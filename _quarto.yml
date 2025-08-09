@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: docs
+  title: "GAC126 - Programação Aplicada com Suporte de IA"
+
+lang: pt-BR
+
+from: markdown+emoji
+
+format: 
+  clean-revealjs:
+  # revealjs:
+    theme: [default, custom.scss]
+    embed-resources: false
+    incremental: true
+    # smaller: true
+    logo: imagens/logo_UFLA.png
+    auto-stretch: false
+    chalkboard: true
+
+revealjs-plugins:
+  - pointer
+
+author:
+ - name: Prof. Julio César Alves
+   affiliation: DAC - ICET - Universidade Federal de Lavras
+   url: https://julio.dac.ufla.br
+
+license: "CC BY-SA"
+
+title-block-banner: true
+
+date: last-modified
+date-format: "DD/MM/YYYY"
+
+filters:
+  - roughnotation
+  - code-fullscreen
+
+highlight-style: github
+
+
+
+

@@ -1,0 +1,288 @@
+---
+title: Introdução à Programação Suportada por IA
+subtitle: PASIA - Aula P.1
+---
+
+##  {.smaller}
+
+O conteúdo dessa aula é baseado nos capítulos 1 e 2 do livro abaixo.
+
+![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 60vh; width: auto;"}
+
+# Introdução {background-color="#40666e"}
+
+## {.smaller}
+
+Você conhece alguma indústria ou negócio cuja forma de trabalho não tem sofrido impacto
+do uso de softwares?
+
+- Difícil de imaginar, não é?
+- Software é essencial hoje em dia.
+
+. . .
+
+O resultado tem sido que cada vez mais pessoas querem aprender a programar
+
+- E não estamos falando apenas de graduação em área de TI.
+  - Pode ser um cientista que precisa de um programa para analisar dados.
+  - Ou um trabalhador de escritório que gostaria de automatizar alguma tarefa repetitiva chata.
+  - Ou alguém que quer criar um jogo por hobby.
+
+## {.smaller}
+
+Apesar do desejo de aprender a programar
+
+- Décadas de pesquisa na área de educação em computação mostram que programar é difícil.
+- Ferramentas de IA podem facilitar muito aprendizado
+  - Evitando que o aluno tenha que saber detalhes de regras de sintaxe.
+
+. . .
+
+Nesta disciplina usaremos o GitHub Copilot como um assistente de IA.
+
+- Algumas pessoas dizem que assistentes de IA acabarão com todos os empregros de desenvolvedores.
+- Outros acham que assistentes de IA nunca serão confiáveis.
+- Mas é fácil encontrar falhas nesses dois argumentos opostos e extremos.
+
+. . .
+
+O fato é que achar que assistentes de IA não deveriam ser usados hoje em dia
+
+- seria o mesmo que um carpinteiro se recusar a usar ferramentas elétricas.
+
+## {.smaller}
+
+Os assistentes de IA possuem vantagens que são inegáveis
+
+- Geram códigos que, na grande maioria das vezes, não têm erros de sintaxe.
+  - Evitando frustrações comuns de iniciantes.
+- São muito boas para explicar o que um código já implementado faz.
+  - Fazendo com que um aluno não dependa tanto de um professor, monitor ou colega para ajudá-lo.
+
+. . .
+
+E, claro, muitas vezes assistentes de IA geram códigos corretos para problemas comuns
+
+- Já que é treinado a partir de uma quantidade imensa de códigos.
+- Por que então não utilizá-los?
+
+## {.smaller}
+
+Isso não quer dizer que criar software agora é algo trivial e podemos confiar toda habilidade de programação para a IA.
+
+- O fato é que as habilidades para se criar um bom software estão evoluindo.
+
+. . .
+
+Habilidades como:
+
+- decomposição de problemas
+- especificação de código
+- leitura de código
+- teste de código
+
+. . . 
+
+Se tornaram mais importantes do que eram no passado.
+
+. . .
+
+Já habilidades como conhecer a semântica e sintaxe de uma biblioteca são agora menos importantes.
+
+## {.smaller}
+
+O que essa disciplina espera de você:
+
+- Que conheça o básico de programação
+  - Tendo feito IALG ou FP1.
+- Que esteja disposto a realmente criar software útil com auxílio de IA.
+  - Não faz sentido fazer uma disciplina para virar um operator de TAB :)
+- Que tenha resiliência para lidar com todo o ciclo de desenvolvimento.
+  - Que envolve criar, testar, corrigir, melhorar, documentar, etc.
+
+. . .
+
+Esperamos que ao final da disciplina você consiga
+
+- Criar programas em Python com auxílio de IA.
+- Saiba identificar se os programas funcionam corretamente e, se não funcionam, o que fazer para corrigir.
+- Consiga ler e entender códigos em Python.
+- Saiba utilizar bibliotecas de análise e visualização de dados em Python.
+- Saiba automatizar tarefas repetitivas com Python.
+
+## {.smaller}
+
+Há um desafio ao utilizar assistentes de IA, que é especialmente relevante no caso de uma disciplina.
+
+- Assistentes de IA estão evoluindo muito rapidamente,
+- e ainda possuem comportamento não-determinístico.
+- Com isso, se você resolver a mesma tarefa várias vezes, você pode obter soluções diferentes.
+
+. . .
+
+O resultado é que o que você fizer pode não bater exatamente com o que o professor preparou para a aula.
+
+- Por isso é tão importante que você aprenda como verificar se uma solução do assistente de IA está correta ou não.
+
+# Impacto da IA na programação {background-color="#40666e"}
+
+## {.smaller}
+
+O que você acha que esse código faz?
+
+```{.assembly code-line-numbers="false"}
+section .text 
+global _start 
+_start: 
+    mov ecx, 10 
+    mov eax, '0' 
+    l1: 
+    mov [num], eax 
+    mov eax, 4 
+    mov ebx, 1 
+    push ecx 
+    mov ecx, num 
+    mov edx, 1 
+    int 0x80 
+    mov eax, [num] 
+    inc eax 
+    pop ecx 
+    loop l1 
+    mov eax, 1 
+    int 0x80 
+section .bss 
+    num resb 1
+```
+
+. . .
+
+Ele faz com que o computador conte de 0 a 9 e imprima os números na tela.
+
+- Era assim que se programava antigamente.
+
+## {.smaller}
+
+O que você acha que esse código faz?
+
+```{.assembly code-line-numbers="false"}
+section .text 
+global _start 
+_start: 
+    mov ecx, 10 
+    mov eax, '0' 
+    l1: 
+    mov [num], eax 
+    mov eax, 4 
+    mov ebx, 1 
+    push ecx 
+    mov ecx, num 
+    mov edx, 1 
+    int 0x80 
+    mov eax, [num] 
+    inc eax 
+    pop ecx 
+    loop l1 
+    mov eax, 1 
+    int 0x80 
+section .bss 
+    num resb 1
+```
+
+Essa monstruosidade foi escrita em código Assembly.
+
+- Projetada para ser entendida por máquinas e não humanos.
+- Mesmo na década de 90 jogos como Doom e Quake tinham trechos escritos em Assembly para garantir desempenho.
+
+## {.smaller}
+
+Uma forma mais moderna de escrever o mesmo programa seria:
+
+::: {.doublefontsize}
+```{.python code-line-numbers="false"}
+for numero in range(9):
+    print(numero)
+```
+:::
+
+- Escrito em Python, que se parece muito mais com uma linguagem natural.
+- E é mais fácil para uma pessoa tentar advinhar o que o código faz, mesmo que não conheça Python.
+
+. . .
+
+Mas infelizmente, o código está errado, ele não exibe os números de 0 a 9.
+
+- Apesar de parecer inglês, Python não é inglês.
+- E, assim, confundir algum detalhe das regras de um programa pode "quebrá-lo".
+
+## {.smaller}
+
+Com assitentes de IA, o trabalho ficou muito mais fácil.
+
+- Podemos escrever em português, e o GitHub Copilot gera o código em Python para nós.
+
+. . .
+
+Se escrevemos, por exemplo, o comentário abaixo:
+
+::: {.doublefontsize}
+```{.python code-line-numbers="false"}
+# Exiba os números de 0 a 9
+```
+:::
+
+. . .
+
+Provavelmente, o GitHub Copilot irá sugerir o código a seguir
+
+- que, diferentemente do código anterior, esse está correto.
+
+::: {.doublefontsize}
+```{.python code-line-numbers="false"}
+# Exiba os números de 0 a 9
+for i in range(10):
+    print(i)
+```
+:::
+
+## {.smaller}
+
+Antes dos assistentes de IA, programadores profissionais costumavam trabalhar com duas telas.
+
+- Uma com a IDE para programar
+- Outra com o Google e/ou Stack Overflow para pesquisar como resolver problemas.
+
+. . .
+
+Muitas vezes a solução encontrada na internet já era o que o programador estava tentando fazer.
+
+- especialmente no caso de programadores iniciantes.
+
+. . .
+
+Uma das coisas que os assistentes de IA fazem de melhor é automatizar esse processo.
+
+- Fazendo isso não só mais rápido, como também contextualizado no código que está sendo escrito.
+
+# Funcionamento de um assistente de IA {background-color="#40666e"}
+
+## {.smaller}
+
+TODO
+
+# O que um assistente de IA pode fazer {background-color="#40666e"}
+
+## {.smaller}
+
+TODO
+
+# Riscos e desafios ao usar assistentes de IA {background-color="#40666e"}
+
+## {.smaller}
+
+TODO
+
+# Preocupações sociais sobre o uso de IA {background-color="#40666e"}
+
+## {.smaller}
+
+TODO

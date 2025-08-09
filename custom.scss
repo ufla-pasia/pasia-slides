@@ -1,0 +1,35 @@
+/*-- scss:defaults --*/
+
+$h1bgcolor: #f7fad1;
+
+/*-- scss:rules --*/
+
+.alert {
+    font-weight: bold;
+}
+
+.doublefontsize {
+    font-size: 200%;
+}
+
+.halfincfontsize {
+    font-size: 150%;
+}
+
+.fontsize80 {
+    font-size: 80%;
+}
+
+.fontsize70 {
+    font-size: 70%;
+}
+
+// Slide numbers to the bottom-left
+.slide-number, .reveal.has-logo .slide-number {
+    bottom: 14px !important;
+    left: 50px !important;
+    top: unset !important;
+}
+
+
+  

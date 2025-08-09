@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "aula_p1.html#como-estudar-esse-conteúdo",
+    "href": "aula_p1.html#como-estudar-esse-conteúdo",
+    "title": "Introdução à Programação suportada por IA",
+    "section": "Como estudar esse conteúdo?",
+    "text": "Como estudar esse conteúdo?\nUma dica fundamental é: just do it!"
+  },
+  {
+    "objectID": "aula_p1.html#section",
+    "href": "aula_p1.html#section",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "O conteúdo dessa aula é baseado nos capítulos 1 e 2 do livro abaixo."
+  },
+  {
+    "objectID": "aula_p1.html#section-1",
+    "href": "aula_p1.html#section-1",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Você conhece alguma indústria ou negócio cuja forma de trabalho não tem sofrido impacto do uso de softwares?\n\nDifícil de imaginar, não é?\nSoftware é essencial hoje em dia.\n\n\nO resultado tem sido que cada vez mais pessoas querem aprender a programar\n\nE não estamos falando apenas de graduação em área de TI.\n\nPode ser um cientista que precisa de um programa para analisar dados.\nOu um trabalhador de escritório que gostaria de automatizar alguma tarefa repetitiva chata.\nOu alguém que quer criar um jogo por hobby."
+  },
+  {
+    "objectID": "aula_p1.html#section-2",
+    "href": "aula_p1.html#section-2",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Apesar do desejo de aprender a programar\n\nDécadas de pesquisa na área de educação em computação mostram que programar é difícil.\nFerramentas de IA podem facilitar muito aprendizado\n\nEvitando que o aluno tenha que saber detalhes de regras de sintaxe.\n\n\n\nNesta disciplina usaremos o GitHub Copilot como um assistente de IA.\n\nAlgumas pessoas dizem que assistentes de IA acabarão com todos os empregros de desenvolvedores.\nOutros acham que assistentes de IA nunca serão confiáveis.\nMas é fácil encontrar falhas nesses dois argumentos opostos e extremos.\n\n\n\nO fato é que achar que assistentes de IA não deveriam ser usados hoje em dia\n\nseria o mesmo que um carpinteiro se recusar a usar ferramentas elétricas."
+  },
+  {
+    "objectID": "aula_p1.html#section-3",
+    "href": "aula_p1.html#section-3",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Os assistentes de IA possuem vantagens que são inegáveis\n\nGeram códigos que, na grande maioria das vezes, não têm erros de sintaxe.\n\nEvitando frustrações comuns de iniciantes.\n\nSão muito boas para explicar o que um código já implementado faz.\n\nFazendo com que um aluno não dependa tanto de um professor, monitor ou colega para ajudá-lo.\n\n\n\nE, claro, muitas vezes assistentes de IA geram códigos corretos para problemas comuns\n\nJá que é treinado a partir de uma quantidade imensa de códigos.\nPor que então não utilizá-los?"
+  },
+  {
+    "objectID": "aula_p1.html#section-4",
+    "href": "aula_p1.html#section-4",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Isso não quer dizer que criar software agora é algo trivial e podemos confiar toda habilidade de programação para a IA.\n\nO fato é que as habilidades para se criar um bom software estão evoluindo.\n\n\nHabilidades como:\n\ndecomposição de problemas\nespecificação de código\nleitura de código\nteste de código\n\n\n\nSe tornaram mais importantes do que eram no passado.\n\n\nJá habilidades como conhecer a semântica e sintaxe de uma biblioteca são agora menos importantes."
+  },
+  {
+    "objectID": "aula_p1.html#section-5",
+    "href": "aula_p1.html#section-5",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "O que essa disciplina espera de você:\n\nQue conheça o básico de programação\n\nTendo feito IALG ou FP1.\n\nQue esteja disposto a realmente criar software útil com auxílio de IA.\n\nNão faz sentido fazer uma disciplina para virar um operator de TAB :)\n\nQue tenha resiliência para lidar com todo o ciclo de desenvolvimento.\n\nQue envolve criar, testar, corrigir, melhorar, documentar, etc.\n\n\n\nEsperamos que ao final da disciplina você consiga\n\nCriar programas em Python com auxílio de IA.\nSaiba identificar se os programas funcionam corretamente e, se não funcionam, o que fazer para corrigir.\nConsiga ler e entender códigos em Python.\nSaiba utilizar bibliotecas de análise e visualização de dados em Python.\nSaiba automatizar tarefas repetitivas com Python."
+  },
+  {
+    "objectID": "aula_p1.html#section-6",
+    "href": "aula_p1.html#section-6",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Há um desafio ao utilizar assistentes de IA, que é especialmente relevante no caso de uma disciplina.\n\nAssistentes de IA estão evoluindo muito rapidamente,\ne ainda possuem comportamento não-determinístico.\nCom isso, se você resolver a mesma tarefa várias vezes, você pode obter soluções diferentes.\n\n\nO resultado é que o que você fizer pode não bater exatamente com o que o professor preparou para a aula.\n\nPor isso é tão importante que você aprenda como verificar se uma solução do assistente de IA está correta ou não."
+  },
+  {
+    "objectID": "aula_p1.html#section-7",
+    "href": "aula_p1.html#section-7",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "O que você acha que esse código faz?\nsection .text \nglobal _start \n_start: \n    mov ecx, 10 \n    mov eax, '0' \n    l1: \n    mov [num], eax \n    mov eax, 4 \n    mov ebx, 1 \n    push ecx \n    mov ecx, num \n    mov edx, 1 \n    int 0x80 \n    mov eax, [num] \n    inc eax \n    pop ecx \n    loop l1 \n    mov eax, 1 \n    int 0x80 \nsection .bss \n    num resb 1\n\nEle faz com que o computador conte de 0 a 9 e imprima os números na tela.\n\nEra assim que se programava antigamente."
+  },
+  {
+    "objectID": "aula_p1.html#section-8",
+    "href": "aula_p1.html#section-8",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "O que você acha que esse código faz?\nsection .text \nglobal _start \n_start: \n    mov ecx, 10 \n    mov eax, '0' \n    l1: \n    mov [num], eax \n    mov eax, 4 \n    mov ebx, 1 \n    push ecx \n    mov ecx, num \n    mov edx, 1 \n    int 0x80 \n    mov eax, [num] \n    inc eax \n    pop ecx \n    loop l1 \n    mov eax, 1 \n    int 0x80 \nsection .bss \n    num resb 1\nEssa monstruosidade foi escrita em código Assembly.\n\nProjetada para ser entendida por máquinas e não humanos.\nMesmo na década de 90 jogos como Doom e Quake tinham trechos escritos em Assembly para garantir desempenho."
+  },
+  {
+    "objectID": "aula_p1.html#section-9",
+    "href": "aula_p1.html#section-9",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Uma forma mais moderna de escrever o mesmo programa seria:\n\nfor numero in range(9):\n    print(numero)\n\n\nEscrito em Python, que se parece muito mais com uma linguagem natural.\nE é mais fácil para uma pessoa tentar advinhar o que o código faz, mesmo que não conheça Python.\n\n\nMas infelizmente, o código está errado, ele não exibe os números de 0 a 9.\n\nApesar de parecer inglês, Python não é inglês.\nE, assim, confundir algum detalhe das regras de um programa pode “quebrá-lo”."
+  },
+  {
+    "objectID": "aula_p1.html#section-10",
+    "href": "aula_p1.html#section-10",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Com assitentes de IA, o trabalho ficou muito mais fácil.\n\nPodemos escrever em português, e o GitHub Copilot gera o código em Python para nós.\n\n\nSe escrevemos, por exemplo, o comentário abaixo:\n\n# Exiba os números de 0 a 9\n\n\n\nProvavelmente, o GitHub Copilot irá sugerir o código a seguir\n\nque, diferentemente do código anterior, esse está correto.\n\n\n# Exiba os números de 0 a 9\nfor i in range(10):\n    print(i)"
+  },
+  {
+    "objectID": "aula_p1.html#section-11",
+    "href": "aula_p1.html#section-11",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Antes dos assistentes de IA, programadores profissionais costumavam trabalhar com duas telas.\n\nUma com a IDE para programar\nOutra com o Google e/ou Stack Overflow para pesquisar como resolver problemas.\n\n\nMuitas vezes a solução encontrada na internet já era o que o programador estava tentando fazer.\n\nespecialmente no caso de programadores iniciantes.\n\n\n\nUma das coisas que os assistentes de IA fazem de melhor é automatizar esse processo.\n\nFazendo isso não só mais rápido, como também contextualizado no código que está sendo escrito."
+  },
+  {
+    "objectID": "aula_p1.html#section-12",
+    "href": "aula_p1.html#section-12",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "TODO"
+  },
+  {
+    "objectID": "aula_p1.html#section-13",
+    "href": "aula_p1.html#section-13",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "TODO"
+  },
+  {
+    "objectID": "aula_p1.html#section-14",
+    "href": "aula_p1.html#section-14",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "TODO"
+  },
+  {
+    "objectID": "aula_p1.html#section-15",
+    "href": "aula_p1.html#section-15",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "TODO"
+  }
+]
