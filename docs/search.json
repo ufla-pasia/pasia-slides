@@ -74,7 +74,7 @@
     "href": "aula_p1.html#section-9",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Uma forma mais moderna de escrever o mesmo programa seria:\n\nfor numero in range(9):\n    print(numero)\n\n\nEscrito em Python, que se parece muito mais com uma linguagem natural.\nE é mais fácil para uma pessoa tentar advinhar o que o código faz, mesmo que não conheça Python.\n\n\nMas infelizmente, o código está errado, ele não exibe os números de 0 a 9.\n\nApesar de parecer inglês, Python não é inglês.\nE, assim, confundir algum detalhe das regras de um programa pode “quebrá-lo”."
+    "text": "Uma forma mais moderna de escrever o mesmo programa seria:\n\nfor numero in range(9):\n    print(numero)\n\n\nEscrito em Python, que se parece muito mais com uma linguagem natural.\n\nEspecialmente para quem fala inglês.\n\nE é mais fácil para uma pessoa tentar adivinhar o que o código faz, mesmo que não conheça Python.\n\n\nMas infelizmente, o código está errado, ele não exibe os números de 0 a 9.\n\nApesar de parecer inglês, Python não é inglês.\nE, assim, confundir algum detalhe das regras de um programa pode “quebrá-lo”."
   },
   {
     "objectID": "aula_p1.html#section-10",
@@ -95,25 +95,116 @@
     "href": "aula_p1.html#section-12",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "TODO"
+    "text": "O vídeo abaixo é bem interessante e explica de forma simples como funcionam os modelos LLM.\n\n\n\n\n\nFica a dica:\n\nEsse canal 3Blue1Brown é muito bom.\nExplica diversos conceitos matemáticos de forma visual e intuitiva."
   },
   {
     "objectID": "aula_p1.html#section-13",
     "href": "aula_p1.html#section-13",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "TODO"
+    "text": "Programadores, especialmente iniciantes, gastam muito tempo aprendendo a escrever código sintaticamente correto.\n\nMesmo programadores mais experientes podem gastar muito tempo quando utilizam uma nova linguagem de programação ou mesmo uma nova biblioteca em uma linguagem que já conhecem.\n\n\nAssistentes como o Copilot podem ajudar muito nesse aspecto.\n\nPois quase sempre geram códigos que são sintaticamente corretos.\nEvitando que precisemos escrevê-los do zero.\n\n\n\nCom isso, conseguimos criar softwares mais complexos em menos tempo e com menos frustrações."
   },
   {
     "objectID": "aula_p1.html#section-14",
     "href": "aula_p1.html#section-14",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "TODO"
+    "text": "Não ter que se preocupar com detalhes de sintaxe pode ser um grande fator de aumento de produtividade.\n\nAfinal de contas o que precisamos é resolver o problema do usuário final, independente dos detalhes de como o código precisa ser escrito.\nMas não é só assim que o Copilot pode nos ajudar."
   },
   {
     "objectID": "aula_p1.html#section-15",
     "href": "aula_p1.html#section-15",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "O Copilot, assim como outros assistentes de IA, também pode:\n\nExplicar códigos que já existem\n\nIsso é útil tanto quando temos que trabalhar em um código que não fomos nós que escrevemos.\nComo também quando queremos entender um código que foi gerado pelo próprio Copilot.\n\n\n\nTornar código mais fácil de entender\n\nHá diferentes formas de escrever um código que resolve a mesma tarefa.\nE algumas são mais fáceis de entender do que outras.\nPodemos então pedir ao Copilot para reorganizar o código de forma que ele fique mais fácil de entender."
+  },
+  {
+    "objectID": "aula_p1.html#section-16",
+    "href": "aula_p1.html#section-16",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "O Copilot, assim como outros assistentes de IA, também pode:\nEncontrar e corrigir bugs\n\nComo já foi mencionado o código gerado pelo Copilot pode não funcionar corretamente.\nOu pode funcionar em quase todos os casos, mas falhar em alguns.\nPodemos então pedir ao Copilot para nos ajudar a encontrar e corrigir esses bugs.\n\n\nExplicar erros\n\nAs mensagens de erro geradas pelas linguagens de programação podem ser difíceis de entender.\nO Copilot pode nos ajudar a entender o que está acontecendo e como corrigir o erro.\nÉ útil passar para o Copilot não só a mensagem de erro, como também a pilha de execução."
+  },
+  {
+    "objectID": "aula_p1.html#section-17",
+    "href": "aula_p1.html#section-17",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "O Copilot, assim como outros assistentes de IA, também pode:\nEncontrar bibliotecas que podem ser úteis\n\nMuitas vezes não sabemos que bibliotecas existem ou como utilizá-las.\nO Copilot pode nos ajudar a encontrar bibliotecas que podem ser úteis para o nosso problema.\nE também pode nos ajudar a entender como utilizá-las.\n\n\nMelhorar o desempenho do código\n\nO Copilot pode nos ajudar a identificar gargalos de desempenho no código.\nE sugerir melhorias para torná-lo mais eficiente."
+  },
+  {
+    "objectID": "aula_p1.html#section-18",
+    "href": "aula_p1.html#section-18",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Uma dica geral para utilizar assistentes de IA é:\n\nInteraja com o assistente de IA, fazendo ciclos de perguntas e feedbacks.\n\n\nVocê pode, por exemplo:\n\nPedir ao Copilot para gerar um código que resolva um problema específico.\nPedir que ele explique o código que fez.\nPedir que ele melhore o código, tornando-o mais fácil de entender.\nPedir que ele encontre e corrija bugs no código.\nSe necessário, pedir para melhorar o desempenho depois de ter a solução funcionando."
+  },
+  {
+    "objectID": "aula_p1.html#section-19",
+    "href": "aula_p1.html#section-19",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Além de falar das vantagens, é importante também falar dos riscos e desafios ao usar assistentes de IA.\n\nCopyright\n\nA quem pertence um código gerado por um assistente de IA?\nO assistente de IA é treinado a partir de códigos disponíveis na internet, então é possível que o código gerado seja muito parecido com algum código existente.\nAs ferramentas têm evoluído e muitas identificam a fonte quando o código gerado é muito parecido com algum código existente.\nIsso levanta questões sobre a propriedade intelectual e o uso ético de código gerado por IA.\nA tecnologia evoluiu muito rápido do que a legislação, então ainda teremos muito debate sobre o assunto."
+  },
+  {
+    "objectID": "aula_p1.html#section-20",
+    "href": "aula_p1.html#section-20",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Educação\n\nOs autores do livro fizeram testes com exercícios de disciplinas introdutórias de programação.\nDe cara, o Copilot acertou 50% dos exercícios.\n\nCom um pouco mais de contexto acertou 80%.\n\nÉ fato que a educação precisa mudar para lidar com essa nova realidade.\n\nEm algumas escolas, o aluno pode usar assitentes de IA para fazer os exercícios.\nEm outras, o uso é proibido em provas ou dependendo do curso (como Computação ou Sistemas).\nAlgumas treinararam LLMs específicos para dar apenas certos tipos de respostas.\n\nO fato é que ainda está muito ceodo para dizer como LLM vai afetar a educação em computação.\n\nMas certas tendências já começaram a aparecer."
+  },
+  {
+    "objectID": "aula_p1.html#section-21",
+    "href": "aula_p1.html#section-21",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Qualidade do código\n\nÉ necessário ser bem cuidadoso e não confiar cegamente no código gerado por assistentes de IA.\n\nEspecialmente em códigos sensíveis ou que precisam ser especialmente seguros.\nImagine um código de um dispositivo médico ou de um carro autônomo, por exemplo.\n\nÉ fundamental criar uma estrutura de testes, independente do assistente de IA,\n\nPara garantir que o código funciona corretamente."
+  },
+  {
+    "objectID": "aula_p1.html#section-22",
+    "href": "aula_p1.html#section-22",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Segurança do código\n\nNão há nenhuma garantia de segurança em código gerado por assistentes de IA.\nTrabalhar com dados de usuários, por exemplo, requer cuidados especiais.\nDevemos também tomar cuidado com dados que são enviados para os assistentes de IA.\n\nPor exemplo, não enviar dados sensíveis ou confidenciais.\n\nMuitas empresas proíbam ou limitam a forma de uso das ferramentas de IA, devido a essas preocupações."
+  },
+  {
+    "objectID": "aula_p1.html#section-23",
+    "href": "aula_p1.html#section-23",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Assistentes de IA não são especialistas (experts)\n\nA grande diferença de um especialista não é o que ele sabe, mas o que ele sabe que não sabe :)\nUm especialista consegue dizer o quão confiante eles estão sobre uma determinada solução.\n\nE se não estiverem confiantes o suficiente, eles estudam até conhecerem melhor o que eles não sabem.\n\nAssistentes de IA não têm essa capacidade.\nHá casos de assistentes que geraram obituários de pessoas mortas ou que explicaram com um ábaco é mais rápido que um computador.\nAs ferramentas estão evoluindo muito, mas ainda são muito autoconfiantes.\nEm resumo: tudo que um assistente de IA faz deve ser verificado por um humano."
+  },
+  {
+    "objectID": "aula_p1.html#section-24",
+    "href": "aula_p1.html#section-24",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Viés\n\nLLMs vão reproduzir os mesmos vieses que estão presentes nos dados com os quais foram treinados.\nUma LLM é treinada com mais literatura inglesa do que de outras culturas, por exemplo.\n\nE isso acabará se refletindo nas respostas que ela gera.\n\nHá também o risco de reforçar estereótipos negativos.\nNa geração de código, é provável que ela gera códigos em um estilo que é mais comum em grupos que têm maior representatividade na comunidade de programação.\nPor outro lado, as próprias LLMs podem ajudar a quebrar esses vieses ao facilitar o acesso à programação para pessoas que não têm tanta representatividade na comunidade."
+  },
+  {
+    "objectID": "aula_p1.html#section-25",
+    "href": "aula_p1.html#section-25",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Se o Copliot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?\n\nErrado!\nAssistentes de IA cometem erros.\n\n\nAlém disso, não podemos passar uma tarefa gigantesca para o Copilot e esperar que ele resolva tudo.\n\nExemplo: “Crie um novo de videogame. Ah, e ele precisa ser divertido!”\nIsso não vai funcionar.\nPrecisamos quebrar um problema grande em parte menores para os quais o Copilot possa nos ajudar.\n\nE fazer essa decomposição de problemas não é algo tão simples quanto possa parecer à primeira vista."
+  },
+  {
+    "objectID": "aula_p1.html#section-26",
+    "href": "aula_p1.html#section-26",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Uma tarefa que já existia e agora é ainda mais fundamental é: testes de software.\n\nDesenvolvedores profissionais e empresas já tratam esse tipo de tarefa.\nMas é importante saber que o tipo de erro que um assistente de IA pode cometer é diferente do tipo de erro que um humano pode cometer.\n\nPode acontecer de em 20 linhas de código, uma delas tenha um erro tão absurdo ou sutil, que não esperaríamos que ele pudesse acontecer.\n\nAssim, é importante criar uma boa estrutura de testes para garantir que o código funciona corretamente.\n\n\nOutra habilidade essencial é depuração de código.\n\nDepuração é o processo de encontrar e corrigir erros em um código.\nQuando nós mesmos escrevemos o código já costuma ser uma tarefa que consome tempo e exige paciência.\nCom assistentes de IA, a depuração pode ser ainda mais desafiadora.\n\nMesmo que possamos usar a própria IA para ajudar a corrigir\nainda assim precisamos entender o que está acontecendo para poder explicar para a IA o que está errado."
+  },
+  {
+    "objectID": "aula_p1.html#section-27",
+    "href": "aula_p1.html#section-27",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Por fim, há uma habilidade totalmente nova quando usamos assistentes de IA: engenharia de prompt.\n\nEngenharia de prompt envolve como dizer para o Copilot o que ele tem que fazer.\nNós podemos escrever as instruções em português, mas a forma como escrevemos essas instruções pode fazer muita diferença.\n\nPrecisamos ser bastante precisos sobre o que queremos\n\nE mesmo sendo precisos pode ser que a resposta gerada não seja correta.\n\nNesse caso, precisamos primeiro ser capazes de identificar o que está errado\ne depois sermos capazes de reformular o prompt para tentar obter uma resposta melhor.\n\nÀs vezes um pequeno detalhe no prompt pode fazer muita diferença."
+  },
+  {
+    "objectID": "aula_p1.html#section-28",
+    "href": "aula_p1.html#section-28",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
     "text": "TODO"

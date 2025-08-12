@@ -205,7 +205,8 @@ for numero in range(9):
 :::
 
 - Escrito em Python, que se parece muito mais com uma linguagem natural.
-- E é mais fácil para uma pessoa tentar advinhar o que o código faz, mesmo que não conheça Python.
+  - Especialmente para quem fala inglês.
+- E é mais fácil para uma pessoa tentar adivinhar o que o código faz, mesmo que não conheça Python.
 
 . . .
 
@@ -265,21 +266,246 @@ Uma das coisas que os assistentes de IA fazem de melhor é automatizar esse proc
 
 # Funcionamento de um assistente de IA {background-color="#40666e"}
 
-## {.smaller}
+
 
 TODO
+
+
+## {.smaller}
+
+O vídeo abaixo é bem interessante e explica de forma simples como funcionam os modelos LLM.
+
+::: {.center}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LPZh9BOjkQs" title="Modelos LLM explicados resumidamente" frameborder="0" allowfullscreen></iframe>
+::: 
+
+. . .
+
+Fica a dica:
+
+- Esse canal [3Blue1Brown](https://www.youtube.com/@3blue1brown) é muito bom.
+- Explica diversos conceitos matemáticos de forma visual e intuitiva.
 
 # O que um assistente de IA pode fazer {background-color="#40666e"}
 
 ## {.smaller}
 
-TODO
+Programadores, especialmente iniciantes, gastam muito tempo aprendendo a escrever código sintaticamente correto.
+
+- Mesmo programadores mais experientes podem gastar muito tempo quando utilizam uma nova linguagem de programação 
+ou mesmo uma nova biblioteca em uma linguagem que já conhecem.
+
+. . .
+
+Assistentes como o Copilot podem ajudar muito nesse aspecto.
+
+- Pois quase sempre geram códigos que são sintaticamente corretos.
+- Evitando que precisemos escrevê-los do zero.
+
+. . .
+
+Com isso, conseguimos criar softwares mais complexos em menos tempo e com menos frustrações.
+
+## {.smaller}
+
+Não ter que se preocupar com detalhes de sintaxe pode ser um grande fator de aumento de produtividade.
+
+- Afinal de contas o que precisamos é resolver o problema do usuário final, independente dos detalhes de como o código precisa ser escrito.
+- Mas não é só assim que o Copilot pode nos ajudar.
+
+## {.smaller}
+
+O Copilot, assim como outros assistentes de IA, também pode:
+
+. . .
+
+**Explicar códigos que já existem** 
+
+- Isso é útil tanto quando temos que trabalhar em um código que não fomos nós que escrevemos.
+- Como também quando queremos entender um código que foi gerado pelo próprio Copilot.
+
+. . .
+
+**Tornar código mais fácil de entender**
+
+- Há diferentes formas de escrever um código que resolve a mesma tarefa.
+- E algumas são mais fáceis de entender do que outras.
+- Podemos então pedir ao Copilot para reorganizar o código de forma que ele fique mais fácil de entender.
+
+## {.smaller}
+
+O Copilot, assim como outros assistentes de IA, também pode:
+
+**Encontrar e corrigir bugs**
+
+- Como já foi mencionado o código gerado pelo Copilot pode não funcionar corretamente.
+- Ou pode funcionar em quase todos os casos, mas falhar em alguns.
+- Podemos então pedir ao Copilot para nos ajudar a encontrar e corrigir esses bugs.
+
+. . .
+
+**Explicar erros**
+
+- As mensagens de erro geradas pelas linguagens de programação podem ser difíceis de entender.
+- O Copilot pode nos ajudar a entender o que está acontecendo e como corrigir o erro.
+- É útil passar para o Copilot não só a mensagem de erro, como também a pilha de execução.
+
+## {.smaller}
+
+O Copilot, assim como outros assistentes de IA, também pode:
+
+**Encontrar bibliotecas que podem ser úteis**
+
+- Muitas vezes não sabemos que bibliotecas existem ou como utilizá-las.
+- O Copilot pode nos ajudar a encontrar bibliotecas que podem ser úteis para o nosso problema.
+- E também pode nos ajudar a entender como utilizá-las.
+
+. . .
+
+**Melhorar o desempenho do código**
+
+- O Copilot pode nos ajudar a identificar gargalos de desempenho no código.
+- E sugerir melhorias para torná-lo mais eficiente.
+
+## {.smaller}
+
+Uma **dica** geral para utilizar assistentes de IA é:
+
+- Interaja com o assistente de IA, fazendo ciclos de perguntas e feedbacks.
+
+. . .
+
+Você pode, por exemplo:
+
+1. Pedir ao Copilot para gerar um código que resolva um problema específico.
+2. Pedir que ele explique o código que fez.
+3. Pedir que ele melhore o código, tornando-o mais fácil de entender.
+4. Pedir que ele encontre e corrija bugs no código.
+5. Se necessário, pedir para melhorar o desempenho depois de ter a solução funcionando.
+
 
 # Riscos e desafios ao usar assistentes de IA {background-color="#40666e"}
 
 ## {.smaller}
 
-TODO
+Além de falar das vantagens, é importante também falar dos riscos e desafios ao usar assistentes de IA.
+
+. . .
+
+**_Copyright_**
+  
+- A quem pertence um código gerado por um assistente de IA?
+- O assistente de IA é treinado a partir de códigos disponíveis na internet, então é possível que o código 
+  gerado seja muito parecido com algum código existente.
+- As ferramentas têm evoluído e muitas identificam a fonte quando o código gerado é muito parecido com algum código existente.
+- Isso levanta questões sobre a propriedade intelectual e o uso ético de código gerado por IA.
+- A tecnologia evoluiu muito rápido do que a legislação, então ainda teremos muito debate sobre o assunto.
+
+## {.smaller}
+
+**Educação**
+
+- Os autores do livro fizeram testes com exercícios de disciplinas introdutórias de programação.
+- De cara, o Copilot acertou 50% dos exercícios.
+  - Com um pouco mais de contexto acertou 80%.
+- É fato que a educação precisa mudar para lidar com essa nova realidade.
+  - Em algumas escolas, o aluno pode usar assitentes de IA para fazer os exercícios.
+  - Em outras, o uso é proibido em provas ou dependendo do curso (como Computação ou Sistemas).
+  - Algumas treinararam LLMs específicos para dar apenas certos tipos de respostas.
+- O fato é que ainda está muito cedo para dizer como LLM vai afetar a educação em computação.
+  - Mas certas tendências já começaram a aparecer.
+
+## {.smaller}
+
+**Qualidade do código**
+
+- É necessário ser bem cuidadoso e não confiar cegamente no código gerado por assistentes de IA.
+  - Especialmente em códigos sensíveis ou que precisam ser especialmente seguros.
+  - Imagine um código de um dispositivo médico ou de um carro autônomo, por exemplo.
+- É fundamental criar uma estrutura de testes, independente do assistente de IA,
+  - Para garantir que o código funciona corretamente.
+
+## {.smaller}
+
+**Segurança do código**
+
+- Não há nenhuma garantia de segurança em código gerado por assistentes de IA.
+- Trabalhar com dados de usuários, por exemplo, requer cuidados especiais.
+- Devemos também tomar cuidado com dados que são enviados para os assistentes de IA.
+  - Por exemplo, não enviar dados sensíveis ou confidenciais.
+- Muitas empresas proíbam ou limitam a forma de uso das ferramentas de IA, devido a essas preocupações.
+
+## {.smaller}
+
+**Assistentes de IA não são especialistas (_experts_)**
+
+- A grande diferença de um especialista não é o que ele sabe, mas o que ele sabe que não sabe :)
+- Um especialista consegue dizer o quão confiante ele está sobre uma determinada solução.
+  - E se não estiver confiante o suficiente, ele estuda até conhecer melhor o que ele não sabe.
+- Assistentes de IA não têm essa capacidade.
+  - Há casos de assistentes que geraram obituários de pessoas mortas ou que explicaram com um ábaco é mais rápido que um computador.
+- As ferramentas estão evoluindo muito, mas ainda são muito autoconfiantes.
+- Em resumo: tudo que um assistente de IA faz deve ser verificado por um humano.
+
+## {.smaller}
+
+**Viés**
+
+- LLMs vão reproduzir os mesmos vieses que estão presentes nos dados com os quais foram treinados.
+- Um LLM é treinada com mais literatura inglesa do que de outras culturas, por exemplo.
+  - E isso acabará se refletindo nas respostas que ele gera.
+- Há também o risco de reforçar estereótipos negativos.
+- Na geração de código, é provável que ele gere códigos em um estilo que é mais comum em grupos que têm maior representatividade na comunidade de programação.
+- Por outro lado, as próprias LLMs podem ajudar a quebrar esses vieses ao facilitar o acesso à programação para pessoas que não têm tanta representatividade na comunidade.
+
+# As habilidades que precisamos usando Assistentes de IA {background-color="#40666e"}
+
+## {.smaller}
+
+Se o Copliot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?
+
+- Errado!
+- Assistentes de IA cometem erros.
+
+. . . 
+
+Além disso, não podemos passar uma tarefa gigantesca para o Copilot e esperar que ele resolva tudo.
+
+- Exemplo: "Crie um novo jogo de videogame. Ah, e ele precisa ser divertido!"
+- Isso não vai funcionar.
+- Precisamos quebrar um problema grande em parte menores para os quais o Copilot possa nos ajudar.
+  - E fazer essa [decomposição de problemas]{.alert} não é algo tão simples quanto possa parecer à primeira vista.
+
+## {.smaller}
+
+Uma tarefa que já existia e agora é ainda mais fundamental é: [testes]{.alert} de software.
+
+- Desenvolvedores profissionais e empresas já tratam esse tipo de tarefa.
+- Mas é importante saber que o tipo de erro que um assistente de IA pode cometer é diferente do tipo de erro que um humano pode cometer.
+  - Pode acontecer de em 20 linhas de código, uma delas tenha um erro tão absurdo ou sutil, que não esperaríamos que ele pudesse acontecer.
+- Assim, é importante criar uma boa estrutura de testes para garantir que o código funciona corretamente.
+
+## {.smaller}
+
+Outra habilidade essencial é [depuração]{.alert} de código.
+
+- Depuração é o processo de encontrar e corrigir erros em um código.
+- Quando nós mesmos escrevemos o código já costuma ser uma tarefa que consome tempo e exige paciência.
+- Com assistentes de IA, a depuração pode ser ainda mais desafiadora.
+  - Mesmo que possamos usar a própria IA para ajudar a corrigir
+  - ainda assim precisamos entender o que está acontecendo para poder explicar para a IA o que está errado.
+
+## {.smaller}
+
+Por fim, há uma habilidade totalmente nova quando usamos assistentes de IA: [engenharia de prompt]{.alert}.
+
+- Engenharia de prompt envolve **como** dizer para o Copilot o que ele tem que fazer.
+- Nós podemos escrever as instruções em português, mas a forma como escrevemos essas instruções pode fazer muita diferença.
+  - Precisamos ser bastante precisos sobre o que queremos.
+- E mesmo sendo precisos pode ser que a resposta gerada não seja correta.
+  - Nesse caso, precisamos primeiro ser capazes de identificar o que está errado
+  - e depois sermos capazes de reformular o prompt para tentar obter uma resposta melhor.
+- Às vezes um pequeno detalhe no prompt pode fazer muita diferença.
 
 # Preocupações sociais sobre o uso de IA {background-color="#40666e"}
 
