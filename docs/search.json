@@ -102,7 +102,7 @@
     "href": "aula_p1.html#section-13",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Mas como o Copilot funciona?\n\nEle pode ser visto como uma camada entre você e o programa que você está implementando.\nEm vez de escrever diretamente em Python, você descreve o que você quer em palavras e o Copilot gera o programa para você.\nEssas palavras que escrevemos é o que chamamos de prompt.\n\n\nO “cérebro” por traz do Copilot é um programa de computador bacna que chamamos de LLM.\n\nLLM vem do inglês Large Language Model, ou Grande Modelo de Linguagem.\nUm LLM guarda informações sobre o relacionamento entre palavras\n\nIncluindo quais palavras fazem sentido em certos contextos\nE usa isso para prever a melhor sequência de palavras para responder um prompt."
+    "text": "Mas como o Copilot funciona?\n\nEle pode ser visto como uma camada entre você e o programa que você está implementando.\nEm vez de escrever diretamente em Python, você descreve o que você quer em palavras e o Copilot gera o programa para você.\nEssas palavras que escrevemos é o que chamamos de prompt.\n\n\nO “cérebro” por traz do Copilot é um programa de computador bacana que chamamos de LLM.\n\nLLM vem do inglês Large Language Model, ou Modelo de Linguagem de Larga Escala.\nUm LLM guarda informações sobre o relacionamento entre palavras\n\nIncluindo quais palavras fazem sentido em certos contextos\nE usa isso para prever a melhor sequência de palavras para responder um prompt."
   },
   {
     "objectID": "aula_p1.html#section-14",
@@ -228,7 +228,7 @@
     "href": "aula_p1.html#section-31",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Se o Copliot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?\n\nErrado!\nAssistentes de IA cometem erros.\n\n\nAlém disso, não podemos passar uma tarefa gigantesca para o Copilot e esperar que ele resolva tudo.\n\nExemplo: “Crie um novo jogo de videogame. Ah, e ele precisa ser divertido!”\nIsso não vai funcionar.\nPrecisamos quebrar um problema grande em parte menores para os quais o Copilot possa nos ajudar.\n\nE fazer essa decomposição de problemas não é algo tão simples quanto possa parecer à primeira vista."
+    "text": "Se o Copilot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?\n\nErrado!\nAssistentes de IA cometem erros.\n\n\nAlém disso, não podemos passar uma tarefa gigantesca para o Copilot e esperar que ele resolva tudo.\n\nExemplo: “Crie um novo jogo de videogame. Ah, e ele precisa ser divertido!”\nIsso não vai funcionar.\nPrecisamos quebrar um problema grande em parte menores para os quais o Copilot possa nos ajudar.\n\nE fazer essa decomposição de problemas não é algo tão simples quanto possa parecer à primeira vista."
   },
   {
     "objectID": "aula_p1.html#section-32",
@@ -256,6 +256,97 @@
     "href": "aula_p1.html#section-35",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "TODO"
+    "text": "Para fazer atividades da disciplina você precisa instalar\n\nVS Code\nPython\nExtensão de Python para VS Code (da Microsoft)\n\nVocê pode instalar digitando Ctrl+P no VS Code e digitando ext install ms-python.python."
+  },
+  {
+    "objectID": "aula_p1.html#section-37",
+    "href": "aula_p1.html#section-37",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Além disso, precisamos, claro, do GitHub Copilot.\n\nE, como estudante da UFLA, você tem direito à versão GitHub Copilot Pro.\n\n\nPara ter acesso a ela você deve:\n\nCriar uma conta no GitHub, se ainda não tiver, acessando github.com/.\nApós logar, clique no ícone do seu usuário no canto superior direito e acesse a opção Settings.\nNa barra lateral esquerda, clique em Billing and licensing → Education benefits.\nAcesse a opção Start an application\n\nSiga as instruções (você precisará fornecer um comprovante de matrícula)."
+  },
+  {
+    "objectID": "aula_p1.html#section-38",
+    "href": "aula_p1.html#section-38",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Vamos agora testar o uso do GitHub Copilot no VS Code\n\nVocê deve logar com seu usuário no painel do Copilot.\n\n\nEm seguida, apague o conteúdo do arquivo Python e digite um comentário com a instrução abaixo.\n# exiba na tela: bora começar!\n\n\nAo apertar ENTER, aguarde um pouco e o Copilot deve sugerir um código que atenda à sua solicitação.\n\nO código aparece esmaecido e em itálico.\nE você deve apertar TAB para aceitar a sugestão."
+  },
+  {
+    "objectID": "aula_p1.html#section-39",
+    "href": "aula_p1.html#section-39",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Você deverá então ver um código semelhante a este:\n\nExecute então seu programa para testá-lo.\n\n# exiba na tela: bora começar!\nprint(\"bora começar!\")\n\nApareceu algo diferente para você?\n\nLembre que o Copilot é não determinístico e pode gerar soluções diferentes de cada vez.\nVocê pode tentar reformular o prompt para ver se obtém uma resposta diferente."
+  },
+  {
+    "objectID": "aula_p1.html#section-40",
+    "href": "aula_p1.html#section-40",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Vamos experimentar um programa que mais do que um simples print na tela.\n\nExperimente criar um programa a partir do prompt abaixo.\n\nNão esqueça de testá-lo.\n\n# peça ao usuário o tamanho dos lados de um retângulo e exiba a área do retângulo\nDica: às vezes o Copilot continua o comentário da linha anterior em vez de gerar código.\n\nSe isso acontecer, você pode tentar apertar ENTER novamente.\nOu então começar a digitar um código para que ele entenda que é para completar."
+  },
+  {
+    "objectID": "aula_p1.html#section-41",
+    "href": "aula_p1.html#section-41",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Nós podemos também conversar com o Copilot dentro do contexto de uma parte de código.\n\nPara alterar um trecho de código, por exemplo.\n\n\nExperimente selecionar o código que você acabou de gerar e aperte Ctrl+I.\n\nNa caixa de diálogo que aparece peça ao Copilot para usar emojis na interação com o usuário, por exemplo.\nDepois de processar o prompt, o Copilot fará uma sugestão de alteração no código\n\nVocê pode aceitar a sugestão (o código será alterado).\nFechar a caixa de diálogo (o que vai ignorar a sugestão).\nOu você pode pedir outra sugestão (clicando no botão da terceira opção).\n\n\n\n\nQue tal agora pedir para o Copilot conversar com o usuário em mineirês :)"
+  },
+  {
+    "objectID": "aula_p1.html#section-42",
+    "href": "aula_p1.html#section-42",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Vamos agora fazer algo mais interessante.\n\nE que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.\n\n\nNós vamos utilizar um conjunto de dados (dataset) da plataforma Kaggle.\n\nUma plataforma de competição de ciência de dados e aprendizado de máquina.\nQue tem milhares de conjuntos de dados dos mais variados assuntos."
+  },
+  {
+    "objectID": "aula_p1.html#section-43",
+    "href": "aula_p1.html#section-43",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Vamos trabalhar com dados sobre futebol.\n\nAcesse a página do dataset All footeball player stats in top 5 leagues 23/24.\nSão dados estatísticos dos jogadores das 5 principais ligas de futebol europeias.\nNa página há informações sobre os dados disponíveis e uma amostra dos dados.\n\n\nVamos baixar os dados para usar em nosso programa. Para isso:\n\nClique em Download → Download dataset as zip.\n\nLogue no Kaggle ou crie uma conta se não tiver (pode ser logando com a conta do Google).\n\nDescompacte o arquivo zip baixado.\nCopie o arquivo top5-players.csv para a pasta do seu projeto Python."
+  },
+  {
+    "objectID": "aula_p1.html#section-44",
+    "href": "aula_p1.html#section-44",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.\n\nCrie um novo arquivo python ou apague o conteúdo do arquivo que você tinha criado.\nEm seguida digite o prompt abaixo e gere o código com o Copilot.\n\n\n\n# abra o arquivo csv chamado \"top5-players.csv\" \n# e guarde os dados em uma variável\n\n\n\nExecute o programa:\n\nele não deve exibir nada, mas serve para testar se o código gerado funciona.\n\n\n\nÉ possível que o Copilot tenha sugerido uma biblioteca mas não a tenha importado.\n\nPara corrigir isso, ou algum outro tipo de erro, você pode selecionar, clicar na lâmpada que aparece\n\nE acessar a opção fix (consertar).\n\nSe ele sugeriu usar uma biblioteca que precisaria ser instalada você pode alterar o prompt\n\npedindo para usar apenas as bibliotecas padrões do python."
+  },
+  {
+    "objectID": "aula_p1.html#section-45",
+    "href": "aula_p1.html#section-45",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Nessa parte cada aluno pode estar vendo um código diferente:\n\npois há várias bibliotecas no Python para lidar com arquivos CSV.\nE, como já sabemos, os assistentes de IA são não determinísticos."
+  },
+  {
+    "objectID": "aula_p1.html#section-46",
+    "href": "aula_p1.html#section-46",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Vamos agora trabalhar com os dados que foram carregados.\n\nA ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.\n\n\nCom o prompt abaixo vamos processar os dados para calcular a quantidade de gol feitos por brasileiros em cada liga.\n\n# a terceira coluna traz o nome do país do jogador, a sexta o nome da liga\n# e a nona o número de gols feitos pelo jogador. Para cada liga some\n# o número de gols feitos por jogadores brasileiros (o país é identificado\n# como \"br BRA\")\n\n\n\nEm seguida, vamos exibir as informações calculadas ordenadas pelo número de gols feitos.\n\n# exiba o nome da liga e o número de gols feitos por brasileiros em ordem\n# descrescente de gols feitos\n\n\n\nTeste seu programa!\n\nCaso seja gerado algum erro, use o Copilot para ajudá-lo a corrigir."
+  },
+  {
+    "objectID": "aula_p1.html#section-47",
+    "href": "aula_p1.html#section-47",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Repare que fizemos o nosso programa com apenas três prompts.\n\nUma para lidar com a entrada de dados.\nOutro para processá-los.\nE o último para exibir os dados.\n\n\nEsse ciclo de entrada, processamento e saída é extremamente comum em programação."
+  },
+  {
+    "objectID": "aula_p1.html#section-48",
+    "href": "aula_p1.html#section-48",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Vamos agora usar o Copilot para alterar o código que havíamos gerado.\n\nSuponha que estamos interessados apenas nos gols dos jogadores jovens.\n\nApague o código gerado pelo segundo prompt que você tinha feito altere o prompt\n\nInformando a coluna que contém a idade e pedindo os dados apenas jogadores com menos de 23 anos.\n\n\n\n# a terceira coluna traz o nome do país do jogador, a sexta o nome da liga\n# e a nona o número de gols feitos pelo jogador. Para cada liga some\n# o número de gols feitos por jogadores brasileiros (o país é identificado\n# como \"br BRA\") e que tenham menos de 23 anos\n\nTeste seu programa!"
+  },
+  {
+    "objectID": "aula_p1.html#section-49",
+    "href": "aula_p1.html#section-49",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país.\n\neng, es, it, fr ou de.\n\n\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país.\n\nPara isso, apague o código gerado pelo terceiro prompt e o reescreva.\n\n\n\n\n# exiba o nome da liga e o número de gols feitos por brasileiros em ordem\n# descrescente de gols feitos.\n# O nome da liga tem primeiro duas ou três letras para identificar o país,\n# seguido de um espaço e depois o nome da liga propriamente dito. Substitua\n# essas duas letras pelo nome do país. Os países são:\n# eng: Inglaterra, es: Espanha, it: Itália, fr: França e de: Alemanha\n\n\n\nDica:\n\nSe o copilot não gerar o código selecione o comentário, clique na lâmpada, acesse Modify e digite complete o código."
   }
 ]

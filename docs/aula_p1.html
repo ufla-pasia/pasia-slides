@@ -726,9 +726,9 @@ section .bss
 <li class="fragment">Essas palavras que escrevemos é o que chamamos de <strong><em>prompt</em></strong>.</li>
 </ul>
 <div class="fragment">
-<p>O “cérebro” por traz do Copilot é um programa de computador bacna que chamamos de LLM.</p>
+<p>O “cérebro” por traz do Copilot é um programa de computador bacana que chamamos de LLM.</p>
 <ul>
-<li class="fragment">LLM vem do inglês Large Language Model, ou Grande Modelo de Linguagem.</li>
+<li class="fragment">LLM vem do inglês Large Language Model, ou Modelo de Linguagem de Larga Escala.</li>
 <li class="fragment">Um LLM guarda informações sobre o relacionamento entre palavras
 <ul>
 <li class="fragment">Incluindo quais palavras fazem sentido em certos contextos</li>
@@ -1021,7 +1021,7 @@ section .bss
 </section>
 <section id="section-31" class="slide level2 smaller">
 <h2></h2>
-<p>Se o Copliot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?</p>
+<p>Se o Copilot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?</p>
 <ul>
 <li class="fragment">Errado!</li>
 <li class="fragment">Assistentes de IA cometem erros.</li>
@@ -1081,18 +1081,307 @@ section .bss
 </ul>
 </section></section>
 <section>
-<section id="preocupações-sociais-sobre-o-uso-de-ia" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Preocupações sociais sobre o uso de IA</h1>
+<section id="as-ferramentas-que-vamos-usar" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>As ferramentas que vamos usar</h1>
 
 </section>
 <section id="section-35" class="slide level2 smaller">
 <h2></h2>
-<p>TODO</p>
+<p>Para fazer atividades da disciplina você precisa instalar</p>
+<ul>
+<li class="fragment">VS Code</li>
+<li class="fragment">Python</li>
+<li class="fragment">Extensão de Python para VS Code (da Microsoft)
+<ul>
+<li class="fragment">Você pode instalar digitando <code>Ctrl+P</code> no VS Code e digitando <code>ext install ms-python.python</code>.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="section-36" class="title-slide slide level1 smaller center">
+<h1></h1>
+<p>O VS Code possui o conceito de pasta de trabalho (<em>working folder</em>).</p>
+<ul>
+<li class="fragment">Assim, o ideal é que sempre crie uma pasta para cada projeto que desenvolver.</li>
+<li class="fragment">E abra a pasta acessando <code>File</code> → <code>Open Folder</code>.</li>
+</ul>
+<div class="fragment">
+<p>Para testar se a extensão está instalada corretamente, vamos:</p>
+<ul>
+<li class="fragment">Criar um arquivo acessando a opção <code>File</code> → <code>New File</code>.</li>
+<li class="fragment">Escolhendo a opção <code>Python File</code>.</li>
+<li class="fragment">Salvando o arquivo com a extensão <code>.py</code> (acessando <code>File</code> → <code>Save As</code> e usando um nome como <code>aula.py</code>, por exemplo).</li>
+<li class="fragment">Digitamos um código simples como <code>print("Meu primeiro programa!")</code>.</li>
+<li class="fragment">E acessamos a opção <code>Run</code> (no canto superior direito).</li>
+<li class="fragment">Se tudo estiver certo, veremos a saída do programa na parte inferior do VS Code.</li>
+</ul>
+</div>
+</section>
+<section id="section-37" class="slide level2 smaller">
+<h2></h2>
+<p>Além disso, precisamos, claro, do GitHub Copilot.</p>
+<ul>
+<li class="fragment">E, como estudante da UFLA, você tem direito à versão GitHub Copilot Pro.</li>
+</ul>
+<div class="fragment">
+<p>Para ter acesso a ela você deve:</p>
+<ul>
+<li class="fragment">Criar uma conta no GitHub, se ainda não tiver, acessando <a href="https://github.com/">github.com/</a>.</li>
+<li class="fragment">Após logar, clique no ícone do seu usuário no canto superior direito e acesse a opção <code>Settings</code>.</li>
+<li class="fragment">Na barra lateral esquerda, clique em <code>Billing and licensing</code> → <code>Education benefits</code>.</li>
+<li class="fragment">Acesse a opção <code>Start an application</code>
+<ul>
+<li class="fragment">Siga as instruções (você precisará fornecer um comprovante de matrícula).</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section-38" class="slide level2 smaller">
+<h2></h2>
+<p>Vamos agora testar o uso do GitHub Copilot no VS Code</p>
+<ul>
+<li class="fragment">Você deve logar com seu usuário no painel do Copilot.</li>
+</ul>
+<div class="fragment">
+<p>Em seguida, apague o conteúdo do arquivo Python e digite um comentário com a instrução abaixo.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># exiba na tela: bora começar!</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Ao apertar ENTER, aguarde um pouco e o Copilot deve sugerir um código que atenda à sua solicitação.</p>
+<ul>
+<li class="fragment">O código aparece esmaecido e em itálico.</li>
+<li class="fragment">E você deve apertar TAB para aceitar a sugestão.</li>
+</ul>
+</div>
+</section>
+<section id="section-39" class="slide level2 smaller">
+<h2></h2>
+<p>Você deverá então ver um código semelhante a este:</p>
+<ul>
+<li class="fragment">Execute então seu programa para testá-lo.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># exiba na tela: bora começar!</span></span>
+<span id="cb7-2"><a></a><span class="bu">print</span>(<span class="st">"bora começar!"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Apareceu algo diferente para você?</p>
+<ul>
+<li class="fragment">Lembre que o Copilot é não determinístico e pode gerar soluções diferentes de cada vez.</li>
+<li class="fragment">Você pode tentar reformular o prompt para ver se obtém uma resposta diferente.</li>
+</ul>
+</div>
+</section>
+<section id="section-40" class="slide level2 smaller">
+<h2></h2>
+<p>Vamos experimentar um programa que mais do que um simples print na tela.</p>
+<div class="fragment">
+<p>Experimente criar um programa a partir do prompt abaixo.</p>
+<ul>
+<li class="fragment">Não esqueça de testá-lo.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="co"># peça ao usuário o tamanho dos lados de um retângulo e exiba a área do retângulo</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dica: às vezes o Copilot continua o comentário da linha anterior em vez de gerar código.</p>
+<ul>
+<li class="fragment">Se isso acontecer, você pode tentar apertar ENTER novamente.</li>
+<li class="fragment">Ou então começar a digitar um código para que ele entenda que é para completar.</li>
+</ul>
+</div>
+</section>
+<section id="section-41" class="slide level2 smaller">
+<h2></h2>
+<p>Nós podemos também conversar com o Copilot dentro do contexto de uma parte de código.</p>
+<ul>
+<li class="fragment">Para alterar um trecho de código, por exemplo.</li>
+</ul>
+<div class="fragment">
+<p>Experimente selecionar o código que você acabou de gerar e aperte <code>Ctrl+I</code>.</p>
+<ul>
+<li class="fragment">Na caixa de diálogo que aparece peça ao Copilot para usar emojis na interação com o usuário, por exemplo.</li>
+<li class="fragment">Depois de processar o prompt, o Copilot fará uma sugestão de alteração no código
+<ul>
+<li class="fragment">Você pode aceitar a sugestão (o código será alterado).</li>
+<li class="fragment">Fechar a caixa de diálogo (o que vai ignorar a sugestão).</li>
+<li class="fragment">Ou você pode pedir outra sugestão (clicando no botão da terceira opção).</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Que tal agora pedir para o Copilot conversar com o usuário em mineirês :)</p>
+</div>
+</section></section>
+<section>
+<section id="demonstrando-o-uso-do-copilot-para-processamento-de-dados" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Demonstrando o uso do Copilot para Processamento de Dados</h1>
+
+</section>
+<section id="section-42" class="slide level2 smaller">
+<h2></h2>
+<p>Vamos agora fazer algo mais interessante.</p>
+<ul>
+<li class="fragment">E que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.</li>
+</ul>
+<div class="fragment">
+<p>Nós vamos utilizar um conjunto de dados (<em>dataset</em>) da plataforma Kaggle.</p>
+<ul>
+<li class="fragment">Uma plataforma de competição de ciência de dados e aprendizado de máquina.</li>
+<li class="fragment">Que tem milhares de conjuntos de dados dos mais variados assuntos.</li>
+</ul>
+</div>
+</section>
+<section id="section-43" class="slide level2 smaller">
+<h2></h2>
+<p>Vamos trabalhar com dados sobre futebol.</p>
+<ul>
+<li class="fragment">Acesse a página do <em>dataset</em> <a href="https://www.kaggle.com/datasets/orkunaktas/all-football-players-stats-in-top-5-leagues-2324">All footeball player stats in top 5 leagues 23/24</a>.</li>
+<li class="fragment">São dados estatísticos dos jogadores das 5 principais ligas de futebol europeias.</li>
+<li class="fragment">Na página há informações sobre os dados disponíveis e uma amostra dos dados.</li>
+</ul>
+<div class="fragment">
+<p>Vamos baixar os dados para usar em nosso programa. Para isso:</p>
+<ul>
+<li class="fragment">Clique em <code>Download</code> → <code>Download dataset as zip</code>.
+<ul>
+<li class="fragment">Logue no Kaggle ou crie uma conta se não tiver (pode ser logando com a conta do Google).</li>
+</ul></li>
+<li class="fragment">Descompacte o arquivo zip baixado.</li>
+<li class="fragment">Copie o arquivo <code>top5-players.csv</code> para a pasta do seu projeto Python.</li>
+</ul>
+</div>
+</section>
+<section id="section-44" class="slide level2 smaller">
+<h2></h2>
+<p>Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.</p>
+<ul>
+<li class="fragment">Crie um novo arquivo python ou apague o conteúdo do arquivo que você tinha criado.</li>
+<li class="fragment">Em seguida digite o prompt abaixo e gere o código com o Copilot.</li>
+</ul>
+<div class="fragment">
+<div class="halfincfontsize">
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># abra o arquivo csv chamado "top5-players.csv" </span></span>
+<span id="cb9-2"><a></a><span class="co"># e guarde os dados em uma variável</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Execute o programa:</p>
+<ul>
+<li class="fragment">ele não deve exibir nada, mas serve para testar se o código gerado funciona.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>É possível que o Copilot tenha sugerido uma biblioteca mas não a tenha importado.</p>
+<ul>
+<li class="fragment">Para corrigir isso, ou algum outro tipo de erro, você pode selecionar, clicar na lâmpada que aparece
+<ul>
+<li class="fragment">E acessar a opção <code>fix</code> (consertar).</li>
+</ul></li>
+<li class="fragment">Se ele sugeriu usar uma biblioteca que precisaria ser instalada você pode alterar o prompt
+<ul>
+<li class="fragment">pedindo para usar apenas as bibliotecas padrões do python.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section-45" class="slide level2 smaller">
+<h2></h2>
+<p>Nessa parte cada aluno pode estar vendo um código diferente:</p>
+<ul>
+<li class="fragment">pois há várias bibliotecas no Python para lidar com arquivos CSV.</li>
+<li class="fragment">E, como já sabemos, os assistentes de IA são não determinísticos.</li>
+</ul>
+</section>
+<section id="section-46" class="slide level2 smaller">
+<h2></h2>
+<p>Vamos agora trabalhar com os dados que foram carregados.</p>
+<ul>
+<li class="fragment">A ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.</li>
+</ul>
+<div class="fragment">
+<p>Com o prompt abaixo vamos processar os dados para calcular a quantidade de gol feitos por brasileiros em cada liga.</p>
+<div class="halfincfontsize">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="co"># a terceira coluna traz o nome do país do jogador, a sexta o nome da liga</span></span>
+<span id="cb10-2"><a></a><span class="co"># e a nona o número de gols feitos pelo jogador. Para cada liga some</span></span>
+<span id="cb10-3"><a></a><span class="co"># o número de gols feitos por jogadores brasileiros (o país é identificado</span></span>
+<span id="cb10-4"><a></a><span class="co"># como "br BRA")</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Em seguida, vamos exibir as informações calculadas ordenadas pelo número de gols feitos.</p>
+<div class="halfincfontsize">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="co"># exiba o nome da liga e o número de gols feitos por brasileiros em ordem</span></span>
+<span id="cb11-2"><a></a><span class="co"># descrescente de gols feitos</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Teste seu programa!</p>
+<ul>
+<li class="fragment">Caso seja gerado algum erro, use o Copilot para ajudá-lo a corrigir.</li>
+</ul>
+</div>
+</section>
+<section id="section-47" class="slide level2 smaller">
+<h2></h2>
+<p>Repare que fizemos o nosso programa com apenas três prompts.</p>
+<ul>
+<li class="fragment">Uma para lidar com a entrada de dados.</li>
+<li class="fragment">Outro para processá-los.</li>
+<li class="fragment">E o último para exibir os dados.</li>
+</ul>
+<div class="fragment">
+<p>Esse ciclo de entrada, processamento e saída é extremamente comum em programação.</p>
+</div>
+</section>
+<section id="section-48" class="slide level2 smaller">
+<h2></h2>
+<p>Vamos agora usar o Copilot para alterar o código que havíamos gerado.</p>
+<ul>
+<li class="fragment">Suponha que estamos interessados apenas nos gols dos jogadores jovens.</li>
+</ul>
+<p>Apague o código gerado pelo segundo prompt que você tinha feito altere o prompt</p>
+<ul>
+<li class="fragment">Informando a coluna que contém a idade e pedindo os dados apenas jogadores com menos de 23 anos.</li>
+</ul>
+<div class="fragment">
+<div class="halfincfontsize">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="co"># a terceira coluna traz o nome do país do jogador, a sexta o nome da liga</span></span>
+<span id="cb12-2"><a></a><span class="co"># e a nona o número de gols feitos pelo jogador. Para cada liga some</span></span>
+<span id="cb12-3"><a></a><span class="co"># o número de gols feitos por jogadores brasileiros (o país é identificado</span></span>
+<span id="cb12-4"><a></a><span class="co"># como "br BRA") e que tenham menos de 23 anos</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Teste seu programa!</p>
+</div>
+</section>
+<section id="section-49" class="slide level2 smaller">
+<h2></h2>
+<p>Você deve ter notado que os nomes das ligas começam com um identificador do país.</p>
+<ul>
+<li class="fragment"><code>eng</code>, <code>es</code>, <code>it</code>, <code>fr</code> ou <code>de</code>.</li>
+</ul>
+<div class="fragment">
+<p>Vamos pedir ao Copilot para substituir esse identificador pelo nome do país.</p>
+<ul>
+<li class="fragment">Para isso, apague o código gerado pelo terceiro prompt e o reescreva.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="halfincfontsize">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="co"># exiba o nome da liga e o número de gols feitos por brasileiros em ordem</span></span>
+<span id="cb13-2"><a></a><span class="co"># descrescente de gols feitos.</span></span>
+<span id="cb13-3"><a></a><span class="co"># O nome da liga tem primeiro duas ou três letras para identificar o país,</span></span>
+<span id="cb13-4"><a></a><span class="co"># seguido de um espaço e depois o nome da liga propriamente dito. Substitua</span></span>
+<span id="cb13-5"><a></a><span class="co"># essas duas letras pelo nome do país. Os países são:</span></span>
+<span id="cb13-6"><a></a><span class="co"># eng: Inglaterra, es: Espanha, it: Itália, fr: França e de: Alemanha</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Dica:</p>
+<ul>
+<li class="fragment">Se o copilot não gerar o código selecione o comentário, clique na lâmpada, acesse <code>Modify</code> e digite <code>complete o código</code>.</li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <p><img src="imagens/logo_UFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
+</div>
 </div>
 </div>
 </section></section>
