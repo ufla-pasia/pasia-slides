@@ -895,4 +895,58 @@ Dica:
 - Se o copilot não gerar o código selecione o comentário, clique na lâmpada, 
  acesse `Modify` e digite `complete o código`.
 
+## {.smaller}
 
+Repare que o que fizemos poderia ser sido feito por alguém que nunca tivesse programado em Python.
+
+- Essa pessoa poderia ter mais dificuldade nas situações que geram erro.
+- Mas ainda assim conseguiria, ao final, obter o resultado que precisa.
+- Imagine como ela faria isso sem uma ferramenta como o Copilot?
+
+
+# Copilot via chat {background-color="#40666e"}
+
+## {.smaller}
+
+Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos dados processados.
+
+. . . 
+
+Para isso, selecione o texto e o código do terceiro prompt.
+
+- Abra o chat do Copilot (clicando no ícone de chat na barra de título ou digitando `Ctrl+Alt+I`
+- Mude a opção de `Agent` para `Chat` (primeira opção na parte inferior do chat).
+- E digite o prompt abaixo.
+
+. . .
+
+::: {.halfincfontsize}
+```python
+O código selecionado exibe informações no terminal. 
+Acrescente código para que essas informações sejam exibidas 
+em um gráfico. Caso seja necessário instalar alguma biblioteca, me explique como eu poderia fazer isso.
+```
+:::
+
+. . .
+
+Siga as instruções e faça interações com o Copilot, se necessário até obter o gráfico.
+
+# Experimentando o Copilot {background-color="#40666e"}
+
+## {.smaller}
+
+Exercícios (usando o Copilot pela opção `Modify` diretamente no código ou via chat)
+
+1. Aumente o tamanho das fontes do gráfico.
+2. Exiba o número de gols nas barras do gráfico.
+3. Salve o gráfico em um arquivo PNG.
+
+. . .
+
+Processando outros dados.
+
+1. Exiba os nomes e quantidade de gols dos cinco jogadores que mais fizeram gols em cada liga, ordenados pela quantidade de gols.
+2. Encontre o jogador mais jovem que marcou gol em cada liga e exiba seu nome, idade, equipe e número de gols.
+3. Encontre a equipe que menos tomou cartões (amarelos e vermelhos em cada liga).
+Exiba o nome da equipe e a quantidade de cartões recebidos de cada tipo.
