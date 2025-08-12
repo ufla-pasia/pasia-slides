@@ -266,9 +266,98 @@ Uma das coisas que os assistentes de IA fazem de melhor é automatizar esse proc
 
 # Funcionamento de um assistente de IA {background-color="#40666e"}
 
+## {.smaller}
 
+Mas o que é exatamente um assistente de IA?
 
-TODO
+- É um agente de IA que te ajuda a completar uma tarefa de programação.
+- De forma similar à Alexa, da Amazon, um assistente de IA entende instruções em linguagem natural.
+
+. . . 
+
+No caso do Copilot, uma das tarefas que ele faz é:
+
+- converter uma linguagem, como o Português, em programas de computador.
+
+. . .
+
+Copilot é apenas um exemplo de assistente desse tipo.
+
+- Existem outros como Amazon Q Developer, Tabnine, Ghostwriter, etc.
+
+## {.smaller}
+
+Mas como o Copilot funciona?
+
+- Ele pode ser visto como uma camada entre você e o programa que você está implementando.
+- Em vez de escrever diretamente em Python, você descreve o que você quer em palavras e o Copilot gera o programa para você.
+- Essas palavras que escrevemos é o que chamamos de **_prompt_**.
+
+. . .
+
+O "cérebro" por traz do Copilot é um programa de computador bacana que chamamos de LLM.
+
+- LLM vem do inglês Large Language Model, ou Modelo de Linguagem de Larga Escala.
+- Um LLM guarda informações sobre o relacionamento entre palavras
+  - Incluindo quais palavras fazem sentido em certos contextos
+  - E usa isso para prever a melhor sequência de palavras para responder um prompt.
+
+## {.smaller}
+
+Imagine por exemplo que você pergunte qual a próxima palavra deveria ver na frase:
+
+- "A pessoa abriu a _____".
+
+. . .
+
+Há várias palavras que fariam sentido nesse contexto, como "porta", "caixa" ou "sessão".
+
+- Já outras claramente não fariam sentido como: "o", "ele" ou "abrir".
+
+. . . 
+
+Um LLM leva em conta o contexto para completar a próxima palavra e vai fazendo isso, palavra a palavra,
+  até chegar na resposta final.
+
+- O LLM faz isso de maneira **não determinística**, o que significa que há uma certa aleatoriedade no processo.
+- Assim, às vezes a frase poderia ser completada com "caixa" e outras vezes com "porta", por exemplo.
+
+. . . 
+
+Isso é importante pois significa que o Copilot pode gerar códigos diferentes cada vez que você pede que ele seja gerado.
+
+## {.smaller}
+
+Repare que em nenhum momento dissemos que o Copilot "entende" o que ele está fazendo.
+
+- Ele simplesmente completa o código com aquilo que parece fazer mais sentido.
+ 
+. . .
+
+Assim, durante nossa jornada na disciplina,
+
+- caberá a você conferir se o que está sendo gerado é realmente o que você precisa que seja feito
+
+## {.smaller}
+
+Funcionamento do Copilot:
+
+- obs.: atualmente você pode escolher diferentes LLMs no Copilot, não só o GPT da OpenAI.
+
+![](imagens/fig1-2_prompt_to_program.png){fig-align="center" fig-alt="Fluxograma mostrando a sequência de passos do prompt até o programa gerado." style="max-height: 60vh; width: auto;"}
+
+## {.smaller}
+
+Não seria mais prático se o Copilot gerasse código de máquina diretamente?
+
+- Por que você acha que o usamos para gerar um código em uma linguagem de programação como Python?
+
+. . .
+
+A questão é que o Copilot cometerá erros
+
+- E nós precisaremos encontrá-los e corrigi-los (mesmo que com a ajuda do próprio Copilot).
+- É muito mais fácil fazer isso em uma linguagem de alto nível como Python do que em código de máquina.
 
 
 ## {.smaller}
@@ -383,7 +472,6 @@ Você pode, por exemplo:
 4. Pedir que ele encontre e corrija bugs no código.
 5. Se necessário, pedir para melhorar o desempenho depois de ter a solução funcionando.
 
-
 # Riscos e desafios ao usar assistentes de IA {background-color="#40666e"}
 
 ## {.smaller}
@@ -462,7 +550,7 @@ Além de falar das vantagens, é importante também falar dos riscos e desafios 
 
 ## {.smaller}
 
-Se o Copliot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?
+Se o Copilot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?
 
 - Errado!
 - Assistentes de IA cometem erros.
