@@ -270,28 +270,28 @@
     "href": "aula_p1.html#section-38",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Vamos agora testar o uso do GitHub Copilot no VS Code\n\nVocê deve logar com seu usuário no painel do Copilot.\n\n\nEm seguida, apague o conteúdo do arquivo Python e digite um comentário com a instrução abaixo.\n# exiba na tela: bora começar!\n\n\nAo apertar ENTER, aguarde um pouco e o Copilot deve sugerir um código que atenda à sua solicitação.\n\nO código aparece esmaecido e em itálico.\nE você deve apertar TAB para aceitar a sugestão."
+    "text": "Vamos agora testar o uso do GitHub Copilot no VS Code\n\nVocê deve logar com seu usuário no painel do Copilot.\n\n\nEm seguida, apague o conteúdo do arquivo Python e digite um comentário com a instrução abaixo.\n\n# exiba na tela: bora começar!\n\n\n\nAo apertar ENTER, aguarde um pouco e o Copilot deve sugerir um código que atenda à sua solicitação.\n\nO código aparece esmaecido e em itálico.\nE você deve apertar TAB para aceitar a sugestão."
   },
   {
     "objectID": "aula_p1.html#section-39",
     "href": "aula_p1.html#section-39",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Você deverá então ver um código semelhante a este:\n\nExecute então seu programa para testá-lo.\n\n# exiba na tela: bora começar!\nprint(\"bora começar!\")\n\nApareceu algo diferente para você?\n\nLembre que o Copilot é não determinístico e pode gerar soluções diferentes de cada vez.\nVocê pode tentar reformular o prompt para ver se obtém uma resposta diferente."
+    "text": "Você deverá então ver um código semelhante a este:\n\nExecute então seu programa para testá-lo.\n\n\n# exiba na tela: bora começar!\nprint(\"bora começar!\")\n\n\nApareceu algo diferente para você?\n\nLembre que o Copilot é não determinístico e pode gerar soluções diferentes de cada vez.\nVocê pode tentar reformular o prompt para ver se obtém uma resposta diferente."
   },
   {
     "objectID": "aula_p1.html#section-40",
     "href": "aula_p1.html#section-40",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Vamos experimentar um programa que mais do que um simples print na tela.\n\nExperimente criar um programa a partir do prompt abaixo.\n\nNão esqueça de testá-lo.\n\n# peça ao usuário o tamanho dos lados de um retângulo e exiba a área do retângulo\nDica: às vezes o Copilot continua o comentário da linha anterior em vez de gerar código.\n\nSe isso acontecer, você pode tentar apertar ENTER novamente.\nOu então começar a digitar um código para que ele entenda que é para completar."
+    "text": "Vamos experimentar um programa que mais do que um simples print na tela.\n\nExperimente criar um programa a partir do prompt abaixo.\n\nNão esqueça de testá-lo.\n\n\n# peça ao usuário o tamanho dos lados de um retângulo e \n# exiba a área do retângulo\n\nDica: às vezes o Copilot continua o comentário da linha anterior em vez de gerar código.\n\nSe isso acontecer, você pode tentar apertar ENTER novamente.\nOu então começar a digitar um código para que ele entenda que é para completar."
   },
   {
     "objectID": "aula_p1.html#section-41",
     "href": "aula_p1.html#section-41",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Nós podemos também conversar com o Copilot dentro do contexto de uma parte de código.\n\nPara alterar um trecho de código, por exemplo.\n\n\nExperimente selecionar o código que você acabou de gerar e aperte Ctrl+I.\n\nNa caixa de diálogo que aparece peça ao Copilot para usar emojis na interação com o usuário, por exemplo.\nDepois de processar o prompt, o Copilot fará uma sugestão de alteração no código\n\nVocê pode aceitar a sugestão (o código será alterado).\nFechar a caixa de diálogo (o que vai ignorar a sugestão).\nOu você pode pedir outra sugestão (clicando no botão da terceira opção).\n\n\n\n\nQue tal agora pedir para o Copilot conversar com o usuário em mineirês :)"
+    "text": "Nós podemos também conversar com o Copilot dentro do contexto de uma parte de código.\n\nPara alterar um trecho de código, por exemplo.\n\n\nExperimente selecionar o código que você acabou de gerar e aperte Ctrl+I.\n\nNa caixa de diálogo que aparece peça ao Copilot para usar emojis na interação com o usuário, por exemplo.\nDepois de processar o prompt, o Copilot fará uma sugestão de alteração no código\n\nVocê pode aceitar a sugestão (o código será alterado).\nFechar a caixa de diálogo (o que vai ignorar a sugestão).\nOu você pode pedir outra sugestão (clicando no botão da terceira opção).\n\n\n\n\nQue tal agora pedir para o Copilot conversar com o usuário em mineirês? :)"
   },
   {
     "objectID": "aula_p1.html#section-42",
@@ -348,5 +348,145 @@
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
     "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país.\n\neng, es, it, fr ou de.\n\n\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país.\n\nPara isso, apague o código gerado pelo terceiro prompt e o reescreva.\n\n\n\n\n# exiba o nome da liga e o número de gols feitos por brasileiros em ordem\n# descrescente de gols feitos.\n# O nome da liga tem primeiro duas ou três letras para identificar o país,\n# seguido de um espaço e depois o nome da liga propriamente dito. Substitua\n# essas duas letras pelo nome do país. Os países são:\n# eng: Inglaterra, es: Espanha, it: Itália, fr: França e de: Alemanha\n\n\n\nDica:\n\nSe o copilot não gerar o código selecione o comentário, clique na lâmpada, acesse Modify e digite complete o código."
+  },
+  {
+    "objectID": "aula_p2.html#section",
+    "href": "aula_p2.html#section",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "O conteúdo dessa aula é baseado nos capítulos 2 e 3 do livro abaixo."
+  },
+  {
+    "objectID": "aula_p2.html#section-2",
+    "href": "aula_p2.html#section-2",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos agora fazer algo mais interessante.\n\nE que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.\n\n\nNós vamos utilizar um conjunto de dados (dataset) da plataforma Kaggle.\n\nUma plataforma de competição de ciência de dados e aprendizado de máquina.\nQue tem milhares de conjuntos de dados dos mais variados assuntos."
+  },
+  {
+    "objectID": "aula_p2.html#section-3",
+    "href": "aula_p2.html#section-3",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos trabalhar com dados sobre futebol.\n\nAcesse a página do dataset All footeball player stats in top 5 leagues 23/24.\nSão dados estatísticos dos jogadores das 5 principais ligas de futebol europeias.\nVeja na página quais são os dados disponíveis e uma amostra dos dados."
+  },
+  {
+    "objectID": "aula_p2.html#section-4",
+    "href": "aula_p2.html#section-4",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos baixar os dados para usar em nosso programa. Para isso:\n\nClique em Download → Download dataset as zip.\n\nLogue no Kaggle ou crie uma conta se não tiver (pode ser logando com a conta do Google).\n\nDescompacte o arquivo zip baixado.\nCrie uma pasta para o projeto da aula de hoje e copie para ela o arquivo top5-players.csv."
+  },
+  {
+    "objectID": "aula_p2.html#section-5",
+    "href": "aula_p2.html#section-5",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.\n\nAbra a pasta criada no VS Code.\nCrie um novo arquivo python chamado futebol.py.\nEm seguida digite o prompt abaixo e gere o código com o Copilot.\n\n\n\n# abra o arquivo csv chamado \"top5-players.csv\" \n# e guarde os dados em uma variável\n\n\n\nExecute o programa:\n\nele não deve exibir nada, mas serve para testar se o código gerado funciona."
+  },
+  {
+    "objectID": "aula_p2.html#section-6",
+    "href": "aula_p2.html#section-6",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Nessa parte cada aluno pode estar vendo um código diferente:\n\npois há várias bibliotecas no Python para lidar com arquivos CSV.\nE, como já sabemos, os assistentes de IA são não determinísticos."
+  },
+  {
+    "objectID": "aula_p2.html#section-7",
+    "href": "aula_p2.html#section-7",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "É possível que o Copilot tenha sugerido uma biblioteca mas não a tenha importado.\n\nPara corrigir isso, ou algum outro tipo de erro, você pode selecionar o código gerado,\n\nclicar na lâmpada que aparece e acessar a opção fix (consertar).\n\nSe ele sugeriu usar uma biblioteca que precisaria ser instalada você pode alterar o prompt\n\npedindo para usar apenas as bibliotecas padrões do python."
+  },
+  {
+    "objectID": "aula_p2.html#section-8",
+    "href": "aula_p2.html#section-8",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos agora trabalhar com os dados que foram carregados.\n\nA ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.\n\n\nPara isso vamos usar dois prompts:\n\nUm para calcular os dados que queremos: quantidade de gols feitos por brasileiros em cada liga.\nE outro para exibir os resultados."
+  },
+  {
+    "objectID": "aula_p2.html#section-9",
+    "href": "aula_p2.html#section-9",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Gere então o código do primeiro prompt:\n\n# a terceira coluna traz o nome do país do jogador, \n# a sexta o nome da liga e a nona o número de gols \n# feitos pelo jogador. Para cada liga some o número \n# de gols feitos por jogadores brasileiros (o país \n# é identificado como \"br BRA\")\n\n\nE, em seguida, do segundo.\n\n# exiba o nome da liga e o número de gols feitos por \n# brasileiros em ordem descrescente de gols feitos\n\nTeste seu programa (use o Copilot para corrigir erros, se necessário)."
+  },
+  {
+    "objectID": "aula_p2.html#section-10",
+    "href": "aula_p2.html#section-10",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Repare que fizemos o nosso programa com apenas três prompts.\n\nUma para lidar com a entrada de dados.\nOutro para processá-los.\nE o último para exibir os dados.\n\n\nEsse ciclo de entrada, processamento e saída é extremamente comum em programação."
+  },
+  {
+    "objectID": "aula_p2.html#section-11",
+    "href": "aula_p2.html#section-11",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos agora usar o Copilot para alterar o código que havíamos gerado.\n\nSuponha que estamos interessados apenas nos gols dos jogadores jovens."
+  },
+  {
+    "objectID": "aula_p2.html#section-12",
+    "href": "aula_p2.html#section-12",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Apague o código gerado pelo segundo prompt que você tinha feito\n\nE altere o prompt informando a coluna que contém a idade e\npedindo os dados apenas jogadores com menos de 23 anos.\n\n\n\n# a terceira coluna traz o nome do país do jogador, \n# a sexta o nome da liga, a sétima a idade do jogador\n# e a nona o número de gols feitos pelo jogador. \n# Para cada liga some o número de gols feitos por \n# jogadores brasileiros (o país é identificado como \n# \"br BRA\") e que tenham menos de 23 anos.\n\nTeste seu programa!"
+  },
+  {
+    "objectID": "aula_p2.html#section-13",
+    "href": "aula_p2.html#section-13",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país.\n\neng, es, it, fr ou de.\n\n\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país."
+  },
+  {
+    "objectID": "aula_p2.html#section-14",
+    "href": "aula_p2.html#section-14",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Apague o código gerado pelo terceiro prompt e acrescente as informações da terceira linha abaixo em diante.\n\n# exiba o nome da liga e o número de gols feitos por \n# brasileiros em ordem descrescente de gols feitos.\n# O nome da liga tem primeiro duas ou três letras para \n# identificar o país, seguido de um espaço e depois o \n# nome da liga propriamente dito. Substitua essas duas \n# letras pelo nome do país. Os países são: \n# eng: Inglaterra, es: Espanha, it: Itália, fr: França \n# e de: Alemanha\n\nDica: se o copilot não gerar o código selecione o comentário, clique na lâmpada, acesse Modify e digite complete o código."
+  },
+  {
+    "objectID": "aula_p2.html#section-15",
+    "href": "aula_p2.html#section-15",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Repare que o que fizemos poderia ser sido feito por alguém que nunca tivesse programado em Python.\n\nEssa pessoa poderia ter mais dificuldade nas situações que geram erro.\nMas ainda assim conseguiria, ao final, obter o resultado que precisa.\nImagine como seria difícil para ela fazer isso sem uma ferramenta como o Copilot?"
+  },
+  {
+    "objectID": "aula_p2.html#section-16",
+    "href": "aula_p2.html#section-16",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos dados processados.\n\nPara isso, selecione o texto e o código do terceiro prompt.\n\nAbra o chat do Copilot (clicando no ícone de chat na barra de título do VS Code ou digitando Ctrl+Alt+I).\nMude do modo Agent para Chat (primeira opção na parte inferior do chat).\nE digite o prompt a seguir."
+  },
+  {
+    "objectID": "aula_p2.html#section-17",
+    "href": "aula_p2.html#section-17",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "# O código selecionado exibe informações no terminal. \n# Acrescente código para que essas informações sejam \n# exibidas em um gráfico. Caso seja necessário \n# instalar alguma biblioteca, me explique como eu \n# poderia fazer isso.\n\nSiga então as instruções e faça interações com o Copilot, se necessário, até obter o gráfico."
+  },
+  {
+    "objectID": "aula_p2.html#section-18",
+    "href": "aula_p2.html#section-18",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Os exercícios a seguir podem ser feitos usando o Copilot\n\nselecionando o código e acessando a opção Modify\nou via chat.\n\n\nAumente o tamanho das fontes do gráfico.\nExiba o número de gols nas barras do gráfico.\nSalve o gráfico em um arquivo PNG."
+  },
+  {
+    "objectID": "aula_p2.html#section-19",
+    "href": "aula_p2.html#section-19",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "É importante termos em mente que não estamos validando os resultados gerados\n\nAssim, é possível que alguns resultados estejam incorretos.\n\n\nComo foi mencionado nas aulas anteriores, precisamos aprender a testar o código gerado pelo Copilot\n\nPara termos segurança de que ele faz o que precisamos.\nVeremos mais sobre isso mais adiante na disciplina."
+  },
+  {
+    "objectID": "aula_p2.html#section-20",
+    "href": "aula_p2.html#section-20",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Obtendo mais informações do dataset:\n\nAs informações abaixo podem ser exibidas apenas no terminal.\n\n\nExiba os nomes e quantidade de gols dos cinco jogadores que mais fizeram gols em cada liga, ordenados pela quantidade de gols.\nEncontre o jogador mais jovem que marcou gol em cada liga e exiba seu nome, idade, equipe e número de gols.\nEncontre a equipe que menos tomou cartões (amarelos e vermelhos em cada liga). Exiba o nome da equipe e a quantidade de cartões recebidos de cada tipo."
   }
 ]
