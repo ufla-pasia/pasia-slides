@@ -1,0 +1,283 @@
+---
+title: Projetando Funções
+subtitle: PASIA - Aula T.2
+---
+
+##  
+
+O conteúdo dessa aula é baseado no capítulo 3 do livro abaixo.
+
+![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
+
+##
+
+Pela pesquisa de perfil da turma vi que alguns alunos conhecem bem Python e outros não.
+
+- É importante então apresentar a linguagem nas primeiras aulas.
+- Mas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.
+
+. . .
+
+Espero então que a aula seja útil para todos :)
+
+# Introdução {background-color="#40666e"}
+
+##  
+
+Um dos desafios para programadores iniciantes usarem o Copilot
+
+- é saber o que é uma tarefa razoável para que ele consiga gerar uma boa solução.
+
+. . .
+
+Como já mencionamos antes, passar uma tarefa muito grande para o Assistente de IA
+
+- pode fazer com que ele falhe
+- e falhe de uma forma que seja muito difícil de corrigir.
+
+
+##
+
+Na verdade essa questão de complexidade não é um problema só para o Copilot, mas para nós mesmos.
+
+- Engenheiros de Software que tentam resolver problemas muito complexos sem quebrá-los em partes menores também falham.
+
+. . .
+
+Existem diversas formas de tratar, no código, a decomosição de um problema em partes.
+
+- A mais simples delas é a através de funções.
+
+##
+
+Uma função é um trecho de código que resolve uma tarefa específicia
+
+- E que não é tão complexo a ponto de ficar difícil de implementar e testar.
+
+. . .
+
+Claro que vocês já sabem o que são funções e como elas podem ser implementadas.
+
+- Mas será que vocês sabem quais são os critérios para projetar boas funções?
+- Será pensam nisso na hora de programar, ou simplesmente saem programando?
+- Além disso, no contexto do uso de IA, quais seriam as melhores práticas para projetar funções?
+
+# Funções {background-color="#40666e"}
+
+Uma função é uma pequena tarefa que pode ser usada para resolver tarefas maiores.
+
+- Essas tarefas maiores, por sua vez, podem ser usadas para resolver tarefas maiores ainda.
+
+##
+
+Para exemplificar, encontre as palavras abaixo no quebra-cabeça.
+
+![](imagens/fig3-1_word_puzzle.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
+
+## 
+
+Qual foi o raciocínio que você usou para encontrar as palavras?
+
+- Procurar todas as palavras de uma vez é uma tarefa muito grande e complicada.
+
+. . .
+
+Você poderia, por exemplo, escolher uma palavra para encontrar primeiro.
+
+- E, para encontrar uma única palavra, poderíamos procurar a primeira letra.
+  - E então procurar a palavra buscando para a direita, esquerda, para cima ou para baixo.
+
+##
+
+Repare que estamos decompondo o problema de resolver o caça-palavras
+
+- em tarefas menores, que, se resolvidas, nos ajudam a resolver o problema como um todo.
+- E essa a estratégia que precisamos seguir na hora de programar.
+
+##
+
+Uma função pode ser vista como um contrato.
+
+- Se existir uma função `maior` e for dito que ela recebe dois números e retorna o maior deles.
+- Nós podemos acreditar que se a função for chamada com os números 2 e 5, ela retornará 5.
+  - Nós não precisamos saber como a função funciona para utilizá-la.
+- Da mesma forma que não precisamos entender de mecânica de carros para frear um carro.
+  - Nós acionamos o pedal e sabemos que a velocidade do carro vai diminuir.
+
+##
+
+Na aula passada usamos o Copilot para gerar código a partir de um comentário.
+
+- Podemos fazer o mesmo para criar funções.
+
+. . .
+
+Vamos fazer um exemplo:
+
+::: {.halfincfontsize}
+```python
+# escreva uma função que retorna o  
+# maior de dois números
+# a entrada são dois números
+# e a saída é o maior entre eles
+```
+:::
+
+##
+
+::: {.halfincfontsize}
+```python
+# escreva uma função que retorna o  
+# maior de dois números
+# a entrada são dois números
+# e a saída é o maior entre eles
+def maior_numero(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+```
+:::
+
+Esse é um possível resultado gerado pelo Copilot.
+
+##
+
+```python
+# escreva uma função que retorna o  
+# maior de dois números
+# a entrada são dois números
+# e a saída é o maior entre eles
+def maior_numero(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+```
+- Note que assinatura de uma função em python começa com a palavra-chave `def`.
+  - É isso que diz para o Python que o que vem a seguir é uma função.
+- Depois vem o nome da função (`maior_numero`, nesse caso).
+  - Dica: se parecer difícil escolher um nome para a função, pode ser um sinal de que ela está fazendo muitas coisas.
+
+##
+
+```python
+# escreva uma função que retorna o  
+# maior de dois números
+# a entrada são dois números
+# e a saída é o maior entre eles
+def maior_numero(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+```
+
+- Em seguida, temos os parâmetros da função, que são as entradas que ela recebe.
+- Por fim, temos o corpo da função, que é onde a lógica é implementada.
+  - Uma função pode retornar valores ou não. 
+  - Quando ela retorna usamos a palavra-chave `return`.
+
+##
+
+```python
+# escreva uma função que retorna o  
+# maior de dois números
+# a entrada são dois números
+# e a saída é o maior entre eles
+def maior_numero(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+```
+
+Veja que, diferente de linguagens fortemente tipadas, em Python não precisamos especificar os tipos
+
+  - nem dos parâmetros e nem do retorno da função.
+
+##
+
+Dica para programadores avançados:
+
+- Apesar de Python não ser fortemente tipado
+  - é uma boa prática usar anotações de tipo (_type hints_) para melhorar a legibilidade do código.
+- Isso ajuda muito na implementação de sistemas mais complexos.
+- Mas afinal, o que é isso?
+
+
+## 
+
+Vamos gerar novamente a função `maior_numero`, mas agora com _type hints_.
+
+::: {.halfincfontsize}
+```python
+# escreva uma função que retorna o  
+# maior de dois números
+# a entrada são dois números
+# e a saída é o maior entre eles
+# use anotação de tipos
+```
+:::
+
+::: {.halfincfontsize}
+```python {.fragment start=6}
+def maior_numero(a: int, b: int) -> int:
+  if a > b:
+    return a
+  else:
+    return b    
+```
+:::
+
+## 
+
+As anotações de tipo servem como documentação e podem ser utilizadas por ferramentas de análise sintática.
+
+- Ou seja, são úteis para dizer para outros programadores o que exatamente a função espera e o que retorna.
+- E, principalmente, para que as IDEs, como o VS Code, apontem possíveis erros antes mesmo de rodar o código.
+  - Isso melhora a qualidade do código e facilita a manutenção.
+
+. . .
+
+Experimente, por exemplo, chamar a função no VS Code passando uma string.
+
+## 
+
+Mas é importante deixar claro que os _type hints_ não alteram o comportamento do código.
+
+- Como Python não é uma linguagem compilada, o código vai ser executado
+  - e os _type hints_ são ignorados em tempo de execução.
+- Ou seja, se a função for chamada passando um parâmetro de tipo errado
+  - isso não causará um erro imediatamente, mas pode levar a comportamentos inesperados.
+  - Na verdade quando dá erro é até melhor, o problema maior é quando passa batido.
+
+## 
+
+Nós passamos para o Copilot a tarefa de criar a função.
+
+- Mas outra forma de usar o Copilot é nós mesmos definirmos a assinatura da função
+- E pedirmos ao Copilot apenas para implementar o corpo da função.
+  - Isso geralmente leva a resultados melhores.
+
+##
+
+Nós podemos fazer isso usando [docstrings]{.alert}.
+
+- Docstrings são strings de documentação que podem ser usadas para descrever o que uma função faz.
+- Elas são definidas logo abaixo da assinatura da função e são delimitadas por três aspas duplas.
+
+. . .
+
+::: {.callout-tip collapse=\"true\"}
+É uma boa prática escrever docstrings para suas funções.
+:::
+
+##
+
+Nós poderíamos então gerar a função `maior_numero` de forma diferente
+
+- Escrevendo nós mesmos o cabeçalho e a docstring da função.
+- E deixando o Copilot gerar o corpo da função.
+
+##

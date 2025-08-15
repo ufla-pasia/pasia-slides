@@ -488,5 +488,152 @@
     "title": "Lendo Código Python",
     "section": "",
     "text": "Obtendo mais informações do dataset:\n\nAs informações abaixo podem ser exibidas apenas no terminal.\n\n\nExiba os nomes e quantidade de gols dos cinco jogadores que mais fizeram gols em cada liga, ordenados pela quantidade de gols.\nEncontre o jogador mais jovem que marcou gol em cada liga e exiba seu nome, idade, equipe e número de gols.\nEncontre a equipe que menos tomou cartões (amarelos e vermelhos em cada liga). Exiba o nome da equipe e a quantidade de cartões recebidos de cada tipo."
+  },
+  {
+    "objectID": "aula_t2.html#section",
+    "href": "aula_t2.html#section",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "O conteúdo dessa aula é baseado no capítulo 3 do livro abaixo."
+  },
+  {
+    "objectID": "aula_t2.html#section-1",
+    "href": "aula_t2.html#section-1",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Pela pesquisa de perfil da turma vi que alguns alunos conhecem bem Python e outros não.\n\nÉ importante então apresentar a linguagem nas primeiras aulas.\nMas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.\n\n\nEspero então que a aula seja útil para todos :)"
+  },
+  {
+    "objectID": "aula_t2.html#section-2",
+    "href": "aula_t2.html#section-2",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Um dos desafios para programadores iniciantes usarem o Copilot\n\né saber o que é uma tarefa razoável para que ele consiga gerar uma boa solução.\n\n\nComo já mencionamos antes, passar uma tarefa muito grande para o Assistente de IA\n\npode fazer com que ele falhe\ne falhe de uma forma que seja muito difícil de corrigir."
+  },
+  {
+    "objectID": "aula_t2.html#section-3",
+    "href": "aula_t2.html#section-3",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Na verdade essa questão de complexidade não é um problema só para o Copilot, mas para nós mesmos.\n\nEngenheiros de Software que tentam resolver problemas muito complexos sem quebrá-los em partes menores também falham.\n\n\nExistem diversas formas de tratar, no código, a decomosição de um problema em partes.\n\nA mais simples delas é a através de funções."
+  },
+  {
+    "objectID": "aula_t2.html#section-4",
+    "href": "aula_t2.html#section-4",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Uma função é um trecho de código que resolve uma tarefa específicia\n\nE que não é tão complexo a ponto de ficar difícil de implementar e testar.\n\n\nClaro que vocês já sabem o que são funções e como elas podem ser implementadas.\n\nMas será que vocês sabem quais são os critérios para projetar boas funções?\nSerá pensam nisso na hora de programar, ou simplesmente saem programando?\nAlém disso, no contexto do uso de IA, quais seriam as melhores práticas para projetar funções?"
+  },
+  {
+    "objectID": "aula_t2.html#section-5",
+    "href": "aula_t2.html#section-5",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Para exemplificar, encontre as palavras abaixo no quebra-cabeça."
+  },
+  {
+    "objectID": "aula_t2.html#section-6",
+    "href": "aula_t2.html#section-6",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Qual foi o raciocínio que você usou para encontrar as palavras?\n\nProcurar todas as palavras de uma vez é uma tarefa muito grande e complicada.\n\n\nVocê poderia, por exemplo, escolher uma palavra para encontrar primeiro.\n\nE, para encontrar uma única palavra, poderíamos procurar a primeira letra.\n\nE então procurar a palavra buscando para a direita, esquerda, para cima ou para baixo."
+  },
+  {
+    "objectID": "aula_t2.html#section-7",
+    "href": "aula_t2.html#section-7",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Repare que estamos decompondo o problema de resolver o caça-palavras\n\nem tarefas menores, que, se resolvidas, nos ajudam a resolver o problema como um todo.\nE essa a estratégia que precisamos seguir na hora de programar."
+  },
+  {
+    "objectID": "aula_t2.html#section-8",
+    "href": "aula_t2.html#section-8",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Uma função pode ser vista como um contrato.\n\nSe existir uma função maior e for dito que ela recebe dois números e retorna o maior deles.\nNós podemos acreditar que se a função for chamada com os números 2 e 5, ela retornará 5.\n\nNós não precisamos saber como a função funciona para utilizá-la.\n\nDa mesma forma que não precisamos entender de mecânica de carros para frear um carro.\n\nNós acionamos o pedal e sabemos que a velocidade do carro vai diminuir."
+  },
+  {
+    "objectID": "aula_t2.html#section-9",
+    "href": "aula_t2.html#section-9",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Na aula passada usamos o Copilot para gerar código a partir de um comentário.\n\nPodemos fazer o mesmo para criar funções.\n\n\nVamos fazer um exemplo:\n\n# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles"
+  },
+  {
+    "objectID": "aula_t2.html#section-10",
+    "href": "aula_t2.html#section-10",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\n\nEsse é um possível resultado gerado pelo Copilot."
+  },
+  {
+    "objectID": "aula_t2.html#section-11",
+    "href": "aula_t2.html#section-11",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\n\nNote que assinatura de uma função em python começa com a palavra-chave def.\n\nÉ isso que diz para o Python que o que vem a seguir é uma função.\n\nDepois vem o nome da função (maior_numero, nesse caso).\n\nDica: se parecer difícil escolher um nome para a função, pode ser um sinal de que ela está fazendo muitas coisas."
+  },
+  {
+    "objectID": "aula_t2.html#section-12",
+    "href": "aula_t2.html#section-12",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\n\nEm seguida, temos os parâmetros da função, que são as entradas que ela recebe.\nPor fim, temos o corpo da função, que é onde a lógica é implementada.\n\nUma função pode retornar valores ou não.\nQuando ela retorna usamos a palavra-chave return."
+  },
+  {
+    "objectID": "aula_t2.html#section-13",
+    "href": "aula_t2.html#section-13",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\nVeja que, diferente de linguagens fortemente tipadas, em Python não precisamos especificar os tipos\n\nnem dos parâmetros e nem do retorno da função."
+  },
+  {
+    "objectID": "aula_t2.html#section-14",
+    "href": "aula_t2.html#section-14",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Dica para programadores avançados:\n\nApesar de Python não ser fortemente tipado\n\né uma boa prática usar anotações de tipo (type hints) para melhorar a legibilidade do código.\n\nIsso ajuda muito na implementação de sistemas mais complexos.\nMas afinal, o que é isso?"
+  },
+  {
+    "objectID": "aula_t2.html#section-15",
+    "href": "aula_t2.html#section-15",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Vamos gerar novamente a função maior_numero, mas agora com type hints.\n\n# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\n# use anotação de tipos\n\n\ndef maior_numero(a: int, b: int) -&gt; int:\n  if a &gt; b:\n    return a\n  else:\n    return b"
+  },
+  {
+    "objectID": "aula_t2.html#section-16",
+    "href": "aula_t2.html#section-16",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "As anotações de tipo servem como documentação e podem ser utilizadas por ferramentas de análise sintática.\n\nOu seja, são úteis para dizer para outros programadores o que exatamente a função espera e o que retorna.\nE, principalmente, para que as IDEs, como o VS Code, apontem possíveis erros antes mesmo de rodar o código.\n\nIsso melhora a qualidade do código e facilita a manutenção.\n\n\n\nExperimente, por exemplo, chamar a função no VS Code passando uma string."
+  },
+  {
+    "objectID": "aula_t2.html#section-17",
+    "href": "aula_t2.html#section-17",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Mas é importante deixar claro que os type hints não alteram o comportamento do código.\n\nComo Python não é uma linguagem compilada, o código vai ser executado\n\ne os type hints são ignorados em tempo de execução.\n\nOu seja, se a função for chamada passando um parâmetro de tipo errado\n\nisso não causará um erro imediatamente, mas pode levar a comportamentos inesperados.\nNa verdade quando dá erro é até melhor, o problema maior é quando passa batido."
+  },
+  {
+    "objectID": "aula_t2.html#section-18",
+    "href": "aula_t2.html#section-18",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Nós passamos para o Copilot a tarefa de criar a função.\n\nMas outra forma de usar o Copilot é nós mesmos definirmos a assinatura da função\nE pedirmos ao Copilot apenas para implementar o corpo da função.\n\nIsso geralmente leva a resultados melhores."
+  },
+  {
+    "objectID": "aula_t2.html#section-19",
+    "href": "aula_t2.html#section-19",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Nós podemos fazer isso usando docstrings.\n\nDocstrings são strings de documentação que podem ser usadas para descrever o que uma função faz.\nElas são definidas logo abaixo da assinatura da função e são delimitadas por três aspas duplas.\n\n\n\n\n\n\n\n\nDica\n\n\nÉ uma boa prática escrever docstrings para suas funções."
+  },
+  {
+    "objectID": "aula_t2.html#section-20",
+    "href": "aula_t2.html#section-20",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Nós poderíamos então gerar a função maior_numero de forma diferente\n\nEscrevendo nós mesmos o cabeçalho e a docstring da função.\nE deixando o Copilot gerar o corpo da função."
   }
 ]
