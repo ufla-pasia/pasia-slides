@@ -196,6 +196,8 @@ Veja que, diferente de linguagens fortemente tipadas, em Python não precisamos 
 
   - nem dos parâmetros e nem do retorno da função.
 
+# Funções (dicas avançadas) {background-color="#40666e"}
+
 ##
 
 Dica para programadores avançados:
@@ -252,9 +254,12 @@ Mas é importante deixar claro que os _type hints_ não alteram o comportamento 
   - isso não causará um erro imediatamente, mas pode levar a comportamentos inesperados.
   - Na verdade quando dá erro é até melhor, o problema maior é quando passa batido.
 
+
+# Criando funções com Copilot {background-color="#40666e"}
+
 ## 
 
-Nós passamos para o Copilot a tarefa de criar a função.
+Nós havíamos passado para o Copilot a tarefa de criar a função completa.
 
 - Mas outra forma de usar o Copilot é nós mesmos definirmos a assinatura da função
 - E pedirmos ao Copilot apenas para implementar o corpo da função.
@@ -273,11 +278,69 @@ Nós podemos fazer isso usando [docstrings]{.alert}.
 É uma boa prática escrever docstrings para suas funções.
 :::
 
+
 ##
 
 Nós poderíamos então gerar a função `maior_numero` de forma diferente
 
 - Escrevendo nós mesmos o cabeçalho e a docstring da função.
 - E deixando o Copilot gerar o corpo da função.
+  - O que torna a geração do código mais fácil para o Copilot.
 
 ##
+
+Vamos então refazer a função, mas agora nós definimos o cabeçalho e docstring da função.
+
+::: {.halfincfontsize}
+```python
+def maior_numero(num1, num2):
+  """
+  num1 e num2 são dois números.
+
+  Retorna o maior dos dois números.
+  """
+```
+:::
+
+##
+
+O Copilot pode então gerar o corpo da função.
+
+::: {.halfincfontsize}
+```python
+def maior_numero(num1, num2):
+  """
+  num1 e num2 são dois números.
+
+  Retorna o maior dos dois números.
+  """
+  if num1 > num2:
+    return num1
+  else:
+    return num2
+```
+:::
+
+##
+
+Para terminar, vamos pedir ao Copilot para chamar a função que criamos.
+
+::: {.halfincfontsize}
+```python
+# chame a funcao maior_numero com os valores 3 e 5
+# armazene o resultado em uma variável chamada 
+# resultado e então exiba o resultado
+```
+:::
+
+::: {.halfincfontsize}
+```python {.fragment start=4}
+resultado = maior_numero(3, 5)
+print(resultado)
+```
+:::
+
+##
+
+O Ciclo de design de funções com Copilot.
+

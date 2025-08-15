@@ -620,7 +620,7 @@
     "href": "aula_t2.html#section-18",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nós passamos para o Copilot a tarefa de criar a função.\n\nMas outra forma de usar o Copilot é nós mesmos definirmos a assinatura da função\nE pedirmos ao Copilot apenas para implementar o corpo da função.\n\nIsso geralmente leva a resultados melhores."
+    "text": "Nós havíamos passado para o Copilot a tarefa de criar a função completa.\n\nMas outra forma de usar o Copilot é nós mesmos definirmos a assinatura da função\nE pedirmos ao Copilot apenas para implementar o corpo da função.\n\nIsso geralmente leva a resultados melhores."
   },
   {
     "objectID": "aula_t2.html#section-19",
@@ -634,6 +634,27 @@
     "href": "aula_t2.html#section-20",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nós poderíamos então gerar a função maior_numero de forma diferente\n\nEscrevendo nós mesmos o cabeçalho e a docstring da função.\nE deixando o Copilot gerar o corpo da função."
+    "text": "Nós poderíamos então gerar a função maior_numero de forma diferente\n\nEscrevendo nós mesmos o cabeçalho e a docstring da função.\nE deixando o Copilot gerar o corpo da função.\n\nO que torna a geração do código mais fácil para o Copilot."
+  },
+  {
+    "objectID": "aula_t2.html#section-21",
+    "href": "aula_t2.html#section-21",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Vamos então refazer a função, mas agora nós definimos o cabeçalho e docstring da função.\n\ndef maior_numero(num1, num2):\n  \"\"\"\n  num1 e num2 são dois números.\n\n  Retorna o maior dos dois números.\n  \"\"\""
+  },
+  {
+    "objectID": "aula_t2.html#section-22",
+    "href": "aula_t2.html#section-22",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "O Copilot pode então gerar o corpo da função.\n\ndef maior_numero(num1, num2):\n  \"\"\"\n  num1 e num2 são dois números.\n\n  Retorna o maior dos dois números.\n  \"\"\"\n  if num1 &gt; num2:\n    return num1\n  else:\n    return num2"
+  },
+  {
+    "objectID": "aula_t2.html#section-23",
+    "href": "aula_t2.html#section-23",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Para terminar, vamos pedir ao Copilot para chamar a função que criamos.\n\n# chame a funcao maior_numero com os valores 3 e 5\n# armazene o resultado em uma variável chamada \n# resultado e então exiba o resultado\n\n\nresultado = maior_numero(3, 5)\nprint(resultado)"
   }
 ]
