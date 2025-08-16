@@ -15,10 +15,17 @@ Pela pesquisa de perfil da turma vi que alguns alunos conhecem bem Python e outr
 
 - É importante então apresentar a linguagem nas primeiras aulas.
 - Mas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.
+  - que podem ser interessantes também para que tem mais experiência com Python.
+- Espero então que a aula seja útil para todos :)
 
 . . .
 
-Espero então que a aula seja útil para todos :)
+::: {.callout-caution}
+## Lembrete
+
+Lembre-se que **Assistentes de IA são não determinísticos**. 
+Portanto, ao experimentar os exemplos dessa, aula você pode obter resultados diferentes.
+:::
 
 # Introdução {background-color="#40666e"}
 
@@ -279,7 +286,7 @@ Nós podemos fazer isso usando [docstrings]{.alert}.
 
 . . .
 
-::: {.callout-tip collapse=\"true\"}
+::: {.callout-tip"}
 É uma boa prática escrever docstrings para suas funções.
 :::
 
@@ -429,7 +436,7 @@ Seguindo a estratégia que vimos antes,
 
 . . .
 
-::: {.callout-tip collapse=\"true\"}
+::: {.callout-tip}
 Claro que essa função é muito simples e você poderia pedir ao Copilot para criar
 inclusive a assinatura e a docstring.
 
@@ -781,4 +788,975 @@ Essa é uma possível resposta do Copilot.
 
 Esse é um bom exemplo de como o Copilot pode nos ajudar a entender um código já implementado.
 
+## 
 
+Agora que o código parece razoável, vamos passar para a fase de testes.
+
+::: {.fontsize125}
+
+```python {.fragment code-line-numbers="false"}
+>>> eh_senha_forte("Tião")
+```
+```python {.fragment code-line-numbers="false"}
+False
+```
+
+```python {.fragment code-line-numbers="false"}
+>>> eh_senha_forte("Tião4*")
+```
+```python {.fragment code-line-numbers="false"}
+True
+```
+
+:::
+
+. . .
+
+Parece tudo certo, né? Mas vamos testar mais um caso.
+
+::: {.fontsize125}
+```python {.fragment code-line-numbers="false"}
+>>> eh_senha_forte("Tião da Silva")
+```
+```python {.fragment code-line-numbers="false"}
+True
+```
+:::
+
+. . . 
+
+Essa não era uma senha forte, pois não parece conter caracteres especiais.
+
+## 
+
+O que será que aconteceu?
+
+- Vamos analisar a linha que trata caracteres especiais.
+
+. . .
+
+::: {.fontsize125}
+```python {.fragment start=8}
+    tem_especial = any(not c.isalnum() for c in senha)
+```
+:::
+
+. . .
+
+Podemos pedir ao copilot para explicar o funcionamento da função `isalnum`.
+
+##
+
+Essa é uma possível resposta do Copilot.
+
+<div style="overflow:auto; max-height:400px; text-align:center;">
+  <img src="imagens/copilot_explicacao_isalnum.png" alt="Explicação do Copilot sobre o trecho a função isalnum()" style="width:auto; max-width:100%;">
+</div>
+
+. . .
+
+Veja que o caractere espaço não é alfanumérico, ou seja, não é uma letra ou um número.
+
+##
+
+Podemos pedir ao Copilot para corrigir.
+
+- Ou fazer uma engenharia de prompt.
+  - O que no caso, significa mudar a maneira como documentamos a função.
+
+. . .
+
+Vamos experimentar substituir _caractere especial_ por _caractere de pontuação_ na docstring da função.
+
+##
+
+::: {.fontsize125}
+```python
+def eh_senha_forte(senha):
+    """
+    Uma senha forte tem pelo menos uma letra maiúscula,
+    uma letra minúscula, um número e um caractere de pontuação.
+
+    Retorna True se a senha for forte e False em caso contrário
+    """  
+```
+:::
+
+##
+
+```python
+def eh_senha_forte(senha):
+    """
+    Uma senha forte tem pelo menos uma letra maiúscula,
+    uma letra minúscula, um número e um caractere de pontuação.
+
+    Retorna True se a senha for forte e False em caso contrário
+    """  
+    import string
+
+    if len(senha) < 8:
+        return False
+
+    tem_maiuscula = any(c.isupper() for c in senha)
+    tem_minuscula = any(c.islower() for c in senha)
+    tem_numero = any(c.isdigit() for c in senha)
+    tem_pontuacao = any(c in string.punctuation for c in senha)
+
+    return tem_maiuscula and tem_minuscula and tem_numero and tem_pontuacao
+```
+
+. . .
+
+Esse foi o código gerado pelo Copilot.
+
+- Ao analisar se o código parece razoável há dois pontos que vale a pena destacar.
+
+## 
+
+A primeira é que o código usa a função `string.punctuation` que parece que vai fazer o que precisamos.
+
+- Mas para ela funcionar, foi necessário importar um módulo do Python: `import string`.
+
+. . .
+
+Python possui diversos módulos que podem ser importados para ajudar a realizar tarefas específicas.
+
+- A linguagem já vem com muitos deles.
+- Mas o grande potencial da linguagem é a quantidade de bibliotecas de terceiros que podem ser instaladas e utilizadas.
+
+##
+
+Repare que o código foi gerado fazendo a importação do módulo dentro da própria função.
+
+- O que não é uma boa prática de programação.
+- Porque deixa as dependências de código menos legíveis para outros programadores.
+
+. . .
+
+O ideal é levar o import para o início do arquivo.
+
+- E, portanto, de fora da função.
+
+##
+
+```python
+import string
+
+def eh_senha_forte(senha):
+    """
+    Uma senha forte tem pelo menos uma letra maiúscula,
+    uma letra minúscula, um número e um caractere de pontuação.
+
+    Retorna True se a senha for forte e False em caso contrário
+    """  
+
+    if len(senha) < 8:
+        return False
+
+    tem_maiuscula = any(c.isupper() for c in senha)
+    tem_minuscula = any(c.islower() for c in senha)
+    tem_numero = any(c.isdigit() for c in senha)
+    tem_pontuacao = any(c in string.punctuation for c in senha)
+
+    return tem_maiuscula and tem_minuscula and tem_numero and tem_pontuacao
+```
+
+##
+
+Apenas tome cuidado na hora de testar a função usando <kbd>Shift</kbd> + <kbd>Enter</kbd> para executar a célula.
+
+- Pois, se não selecionar também a linha que contém o import, o código não vai funcionar.
+
+. . .
+
+::: {.fontsize125}
+```python {code-line-numbers="false"}
+>>> eh_senha_forte("Tião3da!Silva")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 12, in eh_senha_forte
+  File "<stdin>", line 12, in <genexpr>
+NameError: name 'string' is not defined. Did you forget to import 'string'?
+```
+:::
+
+##
+
+::: {.smaller}
+
+Obs.: no teste feito pelos autores do livro, o import não foi gerado nem dentro da função.
+
+- Se isso acontecer com você, você pode inserir manualmente ou pedir o Copilot para corrigir.
+:::
+
+##
+
+Outra obsevação sobre o código gerado pelo Copilot é que ele criou uma regra que não havíamos solicitado.
+
+. . .
+
+::: {.fontsize125}
+```python {code-line-numbers="false"}
+    if len(senha) < 8:
+        return False
+```
+:::
+
+. . .
+
+Ele acrescentou uma verificação que obriga que a senha tenha pelo menos 8 caracteres.
+
+- A função `len` retorna o tamanho de uma string (ou de uma lista, por exemplo).
+
+##
+
+Mesmo que consideremos que pode ter sido uma boa sugestão para esse caso.
+
+- É importante que estejamos atentos para esse fato:
+  - Assistentes de IA podem **inventar regras de negócio** que não foram solicitadas.
+- O que reforça a importância da avaliação e teste de código.
+
+. . .
+
+Para o nosso exemplo, vamos remover essas linhas.
+
+- É hora então de testar o código.
+
+##
+
+::: {.fontsize125}
+
+```python {.fragment code-line-numbers="false"}
+>>> eh_senha_forte("Tião da Silva")
+```
+```python {.fragment code-line-numbers="false"}
+False
+```
+
+```python {.fragment code-line-numbers="false"}
+>>> eh_senha_forte("Tião3da Silva")
+```
+```python {.fragment code-line-numbers="false"}
+False
+```
+
+```python {.fragment code-line-numbers="false"}
+>>> eh_senha_forte("Tião3da!Silva")
+```
+```python {.fragment code-line-numbers="false"}
+True
+```
+
+:::
+
+. . .
+
+Parece tudo OK agora ✅
+
+## 
+
+Espero que esses exemplos tenham mostrado a importância de testes de código.
+
+- Programadores iniciantes muitas vezes não testam seu código.
+- Eles confiam que o código está correto pois, analisando o código, ele parece fazer sentido.
+
+. . . 
+
+Uma diferença bem comum entre juninhos e progamadores experientes é:
+
+- Juninhos sempre assumem que seu código está correto.
+- Enquanto experientes sempre assumem que está errado;
+  - até que tenham testado e provado o contrário.
+
+##
+
+Um dos motivos que iniciantes falham em testar código
+
+- é porque parece meio desanimador descobrir que seu código está errado.
+
+. . .
+
+Mas, na verdade, quanto antes descobrirmos que uma função está errada melhor.
+
+- Por que dá muito mais trabalho quando já desenvolvemos muitas funções.
+- E temos que descobrir porque o sistema não funciona.
+
+. . .
+
+⚠️ Me chamou a atenção que, na Pesquisa de Perfil da Turma, poucos de vocês usam Copilot para gerar testes!
+
+##
+
+Para finalizar o trabalho com senhas fortes
+
+- vamos criar uma função que pede ao usuário uma senha
+- e, se ela não forte, pede a senha novamente até que seja uma senha forte.
+- Que é mais ou menos o que os sites fazem quando criamos uma senha.
+
+. . .
+
+Qual poderia ser a assinatura dessa função?
+
+##
+
+A função não precisa de parâmetros, pois não depende de nenhuma informação externa.
+
+::: {.fontsize125}
+```python 
+def obter_senha_forte():
+  """
+  Fica pedindo uma senha para o usuário até
+  que ele digite uma senha forte.
+
+  Se a senha não for forte, avisa que ela não é.
+  Se for, retorna a senha forte
+  """
+```
+:::
+
+##
+
+::: {.fontsize125}
+```python 
+def obter_senha_forte():
+  """
+  Fica pedindo uma senha para o usuário até
+  que ele digite uma senha forte.
+
+  Se a senha não for forte, avisa que ela não é.
+  Se for, retorna a senha forte
+  """
+  while True:
+      senha = input("Digite uma senha forte: ")
+      if eh_senha_forte(senha):
+          return senha
+      print("A senha não é forte. Tente novamente.")
+```
+:::
+
+. . .
+
+Veja que o código gerado pelo Copilot usa a função `eh_senha_forte` que havíamos criado anteriormente.
+
+- O código parece razoável?
+
+##
+
+Para testar no VS Code, temos agora que lembrar de selecionar as duas funções.
+
+. . .
+
+::: {.fontsize125}
+```python  {code-line-numbers="false"} 
+>>> obter_senha_forte()
+Digite uma senha forte: tião !!@*#@
+A senha não é forte. Tente novamente.
+Digite uma senha forte: tião!!@*#@
+A senha não é forte. Tente novamente.
+Digite uma senha forte: Tião1!@*#@
+'Tião1!@*#@'
+```
+:::
+
+- Repare que a última linha é o retorno da função `obter_senha_forte()`.
+
+
+# Benefícios das funções {background-color="#40666e"}
+
+##
+
+Além das funções serem essenciais na **decomposição de problemas**,
+
+- elas também trazem outros benefícios.
+
+
+## [Esforço cognitivo]{.alert}
+
+. . .
+
+::: {.callout-tip}
+**Esforço cognitivo** tem relação com a quantidade de informação que seu cérebro consegue processar ao mesmo tempo e ainda ser efetivo.
+:::
+
+. . .
+
+Se alguém te disser 4 palavras aleatórias e pedir para você repetir, provavelmente você conseguirá.
+
+- Mas se a pessoa disser 20 palavras, provavelmente você terá dificuldades.
+- A mesma dificuldade acontece quando temos que pensar em detalhes de uma situação muito complexa.
+
+## [Esforço cognitivo]{.alert}
+
+Programadores têm o mesmo problema.
+
+- Se tentarem resolver um problema complexo tudo de uma vez, têm dificuldade de criar um código correto.
+
+. . .
+
+Funções ajudam os programadores a evitarem fazer tudo de uma vez.
+
+## [Evitar repetição]{.alert}
+
+. . .
+
+Programadores, e pessoas em geral, não gostam muito de resolver o mesmo problema repetidamente.
+
+- Se você criar uma função que calcula a área de um círculo, por exemplo,
+  - e precisar desse cálculo em lugares diferentes de um sistema,
+  - você pode chamar a mesma função nos dois lugares.
+
+. . . 
+
+::: {.callout-tip}
+**Reutilização de código**, que é o contrário da replicação, é uma característica de um código bem projetado.
+:::
+
+## [Melhoria dos testes]{.alert}
+
+. . .
+
+É muito mais complicado testar um código que faz muitas coisas ao mesmo tempo.
+
+. . .
+
+Quando criamos funções para tarefas específicas, podemos testá-las individualmente.
+
+- Essa é uma técnica chamada [teste unitário]{.alert}.
+- Utilizamos diferentes casos de teste com diferentes parâmetros de entrada.
+- Se todos eles produzirem uma saída correta, provavelmente nossa função não causará problema no sistema como um todo.
+
+## [Melhoria dos testes]{.alert}
+
+::: {.callout-tip}
+**Testes unitários** são altamente recomendados em softwares bem projetados.
+:::
+
+## [Melhoria da confiabilidade]{.alert}
+
+. . .
+
+Engenheiros de software experientes cometem erros, e sabemos que o Copilot também.
+
+. . .
+
+Se você for um programador incrível, e cada linha de código que você escreve tiver 95% de chances de estar certa,
+
+- quantas linhas de código você acha que conseguiria escrever antes que pelo menos uma linha de código fosse provavelmente incorreta?
+  - A resposta são 14 linhas de código!
+
+. . .
+
+Obs.: veja a explicação estatística do ChatGPT sobre as 14 linhas [aqui](https://chatgpt.com/share/68a0d06e-a1e4-800e-8aaa-8644f1edf204). 😃
+
+
+## [Melhoria da confiabilidade]{.alert}
+
+Note que 95% é um nível bem alto, mas, mesmo assim, é possível que erros aconteçam em poucas linhas.
+
+- Por isso, dividir um problema em funções com até 12 (ou, no máximo, 20 linhas)
+- diminui a probabilidade de que exista um erro no código.
+
+. . .
+
+Sem contar que quando um código tem muitos erros que interagem entre si,
+
+- a probabilidade se gerem gerados novos erros ainda maiores só aumenta.
+
+## [Melhoria da confiabilidade]{.alert}
+
+Todo programador experiente já passou horas 😫 depurando um código que tinha múltiplos erros.
+
+- Que poderiam ter sido evitadas com testes mais frequentes em trechos menores e código.
+
+## [Melhoria da legibilidade de código]{.alert}
+
+. . .
+
+Mesmo usando Copilot, quando pensamos em software desenvolvido por várias pessoas
+
+- é importante que seja fácil para a equipe entender o código existente,
+- independente se ele foi criado pelo Copilot ou por outros programadores.
+
+## [Melhoria da legibilidade de código]{.alert}
+
+Isso torna mais fácil tarefas como:
+
+- encontrar bugs;
+- determinar onde começar a alterar o código para acrescentar uma nova funcionalidade;
+- entender, em alto nível, se seria fácil ou não fazer alguma alteração no sistema que estejamos prospectando.
+
+## [Melhoria da legibilidade de código]{.alert}
+
+::: {.nonincremental}
+Ter as tarefas do sistema divididas em funções
+
+- nos ajuda a entender o que cada parte do código faz
+- e a ter uma melhor percepção sobre como as coisas funcionam no todo.
+:::
+
+. . .
+
+Também nos ajuda a dividir o trabalho e as responsabilidades de forma a garantir que o código está correto.
+
+# Características de boas funções {background-color="#40666e"}
+
+##
+
+Não há uma regra absoluta para definir o que é uma boa função.
+
+- Mas há recomendações e intuições que podemos compartilhar.
+- Mesmo com elas, saiba que identificar boas funções é uma habilidade que requer tempo e prática.
+
+. . .
+
+Antes de entrar nas recomendações, você verá que usaremos aqui o termo "funções folha" (_leaf functions_).
+
+- Esse termo se referem a funções que não chamam nenhuma outra função do nosso próprio sistema.
+- A ideia vem de que em uma árvore, a partir da raiz, as folhas são as "pontas".
+
+## [Uma tarefa clara a realizar]{.alert}
+
+. . .
+
+Uma função folha pode ser algo como:
+
+- Calcular o volume de uma esfera.
+- Encontrar o maior número em uma lista.
+- Verificar se uma lista tem um valor específico.
+
+. . .
+
+Funções que não são folha podem ter objetivos mais amplos, como:
+
+- Atualizar os gráficos do jogo.
+- Mas ainda assim devem ter um objetivo específico,
+  e devem chamar outras funções para atingir esse objetivo.
+
+## [Comportamento claramente definido]{.alert}
+
+. . .
+
+A tarefa _"encontrar o maior número em uma lista"_ é claramente definida.
+
+- Se alguém te der uma lista de números e te pedir o maior número, você sabe exatamente o que fazer.
+
+. . .
+
+Já a tarefa _"encontre a melhor palavra em uma lista"_ é mal definida.
+
+- Falta informação: o que significa palavra "melhor"?
+- É a palavra mais longa, a que tem menos vogais, a que tem `J`?
+
+## [Comportamento claramente definido]{.alert}
+
+A questão é que tarefas **subjetivas** não são boas para computadores.
+
+. . .
+
+É comum conseguimos deixar claro o comportamento da função só pelo seu nomes.
+
+- Mas muitas vezes isso não é possível, e usamos a docstring para dar mais detalhes sobre a tarefa.
+
+. . . 
+
+
+::: {.callout-tip}
+Se precisar escrever mais do que algumas linhas em uma docstring de uma função folha, pode ser um sinal
+de que a tarefa é muito grande para uma única função.
+:::
+
+## [Poucas linhas de código]{.alert}
+
+. . .
+
+Muitas empresas de software tem guias de estilo de programação que sugerem um limite no número de linhas das funções.
+
+- Esse limite geralmente varia de 12 a 20 linhas.
+
+. . .
+
+Na verdade o número de linhas é um _proxy_ para a complexidade do código.
+
+- E acaba sendo um _proxy_ bem razoável.
+
+. . .
+
+::: {.callout-tip}
+Se o Copilot gerar uma função para você com 50 linhas de código, é recomendável pedir que ele quebre a tarefa em funções menores.
+:::
+
+## [Uso geral em vez de uso específico]{.alert}
+
+. . .
+
+Criar uma função que retorna todos os números de uma lista maiores que 5
+
+- pode ser útil para uma necessidade específica.
+- Mas a função seria muito mais útil se o limite fosse um parâmetro.
+
+. . .
+
+Seguimos a mesma ideia ao calcular o lucro das ações do Tião.
+
+. . .
+
+::: {.callout-tip}
+Vale a pena reescrever uma função se percebermos que ela pode ter um uso mais geral.
+:::
+
+## [Entrada e saída claras]{.alert}
+
+. . .
+
+É importante que uma função tenha parâmetros e valores de retorno bem definidos.
+
+- Pode ser que precisemos de uma função que receba muitos parâmetros,
+  - ou que retorne vários valores.
+- Mas é importante sempre questionar se eles são realmente necessários ou se não teria outro jeito de resolver a tarefa.
+
+. . .
+
+::: {.callout-tip}
+Se você está criando uma função que às vezes retorna uma lista, às vezes um valor único e 
+às vezes não retorna nada, é um sinal de que ela provavelmente não é uma boa função.
+:::
+
+## 
+
+::: {.nonincremental}
+Em resumo, esse então é o **guia para criarmos boas funções**.
+
+1. Uma tarefa clara a realizar
+2. Comportamento claramente definido
+3. Poucas linhas de código
+4. Uso geral em vez de uso específico
+5. Entrada e saída claras
+:::
+
+## Exemplos de **boas** funções folha
+
+- _Calcular o volume de uma esfera_ 
+  - Dado o raio da esfera calcula seu volume.
+- _Encontrar o maior número em uma lista_
+  - Dada uma lista, retorna seu maior valor.
+- _Verificar se a lista contém um valor específico_ 
+  - Dada uma lista e um valor, retornar True se ela tem o valor e False em caso contrário.
+
+## Exemplos de **boas** funções folha
+
+- _Exibir o estado de um jogo de Xadrez_
+  - Dada uma lista 2D representando o tabuleiro do jogo, exibir o tabuleiro na tela em formato texto.
+- _Inserir um valor em uma lista_
+  - Dada uma lista, um novo valor e uma posição na lista, retornar uma nova lista que é a lista original com o novo valor inserido na posição especificada.
+
+## Funções folha **ruins**
+
+Vamos agora ver alguns exemplos de funções folha ruins e porque elas são ruins.
+
+. . .
+
+_Pedir informações fiscais de um usuário e calcular seu imposto de renda_
+
+- Calcular imposto de renda envolve vários cálculos que deveriam ser implementados em funções separadas.
+
+## Funções folha **ruins**
+
+_Remover o maior valor de uma lista_
+
+- Pode não parecer ruim a princípio, mas veja que estamos fazendo duas coisas.
+  - Precisamos encontrar o maior valor na lista.
+  - E precisamos remover um valor da lista.
+- Assim, seria mais reutilizável ter uma função folha para cada subtarefa.
+  - Obs.: pode ser útil criar uma função não folha que chama as outras duas se isso for usado várias vezes em um sistema.
+
+## Funções folha **ruins**
+
+_Dado um conjunto de dados estatísticos de partidas de futebol, retornar os nomes dos zagueiros que correram mais de 8 km_
+
+- Há muita informação específica nesse caso.
+- Claramente a distância percorrida poderia ser um parâmetro.
+- Mas, se pensarmos bem, inclusive a posição dos jogadores poderia ser um parâmetro.
+- Melhor ainda seria se a própria estatística fosse um parâmetro.
+  - Poderíamos querer consultar o número de gols feitos ou de faltas recebidas, por exemplo.
+
+## Funções folha **ruins**
+
+_Determinar o melhor filme de todos os tempos_
+
+- O problema dessa função é que ela é muito vaga.
+  - O que define o que é um bom filme?
+  - Quais filmes deveriam ser considerados?
+- Seria mais claro se a função recebesse uma lista de filmes com suas respectivas avaliações e um número limite de avaliações.
+  - E retornasse os filmes melhor avaliados que tivesse, pelo menos, o número de avaliações passado como limite.
+
+## Funções folha **ruins**
+
+_Jogar Call of Duty_
+
+- Precisa explicar? 🤓
+ 
+# Dica: escolhendo sugestão do Copilot  {background-color="#40666e"}
+
+##
+
+Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.
+
+. . .
+
+Para exemplificar isso, suponha que vamos criar um programa para jogar `Scrabble`.
+
+- É um jogo de tabuleiro baseado em palavras-cruzadas.
+- Dois jogadores devem ir completando palavras em um tabuleiro com peças de letras.
+   - E, quando consegue formar uma palavra, o jogador ganha pontos dependendo das letras da palavra.
+
+##
+
+Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.
+
+- O cabeçalho e docstring abaixo mostram como é o cálculo na versão do jogo em português.
+
+. . .
+
+```python 
+def numero_de_pontos(palavra):
+    """
+    Cada letra na palavra vale os seguintes pontos:
+    a, e, i, o, u, m, s, r, t: 1 ponto
+    d, l, c, p: 2 pontos
+    n, b, ç: 3 pontos
+    f, g, h, v: 4 pontos
+    j: 5 pontos
+    q: 6 pontos
+    x, z: 8 pontos
+
+    palavra é uma palavra formada por letras caracteres minúsculos
+    Retorna a soma dos pontos de cada letra da palavra
+    """
+```
+
+## 
+
+Uma possível resposta do Copilot para o corpo da função é:
+
+```python 
+    pontos = 0
+    for letra in palavra:
+        if letra in "aeioumsrt":
+            pontos += 1
+        elif letra in "dlcp":
+            pontos += 2
+        elif letra in "nbç":
+            pontos += 3
+        elif letra in "fghv":
+            pontos += 4
+        elif letra == "j":
+            pontos += 5
+        elif letra == "q":
+            pontos += 6
+        elif letra in "xz":
+            pontos += 8
+    return pontos
+```
+
+## 
+
+O código parece razoável, e nosso próximo passo seria testar a função.
+
+- Mas o ponto que quero mostrar aqui é como escolher as sugestões do Copilot.
+
+## 
+
+Quando o Copilot sugere o código, ele aparece esmaecido e em itálico.
+
+- Antes de apertarmos <kbd>TAB</kbd> para aceitar o código, 
+- podemos avaliar outras sugestões que o Copilot oferece.
+  - Isso pode ser feito passando o mouse sobre o código e escolhendo no painel que aparece acima do código.
+  - Ou pelo atalho <kbd>Alt</kbd> + <kbd>]</kbd> para ver a próxima sugestão ou <kbd>Alt</kbd> + <kbd>[</kbd> para ver a anterior.
+
+##
+
+Uma segunda sugestão feita pelo código para o corpo da função foi:
+
+```python 
+    pontos = {
+        'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'm': 1, 's': 1, 'r': 1, 't': 1,
+        'd': 2, 'l': 2, 'c': 2, 'p': 2,
+        'n': 3, 'b': 3, 'ç': 3,
+        'f': 4, 'g': 4, 'h': 4, 'v': 4,
+        'j': 5,
+        'q': 6,
+        'x': 8, 'z': 8
+    }
+    total = 0
+    for letra in palavra:
+        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário
+    return total
+```
+
+##
+
+Essa segunda sugestão usa um [dicionário]{.alert} para guardar o valor de cada letra.
+
+- Um dicionário do Python é uma estrutura similar a um `HashMap` do Java.
+
+. . .
+
+No código o dicionário `pontos` usa as letras como chaves e os pontos correspondentes como valores.
+
+- Assim, ao percorrer a palavra uma letra de cada vez.
+  - podemos consultar o dicionário para buscar quanto vale a letra.
+
+## 
+
+::: {.nonincremental}
+Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho
+
+::: {.fontsize125}
+```python 
+    total = 0
+    for letra in palavra:
+        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário
+    return total
+```
+:::
+
+por
+
+::: {.fontsize125}
+```python 
+    return sum(pontos.get(letra, 0) for letra in palavra)
+```
+:::
+
+:::
+
+- Esse tipo de construção usando [list comprehension]{.alert} é muito comum em Python.
+
+##
+
+::: {.callout-tip}
+Você pode fazer com o que o painel de escolha das sugestões do Copilot fique sempre visível, 
+para não precisar passar o mouse sobre o código para acessá-lo.
+
+Para isso, quando ele aparecer uma vez, acesse os botão de três pontos ao final do painel e 
+escolha a opção _Always show toolbar_.
+:::
+
+##
+
+Para fechar o exemplo, suponha que o Tião está jogando Scrabble
+
+- e tem três palavras que poderiam ser encaixadas agora: _zape_, _pazes_ e _pizza_.
+- ele gostaria de saber qual palavra dá mais pontos.
+
+. . .
+
+O que acha do cabeçalho abaixo para uma função que retorne a melhor dessas três palavras?
+
+::: {.fontsize125}
+```python
+def melhor_palavra(palavra1, palavra2, palavra3):
+```
+:::
+
+##
+
+::: {.fontsize125}
+```python
+def melhor_palavra(palavra1, palavra2, palavra3):
+```
+:::
+
+De acordo com o **guia para criarmos boas funções** essa não é uma boa função, por que?
+
+- Ela poderia ser mais geral, funcionando para qualquer quantidade de palavras.
+- Poderíamos, por exemplo, receber uma lista de palavras como parâmetro.
+
+. . .
+
+Vamos então melhorar a definição da função.
+
+##
+
+::: {.fontsize125}
+```python
+def melhor_palavra(palavras):
+    """
+    palavras é uma lista de palavras.
+
+    Retorna a palavra com a maior pontuação.
+    """
+```
+```python {.fragment start=7}
+    if not palavras:
+        return None  # Retorna None se a lista estiver vazia
+
+    melhor = palavras[0]
+    max_pontos = numero_de_pontos(melhor)
+
+    for palavra in palavras[1:]:
+        pontos = numero_de_pontos(palavra)
+        if pontos > max_pontos:
+            melhor = palavra
+            max_pontos = pontos
+
+    return melhor
+```
+:::
+
+##
+
+Escolhendo entre as sugestões do Copilot, essa foi outra opção:
+
+::: {.fontsize125}
+```python
+def melhor_palavra(palavras):
+    """
+    palavras é uma lista de palavras.
+
+    Retorna a palavra com a maior pontuação.
+    """
+    return max(palavras, key=numero_de_pontos)
+```
+:::
+
+. . .
+
+Qual das duas opções você prefere?
+
+##
+
+Talvez seja prematuro escolher sem fazer testes.
+
+. . .
+
+Veja esse teste feito com a segunda opção:
+
+::: {.fontsize125}
+```python {.fragment code-line-numbers="false"}
+>>> melhor_palavra([])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 6, in melhor_palavra
+ValueError: max() iterable argument is empty
+```
+:::
+
+. . .
+
+Esse erro não ocorreria na primeira opção.
+
+##
+
+A dica portanto é:
+
+- Para qualquer que seja a sugestão escolhida é: **sempre testar!**
+
+. . .
+
+A segunda opção poderia ser alterada para a acrescentar o mesmo `if` da primeira opção.
+
+- Nesse caso, qual você escolheria?
+- Sugestão: depende do seu objetivo.
+  - A primeira opção é mais legível.
+  - A segunda é mais compacta.

@@ -501,7 +501,7 @@
     "href": "aula_t2.html#section-1",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Pela pesquisa de perfil da turma vi que alguns alunos conhecem bem Python e outros não.\n\nÉ importante então apresentar a linguagem nas primeiras aulas.\nMas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.\n\n\nEspero então que a aula seja útil para todos :)"
+    "text": "Pela pesquisa de perfil da turma vi que alguns alunos conhecem bem Python e outros não.\n\nÉ importante então apresentar a linguagem nas primeiras aulas.\nMas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.\n\nque podem ser interessantes também para que tem mais experiência com Python.\n\nEspero então que a aula seja útil para todos :)\n\n\n\n\n\n\n\n\nLembrete\n\n\nLembre-se que Assistentes de IA são não determinísticos. Portanto, ao experimentar os exemplos dessa, aula você pode obter resultados diferentes."
   },
   {
     "objectID": "aula_t2.html#section-2",
@@ -641,7 +641,7 @@
     "href": "aula_t2.html#section-21",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nós podemos fazer isso usando docstrings.\n\nDocstrings são strings de documentação que podem ser usadas para descrever o que uma função faz.\nElas são definidas logo abaixo da assinatura da função e são delimitadas por três aspas duplas.\n\n\n\n\n\n\n\n\nDica\n\n\nÉ uma boa prática escrever docstrings para suas funções."
+    "text": "Nós podemos fazer isso usando docstrings.\n\nDocstrings são strings de documentação que podem ser usadas para descrever o que uma função faz.\nElas são definidas logo abaixo da assinatura da função e são delimitadas por três aspas duplas.\n\n\n\nÉ uma boa prática escrever docstrings para suas funções."
   },
   {
     "objectID": "aula_t2.html#section-22",
@@ -802,7 +802,7 @@
     "href": "aula_t2.html#section-42",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora testar a função usando Shift + Enter no VS Code.\n\n&gt;&gt;&gt; eh_senha_forte(\"1234\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"senha\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"admin\")\nTrue\n\n'admin' claramente não é uma senha forte 🙂"
+    "text": "Vamos agora testar a função usando Shift + Enter no VS Code.\n\n&gt;&gt;&gt; eh_senha_forte(\"1234\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"senha\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"admin\")\nTrue\n\n\n'admin' claramente não é uma senha forte 🙂"
   },
   {
     "objectID": "aula_t2.html#section-43",
@@ -830,7 +830,7 @@
     "href": "aula_t2.html#section-46",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere especial.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_especial = any(not c.isalnum() for c in senha)\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_especial\n\nO código gerado pelo Copilot parece bem claro sobre o que está fazendo no geral.\n\nMas há construções de Python que podem ser melhor exploradas."
+    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere especial.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_especial = any(not c.isalnum() for c in senha)\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_especial\n\nO código gerado pelo Copilot parece bem claro sobre o que está fazendo no geral.\n\nMas há construções de Python nos detalhes que podem ser melhor exploradas."
   },
   {
     "objectID": "aula_t2.html#section-47",
@@ -845,5 +845,453 @@
     "title": "Projetando Funções",
     "section": "",
     "text": "Essa é uma possível resposta do Copilot.\n\n\n\n\nEsse é um bom exemplo de como o Copilot pode nos ajudar a entender um código já implementado."
+  },
+  {
+    "objectID": "aula_t2.html#section-49",
+    "href": "aula_t2.html#section-49",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Agora que o código parece razoável, vamos passar para a fase de testes.\n\n&gt;&gt;&gt; eh_senha_forte(\"Tião\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"Tião4*\")\nTrue\n\n\nParece tudo certo, né? Mas vamos testar mais um caso.\n\n&gt;&gt;&gt; eh_senha_forte(\"Tião da Silva\")\nTrue\n\n\n\nEssa não era uma senha forte, pois não parece conter caracteres especiais."
+  },
+  {
+    "objectID": "aula_t2.html#section-50",
+    "href": "aula_t2.html#section-50",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "O que será que aconteceu?\n\nVamos analisar a linha que trata caracteres especiais.\n\n\n\n    tem_especial = any(not c.isalnum() for c in senha)\n\n\n\nPodemos pedir ao copilot para explicar o funcionamento da função isalnum."
+  },
+  {
+    "objectID": "aula_t2.html#section-51",
+    "href": "aula_t2.html#section-51",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Essa é uma possível resposta do Copilot.\n\n\n\n\nVeja que o caractere espaço não é alfanumérico, ou seja, não é uma letra ou um número."
+  },
+  {
+    "objectID": "aula_t2.html#section-52",
+    "href": "aula_t2.html#section-52",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Podemos pedir ao Copilot para corrigir.\n\nOu fazer uma engenharia de prompt.\n\nO que no caso, significa mudar a maneira como documentamos a função.\n\n\n\nVamos experimentar substituir caractere especial por caractere de pontuação na docstring da função."
+  },
+  {
+    "objectID": "aula_t2.html#section-53",
+    "href": "aula_t2.html#section-53",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere de pontuação.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t2.html#section-54",
+    "href": "aula_t2.html#section-54",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere de pontuação.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n    import string\n\n    if len(senha) &lt; 8:\n        return False\n\n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_pontuacao = any(c in string.punctuation for c in senha)\n\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_pontuacao\n\nEsse foi o código gerado pelo Copilot.\n\nAo analisar se o código parece razoável há dois pontos que vale a pena destacar."
+  },
+  {
+    "objectID": "aula_t2.html#section-55",
+    "href": "aula_t2.html#section-55",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "A primeira é que o código usa a função string.punctuation que parece que vai fazer o que precisamos.\n\nMas para ela funcionar, foi necessário importar um módulo do Python: import string.\n\n\nPython possui diversos módulos que podem ser importados para ajudar a realizar tarefas específicas.\n\nA linguagem já vem com muitos deles.\nMas o grande potencial da linguagem é a quantidade de bibliotecas de terceiros que podem ser instaladas e utilizadas."
+  },
+  {
+    "objectID": "aula_t2.html#section-56",
+    "href": "aula_t2.html#section-56",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Repare que o código foi gerado fazendo a importação do módulo dentro da própria função.\n\nO que não é uma boa prática de programação.\nPorque deixa as dependências de código menos legíveis para outros programadores.\n\n\nO ideal é levar o import para o início do arquivo.\n\nE, portanto, de fora da função."
+  },
+  {
+    "objectID": "aula_t2.html#section-57",
+    "href": "aula_t2.html#section-57",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "import string\n\ndef eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere de pontuação.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n\n    if len(senha) &lt; 8:\n        return False\n\n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_pontuacao = any(c in string.punctuation for c in senha)\n\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_pontuacao"
+  },
+  {
+    "objectID": "aula_t2.html#section-58",
+    "href": "aula_t2.html#section-58",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Apenas tome cuidado na hora de testar a função usando Shift + Enter para executar a célula.\n\nPois, se não selecionar também a linha que contém o import, o código não vai funcionar.\n\n\n\n&gt;&gt;&gt; eh_senha_forte(\"Tião3da!Silva\")\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 12, in eh_senha_forte\n  File \"&lt;stdin&gt;\", line 12, in &lt;genexpr&gt;\nNameError: name 'string' is not defined. Did you forget to import 'string'?"
+  },
+  {
+    "objectID": "aula_t2.html#section-59",
+    "href": "aula_t2.html#section-59",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Obs.: no teste feito pelos autores do livro, o import não foi gerado nem dentro da função.\n\nSe isso acontecer com você, você pode inserir manualmente ou pedir o Copilot para corrigir."
+  },
+  {
+    "objectID": "aula_t2.html#section-60",
+    "href": "aula_t2.html#section-60",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Outra obsevação sobre o código gerado pelo Copilot é que ele criou uma regra que não havíamos solicitado.\n\n\n    if len(senha) &lt; 8:\n        return False\n\n\n\nEle acrescentou uma verificação que obriga que a senha tenha pelo menos 8 caracteres.\n\nA função len retorna o tamanho de uma string (ou de uma lista, por exemplo)."
+  },
+  {
+    "objectID": "aula_t2.html#section-61",
+    "href": "aula_t2.html#section-61",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Mesmo que consideremos que pode ter sido uma boa sugestão para esse caso.\n\nÉ importante que estejamos atentos para esse fato:\n\nAssistentes de IA podem inventar regras de negócio que não foram solicitadas.\n\nO que reforça a importância da avaliação e teste de código.\n\n\nPara o nosso exemplo, vamos remover essas linhas.\n\nÉ hora então de testar o código."
+  },
+  {
+    "objectID": "aula_t2.html#section-62",
+    "href": "aula_t2.html#section-62",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "&gt;&gt;&gt; eh_senha_forte(\"Tião da Silva\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"Tião3da Silva\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"Tião3da!Silva\")\nTrue\n\n\nParece tudo OK agora ✅"
+  },
+  {
+    "objectID": "aula_t2.html#section-63",
+    "href": "aula_t2.html#section-63",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Espero que esses exemplos tenham mostrado a importância de testes de código.\n\nProgramadores iniciantes muitas vezes não testam seu código.\nEles confiam que o código está correto pois, analisando o código, ele parece fazer sentido.\n\n\nUma diferença bem comum entre juninhos e progamadores experientes é:\n\nJuninhos sempre assumem que seu código está correto.\nEnquanto experientes sempre assumem que está errado;\n\naté que tenham testado e provado o contrário."
+  },
+  {
+    "objectID": "aula_t2.html#section-64",
+    "href": "aula_t2.html#section-64",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Um dos motivos que iniciantes falham em testar código\n\né porque parece meio desanimador descobrir que seu código está errado.\n\n\nMas, na verdade, quanto antes descobrirmos que uma função está errada melhor.\n\nPor que dá muito mais trabalho quando já desenvolvemos muitas funções.\nE temos que descobrir porque o sistema não funciona.\n\n\n\n⚠️ Me chamou a atenção que, na Pesquisa de Perfil da Turma, poucos de vocês usam Copilot para gerar testes!"
+  },
+  {
+    "objectID": "aula_t2.html#section-65",
+    "href": "aula_t2.html#section-65",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Para finalizar o trabalho com senhas fortes\n\nvamos criar uma função que pede ao usuário uma senha\ne, se ela não forte, pede a senha novamente até que seja uma senha forte.\nQue é mais ou menos o que os sites fazem quando criamos uma senha.\n\n\nQual poderia ser a assinatura dessa função?"
+  },
+  {
+    "objectID": "aula_t2.html#section-66",
+    "href": "aula_t2.html#section-66",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "A função não precisa de parâmetros, pois não depende de nenhuma informação externa.\n\ndef obter_senha_forte():\n  \"\"\"\n  Fica pedindo uma senha para o usuário até\n  que ele digite uma senha forte.\n\n  Se a senha não for forte, avisa que ela não é.\n  Se for, retorna a senha forte\n  \"\"\""
+  },
+  {
+    "objectID": "aula_t2.html#section-67",
+    "href": "aula_t2.html#section-67",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "def obter_senha_forte():\n  \"\"\"\n  Fica pedindo uma senha para o usuário até\n  que ele digite uma senha forte.\n\n  Se a senha não for forte, avisa que ela não é.\n  Se for, retorna a senha forte\n  \"\"\"\n  while True:\n      senha = input(\"Digite uma senha forte: \")\n      if eh_senha_forte(senha):\n          return senha\n      print(\"A senha não é forte. Tente novamente.\")\n\n\nVeja que o código gerado pelo Copilot usa a função eh_senha_forte que havíamos criado anteriormente.\n\nO código parece razoável?"
+  },
+  {
+    "objectID": "aula_t2.html#section-68",
+    "href": "aula_t2.html#section-68",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Para testar no VS Code, temos agora que lembrar de selecionar as duas funções.\n\n\n&gt;&gt;&gt; obter_senha_forte()\nDigite uma senha forte: tião !!@*#@\nA senha não é forte. Tente novamente.\nDigite uma senha forte: tião!!@*#@\nA senha não é forte. Tente novamente.\nDigite uma senha forte: Tião1!@*#@\n'Tião1!@*#@'\n\n\nRepare que a última linha é o retorno da função obter_senha_forte()."
+  },
+  {
+    "objectID": "aula_t2.html#section-69",
+    "href": "aula_t2.html#section-69",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Além das funções serem essenciais na decomposição de problemas,\n\nelas também trazem outros benefícios."
+  },
+  {
+    "objectID": "aula_t2.html#esforço-cognitivo",
+    "href": "aula_t2.html#esforço-cognitivo",
+    "title": "Projetando Funções",
+    "section": "Esforço cognitivo",
+    "text": "Esforço cognitivo\n\n\n\n\n\n\n\nDica\n\n\nEsforço cognitivo tem relação com a quantidade de informação que seu cérebro consegue processar ao mesmo tempo e ainda ser efetivo.\n\n\n\n\n\nSe alguém te disser 4 palavras aleatórias e pedir para você repetir, provavelmente você conseguirá.\n\nMas se a pessoa disser 20 palavras, provavelmente você terá dificuldades.\nA mesma dificuldade acontece quando temos que pensar em detalhes de uma situação muito complexa."
+  },
+  {
+    "objectID": "aula_t2.html#section-70",
+    "href": "aula_t2.html#section-70",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Não há uma regra absoluta para definir o que é uma boa função.\n\nMas há recomendações e intuições que podemos compartilhar.\nMesmo com elas, saiba que identificar boas funções é uma habilidade que requer tempo e prática.\n\n\nAntes de entrar nas recomendações, você verá que usaremos aqui o termo “funções folha” (leaf functions).\n\nEsse termo se referem a funções que não chamam nenhuma outra função do nosso próprio sistema.\nA ideia vem de que em uma árvore, a partir da raiz, as folhas são as “pontas”."
+  },
+  {
+    "objectID": "aula_t2.html#esforço-cognitivo-1",
+    "href": "aula_t2.html#esforço-cognitivo-1",
+    "title": "Projetando Funções",
+    "section": "Esforço cognitivo",
+    "text": "Esforço cognitivo\nProgramadores têm o mesmo problema.\n\nSe tentarem resolver um problema complexo tudo de uma vez, têm dificuldade de criar um código correto.\n\n\nFunções ajudam os programadores a evitarem fazer tudo de uma vez."
+  },
+  {
+    "objectID": "aula_t2.html#evitar-repetição",
+    "href": "aula_t2.html#evitar-repetição",
+    "title": "Projetando Funções",
+    "section": "Evitar repetição",
+    "text": "Evitar repetição\n\nProgramadores, e pessoas em geral, não gostam muito de resolver o mesmo problema repetidamente.\n\nSe você criar uma função que calcula a área de um círculo, por exemplo,\n\ne precisar desse cálculo em lugares diferentes de um sistema,\nvocê pode chamar a mesma função nos dois lugares.\n\n\n\n\n\n\n\n\n\n\nDica\n\n\nReutilização de código, que é o contrário da replicação, é uma característica de um código bem projetado."
+  },
+  {
+    "objectID": "aula_t2.html#melhoria-dos-testes",
+    "href": "aula_t2.html#melhoria-dos-testes",
+    "title": "Projetando Funções",
+    "section": "Melhoria dos testes",
+    "text": "Melhoria dos testes\n\nÉ muito mais complicado testar um código que faz muitas coisas ao mesmo tempo.\n\n\nQuando criamos funções para tarefas específicas, podemos testá-las individualmente.\n\nEssa é uma técnica chamada teste unitário.\nUtilizamos diferentes casos de teste com diferentes parâmetros de entrada.\nSe todos eles produzirem uma saída correta, provavelmente nossa função não causará problema no sistema como um todo."
+  },
+  {
+    "objectID": "aula_t2.html#melhoria-da-confiabilidade",
+    "href": "aula_t2.html#melhoria-da-confiabilidade",
+    "title": "Projetando Funções",
+    "section": "Melhoria da confiabilidade",
+    "text": "Melhoria da confiabilidade\n\nEngenheiros de software experientes cometem erros, e sabemos que o Copilot também.\n\n\nSe você for um programador incrível, e cada linha de código que você escreve tiver 95% de chances de estar certa,\n\nquantas linhas de código você acha que conseguiria escrever antes que pelo menos uma linha de código fosse provavelmente incorreta?\n\nA resposta são 14 linhas de código!\n\n\n\n\nObs.: veja a explicação estatística do ChatGPT sobre as 14 linhas aqui. 😃"
+  },
+  {
+    "objectID": "aula_t2.html#melhoria-dos-testes-1",
+    "href": "aula_t2.html#melhoria-dos-testes-1",
+    "title": "Projetando Funções",
+    "section": "Melhoria dos testes",
+    "text": "Melhoria dos testes\n\n\n\n\n\n\nDica\n\n\nTestes unitários são altamente recomendados em softwares bem projetados."
+  },
+  {
+    "objectID": "aula_t2.html#melhoria-da-confiabilidade-1",
+    "href": "aula_t2.html#melhoria-da-confiabilidade-1",
+    "title": "Projetando Funções",
+    "section": "Melhoria da confiabilidade",
+    "text": "Melhoria da confiabilidade\nNote que 95% é um nível bem alto, mas, mesmo assim, é possível que erros aconteçam em poucas linhas.\n\nPor isso, dividir um problema em funções com até 12 (ou, no máximo, 20 linhas)\ndiminui a probabilidade de que exista um erro no código.\n\n\nSem contar que quando um código tem muitos erros que interagem entre si,\n\na probabilidade se gerem gerados novos erros ainda maiores só aumenta."
+  },
+  {
+    "objectID": "aula_t2.html#melhoria-da-confiabilidade-2",
+    "href": "aula_t2.html#melhoria-da-confiabilidade-2",
+    "title": "Projetando Funções",
+    "section": "Melhoria da confiabilidade",
+    "text": "Melhoria da confiabilidade\nTodo programador experiente já passou horas 😫 depurando um código que tinha múltiplos erros.\n\nQue poderiam ter sido evitadas com testes mais frequentes em trechos menores e código."
+  },
+  {
+    "objectID": "aula_t2.html#melhoria-da-legibilidade-de-código",
+    "href": "aula_t2.html#melhoria-da-legibilidade-de-código",
+    "title": "Projetando Funções",
+    "section": "Melhoria da legibilidade de código",
+    "text": "Melhoria da legibilidade de código\n\nMesmo usando Copilot, quando pensamos em software desenvolvido por várias pessoas\n\né importante que seja fácil para a equipe entender o código existente,\nindependente se ele foi criado pelo Copilot ou por outros programadores."
+  },
+  {
+    "objectID": "aula_t2.html#melhoria-da-legibilidade-de-código-1",
+    "href": "aula_t2.html#melhoria-da-legibilidade-de-código-1",
+    "title": "Projetando Funções",
+    "section": "Melhoria da legibilidade de código",
+    "text": "Melhoria da legibilidade de código\nIsso torna mais fácil tarefas como:\n\nencontrar bugs;\ndeterminar onde começar a alterar o código para acrescentar uma nova funcionalidade;\nentender, em alto nível, se seria fácil ou não fazer alguma alteração no sistema que estejamos prospectando."
+  },
+  {
+    "objectID": "aula_t2.html#melhoria-da-legibilidade-de-código-2",
+    "href": "aula_t2.html#melhoria-da-legibilidade-de-código-2",
+    "title": "Projetando Funções",
+    "section": "Melhoria da legibilidade de código",
+    "text": "Melhoria da legibilidade de código\nTer as tarefas do sistema divididas em funções\n\nnos ajuda a entender o que cada parte do código faz\ne a ter uma melhor percepção sobre como as coisas funcionam no todo.\n\n\nTambém nos ajuda a dividir o trabalho e as responsabilidades de forma a garantir que o código está correto."
+  },
+  {
+    "objectID": "aula_t2.html#uma-tarefa-clara-a-realizar",
+    "href": "aula_t2.html#uma-tarefa-clara-a-realizar",
+    "title": "Projetando Funções",
+    "section": "Uma tarefa clara a realizar",
+    "text": "Uma tarefa clara a realizar\n\nUma função folha pode ser algo como:\n\nCalcular o volume de uma esfera.\nEncontrar o maior número em uma lista.\nVerificar se uma lista tem um valor específico.\n\n\n\nFunções que não são folha podem ter objetivos mais amplos, como:\n\nAtualizar os gráficos do jogo.\nMas ainda assim devem ter um objetivo específico, e devem chamar outras funções para atingir esse objetivo."
+  },
+  {
+    "objectID": "aula_t2.html#comportamento-claramente-definido",
+    "href": "aula_t2.html#comportamento-claramente-definido",
+    "title": "Projetando Funções",
+    "section": "Comportamento claramente definido",
+    "text": "Comportamento claramente definido\n\nA tarefa “encontrar o maior número em uma lista” é claramente definida.\n\nSe alguém te der uma lista de números e te pedir o maior número, você sabe exatamente o que fazer.\n\n\n\nJá a tarefa “encontre a melhor palavra em uma lista” é mal definida.\n\nFalta informação: o que significa palavra “melhor”?\nÉ a palavra mais longa, a que tem menos vogais, a que tem J?"
+  },
+  {
+    "objectID": "aula_t2.html#comportamento-claramente-definido-1",
+    "href": "aula_t2.html#comportamento-claramente-definido-1",
+    "title": "Projetando Funções",
+    "section": "Comportamento claramente definido",
+    "text": "Comportamento claramente definido\nA questão é que tarefas subjetivas não são boas para computadores.\n\nÉ comum conseguimos deixar claro o comportamento da função só pelo seu nomes.\n\nMas muitas vezes isso não é possível, e usamos a docstring para dar mais detalhes sobre a tarefa.\n\n\n\n\n\n\n\n\n\nDica\n\n\nSe precisar escrever mais do que algumas linhas em uma docstring de uma função folha, pode ser um sinal de que a tarefa é muito grande para uma única função."
+  },
+  {
+    "objectID": "aula_t2.html#poucas-linhas-de-código",
+    "href": "aula_t2.html#poucas-linhas-de-código",
+    "title": "Projetando Funções",
+    "section": "Poucas linhas de código",
+    "text": "Poucas linhas de código\n\nMuitas empresas de software tem guias de estilo de programação que sugerem um limite no número de linhas das funções.\n\nEsse limite geralmente varia de 12 a 20 linhas.\n\n\n\nNa verdade o número de linhas é um proxy para a complexidade do código.\n\nE acaba sendo um proxy bem razoável.\n\n\n\n\n\n\n\n\n\nDica\n\n\nSe o Copilot gerar uma função para você com 50 linhas de código, é recomendável pedir que ele quebre a tarefa em funções menores."
+  },
+  {
+    "objectID": "aula_t2.html#uso-geral-em-vez-de-uso-específico",
+    "href": "aula_t2.html#uso-geral-em-vez-de-uso-específico",
+    "title": "Projetando Funções",
+    "section": "Uso geral em vez de uso específico",
+    "text": "Uso geral em vez de uso específico\n\nCriar uma função que retorna todos os números de uma lista maiores que 5\n\npode ser útil para uma necessidade específica.\nMas a função seria muito mais útil se o limite fosse um parâmetro.\n\n\n\nSeguimos a mesma ideia ao calcular o lucro das ações do Tião.\n\n\n\n\n\n\n\n\nDica\n\n\nVale a pena reescrever uma função se percebermos que ela pode ter um uso mais geral."
+  },
+  {
+    "objectID": "aula_t2.html#entrada-e-saída-claras",
+    "href": "aula_t2.html#entrada-e-saída-claras",
+    "title": "Projetando Funções",
+    "section": "Entrada e saída claras",
+    "text": "Entrada e saída claras\n\nÉ importante que uma função tenha parâmetros e valores de retorno bem definidos.\n\nPode ser que precisemos de uma função que receba muitos parâmetros,\n\nou que retorne vários valores.\n\nMas é importante sempre questionar se eles são realmente necessários ou se não teria outro jeito de resolver a tarefa.\n\n\n\n\n\n\n\n\n\nDica\n\n\nSe você está criando uma função que às vezes retorna uma lista, às vezes um valor único e às vezes não retorna nada, é um sinal de que ela provavelmente não é uma boa função."
+  },
+  {
+    "objectID": "aula_t2.html#section-71",
+    "href": "aula_t2.html#section-71",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Em resumo, esse então é o guia para criarmos boas funções.\n\nUma tarefa clara a realizar\nComportamento claramente definido\nPoucas linhas de código\nUso geral em vez de uso específico\nEntrada e saída claras"
+  },
+  {
+    "objectID": "aula_t2.html#exemplos-de-boas-funções",
+    "href": "aula_t2.html#exemplos-de-boas-funções",
+    "title": "Projetando Funções",
+    "section": "Exemplos de boas funções",
+    "text": "Exemplos de boas funções\n\nCalcular o volume de uma esfera\n\nDado o raio da esfera calcula seu volume.\n\nEncontrar o maior número em uma lista\n\nDada uma lista, retorna seu maior valor.\n\nVerificar se a lista contém um valor específico\n\nDada uma lista e um valor, retornar True se ela tem o valor e False em caso contrário."
+  },
+  {
+    "objectID": "aula_t2.html#exemplos-de-boas-funções-1",
+    "href": "aula_t2.html#exemplos-de-boas-funções-1",
+    "title": "Projetando Funções",
+    "section": "Exemplos de boas funções",
+    "text": "Exemplos de boas funções\n\nExibir o estado de um jogo de Xadrez\n\nDada uma lista 2D representando o tabuleiro do jogo, exibir o tabuleiro na tela em formato texto.\n\nInserir um valor em uma lista\n\nDada uma lista, u m novo valor e uma posição na lista, retornar uma nova lista que é a lista original com o novo valor inserido na posição especificada."
+  },
+  {
+    "objectID": "aula_t2.html#exemplos-de-boas-funções-folha",
+    "href": "aula_t2.html#exemplos-de-boas-funções-folha",
+    "title": "Projetando Funções",
+    "section": "Exemplos de boas funções folha",
+    "text": "Exemplos de boas funções folha\n\nCalcular o volume de uma esfera\n\nDado o raio da esfera calcula seu volume.\n\nEncontrar o maior número em uma lista\n\nDada uma lista, retorna seu maior valor.\n\nVerificar se a lista contém um valor específico\n\nDada uma lista e um valor, retornar True se ela tem o valor e False em caso contrário."
+  },
+  {
+    "objectID": "aula_t2.html#exemplos-de-boas-funções-folha-1",
+    "href": "aula_t2.html#exemplos-de-boas-funções-folha-1",
+    "title": "Projetando Funções",
+    "section": "Exemplos de boas funções folha",
+    "text": "Exemplos de boas funções folha\n\nExibir o estado de um jogo de Xadrez\n\nDada uma lista 2D representando o tabuleiro do jogo, exibir o tabuleiro na tela em formato texto.\n\nInserir um valor em uma lista\n\nDada uma lista, um novo valor e uma posição na lista, retornar uma nova lista que é a lista original com o novo valor inserido na posição especificada."
+  },
+  {
+    "objectID": "aula_t2.html#funções-folha-ruins",
+    "href": "aula_t2.html#funções-folha-ruins",
+    "title": "Projetando Funções",
+    "section": "Funções folha ruins",
+    "text": "Funções folha ruins\nVamos agora ver alguns exemplos de funções folha ruins e porque elas são ruins.\n\nPedir informações fiscais de um usuário e calcular seu imposto de renda\n\nCalcular imposto de renda envolve vários cálculos que deveriam ser implementados em funções separadas."
+  },
+  {
+    "objectID": "aula_t2.html#funções-folha-ruins-1",
+    "href": "aula_t2.html#funções-folha-ruins-1",
+    "title": "Projetando Funções",
+    "section": "Funções folha ruins",
+    "text": "Funções folha ruins\nRemover o maior valor de uma lista\n\nPode não parecer ruim a princípio, mas veja que estamos fazendo duas coisas.\n\nPrecisamos encontrar o maior valor na lista.\nE precisamos remover um valor da lista.\n\nAssim, seria mais reutilizável ter uma função folha para cada subtarefa.\n\nObs.: pode ser útil criar uma função não folha que chama as outras duas se isso for usado várias vezes em um sistema."
+  },
+  {
+    "objectID": "aula_t2.html#funções-folha-ruins-2",
+    "href": "aula_t2.html#funções-folha-ruins-2",
+    "title": "Projetando Funções",
+    "section": "Funções folha ruins",
+    "text": "Funções folha ruins\nDado um conjunto de dados estatísticos de partidas de futebol, retornar os nomes dos zagueiros que correram mais de 8 km\n\nHá muita informação específica nesse caso.\nClaramente a distância percorrida poderia ser um parâmetro.\nMas, se pensarmos bem, inclusive a posição dos jogadores poderia ser um parâmetro.\nMelhor ainda seria se a própria estatística fosse um parâmetro.\n\nPoderíamos querer consultar o número de gols feitos ou de faltas recebidas, por exemplo."
+  },
+  {
+    "objectID": "aula_t2.html#funções-folha-ruins-3",
+    "href": "aula_t2.html#funções-folha-ruins-3",
+    "title": "Projetando Funções",
+    "section": "Funções folha ruins",
+    "text": "Funções folha ruins\nDeterminar o melhor filme de todos os tempos\n\nO problema dessa função é que ela é muito vaga.\n\nO que define o que é um bom filme?\nQuais filmes deveriam ser considerados?\n\nSeria mais claro se a função recebesse uma lista de filmes com suas respectivas avaliações e um número limite de avaliações.\n\nE retornasse os filmes melhor avaliados que tivesse, pelo menos, o número de avaliações passado como limite."
+  },
+  {
+    "objectID": "aula_t2.html#funções-folha-ruins-4",
+    "href": "aula_t2.html#funções-folha-ruins-4",
+    "title": "Projetando Funções",
+    "section": "Funções folha ruins",
+    "text": "Funções folha ruins\nJogar Call of Duty\n\nPrecisa explicar? 🤓"
+  },
+  {
+    "objectID": "aula_t2.html#section-72",
+    "href": "aula_t2.html#section-72",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.\n\nPara exemplificar isso, suponha que vamos criar um programa para jogar Scrabble.\n\nÉ um jogo de tabuleiro baseado em palavras-cruzadas.\nDois jogadores devem ir completando palavras em um tabuleiro com peças de letras.\n\nE, quando consegue formar uma palavra, o jogador ganha pontos dependendo das letras da palavra."
+  },
+  {
+    "objectID": "aula_t2.html#section-73",
+    "href": "aula_t2.html#section-73",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.\n\nO cabeçalho e docstring abaixo mostram como é o cálculo na versão do jogo em português.\n\n\ndef numero_de_pontos(palavra):\n    \"\"\"\n    Cada letra na palavra vale os seguintes pontos:\n    a, e, i, o, u, m, s, r, t: 1 ponto\n    d, l, c, p: 2 pontos\n    n, b, ç: 3 pontos\n    f, g, h, v: 4 pontos\n    j: 5 pontos\n    q: 6 pontos\n    x, z: 8 pontos\n\n    palavra é uma palavra formada por letras caracteres minúsculos\n    Retorna a soma dos pontos de cada letra da palavra\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t2.html#section-74",
+    "href": "aula_t2.html#section-74",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Uma possível resposta do Copilot para o corpo da função é:\n    pontos = 0\n    for letra in palavra:\n        if letra in \"aeioumsrt\":\n            pontos += 1\n        elif letra in \"dlcp\":\n            pontos += 2\n        elif letra in \"nbç\":\n            pontos += 3\n        elif letra in \"fghv\":\n            pontos += 4\n        elif letra == \"j\":\n            pontos += 5\n        elif letra == \"q\":\n            pontos += 6\n        elif letra in \"xz\":\n            pontos += 8\n    return pontos"
+  },
+  {
+    "objectID": "aula_t2.html#section-75",
+    "href": "aula_t2.html#section-75",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "O código parece razoável, e nosso próximo passo seria testar a função.\n\nMas o ponto que quero mostrar aqui é como escolher as sugestões do Copilot."
+  },
+  {
+    "objectID": "aula_t2.html#section-76",
+    "href": "aula_t2.html#section-76",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Quando o Copilot sugere o código, ele aparece esmaecido e em itálico.\n\nAntes de apertarmos TAB para aceitar o código,\npodemos avaliar outras sugestões que o Copilot oferece.\n\nIsso pode ser feito passando o mouse sobre o código e escolhendo no painel que aparece acima do código.\nOu pelo atalho Alt + ] para ver a próxima sugestão ou Alt + [ para ver a anterior."
+  },
+  {
+    "objectID": "aula_t2.html#section-77",
+    "href": "aula_t2.html#section-77",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Uma segunda sugestão feita pelo código para o corpo da função foi:\n    pontos = {\n        'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'm': 1, 's': 1, 'r': 1, 't': 1,\n        'd': 2, 'l': 2, 'c': 2, 'p': 2,\n        'n': 3, 'b': 3, 'ç': 3,\n        'f': 4, 'g': 4, 'h': 4, 'v': 4,\n        'j': 5,\n        'q': 6,\n        'x': 8, 'z': 8\n    }\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total"
+  },
+  {
+    "objectID": "aula_t2.html#section-78",
+    "href": "aula_t2.html#section-78",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Essa segunda sugestão usa um dicionário para guardar o valor de cada letra.\n\nUm dicionário do Python é uma estrutura similar a um HashMap do Java.\n\n\nNo código o dicionário pontos usa as letras como chaves e os pontos correspondentes como valores.\n\nAssim, ao percorrer a palavra uma letra de cada vez.\n\npodemos consultar o dicionário para buscar quanto vale a letra."
+  },
+  {
+    "objectID": "aula_t2.html#section-79",
+    "href": "aula_t2.html#section-79",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho\n\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\npor\n\n    return sum(pontos.get(letra, 0) for letra in palavra)\n\n\nEsse tipo de construção usando list comprehension é muito comum em Python."
+  },
+  {
+    "objectID": "aula_t2.html#section-80",
+    "href": "aula_t2.html#section-80",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Dica\n\n\nVocê pode fazer com o que o painel de escolha das sugestões do Copilot fique sempre visível, para não precisar passar o mouse sobre o código para acessá-lo.\nPara isso, quando ele aparecer uma vez, acesse os botão de três pontos ao final do painel e escolha a opção Always show toolbar."
+  },
+  {
+    "objectID": "aula_t2.html#section-81",
+    "href": "aula_t2.html#section-81",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Para fechar o exemplo, suponha que o Tião está jogando Scrabble\n\ne tem três palavras que poderiam ser encaixadas agora: zape, pazes e pizza.\nele gostaria de saber qual palavra dá mais pontos.\n\n\nO que acha do cabeçalho abaixo para uma função que retorne a melhor dessas três palavras?\n\ndef melhor_palavra(palavra1, palavra2, palavra3):"
+  },
+  {
+    "objectID": "aula_t2.html#section-82",
+    "href": "aula_t2.html#section-82",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "def melhor_palavra(palavra1, palavra2, palavra3):\n\nDe acordo com o guia para criarmos boas funções essa não é uma boa função, por que?\n\nEla poderia ser mais geral, funcionando para qualquer quantidade de palavras.\nPoderíamos, por exemplo, receber uma lista de palavras como parâmetro.\n\n\nVamos então melhorar a definição da função."
+  },
+  {
+    "objectID": "aula_t2.html#section-83",
+    "href": "aula_t2.html#section-83",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "def melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    if not palavras:\n        return None  # Retorna None se a lista estiver vazia\n\n    melhor = palavras[0]\n    max_pontos = numero_de_pontos(melhor)\n\n    for palavra in palavras[1:]:\n        pontos = numero_de_pontos(palavra)\n        if pontos &gt; max_pontos:\n            melhor = palavra\n            max_pontos = pontos\n\n    return melhor"
+  },
+  {
+    "objectID": "aula_t2.html#section-84",
+    "href": "aula_t2.html#section-84",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Escolhendo entre as sugestões do Copilot, essa foi outra opção:\n\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    return max(palavras, key=numero_de_pontos)\n\n\nQual das duas opções você prefere?"
+  },
+  {
+    "objectID": "aula_t2.html#section-85",
+    "href": "aula_t2.html#section-85",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Talvez seja prematuro escolher sem fazer testes.\n\nVeja esse teste feito com a segunda opção:\n\n&gt;&gt;&gt; melhor_palavra([])\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 6, in melhor_palavra\nValueError: max() iterable argument is empty\n\n\n\nEsse erro não ocorreria na primeira opção."
+  },
+  {
+    "objectID": "aula_t2.html#section-86",
+    "href": "aula_t2.html#section-86",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "A dica portanto é:\n\nPara qualquer que seja a sugestão escolhida é: sempre testar!\n\n\nA segunda opção poderia ser alterada para a acrescentar o mesmo if da primeira opção.\n\nNesse caso, qual você escolheria?\nSugestão: depende do seu objetivo.\n\nA primeira opção é mais legível.\nA segunda é mais compacta."
   }
 ]

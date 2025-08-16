@@ -231,10 +231,26 @@
 <p>Pela pesquisa de perfil da turma vi que alguns alunos conhecem bem Python e outros não.</p>
 <ul>
 <li class="fragment">É importante então apresentar a linguagem nas primeiras aulas.</li>
-<li class="fragment">Mas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.</li>
+<li class="fragment">Mas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.
+<ul>
+<li class="fragment">que podem ser interessantes também para que tem mais experiência com Python.</li>
+</ul></li>
+<li class="fragment">Espero então que a aula seja útil para todos :)</li>
 </ul>
 <div class="fragment">
-<p>Espero então que a aula seja útil para todos :)</p>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lembrete</strong></p>
+</div>
+<div class="callout-content">
+<p>Lembre-se que <strong>Assistentes de IA são não determinísticos</strong>. Portanto, ao experimentar os exemplos dessa, aula você pode obter resultados diferentes.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section>
@@ -524,18 +540,8 @@
 <li class="fragment">Elas são definidas logo abaixo da assinatura da função e são delimitadas por três aspas duplas.</li>
 </ul>
 <div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Dica</strong></p>
-</div>
-<div class="callout-content">
+<div class="{.callout-tip&quot;}">
 <p>É uma boa prática escrever docstrings para suas funções.</p>
-</div>
-</div>
 </div>
 </div>
 </section>
@@ -890,7 +896,9 @@
 <div class="sourceCode" id="cb29"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> eh_senha_forte(<span class="st">"admin"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb30"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="fragment">
 <p><code>'admin'</code> claramente não é uma senha forte 🙂</p>
+</div>
 </section>
 <section id="section-43" class="slide level2">
 <h2></h2>
@@ -918,7 +926,7 @@
 <span id="cb33-7"><a></a>    <span class="cf">if</span> senha <span class="kw">in</span> [<span class="st">'1234'</span>, <span class="st">'senha'</span>, <span class="st">'admin'</span>]:</span>
 <span id="cb33-8"><a></a>        <span class="cf">return</span> <span class="va">False</span></span>
 <span id="cb33-9"><a></a>    <span class="cf">return</span> <span class="va">True</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Repare que, nesse caso, o Copilot gerou um código que usa uma lista.</p>
+<p>Repare que, nesse caso, o Copilot gerou um código que usa uma <span class="alert">lista</span>.</p>
 <ul>
 <li class="fragment">Podemos declarar listas em Python entre colchetes e com valores separados por vírgulas.</li>
 <li class="fragment">E o operador <code>in</code> indica se um elemento pertence à lista.</li>
@@ -951,7 +959,7 @@
 <div class="fragment">
 <p>O código gerado pelo Copilot parece bem claro sobre o que está fazendo no geral.</p>
 <ul>
-<li class="fragment">Mas há construções de Python que podem ser melhor exploradas.</li>
+<li class="fragment">Mas há construções de Python nos detalhes que podem ser melhor exploradas.</li>
 </ul>
 </div>
 </section>
@@ -970,6 +978,1021 @@
 </div>
 <div class="fragment">
 <p>Esse é um bom exemplo de como o Copilot pode nos ajudar a entender um código já implementado.</p>
+</div>
+</section>
+<section id="section-49" class="slide level2">
+<h2></h2>
+<p>Agora que o código parece razoável, vamos passar para a fase de testes.</p>
+<div class="fontsize125">
+<div class="sourceCode" id="cb36"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> eh_senha_forte(<span class="st">"Tião"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">False</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> eh_senha_forte(<span class="st">"Tião4*"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Parece tudo certo, né? Mas vamos testar mais um caso.</p>
+<div class="fontsize125">
+<div class="sourceCode" id="cb40"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> eh_senha_forte(<span class="st">"Tião da Silva"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Essa não era uma senha forte, pois não parece conter caracteres especiais.</p>
+</div>
+</section>
+<section id="section-50" class="slide level2">
+<h2></h2>
+<p>O que será que aconteceu?</p>
+<ul>
+<li class="fragment">Vamos analisar a linha que trata caracteres especiais.</li>
+</ul>
+<div class="fragment">
+<div class="fontsize125">
+<div class="sourceCode" id="cb42" start="8"><pre class="sourceCode numberSource python fragment number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a></a>    tem_especial <span class="op">=</span> <span class="bu">any</span>(<span class="kw">not</span> c.isalnum() <span class="cf">for</span> c <span class="kw">in</span> senha)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Podemos pedir ao copilot para explicar o funcionamento da função <code>isalnum</code>.</p>
+</div>
+</section>
+<section id="section-51" class="slide level2">
+<h2></h2>
+<p>Essa é uma possível resposta do Copilot.</p>
+<div style="overflow:auto; max-height:400px; text-align:center;">
+<p><img src="imagens/copilot_explicacao_isalnum.png" alt="Explicação do Copilot sobre o trecho a função isalnum()" style="width:auto; max-width:100%;"></p>
+</div>
+<div class="fragment">
+<p>Veja que o caractere espaço não é alfanumérico, ou seja, não é uma letra ou um número.</p>
+</div>
+</section>
+<section id="section-52" class="slide level2">
+<h2></h2>
+<p>Podemos pedir ao Copilot para corrigir.</p>
+<ul>
+<li class="fragment">Ou fazer uma engenharia de prompt.
+<ul>
+<li class="fragment">O que no caso, significa mudar a maneira como documentamos a função.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p>Vamos experimentar substituir <em>caractere especial</em> por <em>caractere de pontuação</em> na docstring da função.</p>
+</div>
+</section>
+<section id="section-53" class="slide level2">
+<h2></h2>
+<div class="fontsize125">
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a><span class="kw">def</span> eh_senha_forte(senha):</span>
+<span id="cb43-2"><a></a>    <span class="co">"""</span></span>
+<span id="cb43-3"><a></a><span class="co">    Uma senha forte tem pelo menos uma letra maiúscula,</span></span>
+<span id="cb43-4"><a></a><span class="co">    uma letra minúscula, um número e um caractere de pontuação.</span></span>
+<span id="cb43-5"><a></a></span>
+<span id="cb43-6"><a></a><span class="co">    Retorna True se a senha for forte e False em caso contrário</span></span>
+<span id="cb43-7"><a></a><span class="co">    """</span>  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-54" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a></a><span class="kw">def</span> eh_senha_forte(senha):</span>
+<span id="cb44-2"><a></a>    <span class="co">"""</span></span>
+<span id="cb44-3"><a></a><span class="co">    Uma senha forte tem pelo menos uma letra maiúscula,</span></span>
+<span id="cb44-4"><a></a><span class="co">    uma letra minúscula, um número e um caractere de pontuação.</span></span>
+<span id="cb44-5"><a></a></span>
+<span id="cb44-6"><a></a><span class="co">    Retorna True se a senha for forte e False em caso contrário</span></span>
+<span id="cb44-7"><a></a><span class="co">    """</span>  </span>
+<span id="cb44-8"><a></a>    <span class="im">import</span> string</span>
+<span id="cb44-9"><a></a></span>
+<span id="cb44-10"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(senha) <span class="op">&lt;</span> <span class="dv">8</span>:</span>
+<span id="cb44-11"><a></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb44-12"><a></a></span>
+<span id="cb44-13"><a></a>    tem_maiuscula <span class="op">=</span> <span class="bu">any</span>(c.isupper() <span class="cf">for</span> c <span class="kw">in</span> senha)</span>
+<span id="cb44-14"><a></a>    tem_minuscula <span class="op">=</span> <span class="bu">any</span>(c.islower() <span class="cf">for</span> c <span class="kw">in</span> senha)</span>
+<span id="cb44-15"><a></a>    tem_numero <span class="op">=</span> <span class="bu">any</span>(c.isdigit() <span class="cf">for</span> c <span class="kw">in</span> senha)</span>
+<span id="cb44-16"><a></a>    tem_pontuacao <span class="op">=</span> <span class="bu">any</span>(c <span class="kw">in</span> string.punctuation <span class="cf">for</span> c <span class="kw">in</span> senha)</span>
+<span id="cb44-17"><a></a></span>
+<span id="cb44-18"><a></a>    <span class="cf">return</span> tem_maiuscula <span class="kw">and</span> tem_minuscula <span class="kw">and</span> tem_numero <span class="kw">and</span> tem_pontuacao</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Esse foi o código gerado pelo Copilot.</p>
+<ul>
+<li class="fragment">Ao analisar se o código parece razoável há dois pontos que vale a pena destacar.</li>
+</ul>
+</div>
+</section>
+<section id="section-55" class="slide level2">
+<h2></h2>
+<p>A primeira é que o código usa a função <code>string.punctuation</code> que parece que vai fazer o que precisamos.</p>
+<ul>
+<li class="fragment">Mas para ela funcionar, foi necessário importar um módulo do Python: <code>import string</code>.</li>
+</ul>
+<div class="fragment">
+<p>Python possui diversos módulos que podem ser importados para ajudar a realizar tarefas específicas.</p>
+<ul>
+<li class="fragment">A linguagem já vem com muitos deles.</li>
+<li class="fragment">Mas o grande potencial da linguagem é a quantidade de bibliotecas de terceiros que podem ser instaladas e utilizadas.</li>
+</ul>
+</div>
+</section>
+<section id="section-56" class="slide level2">
+<h2></h2>
+<p>Repare que o código foi gerado fazendo a importação do módulo dentro da própria função.</p>
+<ul>
+<li class="fragment">O que não é uma boa prática de programação.</li>
+<li class="fragment">Porque deixa as dependências de código menos legíveis para outros programadores.</li>
+</ul>
+<div class="fragment">
+<p>O ideal é levar o import para o início do arquivo.</p>
+<ul>
+<li class="fragment">E, portanto, de fora da função.</li>
+</ul>
+</div>
+</section>
+<section id="section-57" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a><span class="im">import</span> string</span>
+<span id="cb45-2"><a></a></span>
+<span id="cb45-3"><a></a><span class="kw">def</span> eh_senha_forte(senha):</span>
+<span id="cb45-4"><a></a>    <span class="co">"""</span></span>
+<span id="cb45-5"><a></a><span class="co">    Uma senha forte tem pelo menos uma letra maiúscula,</span></span>
+<span id="cb45-6"><a></a><span class="co">    uma letra minúscula, um número e um caractere de pontuação.</span></span>
+<span id="cb45-7"><a></a></span>
+<span id="cb45-8"><a></a><span class="co">    Retorna True se a senha for forte e False em caso contrário</span></span>
+<span id="cb45-9"><a></a><span class="co">    """</span>  </span>
+<span id="cb45-10"><a></a></span>
+<span id="cb45-11"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(senha) <span class="op">&lt;</span> <span class="dv">8</span>:</span>
+<span id="cb45-12"><a></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb45-13"><a></a></span>
+<span id="cb45-14"><a></a>    tem_maiuscula <span class="op">=</span> <span class="bu">any</span>(c.isupper() <span class="cf">for</span> c <span class="kw">in</span> senha)</span>
+<span id="cb45-15"><a></a>    tem_minuscula <span class="op">=</span> <span class="bu">any</span>(c.islower() <span class="cf">for</span> c <span class="kw">in</span> senha)</span>
+<span id="cb45-16"><a></a>    tem_numero <span class="op">=</span> <span class="bu">any</span>(c.isdigit() <span class="cf">for</span> c <span class="kw">in</span> senha)</span>
+<span id="cb45-17"><a></a>    tem_pontuacao <span class="op">=</span> <span class="bu">any</span>(c <span class="kw">in</span> string.punctuation <span class="cf">for</span> c <span class="kw">in</span> senha)</span>
+<span id="cb45-18"><a></a></span>
+<span id="cb45-19"><a></a>    <span class="cf">return</span> tem_maiuscula <span class="kw">and</span> tem_minuscula <span class="kw">and</span> tem_numero <span class="kw">and</span> tem_pontuacao</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-58" class="slide level2">
+<h2></h2>
+<p>Apenas tome cuidado na hora de testar a função usando <kbd>Shift</kbd> + <kbd>Enter</kbd> para executar a célula.</p>
+<ul>
+<li class="fragment">Pois, se não selecionar também a linha que contém o import, o código não vai funcionar.</li>
+</ul>
+<div class="fragment">
+<div class="fontsize125">
+<div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> eh_senha_forte(<span class="st">"Tião3da!Silva"</span>)</span>
+<span id="cb46-2"><a aria-hidden="true" tabindex="-1"></a>Traceback (most recent call last):</span>
+<span id="cb46-3"><a aria-hidden="true" tabindex="-1"></a>  File <span class="st">"&lt;stdin&gt;"</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
+<span id="cb46-4"><a aria-hidden="true" tabindex="-1"></a>  File <span class="st">"&lt;stdin&gt;"</span>, line <span class="dv">12</span>, <span class="kw">in</span> eh_senha_forte</span>
+<span id="cb46-5"><a aria-hidden="true" tabindex="-1"></a>  File <span class="st">"&lt;stdin&gt;"</span>, line <span class="dv">12</span>, <span class="kw">in</span> <span class="op">&lt;</span>genexpr<span class="op">&gt;</span></span>
+<span id="cb46-6"><a aria-hidden="true" tabindex="-1"></a><span class="pp">NameError</span>: name <span class="st">'string'</span> <span class="kw">is</span> <span class="kw">not</span> defined. Did you forget to <span class="im">import</span> <span class="st">'string'</span>?</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="section-59" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<p>Obs.: no teste feito pelos autores do livro, o import não foi gerado nem dentro da função.</p>
+<ul>
+<li class="fragment">Se isso acontecer com você, você pode inserir manualmente ou pedir o Copilot para corrigir.</li>
+</ul>
+</div>
+</section>
+<section id="section-60" class="slide level2">
+<h2></h2>
+<p>Outra obsevação sobre o código gerado pelo Copilot é que ele criou uma regra que não havíamos solicitado.</p>
+<div class="fragment">
+<div class="fontsize125">
+<div class="sourceCode" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(senha) <span class="op">&lt;</span> <span class="dv">8</span>:</span>
+<span id="cb47-2"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Ele acrescentou uma verificação que obriga que a senha tenha pelo menos 8 caracteres.</p>
+<ul>
+<li class="fragment">A função <code>len</code> retorna o tamanho de uma string (ou de uma lista, por exemplo).</li>
+</ul>
+</div>
+</section>
+<section id="section-61" class="slide level2">
+<h2></h2>
+<p>Mesmo que consideremos que pode ter sido uma boa sugestão para esse caso.</p>
+<ul>
+<li class="fragment">É importante que estejamos atentos para esse fato:
+<ul>
+<li class="fragment">Assistentes de IA podem <strong>inventar regras de negócio</strong> que não foram solicitadas.</li>
+</ul></li>
+<li class="fragment">O que reforça a importância da avaliação e teste de código.</li>
+</ul>
+<div class="fragment">
+<p>Para o nosso exemplo, vamos remover essas linhas.</p>
+<ul>
+<li class="fragment">É hora então de testar o código.</li>
+</ul>
+</div>
+</section>
+<section id="section-62" class="slide level2">
+<h2></h2>
+<div class="fontsize125">
+<div class="sourceCode" id="cb48"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> eh_senha_forte(<span class="st">"Tião da Silva"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">False</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> eh_senha_forte(<span class="st">"Tião3da Silva"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">False</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> eh_senha_forte(<span class="st">"Tião3da!Silva"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Parece tudo OK agora ✅</p>
+</div>
+</section>
+<section id="section-63" class="slide level2">
+<h2></h2>
+<p>Espero que esses exemplos tenham mostrado a importância de testes de código.</p>
+<ul>
+<li class="fragment">Programadores iniciantes muitas vezes não testam seu código.</li>
+<li class="fragment">Eles confiam que o código está correto pois, analisando o código, ele parece fazer sentido.</li>
+</ul>
+<div class="fragment">
+<p>Uma diferença bem comum entre juninhos e progamadores experientes é:</p>
+<ul>
+<li class="fragment">Juninhos sempre assumem que seu código está correto.</li>
+<li class="fragment">Enquanto experientes sempre assumem que está errado;
+<ul>
+<li class="fragment">até que tenham testado e provado o contrário.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section-64" class="slide level2">
+<h2></h2>
+<p>Um dos motivos que iniciantes falham em testar código</p>
+<ul>
+<li class="fragment">é porque parece meio desanimador descobrir que seu código está errado.</li>
+</ul>
+<div class="fragment">
+<p>Mas, na verdade, quanto antes descobrirmos que uma função está errada melhor.</p>
+<ul>
+<li class="fragment">Por que dá muito mais trabalho quando já desenvolvemos muitas funções.</li>
+<li class="fragment">E temos que descobrir porque o sistema não funciona.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>⚠️ Me chamou a atenção que, na Pesquisa de Perfil da Turma, poucos de vocês usam Copilot para gerar testes!</p>
+</div>
+</section>
+<section id="section-65" class="slide level2">
+<h2></h2>
+<p>Para finalizar o trabalho com senhas fortes</p>
+<ul>
+<li class="fragment">vamos criar uma função que pede ao usuário uma senha</li>
+<li class="fragment">e, se ela não forte, pede a senha novamente até que seja uma senha forte.</li>
+<li class="fragment">Que é mais ou menos o que os sites fazem quando criamos uma senha.</li>
+</ul>
+<div class="fragment">
+<p>Qual poderia ser a assinatura dessa função?</p>
+</div>
+</section>
+<section id="section-66" class="slide level2">
+<h2></h2>
+<p>A função não precisa de parâmetros, pois não depende de nenhuma informação externa.</p>
+<div class="fontsize125">
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a></a><span class="kw">def</span> obter_senha_forte():</span>
+<span id="cb54-2"><a></a>  <span class="co">"""</span></span>
+<span id="cb54-3"><a></a><span class="co">  Fica pedindo uma senha para o usuário até</span></span>
+<span id="cb54-4"><a></a><span class="co">  que ele digite uma senha forte.</span></span>
+<span id="cb54-5"><a></a></span>
+<span id="cb54-6"><a></a><span class="co">  Se a senha não for forte, avisa que ela não é.</span></span>
+<span id="cb54-7"><a></a><span class="co">  Se for, retorna a senha forte</span></span>
+<span id="cb54-8"><a></a><span class="co">  """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-67" class="slide level2">
+<h2></h2>
+<div class="fontsize125">
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a></a><span class="kw">def</span> obter_senha_forte():</span>
+<span id="cb55-2"><a></a>  <span class="co">"""</span></span>
+<span id="cb55-3"><a></a><span class="co">  Fica pedindo uma senha para o usuário até</span></span>
+<span id="cb55-4"><a></a><span class="co">  que ele digite uma senha forte.</span></span>
+<span id="cb55-5"><a></a></span>
+<span id="cb55-6"><a></a><span class="co">  Se a senha não for forte, avisa que ela não é.</span></span>
+<span id="cb55-7"><a></a><span class="co">  Se for, retorna a senha forte</span></span>
+<span id="cb55-8"><a></a><span class="co">  """</span></span>
+<span id="cb55-9"><a></a>  <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb55-10"><a></a>      senha <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Digite uma senha forte: "</span>)</span>
+<span id="cb55-11"><a></a>      <span class="cf">if</span> eh_senha_forte(senha):</span>
+<span id="cb55-12"><a></a>          <span class="cf">return</span> senha</span>
+<span id="cb55-13"><a></a>      <span class="bu">print</span>(<span class="st">"A senha não é forte. Tente novamente."</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Veja que o código gerado pelo Copilot usa a função <code>eh_senha_forte</code> que havíamos criado anteriormente.</p>
+<ul>
+<li class="fragment">O código parece razoável?</li>
+</ul>
+</div>
+</section>
+<section id="section-68" class="slide level2">
+<h2></h2>
+<p>Para testar no VS Code, temos agora que lembrar de selecionar as duas funções.</p>
+<div class="fragment">
+<div class="fontsize125">
+<div class="sourceCode" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> obter_senha_forte()</span>
+<span id="cb56-2"><a aria-hidden="true" tabindex="-1"></a>Digite uma senha forte: tião <span class="op">!!@*</span><span class="co">#@</span></span>
+<span id="cb56-3"><a aria-hidden="true" tabindex="-1"></a>A senha não é forte. Tente novamente.</span>
+<span id="cb56-4"><a aria-hidden="true" tabindex="-1"></a>Digite uma senha forte: tião<span class="op">!!@*</span><span class="co">#@</span></span>
+<span id="cb56-5"><a aria-hidden="true" tabindex="-1"></a>A senha não é forte. Tente novamente.</span>
+<span id="cb56-6"><a aria-hidden="true" tabindex="-1"></a>Digite uma senha forte: Tião1<span class="op">!@*</span><span class="co">#@</span></span>
+<span id="cb56-7"><a aria-hidden="true" tabindex="-1"></a><span class="co">'Tião1!@*#@'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment">Repare que a última linha é o retorno da função <code>obter_senha_forte()</code>.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="benefícios-das-funções" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Benefícios das funções</h1>
+
+</section>
+<section id="section-69" class="slide level2">
+<h2></h2>
+<p>Além das funções serem essenciais na <strong>decomposição de problemas</strong>,</p>
+<ul>
+<li class="fragment">elas também trazem outros benefícios.</li>
+</ul>
+</section>
+<section id="esforço-cognitivo" class="slide level2">
+<h2><span class="alert">Esforço cognitivo</span></h2>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Esforço cognitivo</strong> tem relação com a quantidade de informação que seu cérebro consegue processar ao mesmo tempo e ainda ser efetivo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Se alguém te disser 4 palavras aleatórias e pedir para você repetir, provavelmente você conseguirá.</p>
+<ul>
+<li class="fragment">Mas se a pessoa disser 20 palavras, provavelmente você terá dificuldades.</li>
+<li class="fragment">A mesma dificuldade acontece quando temos que pensar em detalhes de uma situação muito complexa.</li>
+</ul>
+</div>
+</section>
+<section id="esforço-cognitivo-1" class="slide level2">
+<h2><span class="alert">Esforço cognitivo</span></h2>
+<p>Programadores têm o mesmo problema.</p>
+<ul>
+<li class="fragment">Se tentarem resolver um problema complexo tudo de uma vez, têm dificuldade de criar um código correto.</li>
+</ul>
+<div class="fragment">
+<p>Funções ajudam os programadores a evitarem fazer tudo de uma vez.</p>
+</div>
+</section>
+<section id="evitar-repetição" class="slide level2">
+<h2><span class="alert">Evitar repetição</span></h2>
+<div class="fragment">
+<p>Programadores, e pessoas em geral, não gostam muito de resolver o mesmo problema repetidamente.</p>
+<ul>
+<li class="fragment">Se você criar uma função que calcula a área de um círculo, por exemplo,
+<ul>
+<li class="fragment">e precisar desse cálculo em lugares diferentes de um sistema,</li>
+<li class="fragment">você pode chamar a mesma função nos dois lugares.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Reutilização de código</strong>, que é o contrário da replicação, é uma característica de um código bem projetado.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="melhoria-dos-testes" class="slide level2">
+<h2><span class="alert">Melhoria dos testes</span></h2>
+<div class="fragment">
+<p>É muito mais complicado testar um código que faz muitas coisas ao mesmo tempo.</p>
+</div>
+<div class="fragment">
+<p>Quando criamos funções para tarefas específicas, podemos testá-las individualmente.</p>
+<ul>
+<li class="fragment">Essa é uma técnica chamada <span class="alert">teste unitário</span>.</li>
+<li class="fragment">Utilizamos diferentes casos de teste com diferentes parâmetros de entrada.</li>
+<li class="fragment">Se todos eles produzirem uma saída correta, provavelmente nossa função não causará problema no sistema como um todo.</li>
+</ul>
+</div>
+</section>
+<section id="melhoria-dos-testes-1" class="slide level2">
+<h2><span class="alert">Melhoria dos testes</span></h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Testes unitários</strong> são altamente recomendados em softwares bem projetados.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="melhoria-da-confiabilidade" class="slide level2">
+<h2><span class="alert">Melhoria da confiabilidade</span></h2>
+<div class="fragment">
+<p>Engenheiros de software experientes cometem erros, e sabemos que o Copilot também.</p>
+</div>
+<div class="fragment">
+<p>Se você for um programador incrível, e cada linha de código que você escreve tiver 95% de chances de estar certa,</p>
+<ul>
+<li class="fragment">quantas linhas de código você acha que conseguiria escrever antes que pelo menos uma linha de código fosse provavelmente incorreta?
+<ul>
+<li class="fragment">A resposta são 14 linhas de código!</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Obs.: veja a explicação estatística do ChatGPT sobre as 14 linhas <a href="https://chatgpt.com/share/68a0d06e-a1e4-800e-8aaa-8644f1edf204">aqui</a>. 😃</p>
+</div>
+</section>
+<section id="melhoria-da-confiabilidade-1" class="slide level2">
+<h2><span class="alert">Melhoria da confiabilidade</span></h2>
+<p>Note que 95% é um nível bem alto, mas, mesmo assim, é possível que erros aconteçam em poucas linhas.</p>
+<ul>
+<li class="fragment">Por isso, dividir um problema em funções com até 12 (ou, no máximo, 20 linhas)</li>
+<li class="fragment">diminui a probabilidade de que exista um erro no código.</li>
+</ul>
+<div class="fragment">
+<p>Sem contar que quando um código tem muitos erros que interagem entre si,</p>
+<ul>
+<li class="fragment">a probabilidade se gerem gerados novos erros ainda maiores só aumenta.</li>
+</ul>
+</div>
+</section>
+<section id="melhoria-da-confiabilidade-2" class="slide level2">
+<h2><span class="alert">Melhoria da confiabilidade</span></h2>
+<p>Todo programador experiente já passou horas 😫 depurando um código que tinha múltiplos erros.</p>
+<ul>
+<li class="fragment">Que poderiam ter sido evitadas com testes mais frequentes em trechos menores e código.</li>
+</ul>
+</section>
+<section id="melhoria-da-legibilidade-de-código" class="slide level2">
+<h2><span class="alert">Melhoria da legibilidade de código</span></h2>
+<div class="fragment">
+<p>Mesmo usando Copilot, quando pensamos em software desenvolvido por várias pessoas</p>
+<ul>
+<li class="fragment">é importante que seja fácil para a equipe entender o código existente,</li>
+<li class="fragment">independente se ele foi criado pelo Copilot ou por outros programadores.</li>
+</ul>
+</div>
+</section>
+<section id="melhoria-da-legibilidade-de-código-1" class="slide level2">
+<h2><span class="alert">Melhoria da legibilidade de código</span></h2>
+<p>Isso torna mais fácil tarefas como:</p>
+<ul>
+<li class="fragment">encontrar bugs;</li>
+<li class="fragment">determinar onde começar a alterar o código para acrescentar uma nova funcionalidade;</li>
+<li class="fragment">entender, em alto nível, se seria fácil ou não fazer alguma alteração no sistema que estejamos prospectando.</li>
+</ul>
+</section>
+<section id="melhoria-da-legibilidade-de-código-2" class="slide level2">
+<h2><span class="alert">Melhoria da legibilidade de código</span></h2>
+<p>Ter as tarefas do sistema divididas em funções</p>
+<ul>
+<li>nos ajuda a entender o que cada parte do código faz</li>
+<li>e a ter uma melhor percepção sobre como as coisas funcionam no todo.</li>
+</ul>
+<div class="fragment">
+<p>Também nos ajuda a dividir o trabalho e as responsabilidades de forma a garantir que o código está correto.</p>
+</div>
+</section></section>
+<section>
+<section id="características-de-boas-funções" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Características de boas funções</h1>
+
+</section>
+<section id="section-70" class="slide level2">
+<h2></h2>
+<p>Não há uma regra absoluta para definir o que é uma boa função.</p>
+<ul>
+<li class="fragment">Mas há recomendações e intuições que podemos compartilhar.</li>
+<li class="fragment">Mesmo com elas, saiba que identificar boas funções é uma habilidade que requer tempo e prática.</li>
+</ul>
+<div class="fragment">
+<p>Antes de entrar nas recomendações, você verá que usaremos aqui o termo “funções folha” (<em>leaf functions</em>).</p>
+<ul>
+<li class="fragment">Esse termo se referem a funções que não chamam nenhuma outra função do nosso próprio sistema.</li>
+<li class="fragment">A ideia vem de que em uma árvore, a partir da raiz, as folhas são as “pontas”.</li>
+</ul>
+</div>
+</section>
+<section id="uma-tarefa-clara-a-realizar" class="slide level2">
+<h2><span class="alert">Uma tarefa clara a realizar</span></h2>
+<div class="fragment">
+<p>Uma função folha pode ser algo como:</p>
+<ul>
+<li class="fragment">Calcular o volume de uma esfera.</li>
+<li class="fragment">Encontrar o maior número em uma lista.</li>
+<li class="fragment">Verificar se uma lista tem um valor específico.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Funções que não são folha podem ter objetivos mais amplos, como:</p>
+<ul>
+<li class="fragment">Atualizar os gráficos do jogo.</li>
+<li class="fragment">Mas ainda assim devem ter um objetivo específico, e devem chamar outras funções para atingir esse objetivo.</li>
+</ul>
+</div>
+</section>
+<section id="comportamento-claramente-definido" class="slide level2">
+<h2><span class="alert">Comportamento claramente definido</span></h2>
+<div class="fragment">
+<p>A tarefa <em>“encontrar o maior número em uma lista”</em> é claramente definida.</p>
+<ul>
+<li class="fragment">Se alguém te der uma lista de números e te pedir o maior número, você sabe exatamente o que fazer.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Já a tarefa <em>“encontre a melhor palavra em uma lista”</em> é mal definida.</p>
+<ul>
+<li class="fragment">Falta informação: o que significa palavra “melhor”?</li>
+<li class="fragment">É a palavra mais longa, a que tem menos vogais, a que tem <code>J</code>?</li>
+</ul>
+</div>
+</section>
+<section id="comportamento-claramente-definido-1" class="slide level2">
+<h2><span class="alert">Comportamento claramente definido</span></h2>
+<p>A questão é que tarefas <strong>subjetivas</strong> não são boas para computadores.</p>
+<div class="fragment">
+<p>É comum conseguimos deixar claro o comportamento da função só pelo seu nomes.</p>
+<ul>
+<li class="fragment">Mas muitas vezes isso não é possível, e usamos a docstring para dar mais detalhes sobre a tarefa.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Se precisar escrever mais do que algumas linhas em uma docstring de uma função folha, pode ser um sinal de que a tarefa é muito grande para uma única função.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="poucas-linhas-de-código" class="slide level2">
+<h2><span class="alert">Poucas linhas de código</span></h2>
+<div class="fragment">
+<p>Muitas empresas de software tem guias de estilo de programação que sugerem um limite no número de linhas das funções.</p>
+<ul>
+<li class="fragment">Esse limite geralmente varia de 12 a 20 linhas.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Na verdade o número de linhas é um <em>proxy</em> para a complexidade do código.</p>
+<ul>
+<li class="fragment">E acaba sendo um <em>proxy</em> bem razoável.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Se o Copilot gerar uma função para você com 50 linhas de código, é recomendável pedir que ele quebre a tarefa em funções menores.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="uso-geral-em-vez-de-uso-específico" class="slide level2">
+<h2><span class="alert">Uso geral em vez de uso específico</span></h2>
+<div class="fragment">
+<p>Criar uma função que retorna todos os números de uma lista maiores que 5</p>
+<ul>
+<li class="fragment">pode ser útil para uma necessidade específica.</li>
+<li class="fragment">Mas a função seria muito mais útil se o limite fosse um parâmetro.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Seguimos a mesma ideia ao calcular o lucro das ações do Tião.</p>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Vale a pena reescrever uma função se percebermos que ela pode ter um uso mais geral.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="entrada-e-saída-claras" class="slide level2">
+<h2><span class="alert">Entrada e saída claras</span></h2>
+<div class="fragment">
+<p>É importante que uma função tenha parâmetros e valores de retorno bem definidos.</p>
+<ul>
+<li class="fragment">Pode ser que precisemos de uma função que receba muitos parâmetros,
+<ul>
+<li class="fragment">ou que retorne vários valores.</li>
+</ul></li>
+<li class="fragment">Mas é importante sempre questionar se eles são realmente necessários ou se não teria outro jeito de resolver a tarefa.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Se você está criando uma função que às vezes retorna uma lista, às vezes um valor único e às vezes não retorna nada, é um sinal de que ela provavelmente não é uma boa função.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-71" class="slide level2">
+<h2></h2>
+<p>Em resumo, esse então é o <strong>guia para criarmos boas funções</strong>.</p>
+<ol type="1">
+<li>Uma tarefa clara a realizar</li>
+<li>Comportamento claramente definido</li>
+<li>Poucas linhas de código</li>
+<li>Uso geral em vez de uso específico</li>
+<li>Entrada e saída claras</li>
+</ol>
+</section>
+<section id="exemplos-de-boas-funções-folha" class="slide level2">
+<h2>Exemplos de <strong>boas</strong> funções folha</h2>
+<ul>
+<li class="fragment"><em>Calcular o volume de uma esfera</em>
+<ul>
+<li class="fragment">Dado o raio da esfera calcula seu volume.</li>
+</ul></li>
+<li class="fragment"><em>Encontrar o maior número em uma lista</em>
+<ul>
+<li class="fragment">Dada uma lista, retorna seu maior valor.</li>
+</ul></li>
+<li class="fragment"><em>Verificar se a lista contém um valor específico</em>
+<ul>
+<li class="fragment">Dada uma lista e um valor, retornar True se ela tem o valor e False em caso contrário.</li>
+</ul></li>
+</ul>
+</section>
+<section id="exemplos-de-boas-funções-folha-1" class="slide level2">
+<h2>Exemplos de <strong>boas</strong> funções folha</h2>
+<ul>
+<li class="fragment"><em>Exibir o estado de um jogo de Xadrez</em>
+<ul>
+<li class="fragment">Dada uma lista 2D representando o tabuleiro do jogo, exibir o tabuleiro na tela em formato texto.</li>
+</ul></li>
+<li class="fragment"><em>Inserir um valor em uma lista</em>
+<ul>
+<li class="fragment">Dada uma lista, um novo valor e uma posição na lista, retornar uma nova lista que é a lista original com o novo valor inserido na posição especificada.</li>
+</ul></li>
+</ul>
+</section>
+<section id="funções-folha-ruins" class="slide level2">
+<h2>Funções folha <strong>ruins</strong></h2>
+<p>Vamos agora ver alguns exemplos de funções folha ruins e porque elas são ruins.</p>
+<div class="fragment">
+<p><em>Pedir informações fiscais de um usuário e calcular seu imposto de renda</em></p>
+<ul>
+<li class="fragment">Calcular imposto de renda envolve vários cálculos que deveriam ser implementados em funções separadas.</li>
+</ul>
+</div>
+</section>
+<section id="funções-folha-ruins-1" class="slide level2">
+<h2>Funções folha <strong>ruins</strong></h2>
+<p><em>Remover o maior valor de uma lista</em></p>
+<ul>
+<li class="fragment">Pode não parecer ruim a princípio, mas veja que estamos fazendo duas coisas.
+<ul>
+<li class="fragment">Precisamos encontrar o maior valor na lista.</li>
+<li class="fragment">E precisamos remover um valor da lista.</li>
+</ul></li>
+<li class="fragment">Assim, seria mais reutilizável ter uma função folha para cada subtarefa.
+<ul>
+<li class="fragment">Obs.: pode ser útil criar uma função não folha que chama as outras duas se isso for usado várias vezes em um sistema.</li>
+</ul></li>
+</ul>
+</section>
+<section id="funções-folha-ruins-2" class="slide level2">
+<h2>Funções folha <strong>ruins</strong></h2>
+<p><em>Dado um conjunto de dados estatísticos de partidas de futebol, retornar os nomes dos zagueiros que correram mais de 8 km</em></p>
+<ul>
+<li class="fragment">Há muita informação específica nesse caso.</li>
+<li class="fragment">Claramente a distância percorrida poderia ser um parâmetro.</li>
+<li class="fragment">Mas, se pensarmos bem, inclusive a posição dos jogadores poderia ser um parâmetro.</li>
+<li class="fragment">Melhor ainda seria se a própria estatística fosse um parâmetro.
+<ul>
+<li class="fragment">Poderíamos querer consultar o número de gols feitos ou de faltas recebidas, por exemplo.</li>
+</ul></li>
+</ul>
+</section>
+<section id="funções-folha-ruins-3" class="slide level2">
+<h2>Funções folha <strong>ruins</strong></h2>
+<p><em>Determinar o melhor filme de todos os tempos</em></p>
+<ul>
+<li class="fragment">O problema dessa função é que ela é muito vaga.
+<ul>
+<li class="fragment">O que define o que é um bom filme?</li>
+<li class="fragment">Quais filmes deveriam ser considerados?</li>
+</ul></li>
+<li class="fragment">Seria mais claro se a função recebesse uma lista de filmes com suas respectivas avaliações e um número limite de avaliações.
+<ul>
+<li class="fragment">E retornasse os filmes melhor avaliados que tivesse, pelo menos, o número de avaliações passado como limite.</li>
+</ul></li>
+</ul>
+</section>
+<section id="funções-folha-ruins-4" class="slide level2">
+<h2>Funções folha <strong>ruins</strong></h2>
+<p><em>Jogar Call of Duty</em></p>
+<ul>
+<li class="fragment">Precisa explicar? 🤓</li>
+</ul>
+</section></section>
+<section>
+<section id="dica-escolhendo-sugestão-do-copilot" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Dica: escolhendo sugestão do Copilot</h1>
+
+</section>
+<section id="section-72" class="slide level2">
+<h2></h2>
+<p>Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.</p>
+<div class="fragment">
+<p>Para exemplificar isso, suponha que vamos criar um programa para jogar <code>Scrabble</code>.</p>
+<ul>
+<li class="fragment">É um jogo de tabuleiro baseado em palavras-cruzadas.</li>
+<li class="fragment">Dois jogadores devem ir completando palavras em um tabuleiro com peças de letras.
+<ul>
+<li class="fragment">E, quando consegue formar uma palavra, o jogador ganha pontos dependendo das letras da palavra.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section-73" class="slide level2">
+<h2></h2>
+<p>Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.</p>
+<ul>
+<li class="fragment">O cabeçalho e docstring abaixo mostram como é o cálculo na versão do jogo em português.</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a></a><span class="kw">def</span> numero_de_pontos(palavra):</span>
+<span id="cb57-2"><a></a>    <span class="co">"""</span></span>
+<span id="cb57-3"><a></a><span class="co">    Cada letra na palavra vale os seguintes pontos:</span></span>
+<span id="cb57-4"><a></a><span class="co">    a, e, i, o, u, m, s, r, t: 1 ponto</span></span>
+<span id="cb57-5"><a></a><span class="co">    d, l, c, p: 2 pontos</span></span>
+<span id="cb57-6"><a></a><span class="co">    n, b, ç: 3 pontos</span></span>
+<span id="cb57-7"><a></a><span class="co">    f, g, h, v: 4 pontos</span></span>
+<span id="cb57-8"><a></a><span class="co">    j: 5 pontos</span></span>
+<span id="cb57-9"><a></a><span class="co">    q: 6 pontos</span></span>
+<span id="cb57-10"><a></a><span class="co">    x, z: 8 pontos</span></span>
+<span id="cb57-11"><a></a></span>
+<span id="cb57-12"><a></a><span class="co">    palavra é uma palavra formada por letras caracteres minúsculos</span></span>
+<span id="cb57-13"><a></a><span class="co">    Retorna a soma dos pontos de cada letra da palavra</span></span>
+<span id="cb57-14"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-74" class="slide level2">
+<h2></h2>
+<p>Uma possível resposta do Copilot para o corpo da função é:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a></a>    pontos <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb58-2"><a></a>    <span class="cf">for</span> letra <span class="kw">in</span> palavra:</span>
+<span id="cb58-3"><a></a>        <span class="cf">if</span> letra <span class="kw">in</span> <span class="st">"aeioumsrt"</span>:</span>
+<span id="cb58-4"><a></a>            pontos <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb58-5"><a></a>        <span class="cf">elif</span> letra <span class="kw">in</span> <span class="st">"dlcp"</span>:</span>
+<span id="cb58-6"><a></a>            pontos <span class="op">+=</span> <span class="dv">2</span></span>
+<span id="cb58-7"><a></a>        <span class="cf">elif</span> letra <span class="kw">in</span> <span class="st">"nbç"</span>:</span>
+<span id="cb58-8"><a></a>            pontos <span class="op">+=</span> <span class="dv">3</span></span>
+<span id="cb58-9"><a></a>        <span class="cf">elif</span> letra <span class="kw">in</span> <span class="st">"fghv"</span>:</span>
+<span id="cb58-10"><a></a>            pontos <span class="op">+=</span> <span class="dv">4</span></span>
+<span id="cb58-11"><a></a>        <span class="cf">elif</span> letra <span class="op">==</span> <span class="st">"j"</span>:</span>
+<span id="cb58-12"><a></a>            pontos <span class="op">+=</span> <span class="dv">5</span></span>
+<span id="cb58-13"><a></a>        <span class="cf">elif</span> letra <span class="op">==</span> <span class="st">"q"</span>:</span>
+<span id="cb58-14"><a></a>            pontos <span class="op">+=</span> <span class="dv">6</span></span>
+<span id="cb58-15"><a></a>        <span class="cf">elif</span> letra <span class="kw">in</span> <span class="st">"xz"</span>:</span>
+<span id="cb58-16"><a></a>            pontos <span class="op">+=</span> <span class="dv">8</span></span>
+<span id="cb58-17"><a></a>    <span class="cf">return</span> pontos</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-75" class="slide level2">
+<h2></h2>
+<p>O código parece razoável, e nosso próximo passo seria testar a função.</p>
+<ul>
+<li class="fragment">Mas o ponto que quero mostrar aqui é como escolher as sugestões do Copilot.</li>
+</ul>
+</section>
+<section id="section-76" class="slide level2">
+<h2></h2>
+<p>Quando o Copilot sugere o código, ele aparece esmaecido e em itálico.</p>
+<ul>
+<li class="fragment">Antes de apertarmos <kbd>TAB</kbd> para aceitar o código,</li>
+<li class="fragment">podemos avaliar outras sugestões que o Copilot oferece.
+<ul>
+<li class="fragment">Isso pode ser feito passando o mouse sobre o código e escolhendo no painel que aparece acima do código.</li>
+<li class="fragment">Ou pelo atalho <kbd>Alt</kbd> + <kbd>]</kbd> para ver a próxima sugestão ou <kbd>Alt</kbd> + <kbd>[</kbd> para ver a anterior.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-77" class="slide level2">
+<h2></h2>
+<p>Uma segunda sugestão feita pelo código para o corpo da função foi:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a></a>    pontos <span class="op">=</span> {</span>
+<span id="cb59-2"><a></a>        <span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'e'</span>: <span class="dv">1</span>, <span class="st">'i'</span>: <span class="dv">1</span>, <span class="st">'o'</span>: <span class="dv">1</span>, <span class="st">'u'</span>: <span class="dv">1</span>, <span class="st">'m'</span>: <span class="dv">1</span>, <span class="st">'s'</span>: <span class="dv">1</span>, <span class="st">'r'</span>: <span class="dv">1</span>, <span class="st">'t'</span>: <span class="dv">1</span>,</span>
+<span id="cb59-3"><a></a>        <span class="st">'d'</span>: <span class="dv">2</span>, <span class="st">'l'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">2</span>, <span class="st">'p'</span>: <span class="dv">2</span>,</span>
+<span id="cb59-4"><a></a>        <span class="st">'n'</span>: <span class="dv">3</span>, <span class="st">'b'</span>: <span class="dv">3</span>, <span class="st">'ç'</span>: <span class="dv">3</span>,</span>
+<span id="cb59-5"><a></a>        <span class="st">'f'</span>: <span class="dv">4</span>, <span class="st">'g'</span>: <span class="dv">4</span>, <span class="st">'h'</span>: <span class="dv">4</span>, <span class="st">'v'</span>: <span class="dv">4</span>,</span>
+<span id="cb59-6"><a></a>        <span class="st">'j'</span>: <span class="dv">5</span>,</span>
+<span id="cb59-7"><a></a>        <span class="st">'q'</span>: <span class="dv">6</span>,</span>
+<span id="cb59-8"><a></a>        <span class="st">'x'</span>: <span class="dv">8</span>, <span class="st">'z'</span>: <span class="dv">8</span></span>
+<span id="cb59-9"><a></a>    }</span>
+<span id="cb59-10"><a></a>    total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb59-11"><a></a>    <span class="cf">for</span> letra <span class="kw">in</span> palavra:</span>
+<span id="cb59-12"><a></a>        total <span class="op">+=</span> pontos.get(letra, <span class="dv">0</span>)  <span class="co"># Adiciona o valor da letra ou 0 se não estiver no dicionário</span></span>
+<span id="cb59-13"><a></a>    <span class="cf">return</span> total</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-78" class="slide level2">
+<h2></h2>
+<p>Essa segunda sugestão usa um <span class="alert">dicionário</span> para guardar o valor de cada letra.</p>
+<ul>
+<li class="fragment">Um dicionário do Python é uma estrutura similar a um <code>HashMap</code> do Java.</li>
+</ul>
+<div class="fragment">
+<p>No código o dicionário <code>pontos</code> usa as letras como chaves e os pontos correspondentes como valores.</p>
+<ul>
+<li class="fragment">Assim, ao percorrer a palavra uma letra de cada vez.
+<ul>
+<li class="fragment">podemos consultar o dicionário para buscar quanto vale a letra.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section-79" class="slide level2">
+<h2></h2>
+<p>Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho</p>
+<div class="fontsize125">
+<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a></a>    total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb60-2"><a></a>    <span class="cf">for</span> letra <span class="kw">in</span> palavra:</span>
+<span id="cb60-3"><a></a>        total <span class="op">+=</span> pontos.get(letra, <span class="dv">0</span>)  <span class="co"># Adiciona o valor da letra ou 0 se não estiver no dicionário</span></span>
+<span id="cb60-4"><a></a>    <span class="cf">return</span> total</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>por</p>
+<div class="fontsize125">
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a></a>    <span class="cf">return</span> <span class="bu">sum</span>(pontos.get(letra, <span class="dv">0</span>) <span class="cf">for</span> letra <span class="kw">in</span> palavra)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment">Esse tipo de construção usando <span class="alert">list comprehension</span> é muito comum em Python.</li>
+</ul>
+</section>
+<section id="section-80" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Você pode fazer com o que o painel de escolha das sugestões do Copilot fique sempre visível, para não precisar passar o mouse sobre o código para acessá-lo.</p>
+<p>Para isso, quando ele aparecer uma vez, acesse os botão de três pontos ao final do painel e escolha a opção <em>Always show toolbar</em>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-81" class="slide level2">
+<h2></h2>
+<p>Para fechar o exemplo, suponha que o Tião está jogando Scrabble</p>
+<ul>
+<li class="fragment">e tem três palavras que poderiam ser encaixadas agora: <em>zape</em>, <em>pazes</em> e <em>pizza</em>.</li>
+<li class="fragment">ele gostaria de saber qual palavra dá mais pontos.</li>
+</ul>
+<div class="fragment">
+<p>O que acha do cabeçalho abaixo para uma função que retorne a melhor dessas três palavras?</p>
+<div class="fontsize125">
+<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a></a><span class="kw">def</span> melhor_palavra(palavra1, palavra2, palavra3):</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="section-82" class="slide level2">
+<h2></h2>
+<div class="fontsize125">
+<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a><span class="kw">def</span> melhor_palavra(palavra1, palavra2, palavra3):</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>De acordo com o <strong>guia para criarmos boas funções</strong> essa não é uma boa função, por que?</p>
+<ul>
+<li class="fragment">Ela poderia ser mais geral, funcionando para qualquer quantidade de palavras.</li>
+<li class="fragment">Poderíamos, por exemplo, receber uma lista de palavras como parâmetro.</li>
+</ul>
+<div class="fragment">
+<p>Vamos então melhorar a definição da função.</p>
+</div>
+</section>
+<section id="section-83" class="slide level2">
+<h2></h2>
+<div class="fontsize125">
+<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a></a><span class="kw">def</span> melhor_palavra(palavras):</span>
+<span id="cb64-2"><a></a>    <span class="co">"""</span></span>
+<span id="cb64-3"><a></a><span class="co">    palavras é uma lista de palavras.</span></span>
+<span id="cb64-4"><a></a></span>
+<span id="cb64-5"><a></a><span class="co">    Retorna a palavra com a maior pontuação.</span></span>
+<span id="cb64-6"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb65" start="7"><pre class="sourceCode numberSource python fragment number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a></a>    <span class="cf">if</span> <span class="kw">not</span> palavras:</span>
+<span id="cb65-2"><a></a>        <span class="cf">return</span> <span class="va">None</span>  <span class="co"># Retorna None se a lista estiver vazia</span></span>
+<span id="cb65-3"><a></a></span>
+<span id="cb65-4"><a></a>    melhor <span class="op">=</span> palavras[<span class="dv">0</span>]</span>
+<span id="cb65-5"><a></a>    max_pontos <span class="op">=</span> numero_de_pontos(melhor)</span>
+<span id="cb65-6"><a></a></span>
+<span id="cb65-7"><a></a>    <span class="cf">for</span> palavra <span class="kw">in</span> palavras[<span class="dv">1</span>:]:</span>
+<span id="cb65-8"><a></a>        pontos <span class="op">=</span> numero_de_pontos(palavra)</span>
+<span id="cb65-9"><a></a>        <span class="cf">if</span> pontos <span class="op">&gt;</span> max_pontos:</span>
+<span id="cb65-10"><a></a>            melhor <span class="op">=</span> palavra</span>
+<span id="cb65-11"><a></a>            max_pontos <span class="op">=</span> pontos</span>
+<span id="cb65-12"><a></a></span>
+<span id="cb65-13"><a></a>    <span class="cf">return</span> melhor</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-84" class="slide level2">
+<h2></h2>
+<p>Escolhendo entre as sugestões do Copilot, essa foi outra opção:</p>
+<div class="fontsize125">
+<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a></a><span class="kw">def</span> melhor_palavra(palavras):</span>
+<span id="cb66-2"><a></a>    <span class="co">"""</span></span>
+<span id="cb66-3"><a></a><span class="co">    palavras é uma lista de palavras.</span></span>
+<span id="cb66-4"><a></a></span>
+<span id="cb66-5"><a></a><span class="co">    Retorna a palavra com a maior pontuação.</span></span>
+<span id="cb66-6"><a></a><span class="co">    """</span></span>
+<span id="cb66-7"><a></a>    <span class="cf">return</span> <span class="bu">max</span>(palavras, key<span class="op">=</span>numero_de_pontos)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Qual das duas opções você prefere?</p>
+</div>
+</section>
+<section id="section-85" class="slide level2">
+<h2></h2>
+<p>Talvez seja prematuro escolher sem fazer testes.</p>
+<div class="fragment">
+<p>Veja esse teste feito com a segunda opção:</p>
+<div class="fontsize125">
+<div class="sourceCode" id="cb67"><pre class="sourceCode python fragment code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> melhor_palavra([])</span>
+<span id="cb67-2"><a aria-hidden="true" tabindex="-1"></a>Traceback (most recent call last):</span>
+<span id="cb67-3"><a aria-hidden="true" tabindex="-1"></a>  File <span class="st">"&lt;stdin&gt;"</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
+<span id="cb67-4"><a aria-hidden="true" tabindex="-1"></a>  File <span class="st">"&lt;stdin&gt;"</span>, line <span class="dv">6</span>, <span class="kw">in</span> melhor_palavra</span>
+<span id="cb67-5"><a aria-hidden="true" tabindex="-1"></a><span class="pp">ValueError</span>: <span class="bu">max</span>() iterable argument <span class="kw">is</span> empty</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Esse erro não ocorreria na primeira opção.</p>
+</div>
+</section>
+<section id="section-86" class="slide level2">
+<h2></h2>
+<p>A dica portanto é:</p>
+<ul>
+<li class="fragment">Para qualquer que seja a sugestão escolhida é: <strong>sempre testar!</strong></li>
+</ul>
+<div class="fragment">
+<p>A segunda opção poderia ser alterada para a acrescentar o mesmo <code>if</code> da primeira opção.</p>
+<ul>
+<li class="fragment">Nesse caso, qual você escolheria?</li>
+<li class="fragment">Sugestão: depende do seu objetivo.
+<ul>
+<li class="fragment">A primeira opção é mais legível.</li>
+<li class="fragment">A segunda é mais compacta.</li>
+</ul></li>
+</ul>
 
 
 </div>
