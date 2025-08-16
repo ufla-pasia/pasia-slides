@@ -604,7 +604,7 @@ Para fazer atividades da disciplina você precisa instalar
 - VS Code
 - Python
 - Extensão de Python para VS Code (da Microsoft)
-  - Você pode instalar digitando `Ctrl+P` no VS Code e digitando `ext install ms-python.python`.
+  - Você pode instalar digitando <kbd>Ctrl+P</kbd> no VS Code e digitando `ext install ms-python.python`.
 
 # {.smaller}
 
@@ -713,7 +713,7 @@ Nós podemos também conversar com o Copilot dentro do contexto de uma parte de 
 
 . . .
 
-Experimente selecionar o código que você acabou de gerar e aperte `Ctrl+I`.
+Experimente selecionar o código que você acabou de gerar e aperte <kbd>Ctrl</kbd> + <kbd>I</kbd>.
 
 - Na caixa de diálogo que aparece peça ao Copilot para usar emojis na interação com o usuário, por exemplo.
 - Depois de processar o prompt, o Copilot fará uma sugestão de alteração no código

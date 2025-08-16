@@ -219,7 +219,7 @@ Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos
 
 Para isso, selecione o texto e o código do terceiro prompt.
 
-- Abra o chat do Copilot (clicando no ícone de chat na barra de título do VS Code ou digitando `Ctrl+Alt+I`).
+- Abra o chat do Copilot (clicando no ícone de chat na barra de título do VS Code ou digitando <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd>).
 - Mude do modo `Agent` para `Chat` (primeira opção na parte inferior do chat).
 - E digite o prompt a seguir.
 

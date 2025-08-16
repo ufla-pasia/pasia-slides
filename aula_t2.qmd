@@ -342,5 +342,436 @@ print(resultado)
 
 ##
 
-O Ciclo de design de funções com Copilot.
+O ciclo de projeto de funções com Copilot.
+
+ 1. Defina o comportamento desejado para a função
+ 2. Escreva um prompt que descreva a função
+ 3. Deixe o Copilot gerar o código
+ 4. Avalie o código para conferir se ele parece razoável
+ 5. Teste o código para conferir se ele está correto
+  - Se estiver correto, a função está pronta.
+  - Se não estiver, volte ao passo 2.
+
+# Exemplos de boas funções com Copilot {background-color="#40666e"}
+
+## Investimentos em Bolsa do Tião
+
+Tião é um investidor em uma ação chamada PASIA.
+
+- Ele comprou 10 ações por R$ 15.
+- Agora cada ação vale R$ 17.
+- Ele quer saber quanto lucro teria se vendesse as ações agora.
+
+##
+
+Essa seria uma boa função para calcular o lucro do Tião?
+
+. . .
+
+::: {.halfincfontsize}
+```python
+def calcular_lucro():
+  return (17 - 15) * 10
+```
+:::
+
+. . .
+
+Não, essa função não é boa. 
+
+- Por que?
+
+##
+
+Quando criamos uma função devemos criá-la da forma **mais geral possível**.
+
+- Com isso, **a função pode ser reutilizada** em diferentes contextos.
+- Repare que, no caso do Tião, ele não quer saber o lucro apenas de uma compra específica
+  - mas sim de qualquer compra que ele faça.
+
+. . .
+
+Mesmo que você ache que isso parece muito simples.
+
+- É muito comum que programadores experientes repitam esse erro em contextos mais complexos.
+
+##
+
+Como deveria ser a assinatura da função, de forma que ela seja mais útil?
+
+- Quais parâmetros deveria receber?
+  - a quantidade de ações compradas  
+  - o valor que as ações foram compradas  
+  - e o preço de venda das ações.
+
+. . .
+
+Poderíamos então definir a assinatura assim:
+
+::: {.fontsize125}
+```python
+def calcular_lucro(qtd_acoes, valor_compra, valor_venda)
+```
+:::
+
+##
+
+:::{.nonincremental}
+Seguindo a estratégia que vimos antes, 
+
+- vamos criar uma docstring para explicar ao Copilot o que a ação precisa fazer.
+:::
+
+. . .
+
+::: {.callout-tip collapse=\"true\"}
+Claro que essa função é muito simples e você poderia pedir ao Copilot para criar
+inclusive a assinatura e a docstring.
+
+Mas a ideia aqui é que você entenda o processo com uma função simples, para que
+depois possa aplicar para funções mais complexas.
+:::
+
+##
+
+::: {.fontsize125}
+```python
+def calcular_lucro(qtd_acoes, valor_compra, valor_atual):
+  """
+  qtd_acoes é a quantidade de ações compradas
+  valor_compra é o valor de cada uma dessas ações
+  valor_atual é o valor atual dessas ações
+  """
+```
+:::
+
+. . .
+
+Podemos agora pedir ao Copilot para gerar o corpo da função.
+
+##
+
+::: {.fontsize125}
+```python
+def calcular_lucro(qtd_acoes, valor_compra, valor_atual):
+  """
+  qtd_acoes é a quantidade de ações compradas
+  valor_compra é o valor de cada uma dessas ações
+  valor_atual é o valor atual dessas ações
+  """
+  return (valor_atual - valor_compra) * qtd_acoes
+```
+:::
+
+## 
+
+::: {.nonincremental}
+
+Nós já fizemos os três passos iniciais do ciclo de design de funções.
+
+1. Defina o comportamento desejado para a função
+2. Escreva um prompt que descreva a função
+3. Deixe o Copilot gerar o código
+4. Avalie o código para conferir se ele parece razoável
+5. Teste o código para conferir se ele está correto
+
+:::
+
+##
+
+O próximo passo é [avaliar se o código parece razoável]{.alert}.
+
+::: {.fontsize125}
+```python
+  return (valor_atual - valor_compra) * qtd_acoes
+```
+:::
+
+. . .
+
+Em uma função simples, assim esse passo é fácil :)
+
+## 
+
+O passo seguinte é [testar o código]{.alert}.
+
+- E aqui vai uma dica interessante de uso do VS Code para testar códigos Python.
+
+. . .
+
+Você pode selecionar o código da função no VS Code.
+
+- E apertar <kbd>Shift</kbd> + <kbd>Enter</kbd>
+- Ao fazer isso, o trecho de código selecionado será executado em um terminal Python.
+- E você poderá então fazer chamadas de teste a essa função no terminal Python.
+
+## 
+
+::: {.nonincremental}
+Um primeiro teste óbvio que poderíamos fazer 
+
+- é calcular o lucro da compra específica de ações do Tião.
+:::
+
+. . .
+
+::: {.fontsize125}
+```python {code-line-numbers="false"}
+>>>  calcular_lucro(10, 15, 17)
+```
+:::
+
+::: {.fontsize125}
+```python {.fragment code-line-numbers="false"}
+20
+```
+:::
+
+. . .
+
+Está certo?
+
+- Sim, como ele teve 2 reais de lucro em cada ação e são 10 ações, o total é 20.
+
+. . .
+
+Precisamos agora pensar em mais [casos de testes]{.alert}.
+
+##
+
+Testar se as ações tivessem subido para R$ 18 em vez de R$ 17 seria um bom teste?
+
+- Não, porque seria um teste de um caso na **mesma categoria** do teste anterior.
+- Precisamos pensar em situações diferentes.
+
+. . .
+
+Por exemplo:
+
+- Uma situação que desse prejuízo.
+- Ou que as ações permanecessem no mesmo preço.
+
+##
+
+Podemos inverter o preço de compra e o atual para testar o prejuízo.
+
+::: {.fontsize125}
+
+```python {code-line-numbers="false"}
+>>>  calcular_lucro(10, 17, 15)
+```
+```python {.fragment code-line-numbers="false"}
+-20
+```
+:::
+
+. . .
+
+E testar o caso do preço da ação ser mantido
+
+::: {.fontsize125}
+```python {code-line-numbers="false"}
+>>>  calcular_lucro(10, 15, 15)
+```
+```python {.fragment code-line-numbers="false"}
+0
+```
+:::
+
+##
+
+Mas como saber quantas categorias testar?
+
+- Como ter certeza se dois testes não são da mesma categoria?
+- Ou se eles cobrem todas categorias possíveis?
+
+. . .
+
+Testes são uma combinação de **ciência 🧪** e **arte 🎨**
+
+- É necessário prática e experiência para definir bem casos de testes.
+- E vamos ter aula específica sobre isso mais adiante na disciplina.
+
+## A senha do Tião
+
+Tião está se inscrevendo em uma nova rede social chamada _ProgrammersKingdom_.
+
+- Ele quer ter certeza que a senha que ele vai usar é forte o suficiente.
+
+. . .
+
+Vamos começar com uma definição bem simples do que é uma senha forte.
+
+- E depois vamos melhorar a função.
+- No meio do caminho vamos nos acostumando com a sintaxe do Python.
+
+##
+
+A princípio, vamos considerar que uma senha é forte se ela não for `'1234'` ou `'senha'`.
+
+- Vamos então definir o cabeçalho e a docstring de uma função que recebe uma
+  possível senha e retorna se ela é forte ou não.
+
+. . .
+
+::: {.fontsize125}
+```python
+def eh_senha_forte(senha):
+    """
+    Uma senha é forte se não for '1234' ou 'senha'
+
+    Retorna True se a senha for forte e False em caso contrário
+    """    
+```
+:::
+
+##
+
+Suponha que seja esse o código gerado.
+
+::: {.fontsize125}
+```python
+def eh_senha_forte(senha):
+    """
+    Uma senha é forte se não for '1234' ou 'senha'
+
+    Retorna True se a senha for forte e False em caso contrário
+    """    
+    if senha == "1234" or senha == "senha":
+        return False
+    return True
+```
+:::
+
+. . .
+
+Seguindo próximo passo do **ciclo de design de funções**, avaliamos se o código parece razoável.
+
+- O que acha?
+
+##
+
+Vamos agora testar a função usando <kbd>Shift</kbd> + <kbd>Enter</kbd> no VS Code.
+
+::: {.fontsize125}
+
+```python {.fragment code-line-numbers="false"}
+>>> eh_senha_forte("1234")
+```
+```python {.fragment code-line-numbers="false"}
+False
+```
+
+```python {.fragment code-line-numbers="false"}
+>>> eh_senha_forte("senha")
+```
+```python {.fragment code-line-numbers="false"}
+False
+```
+
+```python {.fragment code-line-numbers="false"}
+>>> eh_senha_forte("admin")
+```
+```python {.fragment code-line-numbers="false"}
+True
+```
+
+:::
+
+`'admin'` claramente não é uma senha forte 🙂
+
+##
+
+Vamos melhorar a definição da nossa função.
+
+::: {.fontsize125}
+```python
+def eh_senha_forte(senha):
+    """
+    Uma senha é forte se não for '1234' ou 'senha' ou 'admin'
+
+    Retorna True se a senha for forte e False em caso contrário
+    """    
+```
+```python {.fragment}  
+    if senha in ['1234', 'senha', 'admin']:
+        return False
+    return True
+
+```
+:::
+
+##
+
+```python
+def eh_senha_forte(senha):
+    """
+    Uma senha é forte se não for '1234' ou 'senha' ou 'admin'
+
+    Retorna True se a senha for forte e False em caso contrário
+    """
+    if senha in ['1234', 'senha', 'admin']:
+        return False
+    return True
+
+```
+
+Repare que, nesse caso, o Copilot gerou um código que usa uma lista.
+
+- Podemos declarar listas em Python entre colchetes e com valores separados por vírgulas.
+- E o operador `in` indica se um elemento pertence à lista.
+
+. . .
+
+O código parece razoável? Hora de testar!
+
+##
+
+Mas nossa função ainda aceita `'Tião'` como senha, o que é claramente ruim.
+
+- Vamos então deixar a definição de senha forte, mais forte 💪.
+
+##
+
+```python
+def eh_senha_forte(senha):
+    """
+    Uma senha forte tem pelo menos uma letra maiúscula,
+    uma letra minúscula, um número e um caractere especial.
+
+    Retorna True se a senha for forte e False em caso contrário
+    """  
+```
+```python {.fragment start=8}
+    tem_maiuscula = any(c.isupper() for c in senha)
+    tem_minuscula = any(c.islower() for c in senha)
+    tem_numero = any(c.isdigit() for c in senha)
+    tem_especial = any(not c.isalnum() for c in senha)
+    return tem_maiuscula and tem_minuscula and tem_numero and tem_especial
+```
+
+. . .
+
+O código gerado pelo Copilot parece bem claro sobre o que está fazendo no geral.
+
+- Mas há construções de Python que podem ser melhor exploradas.
+
+## 
+
+Vamos pedir ao Copilot para explicar o trecho `c.isupper() for c in senha`.
+
+- Para isso, aperte <kbd>Ctrl</kbd> + <kbd>I</kbd> e digite `explique essa construção do python`.
+
+##
+
+Essa é uma possível resposta do Copilot.
+
+<div style="overflow:auto; max-height:400px; text-align:center;">
+  <img src="imagens/copilot_explicacao_senhaforte.png" alt="Explicação do Copilot sobre o trecho c.isupper() for c in senha." style="width:auto; max-width:100%;">
+</div>
+
+. . .
+
+Esse é um bom exemplo de como o Copilot pode nos ajudar a entender um código já implementado.
+
 
