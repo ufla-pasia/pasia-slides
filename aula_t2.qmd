@@ -54,7 +54,7 @@ Uma função é um trecho de código que resolve uma tarefa específicia
 
 - E que não é tão complexo a ponto de ficar difícil de implementar e testar.
 
-. . .
+##
 
 Claro que vocês já sabem o que são funções e como elas podem ser implementadas.
 
@@ -63,6 +63,8 @@ Claro que vocês já sabem o que são funções e como elas podem ser implementa
 - Além disso, no contexto do uso de IA, quais seriam as melhores práticas para projetar funções?
 
 # Funções {background-color="#40666e"}
+
+## 
 
 Uma função é uma pequena tarefa que pode ser usada para resolver tarefas maiores.
 
@@ -92,14 +94,17 @@ Você poderia, por exemplo, escolher uma palavra para encontrar primeiro.
 Repare que estamos decompondo o problema de resolver o caça-palavras
 
 - em tarefas menores, que, se resolvidas, nos ajudam a resolver o problema como um todo.
-- E essa a estratégia que precisamos seguir na hora de programar.
+
+. . .
+
+É essa a estratégia que precisamos seguir na hora de programar.
 
 ##
 
 Uma função pode ser vista como um contrato.
 
-- Se existir uma função `maior` e for dito que ela recebe dois números e retorna o maior deles.
-- Nós podemos acreditar que se a função for chamada com os números 2 e 5, ela retornará 5.
+- Se existir uma função `maior` e for dito que ela recebe dois números e retorna o maior deles,
+- nós podemos acreditar que se a função for chamada com os números 2 e 5, ela retornará 5.
   - Nós não precisamos saber como a função funciona para utilizá-la.
 - Da mesma forma que não precisamos entender de mecânica de carros para frear um carro.
   - Nós acionamos o pedal e sabemos que a velocidade do carro vai diminuir.
@@ -203,8 +208,8 @@ Veja que, diferente de linguagens fortemente tipadas, em Python não precisamos 
 Dica para programadores avançados:
 
 - Apesar de Python não ser fortemente tipado
-  - é uma boa prática usar anotações de tipo (_type hints_) para melhorar a legibilidade do código.
-- Isso ajuda muito na implementação de sistemas mais complexos.
+  - é uma boa prática usar [anotações de tipo]{.alert} (_type hints_) para melhorar a legibilidade do código.
+- Isso ajuda muito na implementação de sistemas maiores.
 - Mas afinal, o que é isso?
 
 
@@ -678,6 +683,8 @@ True
 
 :::
 
+. . . 
+
 `'admin'` claramente não é uma senha forte 🙂
 
 ##
@@ -716,7 +723,7 @@ def eh_senha_forte(senha):
 
 ```
 
-Repare que, nesse caso, o Copilot gerou um código que usa uma lista.
+Repare que, nesse caso, o Copilot gerou um código que usa uma [lista]{.alert}.
 
 - Podemos declarar listas em Python entre colchetes e com valores separados por vírgulas.
 - E o operador `in` indica se um elemento pertence à lista.
@@ -754,7 +761,7 @@ def eh_senha_forte(senha):
 
 O código gerado pelo Copilot parece bem claro sobre o que está fazendo no geral.
 
-- Mas há construções de Python que podem ser melhor exploradas.
+- Mas há construções de Python nos detalhes que podem ser melhor exploradas.
 
 ## 
 

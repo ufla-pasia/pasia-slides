@@ -275,24 +275,29 @@
 <ul>
 <li class="fragment">E que não é tão complexo a ponto de ficar difícil de implementar e testar.</li>
 </ul>
-<div class="fragment">
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
 <p>Claro que vocês já sabem o que são funções e como elas podem ser implementadas.</p>
 <ul>
 <li class="fragment">Mas será que vocês sabem quais são os critérios para projetar boas funções?</li>
 <li class="fragment">Será pensam nisso na hora de programar, ou simplesmente saem programando?</li>
 <li class="fragment">Além disso, no contexto do uso de IA, quais seriam as melhores práticas para projetar funções?</li>
 </ul>
-</div>
 </section></section>
 <section>
 <section id="funções" class="title-slide slide level1 center" data-background-color="#40666e">
 <h1>Funções</h1>
+
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
 <p>Uma função é uma pequena tarefa que pode ser usada para resolver tarefas maiores.</p>
 <ul>
 <li class="fragment">Essas tarefas maiores, por sua vez, podem ser usadas para resolver tarefas maiores ainda.</li>
 </ul>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <p>Para exemplificar, encontre as palavras abaixo no quebra-cabeça.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -301,7 +306,7 @@
 </figure>
 </div>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <p>Qual foi o raciocínio que você usou para encontrar as palavras?</p>
 <ul>
@@ -317,20 +322,22 @@
 </ul>
 </div>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <p>Repare que estamos decompondo o problema de resolver o caça-palavras</p>
 <ul>
 <li class="fragment">em tarefas menores, que, se resolvidas, nos ajudam a resolver o problema como um todo.</li>
-<li class="fragment">E essa a estratégia que precisamos seguir na hora de programar.</li>
 </ul>
+<div class="fragment">
+<p>É essa a estratégia que precisamos seguir na hora de programar.</p>
+</div>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <p>Uma função pode ser vista como um contrato.</p>
 <ul>
-<li class="fragment">Se existir uma função <code>maior</code> e for dito que ela recebe dois números e retorna o maior deles.</li>
-<li class="fragment">Nós podemos acreditar que se a função for chamada com os números 2 e 5, ela retornará 5.
+<li class="fragment">Se existir uma função <code>maior</code> e for dito que ela recebe dois números e retorna o maior deles,</li>
+<li class="fragment">nós podemos acreditar que se a função for chamada com os números 2 e 5, ela retornará 5.
 <ul>
 <li class="fragment">Nós não precisamos saber como a função funciona para utilizá-la.</li>
 </ul></li>
@@ -340,7 +347,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <p>Na aula passada usamos o Copilot para gerar código a partir de um comentário.</p>
 <ul>
@@ -356,7 +363,7 @@
 </div>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <div class="halfincfontsize">
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># escreva uma função que retorna o  </span></span>
@@ -371,7 +378,7 @@
 </div>
 <p>Esse é um possível resultado gerado pelo Copilot.</p>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># escreva uma função que retorna o  </span></span>
 <span id="cb3-2"><a></a><span class="co"># maior de dois números</span></span>
@@ -393,7 +400,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># escreva uma função que retorna o  </span></span>
 <span id="cb4-2"><a></a><span class="co"># maior de dois números</span></span>
@@ -413,7 +420,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># escreva uma função que retorna o  </span></span>
 <span id="cb5-2"><a></a><span class="co"># maior de dois números</span></span>
@@ -434,19 +441,19 @@
 <h1>Funções (dicas avançadas)</h1>
 
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <p>Dica para programadores avançados:</p>
 <ul>
 <li class="fragment">Apesar de Python não ser fortemente tipado
 <ul>
-<li class="fragment">é uma boa prática usar anotações de tipo (<em>type hints</em>) para melhorar a legibilidade do código.</li>
+<li class="fragment">é uma boa prática usar <span class="alert">anotações de tipo</span> (<em>type hints</em>) para melhorar a legibilidade do código.</li>
 </ul></li>
-<li class="fragment">Isso ajuda muito na implementação de sistemas mais complexos.</li>
+<li class="fragment">Isso ajuda muito na implementação de sistemas maiores.</li>
 <li class="fragment">Mas afinal, o que é isso?</li>
 </ul>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <p>Vamos gerar novamente a função <code>maior_numero</code>, mas agora com <em>type hints</em>.</p>
 <div class="halfincfontsize">
@@ -464,7 +471,7 @@
 <span id="cb7-5"><a></a>    <span class="cf">return</span> b    </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <p>As anotações de tipo servem como documentação e podem ser utilizadas por ferramentas de análise sintática.</p>
 <ul>
@@ -478,7 +485,7 @@
 <p>Experimente, por exemplo, chamar a função no VS Code passando uma string.</p>
 </div>
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-19" class="slide level2">
 <h2></h2>
 <p>Mas é importante deixar claro que os <em>type hints</em> não alteram o comportamento do código.</p>
 <ul>
@@ -498,7 +505,7 @@
 <h1>Criando funções com Copilot</h1>
 
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 <p>Nós havíamos passado para o Copilot a tarefa de criar a função completa.</p>
 <ul>
@@ -509,7 +516,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-21" class="slide level2">
 <h2></h2>
 <p>Nós podemos fazer isso usando <span class="alert">docstrings</span>.</p>
 <ul>
@@ -532,7 +539,7 @@
 </div>
 </div>
 </section>
-<section id="section-20" class="slide level2">
+<section id="section-22" class="slide level2">
 <h2></h2>
 <p>Nós poderíamos então gerar a função <code>maior_numero</code> de forma diferente</p>
 <ul>
@@ -543,7 +550,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-23" class="slide level2">
 <h2></h2>
 <p>Vamos então refazer a função, mas agora nós definimos o cabeçalho e docstring da função.</p>
 <div class="halfincfontsize">
@@ -555,7 +562,7 @@
 <span id="cb8-6"><a></a><span class="co">  """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-24" class="slide level2">
 <h2></h2>
 <p>O Copilot pode então gerar o corpo da função.</p>
 <div class="halfincfontsize">
@@ -571,7 +578,7 @@
 <span id="cb9-10"><a></a>    <span class="cf">return</span> num2</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-25" class="slide level2">
 <h2></h2>
 <p>Para terminar, vamos pedir ao Copilot para chamar a função que criamos.</p>
 <div class="halfincfontsize">
@@ -584,7 +591,7 @@
 <span id="cb11-2"><a></a><span class="bu">print</span>(resultado)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-24" class="slide level2">
+<section id="section-26" class="slide level2">
 <h2></h2>
 <p>O ciclo de projeto de funções com Copilot.</p>
 <ol type="1">
@@ -613,7 +620,7 @@
 <li class="fragment">Ele quer saber quanto lucro teria se vendesse as ações agora.</li>
 </ul>
 </section>
-<section id="section-25" class="slide level2">
+<section id="section-27" class="slide level2">
 <h2></h2>
 <p>Essa seria uma boa função para calcular o lucro do Tião?</p>
 <div class="fragment">
@@ -629,7 +636,7 @@
 </ul>
 </div>
 </section>
-<section id="section-26" class="slide level2">
+<section id="section-28" class="slide level2">
 <h2></h2>
 <p>Quando criamos uma função devemos criá-la da forma <strong>mais geral possível</strong>.</p>
 <ul>
@@ -646,7 +653,7 @@
 </ul>
 </div>
 </section>
-<section id="section-27" class="slide level2">
+<section id="section-29" class="slide level2">
 <h2></h2>
 <p>Como deveria ser a assinatura da função, de forma que ela seja mais útil?</p>
 <ul>
@@ -666,7 +673,7 @@
 </div>
 </div>
 </section>
-<section id="section-28" class="slide level2">
+<section id="section-30" class="slide level2">
 <h2></h2>
 <p>Seguindo a estratégia que vimos antes,</p>
 <ul>
@@ -689,7 +696,7 @@
 </div>
 </div>
 </section>
-<section id="section-29" class="slide level2">
+<section id="section-31" class="slide level2">
 <h2></h2>
 <div class="fontsize125">
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="kw">def</span> calcular_lucro(qtd_acoes, valor_compra, valor_atual):</span>
@@ -703,7 +710,7 @@
 <p>Podemos agora pedir ao Copilot para gerar o corpo da função.</p>
 </div>
 </section>
-<section id="section-30" class="slide level2">
+<section id="section-32" class="slide level2">
 <h2></h2>
 <div class="fontsize125">
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> calcular_lucro(qtd_acoes, valor_compra, valor_atual):</span>
@@ -715,7 +722,7 @@
 <span id="cb15-7"><a></a>  <span class="cf">return</span> (valor_atual <span class="op">-</span> valor_compra) <span class="op">*</span> qtd_acoes</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-31" class="slide level2">
+<section id="section-33" class="slide level2">
 <h2></h2>
 <p>Nós já fizemos os três passos iniciais do ciclo de design de funções.</p>
 <ol type="1">
@@ -726,7 +733,7 @@
 <li>Teste o código para conferir se ele está correto</li>
 </ol>
 </section>
-<section id="section-32" class="slide level2">
+<section id="section-34" class="slide level2">
 <h2></h2>
 <p>O próximo passo é <span class="alert">avaliar se o código parece razoável</span>.</p>
 <div class="fontsize125">
@@ -736,7 +743,7 @@
 <p>Em uma função simples, assim esse passo é fácil :)</p>
 </div>
 </section>
-<section id="section-33" class="slide level2">
+<section id="section-35" class="slide level2">
 <h2></h2>
 <p>O passo seguinte é <span class="alert">testar o código</span>.</p>
 <ul>
@@ -751,7 +758,7 @@
 </ul>
 </div>
 </section>
-<section id="section-34" class="slide level2">
+<section id="section-36" class="slide level2">
 <h2></h2>
 <p>Um primeiro teste óbvio que poderíamos fazer</p>
 <ul>
@@ -775,7 +782,7 @@
 <p>Precisamos agora pensar em mais <span class="alert">casos de testes</span>.</p>
 </div>
 </section>
-<section id="section-35" class="slide level2">
+<section id="section-37" class="slide level2">
 <h2></h2>
 <p>Testar se as ações tivessem subido para R$ 18 em vez de R$ 17 seria um bom teste?</p>
 <ul>
@@ -790,7 +797,7 @@
 </ul>
 </div>
 </section>
-<section id="section-36" class="slide level2">
+<section id="section-38" class="slide level2">
 <h2></h2>
 <p>Podemos inverter o preço de compra e o atual para testar o prejuízo.</p>
 <div class="fontsize125">
@@ -805,7 +812,7 @@
 </div>
 </div>
 </section>
-<section id="section-37" class="slide level2">
+<section id="section-39" class="slide level2">
 <h2></h2>
 <p>Mas como saber quantas categorias testar?</p>
 <ul>
@@ -834,7 +841,7 @@
 </ul>
 </div>
 </section>
-<section id="section-38" class="slide level2">
+<section id="section-40" class="slide level2">
 <h2></h2>
 <p>A princípio, vamos considerar que uma senha é forte se ela não for <code>'1234'</code> ou <code>'senha'</code>.</p>
 <ul>
@@ -851,7 +858,7 @@
 </div>
 </div>
 </section>
-<section id="section-39" class="slide level2">
+<section id="section-41" class="slide level2">
 <h2></h2>
 <p>Suponha que seja esse o código gerado.</p>
 <div class="fontsize125">
@@ -872,7 +879,7 @@
 </ul>
 </div>
 </section>
-<section id="section-40" class="slide level2">
+<section id="section-42" class="slide level2">
 <h2></h2>
 <p>Vamos agora testar a função usando <kbd>Shift</kbd> + <kbd>Enter</kbd> no VS Code.</p>
 <div class="fontsize125">
@@ -885,7 +892,7 @@
 </div>
 <p><code>'admin'</code> claramente não é uma senha forte 🙂</p>
 </section>
-<section id="section-41" class="slide level2">
+<section id="section-43" class="slide level2">
 <h2></h2>
 <p>Vamos melhorar a definição da nossa função.</p>
 <div class="fontsize125">
@@ -900,7 +907,7 @@
 <span id="cb32-3"><a></a>    <span class="cf">return</span> <span class="va">True</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-42" class="slide level2">
+<section id="section-44" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a><span class="kw">def</span> eh_senha_forte(senha):</span>
 <span id="cb33-2"><a></a>    <span class="co">"""</span></span>
@@ -920,14 +927,14 @@
 <p>O código parece razoável? Hora de testar!</p>
 </div>
 </section>
-<section id="section-43" class="slide level2">
+<section id="section-45" class="slide level2">
 <h2></h2>
 <p>Mas nossa função ainda aceita <code>'Tião'</code> como senha, o que é claramente ruim.</p>
 <ul>
 <li class="fragment">Vamos então deixar a definição de senha forte, mais forte 💪.</li>
 </ul>
 </section>
-<section id="section-44" class="slide level2">
+<section id="section-46" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a><span class="kw">def</span> eh_senha_forte(senha):</span>
 <span id="cb34-2"><a></a>    <span class="co">"""</span></span>
@@ -948,14 +955,14 @@
 </ul>
 </div>
 </section>
-<section id="section-45" class="slide level2">
+<section id="section-47" class="slide level2">
 <h2></h2>
 <p>Vamos pedir ao Copilot para explicar o trecho <code>c.isupper() for c in senha</code>.</p>
 <ul>
 <li class="fragment">Para isso, aperte <kbd>Ctrl</kbd> + <kbd>I</kbd> e digite <code>explique essa construção do python</code>.</li>
 </ul>
 </section>
-<section id="section-46" class="slide level2">
+<section id="section-48" class="slide level2">
 <h2></h2>
 <p>Essa é uma possível resposta do Copilot.</p>
 <div style="overflow:auto; max-height:400px; text-align:center;">
