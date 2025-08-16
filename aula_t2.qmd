@@ -5,13 +5,13 @@ subtitle: PASIA - Aula T.2
 
 ##  
 
-O conteúdo dessa aula é baseado no capítulo 3 do livro abaixo.
+O conteúdo dessa aula é baseado no **capítulo 3** do livro abaixo.
 
 ![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
 
 ##
 
-Pela pesquisa de perfil da turma vi que alguns alunos conhecem bem Python e outros não.
+Pela pesquisa de perfil da turma vi que alguns alunos conhecem Python e outros não.
 
 - É importante então apresentar a linguagem nas primeiras aulas.
 - Mas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.
@@ -24,7 +24,7 @@ Pela pesquisa de perfil da turma vi que alguns alunos conhecem bem Python e outr
 ## Lembrete
 
 Lembre-se que **Assistentes de IA são não determinísticos**. 
-Portanto, ao experimentar os exemplos dessa, aula você pode obter resultados diferentes.
+Portanto, ao experimentar os exemplos dessa aula, você pode obter resultados diferentes.
 :::
 
 # Introdução {background-color="#40666e"}
@@ -45,29 +45,29 @@ Como já mencionamos antes, passar uma tarefa muito grande para o Assistente de 
 
 ##
 
-Na verdade essa questão de complexidade não é um problema só para o Copilot, mas para nós mesmos.
+Na verdade essa questão de **complexidade não é um problema só para o Copilot**, mas para nós mesmos.
 
-- Engenheiros de Software que tentam resolver problemas muito complexos sem quebrá-los em partes menores também falham.
+- **Engenheiros de Software** que tentam resolver problemas muito complexos sem quebrá-los em partes menores **também falham**.
 
 . . .
 
-Existem diversas formas de tratar, no código, a decomosição de um problema em partes.
+Existem diversas formas de tratar, no código, a decomposição de um problema em partes.
 
 - A mais simples delas é a através de funções.
 
 ##
 
-Uma função é um trecho de código que resolve uma tarefa específicia
+Uma [função]{.alert} é um trecho de código que resolve uma tarefa específica
 
-- E que não é tão complexo a ponto de ficar difícil de implementar e testar.
+- e que não é tão complexo a ponto de ficar difícil de implementar e testar.
 
 ##
 
 Claro que vocês já sabem o que são funções e como elas podem ser implementadas.
 
-- Mas será que vocês sabem quais são os critérios para projetar boas funções?
-- Será pensam nisso na hora de programar, ou simplesmente saem programando?
-- Além disso, no contexto do uso de IA, quais seriam as melhores práticas para projetar funções?
+- Mas será que vocês sabem (ou se lembram) quais são os **critérios** para projetar **boas funções**?
+- Será que pensam nisso na hora de programar, ou simplesmente saem programando?
+- Além disso, no **contexto do uso de IA**, quais seriam as **melhores práticas** para projetar funções?
 
 # Funções {background-color="#40666e"}
 
@@ -75,7 +75,7 @@ Claro que vocês já sabem o que são funções e como elas podem ser implementa
 
 Uma função é uma pequena tarefa que pode ser usada para resolver tarefas maiores.
 
-- Essas tarefas maiores, por sua vez, podem ser usadas para resolver tarefas maiores ainda.
+- Essas tarefas menores, por sua vez, podem ser usadas para resolver tarefas maiores.
 
 ##
 
@@ -93,8 +93,8 @@ Qual foi o raciocínio que você usou para encontrar as palavras?
 
 Você poderia, por exemplo, escolher uma palavra para encontrar primeiro.
 
-- E, para encontrar uma única palavra, poderíamos procurar a primeira letra.
-  - E então procurar a palavra buscando para a direita, esquerda, para cima ou para baixo.
+- E, para encontrar essa palavra, você poderia procurar a primeira letra.
+  - E então procurar o restante da palavra buscando para a direita, esquerda, para cima ou para baixo.
 
 ##
 
@@ -108,13 +108,13 @@ Repare que estamos decompondo o problema de resolver o caça-palavras
 
 ##
 
-Uma função pode ser vista como um contrato.
+Uma função pode ser vista como um [contrato]{.alert} 📝.
 
 - Se existir uma função `maior` e for dito que ela recebe dois números e retorna o maior deles,
 - nós podemos acreditar que se a função for chamada com os números 2 e 5, ela retornará 5.
   - Nós não precisamos saber como a função funciona para utilizá-la.
-- Da mesma forma que não precisamos entender de mecânica de carros para frear um carro.
-  - Nós acionamos o pedal e sabemos que a velocidade do carro vai diminuir.
+- Da mesma forma que não precisamos entender de mecânica de carros para frear um carro 🚗.
+  - Nós acionamos o pedal e sabemos que a velocidade do carro vai diminuir 🙌.
 
 ##
 
@@ -166,9 +166,9 @@ def maior_numero(a, b):
     else:
         return b
 ```
-- Note que assinatura de uma função em python começa com a palavra-chave `def`.
+- Note que [assinatura]{.alert} **de uma função em Python** começa com a palavra-chave `def`.
   - É isso que diz para o Python que o que vem a seguir é uma função.
-- Depois vem o nome da função (`maior_numero`, nesse caso).
+- Depois vem o [nome]{.alert} **da função** (`maior_numero`, nesse caso).
   - Dica: se parecer difícil escolher um nome para a função, pode ser um sinal de que ela está fazendo muitas coisas.
 
 ##
@@ -185,9 +185,9 @@ def maior_numero(a, b):
         return b
 ```
 
-- Em seguida, temos os parâmetros da função, que são as entradas que ela recebe.
-- Por fim, temos o corpo da função, que é onde a lógica é implementada.
-  - Uma função pode retornar valores ou não. 
+- Em seguida, temos os [parâmetros]{.alert} **da função**, que são as entradas que ela recebe.
+- Por fim, temos o [corpo]{.alert} **da função**, que é onde a lógica é implementada.
+  - Uma função pode [retornar]{.alert} **valores ou não**. 
   - Quando ela retorna usamos a palavra-chave `return`.
 
 ##
@@ -215,14 +215,14 @@ Veja que, diferente de linguagens fortemente tipadas, em Python não precisamos 
 Dica para programadores avançados:
 
 - Apesar de Python não ser fortemente tipado
-  - é uma boa prática usar [anotações de tipo]{.alert} (_type hints_) para melhorar a legibilidade do código.
+  - é uma boa prática usar [anotações de tipo]{.alert} (**_type hints_**) para melhorar a legibilidade do código.
 - Isso ajuda muito na implementação de sistemas maiores.
 - Mas afinal, o que é isso?
 
 
 ## 
 
-Vamos gerar novamente a função `maior_numero`, mas agora com _type hints_.
+Vamos gerar novamente a função `maior_numero`, mas agora com _type hints_ (acrescentando uma linha na docstring).
 
 ::: {.halfincfontsize}
 ```python
@@ -246,10 +246,10 @@ def maior_numero(a: int, b: int) -> int:
 
 ## 
 
-As anotações de tipo servem como documentação e podem ser utilizadas por ferramentas de análise sintática.
+As anotações de tipo servem como **documentação** e podem ser utilizadas por **ferramentas de análise sintática**.
 
 - Ou seja, são úteis para dizer para outros programadores o que exatamente a função espera e o que retorna.
-- E, principalmente, para que as IDEs, como o VS Code, apontem possíveis erros antes mesmo de rodar o código.
+- E, principalmente, para que as **IDEs**, como o VS Code, **apontem possíveis erros** antes mesmo de rodar o código.
   - Isso melhora a qualidade do código e facilita a manutenção.
 
 . . .
@@ -258,13 +258,19 @@ Experimente, por exemplo, chamar a função no VS Code passando uma string.
 
 ## 
 
-Mas é importante deixar claro que os _type hints_ não alteram o comportamento do código.
+Mas é importante deixar claro que os **_type hints_ não alteram o comportamento do código**.
 
 - Como Python não é uma linguagem compilada, o código vai ser executado
   - e os _type hints_ são ignorados em tempo de execução.
 - Ou seja, se a função for chamada passando um parâmetro de tipo errado
   - isso não causará um erro imediatamente, mas pode levar a comportamentos inesperados.
   - Na verdade quando dá erro é até melhor, o problema maior é quando passa batido.
+
+## 
+
+Nos materiais da disciplina vou evitar anotações de tipo para manter os exemplos mais simples.
+
+- Mas para quem tem mais experiência com Python, recomendo muito que se acostumem a usar.
 
 
 # Criando funções com Copilot {background-color="#40666e"}
@@ -274,20 +280,20 @@ Mas é importante deixar claro que os _type hints_ não alteram o comportamento 
 Nós havíamos passado para o Copilot a tarefa de criar a função completa.
 
 - Mas outra forma de usar o Copilot é nós mesmos definirmos a assinatura da função
-- E pedirmos ao Copilot apenas para implementar o corpo da função.
-  - Isso geralmente leva a resultados melhores.
+  - e pedirmos ao Copilot apenas para implementar o corpo da função.
+- Isso geralmente leva a resultados melhores.
 
 ##
 
 Nós podemos fazer isso usando [docstrings]{.alert}.
 
-- Docstrings são strings de documentação que podem ser usadas para descrever o que uma função faz.
+- **Docstrings** são strings de documentação que podem ser usadas para descrever o que uma função faz.
 - Elas são definidas logo abaixo da assinatura da função e são delimitadas por três aspas duplas.
 
 . . .
 
-::: {.callout-tip"}
-É uma boa prática escrever docstrings para suas funções.
+::: {.callout-tip}
+É uma boa prática escrever **docstrings** para suas funções.
 :::
 
 
@@ -354,12 +360,12 @@ print(resultado)
 
 ##
 
-O ciclo de projeto de funções com Copilot.
+Segue uma sugestão de [ciclo de criação de funções com Copilot]{.alert}.
 
  1. Defina o comportamento desejado para a função
- 2. Escreva um prompt que descreva a função
+ 2. Escreva um prompt que descreva a função da forma mais clara possível
  3. Deixe o Copilot gerar o código
- 4. Avalie o código para conferir se ele parece razoável
+ 4. Leia o código para avaliar se ele parece razoável
  5. Teste o código para conferir se ele está correto
   - Se estiver correto, a função está pronta.
   - Se não estiver, volte ao passo 2.
@@ -368,11 +374,13 @@ O ciclo de projeto de funções com Copilot.
 
 ## Investimentos em Bolsa do Tião
 
+. . .
+
 Tião é um investidor em uma ação chamada PASIA.
 
 - Ele comprou 10 ações por R$ 15.
 - Agora cada ação vale R$ 17.
-- Ele quer saber quanto lucro teria se vendesse as ações agora.
+- Ele quer saber quanto lucro 💰 teria se vendesse as ações agora.
 
 ##
 
@@ -395,7 +403,7 @@ Não, essa função não é boa.
 
 ##
 
-Quando criamos uma função devemos criá-la da forma **mais geral possível**.
+Quando criamos uma função devemos criá-la da forma [mais geral possível]{.alert}.
 
 - Com isso, **a função pode ser reutilizada** em diferentes contextos.
 - Repare que, no caso do Tião, ele não quer saber o lucro apenas de uma compra específica
@@ -414,7 +422,7 @@ Como deveria ser a assinatura da função, de forma que ela seja mais útil?
 - Quais parâmetros deveria receber?
   - a quantidade de ações compradas  
   - o valor que as ações foram compradas  
-  - e o preço de venda das ações.
+  - e o preço de atual das ações.
 
 . . .
 
@@ -431,7 +439,7 @@ def calcular_lucro(qtd_acoes, valor_compra, valor_venda)
 :::{.nonincremental}
 Seguindo a estratégia que vimos antes, 
 
-- vamos criar uma docstring para explicar ao Copilot o que a ação precisa fazer.
+- vamos criar uma docstring para explicar ao Copilot o que a função precisa fazer.
 :::
 
 . . .
@@ -453,6 +461,8 @@ def calcular_lucro(qtd_acoes, valor_compra, valor_atual):
   qtd_acoes é a quantidade de ações compradas
   valor_compra é o valor de cada uma dessas ações
   valor_atual é o valor atual dessas ações
+
+  Retorne o lucro total obtido com a venda das ações.
   """
 ```
 :::
@@ -470,6 +480,8 @@ def calcular_lucro(qtd_acoes, valor_compra, valor_atual):
   qtd_acoes é a quantidade de ações compradas
   valor_compra é o valor de cada uma dessas ações
   valor_atual é o valor atual dessas ações
+
+  Retorne o lucro total obtido com a venda das ações.
   """
   return (valor_atual - valor_compra) * qtd_acoes
 ```
@@ -501,7 +513,7 @@ O próximo passo é [avaliar se o código parece razoável]{.alert}.
 
 . . .
 
-Em uma função simples, assim esse passo é fácil :)
+O exemplo é simples para avaliar 😊
 
 ## 
 
@@ -511,9 +523,8 @@ O passo seguinte é [testar o código]{.alert}.
 
 . . .
 
-Você pode selecionar o código da função no VS Code.
+Você pode selecionar o código da função no VS Code e apertar <kbd>Shift</kbd> + <kbd>Enter</kbd>
 
-- E apertar <kbd>Shift</kbd> + <kbd>Enter</kbd>
 - Ao fazer isso, o trecho de código selecionado será executado em um terminal Python.
 - E você poderá então fazer chamadas de teste a essa função no terminal Python.
 
@@ -605,6 +616,8 @@ Testes são uma combinação de **ciência 🧪** e **arte 🎨**
 - E vamos ter aula específica sobre isso mais adiante na disciplina.
 
 ## A senha do Tião
+
+. . .
 
 Tião está se inscrevendo em uma nova rede social chamada _ProgrammersKingdom_.
 
@@ -766,15 +779,23 @@ def eh_senha_forte(senha):
 
 . . .
 
-O código gerado pelo Copilot parece bem claro sobre o que está fazendo no geral.
+O código gerado pelo Copilot parece claro sobre o que está fazendo no geral.
 
 - Mas há construções de Python nos detalhes que podem ser melhor exploradas.
 
 ## 
 
-Vamos pedir ao Copilot para explicar o trecho `c.isupper() for c in senha`.
+Vamos pedir ao Copilot para explicar o trecho
 
-- Para isso, aperte <kbd>Ctrl</kbd> + <kbd>I</kbd> e digite `explique essa construção do python`.
+::: {.halfincfontsize}
+```python {code-line-numbers="false"}
+c.isupper() for c in senha
+```
+:::
+
+. . . 
+
+Para isso, aperte <kbd>Ctrl</kbd> + <kbd>I</kbd> e digite `explique essa construção do python`.
 
 ##
 
@@ -861,12 +882,12 @@ Veja que o caractere espaço não é alfanumérico, ou seja, não é uma letra o
 
 Podemos pedir ao Copilot para corrigir.
 
-- Ou fazer uma engenharia de prompt.
+- Ou fazer uma [engenharia de prompt]{.alert}.
   - O que no caso, significa mudar a maneira como documentamos a função.
 
 . . .
 
-Vamos experimentar substituir _caractere especial_ por _caractere de pontuação_ na docstring da função.
+Vamos experimentar substituir `caractere especial` por `caractere de pontuação` na docstring da função.
 
 ##
 
@@ -915,7 +936,7 @@ Esse foi o código gerado pelo Copilot.
 
 A primeira é que o código usa a função `string.punctuation` que parece que vai fazer o que precisamos.
 
-- Mas para ela funcionar, foi necessário importar um módulo do Python: `import string`.
+- Mas para ela funcionar, foi necessário importar um [módulo do Python]{.alert}: `import string`.
 
 . . .
 
@@ -984,7 +1005,7 @@ NameError: name 'string' is not defined. Did you forget to import 'string'?
 
 ::: {.smaller}
 
-Obs.: no teste feito pelos autores do livro, o import não foi gerado nem dentro da função.
+Obs.: no teste feito pelos autores do livro, o import não foi gerado.
 
 - Se isso acontecer com você, você pode inserir manualmente ou pedir o Copilot para corrigir.
 :::
@@ -1013,8 +1034,8 @@ Ele acrescentou uma verificação que obriga que a senha tenha pelo menos 8 cara
 Mesmo que consideremos que pode ter sido uma boa sugestão para esse caso.
 
 - É importante que estejamos atentos para esse fato:
-  - Assistentes de IA podem **inventar regras de negócio** que não foram solicitadas.
-- O que reforça a importância da avaliação e teste de código.
+  - assistentes de IA podem **inventar regras de negócio** que não foram solicitadas.
+- O que reforça a **importância da avaliação e teste de código**.
 
 . . .
 
@@ -1060,37 +1081,37 @@ Espero que esses exemplos tenham mostrado a importância de testes de código.
 - Programadores iniciantes muitas vezes não testam seu código.
 - Eles confiam que o código está correto pois, analisando o código, ele parece fazer sentido.
 
-. . . 
+##
 
 Uma diferença bem comum entre juninhos e progamadores experientes é:
 
-- Juninhos sempre assumem que seu código está correto.
-- Enquanto experientes sempre assumem que está errado;
+- juninhos sempre assumem que seu código está correto;
+- enquanto desenvolvedores experientes sempre assumem que está errado,
   - até que tenham testado e provado o contrário.
 
-##
+. . .
 
 Um dos motivos que iniciantes falham em testar código
 
 - é porque parece meio desanimador descobrir que seu código está errado.
 
-. . .
+##
 
 Mas, na verdade, quanto antes descobrirmos que uma função está errada melhor.
 
 - Por que dá muito mais trabalho quando já desenvolvemos muitas funções.
-- E temos que descobrir porque o sistema não funciona.
+- E temos que descobrir porque o sistema como um todo não funciona.
 
 . . .
 
-⚠️ Me chamou a atenção que, na Pesquisa de Perfil da Turma, poucos de vocês usam Copilot para gerar testes!
+Me chamou a atenção que, na Pesquisa de Perfil da Turma, poucos de vocês usam Copilot para gerar testes! ⚠️ 
 
 ##
 
 Para finalizar o trabalho com senhas fortes
 
 - vamos criar uma função que pede ao usuário uma senha
-- e, se ela não forte, pede a senha novamente até que seja uma senha forte.
+- e, se ela não for forte, continua pedindo uma senha até que seja digitada uma senha forte.
 - Que é mais ou menos o que os sites fazem quando criamos uma senha.
 
 . . .
@@ -1167,7 +1188,7 @@ Digite uma senha forte: Tião1!@*#@
 
 Além das funções serem essenciais na **decomposição de problemas**,
 
-- elas também trazem outros benefícios.
+- elas também trazem outros [benefícios]{.alert}.
 
 
 ## [Esforço cognitivo]{.alert}
@@ -1254,7 +1275,7 @@ Obs.: veja a explicação estatística do ChatGPT sobre as 14 linhas [aqui](http
 Note que 95% é um nível bem alto, mas, mesmo assim, é possível que erros aconteçam em poucas linhas.
 
 - Por isso, dividir um problema em funções com até 12 (ou, no máximo, 20 linhas)
-- diminui a probabilidade de que exista um erro no código.
+  - diminui a probabilidade de que exista um erro no código.
 
 . . .
 
@@ -1345,7 +1366,7 @@ A tarefa _"encontrar o maior número em uma lista"_ é claramente definida.
 Já a tarefa _"encontre a melhor palavra em uma lista"_ é mal definida.
 
 - Falta informação: o que significa palavra "melhor"?
-- É a palavra mais longa, a que tem menos vogais, a que tem `J`?
+- É a palavra mais longa, a que tem menos vogais, a que tem `J` de Júlio 😁?
 
 ## [Comportamento claramente definido]{.alert}
 
@@ -1389,10 +1410,13 @@ Se o Copilot gerar uma função para você com 50 linhas de código, é recomend
 
 . . .
 
-Criar uma função que retorna todos os números de uma lista maiores que 5
+Criar uma função que retorna todos os números de uma lista maiores que cinco
 
 - pode ser útil para uma necessidade específica.
-- Mas a função seria muito mais útil se o limite fosse um parâmetro.
+
+. . .
+
+Mas a função seria muito mais útil se o limite fosse um parâmetro.
 
 . . .
 
@@ -1424,7 +1448,7 @@ Se você está criando uma função que às vezes retorna uma lista, às vezes u
 ## 
 
 ::: {.nonincremental}
-Em resumo, esse então é o **guia para criarmos boas funções**.
+Em resumo, esse então é o [guia para criarmos boas funções]{.alert}:
 
 1. Uma tarefa clara a realizar
 2. Comportamento claramente definido
@@ -1477,7 +1501,7 @@ _Dado um conjunto de dados estatísticos de partidas de futebol, retornar os nom
 - Claramente a distância percorrida poderia ser um parâmetro.
 - Mas, se pensarmos bem, inclusive a posição dos jogadores poderia ser um parâmetro.
 - Melhor ainda seria se a própria estatística fosse um parâmetro.
-  - Poderíamos querer consultar o número de gols feitos ou de faltas recebidas, por exemplo.
+  - Poderíamos querer consultar, por exemplo, o nome dos goleiro que fizeram mais que 10 gols.
 
 ## Funções folha **ruins**
 
@@ -1487,7 +1511,7 @@ _Determinar o melhor filme de todos os tempos_
   - O que define o que é um bom filme?
   - Quais filmes deveriam ser considerados?
 - Seria mais claro se a função recebesse uma lista de filmes com suas respectivas avaliações e um número limite de avaliações.
-  - E retornasse os filmes melhor avaliados que tivesse, pelo menos, o número de avaliações passado como limite.
+  - E retornasse os filmes melhor avaliados que tivessem, no mínimo, o número de avaliações passado como limite.
 
 ## Funções folha **ruins**
 
@@ -1507,7 +1531,7 @@ Para exemplificar isso, suponha que vamos criar um programa para jogar `Scrabble
 
 - É um jogo de tabuleiro baseado em palavras-cruzadas.
 - Dois jogadores devem ir completando palavras em um tabuleiro com peças de letras.
-   - E, quando consegue formar uma palavra, o jogador ganha pontos dependendo das letras da palavra.
+   - E, cada vez que um jogador consegue incluir uma palavra, ele ganha pontos de acordo com as letras da palavra.
 
 ##
 
@@ -1593,6 +1617,10 @@ Uma segunda sugestão feita pelo código para o corpo da função foi:
     return total
 ```
 
+. . .
+
+Repare que ela é bem diferente da anterior.
+
 ##
 
 Essa segunda sugestão usa um [dicionário]{.alert} para guardar o valor de cada letra.
@@ -1601,7 +1629,7 @@ Essa segunda sugestão usa um [dicionário]{.alert} para guardar o valor de cada
 
 . . .
 
-No código o dicionário `pontos` usa as letras como chaves e os pontos correspondentes como valores.
+No código, o dicionário `pontos` usa as letras como chaves e os pontos correspondentes como valores.
 
 - Assim, ao percorrer a palavra uma letra de cada vez.
   - podemos consultar o dicionário para buscar quanto vale a letra.
@@ -1750,7 +1778,7 @@ Esse erro não ocorreria na primeira opção.
 
 A dica portanto é:
 
-- Para qualquer que seja a sugestão escolhida é: **sempre testar!**
+- Para qualquer que seja a sugestão escolhida: é necessário **sempre testar**!
 
 . . .
 
