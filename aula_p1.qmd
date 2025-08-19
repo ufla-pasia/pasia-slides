@@ -604,7 +604,7 @@ Para fazer atividades da disciplina você precisa instalar
 - VS Code
 - Python
 - Extensão de Python para VS Code (da Microsoft)
-  - Você pode instalar digitando <kbd>Ctrl+P</kbd> no VS Code e digitando `ext install ms-python.python`.
+  - Você pode instalar digitando <kbd>Ctrl</kbd> + <kbd>P</kbd> no VS Code e digitando `ext install ms-python.python`.
 
 # {.smaller}
 
