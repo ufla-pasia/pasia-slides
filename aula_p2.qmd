@@ -1,11 +1,11 @@
 ---
-title: Projetando Funções e Lendo Código Python
+title: Projetando Funções
 subtitle: PASIA - Aula P.2
 ---
 
 ##  
 
-O conteúdo dessa aula é baseado em partes dos capítulos 2, 3 e 4 do livro abaixo.
+O conteúdo dessa aula é baseado em partes dos capítulos 2 e 3 do livro abaixo.
 
 ![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
 

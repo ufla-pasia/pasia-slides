@@ -417,7 +417,7 @@
     "href": "aula_p2.html#section-10",
     "title": "Projetando Funções e Lendo Código Python",
     "section": "",
-    "text": "Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho\n\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\npor\n\n    return sum(pontos.get(letra, 0) for letra in palavra)\n\n\n\nEsse tipo de construção usando list comprehension é muito comum em Python."
+    "text": "Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho\n\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\npor\n\n    return sum(pontos.get(letra, 0) for letra in palavra)\n\n\nEsse tipo de construção usando list comprehension é muito comum em Python."
   },
   {
     "objectID": "aula_p2.html#section-11",
@@ -1460,7 +1460,7 @@
     "href": "aula_p2.html#section-34",
     "title": "Projetando Funções e Lendo Código Python",
     "section": "",
-    "text": "Repare que, se não usássemos funções, alguém que não sabe programar conseguiria fazer o que fizemos.\n\nEssa pessoa poderia ter mais dificuldade nas situações que geram erro.\nMas ainda assim conseguiria, ao final, obter o resultado que precisa.\nImagine como seria difícil para ela fazer isso sem uma ferramenta como o Copilot?"
+    "text": "Repare que, se não estivéssemos preocupados em separar o código em funções, quem nunca programou também conseguiria fazer o que fizemos usando o Copilot.\n\nEssa pessoa poderia ter mais dificuldade nas situações que geram erro.\nMas ainda assim conseguiria, ao final, obter o resultado que precisa.\nImagine como seria difícil para ela fazer isso sem uma ferramenta como o Copilot?"
   },
   {
     "objectID": "aula_p2.html#section-35",
