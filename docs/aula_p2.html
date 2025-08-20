@@ -413,7 +413,7 @@
     </div>
 </div>
 
-  <p class="date">19/08/2025</p>
+  <p class="date">20/08/2025</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -540,16 +540,31 @@
 <p>Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.</p>
 <div class="fragment">
 <p>Para exemplificar isso, suponha que vamos criar um programa para jogar <code>Scrabble</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/jogo_scrabble.png" class="quarto-figure quarto-figure-center" alt="Jogo de tabuleiro Scrabble em português."></p>
+</figure>
+</div>
+</div>
+<div class="fragment">
 <ul>
 <li class="fragment">É um jogo de tabuleiro baseado em palavras-cruzadas.</li>
-<li class="fragment">Dois jogadores devem ir completando palavras em um tabuleiro com peças de letras.
-<ul>
-<li class="fragment">E, cada vez que um jogador consegue incluir uma palavra, ele ganha pontos de acordo com as letras da palavra.</li>
-</ul></li>
 </ul>
 </div>
 </section>
 <section id="section-3" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/jogo_scrabble.png" class="quarto-figure quarto-figure-center" alt="Jogo de tabuleiro Scrabble em português."></p>
+</figure>
+</div>
+<p>Dois jogadores devem ir completando palavras em um tabuleiro com peças de letras.</p>
+<ul>
+<li class="fragment">E, cada vez que um jogador consegue incluir uma palavra, ele ganha pontos de acordo com as letras da palavra.</li>
+</ul>
+</section>
+<section id="section-4" class="slide level2">
 <h2></h2>
 <p>Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.</p>
 <ul>
@@ -572,7 +587,7 @@
 <span id="cb1-14"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <p>Uma possível resposta do Copilot para o corpo da função é:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>    pontos <span class="op">=</span> <span class="dv">0</span></span>
@@ -593,14 +608,14 @@
 <span id="cb2-16"><a></a>            pontos <span class="op">+=</span> <span class="dv">8</span></span>
 <span id="cb2-17"><a></a>    <span class="cf">return</span> pontos</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <p>O código parece razoável, e nosso próximo passo seria testar a função.</p>
 <ul>
 <li class="fragment">Mas o ponto que quero mostrar aqui é como escolher as sugestões do Copilot.</li>
 </ul>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <p>Quando o Copilot sugere o código, ele aparece esmaecido e em itálico.</p>
 <ul>
@@ -612,7 +627,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <p>Uma segunda sugestão feita pelo código para o corpo da função foi:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>    pontos <span class="op">=</span> {</span>
@@ -632,7 +647,7 @@
 <p>Repare que ela é bem diferente da anterior.</p>
 </div>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <p>Essa segunda sugestão usa um <span class="alert">dicionário</span> para guardar o valor de cada letra.</p>
 <ul>
@@ -648,7 +663,7 @@
 </ul>
 </div>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 <div>
 <p>Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho</p>
@@ -667,7 +682,7 @@
 <li class="fragment">Esse tipo de construção usando <span class="alert">list comprehension</span> é muito comum em Python.</li>
 </ul>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -684,7 +699,7 @@
 </div>
 </div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 <p>Para fechar o exemplo, suponha que o Tião está jogando Scrabble</p>
 <ul>
@@ -698,7 +713,7 @@
 </div>
 </div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div class="fontsize125">
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> melhor_palavra(palavra1, palavra2, palavra3):</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -712,7 +727,7 @@
 <p>Vamos então melhorar a definição da função.</p>
 </div>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="fontsize125">
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> melhor_palavra(palavras):</span>
@@ -736,7 +751,7 @@
 <span id="cb9-13"><a></a>    <span class="cf">return</span> melhor</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <p>Escolhendo entre as sugestões do Copilot, essa foi outra opção:</p>
 <div class="fontsize125">
@@ -752,7 +767,7 @@
 <p>Qual das duas opções você prefere?</p>
 </div>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <p>Talvez seja prematuro escolher sem fazer testes.</p>
 <div class="fragment">
@@ -769,7 +784,7 @@
 <p>Esse erro não ocorreria na primeira opção.</p>
 </div>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <p>A dica portanto é:</p>
 <ul>
@@ -792,7 +807,7 @@
 <h1>Demonstrando o uso do Copilot para Processamento de Dados</h1>
 
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <p>Vamos agora fazer algo mais interessante.</p>
 <ul>
@@ -806,7 +821,7 @@
 </ul>
 </div>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-19" class="slide level2">
 <h2></h2>
 <p>Vamos trabalhar com dados sobre futebol.</p>
 <ul>
@@ -815,7 +830,7 @@
 <li class="fragment">Veja na página quais são os dados disponíveis e uma amostra dos dados.</li>
 </ul>
 </section>
-<section id="section-19" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 <p>Vamos baixar os dados para usar em nosso programa. Para isso:</p>
 <ul>
@@ -827,7 +842,7 @@
 <li class="fragment">Crie uma pasta para o projeto da aula de hoje e copie para ela o arquivo <code>top5-players.csv</code>.</li>
 </ul>
 </section>
-<section id="section-20" class="slide level2">
+<section id="section-21" class="slide level2">
 <h2></h2>
 <p>Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.</p>
 <ul>
@@ -845,7 +860,7 @@
 </div>
 </div>
 </section>
-<section id="section-21" class="slide level2">
+<section id="section-22" class="slide level2">
 <h2></h2>
 <p>Teste seu programa usando <kbd>Shift</kbd> + <kbd>Enter</kbd> para excecutá-lo em um terminal Python.</p>
 <ul>
@@ -853,7 +868,7 @@
 <li class="fragment">Se tudo der certo, os dados do arquivo vão aparecer na tela.</li>
 </ul>
 </section>
-<section id="section-22" class="slide level2">
+<section id="section-23" class="slide level2">
 <h2></h2>
 <p>Nessa parte cada aluno pode estar vendo um código diferente:</p>
 <ul>
@@ -861,7 +876,7 @@
 <li class="fragment">E, como já sabemos, os assistentes de IA são não determinísticos.</li>
 </ul>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-24" class="slide level2">
 <h2></h2>
 <div>
 <p>É possível que o Copilot tenha sugerido uma biblioteca mas não a tenha importado.</p>
@@ -877,7 +892,7 @@
 </ul>
 </div>
 </section>
-<section id="section-24" class="slide level2">
+<section id="section-25" class="slide level2">
 <h2></h2>
 <p>Vamos agora trabalhar com os dados que foram carregados.</p>
 <ul>
@@ -891,7 +906,7 @@
 </ul>
 </div>
 </section>
-<section id="section-25" class="slide level2">
+<section id="section-26" class="slide level2">
 <h2></h2>
 <p>Gere então o código da primeira função com o prompt abaixo.</p>
 <div class="fontsize125">
@@ -914,7 +929,7 @@
 </ul>
 </div>
 </section>
-<section id="section-26" class="slide level2">
+<section id="section-27" class="slide level2">
 <h2></h2>
 <p>Nós já vimos os resultados no terminal mas em um formato que não é muito adequado para o usuário final.</p>
 <ul>
@@ -931,7 +946,7 @@
 </div>
 </div>
 </section>
-<section id="section-27" class="slide level2">
+<section id="section-28" class="slide level2">
 <h2></h2>
 <p>Em seguida, vamos pedir ao Copilot para chamar as funções no próprio script Python que estamos criando.</p>
 <div class="fragment">
@@ -948,7 +963,7 @@
 </ul>
 </div>
 </section>
-<section id="section-28" class="slide level2">
+<section id="section-29" class="slide level2">
 <h2></h2>
 <p>Repare que fizemos o nosso programa com apenas três funções.</p>
 <ul>
@@ -960,7 +975,7 @@
 <p>Esse ciclo de entrada, processamento e saída é extremamente comum em programação.</p>
 </div>
 </section>
-<section id="section-29" class="slide level2">
+<section id="section-30" class="slide level2">
 <h2></h2>
 <p>Vamos agora usar o Copilot para alterar o código que havíamos gerado.</p>
 <ul>
@@ -976,7 +991,7 @@
 </ul>
 </div>
 </section>
-<section id="section-30" class="slide level2">
+<section id="section-31" class="slide level2">
 <h2></h2>
 <p>Seguindo os critérios de criação de boas funções provavelmente você:</p>
 <ul>
@@ -992,7 +1007,7 @@
 <p>Se não foi isso que fez, bora fazer :)</p>
 </div>
 </section>
-<section id="section-31" class="slide level2">
+<section id="section-32" class="slide level2">
 <h2></h2>
 <p>Você deve ter notado que os nomes das ligas começam com um identificador do país</p>
 <ul>
@@ -1005,7 +1020,7 @@
 </ul>
 </div>
 </section>
-<section id="section-32" class="slide level2">
+<section id="section-33" class="slide level2">
 <h2></h2>
 <div class="fontsize125">
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>O nome da liga tem primeiro duas ou três letras para </span>
@@ -1017,7 +1032,7 @@
 </div>
 <p>Dica: se o copilot não gerar o código selecione o comentário, clique na lâmpada, acesse <code>Modify</code> e digite <code>complete o código</code>.</p>
 </section>
-<section id="section-33" class="slide level2">
+<section id="section-34" class="slide level2">
 <h2></h2>
 <p>Repare que, se não usássemos funções, alguém que não sabe programar conseguiria fazer o que fizemos.</p>
 <ul>
@@ -1031,7 +1046,7 @@
 <h1>Copilot via chat</h1>
 
 </section>
-<section id="section-34" class="slide level2">
+<section id="section-35" class="slide level2">
 <h2></h2>
 <p>Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos dados processados.</p>
 <div class="fragment">
@@ -1043,7 +1058,7 @@
 </ul>
 </div>
 </section>
-<section id="section-35" class="slide level2">
+<section id="section-36" class="slide level2">
 <h2></h2>
 <div class="fontsize125">
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a></a>A função selecionada exibe informações no terminal. </span>
@@ -1059,7 +1074,7 @@
 <h1>Mais experimentos com o Copilot</h1>
 
 </section>
-<section id="section-36" class="slide level2">
+<section id="section-37" class="slide level2">
 <h2></h2>
 <p>Os exercícios a seguir podem ser feitos usando o Copilot</p>
 <ul>
@@ -1072,7 +1087,7 @@
 <li class="fragment">Salve o gráfico em um arquivo PNG.</li>
 </ol>
 </section>
-<section id="section-37" class="slide level2">
+<section id="section-38" class="slide level2">
 <h2></h2>
 <p>É importante termos em mente que não estamos validando os resultados gerados</p>
 <ul>
@@ -1086,12 +1101,12 @@
 </ul>
 </div>
 </section>
-<section id="section-38" class="slide level2">
+<section id="section-39" class="slide level2">
 <h2></h2>
 <p>Obtendo mais informações do <em>dataset</em>:</p>
 <ul>
 <li class="fragment">Crie funções com ajuda do Copilot para cada situação abaixo.</li>
-<li class="fragment">As informações abaixo podem ser exibidas apenas no terminal.</li>
+<li class="fragment">Obs.: as informações podem ser exibidas apenas no terminal.</li>
 </ul>
 <ol start="4" type="1">
 <li class="fragment">Exiba os nomes e quantidade de gols dos cinco jogadores que mais fizeram gols em cada liga, ordenados pela quantidade de gols.</li>

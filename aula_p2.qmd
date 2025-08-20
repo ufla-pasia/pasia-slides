@@ -93,9 +93,19 @@ Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíve
 
 Para exemplificar isso, suponha que vamos criar um programa para jogar `Scrabble`.
 
+![](imagens/jogo_scrabble.png){fig-align="center" fig-alt="Jogo de tabuleiro Scrabble em português."}
+
+. . .
+
 - É um jogo de tabuleiro baseado em palavras-cruzadas.
-- Dois jogadores devem ir completando palavras em um tabuleiro com peças de letras.
-   - E, cada vez que um jogador consegue incluir uma palavra, ele ganha pontos de acordo com as letras da palavra.
+
+##
+
+![](imagens/jogo_scrabble.png){fig-align="center" fig-alt="Jogo de tabuleiro Scrabble em português."}
+
+Dois jogadores devem ir completando palavras em um tabuleiro com peças de letras.
+
+- E, cada vez que um jogador consegue incluir uma palavra, ele ganha pontos de acordo com as letras da palavra.
 
 ##
 
@@ -587,8 +597,8 @@ Dica: se o copilot não gerar o código selecione o comentário, clique na lâmp
 
 ## 
 
-Repare que, se não usássemos funções, alguém que não sabe
-programar conseguiria fazer o que fizemos.
+Repare que, se não estivéssemos preocupados em separar o código em funções,
+quem nunca programou também conseguiria fazer o que fizemos usando o Copilot.
 
 - Essa pessoa poderia ter mais dificuldade nas situações que geram erro.
 - Mas ainda assim conseguiria, ao final, obter o resultado que precisa.
