@@ -1,0 +1,287 @@
+---
+title: Lendo Código Python
+subtitle: PASIA - Aula T.3
+---
+
+##  
+
+O conteúdo dessa aula é baseado nos **capítulo 4 e 5** do livro abaixo.
+
+![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
+
+## Ler Código
+
+[Ler código]{.alert} significa [entender]{.alert} o que o código faz ao examiná-lo.
+
+. . . 
+
+Existem **dois níveis de entendimento**:
+
+- _Tracing description_: entender o que **cada linha de código faz**.
+- Entender o **objetivo geral** de um código (função, classe, etc.).
+
+## Ler Código
+
+O **1º nível** (_tracing description_) depende do conhecimento de estruturas e linguagem de programação.
+
+. . .
+
+Já o **2º nível** (_objetivo geral_) é geralmente o que esperamos encontrar na docstring de uma função.
+
+- E depende do entendimento de 1º nível.
+
+## Por que é importante a habilidade de ler código?
+
+**Ajuda a determinar se o código está correto**:
+
+- Nós usaremos testes para validar código.
+- Mas podemos ganhar tempo se conseguirmos identificar erros mais óbvios no código, antes de gastar tempo escrevendo código de teste.
+
+. . .
+
+**Para ter mais informações para os testes**:
+
+- Entender o código nos ajuda a identificar melhor os casos de testes que precisamos criar para validar a implementação.
+
+## Por que é importante a habilidade de ler código?
+
+**Para ajudar a escrever código**:
+
+- Por que escrever código se vamos usar o Copilot?
+- Às vezes é mais rápido alterarmos nós mesmos o código, do que ficar mudando prompt até obter o código correto.
+- E, por fim, há evidência científica de que conseguir explicar código linha a linha é pré-requisito para conseguir escrever código.
+
+##
+
+A ideia aqui não é entender cada detalhe de cada linha do código.
+
+- E sim aprender a como usar o Copilot para chegar num meio termo entre:
+  - _“Esse código faz mágica”_ 
+  - e _“Eu sei exatamente como cada linha de código funciona”_.
+
+##
+
+Nas aulas anteriores escremos prompt para que o Copilot explicasse um trecho de código pra gente.
+ 
+- Mas o Copilot também tem **comandos específicos** além de texto livre.
+
+. . .
+
+Podemos usar o comando `/explain` por exemplo.
+
+- Selecionamos a função (ou trecho de código) que queremos entender e acessamos com o botão direito do mouse **a opção Copilot -> Explain** 
+  - ou **digitamos `/explain` no chat** (seja com <kbd>Ctrl</kbd> + <kbd>I</kbd> ou no chat).
+
+##
+
+::: {.callout-tip}
+Podemos complementar o comando `/explain` com mais detalhes.
+
+Isso é especialmente útil para fazermos com que o Copilot entenda que queremos as explicações em português.
+:::
+
+
+##
+
+Vamos usar como exemplo a função `melhor_palavra`.
+
+```python
+def melhor_palavra(palavras):
+    """
+    palavras é uma lista de palavras.
+
+    Retorna a palavra com a maior pontuação.
+    """
+    melhor = palavras[0]
+    max_pontos = numero_de_pontos(melhor)
+
+    for palavra in palavras[1:]:
+        pontos = numero_de_pontos(palavra)
+        if pontos > max_pontos:
+            melhor = palavra
+            max_pontos = pontos
+
+    return melhor
+```
+
+##
+
+Primeira parte da explicação:
+
+<div style="overflow:auto; text-align:center;">
+  <img src="imagens/copilot_explicacao_melhor_palavra_part1.png" alt="Primeira parte da explicação do Copilot sobre a função melhor_palavra." style="width:auto; max-width:100%;">
+</div>
+
+##
+
+<div style="overflow:auto; text-align:center;">
+  <img src="imagens/copilot_explicacao_melhor_palavra_part2.png" alt="Segunda parte da explicação do Copilot sobre a função melhor_palavra." style="width:auto; max-width:100%;">
+</div>
+
+##
+
+Veja que, na explicação, o Copilot já destacou pontos de dúvidas e sugeriu melhoria.
+
+- Nem sempre ele faz isso. Demos sorte nessa vez. 😃
+
+. . .
+
+Se uma função tiver um código com o qual não temos familiaridade,
+podemos pedir uma **explicação linha a linha**.
+
+- Usando `\explain linha a linha`, por exemplo.
+
+##
+
+<div style="overflow-y:auto; max-height:60vh; width:100%; text-align:center;">
+  <img src="imagens/copilot_explicacao_melhor_palavra_linha_a_linha.png" alt="Explicação do Copilot linha a linha sobre a função melhor_palavra." style="width:100%; height:auto;">
+</div>
+
+##
+
+Como professor é incrível que agora os alunos tenham com quem **tirar dúvidas** quantas vezes for necessário.
+
+. . .
+
+Apenas lembre-se que a explicação do Copilot pode estar errada. 
+
+- Aí você pode pensar: então pra que ela serve?
+
+. . .
+
+Realmente pode ser frustrante.
+
+- Mas na maioria dos códigos, especialmente mais simples, as explicações são corretas.
+- E, sem o Copilot, se você tivesse dúvidas e procurasse um amigo ou no Google, poderia obter respostas erradas também.
+    
+##
+
+
+::: {.callout-tip}
+Uma maneira de diminuir a possibilidade de erro é pedir a explicação mais de uma vez.
+
+É bem raro que o Copilot explique errado mais de uma vez.
+:::
+
+
+##
+
+Vamos usar outro exemplo de explicação do Copilot.
+
+- Suponha que você precise entender uma função já existente em um projeto.
+
+. . .
+
+::: {.halfincfontsize}
+```python
+def clean_number(phone_number):
+    phone_number = phone_number.replace("(", "")
+    phone_number = phone_number.replace(")", "")
+    phone_number = phone_number.replace("-", "")
+    phone_number = phone_number.replace(" ", "")
+    return phone_number
+```
+:::
+
+. . .
+
+Vamos ver a explicação do Copilot em português.
+
+##
+
+<div style="overflow:auto; text-align:center;">
+  <img src="imagens/copilot_explicacao_clean_number.png" alt="Explicação do Copilot sobre a função clean_number." style="width:auto; max-width:100%;">
+</div>
+
+##
+
+Veja que neste caso o Copilot fez uma explicação e sugeriu uma melhoria.
+
+- Antes de avaliar a sugestão de melhoria é importante que você avalie
+  se realmente entendeu a explicação dada para o código atual.
+
+. . .
+
+Por exemplo, se não tiver ficado claro como o método `replace` funciona, você pode pedir uma explicação mais detalhada sobre isso.
+
+##
+
+<div style="overflow:auto; text-align:center;">
+  <img src="imagens/copilot_explicacao_clean_number_replace.png" alt="Explicação do Copilot sobre o uso da função replace na implementação da função clean_number." style="width:auto; max-width:100%;">
+</div>
+
+##
+
+Você pode continuar pedindo mais informações do Copilot até julgar que tem um nível de entendimento adequado para a tarefa que precisa.
+
+- Lembre-se do que falamos no início da aula
+- Não é necessário entender cada detalhe do código.
+  - Mas temos que sair do estágio _“Esse código faz mágica”_.
+  - Para conseguirmos depois validar o nosso código.
+  - E assim resolver a tarefa que precisamos.
+
+##
+
+Voltando na explicação inicial dada pelo Copilot
+
+- você alteraria seu código para usar a solução _"mais limpa e eficiente"_, segundo ele, que usa o módulo `re`?
+
+. . .
+
+Que **critérios** adotar para decidir aceitar ou não a sugestão?
+
+##
+
+::: {.callout-tip}
+Minha sugestão é: use a opção que você entenda melhor.
+
+Você pode já ficar satisfeito com o código original, ou pode pedir ao Copilot explicações sobre a sugestão de melhoria.
+E depois de ter entendido as duas opções, escolher a que te parece melhor.
+:::
+
+::: {.nonincremental}
+::: {.callout-tip}
+É melhor ter mais rapidamente uma versão do sistema que funciona corretamente e depois otimizá-la, se necessário,
+do que tentar já otimizar código antes mesmo de saber se ele vai atender o que precisa.
+
+- Pode ser, por exemplo, que uma função que você está otimizando agora acabe nem sendo usada mais adiante.
+:::
+:::
+
+##
+
+O livro que estamos usando como referência, lista as **10 principais estruturas de programação do Python** que precisamos entender
+
+- para conseguir acompanhar tudo que é apresentado no livro.
+
+. . .
+
+Como você já fez disciplinas de programação, você deve ter um bom entendimento do que são essas estruturas em si.
+
+- Mas é importante que consiga entendê-las na sintaxe do Python.
+- Se você já programa em Python é bom revisar seu conhecimento.
+- Se está começando na linguagem agora é uma boa hora de conhecê-las.
+
+## 10 principais estruturas de programação do Python
+
+1. Funções
+2. Variáveis
+3. Condicionais
+4. Strings
+5. Listas
+6. Loops
+7. Indentação
+8. Dicionários
+9. Arquivos
+10. Módulos
+
+
+
+
+Dica para quem não conhece Python
+
+- Use o Copilot, CharGPT ou Gemini para uma sessão de conversa sobre isso.
+- Indique seu nível de conhecimento prévio de programação.
+- Indique uma linguagem que você tenha mais familiaridade.
+- Exemplo
+    - Considere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python. Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez.

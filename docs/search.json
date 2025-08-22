@@ -1496,5 +1496,159 @@
     "title": "Projetando Funções e Lendo Código Python",
     "section": "",
     "text": "Obtendo mais informações do dataset:\n\nCrie funções com ajuda do Copilot para cada situação abaixo.\nObs.: as informações podem ser exibidas apenas no terminal.\n\n\nExiba os nomes e quantidade de gols dos cinco jogadores que mais fizeram gols em cada liga, ordenados pela quantidade de gols.\nEncontre o jogador mais jovem que marcou gol em cada liga e exiba seu nome, idade, equipe e número de gols.\nEncontre a equipe que menos tomou cartões (amarelos e vermelhos em cada liga). Exiba o nome da equipe e a quantidade de cartões recebidos de cada tipo."
+  },
+  {
+    "objectID": "aula_t3.html#section",
+    "href": "aula_t3.html#section",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "O conteúdo dessa aula é baseado nos capítulo 4 e 5 do livro abaixo."
+  },
+  {
+    "objectID": "aula_t3.html#ler-código",
+    "href": "aula_t3.html#ler-código",
+    "title": "Lendo Código Python",
+    "section": "Ler Código",
+    "text": "Ler Código\nLer código significa entender o que o código faz ao examiná-lo.\n\nExistem dois níveis de entendimento:\n\nTracing description: entender o que cada linha de código faz.\nEntender o objetivo geral de um código (função, classe, etc.)."
+  },
+  {
+    "objectID": "aula_t3.html#por-que-é-importante-a-habilidade-de-ler-código",
+    "href": "aula_t3.html#por-que-é-importante-a-habilidade-de-ler-código",
+    "title": "Lendo Código Python",
+    "section": "Por que é importante a habilidade de ler código?",
+    "text": "Por que é importante a habilidade de ler código?\nAjuda a determinar se o código está correto:\n\nNós usaremos testes para validar código.\nMas podemos ganhar tempo se conseguirmos identificar erros mais óbvios no código, antes de gastar tempo escrevendo código de teste.\n\n\nPara ter mais informações para os testes:\n\nEntender o código nos ajuda a identificar melhor os casos de testes que precisamos criar para validar a implementação."
+  },
+  {
+    "objectID": "aula_t3.html#section-1",
+    "href": "aula_t3.html#section-1",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "A ideia aqui não é entender cada detalhe de cada linha do código.\n\nE sim aprender a como usar o Copilot para chegar num meio termo entre:\n\n“Esse código faz mágica”\ne “Eu sei exatamente como cada linha de código funciona”."
+  },
+  {
+    "objectID": "aula_t3.html#section-2",
+    "href": "aula_t3.html#section-2",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Nas aulas anteriores escremos prompt para que o Copilot explicasse um trecho de código pra gente.\n\nMas o Copilot também tem comandos específicos além de texto livre.\n\n\nPodemos usar o comando /explain por exemplo.\n\nSelecionamos a função (ou trecho de código) que queremos entender e acessamos com o botão direito do mouse a opção Copilot -&gt; Explain\n\nou digitamos /explain no chat (seja com Ctrl + I ou no chat)."
+  },
+  {
+    "objectID": "aula_t3.html#section-3",
+    "href": "aula_t3.html#section-3",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Dica\n\n\nPodemos complementar o comando /explain com mais detalhes.\nIsso é especialmente útil para fazermos com que o Copilot entenda que queremos as explicações em português."
+  },
+  {
+    "objectID": "aula_t3.html#section-4",
+    "href": "aula_t3.html#section-4",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos usar como exemplo a função melhor_palavra.\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    melhor = palavras[0]\n    max_pontos = numero_de_pontos(melhor)\n\n    for palavra in palavras[1:]:\n        pontos = numero_de_pontos(palavra)\n        if pontos &gt; max_pontos:\n            melhor = palavra\n            max_pontos = pontos\n\n    return melhor"
+  },
+  {
+    "objectID": "aula_t3.html#section-6",
+    "href": "aula_t3.html#section-6",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Veja que na explicação o Copilot já destacou pontos de dúvidas e sugeriu melhoria.\n\nNem sempre ele faz isso. Demos sorte nessa vez. 😃\n\n\nSe uma função tiver um código com o qual não temos familiaridade, podemos pedir uma explicação linha a linha.\n\nUsando \\explain linha a linha."
+  },
+  {
+    "objectID": "aula_t3.html#section-8",
+    "href": "aula_t3.html#section-8",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "&lt;img src=\"imagens/copilot_explicacao_melhor_palavra_linha_a_linha.png\" alt=\"Explicação do Copilot linha a linha sobre a função melhor_palavra.\" style=\"width:auto; max-width:100%;\"&gt;"
+  },
+  {
+    "objectID": "aula_t3.html#ler-código-1",
+    "href": "aula_t3.html#ler-código-1",
+    "title": "Lendo Código Python",
+    "section": "Ler Código",
+    "text": "Ler Código\nO 1º nível (tracing description) depende do conhecimento de estruturas e linguagem de programação.\n\nJá o 2º nível (objetivo geral) é geralmente o que esperamos encontrar na docstring de uma função.\n\nE depende do entendimento de 1º nível."
+  },
+  {
+    "objectID": "aula_t3.html#por-que-é-importante-a-habilidade-de-ler-código-1",
+    "href": "aula_t3.html#por-que-é-importante-a-habilidade-de-ler-código-1",
+    "title": "Lendo Código Python",
+    "section": "Por que é importante a habilidade de ler código?",
+    "text": "Por que é importante a habilidade de ler código?\nPara ajudar a escrever código:\n\nPor que escrever código se vamos usar o Copilot?\nÀs vezes é mais rápido alterarmos nós mesmos o código, do que ficar mudando prompt até obter o código correto.\nE, por fim, há evidência científica de que conseguir explicar código linha a linha é pré-requisito para conseguir escrever código."
+  },
+  {
+    "objectID": "aula_t3.html#section-5",
+    "href": "aula_t3.html#section-5",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Primeira parte da explicação:"
+  },
+  {
+    "objectID": "aula_t3.html#section-7",
+    "href": "aula_t3.html#section-7",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Veja que, na explicação, o Copilot já destacou pontos de dúvidas e sugeriu melhoria.\n\nNem sempre ele faz isso. Demos sorte nessa vez. 😃\n\n\nSe uma função tiver um código com o qual não temos familiaridade, podemos pedir uma explicação linha a linha.\n\nUsando \\explain linha a linha, por exemplo."
+  },
+  {
+    "objectID": "aula_t3.html#section-9",
+    "href": "aula_t3.html#section-9",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Como professor é incrível que agora os alunos tenham com quem tirar dúvidas quantas vezes for necessário.\n\nApenas lembre-se que a explicação do Copilot pode estar errada.\n\nAí você pode pensar: então pra que ela serve?\n\n\n\nRealmente pode ser frustrante.\n\nMas na maioria dos códigos, especialmente mais simples, as explicações são corretas.\nE, sem o Copilot, se você tivesse dúvidas e procurasse um amigo ou no Google, poderia obter respostas erradas também."
+  },
+  {
+    "objectID": "aula_t3.html#section-10",
+    "href": "aula_t3.html#section-10",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Dica\n\n\nUma maneira de diminuir a possibilidade de erro é pedir a explicação mais de uma vez.\nÉ bem raro que o Copilot explique errado mais de uma vez."
+  },
+  {
+    "objectID": "aula_t3.html#section-11",
+    "href": "aula_t3.html#section-11",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos usar outro exemplo de explicação do Copilot.\n\nSuponha que você precise entender uma função já existente em um projeto.\n\n\n\ndef clean_number(phone_number):\n    phone_number = phone_number.replace(\"(\", \"\")\n    phone_number = phone_number.replace(\")\", \"\")\n    phone_number = phone_number.replace(\"-\", \"\")\n    phone_number = phone_number.replace(\" \", \"\")\n    return phone_number\n\n\n\nVamos ver a explicação do Copilot em português."
+  },
+  {
+    "objectID": "aula_t3.html#section-13",
+    "href": "aula_t3.html#section-13",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Veja que neste caso o Copilot fez uma explicação e sugeriu uma melhoria.\n\nAntes de avaliar a sugestão de melhoria é importante que você avalie se realmente entendeu a explicação dada para o código atual.\n\n\nPor exemplo, se não tiver ficado claro como o método replace funciona, você pode pedir uma explicação mais detalhada sobre isso."
+  },
+  {
+    "objectID": "aula_t3.html#section-15",
+    "href": "aula_t3.html#section-15",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Você pode continuar pedindo mais informações do Copilot até julgar que tem um nível de entendimento adequado para a tarefa que precisa.\n\nLembre-se do que falamos no início da aula\nNão é necessário entender cada detalhe do código.\n\nMas temos que sair do estágio “Esse código faz mágica”.\nPara conseguirmos depois validar o nosso código.\nE assim resolver a tarefa que precisamos."
+  },
+  {
+    "objectID": "aula_t3.html#section-16",
+    "href": "aula_t3.html#section-16",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Voltando na explicação inicial dada pelo Copilot\n\nvocê alteraria seu código para usar a solução “mais limpa e eficiente”, segundo ele, que usa o módulo re?\n\n\nQue critérios adotar para decidir aceitar ou não a sugestão?"
+  },
+  {
+    "objectID": "aula_t3.html#section-17",
+    "href": "aula_t3.html#section-17",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Dica\n\n\nMinha sugestão é: use a opção que você entenda melhor.\nVocê pode já ficar satisfeito com o código original, ou pode pedir ao Copilot explicações sobre a sugestão de melhoria. E depois de ter entendido as duas opções, escolher a que te parece melhor.\n\n\n\n\n\n\n\n\n\nDica\n\n\nÉ melhor ter mais rapidamente uma versão do sistema que funciona corretamente e depois otimizá-la, se necessário, do que tentar já otimizar código antes mesmo de saber se ele vai atender o que precisa.\n\nPode ser, por exemplo, que uma função que você está otimizando agora acabe nem sendo usada mais adiante."
+  },
+  {
+    "objectID": "aula_t3.html#section-18",
+    "href": "aula_t3.html#section-18",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "O livro que estamos usando como referência, lista as 10 principais estruturas de programação do Python que precisamos entender\n\npara conseguir acompanhar tudo que é apresentado no livro.\n\n\nComo você já fez disciplinas de programação, você deve ter um bom entendimento do que são essas estruturas em si.\n\nMas é importante que consiga entendê-las na sintaxe do Python.\nSe você já programa em Python é bom revisar seu conhecimento.\nSe está começando na linguagem agora é uma boa hora de conhecê-las."
+  },
+  {
+    "objectID": "aula_t3.html#section-19",
+    "href": "aula_t3.html#section-19",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Dica para quem não conhece Python\n\nUse o Copilot, CharGPT ou Gemini para uma sessão de conversa sobre isso.\nIndique seu nível de conhecimento prévio de programação.\nIndique uma linguagem que você tenha mais familiaridade.\nExemplo\n\nConsidere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python. Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez."
   }
 ]
