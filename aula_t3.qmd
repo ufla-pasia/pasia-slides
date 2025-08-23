@@ -255,11 +255,11 @@ do que tentar já otimizar código antes mesmo de saber se ele vai atender o que
 :::
 
 
-# As 10 Principais Estruturas de Programação do Python {background-color="#40666e"}
+# Os 10 Principais Tópicos em Python {background-color="#40666e"}
 
 ##
 
-O livro que estamos usando como referência, lista as **10 principais estruturas de programação do Python** que precisamos entender
+O livro que estamos usando como referência, lista os **10 principais tópicos em Python** que precisamos entender
 
 - para conseguir acompanhar tudo que é apresentado no livro.
 
@@ -271,7 +271,7 @@ Como você já fez disciplinas de programação, você pode ter um  entendimento
 - Se você já programa em Python é bom revisar seu conhecimento.
 - Se está começando na linguagem agora é uma boa hora de conhecê-las.
 
-## As10 Principais estruturas de programação do Python
+## Os 10 Principais Tópicos em Python
 
 ::: {.columns}
 :::: {.column width="50%"}
@@ -295,18 +295,23 @@ Como você já fez disciplinas de programação, você pode ter um  entendimento
 Fiquei pensando na melhor forma de passar esse conteúdo nessa disciplina.
 
 - Poderia ser interessante para alguns alunos fazer uma revisão completa desses conceitos na aula.
-- Mas poderia ser tedioso para outros uma aula assim, em formato expositivo.
+- Mas poderia ser tedioso para outros uma aula em formato expositivo.
 
 ##
 
-Creio que é muito mais interessante, especialmente para quem já fez outras disciplinas de programação, estudar as estruturas de maneira mais prática e interativa.
+Creio que é muito mais interessante estudar as estruturas de maneira mais prática e interativa.
 
-- E, como temos Assistentes de IA à nossa disposição
+- Especialmente para quem já fez outras disciplinas de programação.
+
+. . .
+
+E, como temos Assistentes de IA à nossa disposição
+
 - por que não utilizá-los para apoiar essa tarefa.
 
 ##
 
-Em vez de sair simplesmente perguntando para um Assistente de IA o que são esses conceitos.
+Em vez de sair simplesmente perguntando para um Assistente de IA o que são esses conceitos,
 
 - podemos usar um pouco de [Engenharia de Prompt]{.alert} para tornar esse processo mais interessante.
 
@@ -317,15 +322,17 @@ Ainda vamos ter aula específica sobre Engenharia de Prompt.
 - E pode ser que ao chegar nela a gente conclua que a abordagem que vou sugerir poderia ser melhor.
 - Mas o que preparei já pode ser um bom começo.
 
-## Um pouco de Engenharia de Prompt
+# Um pouco de Engenharia de Prompt {background-color="#40666e"}
+
+##
 
 Algumas das recomendações mais comuns de Engenharia de Prompt são:
 
-- Dar contexto.
-- Definir o papel (_persona_)  do modelo.
-- Ser claro e específico.
-- Definir o formato da resposta esperada.
-- Iterar e refinar o prompt.
+- **Dar contexto**.
+- **Definir o papel (_persona_) do modelo**.
+- **Ser claro e específico**.
+- **Definir o formato da resposta esperada**.
+- **Iterar e refinar o prompt**.
 
 ## 
 
@@ -338,7 +345,7 @@ Seguindo essas ideias pensei no seguinte formato de estudo
 ::: {.halfincfontsize}
 ::: {.callout-note}
 #### Dar contexto
-Considere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.
+Considere que sou estudante de um curso de TI. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.
 :::
 :::
 
@@ -356,7 +363,7 @@ Atue como um professor de programação paciente, criativo e com ótima didátic
 ::: {.halfincfontsize}
 ::: {.callout-note}
 #### Ser claro e específico
-Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas,Loops, Indentação, Dicionários, Arquivos e Módulos.
+Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas, Loops, Indentação, Dicionários, Arquivos e Módulos.
 :::
 :::
 
@@ -365,21 +372,8 @@ Poderia me guiar por uma sessão de conversa que apresente de forma didática a 
 ::: {.halfincfontsize}
 ::: {.callout-note}
 #### Definir o formato da resposta esperada
-Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos e comparações com Java.
+Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos, comparações com Java e perguntas de múltipla escolha para fixação do conteúdo.
 :::
-:::
-
-. . .
-
-Você pode montar um texto único com tudo que escrevemos ou você pode ser mais específico indicando algo como:
-
-::: {.halfincfontsize}
-```
-Contexto: Considere que sou estudante ...
-Persona: Atue como um professor ...
-Tarefa: Poderia me guiar ...
-Formato: Gostaria que a sessão fosse ...
-```
 :::
 
 
@@ -391,7 +385,7 @@ Formato: Gostaria que a sessão fosse ...
 É comum que um prompt não funcione como gostaríamos.
 Podemos então alterá-lo para conseguir o que queremos.
 
-Nesse caso como pedi uma sessão interativa, podemos experimentá-la e,
+Nesse caso como estou pedindo uma sessão interativa, podemos experimentá-la e,
 se ao longo do processo não estivermos satisfeitos, interrompemos a
 sessão e fazemos um novo prompt.
 :::
@@ -399,23 +393,113 @@ sessão e fazemos um novo prompt.
 
 ##
 
+Podemos montar um texto corrido com tudo que escrevemos ou você pode ser mais específico usando um **prompt estruturado**:
+
+::: {.halfincfontsize}
+```
+  Contexto: Considere que sou estudante ...
+  Persona: Atue como um professor ...
+  Tarefa: Poderia me guiar ...
+  Formato: Gostaria que a sessão fosse ...
+```
+:::
+
+
+# Conhecendo/revisando os 10 tópicos principais em Python {background-color="#40666e"}
+
+## Sessão interativa com Copilot
+
 Vamos então testar!
 
 ```
-Contexto: Considere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.
+Contexto: Considere que sou estudante de um curso de TI. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.
 Persona: Atue como um professor de programação paciente, criativo e com ótima didática.
 Tarefa: Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas,Loops, Indentação, Dicionários, Arquivos e Módulos.
-Formato: Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos e comparações com Java.
+Formato: Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos, comparações com Java e perguntas de múltipla escolha para fixação do conteúdo.
 ```
-
-
 
 ##
 
-Dica para quem não conhece Python
+::: {.nonincremental}
 
-- Use o Copilot, CharGPT ou Gemini para uma sessão de conversa sobre isso.
-- Indique seu nível de conhecimento prévio de programação.
-- Indique uma linguagem que você tenha mais familiaridade.
-- Exemplo
-    -   
+::: {.callout-tip}
+Durante a sessão interativa o Copilot deve te pedir para escrever trechos de código
+em Python e, para isso, você precisará pular linha. Mas se usar <kbd>ENTER</kbd> você
+envia o prompt incompleto. Use <kbd>Shift</kbd> + <kbd>ENTER</kbd> para pular linha.
+:::
+
+
+Vamos fazer uma sessão interativa dessas aqui na sala para revisar os conceitos.
+
+- E é **altamente recomendável** que você faça depois em casa, adaptando o prompt à sua realidade.
+- Para tornar o processo ainda mais interativo, vamos usar o 
+  [PollEverywhere](https://www.polleverywhere.com/multiple_choice_polls/kZQNDtzSrq02FX6N3CQMK) 
+  para responder às perguntas durante a sessão.
+
+:::
+
+##
+
+::: {.callout-tip}
+Além de experimentar prompts diferentes, você pode também usar Assistentes de IA diferentes.
+
+Eu testei com Copilot, ChatGPT e Gemini e a interação de cada um deles foi diferente.
+Gemini pediu para escrever código Python, ChatGPT esqueceu de tratar funções :)
+
+Mas, lembre-se, se usar o mesmo prompt de novo pode ter uma interação diferente.
+:::
+
+## Dinâmica em duplas
+
+Vamos passar agora para uma segunda parte de fixação das 10 principais estruturas em Python.
+
+. . .
+
+Quando preparei a aula, logo após a sessão interativa, pedi ao Copilot para gerar 
+20 exercícios de fixação sobre as 10 estruturas do Python.
+
+- Vamos formar duplas e cada dupla vai responder os exercícios.
+- Não é necessário identificar os nomes, basta dar um nome para a dupla.
+- Anote o gabarito de vocês no caderno para facilitar a próxima etapa da dinâmica.
+
+##
+
+Depois de respondidos os exercícios, cada dupla receberá as respostas de outra dupla.
+
+- E preencher a folha de conferência.
+- Justificando as respostas incorretas.
+
+##
+
+Para finalizar vamos comparar as respostas com o gabarito oficial.
+
+::: {.columns}
+:::: {.column width="33%"}
+1. a  
+2. b  
+3. b  
+4. c  
+5. b  
+6. c  
+7. c  
+::::
+
+:::: {.column width="33%"}
+8. a  
+9. a  
+10. b  
+11. a  
+12. c  
+13. c  
+14. b  
+::::
+
+:::: {.column width="33%"}
+15. a  
+16. a  
+17. a  
+18. a  
+19. a  
+20. a  
+::::
+:::
