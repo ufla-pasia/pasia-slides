@@ -34,6 +34,8 @@ Já o **2º nível** (_objetivo geral_) é geralmente o que esperamos encontrar 
 
 ## Por que é importante a habilidade de ler código?
 
+. . .
+
 **Ajuda a determinar se o código está correto**:
 
 - Nós usaremos testes para validar código.
@@ -58,8 +60,8 @@ Já o **2º nível** (_objetivo geral_) é geralmente o que esperamos encontrar 
 A ideia aqui não é entender cada detalhe de cada linha do código.
 
 - E sim aprender a como usar o Copilot para chegar num meio termo entre:
-  - _“Esse código faz mágica”_ 
-  - e _“Eu sei exatamente como cada linha de código funciona”_.
+  - _“Esse código faz mágica”_ 🧙‍♂️
+  - e _“Eu sei exatamente como cada linha de código funciona”_ 🤓
 
 # Usando Copilot para Entender Código {background-color="#40666e"}
 
@@ -164,7 +166,7 @@ Realmente pode ser frustrante.
 ::: {.callout-tip}
 Uma maneira de diminuir a possibilidade de erro é pedir a explicação mais de uma vez.
 
-É bem raro que o Copilot explique errado mais de uma vez.
+É incomum que o Copilot explique errado mais de uma vez.
 :::
 
 
@@ -218,8 +220,7 @@ Por exemplo, se não tiver ficado claro como o método `replace` funciona, você
 
 Você pode continuar pedindo mais informações do Copilot até julgar que tem um nível de entendimento adequado para a tarefa que precisa.
 
-- Lembre-se do que falamos no início da aula
-- Não é necessário entender cada detalhe do código.
+- Lembre-se do que falamos no início da aula: não é necessário entender cada detalhe do código.
   - Mas temos que sair do estágio _“Esse código faz mágica”_.
   - Para conseguirmos depois validar o nosso código.
   - E assim resolver a tarefa que precisamos.
@@ -265,11 +266,11 @@ O livro que estamos usando como referência, lista os **10 principais tópicos e
 
 . . .
 
-Como você já fez disciplinas de programação, você pode ter um  entendimento razoável dessas estruturas em outras linguagens. 
+Como você já fez disciplinas de programação, você pode ter um bom entendimento dessas estruturas em outras linguagens. 
 
 - Mas é importante que consiga entendê-las na sintaxe do Python.
 - Se você já programa em Python é bom revisar seu conhecimento.
-- Se está começando na linguagem agora é uma boa hora de conhecê-las.
+- Se está começando na linguagem agora é uma boa hora de conhecê-los.
 
 ## Os 10 Principais Tópicos em Python
 
@@ -294,7 +295,7 @@ Como você já fez disciplinas de programação, você pode ter um  entendimento
 
 Fiquei pensando na melhor forma de passar esse conteúdo nessa disciplina.
 
-- Poderia ser interessante para alguns alunos fazer uma revisão completa desses conceitos na aula.
+- Poderia ser interessante para alguns alunos fazer uma revisão tradicional completa desses conceitos na aula.
 - Mas poderia ser tedioso para outros uma aula em formato expositivo.
 
 ##
@@ -305,9 +306,11 @@ Creio que é muito mais interessante estudar as estruturas de maneira mais prát
 
 . . .
 
+::: {.nonincremental}
 E, como temos Assistentes de IA à nossa disposição
 
 - por que não utilizá-los para apoiar essa tarefa.
+:::
 
 ##
 
@@ -326,7 +329,7 @@ Ainda vamos ter aula específica sobre Engenharia de Prompt.
 
 ##
 
-Algumas das recomendações mais comuns de Engenharia de Prompt são:
+Algumas das [recomendações]{.alert} **mais comuns de Engenharia de Prompt** são:
 
 - **Dar contexto**.
 - **Definir o papel (_persona_) do modelo**.
@@ -334,11 +337,14 @@ Algumas das recomendações mais comuns de Engenharia de Prompt são:
 - **Definir o formato da resposta esperada**.
 - **Iterar e refinar o prompt**.
 
+. . .
+
+Seguindo essas ideias pensei em uma sugestão de formato de estudo,
+que você pode (e deve) adaptar para a sua realidade.
+
 ## 
 
-Seguindo essas ideias pensei no seguinte formato de estudo
 
-- que você pode (e deve) adaptar para a sua realidade.
 
 . . .
 
@@ -349,7 +355,8 @@ Considere que sou estudante de um curso de TI. Já fiz disciplinas introdutória
 :::
 :::
 
-##
+. . .
+
 
 ::: {.halfincfontsize}
 ::: {.callout-note}
@@ -358,7 +365,7 @@ Atue como um professor de programação paciente, criativo e com ótima didátic
 :::
 :::
 
-. . .
+##
 
 ::: {.halfincfontsize}
 ::: {.callout-note}
@@ -367,7 +374,7 @@ Poderia me guiar por uma sessão de conversa que apresente de forma didática a 
 :::
 :::
 
-##
+##  
 
 ::: {.halfincfontsize}
 ::: {.callout-note}
@@ -433,7 +440,7 @@ Vamos fazer uma sessão interativa dessas aqui na sala para revisar os conceitos
 
 - E é **altamente recomendável** que você faça depois em casa, adaptando o prompt à sua realidade.
 - Para tornar o processo ainda mais interativo, vamos usar o 
-  [PollEverywhere](https://www.polleverywhere.com/multiple_choice_polls/kZQNDtzSrq02FX6N3CQMK) 
+  [PollEverywhere](https://www.polleverywhere.com/multiple_choice_polls/9WFVxxh6jUTT96ViR822m) 
   para responder às perguntas durante a sessão.
 
 :::
@@ -446,7 +453,7 @@ Além de experimentar prompts diferentes, você pode também usar Assistentes de
 Eu testei com Copilot, ChatGPT e Gemini e a interação de cada um deles foi diferente.
 Gemini pediu para escrever código Python, ChatGPT esqueceu de tratar funções :)
 
-Mas, lembre-se, se usar o mesmo prompt de novo pode ter uma interação diferente.
+Mas, lembre-se, se usar o mesmo prompt de novo no mesmo assistente de IA pode levar a uma interação diferente.
 :::
 
 ## Dinâmica em duplas
@@ -456,10 +463,13 @@ Vamos passar agora para uma segunda parte de fixação das 10 principais estrutu
 . . .
 
 Quando preparei a aula, logo após a sessão interativa, pedi ao Copilot para gerar 
-20 exercícios de fixação sobre as 10 estruturas do Python, usando o prompt abaixo.
+20 exercícios sobre as 10 estruturas do Python, usando o prompt abaixo.
 
 ```
-Agora gostaria que gerasse 20 perguntas de múltipla escolha, sendo 2 de cada uma das estruturas de Python que citei anteriormente. Gostaria que as perguntas fossem listadas em Markdown para que eu possa passar para o outro arquivo. E o gabarito deve ser fornecido somente ao final.
+Agora gostaria que gerasse 20 perguntas de múltipla escolha, 
+sendo 2 de cada uma das estruturas de Python que citei anteriormente. 
+Gostaria que as perguntas fossem listadas em Markdown para que eu possa 
+passar para o outro arquivo. E o gabarito deve ser fornecido somente ao final.
 ```
 
 ##
@@ -818,7 +828,7 @@ Se ainda tivermos tempo, nossa última parte será um [Quiz](https://www.polleve
 mas agora com perguntas um pouco mais avançadas.
 
 
-Não se preocupe se não precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.
+Não se preocupe se precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.
 
 - Mas vou aproveitar o gancho para comentar sobre elas.
 

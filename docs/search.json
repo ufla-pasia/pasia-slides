@@ -1516,14 +1516,14 @@
     "href": "aula_t3.html#por-que-é-importante-a-habilidade-de-ler-código",
     "title": "Lendo Código Python",
     "section": "Por que é importante a habilidade de ler código?",
-    "text": "Por que é importante a habilidade de ler código?\nAjuda a determinar se o código está correto:\n\nNós usaremos testes para validar código.\nMas podemos ganhar tempo se conseguirmos identificar erros mais óbvios no código, antes de gastar tempo escrevendo código de teste.\n\n\nPara ter mais informações para os testes:\n\nEntender o código nos ajuda a identificar melhor os casos de testes que precisamos criar para validar a implementação."
+    "text": "Por que é importante a habilidade de ler código?\n\nAjuda a determinar se o código está correto:\n\nNós usaremos testes para validar código.\nMas podemos ganhar tempo se conseguirmos identificar erros mais óbvios no código, antes de gastar tempo escrevendo código de teste.\n\n\n\nPara ter mais informações para os testes:\n\nEntender o código nos ajuda a identificar melhor os casos de testes que precisamos criar para validar a implementação."
   },
   {
     "objectID": "aula_t3.html#section-1",
     "href": "aula_t3.html#section-1",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "A ideia aqui não é entender cada detalhe de cada linha do código.\n\nE sim aprender a como usar o Copilot para chegar num meio termo entre:\n\n“Esse código faz mágica”\ne “Eu sei exatamente como cada linha de código funciona”."
+    "text": "A ideia aqui não é entender cada detalhe de cada linha do código.\n\nE sim aprender a como usar o Copilot para chegar num meio termo entre:\n\n“Esse código faz mágica” 🧙‍♂️\ne “Eu sei exatamente como cada linha de código funciona” 🤓"
   },
   {
     "objectID": "aula_t3.html#section-2",
@@ -1600,7 +1600,7 @@
     "href": "aula_t3.html#section-10",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nUma maneira de diminuir a possibilidade de erro é pedir a explicação mais de uma vez.\nÉ bem raro que o Copilot explique errado mais de uma vez."
+    "text": "Dica\n\n\nUma maneira de diminuir a possibilidade de erro é pedir a explicação mais de uma vez.\nÉ incomum que o Copilot explique errado mais de uma vez."
   },
   {
     "objectID": "aula_t3.html#section-11",
@@ -1621,7 +1621,7 @@
     "href": "aula_t3.html#section-15",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Você pode continuar pedindo mais informações do Copilot até julgar que tem um nível de entendimento adequado para a tarefa que precisa.\n\nLembre-se do que falamos no início da aula\nNão é necessário entender cada detalhe do código.\n\nMas temos que sair do estágio “Esse código faz mágica”.\nPara conseguirmos depois validar o nosso código.\nE assim resolver a tarefa que precisamos."
+    "text": "Você pode continuar pedindo mais informações do Copilot até julgar que tem um nível de entendimento adequado para a tarefa que precisa.\n\nLembre-se do que falamos no início da aula: não é necessário entender cada detalhe do código.\n\nMas temos que sair do estágio “Esse código faz mágica”.\nPara conseguirmos depois validar o nosso código.\nE assim resolver a tarefa que precisamos."
   },
   {
     "objectID": "aula_t3.html#section-16",
@@ -1642,14 +1642,14 @@
     "href": "aula_t3.html#section-18",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "O livro que estamos usando como referência, lista os 10 principais tópicos em Python que precisamos entender\n\npara conseguir acompanhar tudo que é apresentado no livro.\n\n\nComo você já fez disciplinas de programação, você pode ter um entendimento razoável dessas estruturas em outras linguagens.\n\nMas é importante que consiga entendê-las na sintaxe do Python.\nSe você já programa em Python é bom revisar seu conhecimento.\nSe está começando na linguagem agora é uma boa hora de conhecê-las."
+    "text": "O livro que estamos usando como referência, lista os 10 principais tópicos em Python que precisamos entender\n\npara conseguir acompanhar tudo que é apresentado no livro.\n\n\nComo você já fez disciplinas de programação, você pode ter um bom entendimento dessas estruturas em outras linguagens.\n\nMas é importante que consiga entendê-las na sintaxe do Python.\nSe você já programa em Python é bom revisar seu conhecimento.\nSe está começando na linguagem agora é uma boa hora de conhecê-los."
   },
   {
     "objectID": "aula_t3.html#section-19",
     "href": "aula_t3.html#section-19",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Fiquei pensando na melhor forma de passar esse conteúdo nessa disciplina.\n\nPoderia ser interessante para alguns alunos fazer uma revisão completa desses conceitos na aula.\nMas poderia ser tedioso para outros uma aula em formato expositivo."
+    "text": "Fiquei pensando na melhor forma de passar esse conteúdo nessa disciplina.\n\nPoderia ser interessante para alguns alunos fazer uma revisão tradicional completa desses conceitos na aula.\nMas poderia ser tedioso para outros uma aula em formato expositivo."
   },
   {
     "objectID": "aula_t3.html#principais-estruturas-de-programação-do-python",
@@ -1698,21 +1698,21 @@
     "href": "aula_t3.html#section-23",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Seguindo essas ideias pensei no seguinte formato de estudo\n\nque você pode (e deve) adaptar para a sua realidade.\n\n\n\n\n\n\n\n\n\nDar contexto\n\n\nConsidere que sou estudante de um curso de TI. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python."
+    "text": "Dar contexto\n\n\nConsidere que sou estudante de um curso de TI. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.\n\n\n\n\n\n\n\n\n\n\n\n\n\nDefinir o papel (persona) do modelo\n\n\nAtue como um professor de programação paciente, criativo e com ótima didática."
   },
   {
     "objectID": "aula_t3.html#section-22",
     "href": "aula_t3.html#section-22",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Algumas das recomendações mais comuns de Engenharia de Prompt são:\n\nDar contexto.\nDefinir o papel (persona) do modelo.\nSer claro e específico.\nDefinir o formato da resposta esperada.\nIterar e refinar o prompt."
+    "text": "Algumas das recomendações mais comuns de Engenharia de Prompt são:\n\nDar contexto.\nDefinir o papel (persona) do modelo.\nSer claro e específico.\nDefinir o formato da resposta esperada.\nIterar e refinar o prompt.\n\n\nSeguindo essas ideias pensei em uma sugestão de formato de estudo, que você pode (e deve) adaptar para a sua realidade."
   },
   {
     "objectID": "aula_t3.html#section-24",
     "href": "aula_t3.html#section-24",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Definir o papel (persona) do modelo\n\n\nAtue como um professor de programação paciente, criativo e com ótima didática.\n\n\n\n\n\n\n\n\n\n\n\n\nSer claro e específico\n\n\nPoderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas, Loops, Indentação, Dicionários, Arquivos e Módulos."
+    "text": "Ser claro e específico\n\n\nPoderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas, Loops, Indentação, Dicionários, Arquivos e Módulos."
   },
   {
     "objectID": "aula_t3.html#iterar-e-refinar-o-prompt.",
@@ -1754,7 +1754,7 @@
     "href": "aula_t3.html#section-29",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nAlém de experimentar prompts diferentes, você pode também usar Assistentes de IA diferentes.\nEu testei com Copilot, ChatGPT e Gemini e a interação de cada um deles foi diferente. Gemini pediu para escrever código Python, ChatGPT esqueceu de tratar funções :)\nMas, lembre-se, se usar o mesmo prompt de novo pode ter uma interação diferente."
+    "text": "Dica\n\n\nAlém de experimentar prompts diferentes, você pode também usar Assistentes de IA diferentes.\nEu testei com Copilot, ChatGPT e Gemini e a interação de cada um deles foi diferente. Gemini pediu para escrever código Python, ChatGPT esqueceu de tratar funções :)\nMas, lembre-se, se usar o mesmo prompt de novo no mesmo assistente de IA pode levar a uma interação diferente."
   },
   {
     "objectID": "aula_t3.html#os-10-principais-tópicos-em-python-1",
@@ -1775,7 +1775,7 @@
     "href": "aula_t3.html#dinâmica-em-duplas",
     "title": "Lendo Código Python",
     "section": "Dinâmica em duplas",
-    "text": "Dinâmica em duplas\nVamos passar agora para uma segunda parte de fixação das 10 principais estruturas em Python.\n\nQuando preparei a aula, logo após a sessão interativa, pedi ao Copilot para gerar 20 exercícios de fixação sobre as 10 estruturas do Python, usando o prompt abaixo.\nAgora gostaria que gerasse 20 perguntas de múltipla escolha, sendo 2 de cada uma das estruturas de Python que citei anteriormente. Gostaria que as perguntas fossem listadas em Markdown para que eu possa passar para o outro arquivo. E o gabarito deve ser fornecido somente ao final."
+    "text": "Dinâmica em duplas\nVamos passar agora para uma segunda parte de fixação das 10 principais estruturas em Python.\n\nQuando preparei a aula, logo após a sessão interativa, pedi ao Copilot para gerar 20 exercícios sobre as 10 estruturas do Python, usando o prompt abaixo.\nAgora gostaria que gerasse 20 perguntas de múltipla escolha, \nsendo 2 de cada uma das estruturas de Python que citei anteriormente. \nGostaria que as perguntas fossem listadas em Markdown para que eu possa \npassar para o outro arquivo. E o gabarito deve ser fornecido somente ao final."
   },
   {
     "objectID": "aula_t3.html#section-30",
@@ -1950,7 +1950,7 @@
     "href": "aula_t3.html#section-34",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Se ainda tivermos tempo, nossa última parte será um Quiz no Poll Everywhere, mas agora com perguntas um pouco mais avançadas.\nNão se preocupe se não precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.\n\nMas vou aproveitar o gancho para comentar sobre elas.\n\n\n\n\n\n\n\nDica\n\n\nNa primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. Lembre-se que Assistentes de IA podem gerar respostas erradas.\nUma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir."
+    "text": "Se ainda tivermos tempo, nossa última parte será um Quiz no Poll Everywhere, mas agora com perguntas um pouco mais avançadas.\nNão se preocupe se precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.\n\nMas vou aproveitar o gancho para comentar sobre elas.\n\n\n\n\n\n\n\nDica\n\n\nNa primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. Lembre-se que Assistentes de IA podem gerar respostas erradas.\nUma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir."
   },
   {
     "objectID": "aula_t3.html#videoaula",
