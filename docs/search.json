@@ -1775,20 +1775,188 @@
     "href": "aula_t3.html#dinâmica-em-duplas",
     "title": "Lendo Código Python",
     "section": "Dinâmica em duplas",
-    "text": "Dinâmica em duplas\nVamos passar agora para uma segunda parte de fixação das 10 principais estruturas em Python.\n\nQuando preparei a aula, logo após a sessão interativa, pedi ao Copilot para gerar 20 exercícios de fixação sobre as 10 estruturas do Python.\n\nVamos formar duplas e cada dupla vai responder os exercícios.\nNão é necessário identificar os nomes, basta dar um nome para a dupla.\nAnote o gabarito de vocês no caderno para facilitar a próxima etapa da dinâmica."
+    "text": "Dinâmica em duplas\nVamos passar agora para uma segunda parte de fixação das 10 principais estruturas em Python.\n\nQuando preparei a aula, logo após a sessão interativa, pedi ao Copilot para gerar 20 exercícios de fixação sobre as 10 estruturas do Python, usando o prompt abaixo.\nAgora gostaria que gerasse 20 perguntas de múltipla escolha, sendo 2 de cada uma das estruturas de Python que citei anteriormente. Gostaria que as perguntas fossem listadas em Markdown para que eu possa passar para o outro arquivo. E o gabarito deve ser fornecido somente ao final."
   },
   {
     "objectID": "aula_t3.html#section-30",
     "href": "aula_t3.html#section-30",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Depois de respondidos os exercícios, cada dupla receberá as respostas de outra dupla.\n\nE preencher a folha de conferência.\nJustificando as respostas incorretas."
+    "text": "Vamos formar duplas e cada dupla vai responder os exercícios.\n\nNão é necessário identificar os nomes, basta dar um nome para a dupla.\nAnote o gabarito de vocês no caderno para facilitar a próxima etapa da dinâmica."
   },
   {
     "objectID": "aula_t3.html#section-31",
     "href": "aula_t3.html#section-31",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Para finalizar vamos comparar as respostas com o gabarito oficial.\n\n\n\na\n\nb\n\nb\n\nc\n\nb\n\nc\n\nc\n\n\n\n\na\n\na\n\nb\n\na\n\nc\n\nc\n\nb\n\n\n\n\na\n\na\n\na\n\na\n\na\n\na"
+    "text": "Depois de respondidos os exercícios, cada dupla receberá as respostas de outra dupla.\n\nE vai preencher a folha de conferência.\nJustificando as respostas incorretas."
+  },
+  {
+    "objectID": "aula_t3.html#funções",
+    "href": "aula_t3.html#funções",
+    "title": "Lendo Código Python",
+    "section": "Funções",
+    "text": "Funções\n\nQual é a forma correta de definir uma função que retorna o quadrado de um número em Python?\n\n\ndef quadrado(n): return n * n\nfunction quadrado(n) { return n * n }\ndef quadrado(n) { return n * n }\nint quadrado(int n) { return n * n }\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#funções-1",
+    "href": "aula_t3.html#funções-1",
+    "title": "Lendo Código Python",
+    "section": "Funções",
+    "text": "Funções\n\nO que acontece se uma função Python não possui a instrução return?\n\n\nRetorna 0\nRetorna None\nRetorna False\nRetorna vazio\n\n\nResposta: b"
+  },
+  {
+    "objectID": "aula_t3.html#variáveis",
+    "href": "aula_t3.html#variáveis",
+    "title": "Lendo Código Python",
+    "section": "Variáveis",
+    "text": "Variáveis\n\nQual destas opções declara corretamente uma variável chamada idade com valor 25 em Python?\n\n\nint idade = 25\nidade = 25\nidade := 25\nvar idade = 25\n\n\nResposta: b"
+  },
+  {
+    "objectID": "aula_t3.html#condicionais",
+    "href": "aula_t3.html#condicionais",
+    "title": "Lendo Código Python",
+    "section": "Condicionais",
+    "text": "Condicionais\n\nQual é a sintaxe correta para um if em Python?\n\n\nif (x &gt; 10) { print(\"maior\") }\nif x &gt; 10: print(\"maior\")\nif x &gt; 10 then print(\"maior\")\nif x &gt; 10 { print(\"maior\") }\n\n\nResposta: b"
+  },
+  {
+    "objectID": "aula_t3.html#strings",
+    "href": "aula_t3.html#strings",
+    "title": "Lendo Código Python",
+    "section": "Strings",
+    "text": "Strings\n\nQual comando imprime o tamanho da string \"Python\"?\n\n\nprint(size(\"Python\"))\nprint(length(\"Python\"))\nprint(len(\"Python\"))\nprint(count(\"Python\"))\n\n\nResposta: c"
+  },
+  {
+    "objectID": "aula_t3.html#listas",
+    "href": "aula_t3.html#listas",
+    "title": "Lendo Código Python",
+    "section": "Listas",
+    "text": "Listas\n\nComo criar uma lista com os elementos 1, 2 e 3?\n\n\nlista = [1, 2, 3]\nlista = (1, 2, 3)\nlista = {1, 2, 3}\nlista = &lt;1, 2, 3&gt;\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#loops",
+    "href": "aula_t3.html#loops",
+    "title": "Lendo Código Python",
+    "section": "Loops",
+    "text": "Loops\n\nQual é a forma correta de percorrer uma lista chamada nomes e imprimir cada elemento?\n\n\nfor nome in nomes: print(nome)\nfor nome of nomes: print(nome)\nfor (nome in nomes) { print(nome) }\nforeach nome in nomes: print(nome)\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#indentação",
+    "href": "aula_t3.html#indentação",
+    "title": "Lendo Código Python",
+    "section": "Indentação",
+    "text": "Indentação\n\nO que acontece se você esquecer de indentar o corpo de uma função em Python?\n\n\nO código funciona normalmente\nO Python ignora o bloco\nO Python gera erro de indentação\nO Python executa sem problemas\n\n\nResposta: c"
+  },
+  {
+    "objectID": "aula_t3.html#dicionários",
+    "href": "aula_t3.html#dicionários",
+    "title": "Lendo Código Python",
+    "section": "Dicionários",
+    "text": "Dicionários\n\nComo criar um dicionário com as chaves \"a\" e \"b\" e valores 1 e 2?\n\n\nd = {\"a\": 1, \"b\": 2}\nd = [\"a\": 1, \"b\": 2]\nd = (\"a\": 1, \"b\": 2)\nd = &lt;\"a\": 1, \"b\": 2&gt;\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#arquivos",
+    "href": "aula_t3.html#arquivos",
+    "title": "Lendo Código Python",
+    "section": "Arquivos",
+    "text": "Arquivos\n\nQual comando abre um arquivo para leitura em Python?\n\n\nopen(\"arquivo.txt\", \"r\")\nopen(\"arquivo.txt\", \"w\")\nopen(\"arquivo.txt\", \"a\")\nopen(\"arquivo.txt\", \"rw\")\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#módulos",
+    "href": "aula_t3.html#módulos",
+    "title": "Lendo Código Python",
+    "section": "Módulos",
+    "text": "Módulos\n\nComo importar o módulo math em Python? ______\n\n\nimport math\ninclude math\nusing math\nrequire math\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#variáveis-1",
+    "href": "aula_t3.html#variáveis-1",
+    "title": "Lendo Código Python",
+    "section": "Variáveis",
+    "text": "Variáveis\n\nO que acontece se você atribuir um valor string a uma variável que antes era um inteiro?\n\n\nErro de tipo\nPython converte automaticamente para inteiro\nPython aceita a mudança de tipo\nO valor anterior é mantido\n\n\nResposta: c"
+  },
+  {
+    "objectID": "aula_t3.html#condicionais-1",
+    "href": "aula_t3.html#condicionais-1",
+    "title": "Lendo Código Python",
+    "section": "Condicionais",
+    "text": "Condicionais\n\nQual palavra-chave é usada para múltiplas condições em Python?\n\n\nelseif\nelse if\nelif\notherwise\n\n\nResposta: c"
+  },
+  {
+    "objectID": "aula_t3.html#strings-1",
+    "href": "aula_t3.html#strings-1",
+    "title": "Lendo Código Python",
+    "section": "Strings",
+    "text": "Strings\n\nQual método transforma todos os caracteres de uma string para maiúsculas?\n\n\nupper()\ncapitalize()\ntoUpper()\nuppercase()\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#listas-1",
+    "href": "aula_t3.html#listas-1",
+    "title": "Lendo Código Python",
+    "section": "Listas",
+    "text": "Listas\n\nQual método adiciona um elemento ao final de uma lista?\n\n\nadd()\nappend()\ninsert()\npush()\n\n\nResposta: b"
+  },
+  {
+    "objectID": "aula_t3.html#loops-1",
+    "href": "aula_t3.html#loops-1",
+    "title": "Lendo Código Python",
+    "section": "Loops",
+    "text": "Loops\n\nO que faz o comando range(5) em um loop for?\n\n\nCria uma lista de 1 a 5\nCria uma lista de 0 a 5\nCria uma lista de 0 a 4\nCria uma lista de 1 a 4\n\n\nResposta: c"
+  },
+  {
+    "objectID": "aula_t3.html#indentação-1",
+    "href": "aula_t3.html#indentação-1",
+    "title": "Lendo Código Python",
+    "section": "Indentação",
+    "text": "Indentação\n\nQual é o padrão de indentação recomendado em Python?\n\n\n2 espaços\n4 espaços\n1 tabulação\nNão é necessário indentar\n\n\nResposta: b"
+  },
+  {
+    "objectID": "aula_t3.html#dicionários-1",
+    "href": "aula_t3.html#dicionários-1",
+    "title": "Lendo Código Python",
+    "section": "Dicionários",
+    "text": "Dicionários\n\nComo acessar o valor da chave \"nome\" em um dicionário chamado aluno?\n\n\naluno[\"nome\"]\naluno.nome\naluno-&gt;nome\naluno.get(\"nome\")\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#arquivos-1",
+    "href": "aula_t3.html#arquivos-1",
+    "title": "Lendo Código Python",
+    "section": "Arquivos",
+    "text": "Arquivos\n\nQual método lê todo o conteúdo de um arquivo aberto?\n\n\nread()\nreadline()\nreadall()\nget()\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#módulos-1",
+    "href": "aula_t3.html#módulos-1",
+    "title": "Lendo Código Python",
+    "section": "Módulos",
+    "text": "Módulos\n\nComo importar apenas a função sqrt do módulo math?\n\n\nfrom math import sqrt\nimport sqrt from math\nmath.sqrt()\ninclude sqrt from math\n\n\nResposta: a"
+  },
+  {
+    "objectID": "aula_t3.html#section-32",
+    "href": "aula_t3.html#section-32",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Para fechar a dinâmica vamos comparar as respostas com o gabarito oficial."
+  },
+  {
+    "objectID": "aula_t3.html#section-33",
+    "href": "aula_t3.html#section-33",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Dica\n\n\nEm casa você pode gerar outro questionário para estudar podendo direcionar melhor. Você pode pedir mais exercícios de algum tópico, ou se basear em comparações com outra linguagem por exemplo."
+  },
+  {
+    "objectID": "aula_t3.html#section-34",
+    "href": "aula_t3.html#section-34",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Se ainda tivermos tempo, nossa última parte será um Quiz no Poll Everywhere, mas agora com perguntas um pouco mais avançadas.\nNão se preocupe se não precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.\n\nMas vou aproveitar o gancho para comentar sobre elas.\n\n\n\n\n\n\n\nDica\n\n\nNa primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. Lembre-se que Assistentes de IA podem gerar respostas erradas.\nUma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir."
+  },
+  {
+    "objectID": "aula_t3.html#videoaula",
+    "href": "aula_t3.html#videoaula",
+    "title": "Lendo Código Python",
+    "section": "Videoaula",
+    "text": "Videoaula\nPara quem prefere um material em vídeo, há vários disponíveis na internet.\n\nUma sugestão são esses vídeos iniciais de um curso de Ciência de Dados do ICMC."
   }
 ]

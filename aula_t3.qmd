@@ -456,9 +456,16 @@ Vamos passar agora para uma segunda parte de fixação das 10 principais estrutu
 . . .
 
 Quando preparei a aula, logo após a sessão interativa, pedi ao Copilot para gerar 
-20 exercícios de fixação sobre as 10 estruturas do Python.
+20 exercícios de fixação sobre as 10 estruturas do Python, usando o prompt abaixo.
 
-- Vamos formar duplas e cada dupla vai responder os exercícios.
+```
+Agora gostaria que gerasse 20 perguntas de múltipla escolha, sendo 2 de cada uma das estruturas de Python que citei anteriormente. Gostaria que as perguntas fossem listadas em Markdown para que eu possa passar para o outro arquivo. E o gabarito deve ser fornecido somente ao final.
+```
+
+##
+
+Vamos formar duplas e cada dupla vai responder os exercícios.
+
 - Não é necessário identificar os nomes, basta dar um nome para a dupla.
 - Anote o gabarito de vocês no caderno para facilitar a próxima etapa da dinâmica.
 
@@ -466,40 +473,359 @@ Quando preparei a aula, logo após a sessão interativa, pedi ao Copilot para ge
 
 Depois de respondidos os exercícios, cada dupla receberá as respostas de outra dupla.
 
-- E preencher a folha de conferência.
+- E vai preencher a folha de conferência.
 - Justificando as respostas incorretas.
 
 ##
 
-Para finalizar vamos comparar as respostas com o gabarito oficial.
+Para fechar a dinâmica vamos comparar as respostas com o gabarito oficial.
+
+## Funções
+
+::: {.nonincremental}
+1. Qual é a forma correta de definir uma função que retorna o quadrado de um número em Python?
+
+a) `def quadrado(n): return n * n`
+b) `function quadrado(n) { return n * n }`
+c) `def quadrado(n) { return n * n }`
+d) `int quadrado(int n) { return n * n }`
+:::
+
+. . .
+
+**Resposta: a**
+
+## Funções
+
+::: {.nonincremental}
+2. O que acontece se uma função Python não possui a instrução `return`?
+
+a) Retorna `0`
+b) Retorna `None`
+c) Retorna `False`
+d) Retorna vazio
+:::
+
+. . .
+
+**Resposta: b**
+
+## Variáveis
+
+::: {.nonincremental}
+3. Qual destas opções declara corretamente uma variável chamada `idade` com valor 25 em Python?
+
+a) `int idade = 25`
+b) `idade = 25`
+c) `idade := 25`
+d) `var idade = 25`
+
+:::
+
+. . .
+
+**Resposta: b**
+
+## Variáveis
+
+::: {.nonincremental}
+4. O que acontece se você atribuir um valor string a uma variável que antes era um inteiro?
+
+a) Erro de tipo
+b) Python converte automaticamente para inteiro
+c) Python aceita a mudança de tipo
+d) O valor anterior é mantido
+:::
+
+. . .
+
+**Resposta: c**
+
+## Condicionais
+
+::: {.nonincremental}
+5. Qual é a sintaxe correta para um if em Python?
+
+a) `if (x > 10) { print("maior") }`
+b) `if x > 10: print("maior")`
+c) `if x > 10 then print("maior")`
+d) `if x > 10 { print("maior") }`
+:::
+
+. . .
+
+**Resposta: b**
+
+## Condicionais
+
+::: {.nonincremental}
+6. Qual palavra-chave é usada para múltiplas condições em Python?
+
+a) `elseif`
+b) `else if`
+c) `elif`
+d) `otherwise`
+:::
+
+. . .
+
+**Resposta: c**
+
+## Strings
+
+::: {.nonincremental}
+7. Qual comando imprime o tamanho da string `"Python"`?
+
+a) `print(size("Python"))`
+b) `print(length("Python"))`
+c) `print(len("Python"))`
+d) `print(count("Python"))`
+:::
+
+. . .
+
+**Resposta: c**
+
+## Strings
+
+::: {.nonincremental}
+8. Qual método transforma todos os caracteres de uma string para maiúsculas?
+
+a) `upper()`
+b) `capitalize()`
+c) `toUpper()`
+d) `uppercase()`
+:::
+
+. . .
+
+**Resposta: a**
+
+## Listas
+
+::: {.nonincremental}
+9. Como criar uma lista com os elementos 1, 2 e 3?
+
+a) `lista = [1, 2, 3]`
+b) `lista = (1, 2, 3)`
+c) `lista = {1, 2, 3}`
+d) `lista = <1, 2, 3>`
+:::
+
+. . .
+
+**Resposta: a**
+
+## Listas
+
+::: {.nonincremental}
+10. Qual método adiciona um elemento ao final de uma lista?
+
+a) `add()`
+b) `append()`
+c) `insert()`
+d) `push()`
+:::
+
+. . .
+
+**Resposta: b**
+
+## Loops
+
+::: {.nonincremental}
+11. Qual é a forma correta de percorrer uma lista chamada nomes e imprimir cada elemento?
+
+a) `for nome in nomes: print(nome)`
+b) `for nome of nomes: print(nome)`
+c) `for (nome in nomes) { print(nome) }`
+d) `foreach nome in nomes: print(nome)`
+:::
+
+. . .
+
+**Resposta: a**
+
+## Loops
+
+::: {.nonincremental}
+12. O que faz o comando `range(5)` em um loop for?
+
+a) Cria uma lista de 1 a 5
+b) Cria uma lista de 0 a 5
+c) Cria uma lista de 0 a 4
+d) Cria uma lista de 1 a 4
+:::
+
+. . .
+
+**Resposta: c**
+
+## Indentação
+
+::: {.nonincremental}
+13. O que acontece se você esquecer de indentar o corpo de uma função em Python?
+
+a) O código funciona normalmente
+b) O Python ignora o bloco
+c) O Python gera erro de indentação
+d) O Python executa sem problemas
+:::
+
+. . .
+
+**Resposta: c**
+
+## Indentação
+
+::: {.nonincremental}
+14. Qual é o padrão de indentação recomendado em Python?
+
+a) 2 espaços
+b) 4 espaços
+c) 1 tabulação
+d) Não é necessário indentar
+:::
+
+. . .
+
+**Resposta: b**
+
+## Dicionários
+
+::: {.nonincremental}
+15. Como criar um dicionário com as chaves `"a"` e `"b"` e valores `1` e `2`?
+
+a) `d = {"a": 1, "b": 2}`
+b) `d = ["a": 1, "b": 2]`
+c) `d = ("a": 1, "b": 2)`
+d) `d = <"a": 1, "b": 2>`
+:::
+
+. . .
+
+**Resposta: a**
+
+## Dicionários
+
+::: {.nonincremental}
+16. Como acessar o valor da chave `"nome"` em um dicionário chamado aluno?
+
+a) `aluno["nome"]`
+b) `aluno.nome`
+c) `aluno->nome`
+d) `aluno.get("nome")`
+:::
+
+. . .
+
+**Resposta: a**
+
+## Arquivos
+
+::: {.nonincremental}
+17. Qual comando abre um arquivo para leitura em Python?
+
+a) `open("arquivo.txt", "r")`
+b) `open("arquivo.txt", "w")`
+c) `open("arquivo.txt", "a")`
+d) `open("arquivo.txt", "rw")`
+:::
+
+. . .
+
+**Resposta: a**
+
+## Arquivos
+
+::: {.nonincremental}
+18. Qual método lê todo o conteúdo de um arquivo aberto?
+
+a) `read()`
+b) `readline()`
+c) `readall()`
+d) `get()`
+:::
+
+. . .
+
+**Resposta: a**
+
+## Módulos
+
+::: {.nonincremental}
+19. Como importar o módulo `math` em Python? ______
+
+a. `import math`
+b. `include math`
+c. `using math`
+d. `require math`
+:::
+
+
+. . .
+
+**Resposta: a**
+
+## Módulos
+
+::: {.nonincremental}
+20. Como importar apenas a função `sqrt` do módulo math?
+
+a) `from math import sqrt`
+b) `import sqrt from math`
+c) `math.sqrt()`
+d) `include sqrt from math`
+:::
+
+. . .
+
+**Resposta: a**
+
+##
+
+::: {.callout-tip}
+Em casa você pode gerar outro questionário para estudar podendo direcionar melhor.
+Você pode pedir mais exercícios de algum tópico, ou se basear em comparações
+com outra linguagem por exemplo.
+:::
+
+## Videoaula
+
+::: {.nonincremental}
+
+Para quem prefere um material em vídeo, há vários disponíveis na internet.
+
+- Uma sugestão são esses vídeos iniciais de um curso de Ciência de Dados do ICMC.
 
 ::: {.columns}
-:::: {.column width="33%"}
-1. a  
-2. b  
-3. b  
-4. c  
-5. b  
-6. c  
-7. c  
+:::: {.column width="50%"}
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/LxP-r00E2fo" title="Aula 1 - Introdução ao Python" frameborder="0" allowfullscreen></iframe>
 ::::
+:::: {.column width="50%"}
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/1TEVHMv3vcs" title="Aula 2 - Funções e POO" frameborder="0" allowfullscreen></iframe>
+::::
+:::
 
-:::: {.column width="33%"}
-8. a  
-9. a  
-10. b  
-11. a  
-12. c  
-13. c  
-14. b  
-::::
+:::
 
-:::: {.column width="33%"}
-15. a  
-16. a  
-17. a  
-18. a  
-19. a  
-20. a  
-::::
+# Quiz mais avançado {background-color="#40666e"}
+
+##
+
+::: {.nonincremental}
+Se ainda tivermos tempo, nossa última parte será um [Quiz](https://www.polleverywhere.com/activities?folder=20148464) no Poll Everywhere,
+mas agora com perguntas um pouco mais avançadas.
+
+
+Não se preocupe se não precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.
+
+- Mas vou aproveitar o gancho para comentar sobre elas.
+
+::: {.callout-tip}
+Na primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. 
+Lembre-se que Assistentes de IA podem gerar respostas erradas.
+
+Uma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir.
+:::
 :::

@@ -1,0 +1,21 @@
+Activity,Type,Title,Option,Option,Option,Option
+Poll,Multiple Choice,Qual é o resultado da função abaixo? def f(x): return x if x > 0 else -x; print(f(-5)),'5','-5','***5','***-5'
+Poll,Multiple Choice,Qual é a diferença entre argumentos posicionais e nomeados em funções Python?,Argumentos posicionais são obrigatórios,***Argumentos nomeados podem ser passados em qualquer ordem,Argumentos nomeados não existem em Python,Argumentos posicionais não podem ser usados em funções
+Poll,Multiple Choice,O que acontece ao executar: idade = 20; idade += int('5'),Erro de tipo,***idade passa a valer 25,205,'20 5'
+Poll,Multiple Choice,Qual é o tipo retornado por input() em Python?,int,float,***str,bool
+Poll,Multiple Choice,Qual é o resultado de if 0: print('Verdadeiro') else: print('Falso'),'Falso',***Falso,'Verdadeiro',None
+Poll,Multiple Choice,Qual operador lógico representa 'ou' em Python?,&&,||,***or,else
+Poll,Multiple Choice,Qual é o resultado de print('Python'[::-1]),nohtyP,***nohtyP,Python,Erro
+Poll,Multiple Choice,Qual método verifica se uma string começa com determinado prefixo?,'startswith()',***'startswith()',begin(),start()
+Poll,Multiple Choice,Como remover o último elemento de uma lista chamada l?,l.remove(),l.delete(),***l.pop(),l.pop(-1)
+Poll,Multiple Choice,Qual é o resultado de [x**2 for x in range(3)],'[1,4,9]','[0,1,4]',***'[0,1,4]','[1,2,3]'
+Poll,Multiple Choice,Qual é a diferença entre for e while em Python?,for só funciona com listas,while só funciona com números,***for percorre sequências, while repete até condição ser falsa,Não há diferença
+Poll,Multiple Choice,Qual é o resultado de for i in range(2,6,2): print(i),'2 4 6',***'2 4','2 3 4 5','2 4 6 8'
+Poll,Multiple Choice,Qual erro ocorre se a indentação estiver incorreta?,TypeError,***IndentationError,ValueError,KeyError
+Poll,Multiple Choice,Qual é o efeito de misturar espaços e tabulações na indentação?,Nenhum,***Pode causar erro,Deixa o código mais rápido,Python ignora
+Poll,Multiple Choice,Como acessar todas as chaves de um dicionário d?,d.keys,***d.keys(),d.get_keys(),d.chaves()
+Poll,Multiple Choice,Qual é o resultado de d = {'a':1}; d['b'],1,***KeyError,None,0
+Poll,Multiple Choice,Qual modo de abertura de arquivo permite leitura e escrita?,r,***r+,w+,rw
+Poll,Multiple Choice,Qual método lê todas as linhas de um arquivo em uma lista?,read(),***readlines(),readall(),read_list()
+Poll,Multiple Choice,Como importar um módulo de outro diretório?,import ../modulo,***from pasta.modulo import funcao,import modulo from pasta,require modulo
+Poll,Multiple Choice,Qual comando lista todos os módulos instalados via pip?,pip list,***pip freeze,pip show,pip modules
