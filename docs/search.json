@@ -1635,20 +1635,111 @@
     "href": "aula_t3.html#section-17",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nMinha sugestão é: use a opção que você entenda melhor.\nVocê pode já ficar satisfeito com o código original, ou pode pedir ao Copilot explicações sobre a sugestão de melhoria. E depois de ter entendido as duas opções, escolher a que te parece melhor.\n\n\n\n\n\n\n\n\n\nDica\n\n\nÉ melhor ter mais rapidamente uma versão do sistema que funciona corretamente e depois otimizá-la, se necessário, do que tentar já otimizar código antes mesmo de saber se ele vai atender o que precisa.\n\nPode ser, por exemplo, que uma função que você está otimizando agora acabe nem sendo usada mais adiante."
+    "text": "Dica\n\n\nMinha sugestão é: use a opção que você entenda melhor.\nVocê pode já ficar satisfeito com o código original, ou pode pedir ao Copilot explicações sobre a sugestão de melhoria. E depois de ter entendido as duas opções, escolher a que te parece melhor.\n\n\n\n\n\n\n\n\n\n\nDica\n\n\nÉ melhor ter mais rapidamente uma versão do sistema que funciona corretamente e depois otimizá-la, se necessário, do que tentar já otimizar código antes mesmo de saber se ele vai atender o que precisa.\n\nPode ser, por exemplo, que uma função que você está otimizando agora acabe nem sendo usada mais adiante."
   },
   {
     "objectID": "aula_t3.html#section-18",
     "href": "aula_t3.html#section-18",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "O livro que estamos usando como referência, lista as 10 principais estruturas de programação do Python que precisamos entender\n\npara conseguir acompanhar tudo que é apresentado no livro.\n\n\nComo você já fez disciplinas de programação, você deve ter um bom entendimento do que são essas estruturas em si.\n\nMas é importante que consiga entendê-las na sintaxe do Python.\nSe você já programa em Python é bom revisar seu conhecimento.\nSe está começando na linguagem agora é uma boa hora de conhecê-las."
+    "text": "O livro que estamos usando como referência, lista as 10 principais estruturas de programação do Python que precisamos entender\n\npara conseguir acompanhar tudo que é apresentado no livro.\n\n\nComo você já fez disciplinas de programação, você pode ter um entendimento razoável dessas estruturas em outras linguagens.\n\nMas é importante que consiga entendê-las na sintaxe do Python.\nSe você já programa em Python é bom revisar seu conhecimento.\nSe está começando na linguagem agora é uma boa hora de conhecê-las."
   },
   {
     "objectID": "aula_t3.html#section-19",
     "href": "aula_t3.html#section-19",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica para quem não conhece Python\n\nUse o Copilot, CharGPT ou Gemini para uma sessão de conversa sobre isso.\nIndique seu nível de conhecimento prévio de programação.\nIndique uma linguagem que você tenha mais familiaridade.\nExemplo\n\nConsidere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python. Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez."
+    "text": "Fiquei pensando na melhor forma de passar esse conteúdo nessa disciplina.\n\nPoderia ser interessante para alguns alunos fazer uma revisão completa desses conceitos na aula.\nMas poderia ser tedioso para outros uma aula assim, em formato expositivo."
+  },
+  {
+    "objectID": "aula_t3.html#principais-estruturas-de-programação-do-python",
+    "href": "aula_t3.html#principais-estruturas-de-programação-do-python",
+    "title": "Lendo Código Python",
+    "section": "10 principais estruturas de programação do Python",
+    "text": "10 principais estruturas de programação do Python\n\nFunções\nVariáveis\nCondicionais\nStrings\nListas\nLoops\nIndentação\nDicionários\nArquivos\nMódulos\n\naasSS\nDica para quem não conhece Python\n\nUse o Copilot, CharGPT ou Gemini para uma sessão de conversa sobre isso.\nIndique seu nível de conhecimento prévio de programação.\nIndique uma linguagem que você tenha mais familiaridade.\nExemplo\n\nConsidere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python. Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez."
+  },
+  {
+    "objectID": "aula_t3.html#as-10-principais",
+    "href": "aula_t3.html#as-10-principais",
+    "title": "Lendo Código Python",
+    "section": "As 10 Principais",
+    "text": "As 10 Principais\n\nFunções\nVariáveis\nCondicionais\nStrings\nListas\nLoops\nIndentação\nDicionários\nArquivos\nMódulos\n\naasSS\nDica para quem não conhece Python\n\nUse o Copilot, CharGPT ou Gemini para uma sessão de conversa sobre isso.\nIndique seu nível de conhecimento prévio de programação.\nIndique uma linguagem que você tenha mais familiaridade.\nExemplo\n\nConsidere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python. Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez."
+  },
+  {
+    "objectID": "aula_t3.html#as10-principais-estruturas-de-programação-do-python",
+    "href": "aula_t3.html#as10-principais-estruturas-de-programação-do-python",
+    "title": "Lendo Código Python",
+    "section": "As10 Principais estruturas de programação do Python",
+    "text": "As10 Principais estruturas de programação do Python\n\n\n\nFunções\n\nVariáveis\n\nCondicionais\n\nStrings\n\nListas\n\n\n\n\nLoops\n\nIndentação\n\nDicionários\n\nArquivos\n\nMódulos"
+  },
+  {
+    "objectID": "aula_t3.html#section-20",
+    "href": "aula_t3.html#section-20",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Creio que é muito mais interessante, especialmente para quem já fez outras disciplinas de programação, estudar as estruturas de maneira mais prática e interativa.\n\nE, como temos Assistentes de IA à nossa disposição\npor que não utilizá-los para apoiar essa tarefa."
+  },
+  {
+    "objectID": "aula_t3.html#section-21",
+    "href": "aula_t3.html#section-21",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Em vez de sair simplesmente perguntando para um Assistente de IA o que são esses conceitos.\n\npodemos usar um pouco de Engenharia de Prompt para tornar esse processo mais interessante.\n\n\nAinda vamos ter aula específica sobre Engenharia de Prompt.\n\nE pode ser que ao chegar nela a gente conclua que a abordagem que vou sugerir poderia ser melhor.\nMas o que preparei já pode ser um bom começo."
+  },
+  {
+    "objectID": "aula_t3.html#um-pouco-de-engenharia-de-prompt",
+    "href": "aula_t3.html#um-pouco-de-engenharia-de-prompt",
+    "title": "Lendo Código Python",
+    "section": "Um pouco de Engenharia de Prompt",
+    "text": "Um pouco de Engenharia de Prompt\nAlgumas das recomendações mais comuns de Engenharia de Prompt são:\n\nDar contexto.\nDefinir o papel (persona) do modelo.\nSer claro e específico.\nDefinir o formato da resposta esperada.\nIterar e refinar o prompt."
+  },
+  {
+    "objectID": "aula_t3.html#section-23",
+    "href": "aula_t3.html#section-23",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Definir o papel (persona) do modelo\n\n\nAtue como um professor de programação paciente, criativo e com ótima didática.\n\n\n\n\n\n\n\n\n\n\n\n\nSer claro e específico\n\n\nPoderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas,Loops, Indentação, Dicionários, Arquivos e Módulos."
+  },
+  {
+    "objectID": "aula_t3.html#section-22",
+    "href": "aula_t3.html#section-22",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Seguindo essas ideias pensei no seguinte formato de estudo\n\nque você pode (e deve) adaptar para a sua realidade.\n\n\n\n\n\n\n\n\n\nDar contexto\n\n\nConsidere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python."
+  },
+  {
+    "objectID": "aula_t3.html#section-24",
+    "href": "aula_t3.html#section-24",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Definir o formato da resposta esperada\n\n\nGostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos e comparações com Java.\n\n\n\n\n\nVocê pode montar um texto único com tudo que escrevemos ou você pode ser mais específico indicando algo como:\n\nContexto: Considere que sou estudante ...\nPersona: Atue como um professor ...\nTarefa: Poderia me guiar ...\nFormato: Gostaria que a sessão fosse ..."
+  },
+  {
+    "objectID": "aula_t3.html#iterar-e-refinar-o-prompt.",
+    "href": "aula_t3.html#iterar-e-refinar-o-prompt.",
+    "title": "Lendo Código Python",
+    "section": "Iterar e refinar o prompt.",
+    "text": "Iterar e refinar o prompt."
+  },
+  {
+    "objectID": "aula_t3.html#section-25",
+    "href": "aula_t3.html#section-25",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Contexto: Considere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.\nPersona: Atue como um professor de programação paciente, criativo e com ótima didática.\nTarefa: Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas,Loops, Indentação, Dicionários, Arquivos e Módulos.\nFormato: Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos e comparações com Java."
+  },
+  {
+    "objectID": "aula_t3.html#section-26",
+    "href": "aula_t3.html#section-26",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Iterar e refinar o prompt\n\n\nÉ comum que um prompt não funcione como gostaríamos. Podemos então alterá-lo para conseguir o que queremos.\nNesse caso como pedi uma sessão interativa, podemos experimentá-la e, se ao longo do processo não estivermos satisfeitos, interrompemos a sessão e fazemos um novo prompt."
+  },
+  {
+    "objectID": "aula_t3.html#section-27",
+    "href": "aula_t3.html#section-27",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Dica para quem não conhece Python\n\nUse o Copilot, CharGPT ou Gemini para uma sessão de conversa sobre isso.\nIndique seu nível de conhecimento prévio de programação.\nIndique uma linguagem que você tenha mais familiaridade.\nExemplo"
   }
 ]

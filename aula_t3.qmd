@@ -9,6 +9,8 @@ O conteúdo dessa aula é baseado nos **capítulo 4 e 5** do livro abaixo.
 
 ![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
 
+# Introdução {background-color="#40666e"}
+
 ## Ler Código
 
 [Ler código]{.alert} significa [entender]{.alert} o que o código faz ao examiná-lo.
@@ -58,6 +60,8 @@ A ideia aqui não é entender cada detalhe de cada linha do código.
 - E sim aprender a como usar o Copilot para chegar num meio termo entre:
   - _“Esse código faz mágica”_ 
   - e _“Eu sei exatamente como cada linha de código funciona”_.
+
+# Usando Copilot para Entender Código {background-color="#40666e"}
 
 ##
 
@@ -239,6 +243,8 @@ Você pode já ficar satisfeito com o código original, ou pode pedir ao Copilot
 E depois de ter entendido as duas opções, escolher a que te parece melhor.
 :::
 
+. . .
+
 ::: {.nonincremental}
 ::: {.callout-tip}
 É melhor ter mais rapidamente uma versão do sistema que funciona corretamente e depois otimizá-la, se necessário,
@@ -248,6 +254,9 @@ do que tentar já otimizar código antes mesmo de saber se ele vai atender o que
 :::
 :::
 
+
+# As 10 Principais Estruturas de Programação do Python {background-color="#40666e"}
+
 ##
 
 O livro que estamos usando como referência, lista as **10 principais estruturas de programação do Python** que precisamos entender
@@ -256,27 +265,152 @@ O livro que estamos usando como referência, lista as **10 principais estruturas
 
 . . .
 
-Como você já fez disciplinas de programação, você deve ter um bom entendimento do que são essas estruturas em si.
+Como você já fez disciplinas de programação, você pode ter um  entendimento razoável dessas estruturas em outras linguagens. 
 
 - Mas é importante que consiga entendê-las na sintaxe do Python.
 - Se você já programa em Python é bom revisar seu conhecimento.
 - Se está começando na linguagem agora é uma boa hora de conhecê-las.
 
-## 10 principais estruturas de programação do Python
+## As10 Principais estruturas de programação do Python
 
-1. Funções
-2. Variáveis
-3. Condicionais
-4. Strings
-5. Listas
-6. Loops
-7. Indentação
-8. Dicionários
-9. Arquivos
-10. Módulos
+::: {.columns}
+:::: {.column width="50%"}
+1. Funções  
+2. Variáveis  
+3. Condicionais  
+4. Strings  
+5. Listas  
+::::
+:::: {.column width="50%"}
+6. Loops  
+7. Indentação  
+8. Dicionários  
+9. Arquivos  
+10. Módulos  
+::::
+:::
+
+## 
+
+Fiquei pensando na melhor forma de passar esse conteúdo nessa disciplina.
+
+- Poderia ser interessante para alguns alunos fazer uma revisão completa desses conceitos na aula.
+- Mas poderia ser tedioso para outros uma aula assim, em formato expositivo.
+
+##
+
+Creio que é muito mais interessante, especialmente para quem já fez outras disciplinas de programação, estudar as estruturas de maneira mais prática e interativa.
+
+- E, como temos Assistentes de IA à nossa disposição
+- por que não utilizá-los para apoiar essa tarefa.
+
+##
+
+Em vez de sair simplesmente perguntando para um Assistente de IA o que são esses conceitos.
+
+- podemos usar um pouco de [Engenharia de Prompt]{.alert} para tornar esse processo mais interessante.
+
+. . .
+
+Ainda vamos ter aula específica sobre Engenharia de Prompt.
+
+- E pode ser que ao chegar nela a gente conclua que a abordagem que vou sugerir poderia ser melhor.
+- Mas o que preparei já pode ser um bom começo.
+
+## Um pouco de Engenharia de Prompt
+
+Algumas das recomendações mais comuns de Engenharia de Prompt são:
+
+- Dar contexto.
+- Definir o papel (_persona_)  do modelo.
+- Ser claro e específico.
+- Definir o formato da resposta esperada.
+- Iterar e refinar o prompt.
+
+## 
+
+Seguindo essas ideias pensei no seguinte formato de estudo
+
+- que você pode (e deve) adaptar para a sua realidade.
+
+. . .
+
+::: {.halfincfontsize}
+::: {.callout-note}
+#### Dar contexto
+Considere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.
+:::
+:::
+
+##
+
+::: {.halfincfontsize}
+::: {.callout-note}
+#### Definir o papel (_persona_) do modelo
+Atue como um professor de programação paciente, criativo e com ótima didática.
+:::
+:::
+
+. . .
+
+::: {.halfincfontsize}
+::: {.callout-note}
+#### Ser claro e específico
+Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas,Loops, Indentação, Dicionários, Arquivos e Módulos.
+:::
+:::
+
+##
+
+::: {.halfincfontsize}
+::: {.callout-note}
+#### Definir o formato da resposta esperada
+Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos e comparações com Java.
+:::
+:::
+
+. . .
+
+Você pode montar um texto único com tudo que escrevemos ou você pode ser mais específico indicando algo como:
+
+::: {.halfincfontsize}
+```
+Contexto: Considere que sou estudante ...
+Persona: Atue como um professor ...
+Tarefa: Poderia me guiar ...
+Formato: Gostaria que a sessão fosse ...
+```
+:::
+
+
+##
+
+::: {.halfincfontsize}
+::: {.callout-note}
+#### Iterar e refinar o prompt
+É comum que um prompt não funcione como gostaríamos.
+Podemos então alterá-lo para conseguir o que queremos.
+
+Nesse caso como pedi uma sessão interativa, podemos experimentá-la e,
+se ao longo do processo não estivermos satisfeitos, interrompemos a
+sessão e fazemos um novo prompt.
+:::
+:::
+
+##
+
+Vamos então testar!
+
+```
+Contexto: Considere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.
+Persona: Atue como um professor de programação paciente, criativo e com ótima didática.
+Tarefa: Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas,Loops, Indentação, Dicionários, Arquivos e Módulos.
+Formato: Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos e comparações com Java.
+```
 
 
 
+##
 
 Dica para quem não conhece Python
 
@@ -284,4 +418,4 @@ Dica para quem não conhece Python
 - Indique seu nível de conhecimento prévio de programação.
 - Indique uma linguagem que você tenha mais familiaridade.
 - Exemplo
-    - Considere que sou estudante de Ciência da Computação. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python. Poderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria que a sessão fosse interativa, apresentando um conceito de cada vez.
+    -   
