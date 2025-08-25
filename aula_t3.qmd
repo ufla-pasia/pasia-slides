@@ -5,7 +5,7 @@ subtitle: PASIA - Aula T.3
 
 ##  
 
-O conteúdo dessa aula é baseado nos **capítulo 4 e 5** do livro abaixo.
+O conteúdo dessa aula é inspirado nos **capítulos 4 e 5** do livro abaixo.
 
 ![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
 
@@ -19,16 +19,16 @@ O conteúdo dessa aula é baseado nos **capítulo 4 e 5** do livro abaixo.
 
 Existem **dois níveis de entendimento**:
 
-- _Tracing description_: entender o que **cada linha de código faz**.
+- Entender o que **cada linha de código faz** (_tracing description_).
 - Entender o **objetivo geral** de um código (função, classe, etc.).
 
 ## Ler Código
 
-O **1º nível** (_tracing description_) depende do conhecimento de estruturas e linguagem de programação.
+O **1º nível, _tracing description_,** depende do conhecimento de estruturas e linguagem de programação.
 
 . . .
 
-Já o **2º nível** (_objetivo geral_) é geralmente o que esperamos encontrar na docstring de uma função.
+Já o **2º nível, _objetivo geral_,** é geralmente o que esperamos encontrar na docstring de uma função.
 
 - E depende do entendimento de 1º nível.
 
@@ -62,6 +62,15 @@ A ideia aqui não é entender cada detalhe de cada linha do código.
 - E sim aprender a como usar o Copilot para chegar num meio termo entre:
   - _“Esse código faz mágica”_ 🧙‍♂️
   - e _“Eu sei exatamente como cada linha de código funciona”_ 🤓
+
+##
+
+Na aula passada tratamos o processamento de um dataset de futebol
+sem nos preocuparmos em entender realmente o código.
+
+- Mas isso foi apenas para demonstrar o uso do Copilot.
+- Em nossos projetos precisamos buscar o meio termo citado no slide anterior.
+
 
 # Usando Copilot para Entender Código {background-color="#40666e"}
 
@@ -312,10 +321,15 @@ E, como temos Assistentes de IA à nossa disposição
 - por que não utilizá-los para apoiar essa tarefa.
 :::
 
+. . .
+
+Vamos então trabalhar com esses 10 tópicos de três formas distintas.
+
 ##
 
-Em vez de sair simplesmente perguntando para um Assistente de IA o que são esses conceitos,
+Vamos primeiro usar o Copilot para nos ajudar a entender esses conceitos.
 
+- Mas em vez de sair simplesmente perguntando para ele o que são esses conceitos,
 - podemos usar um pouco de [Engenharia de Prompt]{.alert} para tornar esse processo mais interessante.
 
 . . .
@@ -323,7 +337,7 @@ Em vez de sair simplesmente perguntando para um Assistente de IA o que são esse
 Ainda vamos ter aula específica sobre Engenharia de Prompt.
 
 - E pode ser que ao chegar nela a gente conclua que a abordagem que vou sugerir poderia ser melhor.
-- Mas o que preparei já pode ser um bom começo.
+- Mas o que preparei aqui já pode ser um bom começo.
 
 # Um pouco de Engenharia de Prompt {background-color="#40666e"}
 
@@ -400,7 +414,10 @@ sessão e fazemos um novo prompt.
 
 ##
 
-Podemos montar um texto corrido com tudo que escrevemos ou você pode ser mais específico usando um **prompt estruturado**:
+Podemos montar um **texto corrido** com tudo que escrevemos **ou** você pode ser mais específico 
+usando um [prompt estruturado]{.alert}:
+
+. . .
 
 ::: {.halfincfontsize}
 ```
@@ -430,7 +447,7 @@ Formato: Gostaria que a sessão fosse interativa, apresentando um conceito de ca
 ::: {.nonincremental}
 
 ::: {.callout-tip}
-Durante a sessão interativa o Copilot deve te pedir para escrever trechos de código
+Durante a sessão interativa o Copilot pode te pedir para escrever trechos de código
 em Python e, para isso, você precisará pular linha. Mas se usar <kbd>ENTER</kbd> você
 envia o prompt incompleto. Use <kbd>Shift</kbd> + <kbd>ENTER</kbd> para pular linha.
 :::
@@ -453,7 +470,7 @@ Além de experimentar prompts diferentes, você pode também usar Assistentes de
 Eu testei com Copilot, ChatGPT e Gemini e a interação de cada um deles foi diferente.
 Gemini pediu para escrever código Python, ChatGPT esqueceu de tratar funções :)
 
-Mas, lembre-se, se usar o mesmo prompt de novo no mesmo assistente de IA pode levar a uma interação diferente.
+Mas, lembre-se, usar o mesmo prompt de novo no mesmo assistente de IA pode levar a uma interação diferente.
 :::
 
 ## Dinâmica em duplas
@@ -802,11 +819,11 @@ com outra linguagem por exemplo.
 
 ## Videoaula
 
-::: {.nonincremental}
+Para quem prefere um material em vídeo mais tradicional, há vários disponíveis na internet.
 
-Para quem prefere um material em vídeo, há vários disponíveis na internet.
+. . .
 
-- Uma sugestão são esses vídeos iniciais de um curso de Ciência de Dados do ICMC.
+Uma sugestão são esses vídeos iniciais de um curso de Ciência de Dados do ICMC.
 
 ::: {.columns}
 :::: {.column width="50%"}
@@ -815,8 +832,6 @@ Para quem prefere um material em vídeo, há vários disponíveis na internet.
 :::: {.column width="50%"}
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/1TEVHMv3vcs" title="Aula 2 - Funções e POO" frameborder="0" allowfullscreen></iframe>
 ::::
-:::
-
 :::
 
 # Quiz mais avançado {background-color="#40666e"}

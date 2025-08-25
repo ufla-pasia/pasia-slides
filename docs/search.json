@@ -1502,14 +1502,14 @@
     "href": "aula_t3.html#section",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "O conteúdo dessa aula é baseado nos capítulo 4 e 5 do livro abaixo."
+    "text": "O conteúdo dessa aula é inspirado nos capítulos 4 e 5 do livro abaixo."
   },
   {
     "objectID": "aula_t3.html#ler-código",
     "href": "aula_t3.html#ler-código",
     "title": "Lendo Código Python",
     "section": "Ler Código",
-    "text": "Ler Código\nLer código significa entender o que o código faz ao examiná-lo.\n\nExistem dois níveis de entendimento:\n\nTracing description: entender o que cada linha de código faz.\nEntender o objetivo geral de um código (função, classe, etc.)."
+    "text": "Ler Código\nLer código significa entender o que o código faz ao examiná-lo.\n\nExistem dois níveis de entendimento:\n\nEntender o que cada linha de código faz (tracing description).\nEntender o objetivo geral de um código (função, classe, etc.)."
   },
   {
     "objectID": "aula_t3.html#por-que-é-importante-a-habilidade-de-ler-código",
@@ -1530,42 +1530,42 @@
     "href": "aula_t3.html#section-2",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Nas aulas anteriores escremos prompt para que o Copilot explicasse um trecho de código pra gente.\n\nMas o Copilot também tem comandos específicos além de texto livre.\n\n\nPodemos usar o comando /explain por exemplo.\n\nSelecionamos a função (ou trecho de código) que queremos entender e acessamos com o botão direito do mouse a opção Copilot -&gt; Explain\n\nou digitamos /explain no chat (seja com Ctrl + I ou no chat)."
+    "text": "Na aula passada tratamos o processamento de um dataset de futebol sem nos preocuparmos em entender realmente o código.\n\nMas isso foi apenas para demonstrar o uso do Copilot.\nEm nossos projetos precisamos buscar o meio termo citado no slide anterior."
   },
   {
     "objectID": "aula_t3.html#section-3",
     "href": "aula_t3.html#section-3",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nPodemos complementar o comando /explain com mais detalhes.\nIsso é especialmente útil para fazermos com que o Copilot entenda que queremos as explicações em português."
+    "text": "Nas aulas anteriores escremos prompt para que o Copilot explicasse um trecho de código pra gente.\n\nMas o Copilot também tem comandos específicos além de texto livre.\n\n\nPodemos usar o comando /explain por exemplo.\n\nSelecionamos a função (ou trecho de código) que queremos entender e acessamos com o botão direito do mouse a opção Copilot -&gt; Explain\n\nou digitamos /explain no chat (seja com Ctrl + I ou no chat)."
   },
   {
     "objectID": "aula_t3.html#section-4",
     "href": "aula_t3.html#section-4",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Vamos usar como exemplo a função melhor_palavra.\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    melhor = palavras[0]\n    max_pontos = numero_de_pontos(melhor)\n\n    for palavra in palavras[1:]:\n        pontos = numero_de_pontos(palavra)\n        if pontos &gt; max_pontos:\n            melhor = palavra\n            max_pontos = pontos\n\n    return melhor"
+    "text": "Dica\n\n\nPodemos complementar o comando /explain com mais detalhes.\nIsso é especialmente útil para fazermos com que o Copilot entenda que queremos as explicações em português."
   },
   {
     "objectID": "aula_t3.html#section-6",
     "href": "aula_t3.html#section-6",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Veja que na explicação o Copilot já destacou pontos de dúvidas e sugeriu melhoria.\n\nNem sempre ele faz isso. Demos sorte nessa vez. 😃\n\n\nSe uma função tiver um código com o qual não temos familiaridade, podemos pedir uma explicação linha a linha.\n\nUsando \\explain linha a linha."
+    "text": "Primeira parte da explicação:"
   },
   {
     "objectID": "aula_t3.html#section-8",
     "href": "aula_t3.html#section-8",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "&lt;img src=\"imagens/copilot_explicacao_melhor_palavra_linha_a_linha.png\" alt=\"Explicação do Copilot linha a linha sobre a função melhor_palavra.\" style=\"width:auto; max-width:100%;\"&gt;"
+    "text": "Veja que, na explicação, o Copilot já destacou pontos de dúvidas e sugeriu melhoria.\n\nNem sempre ele faz isso. Demos sorte nessa vez. 😃\n\n\nSe uma função tiver um código com o qual não temos familiaridade, podemos pedir uma explicação linha a linha.\n\nUsando \\explain linha a linha, por exemplo."
   },
   {
     "objectID": "aula_t3.html#ler-código-1",
     "href": "aula_t3.html#ler-código-1",
     "title": "Lendo Código Python",
     "section": "Ler Código",
-    "text": "Ler Código\nO 1º nível (tracing description) depende do conhecimento de estruturas e linguagem de programação.\n\nJá o 2º nível (objetivo geral) é geralmente o que esperamos encontrar na docstring de uma função.\n\nE depende do entendimento de 1º nível."
+    "text": "Ler Código\nO 1º nível, tracing description, depende do conhecimento de estruturas e linguagem de programação.\n\nJá o 2º nível, objetivo geral, é geralmente o que esperamos encontrar na docstring de uma função.\n\nE depende do entendimento de 1º nível."
   },
   {
     "objectID": "aula_t3.html#por-que-é-importante-a-habilidade-de-ler-código-1",
@@ -1579,7 +1579,7 @@
     "href": "aula_t3.html#section-5",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Primeira parte da explicação:"
+    "text": "Vamos usar como exemplo a função melhor_palavra.\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    melhor = palavras[0]\n    max_pontos = numero_de_pontos(melhor)\n\n    for palavra in palavras[1:]:\n        pontos = numero_de_pontos(palavra)\n        if pontos &gt; max_pontos:\n            melhor = palavra\n            max_pontos = pontos\n\n    return melhor"
   },
   {
     "objectID": "aula_t3.html#section-7",
@@ -1600,14 +1600,14 @@
     "href": "aula_t3.html#section-10",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nUma maneira de diminuir a possibilidade de erro é pedir a explicação mais de uma vez.\nÉ incomum que o Copilot explique errado mais de uma vez."
+    "text": "Como professor é incrível que agora os alunos tenham com quem tirar dúvidas quantas vezes for necessário.\n\nApenas lembre-se que a explicação do Copilot pode estar errada.\n\nAí você pode pensar: então pra que ela serve?\n\n\n\nRealmente pode ser frustrante.\n\nMas na maioria dos códigos, especialmente mais simples, as explicações são corretas.\nE, sem o Copilot, se você tivesse dúvidas e procurasse um amigo ou no Google, poderia obter respostas erradas também."
   },
   {
     "objectID": "aula_t3.html#section-11",
     "href": "aula_t3.html#section-11",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Vamos usar outro exemplo de explicação do Copilot.\n\nSuponha que você precise entender uma função já existente em um projeto.\n\n\n\ndef clean_number(phone_number):\n    phone_number = phone_number.replace(\"(\", \"\")\n    phone_number = phone_number.replace(\")\", \"\")\n    phone_number = phone_number.replace(\"-\", \"\")\n    phone_number = phone_number.replace(\" \", \"\")\n    return phone_number\n\n\n\nVamos ver a explicação do Copilot em português."
+    "text": "Dica\n\n\nUma maneira de diminuir a possibilidade de erro é pedir a explicação mais de uma vez.\nÉ incomum que o Copilot explique errado mais de uma vez."
   },
   {
     "objectID": "aula_t3.html#section-13",
@@ -1628,28 +1628,28 @@
     "href": "aula_t3.html#section-16",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Voltando na explicação inicial dada pelo Copilot\n\nvocê alteraria seu código para usar a solução “mais limpa e eficiente”, segundo ele, que usa o módulo re?\n\n\nQue critérios adotar para decidir aceitar ou não a sugestão?"
+    "text": "Você pode continuar pedindo mais informações do Copilot até julgar que tem um nível de entendimento adequado para a tarefa que precisa.\n\nLembre-se do que falamos no início da aula: não é necessário entender cada detalhe do código.\n\nMas temos que sair do estágio “Esse código faz mágica”.\nPara conseguirmos depois validar o nosso código.\nE assim resolver a tarefa que precisamos."
   },
   {
     "objectID": "aula_t3.html#section-17",
     "href": "aula_t3.html#section-17",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nMinha sugestão é: use a opção que você entenda melhor.\nVocê pode já ficar satisfeito com o código original, ou pode pedir ao Copilot explicações sobre a sugestão de melhoria. E depois de ter entendido as duas opções, escolher a que te parece melhor.\n\n\n\n\n\n\n\n\n\n\nDica\n\n\nÉ melhor ter mais rapidamente uma versão do sistema que funciona corretamente e depois otimizá-la, se necessário, do que tentar já otimizar código antes mesmo de saber se ele vai atender o que precisa.\n\nPode ser, por exemplo, que uma função que você está otimizando agora acabe nem sendo usada mais adiante."
+    "text": "Voltando na explicação inicial dada pelo Copilot\n\nvocê alteraria seu código para usar a solução “mais limpa e eficiente”, segundo ele, que usa o módulo re?\n\n\nQue critérios adotar para decidir aceitar ou não a sugestão?"
   },
   {
     "objectID": "aula_t3.html#section-18",
     "href": "aula_t3.html#section-18",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "O livro que estamos usando como referência, lista os 10 principais tópicos em Python que precisamos entender\n\npara conseguir acompanhar tudo que é apresentado no livro.\n\n\nComo você já fez disciplinas de programação, você pode ter um bom entendimento dessas estruturas em outras linguagens.\n\nMas é importante que consiga entendê-las na sintaxe do Python.\nSe você já programa em Python é bom revisar seu conhecimento.\nSe está começando na linguagem agora é uma boa hora de conhecê-los."
+    "text": "Dica\n\n\nMinha sugestão é: use a opção que você entenda melhor.\nVocê pode já ficar satisfeito com o código original, ou pode pedir ao Copilot explicações sobre a sugestão de melhoria. E depois de ter entendido as duas opções, escolher a que te parece melhor.\n\n\n\n\n\n\n\n\n\n\n\nDica\n\n\nÉ melhor ter mais rapidamente uma versão do sistema que funciona corretamente e depois otimizá-la, se necessário, do que tentar já otimizar código antes mesmo de saber se ele vai atender o que precisa.\n\nPode ser, por exemplo, que uma função que você está otimizando agora acabe nem sendo usada mais adiante."
   },
   {
     "objectID": "aula_t3.html#section-19",
     "href": "aula_t3.html#section-19",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Fiquei pensando na melhor forma de passar esse conteúdo nessa disciplina.\n\nPoderia ser interessante para alguns alunos fazer uma revisão tradicional completa desses conceitos na aula.\nMas poderia ser tedioso para outros uma aula em formato expositivo."
+    "text": "O livro que estamos usando como referência, lista os 10 principais tópicos em Python que precisamos entender\n\npara conseguir acompanhar tudo que é apresentado no livro.\n\n\nComo você já fez disciplinas de programação, você pode ter um bom entendimento dessas estruturas em outras linguagens.\n\nMas é importante que consiga entendê-las na sintaxe do Python.\nSe você já programa em Python é bom revisar seu conhecimento.\nSe está começando na linguagem agora é uma boa hora de conhecê-los."
   },
   {
     "objectID": "aula_t3.html#principais-estruturas-de-programação-do-python",
@@ -1677,14 +1677,14 @@
     "href": "aula_t3.html#section-20",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Creio que é muito mais interessante estudar as estruturas de maneira mais prática e interativa.\n\nEspecialmente para quem já fez outras disciplinas de programação.\n\n\nE, como temos Assistentes de IA à nossa disposição\n\npor que não utilizá-los para apoiar essa tarefa."
+    "text": "Fiquei pensando na melhor forma de passar esse conteúdo nessa disciplina.\n\nPoderia ser interessante para alguns alunos fazer uma revisão tradicional completa desses conceitos na aula.\nMas poderia ser tedioso para outros uma aula em formato expositivo."
   },
   {
     "objectID": "aula_t3.html#section-21",
     "href": "aula_t3.html#section-21",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Em vez de sair simplesmente perguntando para um Assistente de IA o que são esses conceitos,\n\npodemos usar um pouco de Engenharia de Prompt para tornar esse processo mais interessante.\n\n\nAinda vamos ter aula específica sobre Engenharia de Prompt.\n\nE pode ser que ao chegar nela a gente conclua que a abordagem que vou sugerir poderia ser melhor.\nMas o que preparei já pode ser um bom começo."
+    "text": "Creio que é muito mais interessante estudar as estruturas de maneira mais prática e interativa.\n\nEspecialmente para quem já fez outras disciplinas de programação.\n\n\n\nE, como temos Assistentes de IA à nossa disposição\n\npor que não utilizá-los para apoiar essa tarefa.\n\n\n\n\nVamos então trabalhar com esses 10 tópicos de três formas distintas."
   },
   {
     "objectID": "aula_t3.html#um-pouco-de-engenharia-de-prompt",
@@ -1698,21 +1698,21 @@
     "href": "aula_t3.html#section-23",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dar contexto\n\n\nConsidere que sou estudante de um curso de TI. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.\n\n\n\n\n\n\n\n\n\n\n\n\n\nDefinir o papel (persona) do modelo\n\n\nAtue como um professor de programação paciente, criativo e com ótima didática."
+    "text": "Algumas das recomendações mais comuns de Engenharia de Prompt são:\n\nDar contexto.\nDefinir o papel (persona) do modelo.\nSer claro e específico.\nDefinir o formato da resposta esperada.\nIterar e refinar o prompt.\n\n\nSeguindo essas ideias pensei em uma sugestão de formato de estudo, que você pode (e deve) adaptar para a sua realidade."
   },
   {
     "objectID": "aula_t3.html#section-22",
     "href": "aula_t3.html#section-22",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Algumas das recomendações mais comuns de Engenharia de Prompt são:\n\nDar contexto.\nDefinir o papel (persona) do modelo.\nSer claro e específico.\nDefinir o formato da resposta esperada.\nIterar e refinar o prompt.\n\n\nSeguindo essas ideias pensei em uma sugestão de formato de estudo, que você pode (e deve) adaptar para a sua realidade."
+    "text": "Vamos primeiro usar o Copilot para nos ajudar a entender esses conceitos.\n\nMas em vez de sair simplesmente perguntando para ele o que são esses conceitos,\npodemos usar um pouco de Engenharia de Prompt para tornar esse processo mais interessante.\n\n\nAinda vamos ter aula específica sobre Engenharia de Prompt.\n\nE pode ser que ao chegar nela a gente conclua que a abordagem que vou sugerir poderia ser melhor.\nMas o que preparei aqui já pode ser um bom começo."
   },
   {
     "objectID": "aula_t3.html#section-24",
     "href": "aula_t3.html#section-24",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Ser claro e específico\n\n\nPoderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas, Loops, Indentação, Dicionários, Arquivos e Módulos."
+    "text": "Dar contexto\n\n\nConsidere que sou estudante de um curso de TI. Já fiz disciplinas introdutórias de programação, mas tenho certa dificuldade dificuldade com conceitos de programação. Conheço razoavelmente a linguagem Java e agora gostaria de aprender Python.\n\n\n\n\n\n\n\n\n\n\n\n\n\nDefinir o papel (persona) do modelo\n\n\nAtue como um professor de programação paciente, criativo e com ótima didática."
   },
   {
     "objectID": "aula_t3.html#iterar-e-refinar-o-prompt.",
@@ -1726,35 +1726,35 @@
     "href": "aula_t3.html#section-25",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Definir o formato da resposta esperada\n\n\nGostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos, comparações com Java e perguntas de múltipla escolha para fixação do conteúdo."
+    "text": "Ser claro e específico\n\n\nPoderia me guiar por uma sessão de conversa que apresente de forma didática a linguagem Python comparando as construções com Java? Gostaria de abordar essas 10 construções em Python: Funções, Variáveis, Condicionais, Strings, Listas, Loops, Indentação, Dicionários, Arquivos e Módulos."
   },
   {
     "objectID": "aula_t3.html#section-26",
     "href": "aula_t3.html#section-26",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Iterar e refinar o prompt\n\n\nÉ comum que um prompt não funcione como gostaríamos. Podemos então alterá-lo para conseguir o que queremos.\nNesse caso como estou pedindo uma sessão interativa, podemos experimentá-la e, se ao longo do processo não estivermos satisfeitos, interrompemos a sessão e fazemos um novo prompt."
+    "text": "Definir o formato da resposta esperada\n\n\nGostaria que a sessão fosse interativa, apresentando um conceito de cada vez, com exemplos práticos, comparações com Java e perguntas de múltipla escolha para fixação do conteúdo."
   },
   {
     "objectID": "aula_t3.html#section-27",
     "href": "aula_t3.html#section-27",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Podemos montar um texto corrido com tudo que escrevemos ou você pode ser mais específico usando um prompt estruturado:\n\n  Contexto: Considere que sou estudante ...\n  Persona: Atue como um professor ...\n  Tarefa: Poderia me guiar ...\n  Formato: Gostaria que a sessão fosse ..."
+    "text": "Iterar e refinar o prompt\n\n\nÉ comum que um prompt não funcione como gostaríamos. Podemos então alterá-lo para conseguir o que queremos.\nNesse caso como estou pedindo uma sessão interativa, podemos experimentá-la e, se ao longo do processo não estivermos satisfeitos, interrompemos a sessão e fazemos um novo prompt."
   },
   {
     "objectID": "aula_t3.html#section-28",
     "href": "aula_t3.html#section-28",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nDurante a sessão interativa o Copilot deve te pedir para escrever trechos de código em Python e, para isso, você precisará pular linha. Mas se usar ENTER você envia o prompt incompleto. Use Shift + ENTER para pular linha.\n\n\n\nVamos fazer uma sessão interativa dessas aqui na sala para revisar os conceitos.\n\nE é altamente recomendável que você faça depois em casa, adaptando o prompt à sua realidade.\nPara tornar o processo ainda mais interativo, vamos usar o PollEverywhere para responder às perguntas durante a sessão."
+    "text": "Podemos montar um texto corrido com tudo que escrevemos ou você pode ser mais específico usando um prompt estruturado:\n\n\n  Contexto: Considere que sou estudante ...\n  Persona: Atue como um professor ...\n  Tarefa: Poderia me guiar ...\n  Formato: Gostaria que a sessão fosse ..."
   },
   {
     "objectID": "aula_t3.html#section-29",
     "href": "aula_t3.html#section-29",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nAlém de experimentar prompts diferentes, você pode também usar Assistentes de IA diferentes.\nEu testei com Copilot, ChatGPT e Gemini e a interação de cada um deles foi diferente. Gemini pediu para escrever código Python, ChatGPT esqueceu de tratar funções :)\nMas, lembre-se, se usar o mesmo prompt de novo no mesmo assistente de IA pode levar a uma interação diferente."
+    "text": "Dica\n\n\nDurante a sessão interativa o Copilot pode te pedir para escrever trechos de código em Python e, para isso, você precisará pular linha. Mas se usar ENTER você envia o prompt incompleto. Use Shift + ENTER para pular linha.\n\n\n\nVamos fazer uma sessão interativa dessas aqui na sala para revisar os conceitos.\n\nE é altamente recomendável que você faça depois em casa, adaptando o prompt à sua realidade.\nPara tornar o processo ainda mais interativo, vamos usar o PollEverywhere para responder às perguntas durante a sessão."
   },
   {
     "objectID": "aula_t3.html#os-10-principais-tópicos-em-python-1",
@@ -1782,181 +1782,202 @@
     "href": "aula_t3.html#section-30",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Vamos formar duplas e cada dupla vai responder os exercícios.\n\nNão é necessário identificar os nomes, basta dar um nome para a dupla.\nAnote o gabarito de vocês no caderno para facilitar a próxima etapa da dinâmica."
+    "text": "Dica\n\n\nAlém de experimentar prompts diferentes, você pode também usar Assistentes de IA diferentes.\nEu testei com Copilot, ChatGPT e Gemini e a interação de cada um deles foi diferente. Gemini pediu para escrever código Python, ChatGPT esqueceu de tratar funções :)\nMas, lembre-se, usar o mesmo prompt de novo no mesmo assistente de IA pode levar a uma interação diferente."
   },
   {
     "objectID": "aula_t3.html#section-31",
     "href": "aula_t3.html#section-31",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Depois de respondidos os exercícios, cada dupla receberá as respostas de outra dupla.\n\nE vai preencher a folha de conferência.\nJustificando as respostas incorretas."
+    "text": "Vamos formar duplas e cada dupla vai responder os exercícios.\n\nNão é necessário identificar os nomes, basta dar um nome para a dupla.\nAnote o gabarito de vocês no caderno para facilitar a próxima etapa da dinâmica."
   },
   {
     "objectID": "aula_t3.html#funções",
     "href": "aula_t3.html#funções",
     "title": "Lendo Código Python",
     "section": "Funções",
-    "text": "Funções\n\nQual é a forma correta de definir uma função que retorna o quadrado de um número em Python?\n\n\ndef quadrado(n): return n * n\nfunction quadrado(n) { return n * n }\ndef quadrado(n) { return n * n }\nint quadrado(int n) { return n * n }\n\n\nResposta: a"
+    "text": "Funções\n\n\nQual é a forma correta de definir uma função que retorna o quadrado de um número em Python?\n\n\ndef quadrado(n): return n * n\nfunction quadrado(n) { return n * n }\ndef quadrado(n) { return n * n }\nint quadrado(int n) { return n * n }\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#funções-1",
     "href": "aula_t3.html#funções-1",
     "title": "Lendo Código Python",
     "section": "Funções",
-    "text": "Funções\n\nO que acontece se uma função Python não possui a instrução return?\n\n\nRetorna 0\nRetorna None\nRetorna False\nRetorna vazio\n\n\nResposta: b"
+    "text": "Funções\n\n\nO que acontece se uma função Python não possui a instrução return?\n\n\nRetorna 0\nRetorna None\nRetorna False\nRetorna vazio\n\n\n\nResposta: b"
   },
   {
     "objectID": "aula_t3.html#variáveis",
     "href": "aula_t3.html#variáveis",
     "title": "Lendo Código Python",
     "section": "Variáveis",
-    "text": "Variáveis\n\nQual destas opções declara corretamente uma variável chamada idade com valor 25 em Python?\n\n\nint idade = 25\nidade = 25\nidade := 25\nvar idade = 25\n\n\nResposta: b"
+    "text": "Variáveis\n\n\nQual destas opções declara corretamente uma variável chamada idade com valor 25 em Python?\n\n\nint idade = 25\nidade = 25\nidade := 25\nvar idade = 25\n\n\n\nResposta: b"
   },
   {
     "objectID": "aula_t3.html#condicionais",
     "href": "aula_t3.html#condicionais",
     "title": "Lendo Código Python",
     "section": "Condicionais",
-    "text": "Condicionais\n\nQual é a sintaxe correta para um if em Python?\n\n\nif (x &gt; 10) { print(\"maior\") }\nif x &gt; 10: print(\"maior\")\nif x &gt; 10 then print(\"maior\")\nif x &gt; 10 { print(\"maior\") }\n\n\nResposta: b"
+    "text": "Condicionais\n\n\nQual é a sintaxe correta para um if em Python?\n\n\nif (x &gt; 10) { print(\"maior\") }\nif x &gt; 10: print(\"maior\")\nif x &gt; 10 then print(\"maior\")\nif x &gt; 10 { print(\"maior\") }\n\n\n\nResposta: b"
   },
   {
     "objectID": "aula_t3.html#strings",
     "href": "aula_t3.html#strings",
     "title": "Lendo Código Python",
     "section": "Strings",
-    "text": "Strings\n\nQual comando imprime o tamanho da string \"Python\"?\n\n\nprint(size(\"Python\"))\nprint(length(\"Python\"))\nprint(len(\"Python\"))\nprint(count(\"Python\"))\n\n\nResposta: c"
+    "text": "Strings\n\n\nQual comando imprime o tamanho da string \"Python\"?\n\n\nprint(size(\"Python\"))\nprint(length(\"Python\"))\nprint(len(\"Python\"))\nprint(count(\"Python\"))\n\n\n\nResposta: c"
   },
   {
     "objectID": "aula_t3.html#listas",
     "href": "aula_t3.html#listas",
     "title": "Lendo Código Python",
     "section": "Listas",
-    "text": "Listas\n\nComo criar uma lista com os elementos 1, 2 e 3?\n\n\nlista = [1, 2, 3]\nlista = (1, 2, 3)\nlista = {1, 2, 3}\nlista = &lt;1, 2, 3&gt;\n\n\nResposta: a"
+    "text": "Listas\n\n\nComo criar uma lista com os elementos 1, 2 e 3?\n\n\nlista = [1, 2, 3]\nlista = (1, 2, 3)\nlista = {1, 2, 3}\nlista = &lt;1, 2, 3&gt;\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#loops",
     "href": "aula_t3.html#loops",
     "title": "Lendo Código Python",
     "section": "Loops",
-    "text": "Loops\n\nQual é a forma correta de percorrer uma lista chamada nomes e imprimir cada elemento?\n\n\nfor nome in nomes: print(nome)\nfor nome of nomes: print(nome)\nfor (nome in nomes) { print(nome) }\nforeach nome in nomes: print(nome)\n\n\nResposta: a"
+    "text": "Loops\n\n\nQual é a forma correta de percorrer uma lista chamada nomes e imprimir cada elemento?\n\n\nfor nome in nomes: print(nome)\nfor nome of nomes: print(nome)\nfor (nome in nomes) { print(nome) }\nforeach nome in nomes: print(nome)\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#indentação",
     "href": "aula_t3.html#indentação",
     "title": "Lendo Código Python",
     "section": "Indentação",
-    "text": "Indentação\n\nO que acontece se você esquecer de indentar o corpo de uma função em Python?\n\n\nO código funciona normalmente\nO Python ignora o bloco\nO Python gera erro de indentação\nO Python executa sem problemas\n\n\nResposta: c"
+    "text": "Indentação\n\n\nO que acontece se você esquecer de indentar o corpo de uma função em Python?\n\n\nO código funciona normalmente\nO Python ignora o bloco\nO Python gera erro de indentação\nO Python executa sem problemas\n\n\n\nResposta: c"
   },
   {
     "objectID": "aula_t3.html#dicionários",
     "href": "aula_t3.html#dicionários",
     "title": "Lendo Código Python",
     "section": "Dicionários",
-    "text": "Dicionários\n\nComo criar um dicionário com as chaves \"a\" e \"b\" e valores 1 e 2?\n\n\nd = {\"a\": 1, \"b\": 2}\nd = [\"a\": 1, \"b\": 2]\nd = (\"a\": 1, \"b\": 2)\nd = &lt;\"a\": 1, \"b\": 2&gt;\n\n\nResposta: a"
+    "text": "Dicionários\n\n\nComo criar um dicionário com as chaves \"a\" e \"b\" e valores 1 e 2?\n\n\nd = {\"a\": 1, \"b\": 2}\nd = [\"a\": 1, \"b\": 2]\nd = (\"a\": 1, \"b\": 2)\nd = &lt;\"a\": 1, \"b\": 2&gt;\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#arquivos",
     "href": "aula_t3.html#arquivos",
     "title": "Lendo Código Python",
     "section": "Arquivos",
-    "text": "Arquivos\n\nQual comando abre um arquivo para leitura em Python?\n\n\nopen(\"arquivo.txt\", \"r\")\nopen(\"arquivo.txt\", \"w\")\nopen(\"arquivo.txt\", \"a\")\nopen(\"arquivo.txt\", \"rw\")\n\n\nResposta: a"
+    "text": "Arquivos\n\n\nQual comando abre um arquivo para leitura em Python?\n\n\nopen(\"arquivo.txt\", \"r\")\nopen(\"arquivo.txt\", \"w\")\nopen(\"arquivo.txt\", \"a\")\nopen(\"arquivo.txt\", \"rw\")\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#módulos",
     "href": "aula_t3.html#módulos",
     "title": "Lendo Código Python",
     "section": "Módulos",
-    "text": "Módulos\n\nComo importar o módulo math em Python? ______\n\n\nimport math\ninclude math\nusing math\nrequire math\n\n\nResposta: a"
+    "text": "Módulos\n\n\nComo importar o módulo math em Python? ______\n\n\nimport math\ninclude math\nusing math\nrequire math\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#variáveis-1",
     "href": "aula_t3.html#variáveis-1",
     "title": "Lendo Código Python",
     "section": "Variáveis",
-    "text": "Variáveis\n\nO que acontece se você atribuir um valor string a uma variável que antes era um inteiro?\n\n\nErro de tipo\nPython converte automaticamente para inteiro\nPython aceita a mudança de tipo\nO valor anterior é mantido\n\n\nResposta: c"
+    "text": "Variáveis\n\n\nO que acontece se você atribuir um valor string a uma variável que antes era um inteiro?\n\n\nErro de tipo\nPython converte automaticamente para inteiro\nPython aceita a mudança de tipo\nO valor anterior é mantido\n\n\n\nResposta: c"
   },
   {
     "objectID": "aula_t3.html#condicionais-1",
     "href": "aula_t3.html#condicionais-1",
     "title": "Lendo Código Python",
     "section": "Condicionais",
-    "text": "Condicionais\n\nQual palavra-chave é usada para múltiplas condições em Python?\n\n\nelseif\nelse if\nelif\notherwise\n\n\nResposta: c"
+    "text": "Condicionais\n\n\nQual palavra-chave é usada para múltiplas condições em Python?\n\n\nelseif\nelse if\nelif\notherwise\n\n\n\nResposta: c"
   },
   {
     "objectID": "aula_t3.html#strings-1",
     "href": "aula_t3.html#strings-1",
     "title": "Lendo Código Python",
     "section": "Strings",
-    "text": "Strings\n\nQual método transforma todos os caracteres de uma string para maiúsculas?\n\n\nupper()\ncapitalize()\ntoUpper()\nuppercase()\n\n\nResposta: a"
+    "text": "Strings\n\n\nQual método transforma todos os caracteres de uma string para maiúsculas?\n\n\nupper()\ncapitalize()\ntoUpper()\nuppercase()\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#listas-1",
     "href": "aula_t3.html#listas-1",
     "title": "Lendo Código Python",
     "section": "Listas",
-    "text": "Listas\n\nQual método adiciona um elemento ao final de uma lista?\n\n\nadd()\nappend()\ninsert()\npush()\n\n\nResposta: b"
+    "text": "Listas\n\n\nQual método adiciona um elemento ao final de uma lista?\n\n\nadd()\nappend()\ninsert()\npush()\n\n\n\nResposta: b"
   },
   {
     "objectID": "aula_t3.html#loops-1",
     "href": "aula_t3.html#loops-1",
     "title": "Lendo Código Python",
     "section": "Loops",
-    "text": "Loops\n\nO que faz o comando range(5) em um loop for?\n\n\nCria uma lista de 1 a 5\nCria uma lista de 0 a 5\nCria uma lista de 0 a 4\nCria uma lista de 1 a 4\n\n\nResposta: c"
+    "text": "Loops\n\n\nO que faz o comando range(5) em um loop for?\n\n\nCria uma lista de 1 a 5\nCria uma lista de 0 a 5\nCria uma lista de 0 a 4\nCria uma lista de 1 a 4\n\n\n\nResposta: c"
   },
   {
     "objectID": "aula_t3.html#indentação-1",
     "href": "aula_t3.html#indentação-1",
     "title": "Lendo Código Python",
     "section": "Indentação",
-    "text": "Indentação\n\nQual é o padrão de indentação recomendado em Python?\n\n\n2 espaços\n4 espaços\n1 tabulação\nNão é necessário indentar\n\n\nResposta: b"
+    "text": "Indentação\n\n\nQual é o padrão de indentação recomendado em Python?\n\n\n2 espaços\n4 espaços\n1 tabulação\nNão é necessário indentar\n\n\n\nResposta: b"
   },
   {
     "objectID": "aula_t3.html#dicionários-1",
     "href": "aula_t3.html#dicionários-1",
     "title": "Lendo Código Python",
     "section": "Dicionários",
-    "text": "Dicionários\n\nComo acessar o valor da chave \"nome\" em um dicionário chamado aluno?\n\n\naluno[\"nome\"]\naluno.nome\naluno-&gt;nome\naluno.get(\"nome\")\n\n\nResposta: a"
+    "text": "Dicionários\n\n\nComo acessar o valor da chave \"nome\" em um dicionário chamado aluno?\n\n\naluno[\"nome\"]\naluno.nome\naluno-&gt;nome\naluno.get(\"nome\")\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#arquivos-1",
     "href": "aula_t3.html#arquivos-1",
     "title": "Lendo Código Python",
     "section": "Arquivos",
-    "text": "Arquivos\n\nQual método lê todo o conteúdo de um arquivo aberto?\n\n\nread()\nreadline()\nreadall()\nget()\n\n\nResposta: a"
+    "text": "Arquivos\n\n\nQual método lê todo o conteúdo de um arquivo aberto?\n\n\nread()\nreadline()\nreadall()\nget()\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#módulos-1",
     "href": "aula_t3.html#módulos-1",
     "title": "Lendo Código Python",
     "section": "Módulos",
-    "text": "Módulos\n\nComo importar apenas a função sqrt do módulo math?\n\n\nfrom math import sqrt\nimport sqrt from math\nmath.sqrt()\ninclude sqrt from math\n\n\nResposta: a"
+    "text": "Módulos\n\n\nComo importar apenas a função sqrt do módulo math?\n\n\nfrom math import sqrt\nimport sqrt from math\nmath.sqrt()\ninclude sqrt from math\n\n\n\nResposta: a"
   },
   {
     "objectID": "aula_t3.html#section-32",
     "href": "aula_t3.html#section-32",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Para fechar a dinâmica vamos comparar as respostas com o gabarito oficial."
+    "text": "Depois de respondidos os exercícios, cada dupla receberá as respostas de outra dupla.\n\nE vai preencher a folha de conferência.\nJustificando as respostas incorretas."
   },
   {
     "objectID": "aula_t3.html#section-33",
     "href": "aula_t3.html#section-33",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nEm casa você pode gerar outro questionário para estudar podendo direcionar melhor. Você pode pedir mais exercícios de algum tópico, ou se basear em comparações com outra linguagem por exemplo."
+    "text": "Para fechar a dinâmica vamos comparar as respostas com o gabarito oficial."
   },
   {
     "objectID": "aula_t3.html#section-34",
     "href": "aula_t3.html#section-34",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Se ainda tivermos tempo, nossa última parte será um Quiz no Poll Everywhere, mas agora com perguntas um pouco mais avançadas.\nNão se preocupe se precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.\n\nMas vou aproveitar o gancho para comentar sobre elas.\n\n\n\n\n\n\n\nDica\n\n\nNa primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. Lembre-se que Assistentes de IA podem gerar respostas erradas.\nUma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir."
+    "text": "Dica\n\n\nEm casa você pode gerar outro questionário para estudar podendo direcionar melhor. Você pode pedir mais exercícios de algum tópico, ou se basear em comparações com outra linguagem por exemplo."
   },
   {
     "objectID": "aula_t3.html#videoaula",
     "href": "aula_t3.html#videoaula",
     "title": "Lendo Código Python",
     "section": "Videoaula",
-    "text": "Videoaula\nPara quem prefere um material em vídeo, há vários disponíveis na internet.\n\nUma sugestão são esses vídeos iniciais de um curso de Ciência de Dados do ICMC."
+    "text": "Videoaula\nPara quem prefere um material em vídeo mais tradicional, há vários disponíveis na internet.\n\nUma sugestão são esses vídeos iniciais de um curso de Ciência de Dados do ICMC."
+  },
+  {
+    "objectID": "aula_t3.html#section-12",
+    "href": "aula_t3.html#section-12",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Vamos usar outro exemplo de explicação do Copilot.\n\nSuponha que você precise entender uma função já existente em um projeto.\n\n\n\ndef clean_number(phone_number):\n    phone_number = phone_number.replace(\"(\", \"\")\n    phone_number = phone_number.replace(\")\", \"\")\n    phone_number = phone_number.replace(\"-\", \"\")\n    phone_number = phone_number.replace(\" \", \"\")\n    return phone_number\n\n\n\nVamos ver a explicação do Copilot em português."
+  },
+  {
+    "objectID": "aula_t3.html#section-14",
+    "href": "aula_t3.html#section-14",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Veja que neste caso o Copilot fez uma explicação e sugeriu uma melhoria.\n\nAntes de avaliar a sugestão de melhoria é importante que você avalie se realmente entendeu a explicação dada para o código atual.\n\n\nPor exemplo, se não tiver ficado claro como o método replace funciona, você pode pedir uma explicação mais detalhada sobre isso."
+  },
+  {
+    "objectID": "aula_t3.html#section-35",
+    "href": "aula_t3.html#section-35",
+    "title": "Lendo Código Python",
+    "section": "",
+    "text": "Se ainda tivermos tempo, nossa última parte será um Quiz no Poll Everywhere, mas agora com perguntas um pouco mais avançadas.\nNão se preocupe se precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.\n\nMas vou aproveitar o gancho para comentar sobre elas.\n\n\n\n\n\n\n\nDica\n\n\nNa primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. Lembre-se que Assistentes de IA podem gerar respostas erradas.\nUma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir."
   }
 ]
