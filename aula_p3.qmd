@@ -1,0 +1,314 @@
+---
+title: Testes
+subtitle: PASIA - Aula P.3
+---
+
+##  
+
+O conteúdo dessa aula é baseado no **capítulo 6** do livro abaixo.
+
+![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
+
+# Por que é essencial testar código? {background-color="#40666e"}
+
+##
+
+Já mencionamos nas aulas anteriores sobre testes de código.
+
+- [Testar código]{.alert} é uma **habilidade essencial** porque nos dá confiança de que o código funciona apropriadamente.
+
+. . .
+
+É importante que você adquira essa habilitade e consiga conferir por você mesmo se o seu código funciona.
+
+- Mesmo que o Copilot possa ser usado para gerar testes (e ele está ficando cada vez melhor nisso),
+- entendemos que você deve ser capaz de escrever testes por conta própria, para verificar se um código gerado pelo Copilot está correto.
+
+##
+
+Programadores iniciantes geralmente têm aversão a testes (e mesmo nem tão novatos assim).
+
+- Eles têm dificuldade de perceber que, mesmo que um código pareça fazer sentido, ele pode conter erros sutis.
+- Há também um sentimento de que _"se eu testar vou descobrir que tem problema, então melhor deixar quieto"_.
+
+. . .
+
+Engenheiros de Software profissionais seguem uma abordagem completamente oposta.
+
+- Eles levam testes extremamente a sério, porque sabem o quanto isso pode trazer de consequências para suas empresas.
+- Ninguém quer ser a pessoa que 
+  - causou um prejuízo enorme para sua empresa ou para algum de seus clientes;
+  - deixou hacker obter acesso a dados confidenciais de usuários;
+  - ou causou um acidente de um carro autônomo.
+
+##
+
+Dado o potencial custo de um erro, faz muito mais sentido assumir que o código está errado
+
+- até que se prove o contrário.
+
+. . .
+
+Apenas com testes rigorosos podemos ter confiança de que o código funciona apropriadamente.
+
+- Empresas geralmente não testam uma única vez.
+- Possuem toda uma metodologia e infraestrutura de testes contínuos para garantir que tudo funciona a cada alteração no código.
+
+## TDD
+
+Algumas empresas levam isso tão a sério que seguem uma abordagem chamada **TDD - Test Driven Development**.
+
+- A ideia central é escrever primeiro os testes e depois a função/módulo a ser testado.
+
+. . .
+
+Não vamos seguir essa abordagem na disciplina,
+
+- Mas precisamos nos lembrar que assistentes de IA erram e precisamos verificar nossos códigos.
+
+# Testes de Caixa-Preta e de Caixa-Branca {background-color="#40666e"}
+
+## Testes de Caixa-Preta
+
+[Testes de Caixa-Preta]{.alert} assumem que não sabemos nada sobre como o código funciona.
+
+- Apenas sabemos o que ele deve fazer.
+- O teste envolve então experimentar diferentes entradas e verificar se as saídas estão corretas.
+
+. . .
+
+Podemos aplicar testes de caixa-preta a cada função ou a um programa inteiro.
+
+- Uma vantagem desse tipo de teste é que não precisamos olhar o código para escrevê-lo.
+- Focamos apenas no comportamento desejado do código.
+
+##
+
+Como exemplo, suponha que precisamos testar uma função que pega uma lista de palavras (strings)
+e retorna a maior delas.
+
+. . .
+
+::: {.halfincfontsize}
+```python
+def maior_palavra(palavras):
+```
+:::
+
+Mais precisamente, dada a assinatura acima, o comportamento esperando é que a função retorne a
+palavra que tenha mais caracteres.
+
+- Se existirem várias palavras com o mesmo número máximo de caracteres, a função deve retornar a 
+  primeira delas presente na lista.
+
+##
+
+Há duas categorias principais que costumamos pensar ao escrever testes.
+
+- [Casos de uso comuns]{.alert}: incluem as entradas que imaginamos que serão utilizadas na prática.
+- [Casos de borda _(edge cases)_]{.alert}: são casos incomuns, mas possíveis, que podem quebrar o código.
+  - Há entradas que podem testar algumas regras da função em maior profundidade ou que contenham entradas inesperadas
+   (ex. uma lista contendo só strings vazias).
+
+## Casos de uso comuns
+
+Pensando na função `maior_palavra`, vamos pensar nos casos de testes que deveríamos usar.
+
+- Para especificar os casos de testes vamos escrever como se estivéssemos usando um terminal Python.
+
+. . .
+
+Começando com **casos de uso comuns**:
+
+. . .
+
+Podemos pensar em um teste com poucas palavras nas quais apenas uma é maior que todas as outras
+
+::: {.halfincfontsize}
+```python
+>>> maior_palavra(['gato', 'pássaro', 'cachorro'])
+'cachorro'
+```
+:::
+
+## Casos de uso comuns
+
+Podemos agora testar uma lista com mais palavras e com a maior palavra aparecendo em outra posição da lista.
+
+::: {.halfincfontsize}
+```python
+>>> maior_palavra(['feliz', 'aniversário', 'para', 'meu', 'cachorro'])
+'aniversário'
+```
+:::
+
+. . .
+
+Por fim, podemos pensar em uma lista contendo uma única palavra.
+
+::: {.halfincfontsize}
+```python
+>>> maior_palavra(['feliz'])
+'feliz'
+```
+:::
+
+## Casos de borda
+
+Se o programa estiver funcionando para esses casos de testes comuns, é hora de pensarmos nos **casos de borda**.
+
+- Podemos começar testando o caso de termos empate na maior palavra, que a especificação diz que devemos retornar a primeira.
+- Obs.: algumas pessoas podem considerar esse um caso comum e outras um caso de borda.
+
+::: {.halfincfontsize}
+```python
+>>> maior_palavra(['gato', 'cão', 'sapo'])
+'gato'
+```
+:::
+
+## Casos de borda
+
+E se nenhuma palavra tiver caracteres? A maior palavra é uma string vazia.
+
+::: {.halfincfontsize}
+```python
+>>> maior_palavra(['', '', ''])
+''
+```
+:::
+
+. . .
+
+::: {.callout-tip}
+Em códigos que usam loops é muito comum que erros ocorram em verificações do primeiro 
+ou do último elementos, por falhas na construção da lógica do loop.
+
+Assim, se presumimos que uma função pode ter que percorrer uma lista, ou algo similar,
+é interessante pensarmos em casos de borda sobre isso.
+:::
+
+## Casos de borda
+
+E como deveríamos testar o caso do método ser chamado com uma lista vazia?
+
+- Veja que, neste caso, a especificação do comportamento da função não é clara.
+- A função poderia retornar `None` ou poderia gerar uma exceção, por exemplo.
+
+. . .
+
+Assumindo que a função retorne `None` para esse caso, o teste seria:
+
+::: {.halfincfontsize}
+```python
+>>> maior_palavra([])
+None
+```
+:::
+
+## Testes de entrada incorreta
+
+Há ainda um outro tipo de teste que poderíamos pensar, que é o caso da 
+função ser chamada com parâmetros errados.
+
+- Como Python é fracamente tipado, nada impede que a função `maior_palavra` seja chamada com 
+  tipos de dados inesperados, como números, lista de números, `None`, etc.
+
+. . .
+
+Nessa aula vamos ignorar esse tipo de situação.
+
+- Mas em sistemas em produção isso é algo importante.
+- E, para esse caso, _type hints_ podem ser mais interessantes do que testes exaustivos.
+
+
+## Como saber quais casos de testes usar
+
+Um começo é considerar os tipos de dados dos parâmetros e variar seus valores.
+
+- Se o parâmetro for uma string ou uma lista, podemos pensar em string ou lista vazias, 
+  com um elemento ou com vários elementos.
+- Para testar vários elementos, na grande maioria dos casos podemos testar com quatro.
+  - Já que é improvável que uma função funcione para quatro elementos mas não 
+    para cinco, seis ou mais.
+- Já para uma função que recebe dois números, podemos pensar em testes considerando quando
+  - um é zero, os dois são zero, um é negativo, ambos são negativos ou ambos são positivos.
+
+## Como saber quais casos de testes usar
+
+- Outro tipo de caso de teste é levando em conta o comportamento específico da função.
+  - Como no caso do empate da função `maior_palavra`.
+
+. . .
+
+No final das contas, como já mencionamos, testar é uma mistura de ciência e arte.
+
+- A prática é o melhor caminho para que descubra os melhores testes para suas necessidades.
+
+
+## Testes de Caixa-Branca
+
+A ideia do [teste de caixa-branca] é examinar o código para pensarmos em casos de testes
+adicionais que podemos escrever.
+
+- Ao ler o código de uma função se vermos que ela usa um loop, devemos pensar nos casos comuns de erros com loops.
+- Se uma estrutura condicional com verificação com `>` ou `>=`, por exemplo, é outro caso a se avaliar.
+
+. . .
+
+A ideia, portanto, é usar o conhecimento do código a ser testado para completar os testes necessários.
+
+# Como testar seu código? {background-color="#40666e"}
+
+##
+
+Qual é a estratégia de testes mais simples que podemos pensar?
+
+- Podemos testar nossa função no terminal Python como fizemos nas aulas anteriores.
+
+. . .
+
+Fazemos a chamada como especificamos no caso de testes e comparamos o resultado exibido com o esperado.
+
+::: {.halfincfontsize}
+```python
+>>> maior_palavra(['gato', 'cão', 'sapo'])
+'gato'
+```
+:::
+
+##
+
+Quais são as **vantagens** de testes usando o terminal?
+
+- É rápido de rodar.
+- É fácil acrescentar novos testes de acordo com o resultado dos testes anterioress.
+
+##
+
+Mas e as **desvantagens** de testar usando o terminal?
+
+. . .
+
+Os problemas começam quando fazemos uma correção no código após detecarmos um problema em um teste.
+
+- É muito comum que, ao corrigir um erro, lembremos de repetir apenas o teste que tinha falhado.
+- Mas pode ser que a correção tenha provocado um efeito colateral em outros caso de teste que tínhamos verificado antes.
+- E, portanto, o correto seria reexecutar todos os testes.
+  - E aí começa a ficar muito improdutivo seguir essa estratégia.
+
+##
+
+E qual seria a segunda abordagem mais simples para testar o código?
+
+- Seria inserir os casos de teste no próprio código.
+- Por exemplo, poderíamos inserir testes no mesmo arquivo da função `maior_palavra` logo após a definição dela.
+- Mas isso seria muito ruim quando o código fosse usado em produção.
+  - Precisaríamos comentar esse código de teste, ou ter uma maneira de desabilitá-lo.
+
+## 
+
+A melhor abordagem, na verdade, é usar um framework de testes.
+
+- A biblioteca mais popular para testes em Python é a pytest
+- 

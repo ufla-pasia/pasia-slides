@@ -823,6 +823,7 @@ Para quem prefere um material em vídeo mais tradicional, há vários disponíve
 
 . . .
 
+
 Uma sugestão são esses vídeos iniciais de um curso de Ciência de Dados do ICMC.
 
 ::: {.columns}
