@@ -2238,5 +2238,26 @@
     "title": "Testes",
     "section": "",
     "text": "Na saída anterior vemos que foram encontrados 6 testes dos quais dois não passaram\ncollected 6 items                                            \n\ntestes/test_maior_palavra.py ...F.F                    [100%]\n\nEm seguida são apresentados detalhes dos testes que falharam.\n\nQue nos ajudam a identificar o problema para corrigi-lo."
+  },
+  {
+    "objectID": "aula_p3.html#section-20",
+    "href": "aula_p3.html#section-20",
+    "title": "Testes",
+    "section": "",
+    "text": "Nas aulas anteriores vimos o ciclo de projeto de funções.\n\nVamos agora atualizá-lo para incluir a etapa de testes."
+  },
+  {
+    "objectID": "aula_p3.html#section-21",
+    "href": "aula_p3.html#section-21",
+    "title": "Testes",
+    "section": "",
+    "text": "A. Defina o comportamento desejado da função\nB. Escreva um prompt que descreve a função\nC. Use o Copilot para gerar o código\nD. O código parece razoável? Sim: E, não: I.\nE. Escreva casos de teste usando pytest\nF. Rode os testes. Passou nos testes? Sim: G, não: J\nG. Escreveu todos os casos de testes? Sim: H, não: E\nH. Pronto!\nI. Explore alternativas do Copilot. Alguma parece razoável? Sim: E, não: J\nJ. Revise o prompt para melhorar a descrição da função e vá para C ."
+  },
+  {
+    "objectID": "aula_p3.html#section-22",
+    "href": "aula_p3.html#section-22",
+    "title": "Testes",
+    "section": "",
+    "text": "flowchart TD\n  A(Defina o comportamento desejado da função) --&gt; B(Escreva um prompt que descreve a função)\n  B --&gt; C(Use o Copilot para gerar o código)\n  C --&gt; D(O código parece razoável?)\n  D --Sim--&gt; E(Escreva casos de teste usando pytest)\n  E --&gt; F(Rode os testes. Passou nos testes?)\n  F -- Sim --&gt; G(Escreveu todos os casos de testes?)\n  G -- Sim --&gt; H(Pronto!)\n  G -- Não --&gt; E\n  D -- Não --&gt; I(Explore alternativas do Copilot. Alguma parece razoável?)\n  I -- Sim --&gt; E\n  I -- Não --&gt; J(Revise o prompt para melhorar a descrição da função)\n  J --&gt; C\n  F -- Não --&gt; J"
   }
 ]

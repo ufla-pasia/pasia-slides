@@ -603,3 +603,47 @@ testes/test_maior_palavra.py ...F.F                    [100%]
 Em seguida são apresentados detalhes dos testes que falharam.
 
 - Que nos ajudam a identificar o problema para corrigi-lo.
+
+# Atualizando o ciclo de projeto de funções {background-color="#40666e"}
+
+##
+
+Nas aulas anteriores vimos o **ciclo de projeto de funções**.
+
+- Vamos agora atualizá-lo para incluir a etapa de testes.
+
+##
+
+- **A**. Defina o comportamento desejado da função
+- **B**. Escreva um prompt que descreve a função
+- **C**. Use o Copilot para gerar o código
+- **D**. O código parece razoável? Sim: **E**, não: **I**.
+- **E**. Escreva casos de teste usando pytest
+- **F**. Rode os testes. Passou nos testes? Sim: **G**, não: **J**
+- **G**. Escreveu todos os casos de testes? Sim: **H**, não: **E**
+- **H**. Pronto!
+- **I**. Explore alternativas do Copilot. Alguma parece razoável?  Sim: **E**, não: **J**
+- **J**. Revise o prompt para melhorar a descrição da função e vá para **C** .
+
+##
+
+```{mermaid}
+flowchart TD
+  A(Defina o comportamento desejado da função) --> B(Escreva um prompt que descreve a função)
+  B --> C(Use o Copilot para gerar o código)
+  C --> D(O código parece razoável?)
+  D --Sim--> E(Escreva casos de teste usando pytest)
+  E --> F(Rode os testes. Passou nos testes?)
+  F -- Sim --> G(Escreveu todos os casos de testes?)
+  G -- Sim --> H(Pronto!)
+  G -- Não --> E
+  D -- Não --> I(Explore alternativas do Copilot. Alguma parece razoável?)
+  I -- Sim --> E
+  I -- Não --> J(Revise o prompt para melhorar a descrição da função)
+  J --> C
+  F -- Não --> J
+```
+
+# Como testar seu código? {background-color="#40666e"}
+
+## 

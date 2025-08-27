@@ -17,6 +17,7 @@ format:
     logo: imagens/logo_UFLA.png
     auto-stretch: false
     chalkboard: true
+    mermaid: {}
 
 revealjs-plugins:
   - pointer
