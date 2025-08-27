@@ -39,7 +39,7 @@ def calcular_quantidade_gols(dados, pais):
     dados contém dados estatísticos de futebol:
     - a terceira coluna traz o nome do país do jogador
     - a sexta coluna o nome da liga
-    - a nona coluna o número de gols feitos pelo jogador
+    - a décima terceira coluna o número de gols feitos pelo jogador
     pais é a identificação do país de interesse (ex.: "br BRA")
 
     A função calcula e retorna a quantidade de gols feitos 

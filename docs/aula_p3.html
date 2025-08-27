@@ -941,7 +941,7 @@
 <span id="cb21-3"><a></a><span class="co">    dados contém dados estatísticos de futebol:</span></span>
 <span id="cb21-4"><a></a><span class="co">    - a terceira coluna traz o nome do país do jogador</span></span>
 <span id="cb21-5"><a></a><span class="co">    - a sexta coluna o nome da liga</span></span>
-<span id="cb21-6"><a></a><span class="co">    - a nona coluna o número de gols feitos pelo jogador</span></span>
+<span id="cb21-6"><a></a><span class="co">    - a décima terceira coluna o número de gols feitos pelo jogador</span></span>
 <span id="cb21-7"><a></a><span class="co">    pais é a identificação do país de interesse (ex.: "br BRA")</span></span>
 <span id="cb21-8"><a></a></span>
 <span id="cb21-9"><a></a><span class="co">    A função calcula e retorna a quantidade de gols feitos </span></span>
@@ -1054,14 +1054,24 @@
 </section>
 <section id="section-33" class="slide level2">
 <h2></h2>
-<p>Vamos então criar um arquivo CSV que cubra os casos de testes.</p>
-<div class="fragment">
-<p>Dicas:</p>
+<p>Vamos então criar um arquivo CSV que cubra os casos de testes. Para isso seguem algumas dicas:</p>
+<ul>
+<li class="fragment">Crie um arquivo CSV contendo as 13 primeiras colunas e 11 primeiras linhas do arquivo original.</li>
+<li class="fragment">Salve o arquivo com o nome <code>futebol.csv</code> na pasta <code>testes/dados/</code>.</li>
+<li class="fragment">Altere os dados do arquivo para atender aos casos de testes levantados.
 <ul>
 <li class="fragment">Parece suficiente considerar a existência de apenas duas ligas.</li>
 <li class="fragment">E você pode usar países diferentes para cobrir todos os casos de testes.</li>
+</ul></li>
 </ul>
-</div>
+</section>
+<section id="section-34" class="slide level2">
+<h2></h2>
+<p>Para ler o arquivo criado no seu arquivo com as funçoes de teste você pode usar o seguinte código:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="im">import</span> csv</span>
+<span id="cb22-2"><a></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb22-3"><a></a></span>
+<span id="cb22-4"><a></a>CAMINHO_ARQUIVO_FUTEBOL <span class="op">=</span> Path(<span class="va">__file__</span>).parent <span class="op">/</span> <span class="st">'dados'</span> <span class="op">/</span> <span class="st">'futebol.csv'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>Mãos à obra!</p>
 

@@ -2300,7 +2300,7 @@
     "href": "aula_p3.html#situação-2---testes-com-arquivos",
     "title": "Testes",
     "section": "Situação 2 - Testes com arquivos",
-    "text": "Situação 2 - Testes com arquivos\nImagine agora que queiramos testar funções com processem arquivos.\n\nComo a que fizemos em outra aula, com dados de ligas europeias de futebol.\n\n\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a nona coluna o número de gols feitos pelo jogador\n    pais é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\""
+    "text": "Situação 2 - Testes com arquivos\nImagine agora que queiramos testar funções com processem arquivos.\n\nComo a que fizemos em outra aula, com dados de ligas europeias de futebol.\n\n\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a décima terceira coluna o número de gols feitos pelo jogador\n    pais é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\""
   },
   {
     "objectID": "aula_p3.html#section-26",
@@ -2363,6 +2363,13 @@
     "href": "aula_p3.html#section-33",
     "title": "Testes",
     "section": "",
-    "text": "Vamos então criar um arquivo CSV que cubra os casos de testes.\n\nDicas:\n\nParece suficiente considerar a existência de apenas duas ligas.\nE você pode usar países diferentes para cobrir todos os casos de testes.\n\n\n\nMãos à obra!"
+    "text": "Vamos então criar um arquivo CSV que cubra os casos de testes. Para isso seguem algumas dicas:\n\nCrie um arquivo CSV contendo as 13 primeiras colunas e 11 primeiras linhas do arquivo original.\nSalve o arquivo com o nome futebol.csv na pasta testes/dados/.\nAltere os dados do arquivo para atender aos casos de testes levantados.\n\nParece suficiente considerar a existência de apenas duas ligas.\nE você pode usar países diferentes para cobrir todos os casos de testes."
+  },
+  {
+    "objectID": "aula_p3.html#section-34",
+    "href": "aula_p3.html#section-34",
+    "title": "Testes",
+    "section": "",
+    "text": "Para ler o arquivo criado no seu arquivo com as funçoes de teste você pode usar o seguinte código:\nimport csv\nfrom pathlib import Path\n\nCAMINHO_ARQUIVO_FUTEBOL = Path(__file__).parent / 'dados' / 'futebol.csv'\n\nMãos à obra!"
   }
 ]
