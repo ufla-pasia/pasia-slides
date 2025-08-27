@@ -26,14 +26,14 @@ Já mencionamos nas aulas anteriores sobre testes de código.
 
 ##
 
-Programadores iniciantes geralmente têm aversão a testes (e mesmo nem tão novatos assim).
+**Programadores iniciantes** geralmente têm aversão a testes (e mesmo nem tão novatos assim).
 
 - Eles têm dificuldade de perceber que, mesmo que um código pareça fazer sentido, ele pode conter erros sutis.
 - Há também um sentimento de que _"se eu testar vou descobrir que tem problema, então melhor deixar quieto"_.
 
-. . .
+##
 
-Engenheiros de Software profissionais seguem uma abordagem completamente oposta.
+**Engenheiros de Software profissionais** seguem uma abordagem completamente oposta.
 
 - Eles levam testes extremamente a sério, porque sabem o quanto isso pode trazer de consequências para suas empresas.
 - Ninguém quer ser a pessoa que 
@@ -43,9 +43,7 @@ Engenheiros de Software profissionais seguem uma abordagem completamente oposta.
 
 ##
 
-Dado o potencial custo de um erro, faz muito mais sentido assumir que o código está errado
-
-- até que se prove o contrário.
+Dado o potencial **custo** de um erro, faz muito mais sentido **assumir que o código está errado** até que se prove o contrário.
 
 . . .
 
@@ -56,19 +54,21 @@ Apenas com testes rigorosos podemos ter confiança de que o código funciona apr
 
 ## TDD
 
-Algumas empresas levam isso tão a sério que seguem uma abordagem chamada **TDD - Test Driven Development**.
+Algumas empresas levam isso tão a sério que seguem uma abordagem chamada [TDD - Test Driven Development]{.alert}.
 
 - A ideia central é escrever primeiro os testes e depois a função/módulo a ser testado.
 
 . . .
 
-Não vamos seguir essa abordagem na disciplina,
+Não vamos seguir essa abordagem aqui,
 
-- Mas precisamos nos lembrar que assistentes de IA erram e precisamos verificar nossos códigos.
+- mas precisamos nos lembrar que assistentes de IA erram e precisamos verificar nossos códigos.
 
 # Testes de Caixa-Preta e de Caixa-Branca {background-color="#40666e"}
 
 ## Testes de Caixa-Preta
+
+. . .
 
 [Testes de Caixa-Preta]{.alert} assumem que não sabemos nada sobre como o código funciona.
 
@@ -84,8 +84,8 @@ Podemos aplicar testes de caixa-preta a cada função ou a um programa inteiro.
 
 ##
 
-Como exemplo, suponha que precisamos testar uma função que pega uma lista de palavras (strings)
-e retorna a maior delas.
+Como exemplo, suponha que precisamos testar uma função que 
+**pega uma lista de palavras (strings) e retorna a maior delas**.
 
 . . .
 
@@ -122,7 +122,7 @@ Começando com **casos de uso comuns**:
 
 . . .
 
-Podemos pensar em um teste com poucas palavras nas quais apenas uma é maior que todas as outras
+Podemos pensar em um teste com poucas palavras nas quais apenas uma é maior que todas as outras.
 
 ::: {.halfincfontsize}
 ```python
@@ -157,8 +157,11 @@ Por fim, podemos pensar em uma lista contendo uma única palavra.
 
 Se o programa estiver funcionando para esses casos de testes comuns, é hora de pensarmos nos **casos de borda**.
 
-- Podemos começar testando o caso de termos empate na maior palavra, que a especificação diz que devemos retornar a primeira.
+- Podemos começar testando o caso de termos empate na maior palavra, 
+- que, pela especificação da função, deve ser retornadada a primeira delas.
 - Obs.: algumas pessoas podem considerar esse um caso comum e outras um caso de borda.
+
+. . .
 
 ::: {.halfincfontsize}
 ```python
@@ -169,7 +172,11 @@ Se o programa estiver funcionando para esses casos de testes comuns, é hora de 
 
 ## Casos de borda
 
-E se nenhuma palavra tiver caracteres? A maior palavra é uma string vazia.
+E se nenhuma palavra tiver caracteres? 
+
+- A maior palavra é uma string vazia.
+
+. . .
 
 ::: {.halfincfontsize}
 ```python
@@ -224,20 +231,19 @@ Nessa aula vamos ignorar esse tipo de situação.
 
 ## Como saber quais casos de testes usar
 
-Um começo é considerar os tipos de dados dos parâmetros e variar seus valores.
+Podemos começar considerando os tipos de dados dos parâmetros e variando seus valores.
 
-- Se o parâmetro for uma string ou uma lista, podemos pensar em string ou lista vazias, 
-  com um elemento ou com vários elementos.
-- Para testar vários elementos, na grande maioria dos casos podemos testar com quatro.
-  - Já que é improvável que uma função funcione para quatro elementos mas não 
-    para cinco, seis ou mais.
+- Se o parâmetro for uma lista (ou string), podemos verificar testar vazia, com um ou com vários elementos.
+- Na maioria das vezes, "vários" podem ser 4 elementos.
+  - Já que é improvável que uma função funcione para 4 elementos mas não para 5, 6 ou mais.
 - Já para uma função que recebe dois números, podemos pensar em testes considerando quando
-  - um é zero, os dois são zero, um é negativo, ambos são negativos ou ambos são positivos.
+  - um deles é zero, os dois são zero, um é negativo, ambos são negativos ou ambos são positivos.
 
 ## Como saber quais casos de testes usar
 
-- Outro tipo de caso de teste é levando em conta o comportamento específico da função.
-  - Como no caso do empate da função `maior_palavra`.
+Outro tipo de caso de teste é levar em conta o comportamento específico da função.
+
+- Como no caso do empate da função `maior_palavra`.
 
 . . .
 
@@ -248,11 +254,13 @@ No final das contas, como já mencionamos, testar é uma mistura de ciência e a
 
 ## Testes de Caixa-Branca
 
-A ideia do [teste de caixa-branca] é examinar o código para pensarmos em casos de testes
+. . .
+
+A ideia do [teste de caixa-branca]{.alert} é examinar o código para pensarmos em casos de testes
 adicionais que podemos escrever.
 
 - Ao ler o código de uma função se vermos que ela usa um loop, devemos pensar nos casos comuns de erros com loops.
-- Se uma estrutura condicional com verificação com `>` ou `>=`, por exemplo, é outro caso a se avaliar.
+- Se houver uma estrutura condicional com verificação com `>` ou `>=`, por exemplo, é outro caso a se avaliar.
 
 . . .
 
@@ -293,7 +301,7 @@ Mas e as **desvantagens** de testar usando o terminal?
 Os problemas começam quando fazemos uma correção no código após detecarmos um problema em um teste.
 
 - É muito comum que, ao corrigir um erro, lembremos de repetir apenas o teste que tinha falhado.
-- Mas pode ser que a correção tenha provocado um efeito colateral em outros caso de teste que tínhamos verificado antes.
+- Mas pode ser que a correção tenha provocado um efeito colateral em outros casos de teste que tínhamos verificado antes.
 - E, portanto, o correto seria reexecutar todos os testes.
   - E aí começa a ficar muito improdutivo seguir essa estratégia.
 
@@ -308,7 +316,290 @@ E qual seria a segunda abordagem mais simples para testar o código?
 
 ## 
 
-A melhor abordagem, na verdade, é usar um framework de testes.
+A melhor abordagem, na verdade, é usar um [framework de testes]{.alert}.
 
-- A biblioteca mais popular para testes em Python é a pytest
-- 
+- A biblioteca mais popular para testes em Python é a [pytest](https://docs.pytest.org).
+- Ela permite escrever testes de forma simples e organizada.
+  - E, ao mesmo tempo, oferece recursos avançados.
+
+. . .
+
+Obs.: o livro de Potter e Zingaro usa o módulo `doctest`, que é parte da biblioteca padrão do Python.
+
+- Ele é útil para testes bem simples, mas não é tão poderoso quanto o `pytest`.
+
+## Instalando `pytest`
+
+Nesta aula nós veremos apenas o básico do `pytest`.
+
+- Mas que será suficiente para os testes que precisaremos fazer.
+
+. . .
+
+A primeira coisa que precisamos fazer é instalar o `pytest`, já que não é um módulo padrão do Python.
+
+::: {.halfincfontsize}
+```bash
+pip install pytest
+```
+:::
+
+## Implementando um teste com `pytest`
+
+O módulo `pytest` fornece uma maneira simples de implementar testes.
+
+- Nós, basicamente, escrevemos uma função para cada teste que queremos realizar.
+- E, na implementação da função, usamos o comando `assert` para realizar o teste.
+
+. . . 
+
+::: {.halfincfontsize}
+```python
+def test_maior_palavra():
+    assert maior_palavra(['gato', 'pássaro', 'cachorro']) == 'cachorro'
+```
+:::
+
+## O comando `assert`
+
+O comando `assert` serve para verificar se uma condição é verdadeira.
+
+- Se for, o código continua sendo executado normalmente.
+- Se não for, é lançada uma exceção `AssertionError`.
+- É como se ele significasse: _"Eu espero que isso seja verdade"_. 
+
+. . .
+
+Nós podemos ainda definir uma mensagem de erro personalizada.
+
+- O formato é: 
+
+. . .
+
+::: {.halfincfontsize}
+```python
+assert <condição>, <mensagem_opcional_de_erro>
+```
+:::
+
+## `pytest` e comando `assert`
+
+O módulo `pytest` utiliza o comando `assert` para verificar se as condições dos testes são atendidas.
+
+- Se todas as condições forem verdadeiras, significa que nosso código passou nos testes.
+- Já se um `assert` falha, o Pytest automaticamente fornece informações detalhadas
+  sobre os valores das variáveis envolvidas na comparação, o que simplifica muito a depuração.
+
+## Convenção de nomenclatura do `pytest`
+
+O módulo `pytest` procura de forma automática os testes escritos em nosso projeto.
+
+- Ele procura por arquivos que começam com `test_`.
+- Dentro deles, procura por funções que começam com `test_`.
+- Podemos ainda organizar os testes em classes, que devem começar com `Test` e não podem ter construtor.
+
+##
+
+Vamos então implementar todos os testes que levantamos para a função `maior_palavra`.
+
+- Vamos primeiro deixar clara a estrutura de pastas e arquivos que vamos usar.
+
+. . .
+
+Suponha que nossa função `maior_palavra` esteja implementada em um arquivo `meu_app/main.py`.
+
+- Vamos então criar uma subpasta chamada `testes` e, dentro dela, criar um arquivo
+  `test_maior_palavra.py`, onde escreveremos nossos testes.
+
+##
+
+A estrutura fica então assim.
+
+::: {.halfincfontsize}
+```
+meu_projeto/
+│
+├── meu_app/
+│   ├── __init__.py
+│   └── main.py
+│
+└── testes/
+    ├── __init__.py
+    └── test_utilitarios.py
+```
+:::
+
+. . .
+
+Obs.: os arquivos `__init__.py` são arquivos vazios que servem para que suas pastas (`meu_app` e `testes`) 
+  sejam reconhecidas como módulos Python.
+
+- É similar ao conceito de pacotes em Java.
+
+##
+
+No nosso arquivo `meu_app/main.py`, devemos implementar a função `maior_palavra`.
+
+```python
+def maior_palavra(palavras):
+    if not palavras:
+        return None
+    maior = palavras[0]
+    for p in palavras[1:]:
+        if len(p) > len(maior):
+            maior = p
+    return maior
+```
+
+##
+
+Já nosso arquivo `test_maior_palavra.py` ficaria então assim:
+
+```python
+from meu_app.main import maior_palavra
+
+def test_maior_palavra_unica():
+    assert maior_palavra(['gato', 'pássaro', 'cachorro']) == 'cachorro'
+
+def test_maior_palavra_unica_lista_maior():
+    assert maior_palavra(['feliz', 'aniversário', 'para', 'meu', 'cachorro']) == 'aniversário'
+
+def test_maior_palavra_lista_1_elemento():
+    assert maior_palavra(['feliz']) == 'feliz'
+
+def test_maior_palavra_empate():
+    assert maior_palavra(['gato', 'cão', 'sapo']) == 'gato'
+
+def test_maior_palavra_strings_vazias():
+    assert maior_palavra(['', '', '']) == ''
+
+def test_maior_palavra_lista_vazia():
+    assert maior_palavra([]) is None
+```
+
+## 
+
+Repare em um detalhe importante do último teste.
+
+- Para verificar se o retorno é `None`, usamos `is None` em vez de `== None`.
+
+. . .
+
+É que o operador `==` compara o conteúdo de dois objetos.
+
+- De forma similar ao `equals` no Java.
+- Já o operador `is` verifica se duas variáveis apontam para o mesmo objeto.
+  - Que é similar ao `==` do Java 😁
+
+. . .
+
+Como `None` é um objeto único no Java, é mais eficiente e seguro usar `is None` para verificar se uma variável é `None`.
+
+## Execução do `pytest`
+
+Agora, para executar os testes, basta executar o comando `pytest` na pasta principal do projeto.
+
+::: {.halfincfontsize}
+```bash
+pytest
+```
+:::
+
+. . .
+
+Se nossa função passar em todos os testes, esse seria um exemplo de saída esperada.
+
+```bash
+=================== test session starts ===================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/julio/Downloads/aula_p2
+collected 6 items
+
+testes/test_maior_palavra.py ......                   [100%]
+
+===================== 6 passed in 0.01s ====================
+
+```
+
+## 
+
+Vamos agora forçar dois erros em nossa função `maior_palavra`
+
+- para ver como o `pytest` vai reportar esses erros.
+
+::: {.halfincfontsize}
+```python
+def maior_palavra(palavras):
+    # removemos a verificação de lista vazia
+    maior = palavras[0]
+    for p in palavras[1:]:
+        # trocamos > por >=
+        if len(p) >= len(maior):
+            maior = p
+    return maior
+```
+:::
+
+## 
+
+Obtemos então a seguinte saída com `pytest`.
+
+
+```bash
+==================== test session starts =====================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/julio/Downloads/aula_p2
+collected 6 items                                            
+
+testes/test_maior_palavra.py ...F.F                    [100%]
+
+========================== FAILURES ==========================
+_________________ test_maior_palavra_empate __________________
+
+    def test_maior_palavra_empate():
+>       assert maior_palavra(['gato', 'cão', 'sapo']) == 'gato'
+E       AssertionError: assert 'sapo' == 'gato'
+E         
+E         - gato
+E         + sapo
+
+testes/test_maior_palavra.py:13: AssertionError
+_______________ test_maior_palavra_lista_vazia _______________
+
+    def test_maior_palavra_lista_vazia():
+>       assert maior_palavra([]) == None
+               ^^^^^^^^^^^^^^^^^
+
+testes/test_maior_palavra.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+palavras = []
+
+    def maior_palavra(palavras):
+        # removemos a verificação de lista vazia
+>       maior = palavras[0]
+                ^^^^^^^^^^^
+E       IndexError: list index out of range
+
+meu_app/main.py:3: IndexError
+================== short test summary info ===================
+FAILED testes/test_maior_palavra.py::test_maior_palavra_empate - AssertionError: assert 'sapo' == 'gato'
+FAILED testes/test_maior_palavra.py::test_maior_palavra_lista_vazia - IndexError: list index out of range
+================ 2 failed, 4 passed in 0.04s =================
+```
+
+## 
+
+Na saída anterior vemos que foram encontrados 6 testes dos quais dois não passaram
+
+```bash
+collected 6 items                                            
+
+testes/test_maior_palavra.py ...F.F                    [100%]
+```
+
+. . .
+
+Em seguida são apresentados detalhes dos testes que falharam.
+
+- Que nos ajudam a identificar o problema para corrigi-lo.

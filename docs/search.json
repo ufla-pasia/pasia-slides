@@ -1979,5 +1979,264 @@
     "title": "Lendo Código Python",
     "section": "",
     "text": "Se ainda tivermos tempo, nossa última parte será um Quiz no Poll Everywhere, mas agora com perguntas um pouco mais avançadas.\nNão se preocupe se precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.\n\nMas vou aproveitar o gancho para comentar sobre elas.\n\n\n\n\n\n\n\nDica\n\n\nNa primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. Lembre-se que Assistentes de IA podem gerar respostas erradas.\nUma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir."
+  },
+  {
+    "objectID": "aula_p3.html#section",
+    "href": "aula_p3.html#section",
+    "title": "Testes",
+    "section": "",
+    "text": "O conteúdo dessa aula é baseado no capítulo 6 do livro abaixo."
+  },
+  {
+    "objectID": "aula_p3.html#section-1",
+    "href": "aula_p3.html#section-1",
+    "title": "Testes",
+    "section": "",
+    "text": "Já mencionamos nas aulas anteriores sobre testes de código.\n\nTestar código é uma habilidade essencial porque nos dá confiança de que o código funciona apropriadamente.\n\n\nÉ importante que você adquira essa habilitade e consiga conferir por você mesmo se o seu código funciona.\n\nMesmo que o Copilot possa ser usado para gerar testes (e ele está ficando cada vez melhor nisso),\nentendemos que você deve ser capaz de escrever testes por conta própria, para verificar se um código gerado pelo Copilot está correto."
+  },
+  {
+    "objectID": "aula_p3.html#section-2",
+    "href": "aula_p3.html#section-2",
+    "title": "Testes",
+    "section": "",
+    "text": "Programadores iniciantes geralmente têm aversão a testes (e mesmo nem tão novatos assim).\n\nEles têm dificuldade de perceber que, mesmo que um código pareça fazer sentido, ele pode conter erros sutis.\nHá também um sentimento de que “se eu testar vou descobrir que tem problema, então melhor deixar quieto”."
+  },
+  {
+    "objectID": "aula_p3.html#section-3",
+    "href": "aula_p3.html#section-3",
+    "title": "Testes",
+    "section": "",
+    "text": "Engenheiros de Software profissionais seguem uma abordagem completamente oposta.\n\nEles levam testes extremamente a sério, porque sabem o quanto isso pode trazer de consequências para suas empresas.\nNinguém quer ser a pessoa que\n\ncausou um prejuízo enorme para sua empresa ou para algum de seus clientes;\ndeixou hacker obter acesso a dados confidenciais de usuários;\nou causou um acidente de um carro autônomo."
+  },
+  {
+    "objectID": "aula_p3.html#tdd",
+    "href": "aula_p3.html#tdd",
+    "title": "Testes",
+    "section": "TDD",
+    "text": "TDD\nAlgumas empresas levam isso tão a sério que seguem uma abordagem chamada TDD - Test Driven Development.\n\nA ideia central é escrever primeiro os testes e depois a função/módulo a ser testado.\n\n\nNão vamos seguir essa abordagem aqui,\n\nmas precisamos nos lembrar que assistentes de IA erram e precisamos verificar nossos códigos."
+  },
+  {
+    "objectID": "aula_p3.html#testes-de-caixa-preta",
+    "href": "aula_p3.html#testes-de-caixa-preta",
+    "title": "Testes",
+    "section": "Testes de Caixa-Preta",
+    "text": "Testes de Caixa-Preta\n\nTestes de Caixa-Preta assumem que não sabemos nada sobre como o código funciona.\n\nApenas sabemos o que ele deve fazer.\nO teste envolve então experimentar diferentes entradas e verificar se as saídas estão corretas.\n\n\n\nPodemos aplicar testes de caixa-preta a cada função ou a um programa inteiro.\n\nUma vantagem desse tipo de teste é que não precisamos olhar o código para escrevê-lo.\nFocamos apenas no comportamento desejado do código."
+  },
+  {
+    "objectID": "aula_p3.html#section-4",
+    "href": "aula_p3.html#section-4",
+    "title": "Testes",
+    "section": "",
+    "text": "Dado o potencial custo de um erro, faz muito mais sentido assumir que o código está errado até que se prove o contrário.\n\nApenas com testes rigorosos podemos ter confiança de que o código funciona apropriadamente.\n\nEmpresas geralmente não testam uma única vez.\nPossuem toda uma metodologia e infraestrutura de testes contínuos para garantir que tudo funciona a cada alteração no código."
+  },
+  {
+    "objectID": "aula_p3.html#section-5",
+    "href": "aula_p3.html#section-5",
+    "title": "Testes",
+    "section": "",
+    "text": "Como exemplo, suponha que precisamos testar uma função que pega uma lista de palavras (strings) e retorna a maior delas.\n\n\ndef maior_palavra(palavras):\n\nMais precisamente, dada a assinatura acima, o comportamento esperando é que a função retorne a palavra que tenha mais caracteres.\n\nSe existirem várias palavras com o mesmo número máximo de caracteres, a função deve retornar a primeira delas presente na lista."
+  },
+  {
+    "objectID": "aula_p3.html#casos-de-uso-comuns",
+    "href": "aula_p3.html#casos-de-uso-comuns",
+    "title": "Testes",
+    "section": "Casos de uso comuns",
+    "text": "Casos de uso comuns\nPensando na função maior_palavra, vamos pensar nos casos de testes que deveríamos usar.\n\nPara especificar os casos de testes vamos escrever como se estivéssemos usando um terminal Python.\n\n\nComeçando com casos de uso comuns:\n\n\nPodemos pensar em um teste com poucas palavras nas quais apenas uma é maior que todas as outras.\n\n&gt;&gt;&gt; maior_palavra(['gato', 'pássaro', 'cachorro'])\n'cachorro'"
+  },
+  {
+    "objectID": "aula_p3.html#casos-de-uso-comuns-1",
+    "href": "aula_p3.html#casos-de-uso-comuns-1",
+    "title": "Testes",
+    "section": "Casos de uso comuns",
+    "text": "Casos de uso comuns\nPodemos agora testar uma lista com mais palavras e com a maior palavra aparecendo em outra posição da lista.\n\n&gt;&gt;&gt; maior_palavra(['feliz', 'aniversário', 'para', 'meu', 'cachorro'])\n'aniversário'\n\n\nPor fim, podemos pensar em uma lista contendo uma única palavra.\n\n&gt;&gt;&gt; maior_palavra(['feliz'])\n'feliz'"
+  },
+  {
+    "objectID": "aula_p3.html#casos-de-borda",
+    "href": "aula_p3.html#casos-de-borda",
+    "title": "Testes",
+    "section": "Casos de borda",
+    "text": "Casos de borda\nSe o programa estiver funcionando para esses casos de testes comuns, é hora de pensarmos nos casos de borda.\n\nPodemos começar testando o caso de termos empate na maior palavra,\nque, pela especificação da função, deve ser retornadada a primeira delas.\nObs.: algumas pessoas podem considerar esse um caso comum e outras um caso de borda.\n\n\n\n&gt;&gt;&gt; maior_palavra(['gato', 'cão', 'sapo'])\n'gato'"
+  },
+  {
+    "objectID": "aula_p3.html#casos-de-borda-1",
+    "href": "aula_p3.html#casos-de-borda-1",
+    "title": "Testes",
+    "section": "Casos de borda",
+    "text": "Casos de borda\nE se nenhuma palavra tiver caracteres?\n\nA maior palavra é uma string vazia.\n\n\n\n&gt;&gt;&gt; maior_palavra(['', '', ''])\n''\n\n\n\n\n\n\n\n\n\nDica\n\n\nEm códigos que usam loops é muito comum que erros ocorram em verificações do primeiro ou do último elementos, por falhas na construção da lógica do loop.\nAssim, se presumimos que uma função pode ter que percorrer uma lista, ou algo similar, é interessante pensarmos em casos de borda sobre isso."
+  },
+  {
+    "objectID": "aula_p3.html#casos-de-borda-2",
+    "href": "aula_p3.html#casos-de-borda-2",
+    "title": "Testes",
+    "section": "Casos de borda",
+    "text": "Casos de borda\nE como deveríamos testar o caso do método ser chamado com uma lista vazia?\n\nVeja que, neste caso, a especificação do comportamento da função não é clara.\nA função poderia retornar None ou poderia gerar uma exceção, por exemplo.\n\n\nAssumindo que a função retorne None para esse caso, o teste seria:\n\n&gt;&gt;&gt; maior_palavra([])\nNone"
+  },
+  {
+    "objectID": "aula_p3.html#testes-de-entrada-incorreta",
+    "href": "aula_p3.html#testes-de-entrada-incorreta",
+    "title": "Testes",
+    "section": "Testes de entrada incorreta",
+    "text": "Testes de entrada incorreta\nHá ainda um outro tipo de teste que poderíamos pensar, que é o caso da função ser chamada com parâmetros errados.\n\nComo Python é fracamente tipado, nada impede que a função maior_palavra seja chamada com tipos de dados inesperados, como números, lista de números, None, etc.\n\n\nNessa aula vamos ignorar esse tipo de situação.\n\nMas em sistemas em produção isso é algo importante.\nE, para esse caso, type hints podem ser mais interessantes do que testes exaustivos."
+  },
+  {
+    "objectID": "aula_p3.html#como-saber-quais-casos-de-testes-usar",
+    "href": "aula_p3.html#como-saber-quais-casos-de-testes-usar",
+    "title": "Testes",
+    "section": "Como saber quais casos de testes usar",
+    "text": "Como saber quais casos de testes usar\nPodemos começar considerando os tipos de dados dos parâmetros e variando seus valores.\n\nSe o parâmetro for uma lista (ou string), podemos verificar testar vazia, com um ou com vários elementos.\nNa maioria das vezes, “vários” podem ser 4 elementos.\n\nJá que é improvável que uma função funcione para 4 elementos mas não para 5, 6 ou mais.\n\nJá para uma função que recebe dois números, podemos pensar em testes considerando quando\n\num deles é zero, os dois são zero, um é negativo, ambos são negativos ou ambos são positivos."
+  },
+  {
+    "objectID": "aula_p3.html#como-saber-quais-casos-de-testes-usar-1",
+    "href": "aula_p3.html#como-saber-quais-casos-de-testes-usar-1",
+    "title": "Testes",
+    "section": "Como saber quais casos de testes usar",
+    "text": "Como saber quais casos de testes usar\nOutro tipo de caso de teste é levar em conta o comportamento específico da função.\n\nComo no caso do empate da função maior_palavra.\n\n\nNo final das contas, como já mencionamos, testar é uma mistura de ciência e arte.\n\nA prática é o melhor caminho para que descubra os melhores testes para suas necessidades."
+  },
+  {
+    "objectID": "aula_p3.html#testes-de-caixa-branca",
+    "href": "aula_p3.html#testes-de-caixa-branca",
+    "title": "Testes",
+    "section": "Testes de Caixa-Branca",
+    "text": "Testes de Caixa-Branca\n\nA ideia do teste de caixa-branca é examinar o código para pensarmos em casos de testes adicionais que podemos escrever.\n\nAo ler o código de uma função se vermos que ela usa um loop, devemos pensar nos casos comuns de erros com loops.\nSe houver uma estrutura condicional com verificação com &gt; ou &gt;=, por exemplo, é outro caso a se avaliar.\n\n\n\nA ideia, portanto, é usar o conhecimento do código a ser testado para completar os testes necessários."
+  },
+  {
+    "objectID": "aula_p3.html#section-6",
+    "href": "aula_p3.html#section-6",
+    "title": "Testes",
+    "section": "",
+    "text": "Há duas categorias principais que costumamos pensar ao escrever testes.\n\nCasos de uso comuns: incluem as entradas que imaginamos que serão utilizadas na prática.\nCasos de borda (edge cases): são casos incomuns, mas possíveis, que podem quebrar o código.\n\nHá entradas que podem testar algumas regras da função em maior profundidade ou que contenham entradas inesperadas (ex. uma lista contendo só strings vazias)."
+  },
+  {
+    "objectID": "aula_p3.html#section-7",
+    "href": "aula_p3.html#section-7",
+    "title": "Testes",
+    "section": "",
+    "text": "Qual é a estratégia de testes mais simples que podemos pensar?\n\nPodemos testar nossa função no terminal Python como fizemos nas aulas anteriores.\n\n\nFazemos a chamada como especificamos no caso de testes e comparamos o resultado exibido com o esperado.\n\n&gt;&gt;&gt; maior_palavra(['gato', 'cão', 'sapo'])\n'gato'"
+  },
+  {
+    "objectID": "aula_p3.html#section-8",
+    "href": "aula_p3.html#section-8",
+    "title": "Testes",
+    "section": "",
+    "text": "Quais são as vantagens de testes usando o terminal?\n\nÉ rápido de rodar.\nÉ fácil acrescentar novos testes de acordo com o resultado dos testes anterioress."
+  },
+  {
+    "objectID": "aula_p3.html#section-9",
+    "href": "aula_p3.html#section-9",
+    "title": "Testes",
+    "section": "",
+    "text": "Mas e as desvantagens de testar usando o terminal?\n\nOs problemas começam quando fazemos uma correção no código após detecarmos um problema em um teste.\n\nÉ muito comum que, ao corrigir um erro, lembremos de repetir apenas o teste que tinha falhado.\nMas pode ser que a correção tenha provocado um efeito colateral em outros casos de teste que tínhamos verificado antes.\nE, portanto, o correto seria reexecutar todos os testes.\n\nE aí começa a ficar muito improdutivo seguir essa estratégia."
+  },
+  {
+    "objectID": "aula_p3.html#section-10",
+    "href": "aula_p3.html#section-10",
+    "title": "Testes",
+    "section": "",
+    "text": "E qual seria a segunda abordagem mais simples para testar o código?\n\nSeria inserir os casos de teste no próprio código.\nPor exemplo, poderíamos inserir testes no mesmo arquivo da função maior_palavra logo após a definição dela.\nMas isso seria muito ruim quando o código fosse usado em produção.\n\nPrecisaríamos comentar esse código de teste, ou ter uma maneira de desabilitá-lo."
+  },
+  {
+    "objectID": "aula_p3.html#instalando-pytest",
+    "href": "aula_p3.html#instalando-pytest",
+    "title": "Testes",
+    "section": "Instalando pytest",
+    "text": "Instalando pytest\nNesta aula nós veremos apenas o básico do pytest.\n\nMas que será suficiente para os testes que precisaremos fazer.\n\n\nA primeira coisa que precisamos fazer é instalar o pytest, já que não é um módulo padrão do Python.\n\npip install pytest"
+  },
+  {
+    "objectID": "aula_p3.html#implementando-um-teste-com-pytest",
+    "href": "aula_p3.html#implementando-um-teste-com-pytest",
+    "title": "Testes",
+    "section": "Implementando um teste com pytest",
+    "text": "Implementando um teste com pytest\nO módulo pytest fornece uma maneira simples de implementar testes.\n\nNós, basicamente, escrevemos uma função para cada teste que queremos realizar.\nE, na implementação da função, usamos o comando assert para realizar o teste.\n\n\n\ndef test_maior_palavra():\n    assert maior_palavra(['gato', 'pássaro', 'cachorro']) == 'cachorro'"
+  },
+  {
+    "objectID": "aula_p3.html#o-comando-assert",
+    "href": "aula_p3.html#o-comando-assert",
+    "title": "Testes",
+    "section": "O comando assert",
+    "text": "O comando assert\nO comando assert serve para verificar se uma condição é verdadeira.\n\nSe for, o código continua sendo executado normalmente.\nSe não for, é lançada uma exceção AssertionError.\nÉ como se ele significasse: “Eu espero que isso seja verdade”.\n\n\nNós podemos ainda definir uma mensagem de erro personalizada.\n\nO formato é:\n\n\n\n\nassert &lt;condição&gt;, &lt;mensagem_opcional_de_erro&gt;"
+  },
+  {
+    "objectID": "aula_p3.html#pytest-e-comando-assert",
+    "href": "aula_p3.html#pytest-e-comando-assert",
+    "title": "Testes",
+    "section": "pytest e comando assert",
+    "text": "pytest e comando assert\nO módulo pytest utiliza o comando assert para verificar se as condições dos testes são atendidas.\n\nSe todas as condições forem verdadeiras, significa que nosso código passou nos testes.\nJá se um assert falha, o Pytest automaticamente fornece informações detalhadas sobre os valores das variáveis envolvidas na comparação, o que simplifica muito a depuração."
+  },
+  {
+    "objectID": "aula_p3.html#convenção-de-nomenclatura-do-pytest",
+    "href": "aula_p3.html#convenção-de-nomenclatura-do-pytest",
+    "title": "Testes",
+    "section": "Convenção de nomenclatura do pytest",
+    "text": "Convenção de nomenclatura do pytest\nO módulo pytest procura de forma automática os testes escritos em nosso projeto.\n\nEle procura por arquivos que começam com test_.\nDentro deles, procura por funções que começam com test_.\nPodemos ainda organizar os testes em classes, que devem começar com Test e não podem ter construtor."
+  },
+  {
+    "objectID": "aula_p3.html#section-11",
+    "href": "aula_p3.html#section-11",
+    "title": "Testes",
+    "section": "",
+    "text": "A melhor abordagem, na verdade, é usar um framework de testes.\n\nA biblioteca mais popular para testes em Python é a pytest.\nEla permite escrever testes de forma simples e organizada.\n\nE, ao mesmo tempo, oferece recursos avançados.\n\n\n\nObs.: o livro de Potter e Zingaro usa o módulo doctest, que é parte da biblioteca padrão do Python.\n\nEle é útil para testes bem simples, mas não é tão poderoso quanto o pytest."
+  },
+  {
+    "objectID": "aula_p3.html#section-12",
+    "href": "aula_p3.html#section-12",
+    "title": "Testes",
+    "section": "",
+    "text": "Vamos então implementar todos os testes que levantamos para a função maior_palavra.\n\nVamos primeiro deixar clara a estrutura de pastas e arquivos que vamos usar.\n\n\nSuponha que nossa função maior_palavra esteja implementada em um arquivo meu_app/main.py.\n\nVamos então criar uma subpasta chamada testes e, dentro dela, criar um arquivo test_maior_palavra.py, onde escreveremos nossos testes."
+  },
+  {
+    "objectID": "aula_p3.html#section-13",
+    "href": "aula_p3.html#section-13",
+    "title": "Testes",
+    "section": "",
+    "text": "A estrutura fica então assim.\n\nmeu_projeto/\n│\n├── meu_app/\n│   ├── __init__.py\n│   └── main.py\n│\n└── testes/\n    ├── __init__.py\n    └── test_utilitarios.py\n\n\nObs.: os arquivos __init__.py são arquivos vazios que servem para que suas pastas (meu_app e testes) sejam reconhecidas como módulos Python.\n\nÉ similar ao conceito de pacotes em Java."
+  },
+  {
+    "objectID": "aula_p3.html#section-14",
+    "href": "aula_p3.html#section-14",
+    "title": "Testes",
+    "section": "",
+    "text": "No nosso arquivo meu_app/main.py, devemos implementar a função maior_palavra.\ndef maior_palavra(palavras):\n    if not palavras:\n        return None\n    maior = palavras[0]\n    for p in palavras[1:]:\n        if len(p) &gt; len(maior):\n            maior = p\n    return maior"
+  },
+  {
+    "objectID": "aula_p3.html#execução-do-pytest",
+    "href": "aula_p3.html#execução-do-pytest",
+    "title": "Testes",
+    "section": "Execução do pytest",
+    "text": "Execução do pytest\nAgora, para executar os testes, basta executar o comando pytest na pasta principal do projeto.\n\npytest\n\n\nSe nossa função passar em todos os testes, esse seria um exemplo de saída esperada.\n=================== test session starts ===================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0\nrootdir: /home/julio/Downloads/aula_p2\ncollected 6 items\n\ntestes/test_maior_palavra.py ......                   [100%]\n\n===================== 6 passed in 0.01s ===================="
+  },
+  {
+    "objectID": "aula_p3.html#section-15",
+    "href": "aula_p3.html#section-15",
+    "title": "Testes",
+    "section": "",
+    "text": "Já nosso arquivo test_maior_palavra.py ficaria então assim:\nfrom meu_app.main import maior_palavra\n\ndef test_maior_palavra_unica():\n    assert maior_palavra(['gato', 'pássaro', 'cachorro']) == 'cachorro'\n\ndef test_maior_palavra_unica_lista_maior():\n    assert maior_palavra(['feliz', 'aniversário', 'para', 'meu', 'cachorro']) == 'aniversário'\n\ndef test_maior_palavra_lista_1_elemento():\n    assert maior_palavra(['feliz']) == 'feliz'\n\ndef test_maior_palavra_empate():\n    assert maior_palavra(['gato', 'cão', 'sapo']) == 'gato'\n\ndef test_maior_palavra_strings_vazias():\n    assert maior_palavra(['', '', '']) == ''\n\ndef test_maior_palavra_lista_vazia():\n    assert maior_palavra([]) is None"
+  },
+  {
+    "objectID": "aula_p3.html#section-16",
+    "href": "aula_p3.html#section-16",
+    "title": "Testes",
+    "section": "",
+    "text": "Repare em um detalhe importante do último teste.\n\nPara verificar se o retorno é None, usamos is None em vez de == None.\n\n\nÉ que o operador == compara o conteúdo de dois objetos.\n\nDe forma similar ao equals no Java.\nJá o operador is verifica se duas variáveis apontam para o mesmo objeto.\n\nQue é similar ao == do Java 😁\n\n\n\n\nComo None é um objeto único no Java, é mais eficiente e seguro usar is None para verificar se uma variável é None."
+  },
+  {
+    "objectID": "aula_p3.html#section-17",
+    "href": "aula_p3.html#section-17",
+    "title": "Testes",
+    "section": "",
+    "text": "Vamos agora forçar dois erros em nossa função maior_palavra\n\npara ver como o pytest vai reportar esses erros.\n\n\ndef maior_palavra(palavras):\n    # removemos a verificação de lista vazia\n    maior = palavras[0]\n    for p in palavras[1:]:\n        # trocamos &gt; por &gt;=\n        if len(p) &gt;= len(maior):\n            maior = p\n    return maior"
+  },
+  {
+    "objectID": "aula_p3.html#section-18",
+    "href": "aula_p3.html#section-18",
+    "title": "Testes",
+    "section": "",
+    "text": "Obtemos então a seguinte saída com pytest.\n==================== test session starts =====================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0\nrootdir: /home/julio/Downloads/aula_p2\ncollected 6 items                                            \n\ntestes/test_maior_palavra.py ...F.F                    [100%]\n\n========================== FAILURES ==========================\n_________________ test_maior_palavra_empate __________________\n\n    def test_maior_palavra_empate():\n&gt;       assert maior_palavra(['gato', 'cão', 'sapo']) == 'gato'\nE       AssertionError: assert 'sapo' == 'gato'\nE         \nE         - gato\nE         + sapo\n\ntestes/test_maior_palavra.py:13: AssertionError\n_______________ test_maior_palavra_lista_vazia _______________\n\n    def test_maior_palavra_lista_vazia():\n&gt;       assert maior_palavra([]) == None\n               ^^^^^^^^^^^^^^^^^\n\ntestes/test_maior_palavra.py:19: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npalavras = []\n\n    def maior_palavra(palavras):\n        # removemos a verificação de lista vazia\n&gt;       maior = palavras[0]\n                ^^^^^^^^^^^\nE       IndexError: list index out of range\n\nmeu_app/main.py:3: IndexError\n================== short test summary info ===================\nFAILED testes/test_maior_palavra.py::test_maior_palavra_empate - AssertionError: assert 'sapo' == 'gato'\nFAILED testes/test_maior_palavra.py::test_maior_palavra_lista_vazia - IndexError: list index out of range\n================ 2 failed, 4 passed in 0.04s ================="
+  },
+  {
+    "objectID": "aula_p3.html#section-19",
+    "href": "aula_p3.html#section-19",
+    "title": "Testes",
+    "section": "",
+    "text": "Na saída anterior vemos que foram encontrados 6 testes dos quais dois não passaram\ncollected 6 items                                            \n\ntestes/test_maior_palavra.py ...F.F                    [100%]\n\nEm seguida são apresentados detalhes dos testes que falharam.\n\nQue nos ajudam a identificar o problema para corrigi-lo."
   }
 ]
