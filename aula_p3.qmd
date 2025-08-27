@@ -644,6 +644,196 @@ flowchart TD
   F -- Não --> J
 ```
 
-# Como testar seu código? {background-color="#40666e"}
+# Praticando escrita de testes {background-color="#40666e"}
 
 ## 
+
+Vamos agora **praticar a escrita de testes**.
+
+- Para isso, você deve tratar as situações a seguir, **seguindo todo o ciclo atualizado de projeto de funções**.
+
+. . .
+
+Trataremos duas situações.
+
+- A primeira com o objetivo de experimentarmos o uso da biblioteca `pytest`.
+- Já a segunda com o objetivo de pensarmos em como testar funções que processam arquivos.
+
+## Situação 1
+
+Suponha que esteja indo em grupo a uma sala de cinema
+
+- e que vocês queriam escolher uma fileira de cadeiras que caiba todo o grupo sentado um ao lado do outro.
+- Caso exista mais de uma fileira que caiba todo o grupo, vocês querem escolher a fileira que tenha o maior número consecutivo de assentos livres
+  - de forma que todos do grupo possam se sentar juntos de maneira mais confortável possível.
+- Obs.: em caso de empate o grupo prefere a última fileira (mais ao fundo da sala).
+
+## Situação 1
+
+Crie então uma função que atenda à necessidade do grupo.
+
+- Ela deve receber uma matriz de booleanos (lista de listas) na qual cada lista representa uma fileira com os assentos ocupados (`True`) ou livres (`False`).
+- E deve retornar o número da fileira com a maior quantidade de assentos consecutivos livres.
+  - Considerando que a primeira fileira é a de número 0.
+- Caso não exista nenhuma fileira que caiba todo o grupo, a função deve retornar `-1`.
+
+. . .
+
+Ao chegar na etapa **E**, de escrita de testes, pense em todos os casos de uso comuns e de borda que julgar necessários.
+
+## Situação 1 - Conferência
+
+A ideia é que você só prossiga depois de achar que já terminou todos os testes
+
+- Ou seja depois de já ter chegado no passo **H** do ciclo de projeto de funções.
+
+. . .
+
+Acabou mesmo? Tem certeza?
+
+##
+
+Já que terminou confira se tratou pelo menos os casos abaixo:
+
+```
+1. Uma fileira com mais assentos livres consecutivos que todas as outras e com mais assentos que o tamanho do grupo.
+2. Uma fileira como do caso 1, mas com dois espaços não consecutivos suficientes para todo o grupo.
+3. Uma fileira como do caso 1, mas com assentos livres do mesmo tamanho do grupo.
+4. Mais de uma fileira com mais assentos livres consecutivos que o tamanho do grupo, sem empates.
+5. Mesmo caso anterior, mas com empates.
+6. Mais de uma fileira com assentos consecutivos livres, mas nenhuma suficiente para todo o grupo.
+7. Uma fileira com todos os assentos livres e suficientes para o tamanho do grupo.
+8. Uma sala de cinema cheia, com todos os assentos ocupados.
+9. Uma sala de cinema vazia, com todos os assentos livres (suficientes para o tamanho do grupo).
+10. Uma sala de cinema cujas fileiras são menores que o tamanho do grupo.
+```
+
+Complemente os testes que porventura tenham faltado.
+
+## Situação 2 - Testes com arquivos
+
+Imagine agora que queiramos testar funções com processem arquivos.
+
+- Como a que fizemos em outra aula, com dados de ligas europeias de futebol.
+
+. . .
+
+::: {.fontsize125}
+```python
+def calcular_quantidade_gols(dados, pais):
+    """
+    dados contém dados estatísticos de futebol:
+    - a terceira coluna traz o nome do país do jogador
+    - a sexta coluna o nome da liga
+    - a nona coluna o número de gols feitos pelo jogador
+    pais é a identificação do país de interesse (ex.: "br BRA")
+
+    A função calcula e retorna a quantidade de gols feitos 
+    por jogadores do país passado em cada liga
+    """
+```
+:::
+
+##
+
+Nesse caso, como podemos fazer o teste?
+
+- Usar o arquivo que queremos processar, o próprio arquivo do Kaggle, não é uma boa ideia.
+- Por que? 
+
+. . .
+
+_(pense antes de prosseguir...)_
+
+##
+
+1. Como validar se a resposta está correta?
+
+- Repare que se precisarmos abrir o arquivo Kaggle para conferir manualmente se a resposta está correta,
+  a função perde o sentido pois nem precisaríamos mais dela.
+
+2. E se o arquivo for muito grande?
+
+- Além de ser improditivo conferir manualmente, o teste poderia ser lento para executar.
+- Testes precisam ser [rápidos]{.alert}.
+
+##
+
+3. E se o arquivo for alterado?
+
+- Um outro problema de depender de um arquivo externo é que você não tem controle sobre o conteúdo dele.
+- Assim mesmo que você verifique manualmente a resposta esperada para escrever o teste,
+  se o arquivo for alterado, o teste vai parar de funcionar.
+- Prejudicando a [reprodutibilidade]{.alert} dos testes.
+
+## 
+
+4. E se o arquivo não estiver disponível?
+
+- Precisamos garantir que os testes não dependam de fontes externas que podem não estar disponíveis.
+- Testes precisam ser [isolados]{.alert}.
+
+5. E se o arquivo não tiver casos de borda?
+
+- Precisamos garantir que os testes sejam abrangentes e incluam casos de borda relevantes.
+- Um arquivo real pode não conter esses casos.
+
+
+## 
+
+O que podemos fazer então para testar a função garantindo que os testes são **rápidos**, **isolados** e **reprodutíveis**?
+
+- Podemos criar um conjunto de dados artificial para o qual sabemos a saída esperada para várias consultas possíveis.
+- Como o conjunto é artificial, podemos adicionar a ele situações de casos de borda.
+
+. . .
+
+No caso da função que queremos testar, criaríamos um arquivo CSV fictício
+
+- contendo situações dos casos de testes que queiramos testar.
+- E usaríamos esse arquivo para testar a função.
+
+##
+
+Vamos começar então pensando nos casos de testes.
+
+- Considere que a função pode ser usada para consultar vários países diferentes.
+
+. . .
+
+Lista no seu caderno os casos de testes antes de continuar.
+
+##
+
+Verifique se considerou os casos de testes comuns a seguir.
+
+- Um país aparece várias vezes em linhas não consecutivas, incluindo a última linha.
+- Um país aparece em linhas consecutivas.
+- Um país aparece apenas uma vez.
+- Um país aparece em todas as ligas.
+- Um país aparece em apenas uma liga.
+- Um país aparece várias vezes mas nenhum jogador do país fez gols.
+- Um país não aparece no arquivo.
+
+##
+
+Precisamos agora criar nosso conjunto de dados artificial
+
+- Para isso podemos criar vários arquivos, ou apenas um para todos os testes.
+- Se conseguirmos criar apenas um arquivo, será mais fácil gerenciar os testes.
+-  Repare que o arquivo original tem várias colunas, mas para os nossos testes seria suficiente considerar as primeiras nove (que são as que precisamos).
+
+##
+
+Vamos então criar um arquivo CSV que cubra os casos de testes.
+
+. . .
+
+Dicas:
+
+- Parece suficiente considerar a existência de apenas duas ligas.
+- E você pode usar países diferentes para cobrir todos os casos de testes.
+
+. . .
+
+Mãos à obra!

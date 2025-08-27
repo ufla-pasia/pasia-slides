@@ -2259,5 +2259,110 @@
     "title": "Testes",
     "section": "",
     "text": "flowchart TD\n  A(Defina o comportamento desejado da função) --&gt; B(Escreva um prompt que descreve a função)\n  B --&gt; C(Use o Copilot para gerar o código)\n  C --&gt; D(O código parece razoável?)\n  D --Sim--&gt; E(Escreva casos de teste usando pytest)\n  E --&gt; F(Rode os testes. Passou nos testes?)\n  F -- Sim --&gt; G(Escreveu todos os casos de testes?)\n  G -- Sim --&gt; H(Pronto!)\n  G -- Não --&gt; E\n  D -- Não --&gt; I(Explore alternativas do Copilot. Alguma parece razoável?)\n  I -- Sim --&gt; E\n  I -- Não --&gt; J(Revise o prompt para melhorar a descrição da função)\n  J --&gt; C\n  F -- Não --&gt; J"
+  },
+  {
+    "objectID": "aula_p3.html#section-23",
+    "href": "aula_p3.html#section-23",
+    "title": "Testes",
+    "section": "",
+    "text": "Vamos agora praticar a escrita de testes.\n\nPara isso, você deve tratar as situações a seguir, seguindo todo o ciclo atualizado de projeto de funções.\n\n\nTrataremos duas situações.\n\nA primeira com o objetivo de experimentarmos o uso da biblioteca pytest.\nJá a segunda com o objetivo de pensarmos em como testar funções que processam arquivos."
+  },
+  {
+    "objectID": "aula_p3.html#section-24",
+    "href": "aula_p3.html#section-24",
+    "title": "Testes",
+    "section": "",
+    "text": "Já que terminou confira se tratou pelo menos os casos abaixo:\n1. Uma fileira com mais assentos livres consecutivos que todas as outras e com mais assentos que o tamanho do grupo.\n2. Uma fileira como do caso 1, mas com dois espaços não consecutivos suficientes para todo o grupo.\n3. Uma fileira como do caso 1, mas com assentos livres do mesmo tamanho do grupo.\n4. Mais de uma fileira com mais assentos livres consecutivos que o tamanho do grupo, sem empates.\n5. Mesmo caso anterior, mas com empates.\n6. Mais de uma fileira com assentos consecutivos livres, mas nenhuma suficiente para todo o grupo.\n7. Uma fileira com todos os assentos livres e suficientes para o tamanho do grupo.\n8. Uma sala de cinema cheia, com todos os assentos ocupados.\n9. Uma sala de cinema vazia, com todos os assentos livres (suficientes para o tamanho do grupo).\n10. Uma sala de cinema cujas fileiras são menores que o tamanho do grupo.\nComplemente os testes que porventura tenham faltado."
+  },
+  {
+    "objectID": "aula_p3.html#section-25",
+    "href": "aula_p3.html#section-25",
+    "title": "Testes",
+    "section": "",
+    "text": "Nesse caso, como podemos fazer o teste?\n\nUsar o arquivo que queremos processar, o próprio arquivo do Kaggle, não é uma boa ideia.\nPor que?\n\n\n(pense antes de prosseguir…)"
+  },
+  {
+    "objectID": "aula_p3.html#situação-1",
+    "href": "aula_p3.html#situação-1",
+    "title": "Testes",
+    "section": "Situação 1",
+    "text": "Situação 1\nSuponha que esteja indo em grupo a uma sala de cinema\n\ne que vocês queriam escolher uma fileira de cadeiras que caiba todo o grupo sentado um ao lado do outro.\nCaso exista mais de uma fileira que caiba todo o grupo, vocês querem escolher a fileira que tenha o maior número consecutivo de assentos livres\n\nde forma que todos do grupo possam se sentar juntos de maneira mais confortável possível.\n\nObs.: em caso de empate o grupo prefere a última fileira (mais ao fundo da sala)."
+  },
+  {
+    "objectID": "aula_p3.html#situação-1-1",
+    "href": "aula_p3.html#situação-1-1",
+    "title": "Testes",
+    "section": "Situação 1",
+    "text": "Situação 1\nCrie então uma função que atenda à necessidade do grupo.\n\nEla deve receber uma matriz de booleanos (lista de listas) na qual cada lista representa uma fileira com os assentos ocupados (True) ou livres (False).\nE deve retornar o número da fileira com a maior quantidade de assentos consecutivos livres.\n\nConsiderando que a primeira fileira é a de número 0.\n\nCaso não exista nenhuma fileira que caiba todo o grupo, a função deve retornar -1.\n\n\nAo chegar na etapa E, de escrita de testes, pense em todos os casos de uso comuns e de borda que julgar necessários."
+  },
+  {
+    "objectID": "aula_p3.html#situação-2---testes-com-arquivos",
+    "href": "aula_p3.html#situação-2---testes-com-arquivos",
+    "title": "Testes",
+    "section": "Situação 2 - Testes com arquivos",
+    "text": "Situação 2 - Testes com arquivos\nImagine agora que queiramos testar funções com processem arquivos.\n\nComo a que fizemos em outra aula, com dados de ligas europeias de futebol.\n\n\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a nona coluna o número de gols feitos pelo jogador\n    pais é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\""
+  },
+  {
+    "objectID": "aula_p3.html#section-26",
+    "href": "aula_p3.html#section-26",
+    "title": "Testes",
+    "section": "",
+    "text": "Como validar se a resposta está correta?\n\n\nRepare que se precisarmos abrir o arquivo Kaggle para conferir manualmente se a resposta está correta, a função perde o sentido pois nem precisaríamos mais dela.\n\n\nE se o arquivo for muito grande?\n\n\nAlém de ser improditivo conferir manualmente, o teste poderia ser lento para executar.\nTestes precisam ser rápidos."
+  },
+  {
+    "objectID": "aula_p3.html#section-27",
+    "href": "aula_p3.html#section-27",
+    "title": "Testes",
+    "section": "",
+    "text": "E se o arquivo for alterado?\n\n\nUm outro problema de depender de um arquivo externo é que você não tem controle sobre o conteúdo dele.\nAssim mesmo que você verifique manualmente a resposta esperada para escrever o teste, se o arquivo for alterado, o teste vai parar de funcionar.\nPrejudicando a reprodutibilidade dos testes."
+  },
+  {
+    "objectID": "aula_p3.html#situação-1---conferência",
+    "href": "aula_p3.html#situação-1---conferência",
+    "title": "Testes",
+    "section": "Situação 1 - Conferência",
+    "text": "Situação 1 - Conferência\nA ideia é que você só prossiga depois de achar que já terminou todos os testes\n\nOu seja depois de já ter chegado no passo H do ciclo de projeto de funções.\n\n\nAcabou mesmo? Tem certeza?"
+  },
+  {
+    "objectID": "aula_p3.html#section-28",
+    "href": "aula_p3.html#section-28",
+    "title": "Testes",
+    "section": "",
+    "text": "E se o arquivo não estiver disponível?\n\n\nPrecisamos garantir que os testes não dependam de fontes externas que podem não estar disponíveis.\nTestes precisam ser isolados.\n\n\nE se o arquivo não tiver casos de borda?\n\n\nPrecisamos garantir que os testes sejam abrangentes e incluam casos de borda relevantes.\nUm arquivo real pode não conter esses casos."
+  },
+  {
+    "objectID": "aula_p3.html#section-29",
+    "href": "aula_p3.html#section-29",
+    "title": "Testes",
+    "section": "",
+    "text": "O que podemos fazer então para testar a função garantindo que os testes são rápidos, isolados e reprodutíveis?\n\nPodemos criar um conjunto de dados artificial para o qual sabemos a saída esperada para várias consultas possíveis.\nComo o conjunto é artificial, podemos adicionar a ele situações de casos de borda.\n\n\nNo caso da função que queremos testar, criaríamos um arquivo CSV fictício\n\ncontendo situações dos casos de testes que queiramos testar.\nE usaríamos esse arquivo para testar a função."
+  },
+  {
+    "objectID": "aula_p3.html#section-30",
+    "href": "aula_p3.html#section-30",
+    "title": "Testes",
+    "section": "",
+    "text": "Vamos começar então pensando nos casos de testes.\n\nConsidere que a função pode ser usada para consultar vários países diferentes.\n\n\nLista no seu caderno os casos de testes antes de continuar."
+  },
+  {
+    "objectID": "aula_p3.html#section-31",
+    "href": "aula_p3.html#section-31",
+    "title": "Testes",
+    "section": "",
+    "text": "Verifique se considerou os casos de testes comuns a seguir.\n\nUm país aparece várias vezes em linhas não consecutivas, incluindo a última linha.\nUm país aparece em linhas consecutivas.\nUm país aparece apenas uma vez.\nUm país aparece em todas as ligas.\nUm país aparece em apenas uma liga.\nUm país aparece várias vezes mas nenhum jogador do país fez gols.\nUm país não aparece no arquivo."
+  },
+  {
+    "objectID": "aula_p3.html#section-32",
+    "href": "aula_p3.html#section-32",
+    "title": "Testes",
+    "section": "",
+    "text": "Precisamos agora criar nosso conjunto de dados artificial\n\nPara isso podemos criar vários arquivos, ou apenas um para todos os testes.\nSe conseguirmos criar apenas um arquivo, será mais fácil gerenciar os testes.\nRepare que o arquivo original tem várias colunas, mas para os nossos testes seria suficiente considerar as primeiras nove (que são as que precisamos)."
+  },
+  {
+    "objectID": "aula_p3.html#section-33",
+    "href": "aula_p3.html#section-33",
+    "title": "Testes",
+    "section": "",
+    "text": "Vamos então criar um arquivo CSV que cubra os casos de testes.\n\nDicas:\n\nParece suficiente considerar a existência de apenas duas ligas.\nE você pode usar países diferentes para cobrir todos os casos de testes.\n\n\n\nMãos à obra!"
   }
 ]
