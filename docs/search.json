@@ -2371,5 +2371,89 @@
     "title": "Testes",
     "section": "",
     "text": "Para ler o arquivo criado no seu arquivo com as funçoes de teste você pode usar o seguinte código:\nimport csv\nfrom pathlib import Path\n\nCAMINHO_ARQUIVO_FUTEBOL = Path(__file__).parent / 'dados' / 'futebol.csv'\n\nMãos à obra!"
+  },
+  {
+    "objectID": "aula_t4.html#section",
+    "href": "aula_t4.html#section",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "O conteúdo dessa aula é inspirado no capítulos 7 do livro abaixo."
+  },
+  {
+    "objectID": "aula_t4.html#section-1",
+    "href": "aula_t4.html#section-1",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Já comentamos em aulas anteriores que não devemos pedir ao Copilot para resolver um problema muito grande de uma vez só.\n\nComo: Crie um jogo de estratégia multiplayer desafiador e divertido.\n\n\nNo pior caso, o Copilot não gerar nada de útil.\n\nHá casos em que ele só fica gerando comentários em sequência.\n\n\n\nE, na melhor das hipóteses, você teria um jogo “enlatado” que não é muito divertido ou desafiador."
+  },
+  {
+    "objectID": "aula_t4.html#section-2",
+    "href": "aula_t4.html#section-2",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Parte do poder de ser um programador é conseguir customizar o que você cria.\n\nE imagina a dificuldade que seria corrigir todos os erros de um jogo inteiro gerado de uma vez.\n\n\nNós precisamos pedir ao Copilot para resolver pequenos problemas pra gente.\n\nE nós mesmos vamos juntando esses pedaços em nossos programas."
+  },
+  {
+    "objectID": "aula_t4.html#section-3",
+    "href": "aula_t4.html#section-3",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "O objetivo dessa aula é aprender a quebrar um problema grande em subproblemas menores.\n\nDe forma que consigamos resolver grandes problemas usando programação."
+  },
+  {
+    "objectID": "aula_t4.html#section-4",
+    "href": "aula_t4.html#section-4",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Decomposição de problemas envolve começar com um problema grande e que não está bem especificado\n\ne quebrá-lo em subproblemas, os quais são bem definidos e úteis para resolver o problema original.\n\n\nNa aula vamos trabalhar com decomposição de funções.\n\nO que faremos portanto é escrever funções para cada um dos subproblemas que identificamos."
+  },
+  {
+    "objectID": "aula_t4.html#section-5",
+    "href": "aula_t4.html#section-5",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Ao identificarmos um subproblema, pode ser que consigamos resolvê-lo escrevendo uma função.\n\nOu pode se que ele ainda seja muito grande para ser implementado em uma única função.\nE então precisaremos quebrá-lo em sub-subproblemas.\n\nEsperamos então que cada sub-suproblema seja pequeno o suficiente.\nMas se não for, continuamos quebrando em subproblemas sucessivamente."
+  },
+  {
+    "objectID": "aula_t4.html#section-6",
+    "href": "aula_t4.html#section-6",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "A principal razão para decompormos problemas é a complexidade.\n\nCada função deve ser simples o suficiente de forma que:\n\nconsigamos entender o seu propósito;\nconsigamos pedir ao Copilot para implementá-la;\ne, se tiver algum erro, não tenhamos muitas dificuldades em resolvê-lo."
+  },
+  {
+    "objectID": "aula_t4.html#section-7",
+    "href": "aula_t4.html#section-7",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Quando escrevemos um código que é muito complexo, é muito mais provável que cometamos erros.\n\nO mesmo vale para o Copilot.\n\n\nE quando temos erros em códigos grandes e complexos não é fácil encontrá-los e corrigi-los.\n\n\n“É difícil exagerar a importância da decomposição de problemas para a qualidade de código”"
+  },
+  {
+    "objectID": "aula_t4.html#section-8",
+    "href": "aula_t4.html#section-8",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "No contexto da Engenharia de Software nós chamamos a decomposição de problemas de design top-down (abordagem de cima pra baixo).\n\nTem esse nome porque começamos com uma tarefa grande que precisamos completar e a dividimos em tarefas menores.\nDurante o design top-down, nós criamos a “casca” das funções que precisamos implementar.\nDepois que terminamos o design, podemos implementar o código das funções definidas."
+  },
+  {
+    "objectID": "aula_t4.html#section-9",
+    "href": "aula_t4.html#section-9",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Nós geralmente acabamos tendo uma função para o problema completo.\n\nQue chama as funções que implementam os subproblemas.\nE cada função de subproblema pode chamar funções de subsubproblemas.\nE assim sucessivamente.\n\n\nNesse processo, procuramos definir funções que recebem poucos parâmetros e que retornam poucas informações, mas úteis.\n\nO que ajuda muito a melhorar a facilidade de entendimento do código."
+  },
+  {
+    "objectID": "aula_t4.html#section-10",
+    "href": "aula_t4.html#section-10",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Nas aulas anteriores já tratamos de alguns exemplos de design top-down, ainda que para problemas simples.\n\nNós criamos, por exemplo, a função obter_senha_forte\n\nque fica pedindo um usuário para digitar uma senha até que ele digite uma senha forte.\n\n\n\nSeguindo o design top-down podemos identificar uma subtarefa dessa tarefa.\n\nQue é verificar se uma senha é forte."
+  },
+  {
+    "objectID": "aula_t4.html#section-11",
+    "href": "aula_t4.html#section-11",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "E foi isso que fizemos, nós criamos uma função eh_senha_forte que é chamada pela função obter_senha_forte.\n\nPodemos representar o design top down como mostrado abaixo.\n\n\n\n\n\nflowchart TD\n  A(obter_senha_forte) --&gt; B(eh_senha_forte)"
   }
 ]

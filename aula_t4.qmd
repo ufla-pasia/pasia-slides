@@ -1,0 +1,154 @@
+---
+title: Decomposição de Problemas
+subtitle: PASIA - Aula T.4
+---
+
+##  
+
+O conteúdo dessa aula é inspirado no **capítulos 7** do livro abaixo.
+
+![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
+
+# Introdução {background-color="#40666e"}
+
+##
+
+Já comentamos em aulas anteriores que não devemos pedir ao Copilot para resolver 
+um problema muito grande de uma vez só.
+
+- Como: _Crie um jogo de estratégia multiplayer desafiador e divertido_.
+
+. . .
+
+No pior caso, o Copilot não gerar nada de útil.
+
+- Há casos em que ele só fica gerando comentários em sequência.
+
+. . .
+
+E, na melhor das hipóteses, você teria um jogo _"enlatado"_ que não é muito divertido ou desafiador.
+
+##
+
+Parte do poder de ser um programador é conseguir customizar o que você cria.
+
+- E imagina a dificuldade que seria corrigir todos os erros de um jogo inteiro gerado de uma vez.
+
+. . .
+
+Nós precisamos pedir ao Copilot para resolver pequenos problemas pra gente.
+
+- E nós mesmos vamos juntando esses pedaços em nossos programas.
+
+##
+
+O objetivo dessa aula é aprender a quebrar um problema grande em subproblemas menores.
+
+- De forma que consigamos resolver grandes problemas usando programação.
+
+# Decomposição de Problemas {background-color="#40666e"}
+
+##
+
+[Decomposição de problemas]{.alert} envolve começar com um problema grande e que não 
+está bem especificado
+
+- e **quebrá-lo em subproblemas**, os quais são **bem definidos** e **úteis** para resolver o problema original.
+
+. . .
+
+Na aula vamos trabalhar com decomposição de funções.
+
+- O que faremos portanto é escrever funções para cada um dos subproblemas que identificamos.
+
+##
+
+Ao identificarmos um subproblema, pode ser que consigamos resolvê-lo escrevendo uma função.
+
+- Ou pode se que ele ainda seja muito grande para ser implementado em uma única função.
+- E então precisaremos quebrá-lo em sub-subproblemas.
+  - Esperamos então que cada sub-suproblema seja pequeno o suficiente.
+  - Mas se não for, continuamos quebrando em subproblemas sucessivamente.
+
+##
+
+A principal **razão** para decompormos problemas é a **complexidade**.
+
+. . .
+
+Cada função deve ser simples o suficiente de forma que:
+
+- consigamos entender o seu propósito;
+- consigamos pedir ao Copilot para implementá-la;
+- e, se tiver algum erro, não tenhamos muitas dificuldades em resolvê-lo.
+
+## 
+
+Quando escrevemos um código que é muito complexo, é muito mais provável que cometamos erros.
+
+- O mesmo vale para o Copilot.
+
+. . .
+
+E quando temos erros em códigos grandes e complexos não é fácil encontrá-los e corrigi-los.
+
+. . .
+
+_"É difícil exagerar a importância da decomposição de problemas para a qualidade de código"_
+
+##
+
+No contexto da **Engenharia de Software** nós chamamos a decomposição de problemas de
+[design top-down]{.alert} (abordagem de cima pra baixo).
+
+- Tem esse nome porque começamos com uma tarefa grande que precisamos completar e a
+  dividimos em tarefas menores.
+- Durante o _design top-down_, nós criamos a "casca" das funções que precisamos implementar.
+- Depois que terminamos o _design_, podemos implementar o código das funções definidas.
+
+##
+
+Nós geralmente acabamos tendo uma função para o problema completo.
+
+- Que chama as funções que implementam os subproblemas.
+- E cada função de subproblema pode chamar funções de subsubproblemas.
+- E assim sucessivamente.
+
+. . .
+
+Nesse processo, procuramos definir funções que recebem poucos parâmetros e que
+retornam poucas informações, mas úteis.
+
+- O que ajuda muito a melhorar a facilidade de entendimento do código.
+
+# Pequenos exemplos de _design top-down_ {background-color="#40666e"}
+
+##
+
+Nas aulas anteriores já tratamos de alguns exemplos de _design top-down_, ainda que para problemas simples.
+
+. . .
+
+Nós criamos, por exemplo, a função `obter_senha_forte`
+
+- que fica pedindo um usuário para digitar uma senha até que ele digite uma senha forte.
+
+. . .
+
+Seguindo o _design top-down_ podemos identificar uma subtarefa dessa tarefa.
+
+- Que é verificar se uma senha é forte.
+
+##
+
+E foi isso que fizemos, nós criamos uma função `eh_senha_forte` que é
+chamada pela função `obter_senha_forte`.
+
+. . .
+
+Podemos representar o _design top down_ como mostrado abaixo.
+
+```{mermaid fontSize:25}
+flowchart TD
+  A(obter_senha_forte) --> B(eh_senha_forte)
+```
