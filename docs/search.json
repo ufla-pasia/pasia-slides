@@ -2384,14 +2384,14 @@
     "href": "aula_t4.html#section-1",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "Já comentamos em aulas anteriores que não devemos pedir ao Copilot para resolver um problema muito grande de uma vez só.\n\nComo: Crie um jogo de estratégia multiplayer desafiador e divertido.\n\n\nNo pior caso, o Copilot não gerar nada de útil.\n\nHá casos em que ele só fica gerando comentários em sequência.\n\n\n\nE, na melhor das hipóteses, você teria um jogo “enlatado” que não é muito divertido ou desafiador."
+    "text": "Já comentamos em aulas anteriores que não devemos pedir ao Copilot para resolver um problema muito grande de uma vez só.\n\nComo: Crie um jogo de estratégia multiplayer desafiador e divertido.\n\n\nNo pior caso, o Copilot não vai gerar nada útil.\n\nHá casos em que ele só fica gerando comentários em sequência."
   },
   {
     "objectID": "aula_t4.html#section-2",
     "href": "aula_t4.html#section-2",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "Parte do poder de ser um programador é conseguir customizar o que você cria.\n\nE imagina a dificuldade que seria corrigir todos os erros de um jogo inteiro gerado de uma vez.\n\n\nNós precisamos pedir ao Copilot para resolver pequenos problemas pra gente.\n\nE nós mesmos vamos juntando esses pedaços em nossos programas."
+    "text": "E, na melhor das hipóteses, você teria um jogo “enlatado” que não é muito divertido ou desafiador.\n\nParte do poder de ser um programador é conseguir customizar o que você cria.\n\n\nAlém disso, imagina a dificuldade que seria corrigir todos os erros de um jogo inteiro gerado de uma vez.\n\n\nNós precisamos pedir ao Copilot para resolver pequenos problemas pra gente.\n\nE nós mesmos vamos juntando esses pedaços em nossos programas."
   },
   {
     "objectID": "aula_t4.html#section-3",
@@ -2440,20 +2440,398 @@
     "href": "aula_t4.html#section-9",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "Nós geralmente acabamos tendo uma função para o problema completo.\n\nQue chama as funções que implementam os subproblemas.\nE cada função de subproblema pode chamar funções de subsubproblemas.\nE assim sucessivamente.\n\n\nNesse processo, procuramos definir funções que recebem poucos parâmetros e que retornam poucas informações, mas úteis.\n\nO que ajuda muito a melhorar a facilidade de entendimento do código."
+    "text": "Nós geralmente acabamos tendo:\n\numa função para o problema completo\nque chama as funções que implementam os subproblemas.\nE cada função de subproblema pode chamar funções de subsubproblemas.\nE assim sucessivamente.\n\n\nNesse processo, procuramos definir funções que recebem poucos parâmetros e que retornam poucas informações, mas úteis.\n\nO que ajuda muito a melhorar a facilidade de entendimento do código."
   },
   {
     "objectID": "aula_t4.html#section-10",
     "href": "aula_t4.html#section-10",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "Nas aulas anteriores já tratamos de alguns exemplos de design top-down, ainda que para problemas simples.\n\nNós criamos, por exemplo, a função obter_senha_forte\n\nque fica pedindo um usuário para digitar uma senha até que ele digite uma senha forte.\n\n\n\nSeguindo o design top-down podemos identificar uma subtarefa dessa tarefa.\n\nQue é verificar se uma senha é forte."
+    "text": "Nas aulas anteriores já utilizamos alguns exemplos, ainda que simples, que poderiam ter sido tratados com design top-down.\n\nNós criamos, por exemplo, a função obter_senha_forte\n\nque fica pedindo um usuário para digitar uma senha até que ele digite uma senha forte.\n\n\n\nSeguindo o design top-down poderíamos identificar uma subtarefa dessa tarefa.\n\nQue é verificar se uma senha é forte.\nO que é justamente o que a função eh_senha_forte faz."
   },
   {
     "objectID": "aula_t4.html#section-11",
     "href": "aula_t4.html#section-11",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "E foi isso que fizemos, nós criamos uma função eh_senha_forte que é chamada pela função obter_senha_forte.\n\nPodemos representar o design top down como mostrado abaixo.\n\n\n\n\n\nflowchart TD\n  A(obter_senha_forte) --&gt; B(eh_senha_forte)"
+    "text": "Podemos representar o design top down como mostrado abaixo.\n\n\n\n\n\nflowchart TD\n  A(obter_senha_forte) --&gt; B(eh_senha_forte)"
+  },
+  {
+    "objectID": "aula_t4.html#section-12",
+    "href": "aula_t4.html#section-12",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Nós também trabalhamos com uma função melhor_palavra que recebe uma lista de palavras e retorna aquela que faz mais pontos no jogo Scrabble.\n\nSe tivéssemos criando a função usando design top-down, poderíamos identificar uma subtarefa que é calcular a pontuação de uma palavra.\n\n\nTeríamos então o seguinte design top-down:\n\n\n\n\n\nflowchart TD\n  A(melhor_palavra) --&gt; B(numero_de_pontos)"
+  },
+  {
+    "objectID": "aula_t4.html#section-13",
+    "href": "aula_t4.html#section-13",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Quando nós criamos essas funções na aula passada, nós não usamos design top-down.\n\nNós começamos da subtarefa (função folha) e depois criamos a função que resolve o problema maior.\n\n\nAgora, para implementar o código das funções, nós continuaremos a fazer dessa forma.\n\nMas antes disso, vamos projetar quais são as funções necessárias usando design top-down."
+  },
+  {
+    "objectID": "aula_t4.html#section-14",
+    "href": "aula_t4.html#section-14",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "É importante ressaltar que, para esses exemplos pequenos, pode parecer que não faria muita diferença usar ou não design top-down.\n\nOu até mesmo pode parecer desnecessário implementar mais de uma função.\n\n\nMas, para problemas maiores, a decomposição de problemas é a única forma de manter a complexidade sob controle.\n\nO nosso objetivo aqui é adquirir a habilidade de quebrar um problema em problemas menores."
+  },
+  {
+    "objectID": "aula_t4.html#section-15",
+    "href": "aula_t4.html#section-15",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Vamos agora resolver um problema usando design top-down desde o início.\n\nAo longo da disciplina, nós vamos continuar abordando essa estratégia.\nDe forma que você consiga aplicá-la com susesso por conta própria.\n\n\nOps.. tem um erro na frase anterior.\n\nO correto é sucesso e não susesso."
+  },
+  {
+    "objectID": "aula_t4.html#section-16",
+    "href": "aula_t4.html#section-16",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "É comum que erros de digitação ocorram ou que tenhamos dúvidas sobre a ortografia de uma palavra.\n\nEx.: exceção ou excesão ou excessão?\n\n\nO que nós vamos fazer é pegar uma palavra que pode estar escrita errada\n\ne oferecer sugestões de possíveis correções para ela.\n\n\n\nSerá um corretor ortográfico básico para palavras individuais."
+  },
+  {
+    "objectID": "aula_t4.html#section-17",
+    "href": "aula_t4.html#section-17",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Nós vamos tratar três tipos de erro de ortografia:\n\nletra faltando: como suceso ao invés de sucesso.\nletra sobrando: como menssagem ao invés de mensagem.\nletra trocada: como viajem ao invés de viagem."
+  },
+  {
+    "objectID": "aula_t4.html#section-18",
+    "href": "aula_t4.html#section-18",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Existem diversos outros erros de ortografia que não cobriremos:\n\nComo o caso de excessão ao invés de exceção que tem uma letra trocada e uma letra sobrando.\nOu de metereologia em vez de meteorologia que tem uma letra trocada e em posição errada.\n\n\nMas a ideia aqui é aprendermos o design top-down e não criar um corretor ortográfico perfeito.\n\nOs casos que trataremos serão suficientes para o que precisamos."
+  },
+  {
+    "objectID": "aula_t4.html#section-19",
+    "href": "aula_t4.html#section-19",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "A nossa tarefa é:\n\nEscrever um programa que pega uma palavra que pode estar escrita errada e oferece sugestões de possíveis correções para ela.\nEssa tarefa é certamente muito grande para ser tratada de uma vez só."
+  },
+  {
+    "objectID": "aula_t4.html#resumo-das-tarefas-de-entrada-processamento-e-saída",
+    "href": "aula_t4.html#resumo-das-tarefas-de-entrada-processamento-e-saída",
+    "title": "Decomposição de Problemas",
+    "section": "Resumo das tarefas de entrada, processamento e saída",
+    "text": "Resumo das tarefas de entrada, processamento e saída\n\n\n\n\n\n\n\n\nFase\nPapel\nExemplo de uso com o Corretor\n\n\n\n\nEntrada\nPegar, como entrada, a informação necessária para a função\nPegar a palavra errada suceso e uma coleção de palavras reais (com ortografia correta)\n\n\nProcessamento\nRealizar as operações especificadas sobre os dados\nConsiderar alterações na palavra que possam levar a uma palavra escrita corretamente (deve ser tentadas todas as combinações dos 3 tipos de erros que estamos tratando; ex.: sucesso, mas também ssucesso)\n\n\nSaída\nExibir o resultado do processamento dos dados\nMostrar a sugestão sucesso"
+  },
+  {
+    "objectID": "aula_t4.html#section-20",
+    "href": "aula_t4.html#section-20",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Para dividi-la em subtarefas, a primeira sugestão é tratar os três passos que são muito comuns em diversos programas:\n\nLer a entrada do usuário.\nProcessar os dados.\nExibir a saída.\n\n\nObs.: nós já tínhamos usado isso no exemplo do processamento dos dados de futebol."
+  },
+  {
+    "objectID": "aula_t4.html#section-21",
+    "href": "aula_t4.html#section-21",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Fase\nPapel\nExemplo de uso com o Corretor\n\n\n\n\nEntrada\nPegar, como entrada, a informação necessária para a função\nPegar a palavra errada suceso e uma coleção de palavras reais (com ortografia correta)\n\n\nProcessamento\nRealizar as operações especificadas sobre os dados\nConsiderar alterações na palavra que possam levar a uma palavra escrita corretamente (deve ser tentadas todas as combinações dos 3 tipos de erros que estamos tratando; ex.: sucesso, mas também ssuceso)\n\n\nSaída\nExibir o resultado do processamento dos dados\nMostrar a sugestão sucesso"
+  },
+  {
+    "objectID": "aula_t4.html#dividindo-o-subproblema-de-processamento",
+    "href": "aula_t4.html#dividindo-o-subproblema-de-processamento",
+    "title": "Decomposição de Problemas",
+    "section": "Dividindo o subproblema de Processamento",
+    "text": "Dividindo o subproblema de Processamento\nVamos chamar a função de processamento de _obter_sugestoes_correcao.\n\nQuais parâmetros a função precisa receber?\n\n\nCom certeza precisa receber a palavra que o usuário digitou."
+  },
+  {
+    "objectID": "aula_t4.html#section-22",
+    "href": "aula_t4.html#section-22",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Seguindo essas etapas, começamos nosso design top-down, divindo a tarefa do corretor em três subtarefas:\n\nEntrada: pedimos ao usuário uma palavra para a qual ele quer obter sugestões de correção.\nProcessamento: precisaremos descobrir todas as possíveis sugestões para a palavra do usuário.\nSaída: exibimos para o usuário todas as sugestões que encontramos.\n\n\nE agora criaremos uma função para cada subtarefa dessa, certo?\n\nOu não?"
+  },
+  {
+    "objectID": "aula_t4.html#section-23",
+    "href": "aula_t4.html#section-23",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Apesar de muitas vezes criarmos uma função para cada subtarefa, isso nem sempre é necessário.\n\nVeja que, para o tratamento da entrada do nosso problema, nós precisamos apenas pedir uma palavra ao usuário.\n\nAcontece que Python já tem uma função input que faz exatamente isso.\nPortanto uma função para tratar a entrada teria apenas uma linha, o que parece uma divisão exagerada.\n\nA mesma coisa pode ser dita sobre o passo de saída.\n\nJá que Python já possui uma função print para isso."
+  },
+  {
+    "objectID": "aula_t4.html#section-24",
+    "href": "aula_t4.html#section-24",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Não é que esteja errado se resolvermos criar funções para esses passos.\n\nMas devemos refletir se vale realmente a pena criar funções com uma única linha.\n\nUm caso onde isso é útil é se ela fizer algo que precisa ser repetido várias vezes."
+  },
+  {
+    "objectID": "aula_t4.html#section-25",
+    "href": "aula_t4.html#section-25",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Ela poderia receber também as palavras reais em português, para que consiga fazer as sugestões.\n\nIsso pode ser feito de diferentes formas:\n\nEla pode receber a lista de palavras reais como um parâmetro.\nOu o nome de um arquivo que contém essas palavras."
+  },
+  {
+    "objectID": "aula_t4.html#section-26",
+    "href": "aula_t4.html#section-26",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Esse tipo de decisão é muito comum quando estamos fazendo decomposição de subproblemas.\n\nPara nosso exemplo, vamos usar como parâmetro o nome de um arquivo.\nIsso porque temos um arquivo contendo quase 150 mil palavras reais em português.\nQue foram obtidas através de uma busca no Google (do repositório fserb/pt-br)."
+  },
+  {
+    "objectID": "aula_t4.html#section-27",
+    "href": "aula_t4.html#section-27",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Esse é o nosso design top-down para o corretor até o momento:\n\nConsiderando que a função mais geral, do problema como um todo, se chama corretor_ortografico.\n\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)"
+  },
+  {
+    "objectID": "aula_t4.html#section-28",
+    "href": "aula_t4.html#section-28",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "E o que precisamos fazer na função de processamento?\n\nSe pensarmos bem, podemos dividir a função em 4 subproblemas.\n\nObter uma lista de palavras a partir do arquivo.\nGerar uma lista de todas as palavras possíveis a partir da palavra digitada.\nA partir das palavras possíveis, gerar uma lista contendo apenas palavras reais.\nRetornar uma lista contendo as palavras reais (as sugestões) sem repetições."
+  },
+  {
+    "objectID": "aula_t4.html#carregar-lista-de-palavras",
+    "href": "aula_t4.html#carregar-lista-de-palavras",
+    "title": "Decomposição de Problemas",
+    "section": "Carregar lista de palavras",
+    "text": "Carregar lista de palavras\nVamos agora pensar em cada subproblema gerado no último passo da decomposição.\n\nNós precisamos quebrar a função carregar_lista_palavras em subtarefas?\n\n\nPoderíamos pensar em fases como: abrir o arquivo, carregar os dados em uma lista e fechar o arquivo.\n\nMas pelo que vimos sobre arquivos do Python na aula passada, sabemos que abrir e fechar o arquivo é algo muito simples.\nEntão vamos manter essa tarefa em uma única função."
+  },
+  {
+    "objectID": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis",
+    "href": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis",
+    "title": "Decomposição de Problemas",
+    "section": "Gerar a lista de todas as palavras possíveis",
+    "text": "Gerar a lista de todas as palavras possíveis\nE a função gerar_palavras_possiveis precisaria ser quebrada?\n\nVamos pensar em como exatamente essas palavras candidatas seriam geradas.\nA ideia é gerar todas as combinações de adicionar uma letra, remover uma letra e trocar uma letra.\n\nSó de descrever essa ideia já percebemos que existem três operações distintas.\nQue poderiam então ser tratadas como subproblemas."
+  },
+  {
+    "objectID": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis-1",
+    "href": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis-1",
+    "title": "Decomposição de Problemas",
+    "section": "Gerar a lista de todas as palavras possíveis",
+    "text": "Gerar a lista de todas as palavras possíveis\nPoderíamos então quebrar a tarefa gerar_palavras_possiveis em três subtarefas:\n\nadicionar_letra: que gera uma palavra candidata para cada letra do alfabeto em cada posição possível.\n\n\nEx.: suceso -&gt; asuceso, bsuceso, …, sauceso, sbuceso, …, sucesoa, sucesob.\n\n\nremover_letra: que gera uma palavra candidata removendo cada letra da palavra original.\n\n\nEx.: suceso -&gt; uceso, sceso, sueso, sucso, suceo e suces."
+  },
+  {
+    "objectID": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis-2",
+    "href": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis-2",
+    "title": "Decomposição de Problemas",
+    "section": "Gerar a lista de todas as palavras possíveis",
+    "text": "Gerar a lista de todas as palavras possíveis\n\ntrocar_letra: que gera uma palavra candidata para cada letra do alfabeto substituindo cada letra da palavra original.\n\n\nEx.: suceso -&gt; auceso, buceso, …, saceso, sbceso, …, sucesy, …, sucesz."
+  },
+  {
+    "objectID": "aula_t4.html#section-29",
+    "href": "aula_t4.html#section-29",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Vamos acrescentar alguns detalhes a esses passos.\n\n\nObter uma lista de palavras a partir do arquivo.\n\n\nFunção carregar_lista_palavras que carrega as palavras do arquivo em uma lista.\nO arquivo tem uma palavra real do português em cada linha."
+  },
+  {
+    "objectID": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-reais",
+    "href": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-reais",
+    "title": "Decomposição de Problemas",
+    "section": "Gerar a lista de todas as palavras reais",
+    "text": "Gerar a lista de todas as palavras reais\nA função filtrar_palavras_reais receberá duas listas, uma de palavras candidatas e outra de palavras reais\n\nE precisará retornar as palavras candidatas que existem também na lista de palavras reais.\n\n\nSe pensarmos um pouco em como resolver esse problema, não parece algo tão complicado."
+  },
+  {
+    "objectID": "aula_t4.html#filtrar-palavras-repetidas",
+    "href": "aula_t4.html#filtrar-palavras-repetidas",
+    "title": "Decomposição de Problemas",
+    "section": "Filtrar palavras repetidas",
+    "text": "Filtrar palavras repetidas\nE a função filtrar_palavras_repetidas?\n\nEsse é um exemplo de como seu conhecimento prévio da linguagem pode mudar sua decisão.\n\n\nA princípio podemos manter a função, pois podemos pensar em um loop que percorre a lista de palavras\n\nE, para cada palavra, a adicionamos na lista de resposta apenas se ela ainda não estiver lá."
+  },
+  {
+    "objectID": "aula_t4.html#resumo-do-design-top-down-do-corretor-ortográfico",
+    "href": "aula_t4.html#resumo-do-design-top-down-do-corretor-ortográfico",
+    "title": "Decomposição de Problemas",
+    "section": "Resumo do design top-down do corretor ortográfico",
+    "text": "Resumo do design top-down do corretor ortográfico\nNosso design top-down final é o seguinte:\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)\n  B --&gt; C1(carregar_lista_palavras)\n  B --&gt; C2(gerar_palavras_possiveis)\n  C2 --&gt; D1(adicionar_letra)\n  C2 --&gt; D2(remover_letra)\n  C2 --&gt; D3(trocar_letra)\n  B --&gt; C3(filtrar_palavras_reais)\n  B --&gt; C4(filtrar_palavras_repetidas)"
+  },
+  {
+    "objectID": "aula_t4.html#section-30",
+    "href": "aula_t4.html#section-30",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Gerar uma lista de todas as palavras possíveis a partir da palavra digitada.\n\n\nFunção gerar_palavras_possiveis que recebe a palavra digitada e gera todas as combinações possíveis com os erros que estamos tratando.\nOu seja, ela gera uma lista enorme de strings: acrescentado uma letra, removendo uma letra ou trocando uma letra.\nVamos fazer isso sem nos preocuparmos aqui se essas strings formam uma palavra válida ou não."
+  },
+  {
+    "objectID": "aula_t4.html#section-31",
+    "href": "aula_t4.html#section-31",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "A partir das palavras possíveis, gerar uma lista contendo apenas palavras reais.\n\n\nFunção filtrar_palavras_reais que recebe a lista de palavras possíveis e a lista de palavras reais.\nE retorna uma lista contendo apenas as palavras que estão nas duas listas."
+  },
+  {
+    "objectID": "aula_t4.html#carregar_lista_palavras",
+    "href": "aula_t4.html#carregar_lista_palavras",
+    "title": "Decomposição de Problemas",
+    "section": "carregar_lista_palavras",
+    "text": "carregar_lista_palavras\nRepare que começar de baixo para cima não significa necessariamente começar pelo nível mais baixo do design.\n\nO importante é começar por funções folha.\nE só implementar uma função se todas as suas subfunções estiverem implementadas.\n\n\nPor isso, vamos começar com a função carregar_lista_palavras."
+  },
+  {
+    "objectID": "aula_t4.html#carregar_lista_palavras-1",
+    "href": "aula_t4.html#carregar_lista_palavras-1",
+    "title": "Decomposição de Problemas",
+    "section": "carregar_lista_palavras",
+    "text": "carregar_lista_palavras\nComo já fizemos anteriormente, vamos definir a assinatura e a docstring e deixar o Copilot gerar o código.\n\ndef carregar_lista_palavras(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo  é o nome de um arquivo que tem uma palavra em português por linha.\n    \n    Retorna uma lista com as palavras do arquivo.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t4.html#carregar_lista_palavras-2",
+    "href": "aula_t4.html#carregar_lista_palavras-2",
+    "title": "Decomposição de Problemas",
+    "section": "carregar_lista_palavras",
+    "text": "carregar_lista_palavras\nEsse foi o código gerado pelo Copilot no meu caso.\ndef carregar_lista_palavras(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo  é o nome de um arquivo que tem uma palavra em português por linha.\n    \n    Retorna uma lista com as palavras do arquivo.\n    \"\"\"\n    with open(caminho_arquivo, 'r', encoding='utf-8') as f:\n        palavras = f.read().splitlines()\n    return palavras"
+  },
+  {
+    "objectID": "aula_t4.html#testes-da-função-carregar_lista_palavras",
+    "href": "aula_t4.html#testes-da-função-carregar_lista_palavras",
+    "title": "Decomposição de Problemas",
+    "section": "Testes da função carregar_lista_palavras",
+    "text": "Testes da função carregar_lista_palavras\nQuais testes poderíamos pensar para a função?\n\nPodemos criar três arquivos de teste: um vazio, um com uma palavra e um com várias palavras.\nE criar uma função de teste para cada caso.\n\n\nNo arquivo com uma palavra colocaremos:\nexuberante\nE no arquivo com várias palavras\ndinossauro\nexuberante\nmelancia\ntucano"
+  },
+  {
+    "objectID": "aula_t4.html#testes-da-função-carregar_lista_palavras-1",
+    "href": "aula_t4.html#testes-da-função-carregar_lista_palavras-1",
+    "title": "Decomposição de Problemas",
+    "section": "Testes da função carregar_lista_palavras",
+    "text": "Testes da função carregar_lista_palavras\nNossas funções de teste poderiam ser então:\nfrom pathlib import Path\nfrom corretor.main import carregar_lista_palavras\n\nPASTA_ARQUIVOS = Path(__file__).parent / 'dados'\n\ndef test_carregar_lista_palavras_vazia():\n    palavras = carregar_lista_palavras(PASTA_ARQUIVOS / 'arquivo_vazio.txt')\n    assert palavras == []\n\ndef test_carregar_lista_palavras_uma_palavra():\n    palavras = carregar_lista_palavras(PASTA_ARQUIVOS / 'uma_palavra.txt')\n    assert palavras == ['exuberante']\n\ndef test_carregar_lista_palavras_varias_palavras():\n    palavras = carregar_lista_palavras(PASTA_ARQUIVOS / 'varias_palavras.txt')\n    assert palavras == ['dinossauro', 'exuberante', 'melancia', 'tucano']"
+  },
+  {
+    "objectID": "aula_t4.html#observação-sobre-os-slides",
+    "href": "aula_t4.html#observação-sobre-os-slides",
+    "title": "Decomposição de Problemas",
+    "section": "Observação sobre os slides",
+    "text": "Observação sobre os slides\nDaqui por diante, na aula, nós vamos criar todas as funções e suas respectivas funções de teste em um projeto no VS Code.\n\nEsse projeto estará disponível no repositório ufla-pasia/corretor-ortografico.\n\n\nJá aqui nos slides vou manter apenas o prompt das funções (assinatura e docstring) e a descrição em alto nível dos testes."
+  },
+  {
+    "objectID": "aula_t4.html#adicionar_letra",
+    "href": "aula_t4.html#adicionar_letra",
+    "title": "Decomposição de Problemas",
+    "section": "adicionar_letra",
+    "text": "adicionar_letra\n\ndef adicionar_letra(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as strings que podem ser obtidas\n    adicionando uma letra em qualquer posição da palavra.\n    \"\"\"\n\nObs.: para simplificar, vamos ignorar o acréscimo de letras com acentos."
+  },
+  {
+    "objectID": "aula_t4.html#remover_letra",
+    "href": "aula_t4.html#remover_letra",
+    "title": "Decomposição de Problemas",
+    "section": "remover_letra",
+    "text": "remover_letra\n\ndef remover_letra(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as strings que podem ser obtidas\n    removendo uma letra de qualquer posição da palavra.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t4.html#trocar_letra",
+    "href": "aula_t4.html#trocar_letra",
+    "title": "Decomposição de Problemas",
+    "section": "trocar_letra",
+    "text": "trocar_letra\ndef trocar_letra(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as strings que podem ser obtidas\n    trocando uma letra de qualquer posição da palavra por outra letra.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t4.html#gerar_palavras_possiveis",
+    "href": "aula_t4.html#gerar_palavras_possiveis",
+    "title": "Decomposição de Problemas",
+    "section": "gerar_palavras_possiveis",
+    "text": "gerar_palavras_possiveis\ndef gerar_palavras_possiveis(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as palavras possíveis que podem ser geradas\n    a partir da palavra original, através das operações de adicionar, remover\n    ou trocar uma letra.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t4.html#filtrar_palavras_reais",
+    "href": "aula_t4.html#filtrar_palavras_reais",
+    "title": "Decomposição de Problemas",
+    "section": "filtrar_palavras_reais",
+    "text": "filtrar_palavras_reais\ndef filtrar_palavras_reais(lista_palavras, palavras_possiveis):\n    \"\"\"\n    lista_palavras é uma lista de strings com palavras em português.\n    palavras_possiveis é uma lista de palavras possíveis.\n\n    Retorna uma lista das palavras possíveis que estão na lista de palavras.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t4.html#filtrar_palavras_repetidas",
+    "href": "aula_t4.html#filtrar_palavras_repetidas",
+    "title": "Decomposição de Problemas",
+    "section": "filtrar_palavras_repetidas",
+    "text": "filtrar_palavras_repetidas\ndef filtrar_palavras_repetidas(palavras_reais):\n    \"\"\"\n    palavras_reais é uma lista de strings com palavras em português.\n\n    Retorna a lista sem palavras repetidas.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t4.html#obter_sugestoes_correcao",
+    "href": "aula_t4.html#obter_sugestoes_correcao",
+    "title": "Decomposição de Problemas",
+    "section": "obter_sugestoes_correcao",
+    "text": "obter_sugestoes_correcao\ndef obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo que tem uma palavra em português por linha.\n    possivel_palavra é  uma string que pode ser ou não uma palavra real em português.\n\n    Retorna a lista de todas as possíveis correções únicas para a possível palavra.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t4.html#corretor_ortografico",
+    "href": "aula_t4.html#corretor_ortografico",
+    "title": "Decomposição de Problemas",
+    "section": "corretor_ortografico",
+    "text": "corretor_ortografico\n```python def corretor_ortografico(caminho_arquivo): ““” caminho_arquivo é o nome de um arquivo que contém palavras em português.\nPede ao usuário uma palavra e exibe todas as possíveis correções para aquela palavra,\numa por linha."
+  },
+  {
+    "objectID": "aula_t4.html#section-32",
+    "href": "aula_t4.html#section-32",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Retornar uma lista contendo as palavras reais (as sugestões) sem repetições.\n\n\nFunção filtrar_palavras_repetidas. Mas por que ela seria necessária?\nPorque, dependendo da forma como geramos as palavras possíveis, podemos acabar com sugestões duplicadas.\nEx.: se a palavra digitada for suceso, podemos gerar sucesso duas vezes.\n\nUma ao tentar acrescentar um s depois do e,\ne outra ao tentar trocar um s após o s já existente na palavra."
+  },
+  {
+    "objectID": "aula_t4.html#section-33",
+    "href": "aula_t4.html#section-33",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Até o momento no design top-down pode ser demonstrado no diagrama abaixo.\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)\n  B --&gt; C1(carregar_lista_palavras)\n  B --&gt; C2(gerar_palavras_possiveis)\n  B --&gt; C3(filtrar_palavras_reais)\n  B --&gt; C4(filtrar_palavras_repetidas)"
+  },
+  {
+    "objectID": "aula_t4.html#section-34",
+    "href": "aula_t4.html#section-34",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Múltiplas formas de decompor um problema\n\n\nNão há uma única forma correta de fazer um design top-down.\nVocê poderia ter pensado, por exemplo, em só gerar palavras que fossem reais, filtrando as palavras já no momento em que foram geradas.\n\nCom isso a divisão de subproblemas seria diferente.\nE é recomendável que você tente outras alternativas de decomposição para esse mesmo problema."
+  },
+  {
+    "objectID": "aula_t4.html#section-35",
+    "href": "aula_t4.html#section-35",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Decomposição é um processo de tentativa e erro\n\n\nÉ muito comum que comecemos com uma ideia de design top-down e, no meio do processo, percebamos que precisamos mudar nossa estratégia.\n\nTalvez porque em algum ponto ficou difícil dividir em subproblemas.\nOu porque chegamos a muitas funções que parecem muito específicas (e não seriam úteis para problemas mais gerais).\nOu ainda porque estamos passando muitos parâmetros para as funções ou passando um parâmetro de função em função repetidamente.\nOu, por fim, porque apenas queremos experimentar outra abordagem.\n\nA recomendação é: prática! Quanto mais praticar, mais habilidoso será no processo de decomposição."
+  },
+  {
+    "objectID": "aula_t4.html#section-36",
+    "href": "aula_t4.html#section-36",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Como saber quando parar de dividir em subtarefas?\n\n\nEm geral, saber quando para de decompor um subproblema é mais arte do que ciência.\nÉ necessária muita prática para adquirir a intuição de quando parar. Desenvolvedores experientes costumam já imaginar em sua cabeça como uma tarefa poderia ser resolvida para decidir se deve dividi-la ou não.\nMas tudo bem se não soubermos bem como fazer isso por agora. Podemos ter uma uma primeira versão do design e, durante a implementação, se uma função se torna mais complexa que o esperado, nós a dividimos em subtarefas. Por outro lado, se uma função ficou muito pequena e específica podemos reavaliar e não ter receio de juntá-la a outras funções."
+  },
+  {
+    "objectID": "aula_t4.html#section-37",
+    "href": "aula_t4.html#section-37",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Ao fazer o design, nós definimos as funções de cima para baixo (top-down).\n\nMas na hora de implementar é melhor escrever os códigos das funções de baixo para cima (bottom-up).\nPor que?\n\n\nIsso porque se gerarmos primeiro as funções de subproblemas finais usando Copilot,\n\nse torna mais provável que ele as utilize quando pedirmos para gerar o código das funções de subproblemas maiores."
+  },
+  {
+    "objectID": "aula_t4.html#section-38",
+    "href": "aula_t4.html#section-38",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "A estratégia do livro é focar na Decomposição de Problemas e, por isso, não segue cada passo do Ciclo de projeto de funções para cada função.\n\nMais especificamente, ele já apresenta a solução que preferiram, sem detalhar a Engenharia de Prompt utilizada.\ne não acrescentam os testes das funções.\n\n\nEu planejei aqui incluir pelo menos os testes de funções.\n\nQue é algo importante e geralmente subestimado pelos alunos, e até por professores 😜\nMas vamos ver se o tempo da aula vai permitir passar por tudo."
+  },
+  {
+    "objectID": "aula_t4.html#section-39",
+    "href": "aula_t4.html#section-39",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "A estratégia do livro é focar na Decomposição de Problemas e, por isso, não segue cada passo do Ciclo de projeto de funções para cada função.\n\nMais especificamente, ele já apresenta a solução que preferiram, sem detalhar a Engenharia de Prompt utilizada.\ne nem acrescenta os testes das funções.\n\n\nEu planejei aqui incluir pelo menos os testes de funções.\n\nQue é algo importante e geralmente subestimado pelos alunos, e até por professores 😜\nMas vamos ver se o tempo da aula vai permitir passar por tudo."
+  },
+  {
+    "objectID": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis-3",
+    "href": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis-3",
+    "title": "Decomposição de Problemas",
+    "section": "Gerar a lista de todas as palavras possíveis",
+    "text": "Gerar a lista de todas as palavras possíveis\nPrecisamos quebrar ainda mais as tarefas anteriores?\n\nPara cada tarefa, parece que precisaremos fazer um loop nas letras da palavra e/ou no alfabeto\nE gerar uma palavra para cada combinação.\n\n\nPor ora, vamos manter as tarefas como estão.\n\nSe, durante a fase de implementação percebermos que as tarefas são mais complicadas que parecem nós quebramos novamente."
+  },
+  {
+    "objectID": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-reais-1",
+    "href": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-reais-1",
+    "title": "Decomposição de Problemas",
+    "section": "Gerar a lista de todas as palavras reais",
+    "text": "Gerar a lista de todas as palavras reais\nPodemos pensar em um loop que percorre a lista de palavras candidatas.\n\nE, para cada uma delas, verifica se ela existe também na lista de palavras reais.\nSe existir é adicionada na lista de resposta.\n\n\nParece um problema simples o suficiente para ser tratado por uma única função."
+  },
+  {
+    "objectID": "aula_t4.html#filtrar-palavras-repetidas-1",
+    "href": "aula_t4.html#filtrar-palavras-repetidas-1",
+    "title": "Decomposição de Problemas",
+    "section": "Filtrar palavras repetidas",
+    "text": "Filtrar palavras repetidas\nAcontece que Python tem uma função que remove duplicações de uma lista com uma linha de código.\n\nEntão se souber disso, você pode concluir que a função filtrar_palavras_repetidas é desnecessária."
   }
 ]
