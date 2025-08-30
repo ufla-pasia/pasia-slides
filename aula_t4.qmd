@@ -607,16 +607,15 @@ Por isso, vamos começar com a função `carregar_lista_palavras`.
 Como já fizemos anteriormente, vamos definir a assinatura e a docstring e deixar o Copilot gerar o código.
 
 
-::: {.halfincfontsize}
 ```python
 def carregar_lista_palavras(caminho_arquivo):
     """
-    caminho_arquivo  é o nome de um arquivo que tem uma palavra em português por linha.
+    caminho_arquivo  é o nome de um arquivo que tem uma palavra 
+    em português por linha.
     
     Retorna uma lista com as palavras do arquivo.
     """
 ```
-:::
 
 ## `carregar_lista_palavras`
 
@@ -625,7 +624,8 @@ Esse foi o código gerado pelo Copilot no meu caso.
 ```python
 def carregar_lista_palavras(caminho_arquivo):
     """
-    caminho_arquivo  é o nome de um arquivo que tem uma palavra em português por linha.
+    caminho_arquivo  é o nome de um arquivo que tem uma palavra 
+    em português por linha.
     
     Retorna uma lista com as palavras do arquivo.
     """
@@ -695,7 +695,6 @@ descrição em alto nível dos testes.
 
 ## `adicionar_letra`
 
-::: {.halfincfontsize}
 ```python
 def adicionar_letra(palavra):
     """
@@ -705,15 +704,18 @@ def adicionar_letra(palavra):
     adicionando uma letra em qualquer posição da palavra.
     """
 ```
-:::
 
 Obs.: para simplificar, vamos ignorar o acréscimo de letras com acentos.
 
----
+. . .
+
+Testes: 
+
+- palavra comum (_boi_), palavra de uma letra (_a_), palavra com letra repetida (_passar_)
+
 
 ## `remover_letra`
 
-::: {.halfincfontsize}
 ```python
 def remover_letra(palavra):
     """
@@ -723,9 +725,13 @@ def remover_letra(palavra):
     removendo uma letra de qualquer posição da palavra.
     """
 ```
-:::
 
----
+. . .
+
+Testes: 
+
+- palavra comum (_boi_), palavra de uma letra (_a_), palavra com letra repetida (_passar_)
+
 
 ## `trocar_letra`
 
@@ -739,7 +745,12 @@ def trocar_letra(palavra):
     """
 ```
 
----
+. . .
+
+Testes: 
+
+- palavra comum (_boi_), palavra de uma letra (_a_), palavra com letra repetida (_passar_)
+
 
 ## `gerar_palavras_possiveis`
 
@@ -754,7 +765,12 @@ def gerar_palavras_possiveis(palavra):
     """
 ```
 
----
+. . .
+
+Testes: 
+
+- palavra comum (_boi_), palavra de uma letra (_a_), palavra com letra repetida (_passar_)
+
 
 ## `filtrar_palavras_reais`
 
@@ -768,7 +784,6 @@ def filtrar_palavras_reais(lista_palavras, palavras_possiveis):
     """
 ```
 
----
 
 ## `filtrar_palavras_repetidas`
 
@@ -781,28 +796,105 @@ def filtrar_palavras_repetidas(palavras_reais):
     """
 ```
 
----
+. . .
+
+Testes: 
+
+- uma palavra sugerida, várias palavras sugeridas e nenhuma palavra sugerida.
+
 
 ## `obter_sugestoes_correcao`
 
 ```python
 def obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):
     """
-    caminho_arquivo é o nome de um arquivo que tem uma palavra em português por linha.
-    possivel_palavra é  uma string que pode ser ou não uma palavra real em português.
+    caminho_arquivo é o nome de um arquivo que tem uma palavra 
+    em português por linha.
+    possivel_palavra é  uma string que pode ser ou não uma 
+    palavra real em português.
 
-    Retorna a lista de todas as possíveis correções únicas para a possível palavra.
+    Retorna a lista de todas as possíveis correções únicas para 
+    a possível palavra.
     """
 ```
 
----
+. . .
+
+Testes: 
+
+- uma sugestão, várias sugestões e nenhuma sugestão.
+
 
 ## `corretor_ortografico`
 
 ```python
 def corretor_ortografico(caminho_arquivo):
     """
-    caminho_arquivo é o nome de um arquivo que contém palavras em português.
+    caminho_arquivo é o nome de um arquivo que contém palavras 
+    em português.
 
-    Pede ao usuário uma palavra e exibe todas as possíveis correções para aquela palavra,
-    uma por linha.
+    Pede ao usuário uma palavra e exibe todas as possíveis correções 
+    para aquela palavra, uma por linha.
+    """
+```
+
+. . .
+
+Testes:
+
+- Como a função não retorna valores precisaríamos simular a interação com o usuário para testá-la.
+- A biblioteca `pytest` tem funções avançadas para isso.
+- Mas esse não é o nosso foco aqui, então vamos testar manualmente.
+
+# Experimentando Sugestões de Correção Ortográfica {background-color="#40666e"}
+
+## 
+
+Vamos então experimentar nosso corretor ortográfico.
+
+- Que palavras seria interessante usar?
+
+. . .
+
+Algumas sugestões interessantes são:
+
+- suceso, susesso, beje, lage, análize, asia, ancioso, previlégio, impecilho, brusa, beneficiente, retrógado, sombrancelha.
+- [Essa página](https://www.dicio.com.br/erros-de-ortografia/) traz outros erros comuns de ortografia em português que 
+  você poderia querer testar.
+
+# Conclusões {background-color="#40666e"}
+
+## Missão Cumprida 👏
+
+Completamos nosso primeiro _design top-down_ de um problema do mundo real.
+
+- Fizemos um gerador de sugestões de correção que faz o que vários desses sistemas fazem.
+
+. . .
+
+O problema se tornou consideravelmente mais fácil de implementar,
+
+- por que primeiro nós dividimos o problema em subproblemas.
+
+##
+
+Muitos especialistas em Computação consideram que **decomposição de problemas** é
+[a]{.alert} habilidade mais crítica necessária para se escrever bons softwares.
+
+. . .
+
+Essa habilidade continua crítica mesmo usando Assistentes de IA como o Copilot e o ChatGPT.
+
+- Pois eles trazem respostas muito melhores para problemas menores, claros e bem definidos.
+
+##
+
+Como mencionamos no início, decomposição de problemas é mais arte que ciência.
+
+- E, portanto, exige prática para fazer isso bem.
+
+. . .
+
+Ao longo da disciplina, aplicaremos a decomposição de problemas em outros exemplos.
+
+- O que te ajudará a ganhar mais experiência com essa habilidade tão importante.

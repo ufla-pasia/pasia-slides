@@ -2671,14 +2671,14 @@
     "href": "aula_t4.html#carregar_lista_palavras-1",
     "title": "Decomposição de Problemas",
     "section": "carregar_lista_palavras",
-    "text": "carregar_lista_palavras\nComo já fizemos anteriormente, vamos definir a assinatura e a docstring e deixar o Copilot gerar o código.\n\ndef carregar_lista_palavras(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo  é o nome de um arquivo que tem uma palavra em português por linha.\n    \n    Retorna uma lista com as palavras do arquivo.\n    \"\"\""
+    "text": "carregar_lista_palavras\nComo já fizemos anteriormente, vamos definir a assinatura e a docstring e deixar o Copilot gerar o código.\ndef carregar_lista_palavras(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo  é o nome de um arquivo que tem uma palavra \n    em português por linha.\n    \n    Retorna uma lista com as palavras do arquivo.\n    \"\"\""
   },
   {
     "objectID": "aula_t4.html#carregar_lista_palavras-2",
     "href": "aula_t4.html#carregar_lista_palavras-2",
     "title": "Decomposição de Problemas",
     "section": "carregar_lista_palavras",
-    "text": "carregar_lista_palavras\nEsse foi o código gerado pelo Copilot no meu caso.\ndef carregar_lista_palavras(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo  é o nome de um arquivo que tem uma palavra em português por linha.\n    \n    Retorna uma lista com as palavras do arquivo.\n    \"\"\"\n    with open(caminho_arquivo, 'r', encoding='utf-8') as f:\n        palavras = f.read().splitlines()\n    return palavras"
+    "text": "carregar_lista_palavras\nEsse foi o código gerado pelo Copilot no meu caso.\ndef carregar_lista_palavras(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo  é o nome de um arquivo que tem uma palavra \n    em português por linha.\n    \n    Retorna uma lista com as palavras do arquivo.\n    \"\"\"\n    with open(caminho_arquivo, 'r', encoding='utf-8') as f:\n        palavras = f.read().splitlines()\n    return palavras"
   },
   {
     "objectID": "aula_t4.html#testes-da-função-carregar_lista_palavras",
@@ -2706,28 +2706,28 @@
     "href": "aula_t4.html#adicionar_letra",
     "title": "Decomposição de Problemas",
     "section": "adicionar_letra",
-    "text": "adicionar_letra\n\ndef adicionar_letra(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as strings que podem ser obtidas\n    adicionando uma letra em qualquer posição da palavra.\n    \"\"\"\n\nObs.: para simplificar, vamos ignorar o acréscimo de letras com acentos."
+    "text": "adicionar_letra\ndef adicionar_letra(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as strings que podem ser obtidas\n    adicionando uma letra em qualquer posição da palavra.\n    \"\"\"\nObs.: para simplificar, vamos ignorar o acréscimo de letras com acentos.\n\nTestes:\n\npalavra comum (boi), palavra de uma letra (a), palavra com letra repetida (passar)"
   },
   {
     "objectID": "aula_t4.html#remover_letra",
     "href": "aula_t4.html#remover_letra",
     "title": "Decomposição de Problemas",
     "section": "remover_letra",
-    "text": "remover_letra\n\ndef remover_letra(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as strings que podem ser obtidas\n    removendo uma letra de qualquer posição da palavra.\n    \"\"\""
+    "text": "remover_letra\ndef remover_letra(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as strings que podem ser obtidas\n    removendo uma letra de qualquer posição da palavra.\n    \"\"\"\n\nTestes:\n\npalavra comum (boi), palavra de uma letra (a), palavra com letra repetida (passar)"
   },
   {
     "objectID": "aula_t4.html#trocar_letra",
     "href": "aula_t4.html#trocar_letra",
     "title": "Decomposição de Problemas",
     "section": "trocar_letra",
-    "text": "trocar_letra\ndef trocar_letra(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as strings que podem ser obtidas\n    trocando uma letra de qualquer posição da palavra por outra letra.\n    \"\"\""
+    "text": "trocar_letra\ndef trocar_letra(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as strings que podem ser obtidas\n    trocando uma letra de qualquer posição da palavra por outra letra.\n    \"\"\"\n\nTestes:\n\npalavra comum (boi), palavra de uma letra (a), palavra com letra repetida (passar)"
   },
   {
     "objectID": "aula_t4.html#gerar_palavras_possiveis",
     "href": "aula_t4.html#gerar_palavras_possiveis",
     "title": "Decomposição de Problemas",
     "section": "gerar_palavras_possiveis",
-    "text": "gerar_palavras_possiveis\ndef gerar_palavras_possiveis(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as palavras possíveis que podem ser geradas\n    a partir da palavra original, através das operações de adicionar, remover\n    ou trocar uma letra.\n    \"\"\""
+    "text": "gerar_palavras_possiveis\ndef gerar_palavras_possiveis(palavra):\n    \"\"\"\n    palavra é uma string com pelo menos uma letra.\n\n    Retorna uma lista com todas as palavras possíveis que podem ser geradas\n    a partir da palavra original, através das operações de adicionar, remover\n    ou trocar uma letra.\n    \"\"\"\n\nTestes:\n\npalavra comum (boi), palavra de uma letra (a), palavra com letra repetida (passar)"
   },
   {
     "objectID": "aula_t4.html#filtrar_palavras_reais",
@@ -2741,21 +2741,21 @@
     "href": "aula_t4.html#filtrar_palavras_repetidas",
     "title": "Decomposição de Problemas",
     "section": "filtrar_palavras_repetidas",
-    "text": "filtrar_palavras_repetidas\ndef filtrar_palavras_repetidas(palavras_reais):\n    \"\"\"\n    palavras_reais é uma lista de strings com palavras em português.\n\n    Retorna a lista sem palavras repetidas.\n    \"\"\""
+    "text": "filtrar_palavras_repetidas\ndef filtrar_palavras_repetidas(palavras_reais):\n    \"\"\"\n    palavras_reais é uma lista de strings com palavras em português.\n\n    Retorna a lista sem palavras repetidas.\n    \"\"\"\n\nTestes:\n\numa palavra sugerida, várias palavras sugeridas e nenhuma palavra sugerida."
   },
   {
     "objectID": "aula_t4.html#obter_sugestoes_correcao",
     "href": "aula_t4.html#obter_sugestoes_correcao",
     "title": "Decomposição de Problemas",
     "section": "obter_sugestoes_correcao",
-    "text": "obter_sugestoes_correcao\ndef obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo que tem uma palavra em português por linha.\n    possivel_palavra é  uma string que pode ser ou não uma palavra real em português.\n\n    Retorna a lista de todas as possíveis correções únicas para a possível palavra.\n    \"\"\""
+    "text": "obter_sugestoes_correcao\ndef obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo que tem uma palavra \n    em português por linha.\n    possivel_palavra é  uma string que pode ser ou não uma \n    palavra real em português.\n\n    Retorna a lista de todas as possíveis correções únicas para \n    a possível palavra.\n    \"\"\"\n\nTestes:\n\numa sugestão, várias sugestões e nenhuma sugestão."
   },
   {
     "objectID": "aula_t4.html#corretor_ortografico",
     "href": "aula_t4.html#corretor_ortografico",
     "title": "Decomposição de Problemas",
     "section": "corretor_ortografico",
-    "text": "corretor_ortografico\n```python def corretor_ortografico(caminho_arquivo): ““” caminho_arquivo é o nome de um arquivo que contém palavras em português.\nPede ao usuário uma palavra e exibe todas as possíveis correções para aquela palavra,\numa por linha."
+    "text": "corretor_ortografico\ndef corretor_ortografico(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo que contém palavras \n    em português.\n\n    Pede ao usuário uma palavra e exibe todas as possíveis correções \n    para aquela palavra, uma por linha.\n    \"\"\"\n\nTestes:\n\nComo a função não retorna valores precisaríamos simular a interação com o usuário para testá-la.\nA biblioteca pytest tem funções avançadas para isso.\nMas esse não é o nosso foco aqui, então vamos testar manualmente."
   },
   {
     "objectID": "aula_t4.html#section-32",
@@ -2811,7 +2811,7 @@
     "href": "aula_t4.html#section-39",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "A estratégia do livro é focar na Decomposição de Problemas e, por isso, não segue cada passo do Ciclo de projeto de funções para cada função.\n\nMais especificamente, ele já apresenta a solução que preferiram, sem detalhar a Engenharia de Prompt utilizada.\ne nem acrescenta os testes das funções.\n\n\nEu planejei aqui incluir pelo menos os testes de funções.\n\nQue é algo importante e geralmente subestimado pelos alunos, e até por professores 😜\nMas vamos ver se o tempo da aula vai permitir passar por tudo."
+    "text": "Vamos então experimentar nosso corretor ortográfico.\n\nQue palavras seria interessante usar?\n\n\nAlgumas sugestões interessantes são:\n\nsuceso, susesso, beje, lage, análize, asia, ancioso, previlégio, impecilho, brusa, beneficiente, retrógado, sombrancelha.\nEssa página traz outros erros comuns de ortografia em português que você poderia querer testar."
   },
   {
     "objectID": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis-3",
@@ -2833,5 +2833,26 @@
     "title": "Decomposição de Problemas",
     "section": "Filtrar palavras repetidas",
     "text": "Filtrar palavras repetidas\nAcontece que Python tem uma função que remove duplicações de uma lista com uma linha de código.\n\nEntão se souber disso, você pode concluir que a função filtrar_palavras_repetidas é desnecessária."
+  },
+  {
+    "objectID": "aula_t4.html#missão-cumprida",
+    "href": "aula_t4.html#missão-cumprida",
+    "title": "Decomposição de Problemas",
+    "section": "Missão Cumprida 👏",
+    "text": "Missão Cumprida 👏\nCompletamos nosso primeiro design top-down de um problema do mundo real.\n\nFizemos um gerador de sugestões de correção que faz o que vários desses sistemas fazem.\n\n\nO problema se tornou consideravelmente mais fácil de implementar,\n\npor que primeiro nós dividimos o problema em subproblemas."
+  },
+  {
+    "objectID": "aula_t4.html#section-40",
+    "href": "aula_t4.html#section-40",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Muitos especialistas em Computação consideram que decomposição de problemas é a habilidade mais crítica necessária para se escrever bons softwares.\n\nEssa habilidade continua crítica mesmo usando Assistentes de IA como o Copilot e o ChatGPT.\n\nPois eles trazem respostas muito melhores para problemas menores, claros e bem definidos."
+  },
+  {
+    "objectID": "aula_t4.html#section-41",
+    "href": "aula_t4.html#section-41",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Como mencionamos no início, decomposição de problemas é mais arte que ciência.\n\nE, portanto, exige prática para fazer isso bem.\n\n\nAo longo da disciplina, aplicaremos a decomposição de problemas em outros exemplos\n\nO que te ajudará a ganhar mais experiência com essa habilidade tão importante."
   }
 ]

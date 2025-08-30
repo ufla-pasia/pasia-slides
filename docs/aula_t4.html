@@ -971,27 +971,27 @@
 <section id="carregar_lista_palavras-1" class="slide level2">
 <h2><code>carregar_lista_palavras</code></h2>
 <p>Como já fizemos anteriormente, vamos definir a assinatura e a docstring e deixar o Copilot gerar o código.</p>
-<div class="halfincfontsize">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">def</span> carregar_lista_palavras(caminho_arquivo):</span>
 <span id="cb1-2"><a></a>    <span class="co">"""</span></span>
-<span id="cb1-3"><a></a><span class="co">    caminho_arquivo  é o nome de um arquivo que tem uma palavra em português por linha.</span></span>
-<span id="cb1-4"><a></a><span class="co">    </span></span>
-<span id="cb1-5"><a></a><span class="co">    Retorna uma lista com as palavras do arquivo.</span></span>
-<span id="cb1-6"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<span id="cb1-3"><a></a><span class="co">    caminho_arquivo  é o nome de um arquivo que tem uma palavra </span></span>
+<span id="cb1-4"><a></a><span class="co">    em português por linha.</span></span>
+<span id="cb1-5"><a></a><span class="co">    </span></span>
+<span id="cb1-6"><a></a><span class="co">    Retorna uma lista com as palavras do arquivo.</span></span>
+<span id="cb1-7"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="carregar_lista_palavras-2" class="slide level2">
 <h2><code>carregar_lista_palavras</code></h2>
 <p>Esse foi o código gerado pelo Copilot no meu caso.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> carregar_lista_palavras(caminho_arquivo):</span>
 <span id="cb2-2"><a></a>    <span class="co">"""</span></span>
-<span id="cb2-3"><a></a><span class="co">    caminho_arquivo  é o nome de um arquivo que tem uma palavra em português por linha.</span></span>
-<span id="cb2-4"><a></a><span class="co">    </span></span>
-<span id="cb2-5"><a></a><span class="co">    Retorna uma lista com as palavras do arquivo.</span></span>
-<span id="cb2-6"><a></a><span class="co">    """</span></span>
-<span id="cb2-7"><a></a>    <span class="cf">with</span> <span class="bu">open</span>(caminho_arquivo, <span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> f:</span>
-<span id="cb2-8"><a></a>        palavras <span class="op">=</span> f.read().splitlines()</span>
-<span id="cb2-9"><a></a>    <span class="cf">return</span> palavras</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a></a><span class="co">    caminho_arquivo  é o nome de um arquivo que tem uma palavra </span></span>
+<span id="cb2-4"><a></a><span class="co">    em português por linha.</span></span>
+<span id="cb2-5"><a></a><span class="co">    </span></span>
+<span id="cb2-6"><a></a><span class="co">    Retorna uma lista com as palavras do arquivo.</span></span>
+<span id="cb2-7"><a></a><span class="co">    """</span></span>
+<span id="cb2-8"><a></a>    <span class="cf">with</span> <span class="bu">open</span>(caminho_arquivo, <span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> f:</span>
+<span id="cb2-9"><a></a>        palavras <span class="op">=</span> f.read().splitlines()</span>
+<span id="cb2-10"><a></a>    <span class="cf">return</span> palavras</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="testes-da-função-carregar_lista_palavras" class="slide level2">
 <h2>Testes da função <code>carregar_lista_palavras</code></h2>
@@ -1042,7 +1042,6 @@ tucano</code></pre>
 </section>
 <section id="adicionar_letra" class="slide level2">
 <h2><code>adicionar_letra</code></h2>
-<div class="halfincfontsize">
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> adicionar_letra(palavra):</span>
 <span id="cb6-2"><a></a>    <span class="co">"""</span></span>
 <span id="cb6-3"><a></a><span class="co">    palavra é uma string com pelo menos uma letra.</span></span>
@@ -1050,12 +1049,16 @@ tucano</code></pre>
 <span id="cb6-5"><a></a><span class="co">    Retorna uma lista com todas as strings que podem ser obtidas</span></span>
 <span id="cb6-6"><a></a><span class="co">    adicionando uma letra em qualquer posição da palavra.</span></span>
 <span id="cb6-7"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>Obs.: para simplificar, vamos ignorar o acréscimo de letras com acentos.</p>
+<div class="fragment">
+<p>Testes:</p>
+<ul>
+<li class="fragment">palavra comum (<em>boi</em>), palavra de uma letra (<em>a</em>), palavra com letra repetida (<em>passar</em>)</li>
+</ul>
+</div>
 </section>
 <section id="remover_letra" class="slide level2">
 <h2><code>remover_letra</code></h2>
-<div class="halfincfontsize">
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> remover_letra(palavra):</span>
 <span id="cb7-2"><a></a>    <span class="co">"""</span></span>
 <span id="cb7-3"><a></a><span class="co">    palavra é uma string com pelo menos uma letra.</span></span>
@@ -1063,6 +1066,11 @@ tucano</code></pre>
 <span id="cb7-5"><a></a><span class="co">    Retorna uma lista com todas as strings que podem ser obtidas</span></span>
 <span id="cb7-6"><a></a><span class="co">    removendo uma letra de qualquer posição da palavra.</span></span>
 <span id="cb7-7"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Testes:</p>
+<ul>
+<li class="fragment">palavra comum (<em>boi</em>), palavra de uma letra (<em>a</em>), palavra com letra repetida (<em>passar</em>)</li>
+</ul>
 </div>
 </section>
 <section id="trocar_letra" class="slide level2">
@@ -1074,6 +1082,12 @@ tucano</code></pre>
 <span id="cb8-5"><a></a><span class="co">    Retorna uma lista com todas as strings que podem ser obtidas</span></span>
 <span id="cb8-6"><a></a><span class="co">    trocando uma letra de qualquer posição da palavra por outra letra.</span></span>
 <span id="cb8-7"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Testes:</p>
+<ul>
+<li class="fragment">palavra comum (<em>boi</em>), palavra de uma letra (<em>a</em>), palavra com letra repetida (<em>passar</em>)</li>
+</ul>
+</div>
 </section>
 <section id="gerar_palavras_possiveis" class="slide level2">
 <h2><code>gerar_palavras_possiveis</code></h2>
@@ -1085,6 +1099,12 @@ tucano</code></pre>
 <span id="cb9-6"><a></a><span class="co">    a partir da palavra original, através das operações de adicionar, remover</span></span>
 <span id="cb9-7"><a></a><span class="co">    ou trocar uma letra.</span></span>
 <span id="cb9-8"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Testes:</p>
+<ul>
+<li class="fragment">palavra comum (<em>boi</em>), palavra de uma letra (<em>a</em>), palavra com letra repetida (<em>passar</em>)</li>
+</ul>
+</div>
 </section>
 <section id="filtrar_palavras_reais" class="slide level2">
 <h2><code>filtrar_palavras_reais</code></h2>
@@ -1104,24 +1124,112 @@ tucano</code></pre>
 <span id="cb11-4"><a></a></span>
 <span id="cb11-5"><a></a><span class="co">    Retorna a lista sem palavras repetidas.</span></span>
 <span id="cb11-6"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Testes:</p>
+<ul>
+<li class="fragment">uma palavra sugerida, várias palavras sugeridas e nenhuma palavra sugerida.</li>
+</ul>
+</div>
 </section>
 <section id="obter_sugestoes_correcao" class="slide level2">
 <h2><code>obter_sugestoes_correcao</code></h2>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):</span>
 <span id="cb12-2"><a></a>    <span class="co">"""</span></span>
-<span id="cb12-3"><a></a><span class="co">    caminho_arquivo é o nome de um arquivo que tem uma palavra em português por linha.</span></span>
-<span id="cb12-4"><a></a><span class="co">    possivel_palavra é  uma string que pode ser ou não uma palavra real em português.</span></span>
-<span id="cb12-5"><a></a></span>
-<span id="cb12-6"><a></a><span class="co">    Retorna a lista de todas as possíveis correções únicas para a possível palavra.</span></span>
-<span id="cb12-7"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a></a><span class="co">    caminho_arquivo é o nome de um arquivo que tem uma palavra </span></span>
+<span id="cb12-4"><a></a><span class="co">    em português por linha.</span></span>
+<span id="cb12-5"><a></a><span class="co">    possivel_palavra é  uma string que pode ser ou não uma </span></span>
+<span id="cb12-6"><a></a><span class="co">    palavra real em português.</span></span>
+<span id="cb12-7"><a></a></span>
+<span id="cb12-8"><a></a><span class="co">    Retorna a lista de todas as possíveis correções únicas para </span></span>
+<span id="cb12-9"><a></a><span class="co">    a possível palavra.</span></span>
+<span id="cb12-10"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Testes:</p>
+<ul>
+<li class="fragment">uma sugestão, várias sugestões e nenhuma sugestão.</li>
+</ul>
+</div>
 </section>
 <section id="corretor_ortografico" class="slide level2">
 <h2><code>corretor_ortografico</code></h2>
-<p>```python def corretor_ortografico(caminho_arquivo): ““” caminho_arquivo é o nome de um arquivo que contém palavras em português.</p>
-<pre><code>Pede ao usuário uma palavra e exibe todas as possíveis correções para aquela palavra,
-uma por linha.</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="kw">def</span> corretor_ortografico(caminho_arquivo):</span>
+<span id="cb13-2"><a></a>    <span class="co">"""</span></span>
+<span id="cb13-3"><a></a><span class="co">    caminho_arquivo é o nome de um arquivo que contém palavras </span></span>
+<span id="cb13-4"><a></a><span class="co">    em português.</span></span>
+<span id="cb13-5"><a></a></span>
+<span id="cb13-6"><a></a><span class="co">    Pede ao usuário uma palavra e exibe todas as possíveis correções </span></span>
+<span id="cb13-7"><a></a><span class="co">    para aquela palavra, uma por linha.</span></span>
+<span id="cb13-8"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Testes:</p>
+<ul>
+<li class="fragment">Como a função não retorna valores precisaríamos simular a interação com o usuário para testá-la.</li>
+<li class="fragment">A biblioteca <code>pytest</code> tem funções avançadas para isso.</li>
+<li class="fragment">Mas esse não é o nosso foco aqui, então vamos testar manualmente.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="experimentando-sugestões-de-correção-ortográfica" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Experimentando Sugestões de Correção Ortográfica</h1>
+
+</section>
+<section id="section-39" class="slide level2">
+<h2></h2>
+<p>Vamos então experimentar nosso corretor ortográfico.</p>
+<ul>
+<li class="fragment">Que palavras seria interessante usar?</li>
+</ul>
+<div class="fragment">
+<p>Algumas sugestões interessantes são:</p>
+<ul>
+<li class="fragment">suceso, susesso, beje, lage, análize, asia, ancioso, previlégio, impecilho, brusa, beneficiente, retrógado, sombrancelha.</li>
+<li class="fragment"><a href="https://www.dicio.com.br/erros-de-ortografia/">Essa página</a> traz outros erros comuns de ortografia em português que você poderia querer testar.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="conclusões" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Conclusões</h1>
+
+</section>
+<section id="missão-cumprida" class="slide level2">
+<h2>Missão Cumprida 👏</h2>
+<p>Completamos nosso primeiro <em>design top-down</em> de um problema do mundo real.</p>
+<ul>
+<li class="fragment">Fizemos um gerador de sugestões de correção que faz o que vários desses sistemas fazem.</li>
+</ul>
+<div class="fragment">
+<p>O problema se tornou consideravelmente mais fácil de implementar,</p>
+<ul>
+<li class="fragment">por que primeiro nós dividimos o problema em subproblemas.</li>
+</ul>
+</div>
+</section>
+<section id="section-40" class="slide level2">
+<h2></h2>
+<p>Muitos especialistas em Computação consideram que <strong>decomposição de problemas</strong> é <span class="alert">a</span> habilidade mais crítica necessária para se escrever bons softwares.</p>
+<div class="fragment">
+<p>Essa habilidade continua crítica mesmo usando Assistentes de IA como o Copilot e o ChatGPT.</p>
+<ul>
+<li class="fragment">Pois eles trazem respostas muito melhores para problemas menores, claros e bem definidos.</li>
+</ul>
+</div>
+</section>
+<section id="section-41" class="slide level2">
+<h2></h2>
+<p>Como mencionamos no início, decomposição de problemas é mais arte que ciência.</p>
+<ul>
+<li class="fragment">E, portanto, exige prática para fazer isso bem.</li>
+</ul>
+<div class="fragment">
+<p>Ao longo da disciplina, aplicaremos a decomposição de problemas em outros exemplos</p>
+<ul>
+<li class="fragment">O que te ajudará a ganhar mais experiência com essa habilidade tão importante.</li>
+</ul>
 
 
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
