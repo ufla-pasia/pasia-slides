@@ -314,7 +314,9 @@ Não é que esteja errado se resolvermos criar funções para esses passos.
 
 ## Dividindo o subproblema de Processamento
 
-Vamos chamar a função de processamento de `_obter_sugestoes_correcao`.
+Vamos focar então na etapa de processamento.
+
+- Vamos chamar a função de processamento de `_obter_sugestoes_correcao`.
 
 - Quais parâmetros a função precisa receber?
 
@@ -691,7 +693,26 @@ de teste em um projeto no VS Code.
 . . .
 
 Já aqui nos slides vou manter apenas o prompt das funções (assinatura e docstring) e a
-descrição em alto nível dos testes.
+descrição em alto nível dos testeas.
+
+##
+
+Já implementamos então a função que carrega as palavras. 
+
+- Vamos agora para a próxima função folha: `adicionar_letra`.
+
+
+```{mermaid}
+flowchart TD
+  A(corretor_ortografico) --> B(obter_sugestoes_correcao)
+  B --> C1(carregar_lista_palavras fa:fa-check)
+  B --> C2(gerar_palavras_possiveis)
+  C2 --> D1(adicionar_letra)
+  C2 --> D2(remover_letra)
+  C2 --> D3(trocar_letra)
+  B --> C3(filtrar_palavras_reais)
+  B --> C4(filtrar_palavras_repetidas)
+```
 
 ## `adicionar_letra`
 
@@ -713,6 +734,21 @@ Testes:
 
 - palavra comum (_boi_), palavra de uma letra (_a_), palavra com letra repetida (_passar_)
 
+##
+
+A próxima função agora será `remover_letra`.
+
+```{mermaid}
+flowchart TD
+  A(corretor_ortografico) --> B(obter_sugestoes_correcao)
+  B --> C1(carregar_lista_palavras fa:fa-check)
+  B --> C2(gerar_palavras_possiveis)
+  C2 --> D1(adicionar_letra fa:fa-check)
+  C2 --> D2(remover_letra)
+  C2 --> D3(trocar_letra)
+  B --> C3(filtrar_palavras_reais)
+  B --> C4(filtrar_palavras_repetidas)
+```
 
 ## `remover_letra`
 
@@ -751,6 +787,23 @@ Testes:
 
 - palavra comum (_boi_), palavra de uma letra (_a_), palavra com letra repetida (_passar_)
 
+##
+
+Agora nós já temos todos os subproblemas da função `gerar_palavras_possiveis` resolvidos e, 
+portanto, podemos implementá-la.
+
+```{mermaid}
+flowchart TD
+  A(corretor_ortografico) --> B(obter_sugestoes_correcao)
+  B --> C1(carregar_lista_palavras fa:fa-check)
+  B --> C2(gerar_palavras_possiveis)
+  C2 --> D1(adicionar_letra fa:fa-check)
+  C2 --> D2(remover_letra fa:fa-check)
+  C2 --> D3(trocar_letra fa:fa-check)
+  B --> C3(filtrar_palavras_reais)
+  B --> C4(filtrar_palavras_repetidas)
+```
+
 
 ## `gerar_palavras_possiveis`
 
@@ -770,6 +823,24 @@ def gerar_palavras_possiveis(palavra):
 Testes: 
 
 - palavra comum (_boi_), palavra de uma letra (_a_), palavra com letra repetida (_passar_)
+
+##
+
+Nosso sistema está evoluindo bem. Próximo passo: `filtrar_palavras_reais` e depois 
+`filtrar_palavras_repetidas`.
+
+```{mermaid}
+flowchart TD
+  A(corretor_ortografico) --> B(obter_sugestoes_correcao)
+  B --> C1(carregar_lista_palavras fa:fa-check)
+  B --> C2(gerar_palavras_possiveis fa:fa-check)
+  C2 --> D1(adicionar_letra fa:fa-check)
+  C2 --> D2(remover_letra fa:fa-check)
+  C2 --> D3(trocar_letra fa:fa-check)
+  B --> C3(filtrar_palavras_reais)
+  B --> C4(filtrar_palavras_repetidas)
+```
+
 
 
 ## `filtrar_palavras_reais`
@@ -802,6 +873,23 @@ Testes:
 
 - uma palavra sugerida, várias palavras sugeridas e nenhuma palavra sugerida.
 
+##
+
+Já resolvemos todos os subproblemas da função `obter_sugestoes_correcao` e hora de implementá-la.
+
+```{mermaid}
+flowchart TD
+  A(corretor_ortografico) --> B(obter_sugestoes_correcao)
+  B --> C1(carregar_lista_palavras fa:fa-check)
+  B --> C2(gerar_palavras_possiveis fa:fa-check)
+  C2 --> D1(adicionar_letra fa:fa-check)
+  C2 --> D2(remover_letra fa:fa-check)
+  C2 --> D3(trocar_letra fa:fa-check)
+  B --> C3(filtrar_palavras_reais fa:fa-check)
+  B --> C4(filtrar_palavras_repetidas fa:fa-check)
+```
+
+
 
 ## `obter_sugestoes_correcao`
 
@@ -822,8 +910,24 @@ def obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):
 
 Testes: 
 
-- uma sugestão, várias sugestões e nenhuma sugestão.
+- Situações que retornem uma sugestão, várias sugestões e nenhuma sugestão.
 
+
+##
+
+Ufa... agora só falta a função principal e terminamos nosso corretor.
+
+```{mermaid}
+flowchart TD
+  A(corretor_ortografico) --> B(obter_sugestoes_correcao fa:fa-check)
+  B --> C1(carregar_lista_palavras fa:fa-check)
+  B --> C2(gerar_palavras_possiveis fa:fa-check)
+  C2 --> D1(adicionar_letra fa:fa-check)
+  C2 --> D2(remover_letra fa:fa-check)
+  C2 --> D3(trocar_letra fa:fa-check)
+  B --> C3(filtrar_palavras_reais fa:fa-check)
+  B --> C4(filtrar_palavras_repetidas fa:fa-check)
+```
 
 ## `corretor_ortografico`
 
@@ -879,7 +983,7 @@ O problema se tornou consideravelmente mais fácil de implementar,
 ##
 
 Muitos especialistas em Computação consideram que **decomposição de problemas** é
-[a]{.alert} habilidade mais crítica necessária para se escrever bons softwares.
+[a]{.alert} **habilidade** mais crítica necessária para se escrever bons softwares.
 
 . . .
 

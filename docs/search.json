@@ -2538,7 +2538,7 @@
     "href": "aula_t4.html#dividindo-o-subproblema-de-processamento",
     "title": "Decomposição de Problemas",
     "section": "Dividindo o subproblema de Processamento",
-    "text": "Dividindo o subproblema de Processamento\nVamos chamar a função de processamento de _obter_sugestoes_correcao.\n\nQuais parâmetros a função precisa receber?\n\n\nCom certeza precisa receber a palavra que o usuário digitou."
+    "text": "Dividindo o subproblema de Processamento\nVamos focar então na etapa de processamento.\n\nVamos chamar a função de processamento de _obter_sugestoes_correcao.\nQuais parâmetros a função precisa receber?\n\n\nCom certeza precisa receber a palavra que o usuário digitou."
   },
   {
     "objectID": "aula_t4.html#section-22",
@@ -2699,7 +2699,7 @@
     "href": "aula_t4.html#observação-sobre-os-slides",
     "title": "Decomposição de Problemas",
     "section": "Observação sobre os slides",
-    "text": "Observação sobre os slides\nDaqui por diante, na aula, nós vamos criar todas as funções e suas respectivas funções de teste em um projeto no VS Code.\n\nEsse projeto estará disponível no repositório ufla-pasia/corretor-ortografico.\n\n\nJá aqui nos slides vou manter apenas o prompt das funções (assinatura e docstring) e a descrição em alto nível dos testes."
+    "text": "Observação sobre os slides\nDaqui por diante, na aula, nós vamos criar todas as funções e suas respectivas funções de teste em um projeto no VS Code.\n\nEsse projeto estará disponível no repositório ufla-pasia/corretor-ortografico.\n\n\nJá aqui nos slides vou manter apenas o prompt das funções (assinatura e docstring) e a descrição em alto nível dos testeas."
   },
   {
     "objectID": "aula_t4.html#adicionar_letra",
@@ -2748,7 +2748,7 @@
     "href": "aula_t4.html#obter_sugestoes_correcao",
     "title": "Decomposição de Problemas",
     "section": "obter_sugestoes_correcao",
-    "text": "obter_sugestoes_correcao\ndef obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo que tem uma palavra \n    em português por linha.\n    possivel_palavra é  uma string que pode ser ou não uma \n    palavra real em português.\n\n    Retorna a lista de todas as possíveis correções únicas para \n    a possível palavra.\n    \"\"\"\n\nTestes:\n\numa sugestão, várias sugestões e nenhuma sugestão."
+    "text": "obter_sugestoes_correcao\ndef obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo que tem uma palavra \n    em português por linha.\n    possivel_palavra é  uma string que pode ser ou não uma \n    palavra real em português.\n\n    Retorna a lista de todas as possíveis correções únicas para \n    a possível palavra.\n    \"\"\"\n\nTestes:\n\nSituações que retornem uma sugestão, várias sugestões e nenhuma sugestão."
   },
   {
     "objectID": "aula_t4.html#corretor_ortografico",
@@ -2811,7 +2811,7 @@
     "href": "aula_t4.html#section-39",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "Vamos então experimentar nosso corretor ortográfico.\n\nQue palavras seria interessante usar?\n\n\nAlgumas sugestões interessantes são:\n\nsuceso, susesso, beje, lage, análize, asia, ancioso, previlégio, impecilho, brusa, beneficiente, retrógado, sombrancelha.\nEssa página traz outros erros comuns de ortografia em português que você poderia querer testar."
+    "text": "Já implementamos então a função que carrega as palavras.\n\nVamos agora para a próxima função folha: adicionar_letra.\n\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)\n  B --&gt; C1(carregar_lista_palavras fa:fa-check)\n  B --&gt; C2(gerar_palavras_possiveis)\n  C2 --&gt; D1(adicionar_letra)\n  C2 --&gt; D2(remover_letra)\n  C2 --&gt; D3(trocar_letra)\n  B --&gt; C3(filtrar_palavras_reais)\n  B --&gt; C4(filtrar_palavras_repetidas)"
   },
   {
     "objectID": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis-3",
@@ -2846,13 +2846,55 @@
     "href": "aula_t4.html#section-40",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "Muitos especialistas em Computação consideram que decomposição de problemas é a habilidade mais crítica necessária para se escrever bons softwares.\n\nEssa habilidade continua crítica mesmo usando Assistentes de IA como o Copilot e o ChatGPT.\n\nPois eles trazem respostas muito melhores para problemas menores, claros e bem definidos."
+    "text": "A próxima função agora será remover_letra.\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)\n  B --&gt; C1(carregar_lista_palavras fa:fa-check)\n  B --&gt; C2(gerar_palavras_possiveis)\n  C2 --&gt; D1(adicionar_letra fa:fa-check)\n  C2 --&gt; D2(remover_letra)\n  C2 --&gt; D3(trocar_letra)\n  B --&gt; C3(filtrar_palavras_reais)\n  B --&gt; C4(filtrar_palavras_repetidas)"
   },
   {
     "objectID": "aula_t4.html#section-41",
     "href": "aula_t4.html#section-41",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "Como mencionamos no início, decomposição de problemas é mais arte que ciência.\n\nE, portanto, exige prática para fazer isso bem.\n\n\nAo longo da disciplina, aplicaremos a decomposição de problemas em outros exemplos\n\nO que te ajudará a ganhar mais experiência com essa habilidade tão importante."
+    "text": "Agora nós já temos todos os subproblemas da função gerar_palavras_possiveis resolvidos e, portanto, podemos implementá-la.\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)\n  B --&gt; C1(carregar_lista_palavras fa:fa-check)\n  B --&gt; C2(gerar_palavras_possiveis)\n  C2 --&gt; D1(adicionar_letra fa:fa-check)\n  C2 --&gt; D2(remover_letra fa:fa-check)\n  C2 --&gt; D3(trocar_letra fa:fa-check)\n  B --&gt; C3(filtrar_palavras_reais)\n  B --&gt; C4(filtrar_palavras_repetidas)"
+  },
+  {
+    "objectID": "aula_t4.html#section-42",
+    "href": "aula_t4.html#section-42",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Nosso sistema está evoluindo bem. Próximo passo: filtrar_palavras_reais e depois filtrar_palavras_repetidas.\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)\n  B --&gt; C1(carregar_lista_palavras fa:fa-check)\n  B --&gt; C2(gerar_palavras_possiveis fa:fa-check)\n  C2 --&gt; D1(adicionar_letra fa:fa-check)\n  C2 --&gt; D2(remover_letra fa:fa-check)\n  C2 --&gt; D3(trocar_letra fa:fa-check)\n  B --&gt; C3(filtrar_palavras_reais)\n  B --&gt; C4(filtrar_palavras_repetidas)"
+  },
+  {
+    "objectID": "aula_t4.html#section-43",
+    "href": "aula_t4.html#section-43",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Já resolvemos todos os subproblemas da função obter_sugestoes_correcao e hora de implementá-la.\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)\n  B --&gt; C1(carregar_lista_palavras fa:fa-check)\n  B --&gt; C2(gerar_palavras_possiveis fa:fa-check)\n  C2 --&gt; D1(adicionar_letra fa:fa-check)\n  C2 --&gt; D2(remover_letra fa:fa-check)\n  C2 --&gt; D3(trocar_letra fa:fa-check)\n  B --&gt; C3(filtrar_palavras_reais fa:fa-check)\n  B --&gt; C4(filtrar_palavras_repetidas fa:fa-check)"
+  },
+  {
+    "objectID": "aula_t4.html#section-44",
+    "href": "aula_t4.html#section-44",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Ufa… agora só falta a função principal e terminamos nosso corretor.\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao fa:fa-check)\n  B --&gt; C1(carregar_lista_palavras fa:fa-check)\n  B --&gt; C2(gerar_palavras_possiveis fa:fa-check)\n  C2 --&gt; D1(adicionar_letra fa:fa-check)\n  C2 --&gt; D2(remover_letra fa:fa-check)\n  C2 --&gt; D3(trocar_letra fa:fa-check)\n  B --&gt; C3(filtrar_palavras_reais fa:fa-check)\n  B --&gt; C4(filtrar_palavras_repetidas fa:fa-check)"
+  },
+  {
+    "objectID": "aula_t4.html#section-45",
+    "href": "aula_t4.html#section-45",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Vamos então experimentar nosso corretor ortográfico.\n\nQue palavras seria interessante usar?\n\n\nAlgumas sugestões interessantes são:\n\nsuceso, susesso, beje, lage, análize, asia, ancioso, previlégio, impecilho, brusa, beneficiente, retrógado, sombrancelha.\nEssa página traz outros erros comuns de ortografia em português que você poderia querer testar."
+  },
+  {
+    "objectID": "aula_t4.html#section-46",
+    "href": "aula_t4.html#section-46",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Muitos especialistas em Computação consideram que decomposição de problemas é a habilidade mais crítica necessária para se escrever bons softwares.\n\nEssa habilidade continua crítica mesmo usando Assistentes de IA como o Copilot e o ChatGPT.\n\nPois eles trazem respostas muito melhores para problemas menores, claros e bem definidos."
+  },
+  {
+    "objectID": "aula_t4.html#section-47",
+    "href": "aula_t4.html#section-47",
+    "title": "Decomposição de Problemas",
+    "section": "",
+    "text": "Como mencionamos no início, decomposição de problemas é mais arte que ciência.\n\nE, portanto, exige prática para fazer isso bem.\n\n\nAo longo da disciplina, aplicaremos a decomposição de problemas em outros exemplos.\n\nO que te ajudará a ganhar mais experiência com essa habilidade tão importante."
   }
 ]
