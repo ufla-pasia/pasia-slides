@@ -2860,7 +2860,7 @@
     "href": "aula_p4.html#section",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "Encontrar e resolver bugs é uma das principais atividades realizadas por um Engenheiro de Software.\n\nOs testes de código são essenciais para encontrarmos bugs em nossos sistemas.\nMas, uma vez que eles são encontrados, como podemos resolvê-los?"
+    "text": "Encontrar e resolver bugs são algumas das principais atividades realizadas por um Engenheiro de Software.\n\nOs testes de código são essenciais para encontrarmos bugs em nossos sistemas.\nMas, uma vez que eles são encontrados, como podemos resolvê-los?"
   },
   {
     "objectID": "aula_p4.html#section-1",
@@ -2874,7 +2874,7 @@
     "href": "aula_p4.html#section-2",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "Existem diversas formas de depurar nosso código.\n\nLendo o código.\nExplicando para alguém.\nIncluindo comandos print() (que depois precisam ser removidos).\nOu usando um depurador (debugger).\n\nQue é a forma mais recomendada!\nAlunos geralmente têm preguiça de usar, mas, quando entram em um estágio ou emprego, costuma perceber que depuradores são ferramentas essenciais para o dia-a-dia de um desenvolvedor."
+    "text": "Existem diversas formas de depurar nosso código.\n\nLendo o código.\nExplicando para alguém.\nIncluindo comandos print() (que depois precisam ser removidos).\nOu usando um depurador (debugger).\n\nQue é a forma mais recomendada!\nAlunos geralmente têm preguiça de usar, mas, quando entram em um estágio ou emprego, costumam perceber que depuradores são ferramentas essenciais para o dia-a-dia de um desenvolvedor."
   },
   {
     "objectID": "aula_p4.html#section-3",
@@ -2916,14 +2916,14 @@
     "href": "aula_p4.html#ideia-geral",
     "title": "Depuração e Decomposição de Problemas",
     "section": "Ideia Geral",
-    "text": "Ideia Geral\nSuponha que temos dois trechos de texto. Esse trecho 1:\n\nI have not yet described to you the most singular part. About six years ago — to be exact, upon the 4th of May 1882 — an advertisement appeared in the Times asking for the address of Miss Mary Morstan and stating that it would be to her advantage to come forward. There was no name or address appended. I had at that time just entered the family of Mrs. Cecil Forrester in the capacity of governess. By her advice I published my address in the advertisement column. The same day there arrived through the post a small card-board box addressed to me, which I found to contain a very large and lustrous pearl. No word of writing was enclosed. Since then, every year upon the same date there has always appeared a similar box, containing a similar pearl, without any clue as to the sender. They have been pronounced by an expert to be of a rare variety and of considerable value. You can see for yourselves that they are very handsome."
+    "text": "Ideia Geral\nBaseado no princípio desse exemplo, suponha que tenhamos:\n\num conjunto de textos de autores conhecidos.\ne o texto de um autor desconhecido\n\nPoderia ser uma obra nunca publicada, que foi encontrada por acaso com um colecionador, por exemplo.\n\n\n\nPrecisamos de uma forma que nos permita comparar o estilo de escrita dos autores conhecidos com o do autor desconhecido."
   },
   {
     "objectID": "aula_p4.html#inspiração",
     "href": "aula_p4.html#inspiração",
     "title": "Depuração e Decomposição de Problemas",
     "section": "Inspiração",
-    "text": "Inspiração\nE esse trecho 2:\n\nIt was the Dover Road that lay on a Friday night late in November, before the first of the persons with whom this history has business. The Dover Road lay, as to him, beyond the Dover mail, as it lumbered up Shooter’s Hill. He walked up hill in the mire by the side of the mail, as the rest of the passen- gers did; not because they had the least relish for walking exercise, under the circumstances, but because the hill, and the harness, and the mud, and the mail, were all so heavy, that the horses had three times already come to a stop, besides once drawing the coach across the road, with the mutinous intent of taking it back to Blackheath. Reins and whip and coachman and guard, however, in combination, had read that article of war which forbade a purpose otherwise strongly in favour of the argument, that some brute animals are endued with Reason; and the team had capitulated and returned to their duty."
+    "text": "Inspiração\n\n\n\n\n\n\nTrecho 2\n\n\nIt was the Dover Road that lay on a Friday night late in November, before the first of the persons with whom this history has business. The Dover Road lay, as to him, beyond the Dover mail, as it lumbered up Shooter’s Hill. He walked up hill in the mire by the side of the mail, as the rest of the passen- gers did; not because they had the least relish for walking exercise, under the circumstances, but because the hill, and the harness, and the mud, and the mail, were all so heavy, that the horses had three times already come to a stop, besides once drawing the coach across the road, with the mutinous intent of taking it back to Blackheath. Reins and whip and coachman and guard, however, in combination, had read that article of war which forbade a purpose otherwise strongly in favour of the argument, that some brute animals are endued with Reason; and the team had capitulated and returned to their duty."
   },
   {
     "objectID": "aula_p4.html#inspiração-1",
@@ -2944,6 +2944,209 @@
     "href": "aula_p4.html#ideia-geral-1",
     "title": "Depuração e Decomposição de Problemas",
     "section": "Ideia Geral",
-    "text": "Ideia Geral\nBaseado nesse princípio, suponha que tenhamos um conjunto de textos de autores conhecidos.\n\nE o texto de um autor desconhecido (poderia ser uma obra nunca publicada, que foi encontrada por acaso com um colecionador, por exemplo).\n\n\nNossa estratégia será encontrar uma “impressão digital” do estilo de escrita de cada autor conhecido."
+    "text": "Ideia Geral\nNossa estratégia será construir uma “impressão digital” (ou “assinatura”) do estilo de escrita de cada autor.\n\nCom base em um livro que ele tenha escrito.\nEssa impressão digital seria baseada em métricas que conseguimos calcular a partir do texto.\n\nComo o número médio de palavras por frase e a complexidade média das frases."
+  },
+  {
+    "objectID": "aula_p4.html#programa-de-identificação-de-autoria-1",
+    "href": "aula_p4.html#programa-de-identificação-de-autoria-1",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Programa de Identificação de Autoria",
+    "text": "Programa de Identificação de Autoria\nA ideia nessa aula é desenvolvermos um programa que tenta identificar o autor desconhecido de um texto misterioso.\n\nVamos usar IA para fazer essa predição.\nNão vamos perder a oportunidade de usar IA em uma disciplina de Programação com Suporte de IA. 😁"
+  },
+  {
+    "objectID": "aula_p4.html#ideia-geral-2",
+    "href": "aula_p4.html#ideia-geral-2",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Ideia Geral",
+    "text": "Ideia Geral\nUsaríamos o mesmo processo para construir a impressão digital do texto de autor desconhecido.\n\nE compararíamos a impressão digital do autor desconhecido com a dos autores conhecidos.\nAquele que tiver a impressão digital mais próxima, seria o autor mais provável do texto desconhecido."
+  },
+  {
+    "objectID": "aula_p4.html#limitações",
+    "href": "aula_p4.html#limitações",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Limitações",
+    "text": "Limitações\nClaro que o texto de autor desconhecido pode ser de um autor completamente novo.\n\nOu pode ser que nossas métricas não capturem bem o estilo de escrita de cada autor.\nOu ainda que um mesmo autor escreva livros diferentes com estilos diferentes.\n\n\nPortanto, nosso programa não estará pronto para ser lançado no mercado 🙃\n\nDe todo modo, dada a dificuldade da tarefa, você ficará surpreso com o resultado que conseguiremos alcançar."
+  },
+  {
+    "objectID": "aula_p4.html#section-7",
+    "href": "aula_p4.html#section-7",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Suponha que temos dois trechos de texto.\n\n\n\n\n\n\nTrecho 1\n\n\nI have not yet described to you the most singular part. About six years ago — to be exact, upon the 4th of May 1882 — an advertisement appeared in the Times asking for the address of Miss Mary Morstan and stating that it would be to her advantage to come forward. There was no name or address appended. I had at that time just entered the family of Mrs. Cecil Forrester in the capacity of governess. By her advice I published my address in the advertisement column. The same day there arrived through the post a small card-board box addressed to me, which I found to contain a very large and lustrous pearl. No word of writing was enclosed. Since then, every year upon the same date there has always appeared a similar box, containing a similar pearl, without any clue as to the sender. They have been pronounced by an expert to be of a rare variety and of considerable value. You can see for yourselves that they are very handsome."
+  },
+  {
+    "objectID": "aula_p4.html#textos-disponíveis",
+    "href": "aula_p4.html#textos-disponíveis",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Textos disponíveis",
+    "text": "Textos disponíveis\nO projeto inicial disponibilizado tem uma pasta dados.\n\nDentro da pasta há uma pasta chamada autores_conhecidos com 5 arquivos de texto.\n\nCada arquivo é um livro diferente, escrito por um autor diferente.\nO título do arquivo é o nome do autor.\n\nHá também 4 arquivos de autores desconhecidos.\n\nCada arquivo é um trecho de texto, que pode ter sido escrito por qualquer um dos autores conhecidos.\nO nome do arquivo não indica o autor."
+  },
+  {
+    "objectID": "aula_p4.html#métricas",
+    "href": "aula_p4.html#métricas",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Métricas",
+    "text": "Métricas\nA ideia é utilizar as seguintes métricas para construir a impressão digital de cada autor:\n\ntamanho médio das palavras\nnúmero de palavras diferentes dividido pelo número total de palavras\nnúmero de palavras usadas exatamente uma vez dividido pelo número total de palavras\nnúmero médio de palavras por frase\ncomplexidade média das frases\n\n\nA seguir vamos detalhar como calcular cada uma dessas métricas."
+  },
+  {
+    "objectID": "aula_p4.html#tamanho-médio-das-palavras",
+    "href": "aula_p4.html#tamanho-médio-das-palavras",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Tamanho médio das palavras",
+    "text": "Tamanho médio das palavras\nA ideia aqui é diferenciar autores que usam, em média, palavras mais curtas ou mais longas.\n\nCalculamos o número total de letras das palavras e o número total de palavras do texto.\nE dividimos o primeiro pelo segundo.\n\n\n\nExemplo: “A chuva caía. O guarda-chuva tinha ficado em casa.”\n\nSão 40 letras e 9 palavras com um total.\nTamanho médio das palavras: 40 / 9 = 4.44\nObs.: para simplificar estamos considerando que o hífen conta como letra."
+  },
+  {
+    "objectID": "aula_p4.html#número-de-palavras-diferentes-dividido-pelo-número-total-de-palavras",
+    "href": "aula_p4.html#número-de-palavras-diferentes-dividido-pelo-número-total-de-palavras",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Número de palavras diferentes dividido pelo número total de palavras",
+    "text": "Número de palavras diferentes dividido pelo número total de palavras\nA ideia dessa métrica é identificar autores que costumam ser repetitivos ou não.\n\nCalculamos o número de palavras diferentes que aparecem.\nE dividimos pelo número total de palavras do texto.\n\n\n\nEx.: Uma pérola! Uma pérola! Uma pérola brilhante! Rara. Que belo achado.\n\nTotal de palavras: 10\nPalavras diferentes: 7 (uma, pérola, brilhante, rara, que, belo, achado)\nResultado da métrica: 7 / 10 = 0.7"
+  },
+  {
+    "objectID": "aula_p4.html#número-de-palavras-usadas-exatamente-uma-vez-dividido-pelo-número-total-de-palavras",
+    "href": "aula_p4.html#número-de-palavras-usadas-exatamente-uma-vez-dividido-pelo-número-total-de-palavras",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Número de palavras usadas exatamente uma vez dividido pelo número total de palavras",
+    "text": "Número de palavras usadas exatamente uma vez dividido pelo número total de palavras\nPode ser que alguns autores usem muitas palavras apenas uma vez, enquanto outros tendem a repetir mais as palavras.\n\nVamos calcular o número de palavras que aparecem exatamente uma vez no texto.\nE dividir pelo número total de palavras do texto.\n\n\n\nExemplo: Uma pérola! Uma pérola! Uma pérola brilhante! Rara. Que belo achado.\n\nNúmero total de palavras: 10\nPalavras usadas exatamente uma vez: 5 (brilhante, rara, que, belo, achado)\nResultado da métrica: 5 / 10 = 0.5"
+  },
+  {
+    "objectID": "aula_p4.html#número-médio-de-palavras-por-frase",
+    "href": "aula_p4.html#número-médio-de-palavras-por-frase",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Número médio de palavras por frase",
+    "text": "Número médio de palavras por frase\nA ideia dessa métrica é identificar se o autor costuma escrever frases mais longas ou mais curtas.\n\nCalculamos o número total de palavras e o número total de frases do texto.\nE dividimos o primeiro pelo segundo.\n\n\n\nExemplo: “A chuva caía. O guarda-chuva tinha ficado em casa.”\n\nNúmero total de palavras: 9\nNúmero total de frases: 2\nNúmero médio de palavras por frase: 9 / 2 = 4.5"
+  },
+  {
+    "objectID": "aula_p4.html#complexidade-média-das-frases",
+    "href": "aula_p4.html#complexidade-média-das-frases",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Complexidade média das frases",
+    "text": "Complexidade média das frases\nComentamos no exemplo inicial que um trecho de texto tinha frases mais curtas e outro mais longas.\n\nUma maneira que temos de medir a complexidade é verificar se as frases têm mais de uma oração.\n\n\nExemplo: “No mesmo dia chegou uma carta endereçada a mim, que parecia conter algo importante. Mas não tive coragem de abri-la.”\n\nVeja que a primeira frase tem duas orações, separadas pela vírgula.\nJá a segunda frase tem apenas uma oração."
+  },
+  {
+    "objectID": "aula_p4.html#impressão-digital-de-cada-autor",
+    "href": "aula_p4.html#impressão-digital-de-cada-autor",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Impressão Digital de cada autor",
+    "text": "Impressão Digital de cada autor\nA impressão digital de cada autor será então dada pelo conjunto de métricas calculada a partir de um livro que ele tenha escrito.\n\nEm Aprendizado de Máquina, nós chamaríamos esse conjunto de vetor de características (features).\nPortanto, ela será dada por uma lista de 5 números, com os valores de cada métrica na ordem que definimos.\n\nExemplo: [4.44, 0.7, 0.5, 4.5, 1.5]\n\n\n\nOrdem das métricas:\n\ntamanho médio das palavras\nnúmero de palavras diferentes dividido pelo número total de palavras\nnúmero de palavras usadas exatamente uma vez dividido pelo número total de palavras\nnúmero médio de palavras por frase\ncomplexidade média das frases"
+  },
+  {
+    "objectID": "aula_p4.html#identificando-o-autor-desconhecido",
+    "href": "aula_p4.html#identificando-o-autor-desconhecido",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Identificando o autor desconhecido",
+    "text": "Identificando o autor desconhecido\nPara identificar o autor desconhecido de um texto, faremos o seguinte:\n\nCalcularemos a impressão digital de cada autor conhecido.\nCalcularemos a impressão digital do texto de autor desconhecido.\n\nE a compararemos com a impressão digital de cada autor conhecido.\n\nO autor conhecido cuja impressão digital for mais próxima, será o autor mais provável do texto desconhecido.\n\n\nMas como será feita a comparação entre as impressões digitais?"
+  },
+  {
+    "objectID": "aula_p4.html#identificando-o-autor-desconhecido-1",
+    "href": "aula_p4.html#identificando-o-autor-desconhecido-1",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Identificando o autor desconhecido",
+    "text": "Identificando o autor desconhecido\nSuponha que estamos comparando a impressão digital [4.44, 0.7, 0.5, 4.5, 1.5] com uma impressão digital de um autor desconhecido dada por [4.0, 0.5, 0.7, 4.0, 1.9].\n\nVamos calcular a diferença, em módulo, entre cada métrica.\n\nO resultado seria [0.44, 0.2, 0.2, 0.5, 0.4].\n\nE, em seguida, vamos calcular a soma ponderada dessas diferenças.\n\nOs pesos da soma seria: [11, 33, 50, 0.4, 4].\nO resultado seria então (0.44*11 + 0.2*33 + 0.2*50 + 0.5*0.4 + 0.4*4) = 23.24."
+  },
+  {
+    "objectID": "aula_p4.html#identificando-o-autor-desconhecido-2",
+    "href": "aula_p4.html#identificando-o-autor-desconhecido-2",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Identificando o autor desconhecido",
+    "text": "Identificando o autor desconhecido\nMas de onde veio essa lista de pesos?\n\nOs autores do livro aplicaram esse exercício ao longo do tempo.\nE, empiricamente, descobriram que esses pesos funcionam bem para esse problema.\n\n\nObs.: em uma aplicação profissional de Aprendizado de Máquina, esses pesos seriam aprendidos a partir de um conjunto de dados de treinamento."
+  },
+  {
+    "objectID": "aula_p4.html#identificando-o-autor-desconhecido-3",
+    "href": "aula_p4.html#identificando-o-autor-desconhecido-3",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Identificando o autor desconhecido",
+    "text": "Identificando o autor desconhecido\nVoltando à identificação do autor desconhecido:\n\nVimos que a comparação entre duas impressões digitais resulta em um número (score).\nE quanto menor esse número, menor a diferença entre as impressões digitais, certo?\nPortanto, o autor conhecido cuja comparação resulte no menor score será o autor mais provável do texto desconhecido."
+  },
+  {
+    "objectID": "aula_p4.html#dica-para-a-fase-de-design",
+    "href": "aula_p4.html#dica-para-a-fase-de-design",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Dica para a fase de design",
+    "text": "Dica para a fase de design\n\nUma das operações necessárias é a contagem de palavras.\n\nPara isso, podemos usar a função split() da classe str.\nExemplo:\n\nUsando função split() no trecho “A chuva caía. O guarda-chuva tinha ficado em casa.”\nObteríamos as palavras: [\"A\", \"chuva\", \"caía.\", \"O\", \"guarda-chuva\", \"tinha\", \"ficado\", \"em\", \"casa.\"]\n\nMas veja que as palavras “caía.” e “caía” seriam consideradas diferentes.\n\nPrecisamos então tratar isso, removendo as pontuações das palavras.\nMas devemos tomar cuidado para não remover o hífen, que faz parte da palavra (como na palavra “guarda-chuva”).\nBastaria remover as pontuações apenas do início e do fim das palavras."
+  },
+  {
+    "objectID": "aula_p4.html#section-8",
+    "href": "aula_p4.html#section-8",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Trecho 2\n\n\nIt was the Dover Road that lay on a Friday night late in November, before the first of the persons with whom this history has business. The Dover Road lay, as to him, beyond the Dover mail, as it lumbered up Shooter’s Hill. He walked up hill in the mire by the side of the mail, as the rest of the passen- gers did; not because they had the least relish for walking exercise, under the circumstances, but because the hill, and the harness, and the mud, and the mail, were all so heavy, that the horses had three times already come to a stop, besides once drawing the coach across the road, with the mutinous intent of taking it back to Blackheath. Reins and whip and coachman and guard, however, in combination, had read that article of war which forbade a purpose otherwise strongly in favour of the argument, that some brute animals are endued with Reason; and the team had capitulated and returned to their duty."
+  },
+  {
+    "objectID": "aula_p4.html#section-9",
+    "href": "aula_p4.html#section-9",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Suponha que alguém te pergunte se é provável que esses dois trechos tenham sido escritos pelo mesmo autor.\n\nComo você poderia responder a essa pergunta?\nApenas com base nos textos - não vale jogar no Google 😜\n\n\nPodemos assumir uma premissa razoável de que autores diferentes têm estilo de escrita diferentes.\n\nE que essas diferenças aparecem em métricas que podemos calcular a partir dos textos."
+  },
+  {
+    "objectID": "aula_p4.html#design-dos-autores-do-livro",
+    "href": "aula_p4.html#design-dos-autores-do-livro",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Design dos autores do livro",
+    "text": "Design dos autores do livro\nVocê já terminou mesmo seu design? Tem certeza?"
+  },
+  {
+    "objectID": "aula_p4.html#section-10",
+    "href": "aula_p4.html#section-10",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Como assim?\n\nPodemos notar, por exemplo, que o primeiro trecho tem frases mais curtas.\nE o segundo texto parece mais complexo se repararmos a quantidade de vírgulas e ponto-e-vírgulas.\n\n\nCom base nessa avaliação poderíamos concluir que os textos, provavelmente, foram escritos por autores diferentes.\n\nO que é verdade nesse caso."
+  },
+  {
+    "objectID": "aula_p4.html#section-11",
+    "href": "aula_p4.html#section-11",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "O autor do primeiro texto é Sir Arthur Conan Doyle.\n\n \n\n\nE o autor do segundo texto é Charles Dickens."
+  },
+  {
+    "objectID": "aula_p4.html#section-12",
+    "href": "aula_p4.html#section-12",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Nesse caso acertamos que são autores diferentes, mas o exemplo foi escolhido a dedo 🤭\n\nPode ser, por exemplo, que um mesmo autor escreva diferente em trechos ou livros diferentes.\nMas, como não vamos fazer um programa perfeito, tudo bem."
+  },
+  {
+    "objectID": "aula_p4.html#section-13",
+    "href": "aula_p4.html#section-13",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "A ideia nessa aula é que você mesmo faça o design top-down do programa.\n\nE use o Copilot para ajudar a implementar as funções que você definir.\n\n\nO livro da disciplina vai construindo o design e, à medida que avança, vai acrescentando mais detalhes sobre como o programa deve funcionar.\n\nComo quais métricas usar, por exemplo.\nMas como aqui é você quem fará o design, é necessário que você conheça esses detalhes antes de começar a fazer o design."
+  },
+  {
+    "objectID": "aula_p4.html#section-14",
+    "href": "aula_p4.html#section-14",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "A impressão digital de cada autor será então dada pelo conjunto de métricas calculada a partir de um livro que ele tenha escrito.\n\nEm Aprendizado de Máquina, nós chamaríamos esse conjunto de vetor de características (features).\nPortanto, ela será dada por uma lista de 5 números, com os valores de cada métrica na ordem que definimos.\n\nExemplo: [4.44, 0.7, 0.5, 4.5, 1.5]\n\n\n\n\n\ntamanho médio das palavras\nnúmero de palavras diferentes dividido pelo número total de palavras\nnúmero de palavras usadas exatamente uma vez dividido pelo número total de palavras\nnúmero médio de palavras por frase\ncomplexidade média das frases"
+  },
+  {
+    "objectID": "aula_p4.html#section-15",
+    "href": "aula_p4.html#section-15",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "É hora então de construir o design top-down do programa.\n\nRecomendo que façam em duplas, mas podem fazer individualmente se preferirem.\nLembre-se que o objetivo é praticar a habilidade de decomposição de problemas.\nDica: provavelmente você encontrará uma ou mais funções que são chamadas por mais de uma função."
+  },
+  {
+    "objectID": "aula_p4.html#section-16",
+    "href": "aula_p4.html#section-16",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "No próximo slide vou apresentar o design feito pelos autores do livro.\n\nMas atenção: é muito importante que você mesmo faça o design.\n\nNão adianta copiar o design de alguém ou usar o design mostrado a seguir.\n\nSomente depois que terminar o design, antes de implementar, você pode comparar com o design mostrado a seguir.\n\nE ver se há algo que você não tinha pensado.\n\nLembre-se que o design não precisa ser igual ao do livro.\n\nA ideia é apenas ajudar a identificar se você esqueceu de algo importante."
+  },
+  {
+    "objectID": "aula_p4.html#complexidade-média-das-frases-1",
+    "href": "aula_p4.html#complexidade-média-das-frases-1",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Complexidade média das frases",
+    "text": "Complexidade média das frases\nComo seria muito complicado realmente tentar identificar orações, vamos usar uma aproximação simples:\n\nVamos considerar que toda vírgula, ponto-e-vírgula ou dois-pontos indicam a separação de orações de uma frase.\nE vamos calcular o total de orações dividido pelo total de frases do texto.\n\nNo exemplo citado, o resultado da métrica seria: 3 / 2 = 1.5"
+  },
+  {
+    "objectID": "aula_p4.html#section-17",
+    "href": "aula_p4.html#section-17",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Agora é hora de implementar o programa.\n\nA ideia é usar o Copilot para ajudar na implementação.\nVocê precisará também escrever testes para suas funções.\n\nPelo menos um caso de teste para cada função.\nO Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.\n\n\n\nO exercício deve ser entregue no Campus Virtual até a data indicada."
   }
 ]
