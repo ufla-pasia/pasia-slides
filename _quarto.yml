@@ -17,7 +17,11 @@ format:
     logo: imagens/logo_UFLA.png
     auto-stretch: false
     chalkboard: true
-    mermaid: {}
+    mermaid: {
+      flowchartConfig: {
+        width: 100%
+      }
+    }
 
 revealjs-plugins:
   - pointer

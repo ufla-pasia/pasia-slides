@@ -2538,7 +2538,7 @@
     "href": "aula_t4.html#dividindo-o-subproblema-de-processamento",
     "title": "Decomposição de Problemas",
     "section": "Dividindo o subproblema de Processamento",
-    "text": "Dividindo o subproblema de Processamento\nVamos chamar a função de processamento de _obter_sugestoes_correcao.\n\nQuais parâmetros a função precisa receber?\n\n\nCom certeza precisa receber a palavra que o usuário digitou."
+    "text": "Dividindo o subproblema de Processamento\nVamos focar então na etapa de processamento.\n\nVamos chamar a função de processamento de _obter_sugestoes_correcao.\nQuais parâmetros a função precisa receber?\n\n\nCom certeza precisa receber a palavra que o usuário digitou."
   },
   {
     "objectID": "aula_t4.html#section-22",
@@ -2699,7 +2699,7 @@
     "href": "aula_t4.html#observação-sobre-os-slides",
     "title": "Decomposição de Problemas",
     "section": "Observação sobre os slides",
-    "text": "Observação sobre os slides\nDaqui por diante, na aula, nós vamos criar todas as funções e suas respectivas funções de teste em um projeto no VS Code.\n\nEsse projeto estará disponível no repositório ufla-pasia/corretor-ortografico.\n\n\nJá aqui nos slides vou manter apenas o prompt das funções (assinatura e docstring) e a descrição em alto nível dos testes."
+    "text": "Observação sobre os slides\nDaqui por diante, na aula, nós vamos criar todas as funções e suas respectivas funções de teste em um projeto no VS Code.\n\nEsse projeto estará disponível no repositório ufla-pasia/corretor-ortografico.\n\n\nJá aqui nos slides vou manter apenas o prompt das funções (assinatura e docstring) e a descrição em alto nível dos testeas."
   },
   {
     "objectID": "aula_t4.html#adicionar_letra",
@@ -2748,7 +2748,7 @@
     "href": "aula_t4.html#obter_sugestoes_correcao",
     "title": "Decomposição de Problemas",
     "section": "obter_sugestoes_correcao",
-    "text": "obter_sugestoes_correcao\ndef obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo que tem uma palavra \n    em português por linha.\n    possivel_palavra é  uma string que pode ser ou não uma \n    palavra real em português.\n\n    Retorna a lista de todas as possíveis correções únicas para \n    a possível palavra.\n    \"\"\"\n\nTestes:\n\numa sugestão, várias sugestões e nenhuma sugestão."
+    "text": "obter_sugestoes_correcao\ndef obter_sugestoes_correcao(caminho_arquivo, possivel_palavra):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo que tem uma palavra \n    em português por linha.\n    possivel_palavra é  uma string que pode ser ou não uma \n    palavra real em português.\n\n    Retorna a lista de todas as possíveis correções únicas para \n    a possível palavra.\n    \"\"\"\n\nTestes:\n\nSituações que retornem uma sugestão, várias sugestões e nenhuma sugestão."
   },
   {
     "objectID": "aula_t4.html#corretor_ortografico",
@@ -2811,7 +2811,7 @@
     "href": "aula_t4.html#section-39",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "Vamos então experimentar nosso corretor ortográfico.\n\nQue palavras seria interessante usar?\n\n\nAlgumas sugestões interessantes são:\n\nsuceso, susesso, beje, lage, análize, asia, ancioso, previlégio, impecilho, brusa, beneficiente, retrógado, sombrancelha.\nEssa página traz outros erros comuns de ortografia em português que você poderia querer testar."
+    "text": "Já implementamos então a função que carrega as palavras.\n\nVamos agora para a próxima função folha: adicionar_letra.\n\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)\n  B --&gt; C1(carregar_lista_palavras fa:fa-check)\n  B --&gt; C2(gerar_palavras_possiveis)\n  C2 --&gt; D1(adicionar_letra)\n  C2 --&gt; D2(remover_letra)\n  C2 --&gt; D3(trocar_letra)\n  B --&gt; C3(filtrar_palavras_reais)\n  B --&gt; C4(filtrar_palavras_repetidas)"
   },
   {
     "objectID": "aula_t4.html#gerar-a-lista-de-todas-as-palavras-possíveis-3",
@@ -2846,7 +2846,7 @@
     "href": "aula_t4.html#section-40",
     "title": "Decomposição de Problemas",
     "section": "",
-    "text": "Muitos especialistas em Computação consideram que decomposição de problemas é a habilidade mais crítica necessária para se escrever bons softwares.\n\nEssa habilidade continua crítica mesmo usando Assistentes de IA como o Copilot e o ChatGPT.\n\nPois eles trazem respostas muito melhores para problemas menores, claros e bem definidos."
+    "text": "A próxima função agora será remover_letra.\n\n\n\n\n\nflowchart TD\n  A(corretor_ortografico) --&gt; B(obter_sugestoes_correcao)\n  B --&gt; C1(carregar_lista_palavras fa:fa-check)\n  B --&gt; C2(gerar_palavras_possiveis)\n  C2 --&gt; D1(adicionar_letra fa:fa-check)\n  C2 --&gt; D2(remover_letra)\n  C2 --&gt; D3(trocar_letra)\n  B --&gt; C3(filtrar_palavras_reais)\n  B --&gt; C4(filtrar_palavras_repetidas)"
   },
   {
     "objectID": "aula_t4.html#section-41",
@@ -2898,6 +2898,13 @@
     "text": "Na aula passada, sobre Decomposição de Problemas, fizemos o Design Top-Down de um programa para sugestões de correção.\n\nVamos agora levar o design top-down para outro nível,\npraticando essa habilidade em um problema muito maior."
   },
   {
+    "objectID": "aula_p4.html#section-6",
+    "href": "aula_p4.html#section-6",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "O processo, a princípio, será o mesmo:\n\nVamos dividir o problema em subproblemas.\nE dividir novamente os subproblemas, se necessário.\nVamos criar funções bem definidas, que recebam poucos parâmetros e retornem o resultado útil.\n\n\nMas, você verá que teremos uma novidade nesse caso:\n\nCriaremos funções que serão chamadas por mais de uma função.\nEvitando a replicação de código."
+  },
+  {
     "objectID": "aula_p4.html#programa-de-identificação-de-autoria",
     "href": "aula_p4.html#programa-de-identificação-de-autoria",
     "title": "Depuração e Decomposição de Problemas",
@@ -2909,13 +2916,34 @@
     "href": "aula_p4.html#ideia-geral",
     "title": "Depuração e Decomposição de Problemas",
     "section": "Ideia Geral",
-    "text": "Ideia Geral\nSuponha que temos dois trechos de texto:\n\nI have not yet described to you the most singular part. About six years ago — to be exact, upon the 4th of May 1882 — an advertisement appeared in the Times asking for the address of Miss Mary Morstan and stating that it would be to her advantage to come forward. There was no name or address appended. I had at that time just entered the family of Mrs. Cecil Forrester in the capacity of governess. By her advice I published my address in the advertisement column. The same day there arrived through the post a small card-board box addressed to me, which I found to contain a very large and lustrous pearl. No word of writing was enclosed. Since then, every year upon the same date there has always appeared a similar box, containing a similar pearl, without any clue as to the sender. They have been pronounced by an expert to be of a rare variety and of considerable value. You can see for yourselves that they are very handsome."
+    "text": "Ideia Geral\nSuponha que temos dois trechos de texto. Esse trecho 1:\n\nI have not yet described to you the most singular part. About six years ago — to be exact, upon the 4th of May 1882 — an advertisement appeared in the Times asking for the address of Miss Mary Morstan and stating that it would be to her advantage to come forward. There was no name or address appended. I had at that time just entered the family of Mrs. Cecil Forrester in the capacity of governess. By her advice I published my address in the advertisement column. The same day there arrived through the post a small card-board box addressed to me, which I found to contain a very large and lustrous pearl. No word of writing was enclosed. Since then, every year upon the same date there has always appeared a similar box, containing a similar pearl, without any clue as to the sender. They have been pronounced by an expert to be of a rare variety and of considerable value. You can see for yourselves that they are very handsome."
   },
   {
-    "objectID": "aula_p4.html#section-6",
-    "href": "aula_p4.html#section-6",
+    "objectID": "aula_p4.html#inspiração",
+    "href": "aula_p4.html#inspiração",
     "title": "Depuração e Decomposição de Problemas",
-    "section": "",
-    "text": "O processo, a princípio, será o mesmo:\n\nVamos dividir o problema em subproblemas.\nE dividir novamente os subproblemas, se necessário.\nVamos criar funções bem definidas, que recebam poucos parâmetros e retornem o resultado útil.\n\n\nMas, você verá que teremos uma novidade nesse caso:\n\nCriaremos funções que serão chamadas por mais de uma função.\nEvitando a replicação de código."
+    "section": "Inspiração",
+    "text": "Inspiração\nE esse trecho 2:\n\nIt was the Dover Road that lay on a Friday night late in November, before the first of the persons with whom this history has business. The Dover Road lay, as to him, beyond the Dover mail, as it lumbered up Shooter’s Hill. He walked up hill in the mire by the side of the mail, as the rest of the passen- gers did; not because they had the least relish for walking exercise, under the circumstances, but because the hill, and the harness, and the mud, and the mail, were all so heavy, that the horses had three times already come to a stop, besides once drawing the coach across the road, with the mutinous intent of taking it back to Blackheath. Reins and whip and coachman and guard, however, in combination, had read that article of war which forbade a purpose otherwise strongly in favour of the argument, that some brute animals are endued with Reason; and the team had capitulated and returned to their duty."
+  },
+  {
+    "objectID": "aula_p4.html#inspiração-1",
+    "href": "aula_p4.html#inspiração-1",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Inspiração",
+    "text": "Inspiração\nSuponha que alguém te pergunte se é provável que esses dois trechos foram escritos pelo mesmo autor.\n\nComo você poderia responder a essa pergunta?\nApenas com base nos textos - não vale jogar no Google :)\n\n\nPodemos assumir uma premissa razoável de que autores diferentes têm estilo de escrita diferentes.\n\nE que essas diferenças aparecem em métricas que podemos calcular a partir dos textos."
+  },
+  {
+    "objectID": "aula_p4.html#inspiração-2",
+    "href": "aula_p4.html#inspiração-2",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Inspiração",
+    "text": "Inspiração\nComo assim?\n\nPodemos notar, por exemplo, que o primeiro trecho tem frases mais curtas.\nE o segundo texto parece mais complexo se repararmos a quantidade de vírgulas e ponto-e-vírgulas.\n\n\nCom base nessa avaliação poderíamos concluir que os textos, provavelmente, foram escritos por autores diferentes.\n\nO que é verdade nesse caso.\nO autor do primeiro texto é Sir Arthur Conan Doyle e do segundo Charles Dickens.\nClaro que esse exemplo foi escolhido a dedo :)\n\nPode ser que o mesmo autor escreva diferente em trechos ou livros diferentes.\nMas, como não vamos fazer um programa perfeito, tudo bem."
+  },
+  {
+    "objectID": "aula_p4.html#ideia-geral-1",
+    "href": "aula_p4.html#ideia-geral-1",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Ideia Geral",
+    "text": "Ideia Geral\nBaseado nesse princípio, suponha que tenhamos um conjunto de textos de autores conhecidos.\n\nE o texto de um autor desconhecido (poderia ser uma obra nunca publicada, que foi encontrada por acaso com um colecionador, por exemplo).\n\n\nNossa estratégia será encontrar uma “impressão digital” do estilo de escrita de cada autor conhecido."
   }
 ]
