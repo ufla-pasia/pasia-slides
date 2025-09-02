@@ -475,6 +475,8 @@ Agora é **hora de implementar o programa**.
 - Você precisará **também escrever testes** para suas funções.
   - Pelo menos um caso de teste para cada função.
   - O Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.
+- Dica: ao escrever o prompt/docstring de cada função, pense que ela poderia ser reutilizada 
+  futuramente em outros programas
 
 Como saber se o programa funciona corretamente?
 

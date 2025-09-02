@@ -3147,7 +3147,7 @@
     "href": "aula_p4.html#section-17",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "Agora é hora de implementar o programa.\n\nA ideia é usar o Copilot para ajudar na implementação.\nVocê precisará também escrever testes para suas funções.\n\nPelo menos um caso de teste para cada função.\nO Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.\n\n\nComo saber se o programa funciona corretamente?"
+    "text": "Agora é hora de implementar o programa.\n\nA ideia é usar o Copilot para ajudar na implementação.\nVocê precisará também escrever testes para suas funções.\n\nPelo menos um caso de teste para cada função.\nO Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.\n\nDica: ao escrever o prompt/docstring de cada função, pense que ela poderia ser reutilizada futuramente em outros programas\n\nComo saber se o programa funciona corretamente?"
   },
   {
     "objectID": "aula_p4.html#section-18",
