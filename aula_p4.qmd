@@ -476,6 +476,15 @@ Agora é **hora de implementar o programa**.
   - Pelo menos um caso de teste para cada função.
   - O Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.
 
+Como saber se o programa funciona corretamente?
+
+##
+
+Você verá que os arquivos de autores desconhecidos têm o nome do autor dentro do arquivo.
+
+- Portanto, você poderá verificar se o programa está funcionando corretamente. 😉
+- E, claro, seu programa não pode usar essa informação para fazer a predição. 😏
+
 . . .
 
 O exercício deve ser entregue no Campus Virtual até a data indicada.

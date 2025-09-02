@@ -3147,6 +3147,13 @@
     "href": "aula_p4.html#section-17",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "Agora é hora de implementar o programa.\n\nA ideia é usar o Copilot para ajudar na implementação.\nVocê precisará também escrever testes para suas funções.\n\nPelo menos um caso de teste para cada função.\nO Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.\n\n\n\nO exercício deve ser entregue no Campus Virtual até a data indicada."
+    "text": "Agora é hora de implementar o programa.\n\nA ideia é usar o Copilot para ajudar na implementação.\nVocê precisará também escrever testes para suas funções.\n\nPelo menos um caso de teste para cada função.\nO Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.\n\n\nComo saber se o programa funciona corretamente?"
+  },
+  {
+    "objectID": "aula_p4.html#section-18",
+    "href": "aula_p4.html#section-18",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Você verá que os arquivos de autores desconhecidos têm o nome do autor dentro do arquivo.\n\nPortanto, você poderá verificar se o programa está funcionando corretamente. 😉\nE, claro, seu programa não pode usar essa informação para fazer a predição. 😏\n\n\nO exercício deve ser entregue no Campus Virtual até a data indicada."
   }
 ]
