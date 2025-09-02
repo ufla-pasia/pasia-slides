@@ -1,0 +1,163 @@
+---
+title: Depuração e Decomposição de Problemas
+subtitle: PASIA - Aula P.4
+---
+
+# Depuração {background-color="#40666e"}
+
+##
+
+Encontrar e resolver bugs é uma das principais atividades realizadas por um Engenheiro de Software.
+
+- Os testes de código são essenciais para encontrarmos bugs em nossos sistemas.
+- Mas, uma vez que eles são encontrados, como podemos resolvê-los?
+
+##
+
+Claro que podemos usar o Copilot para nos ajudar a resolver bugs.
+
+- Mas é importante conseguirmos depurar nosso próprio código.
+- Seja porque às vezes o Copilot não consegue nos ajudar.
+- Seja porque às vezes é mais rápido e eficiente resolvermos o problema sozinhos, do que ficar
+  gerando prompts e analisando as respostas do Copilot.
+
+##
+
+Existem diversas formas de depurar nosso código.
+
+- Lendo o código.
+- Explicando para alguém.
+- Incluindo comandos `print()` (que depois precisam ser removidos).
+- Ou usando um depurador (_debugger_).
+  - Que é a forma mais recomendada!
+  - Alunos geralmente têm preguiça de usar, mas, quando entram em um estágio ou emprego, costuma perceber que
+    depuradores são ferramentas essenciais para o dia-a-dia de um desenvolvedor.
+
+##
+
+Vamos fazer um Quiz para verificar como (e se) vocês costumam usar depuradores.
+
+- [Quiz](https://www.polleverywhere.com/activities?folder=20270545) (obs.: apenas o professor consegue acessar esse link).
+
+##
+
+Como vocês não são alunos de início de curso, provavelmente já sabem usar um depurador.
+
+- Para quem nunca usou o depurador do VS Code, é **altamente recomendável** que comece a usar.
+  - Você pode começar com esse [tutorial](https://scribehow.com/viewer/Usando_Debugger_do_VS_Code__8ggh8wtURoivTHc4W6pGDg) bem simples que uso em PPOO.
+  - E há bastante material disponível na internet.
+- Não vamos trabalhar isso nessa aula.
+  - E vou considerar que, aqueles que ainda não usam, vão tratar isso como tarefa de casa.
+
+
+# Criando um Programa de Identificação de Autoria {background-color="#40666e"}
+
+##
+
+Na aula passada, sobre [Decomposição de Problemas]{.alert}, fizemos o **_Design Top-Down_**
+de um programa para sugestões de correção.
+
+- Vamos agora levar o _design top-down_ para outro nível,
+- praticando essa habilidade em um problema muito maior.
+
+##
+
+O processo, a princípio, será o mesmo:
+
+- Vamos dividir o problema em subproblemas.
+- E dividir novamente os subproblemas, se necessário.
+- Vamos criar funções bem definidas, que recebam poucos parâmetros e retornem o resultado útil.
+
+. . .
+
+Mas, você verá que teremos **uma novidade** nesse caso:
+
+- Criaremos funções que serão chamadas por mais de uma função.
+- Evitando a [replicação de código]{.alert}.
+
+## Programa de Identificação de Autoria
+
+A ideia nessa aula é desenvolvermos um programa que tenta identificar o 
+autor desconhecido de um texto misterioso.
+
+- Vamos usar IA para fazer essa predição.
+- Não vamos perder a oportunidade de  usar IA em uma disciplina de Programação com Suporte de IA.
+
+## Ideia Geral
+
+Suponha que temos dois trechos de texto. Esse trecho 1:
+
+::: {.fontsize80}
+I have not yet described to you the most singular part. About six years
+ago — to be exact, upon the 4th of May 1882 — an advertisement appeared in the
+Times asking for the address of Miss Mary Morstan and stating that it would be
+to her advantage to come forward. There was no name or address appended. I
+had at that time just entered the family of Mrs. Cecil Forrester in the capacity of
+governess. By her advice I published my address in the advertisement column.
+The same day there arrived through the post a small card-board box addressed
+to me, which I found to contain a very large and lustrous pearl. No word of writing 
+was enclosed. Since then, every year upon the same date there has always
+appeared a similar box, containing a similar pearl, without any clue as to the
+sender. They have been pronounced by an expert to be of a rare variety and of
+considerable value. You can see for yourselves that they are very handsome.
+:::
+
+## Inspiração
+
+E esse trecho 2:
+
+::: {.fontsize80}
+It was the Dover Road that lay on a Friday night late in November,
+before the first of the persons with whom this history has business. The Dover
+Road lay, as to him, beyond the Dover mail, as it lumbered up Shooter’s Hill.
+He walked up hill in the mire by the side of the mail, as the rest of the passen-
+gers did; not because they had the least relish for walking exercise, under the
+circumstances, but because the hill, and the harness, and the mud, and the
+mail, were all so heavy, that the horses had three times already come to a stop,
+besides once drawing the coach across the road, with the mutinous intent of
+taking it back to Blackheath. Reins and whip and coachman and guard, however, 
+in combination, had read that article of war which forbade a purpose otherwise 
+strongly in favour of the argument, that some brute animals are endued
+with Reason; and the team had capitulated and returned to their duty.
+:::
+
+## Inspiração
+
+Suponha que alguém te pergunte se é provável que esses dois trechos foram escritos
+pelo mesmo autor.
+
+- Como você poderia responder a essa pergunta?
+- Apenas com base nos textos - não vale jogar no Google :)
+
+. . .
+
+Podemos assumir uma premissa razoável de que autores diferentes têm estilo de escrita diferentes.
+
+- E que essas diferenças aparecem em métricas que podemos calcular a partir dos textos.
+
+## Inspiração
+
+Como assim?
+
+- Podemos notar, por exemplo, que o primeiro trecho tem frases mais curtas.
+- E o segundo texto parece mais complexo se repararmos a quantidade de vírgulas e ponto-e-vírgulas.
+
+. . .
+
+Com base nessa avaliação poderíamos concluir que os textos, provavelmente, foram escritos por autores diferentes.
+
+- O que é verdade nesse caso.
+- O autor do primeiro texto é Sir Arthur Conan Doyle e do segundo Charles Dickens.
+- Claro que esse exemplo foi escolhido a dedo :)
+  - Pode ser que o mesmo autor escreva diferente em trechos ou livros diferentes.
+  - Mas, como não vamos fazer um programa perfeito, tudo bem.
+
+## Ideia Geral
+
+Baseado nesse princípio, suponha que tenhamos um conjunto de textos de autores conhecidos.
+
+- E o texto de um autor desconhecido (poderia ser uma obra nunca publicada, que foi encontrada por acaso com um colecionador, por exemplo).
+
+. . .
+
+Nossa estratégia será encontrar uma _"impressão digital"_ do estilo de escrita de cada autor conhecido.

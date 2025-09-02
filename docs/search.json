@@ -2854,5 +2854,68 @@
     "title": "Decomposição de Problemas",
     "section": "",
     "text": "Como mencionamos no início, decomposição de problemas é mais arte que ciência.\n\nE, portanto, exige prática para fazer isso bem.\n\n\nAo longo da disciplina, aplicaremos a decomposição de problemas em outros exemplos\n\nO que te ajudará a ganhar mais experiência com essa habilidade tão importante."
+  },
+  {
+    "objectID": "aula_p4.html#section",
+    "href": "aula_p4.html#section",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Encontrar e resolver bugs é uma das principais atividades realizadas por um Engenheiro de Software.\n\nOs testes de código são essenciais para encontrarmos bugs em nossos sistemas.\nMas, uma vez que eles são encontrados, como podemos resolvê-los?"
+  },
+  {
+    "objectID": "aula_p4.html#section-1",
+    "href": "aula_p4.html#section-1",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Claro que podemos usar o Copilot para nos ajudar a resolver bugs.\n\nMas é importante conseguirmos depurar nosso próprio código.\nSeja porque às vezes o Copilot não consegue nos ajudar.\nSeja porque às vezes é mais rápido e eficiente resolvermos o problema sozinhos, do que ficar gerando prompts e analisando as respostas do Copilot."
+  },
+  {
+    "objectID": "aula_p4.html#section-2",
+    "href": "aula_p4.html#section-2",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Existem diversas formas de depurar nosso código.\n\nLendo o código.\nExplicando para alguém.\nIncluindo comandos print() (que depois precisam ser removidos).\nOu usando um depurador (debugger).\n\nQue é a forma mais recomendada!\nAlunos geralmente têm preguiça de usar, mas, quando entram em um estágio ou emprego, costuma perceber que depuradores são ferramentas essenciais para o dia-a-dia de um desenvolvedor."
+  },
+  {
+    "objectID": "aula_p4.html#section-3",
+    "href": "aula_p4.html#section-3",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Vamos fazer um Quiz para verificar como (e se) vocês costumam usar depuradores.\n\nQuiz (obs.: apenas o professor consegue acessar esse link)."
+  },
+  {
+    "objectID": "aula_p4.html#section-4",
+    "href": "aula_p4.html#section-4",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Como vocês não são alunos de início de curso, provavelmente já sabem usar um depurador.\n\nPara quem nunca usou o depurador do VS Code, é altamente recomendável que comece a usar.\n\nVocê pode começar com esse tutorial bem simples que uso em PPOO.\nE há bastante material disponível na internet.\n\nNão vamos trabalhar isso nessa aula.\n\nE vou considerar que, aqueles que ainda não usam, vão tratar isso como tarefa de casa."
+  },
+  {
+    "objectID": "aula_p4.html#section-5",
+    "href": "aula_p4.html#section-5",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Na aula passada, sobre Decomposição de Problemas, fizemos o Design Top-Down de um programa para sugestões de correção.\n\nVamos agora levar o design top-down para outro nível,\npraticando essa habilidade em um problema muito maior."
+  },
+  {
+    "objectID": "aula_p4.html#programa-de-identificação-de-autoria",
+    "href": "aula_p4.html#programa-de-identificação-de-autoria",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Programa de Identificação de Autoria",
+    "text": "Programa de Identificação de Autoria\nA ideia nessa aula é desenvolvermos um programa que tenta identificar o autor desconhecido de um texto misterioso.\n\nVamos usar IA para fazer essa predição.\nNão vamos perder a oportunidade de usar IA em uma disciplina de Programação com Suporte de IA."
+  },
+  {
+    "objectID": "aula_p4.html#ideia-geral",
+    "href": "aula_p4.html#ideia-geral",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Ideia Geral",
+    "text": "Ideia Geral\nSuponha que temos dois trechos de texto:\n\nI have not yet described to you the most singular part. About six years ago — to be exact, upon the 4th of May 1882 — an advertisement appeared in the Times asking for the address of Miss Mary Morstan and stating that it would be to her advantage to come forward. There was no name or address appended. I had at that time just entered the family of Mrs. Cecil Forrester in the capacity of governess. By her advice I published my address in the advertisement column. The same day there arrived through the post a small card-board box addressed to me, which I found to contain a very large and lustrous pearl. No word of writing was enclosed. Since then, every year upon the same date there has always appeared a similar box, containing a similar pearl, without any clue as to the sender. They have been pronounced by an expert to be of a rare variety and of considerable value. You can see for yourselves that they are very handsome."
+  },
+  {
+    "objectID": "aula_p4.html#section-6",
+    "href": "aula_p4.html#section-6",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "O processo, a princípio, será o mesmo:\n\nVamos dividir o problema em subproblemas.\nE dividir novamente os subproblemas, se necessário.\nVamos criar funções bem definidas, que recebam poucos parâmetros e retornem o resultado útil.\n\n\nMas, você verá que teremos uma novidade nesse caso:\n\nCriaremos funções que serão chamadas por mais de uma função.\nEvitando a replicação de código."
   }
 ]
