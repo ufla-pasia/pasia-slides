@@ -16,7 +16,7 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Prof.&nbsp;Julio César Alves">
-  <meta name="dcterms.date" content="2025-02-09">
+  <meta name="dcterms.date" content="2025-03-09">
   <title>GAC126 - Programação Aplicada com Suporte de IA – Depuração e Decomposição de Problemas</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -349,7 +349,7 @@
     </div>
 </div>
 
-  <p class="date">02/09/2025</p>
+  <p class="date">03/09/2025</p>
 </section>
 <section class="slide level2">
 
@@ -483,7 +483,7 @@
 <p><strong>Trecho 2</strong></p>
 </div>
 <div class="callout-content">
-<p>It was the Dover Road that lay on a Friday night late in November, before the first of the persons with whom this history has business. The Dover Road lay, as to him, beyond the Dover mail, as it lumbered up Shooter’s Hill. He walked up hill in the mire by the side of the mail, as the rest of the passen- gers did; not because they had the least relish for walking exercise, under the circumstances, but because the hill, and the harness, and the mud, and the mail, were all so heavy, that the horses had three times already come to a stop, besides once drawing the coach across the road, with the mutinous intent of taking it back to Blackheath. Reins and whip and coachman and guard, however, in combination, had read that article of war which forbade a purpose otherwise strongly in favour of the argument, that some brute animals are endued with Reason; and the team had capitulated and returned to their duty.</p>
+<p>It was the Dover Road that lay on a Friday night late in November, before the first of the persons with whom this history has business. The Dover Road lay, as to him, beyond the Dover mail, as it lumbered up Shooter’s Hill. He walked up hill in the mire by the side of the mail, as the rest of the passengers did; not because they had the least relish for walking exercise, under the circumstances, but because the hill, and the harness, and the mud, and the mail, were all so heavy, that the horses had three times already come to a stop, besides once drawing the coach across the road, with the mutinous intent of taking it back to Blackheath. Reins and whip and coachman and guard, however, in combination, had read that article of war which forbade a purpose otherwise strongly in favour of the argument, that some brute animals are endued with Reason; and the team had capitulated and returned to their duty.</p>
 </div>
 </div>
 </div>
@@ -547,6 +547,7 @@
 <li class="fragment">e <strong>o texto de um autor desconhecido</strong>
 <ul>
 <li class="fragment">Poderia ser uma obra nunca publicada, que foi encontrada por acaso com um colecionador, por exemplo.</li>
+<li class="fragment">Ou uma obra publicada com um pseudônimo, que pareça ter sido escrita por um autor conhecido.</li>
 </ul></li>
 </ul>
 <div class="fragment">
@@ -624,15 +625,15 @@
 <section id="métricas" class="slide level2">
 <h2>Métricas</h2>
 <p>A ideia é utilizar as seguintes métricas para construir a <em>impressão digital</em> de cada autor:</p>
+<div>
 <ol type="1">
-<li class="fragment">tamanho médio das palavras</li>
-<li class="fragment">número de palavras diferentes dividido pelo número total de palavras</li>
-<li class="fragment">número de palavras usadas exatamente uma vez dividido pelo número total de palavras</li>
-<li class="fragment">número médio de palavras por frase</li>
-<li class="fragment">complexidade média das frases</li>
+<li>tamanho médio das palavras</li>
+<li>número de palavras diferentes dividido pelo número total de palavras</li>
+<li>número de palavras usadas exatamente uma vez dividido pelo número total de palavras</li>
+<li>número médio de palavras por frase</li>
+<li>complexidade média das frases</li>
 </ol>
-<div class="fragment">
-<p>A seguir vamos detalhar como calcular cada uma dessas métricas.</p>
+<p>A seguir vamos detalhar como calcular cada uma delas.</p>
 </div>
 </section>
 <section id="tamanho-médio-das-palavras" class="slide level2">
@@ -736,22 +737,24 @@
 <h2></h2>
 <p>A <strong><em>impressão digital</em></strong> de cada autor será então dada pelo <strong>conjunto de métricas</strong> calculada a partir de um livro que ele tenha escrito.</p>
 <ul>
-<li class="fragment">Em Aprendizado de Máquina, nós chamaríamos esse conjunto de <strong>vetor de características (<em>features</em>)</strong>.</li>
-<li class="fragment">Portanto, ela será dada por uma lista de 5 números, com os valores de cada métrica na ordem que definimos.
-<ul>
-<li class="fragment">Exemplo: <code>[4.44, 0.7, 0.5, 4.5, 1.5]</code></li>
-</ul></li>
+<li class="fragment">Ela será uma lista de 5 números, com os valores de cada métrica na ordem que definimos.</li>
 </ul>
 <div class="fragment">
 <div class="fontsize70">
+<ul>
+<li>Exemplo: <code>[4.44, 0.7, 0.5, 4.5, 1.5]</code>
 <ol type="1">
 <li>tamanho médio das palavras</li>
 <li>número de palavras diferentes dividido pelo número total de palavras</li>
 <li>número de palavras usadas exatamente uma vez dividido pelo número total de palavras</li>
 <li>número médio de palavras por frase</li>
 <li>complexidade média das frases</li>
-</ol>
+</ol></li>
+</ul>
 </div>
+</div>
+<div class="fragment">
+<p>Em Aprendizado de Máquina, nós chamaríamos esse conjunto de <strong>vetor de características (<em>features</em>)</strong>.</p>
 </div>
 </section>
 <section id="identificando-o-autor-desconhecido" class="slide level2">

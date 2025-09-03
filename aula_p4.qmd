@@ -115,8 +115,8 @@ considerable value. You can see for yourselves that they are very handsome.
 It was the Dover Road that lay on a Friday night late in November,
 before the first of the persons with whom this history has business. The Dover
 Road lay, as to him, beyond the Dover mail, as it lumbered up Shooter’s Hill.
-He walked up hill in the mire by the side of the mail, as the rest of the passen-
-gers did; not because they had the least relish for walking exercise, under the
+He walked up hill in the mire by the side of the mail, as the rest of the passengers 
+did; not because they had the least relish for walking exercise, under the
 circumstances, but because the hill, and the harness, and the mud, and the
 mail, were all so heavy, that the horses had three times already come to a stop,
 besides once drawing the coach across the road, with the mutinous intent of
@@ -191,6 +191,7 @@ Baseado no princípio desse exemplo, suponha que tenhamos:
 - **um conjunto de textos de autores conhecidos**.
 - e **o texto de um autor desconhecido**
   - Poderia ser uma obra nunca publicada, que foi encontrada por acaso com um colecionador, por exemplo.
+  - Ou uma obra publicada com um pseudônimo, que pareça ter sido escrita por um autor conhecido.
 
 . . .
 
@@ -256,15 +257,15 @@ O projeto inicial disponibilizado tem uma pasta `dados`.
 
 A ideia é utilizar as seguintes métricas para construir a _impressão digital_ de cada autor:
 
+::: {.nonincremental}
 1. tamanho médio das palavras
 2. número de palavras diferentes dividido pelo número total de palavras
 3. número de palavras usadas exatamente uma vez dividido pelo número total de palavras
 4. número médio de palavras por frase
 5. complexidade média das frases
 
-. . .
-
-A seguir vamos detalhar como calcular cada uma dessas métricas.
+A seguir vamos detalhar como calcular cada uma delas.
+:::
 
 ## Tamanho médio das palavras
 
@@ -361,19 +362,21 @@ Como seria muito complicado realmente tentar identificar orações, vamos usar u
 
 A **_impressão digital_** de cada autor será então dada pelo **conjunto de métricas** calculada a partir de um livro que ele tenha escrito.
 
-- Em Aprendizado de Máquina, nós chamaríamos esse conjunto de **vetor de características (_features_)**.
-- Portanto, ela será dada por uma lista de 5 números, com os valores de cada métrica na ordem que definimos.
-  - Exemplo: `[4.44, 0.7, 0.5, 4.5, 1.5]`
+- Ela será uma lista de 5 números, com os valores de cada métrica na ordem que definimos.
 
-. . .
+. . . 
 
 ::: {.fontsize70 .nonincremental}
-1. tamanho médio das palavras
-2. número de palavras diferentes dividido pelo número total de palavras
-3. número de palavras usadas exatamente uma vez dividido pelo número total de palavras
-4. número médio de palavras por frase
-5. complexidade média das frases
+- Exemplo: `[4.44, 0.7, 0.5, 4.5, 1.5]`
+  1. tamanho médio das palavras
+  2. número de palavras diferentes dividido pelo número total de palavras
+  3. número de palavras usadas exatamente uma vez dividido pelo número total de palavras
+  4. número médio de palavras por frase
+  5. complexidade média das frases
 :::
+. . .
+
+Em Aprendizado de Máquina, nós chamaríamos esse conjunto de **vetor de características (_features_)**.
 
 ## Identificando o autor desconhecido
 
