@@ -1,0 +1,347 @@
+---
+title: Engenharia de Prompt com o GitHub Copilot
+subtitle: PASIA - Aula T.5
+---
+
+##  
+
+O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Code.
+
+- [Introdução à engenharia de prompts com o GitHub Copilot](https://learn.microsoft.com/pt-br/training/modules/introduction-prompt-engineering-with-github-copilot/)
+
+
+# Introdução {background-color="#40666e"}
+
+---
+
+## O que é engenharia de Prompt?
+
+- Forma de comunicar ao Copilot **o que você precisa**.
+  - Processo de elaborar instruções claras para guiar assistentes de IA.
+- Objetivo: gerar código adequado ao contexto e adaptado às necessidades específicas do projeto. 
+  - Garantindo que seja correto sintática, funcional e contextualmente.
+- Qualidade do código gerado depende da **clareza e precisão do prompt**
+
+---
+
+## Princípios da engenharia de Prompt — os 4 Ss
+
+* **Foco único** (_single_) — Foque em uma tarefa ou pergunta única e bem definida.
+  - Essa clareza é fundamental para obter respostas precisas e úteis.
+* **Específico** (_specific_) — Dê instruções explícitas e detalhadas.
+  - Especificidade leva a sugestões mais precisas e aplicáveis.
+* **Curto** (_short_) — Seja conciso: ser específico, mas direito ao ponto.
+  - A ideia é garantir clareza sem sobrecarregar o Copilot ou complicar a interação.
+* **Contextual** (_surround_) Use nomes de arquivos descritivos e mantenha arquivos relacionados abertos no editor.
+  - Isso dá contexto rico ao Copilot, levando a sugestões mais relevantes.
+
+---
+
+## Exemplo simples (ilustrativo)
+
+**Prompt bem formulado:**
+
+
+
+---
+
+# Melhores práticas {background-color="#40666e"}
+
+# 1. **Forneça clareza suficiente**
+
+```text
+"Escreva uma função Python que receba uma lista de inteiros e retorne uma nova lista contendo apenas os números pares."
+```
+
+- Esse prompt tem **foco único**, é **específico** e **conciso**.
+
+# 2. **Forneça contexto suficiente com detalhes**
+
+Quanto mais informação contextual for fornecida,  mais adereten será a sugestão do Copilot.
+
+* Ex.: Comentários no topo do arquivo dão mais detalhes sobre o que você quer.
+
+```python
+# Escreva um app Flask que retorna uma lista de números pares a partir de uma lista de números
+# Crie uma funçãi que pega uma lista de números e retorne somente os números pares
+# Crie uma lista de números de exemplo
+# Crie uma lista de números pares a partir da lista de números
+# retorna a lista de números
+```
+
+##
+
+![](imagens/t5-2-add-comments-example.gif){fig-align="center" fig-alt="Exemplo de contexto suficiente com detalhes."}
+
+##
+
+Repare que no exemplo anterior foram dados mais detalhes mas ao mesmo tempo
+as instruções são curtas e objetivas.
+
+- Está prática segue o princípio **curto**, equilibrando dtealhe com concisão para garantir clareza e precisão na comunicação.
+
+
+## 3. **Forneça exemplos**
+
+   * Exemplos concretos tornam expectativas mais claras.
+
+4. **Afirme e itere**
+
+   * Trate a interação como um diálogo: refine o prompt, adicione exemplos e reexecute.
+
+---
+
+## Observação sobre contexto do editor
+
+* O Copilot utiliza abas/arquivos abertos no editor para obter contexto adicional.
+* Manter código relacionado visível aumenta a relevância das sugestões.
+
+---
+
+## Como fornecer exemplos (Zero / One / Few-shot)
+
+* **Zero-shot**: nenhuma amostra — descreva a tarefa e o modelo gera com base no treinamento.
+
+  * Ex.: apenas um comentário descrevendo uma função de conversão de temperatura.
+
+* **One-shot**: um exemplo é fornecido — ajuda a ajustar o estilo e o formato.
+
+  * Ex.: uma função de conversão já mostrada; peça para criar uma variante.
+
+* **Few-shot**: vários exemplos fornecidos — geralmente oferece melhor balanceamento entre criatividade e precisão.
+
+  * Ex.: três variações de função de saudação dependendo da hora do dia.
+
+---
+
+## Afirmar e iterar (boas práticas de workflow)
+
+* Não espere perfeição no primeiro output.
+* Apague ou ajuste o código sugerido, acrescente detalhes ou exemplos e solicite novamente.
+* Documente o que funcionou para reutilizar prompts semelhantes futuramente.
+
+---
+
+## Atividade prática sugerida
+
+1. Escreva um prompt **zero-shot** que solicite uma função para calcular a mediana de uma lista de números em Python.
+2. Reescreva o prompt em **one-shot** adicionando um exemplo de entrada/saída.
+3. Teste e itere: refine o prompt até que a função trate entradas ímpares/pares e casos de listas vazias.
+
+---
+
+## Recursos e notas
+
+* Insira aqui capturas de tela reais do Copilot e exemplos do seu projeto.
+* Recomenda-se adicionar testes e docstrings para facilitar o entendimento do modelo.
+
+---
+
+# Fluxo de Processamento de Prompts
+
+## Visão geral do fluxo
+
+* Copilot recebe prompts → processa contexto → gera sugestões.
+* Estrutura básica:
+
+  1. Entrada (prompt + contexto)
+  2. Filtragem e segurança
+  3. Geração de código com LLM
+  4. Saída e feedback
+
+---
+
+## 1. Transmissão segura + Coleta de contexto
+
+* Prompts transmitidos via **HTTPS** (seguro e confidencial).
+* Copilot coleta detalhes do ambiente:
+
+  * Código antes e depois do cursor
+  * Nome e tipo de arquivo
+  * Guias abertas e estrutura do projeto
+  * Linguagens e frameworks usados
+
+* **Pré-processamento FIM (Fill-in-the-Middle)**: considera contexto anterior e posterior ao cursor.
+
+---
+
+## 2. Filtro de proxy
+
+* Prompt passa por servidor proxy no Azure (mantido pelo GitHub).
+* Filtra tráfego malicioso, bloqueando tentativas de manipulação.
+
+---
+
+## 3. Filtragem de toxicidade
+
+* Antes da geração, Copilot remove prompts/respostas com:
+
+  * Discurso de ódio ou conteúdo inapropriado
+  * Dados pessoais (nomes, endereços, IDs)
+* Garante conformidade ética e segurança.
+
+---
+
+## 4. Geração de código (LLM)
+
+* Prompt filtrado → enviado para modelos de linguagem (LLMs).
+* LLMs produzem código relevante e alinhado com o contexto.
+
+---
+
+## 5. Pós-processamento e validação
+
+* Filtro de toxicidade aplicado novamente sobre a saída.
+* Verificações adicionais:
+
+  * **Qualidade do código** (bugs, vulnerabilidades XSS, SQL injection)
+  * **Correspondência com código público** (opcional, >150 caracteres)
+* Sugestões reprovadas → truncadas ou descartadas.
+
+---
+
+## 6. Entrega de sugestões + ciclo de feedback
+
+* Apenas respostas aprovadas chegam ao usuário.
+* Feedback baseado em ações do usuário:
+
+  * Aceitação → reforça padrões de resposta.
+  * Modificação/rejeição → ajusta entendimento futuro.
+
+---
+
+## 7. Iteração contínua
+
+* Processo se repete para novos prompts.
+* Copilot refina resultados com base em:
+
+  * Interações acumuladas
+  * Contexto de projeto
+  * Histórico de feedback
+
+---
+
+# Unidade 4 — Dados do GitHub Copilot
+
+---
+
+## Objetivo da unidade
+
+* Entender como o GitHub Copilot lida com dados em diferentes ambientes e recursos.
+* Compreender as diferenças entre **sugestões de código** e **Copilot Chat**.
+
+---
+
+## Tratamento de dados — Sugestões de código
+
+* Copilot no editor de código **não retém solicitações**.
+* Código, comentários e contexto são usados apenas no momento da sugestão.
+* Após gerar a sugestão → solicitações são descartadas.
+* Assinantes individuais podem **recusar o compartilhamento** de dados com o GitHub para treinar modelos.
+
+---
+
+## Tratamento de dados — Copilot Chat
+
+* Funciona como plataforma interativa, com histórico de conversas.
+* Difere das sugestões de código (autocomplete):
+
+  * **Formatação**: respostas adaptadas à interface de chat, com realce de código.
+  * **Participação do usuário**: permite perguntas de acompanhamento e refinamento.
+  * **Retenção**: solicitações/sugestões/contexto podem ser mantidos por **até 28 dias** (varia conforme ambiente: IDE, CLI, Mobile, Web).
+
+---
+
+## Tipos de solicitações no Copilot Chat
+
+* **Perguntas diretas**: conceitos, bibliotecas, dúvidas pontuais.
+
+  * Ex.: “Como implementar quicksort em Python?”
+
+* **Solicitações relacionadas ao código**: geração, modificação, explicação.
+
+  * Ex.: “Explique este trecho de código.”
+
+* **Consultas abertas**: boas práticas, dicas gerais.
+
+  * Ex.: “Como melhorar o desempenho de um app Python?”
+
+* **Solicitações contextuais**: forneça código ou cenários para ajuda personalizada.
+
+  * Ex.: “Aqui está meu código, sugira melhorias.”
+
+---
+
+## Limitações — Janelas de contexto
+
+* **Janela de contexto** = quantidade de código/texto que o modelo processa simultaneamente.
+* Copilot padrão: \~200 a 500 linhas de código (alguns milhares de tokens).
+* Copilot Chat: **até 4 mil tokens**.
+* Limitação pode variar conforme versão e implementação.
+
+---
+
+## Estratégias para lidar com contexto limitado
+
+* Divida problemas complexos em **consultas menores**.
+* Forneça apenas **trechos de código relevantes**.
+* Use prompts específicos para cada parte do problema.
+
+---
+
+
+# Unidade 5 Modelos de Linguagem Grande (LLMs)
+
+- O GitHub Copilot é alimentado por **LLMs** (Large Language Models).  
+- Eles permitem escrever código de forma integrada e com **reconhecimento de contexto**.  
+- Nesta unidade:  
+  - O que são LLMs  
+  - Papel dos LLMs no Copilot  
+  - Ajuste fino  
+  - Ajuste fino **LoRA**
+
+---
+
+# O que são LLMs?
+
+- Modelos de IA treinados para **entender, gerar e manipular linguagem natural**.  
+- **Volume de dados de treinamento**: bilhões de tokens de texto de diversas fontes.  
+- **Compreensão contextual**: produzem respostas relevantes e coerentes.  
+- **Base em aprendizado de máquina**: redes neurais com milhões ou bilhões de parâmetros.  
+- **Versatilidade**: aplicáveis a múltiplos domínios e idiomas.
+
+---
+
+# Papel dos LLMs no Copilot
+
+- O Copilot usa LLMs para gerar **sugestões de código contextualizadas**.  
+- Considera:  
+  - Arquivo atual  
+  - Outros arquivos do projeto  
+  - Guias abertas no IDE  
+- Garante **sugestões sob medida**, aumentando a produtividade.  
+
+---
+
+# LLMs de ajuste fino
+
+- Processo que adapta modelos pré-treinados a **tarefas específicas**.  
+- Utiliza:  
+  - **Modelo de origem** → conhecimento amplo, pré-treinado.  
+  - **Conjunto de dados de destino** → dados específicos da tarefa.  
+- Benefício: melhora a precisão em contextos especializados.  
+
+---
+
+# Ajuste fino LoRA
+
+- LoRA = **Low-Rank Adaptation**.  
+- Em vez de ajustar todos os parâmetros da rede:  
+  - Adiciona **módulos menores treináveis** em cada camada.  
+  - Mantém o modelo original inalterado.  
+- Vantagens:  
+  - Mais rápido e econômico  
+  - Mais eficiente que adaptadores e prefix tuning  
+  - “Trabalhar de forma mais inteligente, não mais difícil”  
+
+
