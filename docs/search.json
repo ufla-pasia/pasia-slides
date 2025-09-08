@@ -3603,5 +3603,33 @@
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Avançado: customização do Copilot",
     "text": "Avançado: customização do Copilot\n\nUsando servidores MCP que permite conectar serviços externos e ferramentas especilizados aumentando as capacidades do Copilot.\n\n\nNão entraremos em detalhes aqui.\n\nPara quem quiser saber mais acesse Customize chat to your workflow."
+  },
+  {
+    "objectID": "aula_t5.html#section-6",
+    "href": "aula_t5.html#section-6",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "",
+    "text": "Generalização de funções:\n\nAo escrever funções, tente torná-las o mais genéricas possível.\nIsso começa pelo prório prompt e/ou docstring da função.\n\n\nExemplo:\nSe você tem uma função que recebe uma lista de dados e faz algum processamento.\n\nEssa função não precisa se preocupar sobre como os dados foram obtidos.\nO que ela precisa deixar claro é o formato dos dados que ela espera.\nCom isso ela pode ser usada em diferentes contextos.\n\nEx.: não faz diferença se os dados vieram de arquivo ou não."
+  },
+  {
+    "objectID": "aula_t5.html#generalização-de-funções",
+    "href": "aula_t5.html#generalização-de-funções",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Generalização de funções",
+    "text": "Generalização de funções\nAo escrever funções, tente torná-las o mais genéricas possível.\n\nIsso começa pelo prório prompt e/ou docstring da função.\n\n\nEx.: uma função que recebe uma lista de dados e faz algum processamento.\n\nnão precisa se preocupar sobre como os dados foram obtidos.\nO que ela precisa deixar claro é o formato dos dados que ela espera.\nCom isso ela pode ser usada em diferentes contextos.\n\nEx.: não faz diferença se os dados vieram de arquivo ou não."
+  },
+  {
+    "objectID": "aula_t5.html#decomposição-de-problemas",
+    "href": "aula_t5.html#decomposição-de-problemas",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Decomposição de problemas",
+    "text": "Decomposição de problemas\nNotei uma resistência muito grande de boa parte dos alunos em decompor o problema da aula passada.\n\nE alguns já estavam bem dispersos na aula teórica anterior antes disso.\n\n\nLembrem-se que a expectativa é que no futuro nosso trabalho será fortemente baseado em assistência com IA.\n\nE se darão melhor aqueles que conseguirem ser mais produtivos com esse tipo de ferramenta.\nE a decomposição de problemas é uma habilidade essencial para isso."
+  },
+  {
+    "objectID": "aula_t5.html#decomposição-de-problemas-1",
+    "href": "aula_t5.html#decomposição-de-problemas-1",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Decomposição de problemas",
+    "text": "Decomposição de problemas\nComo diz o ditado “Apressado come cru”.\n\nÀs vezes ficamos tentados a obter resultados rápidos.\nE, as primeiras respostas, podem nos dar a impressão que estamos cortando caminhos.\nMas, na verdade, podemos estar apenas criando mais trabalho para nós mesmos."
   }
 ]

@@ -639,3 +639,59 @@ Não entraremos em detalhes aqui.
 
 - Para quem quiser saber mais acesse [Customize chat to your workflow](https://code.visualstudio.com/docs/copilot/customization/overview?originUrl=%2Fdocs%2Fcopilot%2Fcustomization%2Fprompt-files).
 
+# Observações sobre as últimas aulas {background-color="#40666e"}
+
+## Generalização de funções
+
+Ao escrever funções, tente torná-las o mais genéricas possível.
+
+- Isso começa pelo prório prompt e/ou docstring da função.
+
+. . .
+
+Ex.: uma função que recebe uma lista de dados e faz algum processamento.
+
+- não precisa se preocupar sobre como os dados foram obtidos.
+- O que ela precisa deixar claro é o formato dos dados que ela espera.
+- Com isso ela pode ser usada em diferentes contextos.
+  - Ex.: não faz diferença se os dados vieram de arquivo ou não.
+
+## Decomposição de problemas
+
+Notei uma resistência muito grande de boa parte dos alunos em decompor o problema da
+aula passada.
+
+- E alguns já estavam bem dispersos na aula teórica anterior antes disso.
+
+. . .
+
+Lembrem-se que a expectativa é que no futuro nosso trabalho será fortemente
+baseado em assistência com IA.
+
+- E se darão melhor aqueles que conseguirem ser mais produtivos com esse tipo de ferramenta.
+- E a decomposição de problemas é uma habilidade essencial para isso.
+
+
+## Decomposição de problemas
+
+Como diz o ditado _"Apressado come cru"_.
+
+- Às vezes ficamos tentados a obter resultados rápidos.
+- E, as primeiras respostas, podem nos dar a impressão que estamos cortando caminhos.
+- Mas, na verdade, podemos estar apenas criando mais trabalho para nós mesmos.
+
+## Aula ANP 10 de Setembro
+
+10/09 teremos o UFLA de Portas Abertas.
+
+- Assim não teremos aula presencial.
+- A presença será dada pela entrega da atividade de decomposição de problemas da aula passada.
+- É essencial apresentar o diagrama da decomposição do problema.
+
+# Trabalho Prático {background-color="#40666e"}
+
+##
+
+
+
+
