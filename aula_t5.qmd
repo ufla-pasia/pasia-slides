@@ -7,8 +7,14 @@ subtitle: PASIA - Aula T.5
 
 O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Code.
 
-- [Introdução à engenharia de prompts com o GitHub Copilot](https://learn.microsoft.com/pt-br/training/modules/introduction-prompt-engineering-with-github-copilot/)
+:::{.nonincremental}
 
+- [Introdução à engenharia de prompts com o GitHub Copilot](https://learn.microsoft.com/pt-br/training/modules/introduction-prompt-engineering-with-github-copilot/)
+- [Usando recursos avançados do Copilot](https://learn.microsoft.com/pt-br/training/modules/advanced-github-copilot/4-applied-copilot-techniques)
+- [Prompt engineering for Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/prompt-crafting)
+- [Asking GitHub Copilot questions in your IDE](https://docs.github.com/en/copilot/how-tos/use-chat/use-chat-in-ide)
+
+:::
 
 # Introdução {background-color="#40666e"}
 
@@ -18,219 +24,318 @@ O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Cod
 
 - Forma de comunicar ao Copilot **o que você precisa**.
   - Processo de elaborar instruções claras para guiar assistentes de IA.
-- Objetivo: gerar código adequado ao contexto e adaptado às necessidades específicas do projeto. 
+- **Objetivo**
+  - Gerar código adequado ao contexto e adaptado às necessidades específicas do projeto. 
   - Garantindo que seja correto sintática, funcional e contextualmente.
-- Qualidade do código gerado depende da **clareza e precisão do prompt**
+- Qualidade do código gerado depende da **clareza e precisão do prompt**.
 
 ---
 
 ## Princípios da engenharia de Prompt — os 4 Ss
 
-* **Foco único** (_single_) — Foque em uma tarefa ou pergunta única e bem definida.
+* [Single]{.alert} - **Foco único**
+* [Specific]{.alert} - **Específico**
+* [Short]{.alert} - **Curto**
+* [Surround]{.alert} - **Contexto**
+
+## Princípios da engenharia de Prompt — os 4 Ss
+
+* **Foco único** (_single_)
+  - Foque em uma tarefa ou pergunta única e bem definida.
   - Essa clareza é fundamental para obter respostas precisas e úteis.
-* **Específico** (_specific_) — Dê instruções explícitas e detalhadas.
+* **Específico** (_specific_)
+  - Dê instruções explícitas e detalhadas.
   - Especificidade leva a sugestões mais precisas e aplicáveis.
-* **Curto** (_short_) — Seja conciso: ser específico, mas direito ao ponto.
+
+## Princípios da engenharia de Prompt — os 4 Ss
+
+* **Curto** (_short_)
+  - Seja conciso: ser específico, mas direito ao ponto.
   - A ideia é garantir clareza sem sobrecarregar o Copilot ou complicar a interação.
-* **Contextual** (_surround_) Use nomes de arquivos descritivos e mantenha arquivos relacionados abertos no editor.
+* **Contextual** (_surround_)
+  - Use nomes de arquivos descritivos e mantenha arquivos relacionados abertos no editor.
   - Isso dá contexto rico ao Copilot, levando a sugestões mais relevantes.
 
----
-
-## Exemplo simples (ilustrativo)
-
-**Prompt bem formulado:**
-
-
-
----
 
 # Melhores práticas {background-color="#40666e"}
 
-# 1. **Forneça clareza suficiente**
+## 
+
+Vamos ver agora algumas práticas recomendadas para criar prompts eficazes.
+
+1. Forneça clareza suficiente
+2. Forneça contexto suficiente
+3. Forneça exemplos
+4. Itere
+
+## 1. Forneça clareza suficiente
+
+Exemplo
 
 ```text
-"Escreva uma função Python que receba uma lista de inteiros e retorne uma nova lista contendo apenas os números pares."
+Escreva uma função Python que receba uma lista de inteiros e 
+retorne uma nova lista contendo apenas os números pares.
 ```
 
 - Esse prompt tem **foco único**, é **específico** e **conciso**.
 
-# 2. **Forneça contexto suficiente com detalhes**
+. . . 
 
-Quanto mais informação contextual for fornecida,  mais adereten será a sugestão do Copilot.
+Aqui vale tudo que já vimos antes sobre **decomposição de problemas**.
+
+## 2. Forneça contexto suficiente
+
+Quanto mais informação contextual for fornecida,  mais aderente será a sugestão do Copilot.
 
 * Ex.: Comentários no topo do arquivo dão mais detalhes sobre o que você quer.
 
+. . . 
+
 ```python
 # Escreva um app Flask que retorna uma lista de números pares a partir de uma lista de números
-# Crie uma funçãi que pega uma lista de números e retorne somente os números pares
+# Crie uma função que pega uma lista de números e retorne somente os números pares
 # Crie uma lista de números de exemplo
 # Crie uma lista de números pares a partir da lista de números
 # retorna a lista de números
 ```
 
-##
+## 2. Forneça contexto suficiente
 
 ![](imagens/t5-2-add-comments-example.gif){fig-align="center" fig-alt="Exemplo de contexto suficiente com detalhes."}
 
-##
+## 2. Forneça contexto suficiente
 
 Repare que no exemplo anterior foram dados mais detalhes mas ao mesmo tempo
 as instruções são curtas e objetivas.
 
-- Está prática segue o princípio **curto**, equilibrando dtealhe com concisão para garantir clareza e precisão na comunicação.
+- Esta prática segue o princípio **curto**, equilibrando detalhe com concisão para garantir clareza e precisão na comunicação.
+
+## 2. Forneça contexto suficiente
+
+Você também pode controlar o que o Copilot considera como contexto.
+
+- Você pode, por exemplo, selecionar um trecho de código para que o Copilot gere código relacionado a esse trecho.
+- Além disso, o Copilot verifica os arquivos que estão atualmente abertos no editor para analisar o contexto.
+  - Portanto, mantenha arquivos relacionados abertos para fornecer contexto adicional (e feche os que não são relevantes).
+
+## 2. Forneça contexto suficiente
+
+Outra sugestão é que se você já souber a biblioteca que pretende trabalhar,
+é melhor importá-la manualmente antes de pedir ao Copilot para gerar o código.
+
+- Ex.: se for usar o `Pandas`, importe-o antes de pedir para carregar os dados de um arquivo CSV.
+- Isso direciona melhor o Copilot já que existem diferentes bibliotecas para manipulação de dados em Python. 
+
+## 2. Forneça contexto suficiente
+
+Utilize nomes de funções e classes descritivos.
+
+- Isso ajuda o Copilot a entender melhor o propósito do código.
+- E, claro, comentários docstring fornecem contexto ainda mais específico.
+
+## 2. Forneça contexto suficiente
+
+Forneça exemplos de código.
+
+- Se for trabalhar com uma nova biblioteca, e o Copilot gerar respostas de outras ou de versões antigas, 
+- forneça um exemplo de uso da nova biblioteca mesmo que não seja o que você quer fazer.
+- Isso ajuda o Copilot a gerar código para a versão mais recente da biblioteca.
+- (e depois apague o código de exemplo que colocou).
+
+##
+
+::: {.callout-tip}
+Dica: se estiver fazendo experimentações de código por você mesmo, pode ser interessante desabilitar temporariamente o Copilot, evitando que esses "experimentos" interfiram no contexto do Copilot.
+:::
 
 
-## 3. **Forneça exemplos**
+::: {.callout-tip}
+Dica: mantenha uma boa qualidade de código. Aqui vale o princípio _"garbage in, garbage out"_. Ou seja, o contexto pode piorar se o código que você está escrevendo estiver com muitos erros ou for de baixa qualidade.
+:::
 
-   * Exemplos concretos tornam expectativas mais claras.
+## 3. Forneça exemplos
 
-4. **Afirme e itere**
+  O uso de exemplos pode deixar mais claros seus requisitos e expectativas.
 
-   * Trate a interação como um diálogo: refine o prompt, adicione exemplos e reexecute.
+  - Ilustrando conceitos abstratos para o Copilot.
+
+. . .
+
+```python
+# cria uma lista de números de exemplo
+# cria uma lista de números pares a partir da lista de números
+# retorna a lista de números
+# Exemplo: [1,2,3,4,5,6,7] -> [2,4,6]
+```
+
+## 4. Itere
+
+Uma das chaves para desbloquear todo o potencial do Copilot é a prática da iteração.
+
+- Nem sempre seu primeiro prompt produzirá um código perfeito.
+- Se a primeira saída não for ideal, trate-a como uma etapa de um diálogo.
+- Apague o código, melhore o comentário inicial com detalhes e exemplos e deixe
+o Copilot tentar novamente.
+
+## 4. Itere
+
+::: {.callout-tip}
+Usando o chat com `Ctrl`+`I`, você pode pedir ao Copilot para melhorar o código que ele mesmo gerou.
+
+Ex.: "Adicione uma função de fibonacci", na mesma caixa, se necessário, pode continuar com instruções como
+"não use recursão" e depois "melhore os nomes das variáveis".
+:::
+
+# Como o Copilot aprende com seus prompts  {background-color="#40666e"}
+
+## 
+
+O Copilot usa modelos de IA que foram treinados com grande quantidades de dados.
+
+- Para melhorar seu reconhecimento em contextos de código específicos,
+geralmente fornecemos exemplos.
+
+. . .
+
+Essa prática é inspirada em técnicas de **aprendizado de máquina**.
+
+- Aprendizado Zero-Shot.
+- Aprendizado One-Shot.
+- Aprendizado Few-shot.
 
 ---
 
-## Observação sobre contexto do editor
+## Aprendizado Zero-Shot
 
-* O Copilot utiliza abas/arquivos abertos no editor para obter contexto adicional.
-* Manter código relacionado visível aumenta a relevância das sugestões.
+É quando o Copilot gera o código sem nenhum exemplo específico, confiando apenas em seu treinamento básico.
 
----
+- Escrevemos o comentário do que queremos diretamente, sem exemplos.
 
-## Como fornecer exemplos (Zero / One / Few-shot)
+![](imagens/engprompt-2-create-temp-conversion-from-comment.png){fig-align="center" fig-alt="Exemplo de aprendizado zero-shot."}
 
-* **Zero-shot**: nenhuma amostra — descreva a tarefa e o modelo gera com base no treinamento.
+## Aprendizado One-Shot
 
-  * Ex.: apenas um comentário descrevendo uma função de conversão de temperatura.
+É fornecido um único exemplo, ajudando o modelo a gerar uma resposta mais sensível ao contexto.
 
-* **One-shot**: um exemplo é fornecido — ajuda a ajustar o estilo e o formato.
+- Talvez você já tenha uma função semelhante e queira uma variante, por exemplo.
 
-  * Ex.: uma função de conversão já mostrada; peça para criar uma variante.
+. . .
 
-* **Few-shot**: vários exemplos fornecidos — geralmente oferece melhor balanceamento entre criatividade e precisão.
+![](imagens/engprompt-2-create-temp-conversion-from-example.png){fig-align="center" fig-alt="Exemplo de aprendizado one-shot."}
 
-  * Ex.: três variações de função de saudação dependendo da hora do dia.
 
----
+## Aprendizado Few-Shot
 
-## Afirmar e iterar (boas práticas de workflow)
+Nesse métdodo, o Copilot é apresentado a vários exemplos, equilibrando a imprevisibilidade do zero-shot com a precisão do ajuste fino do one-shot.
 
-* Não espere perfeição no primeiro output.
-* Apague ou ajuste o código sugerido, acrescente detalhes ou exemplos e solicite novamente.
-* Documente o que funcionou para reutilizar prompts semelhantes futuramente.
+- Suponha que deseje gerar um código que envie saudações ao usuário dependendo da hora do dia.
 
----
+## Aprendizado Few-Shot
 
-## Atividade prática sugerida
+![](imagens/engprompt-2-generate-greeting-code-from-examples.png){fig-align="center" fig-alt="Exemplo de aprendizado few-shot."}
 
-1. Escreva um prompt **zero-shot** que solicite uma função para calcular a mediana de uma lista de números em Python.
-2. Reescreva o prompt em **one-shot** adicionando um exemplo de entrada/saída.
-3. Teste e itere: refine o prompt até que a função trate entradas ímpares/pares e casos de listas vazias.
 
----
+# Fluxo de Processamento de Prompts {background-color="#40666e"}
 
-## Recursos e notas
+## 
 
-* Insira aqui capturas de tela reais do Copilot e exemplos do seu projeto.
-* Recomenda-se adicionar testes e docstrings para facilitar o entendimento do modelo.
+Vamos agora ver como o Copilot transforma nossos prompts em códigos utilizáveis.
 
----
+- Repare que é um processo de entrada (processamento do prompt) e saída (código gerado).
 
-# Fluxo de Processamento de Prompts
 
-## Visão geral do fluxo
+## Fluxo de entrada
 
-* Copilot recebe prompts → processa contexto → gera sugestões.
-* Estrutura básica:
-
-  1. Entrada (prompt + contexto)
-  2. Filtragem e segurança
-  3. Geração de código com LLM
-  4. Saída e feedback
-
----
+![](imagens/engprompt-3-github-copilot-inbound-flow.png){fig-align="center" fig-alt="Fluxo de entrada do processamento de prompts do GitHub Copilot." style="max-height: 60vh;"}
 
 ## 1. Transmissão segura + Coleta de contexto
 
 * Prompts transmitidos via **HTTPS** (seguro e confidencial).
-* Copilot coleta detalhes do ambiente:
+* Simultaneamente, o Copilot coleta detalhes do ambiente:
 
-  * Código antes e depois do cursor
-  * Nome e tipo de arquivo
-  * Guias abertas e estrutura do projeto
-  * Linguagens e frameworks usados
-
-* **Pré-processamento FIM (Fill-in-the-Middle)**: considera contexto anterior e posterior ao cursor.
+  * Código antes e depois do cursor (contexto).
+  * Nome e tipo do arquivo que está sendo editado.
+  * Abas adjacentes abertas, para que a suestão se alinhe a outros trechos de código do mesmo projeto.
+  * Informações sobre a estrutura do projeto e caminhos de arquivos.
+  * Informações sobre linguagnes de programação e frameworks usados.
 
 ---
 
 ## 2. Filtro de proxy
 
-* Prompt passa por servidor proxy no Azure (mantido pelo GitHub).
-* Filtra tráfego malicioso, bloqueando tentativas de manipulação.
+Prompt passa por servidor proxy no Azure (mantido pelo GitHub).
+
+* Filtra tráfego malicioso
+* bloqueando tentativas de manipulação do prompt 
+* ou ataques de injeção para obter detalhes sobre como o modelo gera as sugestões de código.
 
 ---
 
 ## 3. Filtragem de toxicidade
 
-* Antes da geração, Copilot remove prompts/respostas com:
+Antes da geração, Copilot utiliza filtros para que o código gerado não inclua e nem promova:
 
-  * Discurso de ódio ou conteúdo inapropriado
-  * Dados pessoais (nomes, endereços, IDs)
-* Garante conformidade ética e segurança.
+  * Discurso de ódio ou conteúdo inapropriado (que pode ser ofensivo, por exemplo).
+  * Dados pessoais (nomes, endereços, IDs) para preteger a privacidade e a segurança dos dados do usuário.
 
 ---
 
-## 4. Geração de código (LLM)
+## 4. Geração de código com o modelo LLM
 
 * Prompt filtrado → enviado para modelos de linguagem (LLMs).
-* LLMs produzem código relevante e alinhado com o contexto.
+* As sugestões são baseadas no entendimento do Copilot tanto do prompt quanto do contexto, 
+* para produzir resultados que sejam relevantes, funcionais e alinhados aos requisitos específicos do projeto.
 
 ---
 
-## 5. Pós-processamento e validação
+## Fluxo de Saída
 
-* Filtro de toxicidade aplicado novamente sobre a saída.
-* Verificações adicionais:
+![] (imagens/engprompt-3-github-copilot-outbound-flow.png){fig-align="center" fig-alt="Fluxo de saída do processamento de prompts do GitHub Copilot." style="max-height: 60vh;"}
 
-  * **Qualidade do código** (bugs, vulnerabilidades XSS, SQL injection)
-  * **Correspondência com código público** (opcional, >150 caracteres)
-* Sugestões reprovadas → truncadas ou descartadas.
+## 5. Pós-processamento e validação da resposta
 
----
+Filtro de toxicidade aplicado novamente sobre o código gerado.
 
-## 6. Entrega de sugestões + ciclo de feedback
+. . .
+
+Verificações adicionais feitas pelo servidor de proxy:
+
+* **Qualidade do código**: verificação de bugs, vulnerabilidades comuns (como cross-site scripting XSS, ou injeção de SQL).
+  * Objetivo é tentar garantir robustez e segurança.
+
+## 5. Pós-processamento e validação da resposta
+
+* **Correspondência com código público** (opcional)
+    * Administradores podem habilitar um filtro que impede o Copilot de retornar sugestões com mais de ~150 caracteres que sejam muito semelhantes a trechos de código públicos existentes no GiHub.
+    * Objetivo é evitar sugestão de código que seja coincidente com conteúdo original.
+
+. . .
+
+Se o código gerado falhar nessas verificações → pode ser truncada ou descartado.
+
+
+## 6. Entrega de sugestões e início do ciclo de feedback
 
 * Apenas respostas aprovadas chegam ao usuário.
-* Feedback baseado em ações do usuário:
+* Copilot inicia seu ciclo de feedback baseado em ações do usuário.
 
-  * Aceitação → reforça padrões de resposta.
-  * Modificação/rejeição → ajusta entendimento futuro.
-
----
-
-## 7. Iteração contínua
-
-* Processo se repete para novos prompts.
-* Copilot refina resultados com base em:
-
-  * Interações acumuladas
-  * Contexto de projeto
-  * Histórico de feedback
+  * Para aumentar seu próprio conhecimento com base nas sugestões aceitas.
+  * Para aprender e se aprimorar por meio de modificações e rejeições das sugestões.
 
 ---
 
-# Unidade 4 — Dados do GitHub Copilot
+## 7. Repetição para prompts subsequentes
+
+O processo é repetido à medida que o usuário forneça mais prompts.
+
+- Com o tempo o Copilot aplica os dados acumulados de feedback e de interação.
+- Incluindo os detalhes de contexto fornecidos.
+- Para aprimorar o seu entendimento da intenção do usuário e refiniar seus recursos de geração de código.
 
 ---
 
-## Objetivo da unidade
+# Dados do GitHub Copilot {background-color="#40666e"}
 
-* Entender como o GitHub Copilot lida com dados em diferentes ambientes e recursos.
-* Compreender as diferenças entre **sugestões de código** e **Copilot Chat**.
-
----
 
 ## Tratamento de dados — Sugestões de código
 
@@ -246,9 +351,9 @@ as instruções são curtas e objetivas.
 * Funciona como plataforma interativa, com histórico de conversas.
 * Difere das sugestões de código (autocomplete):
 
-  * **Formatação**: respostas adaptadas à interface de chat, com realce de código.
+  * **Formatação**: respostas adaptadas à interface de chat, como realce de código.
   * **Participação do usuário**: permite perguntas de acompanhamento e refinamento.
-  * **Retenção**: solicitações/sugestões/contexto podem ser mantidos por **até 28 dias** (varia conforme ambiente: IDE, CLI, Mobile, Web).
+  * **Retenção**: solicitações/sugestões/contexto podem ser mantidos por **até 28 dias** (varia conforme o editor).
 
 ---
 
@@ -268,41 +373,25 @@ as instruções são curtas e objetivas.
 
 * **Solicitações contextuais**: forneça código ou cenários para ajuda personalizada.
 
-  * Ex.: “Aqui está meu código, sugira melhorias.”
+  * Ex.: “Aqui está parte do meu código, sugira melhorias.”
 
 ---
 
 ## Limitações — Janelas de contexto
 
 * **Janela de contexto** = quantidade de código/texto que o modelo processa simultaneamente.
-* Copilot padrão: \~200 a 500 linhas de código (alguns milhares de tokens).
-* Copilot Chat: **até 4 mil tokens**.
+* Isso inclui não só o prompt utilizado, mas também o contexto do arquivo e do projeto.
 * Limitação pode variar conforme versão e implementação.
 
----
 
-## Estratégias para lidar com contexto limitado
+# LLMs no Copilot {background-color="#40666e"}
 
-* Divida problemas complexos em **consultas menores**.
-* Forneça apenas **trechos de código relevantes**.
-* Use prompts específicos para cada parte do problema.
-
----
-
-
-# Unidade 5 Modelos de Linguagem Grande (LLMs)
+##
 
 - O GitHub Copilot é alimentado por **LLMs** (Large Language Models).  
 - Eles permitem escrever código de forma integrada e com **reconhecimento de contexto**.  
-- Nesta unidade:  
-  - O que são LLMs  
-  - Papel dos LLMs no Copilot  
-  - Ajuste fino  
-  - Ajuste fino **LoRA**
 
----
-
-# O que são LLMs?
+## O que são LLMs?
 
 - Modelos de IA treinados para **entender, gerar e manipular linguagem natural**.  
 - **Volume de dados de treinamento**: bilhões de tokens de texto de diversas fontes.  
@@ -312,18 +401,7 @@ as instruções são curtas e objetivas.
 
 ---
 
-# Papel dos LLMs no Copilot
-
-- O Copilot usa LLMs para gerar **sugestões de código contextualizadas**.  
-- Considera:  
-  - Arquivo atual  
-  - Outros arquivos do projeto  
-  - Guias abertas no IDE  
-- Garante **sugestões sob medida**, aumentando a produtividade.  
-
----
-
-# LLMs de ajuste fino
+## Ajuste fino de LLMs
 
 - Processo que adapta modelos pré-treinados a **tarefas específicas**.  
 - Utiliza:  
@@ -331,9 +409,11 @@ as instruções são curtas e objetivas.
   - **Conjunto de dados de destino** → dados específicos da tarefa.  
 - Benefício: melhora a precisão em contextos especializados.  
 
----
+## Ajuste fino de LLMs
 
-# Ajuste fino LoRA
+![](imagens/engprompt-4-fine-tune-in-large-language-models-diagram.png){fig-align="center" fig-alt="Ajuste fino de LLMs." style="max-height: 60vh;"}
+
+## Ajuste fino LoRA
 
 - LoRA = **Low-Rank Adaptation**.  
 - Em vez de ajustar todos os parâmetros da rede:  
@@ -344,4 +424,218 @@ as instruções são curtas e objetivas.
   - Mais eficiente que adaptadores e prefix tuning  
   - “Trabalhar de forma mais inteligente, não mais difícil”  
 
+
+# Avaliação {background-color="#40666e"}
+
+## 1. O que é o GitHub Copilot?
+
+::: {.nonincremental}
+- Uma plataforma para os repositórios de código.
+- Um modelo alimentado pelo aprendizado de máquina.
+- [Um assistente para codificação.]{.correct}
+- Um serviço para hospedagem na Web.
+:::
+
+## 2. Qual é a função do prompt na utilização eficaz do GitHub Copilot?
+
+::: {.nonincremental}
+- Gera correções instantâneas de bugs.
+- [Aprimora a qualidade das sugestões de código]{.correct}.
+- Automatiza totalmente o processo de codificação.
+- Implementa a colaboração em tempo real.
+:::
+
+## 3. Qual das regras a seguir é um dos princípios do Método 4S da engenharia de Prompt?
+
+::: {.nonincremental}
+- Resuma os objetivos do código de forma concisa.
+- [Especifique as instruções de forma explícita e em detalhes.]{.correct}
+- Simplifique os processos para obter sugestões de código eficientes.
+- Simplifique as linguagens de codificação para entendimento universal.
+:::
+
+## 4. Como o GitHub Copilot trata os dados pessoais?
+
+::: {.nonincremental}
+- Salva todos os dados pessoais para referências futuras.
+- Compartilha dados pessoais com outros usuários para projetos colaborativos.
+- Criptografa dados pessoais.
+- [Filtra ativamente os dados pessoais para proteger a privacidade do usuário.]{.correct}
+:::
+
+## 5. O que é LoRA no contexto de LLMs (Modelos de Linguagem Grandes) de ajuste fino?
+
+::: {.nonincremental}
+- [Um método que adiciona elementos treináveis a cada camada do modelo pré-treinado sem uma revisão completa.]{.correct}
+- Uma tecnologia que otimiza a comunicação entre diferentes linguagens de codificação.
+- Uma biblioteca de software especializada que aprimora o desempenho do Copilot.
+- Um novo paradigma de programação com suporte exclusivo do Copilot.
+:::
+
+## 6. Como o Copilot usa o contexto para fornecer sugestões de código?
+
+::: {.nonincremental}
+- Considera apenas o texto do prompt que você fornece.
+- Considera o tipo de arquivo, mas não o conteúdo do arquivo.
+- [Considera o código ao redor, o tipo de arquivo e o conteúdo das guias abertas paralelamente no editor de código.]{.correct}
+- Seleciona aleatoriamente o contexto da Internet.
+:::
+
+## 7. Qual das seguintes estratégias ajuda a melhorar a eficácia do prompt no GitHub Copilot?
+
+::: {.nonincremental}
+- [Fornecer informações contextuais detalhadas com clareza.]{.correct}
+- Tornar o prompt o mais geral possível.
+- Manter o prompt longo e detalhado.
+- Evitar exemplos no prompt para não restringir a criatividade do Copilot.
+:::
+
+# Recursos do Copilot {background-color="#40666e"}
+
+## Prompts implícitos (_slash commands_)
+
+Podemos usar opções do Copilot fornecem prompts implícitos prédefinidos que podem melhorar a resposta.
+
+- `/doc` — adiciona comentários ao código especificado ou selecionado.
+- `/explain` — obtém explicações sobre o código.
+- `/fix` — para correção de bugs.
+- `/generate` — gera código para responder a um dado prompt.
+- `/help` — obtém ajuda sobre como usar o chat do Copilot.
+- `/optimize` — analisa e melhora o tempo de execução do código selecionado.
+- `/tests` — cria testes unitários para o código selecionado.
+
+## Prompts implícitos (_slash commands_)
+
+Esses comandos facilitam a interação com o Copilopt,
+
+- permitindo que sejam geradas respostas melhores sem ter que escrever prompts mais longos.
+
+. . .
+
+::: {.callout-tip}
+Combine os comandos com o prompt que você deseja usar.
+
+Exemplo: `/explain como a biblioteca Pandas é usada neste código.`
+:::
+
+## Contexto seletivo: _chat participants_
+
+Nós vimos como o Copilot considera o contexto do código que está sendo trabalhado.
+
+- Mas você pode também dizer explicitamente ao Copilot qual contexto deve ser considerado.
+
+. . .
+
+Por exemplo, suponha que você precise gerar um _Dockerfile_ para seu projeto Python.
+
+- É um arquivo especial que contém instruções específicas que facilitam a execução do seu projeto em diferentes ambientes.
+
+- Você pode usar o agente `@workspace` para indicar que o Copilot deve considerar o contexto de todo o projeto.
+
+```text
+@workspace Preciso criar um Dockerfile para este projeto.
+```
+
+Provavelmente o Copilot vai gerar explicações sobre o que é um _Dockerfile_ e como ele funciona e, em seguida, sugerir um _Dockerfile_ adequado ao seu projeto.
+
+## Contexto seletivo: _chat participants_
+
+Além do agente `@workspace`, você pode usar outros agentes para obter sugestões baseadas em contextos específicos:
+
+- `@terminal` — fornece sugestões baseadas na saída do terminal.
+  - Ex.: `@terminal Como corrigir a mensagem de erro que estou vendo.`
+- `@vscode` — para saber mais sobre os recursos e APIs do VS Code.
+  - Ex.: `@vscode como eu mudo as cores do VS Code?`
+
+## Contexto seletivo: _chat participants_
+
+- `@github` — expande as informações que o Copilot pode fornecer.
+  - Dica: use `@github what skills are available?` para saber como usar esse agente.
+    - Em portugês essa pergunta não funciona :( ... mas a resposta vem em português.
+  - Pode, por exemplo, fazer busca em repositórios ou em histórico de commits. 
+- `@data` — permite fazer análise dados no próprio chat do Copilot.
+  - Ex.: `@data crie um gráfico de barras a partir deste arquivo CSV.`
+
+## Contexto seletivo: _chat participants_
+
+::: {.callout-tip}
+Extensões do VS Code podem adicionar participantes específicos ao Copilot.
+:::
+
+## Contexto seletivo: _chat variables_
+
+Ao usar agentes como `@workspace` ou `@vscode`, por exemplo, você pode usar variáveis para referenciar contextos mais específicos.
+
+- Variáveis de chat são referenciadas com prefixo `#`.
+- Você pode usar por exemplo `#main.py` ou `#utils` para referenciar arquivos ou pastas específicas do projeto.
+
+. . .
+
+Você também pode arrastar um arquivo para a janela do chat do Copilot.
+
+- Ou clicar no ícone de clipe de papel para anexar arquivos.
+
+
+## Modos de uso do Chat Copilot
+
+No canto inferior esquerdo da janela do chat do Copilot, você pode escolher entre três modos de uso:
+
+. . .
+
+[Ask]{.alert}
+
+- Para perguntas gerais e explicações.
+- Possíveis sugestões de código aparecem no Chat e você precisa copiar e colar no editor.
+
+## Modos de uso do Chat Copilot
+
+[Edit]{.alert}
+
+- Para atualização rápida e específica de um conjunto definido de arquivos.
+- Permite controle mais granular sobre as edições propostas pelo Copilot.
+- Possibilitando assim controle total sobre o número de solicitações de LLM que o Copilot usa.
+
+## Modos de uso do Chat Copilot
+
+[Agent]{.alert}
+
+- Quando quiser que o Copilot trate uma tarefa específica de modo autônomo.
+- O próprio Copilot decide quais arquivos editar e como.
+- Pode sugerir comandos a serem executados no terminal (você precisa revisar e aprovar).
+- Funciona em modo interativo até que a tarefa seja concluída.
+- Tem impactos nos custos, pois cada interação pode consumir várias solicitações de LLM.
+
+
+## Histórico do Chat do Copilot
+
+O Copilot mantém um histórico das conversas que você teve com ele.
+
+- Você pode acessar esse histórico clicando no ícone de relógio no canto superior esquerdo da janela do chat.
+- Isso permite que você revise conversas anteriores, reutilize prompts eficazes e acompanhe o
+progresso de suas interações com o Copilot ao longo do tempo.
+
+## Histórico do Chat do Copilot
+
+::: {.callout-tip}
+Se for começar uma nova tarefa que não tem relação com o que você estava fazendo, é melhor começar uma nova conversa clicando no ícone de mais (+) no canto superior esquerdo.
+:::
+
+## Avançado: customização do Copilot
+
+Você pode customizar o comportamento do Copilot de diferentes formas.
+
+1. Com instruções customizadas (para todo o projeto ou para contextos específicos, como todos arquivos .py).
+2. Com arquivos de prompt para reutilização em tarefas repetitivas.
+3. Com modos de chat customizados (além de Ask, Edit e Agent).
+4. Escolhendo diferentes modelos de LLM (se sua assinatura permitir).
+
+## Avançado: customização do Copilot
+
+5. Usando servidores MCP que permite conectar serviços externos e ferramentas especilizados aumentando as capacidades do Copilot.
+
+. . .
+
+Não entraremos em detalhes aqui.
+
+- Para quem quiser saber mais acesse [Customize chat to your workflow](https://code.visualstudio.com/docs/copilot/customization/overview?originUrl=%2Fdocs%2Fcopilot%2Fcustomization%2Fprompt-files).
 
