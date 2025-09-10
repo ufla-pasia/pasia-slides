@@ -18,3 +18,4 @@ Possibilidades para o primeiro exemplo:
 - Ou copiar duas colunas de uma planilha contendo e-mail e nota e gerar e-mail informando para secretaria
   um e-mail relatando o número de aprovados e reprovados.
 - Copiar trechos da CEPE 473 e acertar as quebras de linha.
+- Copiar a CEPE inteira e obter o artigo que fala sobre um determinado assunto.
