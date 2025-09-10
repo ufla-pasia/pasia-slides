@@ -1,0 +1,20 @@
+---
+title: Automatizando Tarefas Tediosas
+subtitle: PASIA - Aula T.6
+---
+
+##  
+
+O conteúdo dessa aula é baseado no **capítulos 9** do livro abaixo.
+
+![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
+
+# Introdução {background-color="#40666e"}
+
+##
+
+Possibilidades para o primeiro exemplo:
+- Copiar uma lista de palavras como `arroz feijao café` e gerar uma lista numerada com um por linha.
+- Ou copiar duas colunas de uma planilha contendo e-mail e nota e gerar e-mail informando para secretaria
+  um e-mail relatando o número de aprovados e reprovados.
+- Copiar trechos da CEPE 473 e acertar as quebras de linha.
