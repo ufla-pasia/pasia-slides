@@ -3631,5 +3631,362 @@
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Decomposição de problemas",
     "text": "Decomposição de problemas\nComo diz o ditado “Apressado come cru”.\n\nÀs vezes ficamos tentados a obter resultados rápidos.\nE, as primeiras respostas, podem nos dar a impressão que estamos cortando caminhos.\nMas, na verdade, podemos estar apenas criando mais trabalho para nós mesmos."
+  },
+  {
+    "objectID": "aula_t6.html#section",
+    "href": "aula_t6.html#section",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "O conteúdo dessa aula é baseado no capítulo 9 do livro abaixo."
+  },
+  {
+    "objectID": "aula_t6.html#section-1",
+    "href": "aula_t6.html#section-1",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Suponha qe você seja responsável por criar 100 relatórios, cada um para uma pessoa diferente.\n\nPoderia ser um professor que precisa enviar correções para seus estudantes.\nOu alguém em um departamento de RH que precisa enviar a avaliação anual para cada funcionário.\n\n\nSuponha que você tenha decidido preparar os relatórios em arquivos PDF.\n\nE que você precisa de uma capa para os arquivos que é customizada para cada pessoa.\nSeu colega, designer gráfico, preparou essas capas para você."
+  },
+  {
+    "objectID": "aula_t6.html#section-2",
+    "href": "aula_t6.html#section-2",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Você e seu colega trabalharam de forma independente e agora cada um terminou sua tarefa.\n\nQuer dizer, quase, pois agora é necessário juntar as capas com os relatórios.\n\n\nAlguém que não é programador estaria agora “rangendo os dentes”\n\ncom o trabalho manual de juntar cada capa com cada relatório.\nIsso poderia levar horas!"
+  },
+  {
+    "objectID": "aula_t6.html#section-3",
+    "href": "aula_t6.html#section-3",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Mas nós somos programadores!\n\nE programadores nunca fariam um trabalho desse manualmente!\nOu pelo menos não deveriam.\n\n\n\n\n\n\n\n\nDica\n\n\nMuitas vezes seguimos o ditado: Casa de ferreiro, espeto de pau.\nE perdemos tempo com tarefas que poderiam ser otimizadas."
+  },
+  {
+    "objectID": "aula_t6.html#section-4",
+    "href": "aula_t6.html#section-4",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Nessa aula vamos ver como escrever programas que automatizam tarefas tediosas.\n\nUma das tarefas será essa dos PDFs.\nMas também veremos outras tarefas que podem ser automatizadas."
+  },
+  {
+    "objectID": "aula_t6.html#section-5",
+    "href": "aula_t6.html#section-5",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Muitas vezes os programadores se definem como preguiçosos.\n\nNão no sentido de que não queremos fazer nosso trabalho.\nMas sim, que não queremos fazer tarefas que são reptitivas, chatas, tediosas 😒.\n\nPara as quais os computadores são muito melhores que nós.\n\n\n\nBons programadores costumam ter um “sentido aranha” 🕸️ para identificar tarefas penosas."
+  },
+  {
+    "objectID": "aula_t6.html#section-6",
+    "href": "aula_t6.html#section-6",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Suponha, por exemplo, que tenhamos centenas de fotos que juntamos de uma viagem.\n\nE que queremos remover as fotos duplicadas.\nNão queremos olhar uma por uma, pois isso levaria muito tempo.\n\n\nOu suponha que um professor tenha que enviar um e-mail com notas para cada um de seus estudantes.\n\nSe forem poucos alunos ele pode escrever um e-mail para cada um.\nMas se forem muitos, nenhum professor vair querer fazer isso manualmente."
+  },
+  {
+    "objectID": "aula_t6.html#section-7",
+    "href": "aula_t6.html#section-7",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Sempre que um bom programador se depara com uma tarefa com passos repetitivos\n\nele pensa em como construir uma ferramenta para automatizá-la.\n\n\nO termo ferramenta está sendo usado aqui no sentido de programas que fazem algo que nos poupe tempo.\n\nMuitas vezes a ferramenta em si não é o objetivo final.\nE criar a ferramenta pode também ser meio entendiante.\nMas uma vez que ela está pronta, ela pode nos poupar muito tempo."
+  },
+  {
+    "objectID": "aula_t6.html#section-8",
+    "href": "aula_t6.html#section-8",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Às vezes criamos uma ferramenta para usar uma única vez.\n\nMas, na maioria das vezes, essas ferramentas acabam se tornando úteis novamente no futuro.\n\nSeja do jeito que ela foi construída inicialmente,\nou com algumas melhorias."
+  },
+  {
+    "objectID": "aula_t6.html#section-9",
+    "href": "aula_t6.html#section-9",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Eu, Julio, por exemplo, envio um e-mail com feedback individual para os alunos após as correções das provas das disciplinas que leciono.\n\nSeria inviável fazer isso manualmente.\n\n\nEu faço a correção da prova em uma panilha do Google.\n\nE escrevi um script (Apps Script) que lê a planilha e envia o e-mail para cada aluno.\nDeu um trabalho inicialmente, e de vez em quando preciso fazer ajustes.\nMas no final das contas, o tempo que economizo é enorme."
+  },
+  {
+    "objectID": "aula_t6.html#section-10",
+    "href": "aula_t6.html#section-10",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "E agora que temos Assistentes de IA, como o Copilot,\n\nficou ainda mais fácil criarmos ferramentas para tarefas repetitivas.\n\n\nNão faz sentido um programador não usar essas ferramentas para se ajudar.\n\nnem no sentido pessoal (podemos usar o tempo que economizamos para coisas mais prazerosas).\nnem no sentido profissional (podemos aumentar nossa produtividade)."
+  },
+  {
+    "objectID": "aula_t6.html#section-11",
+    "href": "aula_t6.html#section-11",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Muitas vezes precisamos usar módulos (bibliotecas) do Python para realizar alguma tarefa que precisamos.\n\nPode ser que seja uma biblioteca incluída (built-in) do Python.\n\nEx.: csv, json, zipfile, etc.\n\nOu uma biblioteca que precisamos instalar antes de usá-la."
+  },
+  {
+    "objectID": "aula_t6.html#section-12",
+    "href": "aula_t6.html#section-12",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Quando estamos criando ferramentas, é muito comum que:\n\nprecisemos lidar com arquivos de diferentes formato\n\n(como arquivos zip, pdf, planilhas de excel ou imagens).\n\ne que precisemos fazer alguma tarefa específica\n\n(como enviar e-mails, intergair com um site, mover arquivos, etc).\n\n\n\nPara muitas dessas coisas precisaremos usar algum módulo.\n\nMas qual módulo?\nE ele é built-in ou preciso instalar?"
+  },
+  {
+    "objectID": "aula_t6.html#section-13",
+    "href": "aula_t6.html#section-13",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Assistentes de IA, como o Copilot, podem nos ajudar a começar.\n\nA ideia é conversarmos com o assistente de IA para descobrir qual módulo precisamos usar.\nE só depois disso entramos na etapa de criar a ferramenta propriamente dita.\n\n\nNa criação da ferramenta, podemos seguir os passos que vimos anteriormente.\n\nDefinir uma função, e sua docstring, e depois pedir para o Copilot gerar o código dela."
+  },
+  {
+    "objectID": "aula_t6.html#section-14",
+    "href": "aula_t6.html#section-14",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Ao fazer isso, devemos seguir o processo que já vimos antes:\n\nverificar a corretude do código (testes),\ncorrigir os bugs,\ne talvez decompor o problema.\n\n\nMas aqui na aula vamos nos concentrar na interação com o Copilot para automizarmos a tarefa que precisamos.\n\nPara manter o foco no conteúdo que estamos trabalhando aqui."
+  },
+  {
+    "objectID": "aula_t6.html#section-15",
+    "href": "aula_t6.html#section-15",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Nós poderíamos pedir ao Copilot ou ao ChatGPT para fazer a ferramenta completa.\n\nMas vamos manter a ideia de criar funções.\n\n\nAcreditamos que vale a pena trabalharmos com funções, documentadas.\n\nDe forma que seja mais fácil, no futuro, fazer alguma melhoria ou evolução necessária na ferramenta."
+  },
+  {
+    "objectID": "aula_t6.html#section-16",
+    "href": "aula_t6.html#section-16",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Suponha que você precise enviar uma lista de compras para alguém por WhatsApp ou e-mail.\n\nE que essa lista precise ser numerada, com um item por linha, e em ordem alfabética.\n\n\nMas você recebeu a lista de compras de alguém (talvez seu chefe)\n\nque simplesmente digitou os itens separados por espaço, e em uma ordem qualquer.\n\n\n\nVamos usar o Copilot para automatizar essa tarefa."
+  },
+  {
+    "objectID": "aula_t6.html#section-17",
+    "href": "aula_t6.html#section-17",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Como você recebeu os itens por e-mail ou WhatsApp,\n\na ferramenta será mais útil se pudermos copiar (Ctrl+c) os itens da mensagem.\ne colar (Ctrl+v) na nossa ferramenta para ela gerar a lista numerada.\nCaso contrário, teríamos que redigitar a lista\n\ne aí não estaríamos economizando tempo.\n\n\n\nPara isso, precisaremos usar a Área de Transferência (Clipboard) do Sistema Operacional."
+  },
+  {
+    "objectID": "aula_t6.html#section-18",
+    "href": "aula_t6.html#section-18",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Essa Área de Transferência é onde ficam os últimos dados que copiamos com o Ctrl+c.\n\nPodemos então criar uma ferramenta que obtenha as palavras da Área de Transferência.\nGere a lista numerada.\nE copie a lista numerada de volta para a Área de Transferência.\n\n\nAssim, depois de rodar a ferramenta, podemos simplesmente colar (Ctrl+v) a lista numerada onde quisermos."
+  },
+  {
+    "objectID": "aula_t6.html#section-19",
+    "href": "aula_t6.html#section-19",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Basicamente o que precisamos fazer em um programa em Python é:\n\nLer o conteúdo da Área de Transferência e guardar em uma string.\nGerar a lista numerada e ordenada a partir dessa string.\nGuardar a lista em uma nova string.\nColocar a nova string na Área de Transferência.\n\n\nMas como podemos usar a Área de Transferência em um programa Python?"
+  },
+  {
+    "objectID": "aula_t6.html#section-20",
+    "href": "aula_t6.html#section-20",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Vamos descobrir isso usando a janela de chat do Copilot.\n\nMas vamos fazer uma exploração mais ampla antes de implementar uma solução.\n\n\nVamos abrir uma pasta vazia no VS Code e usar o modo Ask do chat do Copilot."
+  },
+  {
+    "objectID": "aula_t6.html#section-21",
+    "href": "aula_t6.html#section-21",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Prompt: Eu gostaria de escrever um programa em Python que acessa a área de transferência e que permita copiar e colar usando a área de transferência. Como posso fazer isso?"
+  },
+  {
+    "objectID": "aula_t6.html#section-22",
+    "href": "aula_t6.html#section-22",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "GitHub Copilot: Você pode usar o módulo pyperclip para acessar a área de transferência no Python. Ele permite copiar e colar texto facilmente. Veja como fazer:\n\nInstale o pacote:\n\npip install pyperclip\n\nExemplo de código para copiar e colar:\n\nimport pyperclip\n\n# Copiar texto para a área de transferência\npyperclip.copy(\"Olá, área de transferência!\")\n\n# Colar (obter) texto da área de transferência\ntexto = pyperclip.paste()\nprint(\"Texto copiado:\", texto)\nEsse código copia um texto para a área de transferência e depois lê o que está lá.\nFunciona em Linux, Windows e macOS."
+  },
+  {
+    "objectID": "aula_t6.html#section-23",
+    "href": "aula_t6.html#section-23",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "A resposta do Copilot nos ensina que podemos usar o módulo pyperclip para interagir com a Área de Transferência em um programa em Python.\n\nEle também nos dá um exemplo de como usar o módulo.\nEle também nos diz como instalar o módulo.\n\nO que mostra que ele é não é built-in.\n\n\n\nMas será que não daria para fazer nossa ferramenta sem instalar um módulo?\n\nVamos perguntar ao Copilot."
+  },
+  {
+    "objectID": "aula_t6.html#section-24",
+    "href": "aula_t6.html#section-24",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Prompt: Existe alguma forma de fazer isso sem precisar instalar um módulo Python?"
+  },
+  {
+    "objectID": "aula_t6.html#section-25",
+    "href": "aula_t6.html#section-25",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "GitHub Copilot: Sim, é possível acessar a área de transferência sem instalar módulos externos, mas depende do sistema operacional. No Linux, você pode usar comandos do sistema como xclip ou xsel via subprocess. Veja um exemplo usando xclip:\nimport subprocess\n\n# Copiar texto para a área de transferência\ntexto = \"Olá, área de transferência!\"\nprocess = subprocess.Popen(['xclip', '-selection', 'clipboard'], stdin=subprocess.PIPE)\nprocess.communicate(input=texto.encode())\n\n# Colar (obter) texto da área de transferência\nprocess = subprocess.Popen(['xclip', '-selection', 'clipboard', '-o'], stdout=subprocess.PIPE)\nsaida, _ = process.communicate()\nprint(\"Texto copiado:\", saida.decode())\nObservações:\n\nVocê precisa ter o xclip instalado (sudo apt install xclip).\nPara Windows, pode-se usar clip e powershell via subprocess.\nPara macOS, use pbcopy e pbpaste.\n\nSe precisar de exemplos para outros sistemas, é só pedir!"
+  },
+  {
+    "objectID": "aula_t6.html#section-26",
+    "href": "aula_t6.html#section-26",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Bom essa solução tem uma desvantagem: depende de um programa externo e do sistema operacional.\n\nSe formos tratar a tarefa apenas uma única vez poderia nos atender.\nMas pensando em usos futuros, não é a melhor solução.\n\n\nVamos explorar mais soluções."
+  },
+  {
+    "objectID": "aula_t6.html#section-27",
+    "href": "aula_t6.html#section-27",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Prompt: Existe algum outro jeito de fazer isso sem precisar instalar um módulo Python?"
+  },
+  {
+    "objectID": "aula_t6.html#section-28",
+    "href": "aula_t6.html#section-28",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "GitHub Copilot: Sim, mas você ainda vai precisar de algum utilitário externo já instalado no sistema, como xclip ou xsel no Linux, pbcopy/pbpaste no macOS, ou clip no Windows. O Python puro não oferece acesso direto à área de transferência na biblioteca padrão.\nNo Linux, por exemplo, se o xclip já estiver instalado, você pode usar o seguinte código:\nimport subprocess\n\n# Copiar texto para a área de transferência\nsubprocess.run(\"echo 'Texto para copiar' | xclip -selection clipboard\", shell=True)\n\n# Colar texto da área de transferência\nresultado = subprocess.run(\"xclip -selection clipboard -o\", shell=True, capture_output=True, text=True)\nprint(\"Texto colado:\", resultado.stdout)\nResumo:\nSem instalar módulos Python, você pode usar comandos do sistema operacional via subprocess, desde que o utilitário de área de transferência já esteja disponível no seu sistema."
+  },
+  {
+    "objectID": "aula_t6.html#section-29",
+    "href": "aula_t6.html#section-29",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Bom, essa resposta não ajudou muito, afinal continua basicamente fazendo a mesma coisa.\n\nNo livro, a primeira solução do Copilot foi usar o módulo tkinter.\n\nQue tem a limitação de só funcionar em ambientes gráficos (não funciona em servidores Linux, por exemplo).\n\n\n\nAo pedir outra opção, o Copilot sugeriu um código específico para Windows usando win32clipboard.\n\nPorque os autores estavam em ambiente Windows.\nMas tem o mesmo tipo de limitação da nossa solução com xclip."
+  },
+  {
+    "objectID": "aula_t6.html#section-30",
+    "href": "aula_t6.html#section-30",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Avaliando então as opções que temos, a melhor é usar o módulo pyperclip.\n\nAfinal instalar um módulo não é algo tão complicado.\nE o pyperclip funciona em Linux, Windows e macOS.\nE não depende de programas externos."
+  },
+  {
+    "objectID": "aula_t6.html#section-31",
+    "href": "aula_t6.html#section-31",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Mas por que devemos explorar e entender várias opções?\n\n\nHá vários motivos porque não deveríamos simplesmente usar a primeira opção do Copilot:\n\nPode não funcionar em todos os sistemas operacionais.\n\nO que limita os potenciais usuários da ferramenta.\n\nPode não funcionar para a tarefa que precisamos, ou pode ser que cheguemos em um ponto que ficamos travados em como resolver um problema.\n\nE aí sabermos que temos outras opções pode nos ajudar a sair do impasse.\n\nMódulos são atualizados com frequência.\n\nE funções que existiam, podem não existir nas versões mais atuais.\nOu sua forma de uso pode ter sido alterada.\nE, assim, uma sugestão do Copilot pode não funcionar mais."
+  },
+  {
+    "objectID": "aula_t6.html#section-32",
+    "href": "aula_t6.html#section-32",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Agora que sabemos como acessar a Área de Transferência, podemos criar nossa ferramenta.\n\ncomo vamos precisar instalar um módulo, vamos aproveitar para aprender como fazer isso do jeito mais correto.\nClaro, com a ajuda do Copilot.\n\n\nPrompt: Vou seguir com a sugestão que usa pyperclip. Mas, antes disso, me explique a melhor forma de instalar um módulo Python para um projeto?"
+  },
+  {
+    "objectID": "aula_t6.html#mas-por-que-devemos-explorar-e-entender-várias-opções",
+    "href": "aula_t6.html#mas-por-que-devemos-explorar-e-entender-várias-opções",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "Mas por que devemos explorar e entender várias opções?",
+    "text": "Mas por que devemos explorar e entender várias opções?\nHá vários motivos porque não deveríamos simplesmente usar a primeira opção do Copilot:\n\nPode não funcionar em todos os sistemas operacionais.\n\nO que limita os potenciais usuários da ferramenta.\n\nPode não funcionar para a tarefa que precisamos, ou pode ser que cheguemos em um ponto que ficamos travados em como resolver um problema.\n\nE aí sabermos que temos outras opções pode nos ajudar a sair do impasse.\n\nMódulos são atualizados com frequência.\n\nE funções que existiam, podem não existir nas versões mais atuais.\nOu sua forma de uso pode ter sido alterada.\nE, assim, uma sugestão do Copilot pode não funcionar mais."
+  },
+  {
+    "objectID": "aula_t6.html#section-33",
+    "href": "aula_t6.html#section-33",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "GitHub Copilot: A melhor forma de instalar um módulo Python para um projeto é usar um ambiente virtual. Assim, as dependências ficam isoladas e não afetam outros projetos ou o sistema.\nPassos recomendados:\n\nCrie um ambiente virtual na pasta do projeto:\n\npython3 -m venv venv\n\nAtive o ambiente virtual:\n\nsource venv/bin/activate\n\nInstale o módulo desejado (exemplo: pyperclip):\n\npip install pyperclip\n\n(Opcional) Gere um arquivo de dependências:\n\npip freeze &gt; requirements.txt\nAssim, você mantém seu projeto organizado e fácil de compartilhar ou replicar em outros ambientes."
+  },
+  {
+    "objectID": "aula_t6.html#section-34",
+    "href": "aula_t6.html#section-34",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "O Copilot nos ensinou a criar um ambiente virtual.\n\nDe modo que a instalação do módulo pyperclip fique dentro da pasta do próprio projeto.\nEvitando interferências e conflitos de versões com outros projetos.\n\n\nTambém aprendemos a gerar um arquivo requirements.txt\n\nmas não ficou muito claro para que ele serve, já que foi gerado somente ao final.\n\n\n\nVamos perguntar ao Copilot."
+  },
+  {
+    "objectID": "aula_t6.html#section-35",
+    "href": "aula_t6.html#section-35",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Prompt: Para que serve o arquivo requirements.txt?\n\n\nGitHub Copilot: O arquivo requirements.txt serve para listar todas as dependências (módulos e suas versões) necessárias para o seu projeto Python. Ele facilita a instalação dessas dependências em outros ambientes ou por outros desenvolvedores, usando o comando:\npip install -r requirements.txt\nAssim, todos os pacotes listados no arquivo serão instalados automaticamente, garantindo que o projeto funcione corretamente."
+  },
+  {
+    "objectID": "aula_t6.html#section-36",
+    "href": "aula_t6.html#section-36",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Agora ficou mais claro.\n\nQuando formos instalar o projeto em outro computador, ou quando alguém for usar o projeto,\nbasta criar um ambiente virtual e rodar o comando pip install -r requirements.txt.\n\n\nVamos, enfim, criar nossa ferramenta.\n\nPara isso, vamos, criar um arquivo Python, importar o módulo pyperclip\ne definir a assinatura e docstring função que gera a lista numerada."
+  },
+  {
+    "objectID": "aula_t6.html#section-37",
+    "href": "aula_t6.html#section-37",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "import pyperclip\n\ndef gerar_lista_numerada():\n    \"\"\"\"\n    A área de transferêcia tem linhas de texto contendo\n    palavras separadas por espaços e/ou vírgulas.\n\n    A função extrai as palavras obtidas da área de transferência,\n    ordena-as em ordem alfabética e cria uma lista numerada com\n    um item por linha.\n\n    O resultado é copiado de volta para a área de transferência.    \n    \"\"\""
+  },
+  {
+    "objectID": "aula_t6.html#section-38",
+    "href": "aula_t6.html#section-38",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "def gerar_lista_numerada():\n    \"\"\"\" docstring omitida para não encher o slide \"\"\"\n    # Obtém o texto da área de transferência\n    texto = pyperclip.paste()\n\n    # Substitui vírgulas por espaços e divide o texto em palavras\n    palavras = texto.replace(',', ' ').split()\n\n    # Remove duplicatas e ordena as palavras em ordem alfabética\n    palavras_unicas = sorted(set(palavras))\n\n    # Cria a lista numerada\n    lista_numerada = [f\"{i + 1}. {palavra}\" for i, palavra in enumerate(palavras_unicas)]\n\n    # Junta a lista em uma única string com quebras de linha\n    resultado = '\\n'.join(lista_numerada)\n\n    # Copia o resultado de volta para a área de transferência\n    pyperclip.copy(resultado)\n\nif __name__ == \"__main__\":\n    gerar_lista_numerada()"
+  },
+  {
+    "objectID": "aula_t6.html#section-39",
+    "href": "aula_t6.html#section-39",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Dica\n\n\nComo nós criamos o ambiente virtual pelo termninal do VS Code, se tentarmos usar a opção Run do VS Code, ele não vai funcionar.\nPrecisamos escolher a versão do Python que está dentro do ambiente virtual. Basta clicar no canto inferior esquerdo do VS Code e escolher o Python correto.\nObs.: se tivéssemos criado o ambiente virtual pelo VS Code (Ctrl_Shift_P e escolher Python: Create Environment), o VS Code já teria escolhido o Python correto."
+  },
+  {
+    "objectID": "aula_t6.html#section-40",
+    "href": "aula_t6.html#section-40",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Vamos então testar o nosso programa.\n\nSuponha que tenhamos recebido a seguinte lista de compras:\n\nfeijão, arroz, sorvete, café, batata, óleo, cebola\n\n\n\nCopie a lista acima (Ctrl+c) e rode o programa.\n\nEm seguida cole (Ctrl+v) a lista numerada em algum editor de texto."
+  },
+  {
+    "objectID": "aula_t6.html#section-41",
+    "href": "aula_t6.html#section-41",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Veja que deu quase tudo certo.\n\nExceto que a palavra óleo apareceu fora da ordem alfabética.\n\n\n1. arroz\n2. batata\n3. café\n4. cebola\n5. feijão\n6. sorvete\n7. óleo"
+  },
+  {
+    "objectID": "aula_t6.html#section-42",
+    "href": "aula_t6.html#section-42",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Provavelmente o erro aconteceu porque a palavra tem acento.\n\nVamos pedir ao Copilot para corrigir isso.\n\n\nPrompt: A ordenação está errada, pois a palavra “óleo” deveria aparecer antes de “sorvete”. Pode corrigir isso?"
+  },
+  {
+    "objectID": "aula_t6.html#section-43",
+    "href": "aula_t6.html#section-43",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "GitHub Copilot: Claro! O problema ocorre porque a ordenação padrão do Python (sorted) não considera corretamente os acentos para a ordem alfabética em português. Para corrigir, você pode usar o módulo locale e configurar para 'pt_BR.UTF-8'. Veja como ajustar:\nimport pyperclip\nimport locale\n\ndef gerar_lista_numerada():\n    \"\"\"\n    A área de transferêcia tem linhas de texto contendo\n    palavras separadas por espaços e/ou vírgulas.\n\n    A função extrai as palavras obtidas da área de transferência,\n    ordena-as em ordem alfabética e cria uma lista numerada com\n    um item por linha.\n\n    O resultado é copiado de volta para a área de transferência.    \n    \"\"\"\n    # Configura a ordenação para o padrão do português do Brasil\n    locale.setlocale(locale.LC_COLLATE, 'pt_BR.UTF-8')\n\n    # Obtém o texto da área de transferência\n    texto = pyperclip.paste()\n\n    # Substitui vírgulas por espaços e divide o texto em palavras\n    palavras = texto.replace(',', ' ').split()\n\n    # Remove duplicatas e ordena as palavras em ordem alfabética considerando acentos\n    palavras_unicas = sorted(set(palavras), key=locale.strxfrm)\n\n    # Cria a lista numerada\n    lista_numerada = [f\"{i + 1}. {palavra}\" for i, palavra in enumerate(palavras_unicas)]\n\n    # Junta a lista em uma única string com quebras de linha\n    resultado = '\\n'.join(lista_numerada)\n\n    # Copia o resultado de volta para a área de transferência\n    pyperclip.copy(resultado)\n\nif __name__ == \"__main__\":\n    gerar_lista_numerada()\nAgora, palavras acentuadas serão ordenadas corretamente conforme o português.\nObs: Certifique-se de que o locale pt_BR.UTF-8 está instalado no seu sistema Linux. Se não estiver, instale com:\nsudo locale-gen pt_BR.UTF-8\nsudo update-locale"
+  },
+  {
+    "objectID": "aula_t6.html#section-44",
+    "href": "aula_t6.html#section-44",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Agora sim!\n\nTemos uma ferramenta que nos economiza tempo pegar gerar a lista no formato correto.\nClaro que esse é um exemplo simples e didático.\n\nSeguindo a mesma ideia você pode criar ferramentas para tarefas mais complexas."
+  },
+  {
+    "objectID": "aula_t6.html#section-45",
+    "href": "aula_t6.html#section-45",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Mas tem algo que ainda é complicado em nossa ferramenta.\n\nPrecisamos usar o VS Code para rodar o programa.\nOu então abrir o terminal, navegar até a pasta do projeto, ativar o ambiente virtual e rodar o programa.\nIsso não é muito prático.\n\n\nSeria melhor se pudéssemos simplesmente clicar duas vezes em um ícone na área de trabalho.\n\nE aí a ferramenta rodaria sem precisar abrir o VS Code ou o terminal."
+  },
+  {
+    "objectID": "aula_t6.html#section-46",
+    "href": "aula_t6.html#section-46",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Prompt: Eu gostaria que esse programa estivesse disponível para o usuário como um comando de terminal. Sem precisar entrar na pasta do projeto, ativer o ambiente virtual e rodar o programa manualmente. Como posso fazer isso?"
+  },
+  {
+    "objectID": "aula_t6.html#section-47",
+    "href": "aula_t6.html#section-47",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "GitHub Copilot: Para tornar seu programa disponível como um comando de terminal, você pode empacotá-lo como um script executável e instalá-lo no sistema. O jeito mais comum em projetos Python é criar um entry point usando o setuptools. Veja como fazer:\n1. Crie um arquivo setup.py na raiz do projeto:\nfrom setuptools import setup\n\nsetup(\n    name=\"gerador-lista-numerada\",\n    version=\"1.0\",\n    py_modules=[\"gerador_lista_numerada\"],\n    install_requires=[\"pyperclip\"],\n    entry_points={\n        \"console_scripts\": [\n            \"gerador-lista-numerada=gerador_lista_numerada:gerar_lista_numerada\",\n        ],\n    },\n)\n2. Instale o pacote no modo editável (para desenvolvimento):\nNo terminal, dentro da pasta do projeto:\npip install --user --editable ."
+  },
+  {
+    "objectID": "aula_t6.html#section-48",
+    "href": "aula_t6.html#section-48",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "GitHub Copilot (cont.):\n3. Use o comando no terminal\nAgora, você pode rodar o comando de qualquer lugar:\ngerador-lista-numerada\n\nDicas:\n\nO comando será instalado em ~/.local/bin (Linux). Certifique-se de que esse diretório está no seu $PATH.\nPara outros usuários do sistema, use sudo pip install . (não recomendado para ambientes compartilhados).\nSe quiser distribuir, pode empacotar e publicar no PyPI.\n\nSe quiser um nome de comando diferente, basta alterar em console_scripts."
+  },
+  {
+    "objectID": "aula_t6.html#section-49",
+    "href": "aula_t6.html#section-49",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Possibilidades para o primeiro exemplo: - Copiar uma lista de palavras como arroz feijao café e gerar uma lista numerada com um por linha. - Ou copiar duas colunas de uma planilha contendo e-mail e nota e gerar e-mail informando para secretaria um e-mail relatando o número de aprovados e reprovados. - Copiar trechos da CEPE 473 e acertar as quebras de linha. - Copiar a CEPE inteira e obter o artigo que fala sobre um determinado assunto.\nfeijão, arroz, café, batata, óleo, cebola"
   }
 ]
