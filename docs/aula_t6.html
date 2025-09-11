@@ -1178,7 +1178,7 @@ Sem instalar módulos Python, você pode usar comandos do sistema operacional vi
 <section id="section-48" class="slide level2">
 <h2></h2>
 <div class="r-fit-text">
-<p><span class="alert">GitHub Copilot (cont.)</span>:</p>
+<p><span class="alert">GitHub Copilot <em>(continuação)</em></span>:</p>
 <h3 id="use-o-comando-no-terminal">3. Use o comando no terminal</h3>
 <p>Agora, você pode rodar o comando de qualquer lugar:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a></a><span class="ex">gerador-lista-numerada</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1193,6 +1193,55 @@ Sem instalar módulos Python, você pode usar comandos do sistema operacional vi
 </div>
 </section>
 <section id="section-49" class="slide level2">
+<h2></h2>
+<p>Legal! Agora podemos abrir um terminal, rodar o comando <code>gerador-lista-numerada</code> e pronto!</p>
+<ul>
+<li class="fragment">Teremos nossa lista de compras numerada na Área de Transferência.</li>
+</ul>
+<div class="fragment">
+<p>Mas será que não podemos fazer algo ainda mais prático?</p>
+</div>
+<div class="fragment">
+<p><span class="alert">Prompt</span>: E como faço para ter um ícone na área de trabalho para executar o programa?</p>
+</div>
+</section>
+<section id="section-50" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p><span class="alert">GitHub Copilot</span>: Para criar um atalho com ícone na área de trabalho (no Linux), siga estes passos:</p>
+<h3 id="crie-um-arquivo-.desktop">1. Crie um arquivo <code>.desktop</code></h3>
+<p>Crie um arquivo chamado, por exemplo, <code>GeradorListaNumerada.desktop</code> na sua área de trabalho (<code>~/Área de Trabalho</code> ou <code>~/Desktop</code>):</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource ini number-lines code-with-copy"><code class="sourceCode ini"><span id="cb18-1"><a></a><span class="kw">[Desktop Entry]</span></span>
+<span id="cb18-2"><a></a><span class="dt">Version</span><span class="ot">=</span><span class="fl">1.0</span></span>
+<span id="cb18-3"><a></a><span class="dt">Type</span><span class="ot">=</span><span class="st">Application</span></span>
+<span id="cb18-4"><a></a><span class="dt">Name</span><span class="ot">=</span><span class="st">Gerador Lista Numerada</span></span>
+<span id="cb18-5"><a></a><span class="dt">Comment</span><span class="ot">=</span><span class="st">Gera uma lista numerada a partir da área de transferência</span></span>
+<span id="cb18-6"><a></a><span class="dt">Exec</span><span class="ot">=</span><span class="st">gerador-lista-numerada</span></span>
+<span id="cb18-7"><a></a><span class="dt">Icon</span><span class="ot">=</span><span class="st">/caminho/para/um/icone.png</span></span>
+<span id="cb18-8"><a></a><span class="dt">Terminal</span><span class="ot">=</span><span class="kw">false</span></span>
+<span id="cb18-9"><a></a><span class="dt">Categories</span><span class="ot">=</span><span class="st">Utility;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Exec</strong>: o comando instalado pelo seu script (<code>gerador-lista-numerada</code>).</li>
+<li><strong>Icon</strong>: caminho para um arquivo de ícone (PNG, SVG, etc). Você pode usar um ícone próprio ou algum do sistema.</li>
+<li><strong>Terminal</strong>: coloque <code>true</code> se quiser que abra um terminal, ou <code>false</code> para rodar em segundo plano.</li>
+</ul>
+</div>
+</section>
+<section id="section-51" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p><span class="alert">GitHub Copilot <em>(continuação)</em></span>:</p>
+<h3 id="torne-o-atalho-executável">2. Torne o atalho executável</h3>
+<p>No terminal, rode:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a></a><span class="fu">chmod</span> +x ~/Área\ de\ Trabalho/GeradorListaNumerada.desktop</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="opcional-escolha-um-ícone">3. (Opcional) Escolha um ícone</h3>
+<p>Se não tiver um ícone, pode baixar um PNG ou usar algum já presente no sistema, como <code>/usr/share/icons/hicolor/48x48/apps/accessories-text-editor.png</code>.</p>
+<hr>
+<p>Agora, basta clicar duas vezes no ícone para executar o programa!<br>
+Se aparecer um aviso de segurança, clique em “Confiar” ou “Permitir execução”.</p>
+</div>
+</section>
+<section id="section-52" class="slide level2">
 <h2></h2>
 <p>Possibilidades para o primeiro exemplo: - Copiar uma lista de palavras como <code>arroz feijao café</code> e gerar uma lista numerada com um por linha. - Ou copiar duas colunas de uma planilha contendo e-mail e nota e gerar e-mail informando para secretaria um e-mail relatando o número de aprovados e reprovados. - Copiar trechos da CEPE 473 e acertar as quebras de linha. - Copiar a CEPE inteira e obter o artigo que fala sobre um determinado assunto.</p>
 <p>feijão, arroz, café, batata, óleo, cebola</p>

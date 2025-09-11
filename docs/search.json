@@ -3980,11 +3980,32 @@
     "href": "aula_t6.html#section-48",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot (cont.):\n3. Use o comando no terminal\nAgora, você pode rodar o comando de qualquer lugar:\ngerador-lista-numerada\n\nDicas:\n\nO comando será instalado em ~/.local/bin (Linux). Certifique-se de que esse diretório está no seu $PATH.\nPara outros usuários do sistema, use sudo pip install . (não recomendado para ambientes compartilhados).\nSe quiser distribuir, pode empacotar e publicar no PyPI.\n\nSe quiser um nome de comando diferente, basta alterar em console_scripts."
+    "text": "GitHub Copilot (continuação):\n3. Use o comando no terminal\nAgora, você pode rodar o comando de qualquer lugar:\ngerador-lista-numerada\n\nDicas:\n\nO comando será instalado em ~/.local/bin (Linux). Certifique-se de que esse diretório está no seu $PATH.\nPara outros usuários do sistema, use sudo pip install . (não recomendado para ambientes compartilhados).\nSe quiser distribuir, pode empacotar e publicar no PyPI.\n\nSe quiser um nome de comando diferente, basta alterar em console_scripts."
   },
   {
     "objectID": "aula_t6.html#section-49",
     "href": "aula_t6.html#section-49",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Legal! Agora podemos abrir um terminal, rodar o comando gerador-lista-numerada e pronto!\n\nTeremos nossa lista de compras numerada na Área de Transferência.\n\n\nMas será que não podemos fazer algo ainda mais prático?\n\n\nPrompt: E como faço para ter um ícone na área de trabalho para executar o programa?"
+  },
+  {
+    "objectID": "aula_t6.html#section-50",
+    "href": "aula_t6.html#section-50",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "GitHub Copilot: Para criar um atalho com ícone na área de trabalho (no Linux), siga estes passos:\n1. Crie um arquivo .desktop\nCrie um arquivo chamado, por exemplo, GeradorListaNumerada.desktop na sua área de trabalho (~/Área de Trabalho ou ~/Desktop):\n[Desktop Entry]\nVersion=1.0\nType=Application\nName=Gerador Lista Numerada\nComment=Gera uma lista numerada a partir da área de transferência\nExec=gerador-lista-numerada\nIcon=/caminho/para/um/icone.png\nTerminal=false\nCategories=Utility;\n\nExec: o comando instalado pelo seu script (gerador-lista-numerada).\nIcon: caminho para um arquivo de ícone (PNG, SVG, etc). Você pode usar um ícone próprio ou algum do sistema.\nTerminal: coloque true se quiser que abra um terminal, ou false para rodar em segundo plano."
+  },
+  {
+    "objectID": "aula_t6.html#section-51",
+    "href": "aula_t6.html#section-51",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "GitHub Copilot (continuação):\n2. Torne o atalho executável\nNo terminal, rode:\nchmod +x ~/Área\\ de\\ Trabalho/GeradorListaNumerada.desktop\n3. (Opcional) Escolha um ícone\nSe não tiver um ícone, pode baixar um PNG ou usar algum já presente no sistema, como /usr/share/icons/hicolor/48x48/apps/accessories-text-editor.png.\n\nAgora, basta clicar duas vezes no ícone para executar o programa!\nSe aparecer um aviso de segurança, clique em “Confiar” ou “Permitir execução”."
+  },
+  {
+    "objectID": "aula_t6.html#section-52",
+    "href": "aula_t6.html#section-52",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
     "text": "Possibilidades para o primeiro exemplo: - Copiar uma lista de palavras como arroz feijao café e gerar uma lista numerada com um por linha. - Ou copiar duas colunas de uma planilha contendo e-mail e nota e gerar e-mail informando para secretaria um e-mail relatando o número de aprovados e reprovados. - Copiar trechos da CEPE 473 e acertar as quebras de linha. - Copiar a CEPE inteira e obter o artigo que fala sobre um determinado assunto.\nfeijão, arroz, café, batata, óleo, cebola"

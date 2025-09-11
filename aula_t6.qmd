@@ -741,7 +741,7 @@ pip install --user --editable .
 ##
 
 ::: {.r-fit-text .nonincremental}
-[GitHub Copilot (cont.)]{.alert}: 
+[GitHub Copilot _(continuação)_]{.alert}: 
 
 ### 3. Use o comando no terminal
 
@@ -761,6 +761,85 @@ gerador-lista-numerada
 
 Se quiser um nome de comando diferente, basta alterar em `console_scripts`.
 :::
+
+##
+
+Legal! Agora podemos abrir um terminal, rodar o comando `gerador-lista-numerada` e pronto!
+
+- Teremos nossa lista de compras numerada na Área de Transferência.
+
+. . . 
+
+Mas será que não podemos fazer algo ainda mais prático?
+
+. . . 
+
+[Prompt]{.alert}: E como faço para ter um ícone na área de trabalho para executar o programa?
+
+##
+
+::: {.r-fit-text .nonincremental}
+[GitHub Copilot]{.alert}: Para criar um atalho com ícone na área de trabalho (no Linux), siga estes passos:
+
+### 1. Crie um arquivo `.desktop`
+
+Crie um arquivo chamado, por exemplo, `GeradorListaNumerada.desktop` na sua área de trabalho (`~/Área de Trabalho` ou `~/Desktop`):
+
+````ini
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Gerador Lista Numerada
+Comment=Gera uma lista numerada a partir da área de transferência
+Exec=gerador-lista-numerada
+Icon=/caminho/para/um/icone.png
+Terminal=false
+Categories=Utility;
+````
+
+- **Exec**: o comando instalado pelo seu script (`gerador-lista-numerada`).
+- **Icon**: caminho para um arquivo de ícone (PNG, SVG, etc). Você pode usar um ícone próprio ou algum do sistema.
+- **Terminal**: coloque `true` se quiser que abra um terminal, ou `false` para rodar em segundo plano.
+:::
+
+##
+
+::: {.r-fit-text .nonincremental}
+[GitHub Copilot _(continuação)_]{.alert}: 
+
+### 2. Torne o atalho executável
+
+No terminal, rode:
+
+```bash
+chmod +x ~/Área\ de\ Trabalho/GeradorListaNumerada.desktop
+```
+
+### 3. (Opcional) Escolha um ícone
+
+Se não tiver um ícone, pode baixar um PNG ou usar algum já presente no sistema, como `/usr/share/icons/hicolor/48x48/apps/accessories-text-editor.png`.
+
+---
+
+Agora, basta clicar duas vezes no ícone para executar o programa!  
+Se aparecer um aviso de segurança, clique em "Confiar" ou "Permitir execução".
+:::
+
+##
+
+Bacana! Temos agora um programa disponível na área de trabalho.
+
+- Ficou muito mais rápido gerar a lista numerada.
+
+. . .
+
+Poderíamos melhorar nosso programa dando algum retorno de que ele foi executado com sucesso.
+
+- Mas vamos tratar outra demanda tediosa agora.
+
+# Exemplo 2: Adicionando capas a arquivos PDF {background-color="#40666e"}
+
+##
 
 ## 
 Possibilidades para o primeiro exemplo:
