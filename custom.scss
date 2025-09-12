@@ -41,5 +41,15 @@ h2 {
     top: unset !important;
 }
 
+div.callout-important  {
+  --callout-color: #f9e79f;      /* cor de fundo diferente (amarelo claro) */
+  --callout-border-color: #b7950b; /* cor da borda (amarelo escuro) */
+  --callout-icon: "💬";           /* ícone opcional */
+}
+.callout-prompt .callout-title {
+  font-weight: bold;
+}
+
+
 
   

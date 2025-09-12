@@ -273,15 +273,20 @@ Vamos abrir uma pasta vazia no VS Code e usar o modo `Ask` do chat do Copilot.
 
 ##
 
-[Prompt]{.alert}: Eu gostaria de escrever um programa em Python que 
+
+::: {.callout-caution title="Prompt" icon="false"}
+Eu gostaria de escrever um programa em Python que 
 acessa a área de transferência e que permita copiar 
 e colar usando a área de transferência. 
 Como posso fazer isso?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Você pode usar o módulo `pyperclip` para acessar a área de transferência no Python. Ele permite copiar e colar texto facilmente. Veja como fazer:
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+Você pode usar o módulo `pyperclip` para acessar a área de transferência no Python. 
+
+Ele permite copiar e colar texto facilmente. Veja como fazer:
 
 1. Instale o pacote:
 ```bash
@@ -322,12 +327,16 @@ Mas será que não daria para fazer nossa ferramenta sem instalar um módulo?
 
 ##
 
-[Prompt]{.alert}: Existe alguma forma de fazer isso sem precisar instalar um módulo Python?
+
+::: {.callout-caution title="Prompt" icon="false"}
+Existe alguma forma de fazer isso sem precisar instalar um módulo Python?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Sim, é possível acessar a área de transferência sem instalar módulos externos, mas depende do sistema operacional. No Linux, você pode usar comandos do sistema como `xclip` ou `xsel` via `subprocess`. Veja um exemplo usando `xclip`:
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+Sim, é possível acessar a área de transferência sem instalar módulos externos, mas depende do sistema operacional. 
+No Linux, você pode usar comandos do sistema como `xclip` ou `xsel` via `subprocess`. Veja um exemplo usando `xclip`:
 
 ````python
 import subprocess
@@ -365,13 +374,19 @@ Vamos explorar mais soluções.
 
 ##
 
-[Prompt]{.alert}: Existe algum outro jeito de fazer isso sem precisar instalar um módulo Python?
+
+::: {.callout-caution title="Prompt" icon="false"}
+Existe algum outro jeito de fazer isso sem precisar instalar um módulo Python?
+:::
 
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Sim, mas você ainda vai precisar de algum utilitário externo já instalado no sistema, como `xclip` ou `xsel` no Linux, `pbcopy`/`pbpaste` no macOS, ou `clip` no Windows. O Python puro não oferece acesso direto à área de transferência na biblioteca padrão.
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+Sim, mas você ainda vai precisar de algum utilitário externo já instalado no sistema, 
+como `xclip` ou `xsel` no Linux, `pbcopy`/`pbpaste` no macOS, ou `clip` no Windows. 
+ 
+O Python puro não oferece acesso direto à área de transferência na biblioteca padrão.
 
 No Linux, por exemplo, se o `xclip` já estiver instalado, você pode usar o seguinte código:
 
@@ -387,7 +402,8 @@ print("Texto colado:", resultado.stdout)
 ````
 
 **Resumo:**  
-Sem instalar módulos Python, você pode usar comandos do sistema operacional via `subprocess`, desde que o utilitário de área de transferência já esteja disponível no seu sistema.
+Sem instalar módulos Python, você pode usar comandos do sistema operacional via `subprocess`, 
+desde que o utilitário de área de transferência já esteja disponível no seu sistema.
 :::
 
 
@@ -443,12 +459,15 @@ Agora que sabemos como acessar a Área de Transferência, podemos criar nossa fe
 
 . . .
 
-[Prompt]{.alert}: Vou seguir com a sugestão que usa pyperclip. Mas, antes disso, me explique a melhor forma de instalar um módulo Python para um projeto?
+
+::: {.callout-caution title="Prompt" icon="false"}
+Vou seguir com a sugestão que usa pyperclip. Mas, antes disso, me explique a melhor forma de instalar um módulo Python para um projeto?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: A melhor forma de instalar um módulo Python para um projeto é usar um ambiente virtual. Assim, as dependências ficam isoladas e não afetam outros projetos ou o sistema.
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+ A melhor forma de instalar um módulo Python para um projeto é usar um ambiente virtual. Assim, as dependências ficam isoladas e não afetam outros projetos ou o sistema.
 
 **Passos recomendados:**
 
@@ -494,12 +513,15 @@ Vamos perguntar ao Copilot.
 
 ##
 
-[Prompt]{.alert}: Para que serve o arquivo requirements.txt?
+
+::: {.callout-caution title="Prompt" icon="false"}
+Para que serve o arquivo requirements.txt?
+:::
 
 . . .
 
-::: {.nonincremental}
-[GitHub Copilot]{.alert}: O arquivo requirements.txt serve para listar todas as dependências (módulos e suas versões) necessárias para o seu projeto Python. Ele facilita a instalação dessas dependências em outros ambientes ou por outros desenvolvedores, usando o comando:
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+O arquivo requirements.txt serve para listar todas as dependências (módulos e suas versões) necessárias para o seu projeto Python. Ele facilita a instalação dessas dependências em outros ambientes ou por outros desenvolvedores, usando o comando:
 
 ```bash
 pip install -r requirements.txt
@@ -524,6 +546,8 @@ Vamos, enfim, criar nossa ferramenta.
 
 ##
 
+**Prompt**
+
 ::: {.r-fit-text .nonincremental}
 ```python
 import pyperclip
@@ -544,10 +568,21 @@ def gerar_lista_numerada():
 
 ##
 
+Código gerado pelo Copilot.
+
 ::: {.r-fit-text .nonincremental}
 ```python
 def gerar_lista_numerada():
-    """" docstring omitida para não encher o slide """
+    """"
+    A área de transferêcia tem linhas de texto contendo
+    palavras separadas por espaços e/ou vírgulas.
+
+    A função extrai as palavras obtidas da área de transferência,
+    ordena-as em ordem alfabética e cria uma lista numerada com
+    um item por linha.
+
+    O resultado é copiado de volta para a área de transferência.    
+    """
     # Obtém o texto da área de transferência
     texto = pyperclip.paste()
 
@@ -628,12 +663,15 @@ Provavelmente o erro aconteceu porque a palavra tem acento.
 
 . . .
 
-[Prompt]{.alert}: A ordenação está errada, pois a palavra "óleo" deveria aparecer antes de "sorvete". Pode corrigir isso?
+
+::: {.callout-caution title="Prompt" icon="false"}
+A ordenação está errada, pois a palavra "óleo" deveria aparecer antes de "sorvete". Pode corrigir isso?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Claro! O problema ocorre porque a ordenação padrão do Python (`sorted`) não considera corretamente os acentos para a ordem alfabética em português. Para corrigir, você pode usar o módulo `locale` e configurar para `'pt_BR.UTF-8'`. Veja como ajustar:
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+ Claro! O problema ocorre porque a ordenação padrão do Python (`sorted`) não considera corretamente os acentos para a ordem alfabética em português. Para corrigir, você pode usar o módulo `locale` e configurar para `'pt_BR.UTF-8'`. Veja como ajustar:
 
 ````python
 import pyperclip
@@ -678,8 +716,7 @@ if __name__ == "__main__":
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot _(continuação)_]{.alert}: 
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
 
 Agora, palavras acentuadas serão ordenadas corretamente conforme o português.  
 
@@ -715,12 +752,15 @@ Seria melhor se pudéssemos simplesmente clicar duas vezes em um ícone na área
 
 ##
 
-[Prompt]{.alert}: Eu gostaria que esse programa estivesse disponível para o usuário como um comando de terminal. Sem precisar entrar na pasta do projeto, ativer o ambiente virtual e rodar o programa manualmente. Como posso fazer isso?
+
+::: {.callout-caution title="Prompt" icon="false"}
+Eu gostaria que esse programa estivesse disponível para o usuário como um comando de terminal. Sem precisar entrar na pasta do projeto, ativer o ambiente virtual e rodar o programa manualmente. Como posso fazer isso?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Para tornar seu programa disponível como um comando de terminal, você pode empacotá-lo como um **script executável** e instalá-lo no sistema. O jeito mais comum em projetos Python é criar um **entry point** usando o `setuptools`. Veja como fazer:
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+ Para tornar seu programa disponível como um comando de terminal, você pode empacotá-lo como um **script executável** e instalá-lo no sistema. O jeito mais comum em projetos Python é criar um **entry point** usando o `setuptools`. Veja como fazer:
 
 ### 1. Crie um arquivo `setup.py` na raiz do projeto:
 
@@ -750,8 +790,8 @@ pip install --user --editable .
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot _(continuação)_]{.alert}: 
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
+ .
 
 ### 3. Use o comando no terminal
 
@@ -777,6 +817,8 @@ Se quiser um nome de comando diferente, basta alterar em `console_scripts`.
 Legal! Agora podemos abrir um terminal, rodar o comando `gerador-lista-numerada` e pronto!
 
 - Teremos nossa lista de compras numerada na Área de Transferência.
+
+## No entanto...
 
 . . .
 
@@ -827,12 +869,15 @@ Mas será que não podemos fazer algo ainda mais prático?
 
 . . . 
 
-[Prompt]{.alert}: E como faço para ter um ícone na área de trabalho para executar o programa?
+
+::: {.callout-caution title="Prompt" icon="false"}
+E como faço para ter um ícone na área de trabalho para executar o programa?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Para criar um atalho com ícone na área de trabalho (no Linux), siga estes passos:
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+ Para criar um atalho com ícone na área de trabalho (no Linux), siga estes passos:
 
 ### 1. Crie um arquivo `.desktop`
 
@@ -857,8 +902,7 @@ Categories=Utility;
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot _(continuação)_]{.alert}: 
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
 
 ### 2. Torne o atalho executável
 
@@ -958,12 +1002,15 @@ Poderíamos usar algum software, como o Adobe Acrobat, para fazer isso manualmen
 Antes de pedirmos o Copilot para criar a ferramenta completa, vamos explorar como
 podemos lidar com a junção (_merge_) de arquivos PDF em Python.
 
-[Prompt]{.alert}: Eu gostaria de escrever um programa em Python que junte dois arquivos PDF em um só. Como posso fazer isso?
+
+::: {.callout-caution title="Prompt" icon="false"}
+Eu gostaria de escrever um programa em Python que junte dois arquivos PDF em um só. Como posso fazer isso?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Você pode usar a biblioteca `PyPDF2` para juntar dois arquivos PDF em Python. Veja um exemplo simples:
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+ Você pode usar a biblioteca `PyPDF2` para juntar dois arquivos PDF em Python. Veja um exemplo simples:
 
 1. Instale a biblioteca (caso ainda não tenha):
 ```bash
@@ -979,10 +1026,8 @@ from PyPDF2 import PdfMerger
 arquivos = ['arquivo1.pdf', 'arquivo2.pdf']
 
 merger = PdfMerger()
-
 for pdf in arquivos:
     merger.append(pdf)
-
 merger.write('pdf_unido.pdf')
 merger.close()
 ````
@@ -998,12 +1043,15 @@ Já temos então uma opção que parece atender o que precisamos.
 
 . . .
 
-[Prompt]{.alert}: Existe alguma forma de fazer isso sem precisar instalar um módulo Python?
+
+::: {.callout-caution title="Prompt" icon="false"}
+Existe alguma forma de fazer isso sem precisar instalar um módulo Python?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Não existe uma forma nativa em Python puro para manipular ou juntar arquivos PDF, pois o formato PDF é complexo e não é suportado pela biblioteca padrão do Python. 
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+ Não existe uma forma nativa em Python puro para manipular ou juntar arquivos PDF, pois o formato PDF é complexo e não é suportado pela biblioteca padrão do Python. 
 
 Se você não quiser instalar módulos Python, pode usar ferramentas externas já instaladas no Linux, como o `pdftk` ou o `qpdf`. Por exemplo, usando o terminal:
 
@@ -1032,12 +1080,15 @@ A primeira opção parece boa, mas vamos explorar se existem alternativas.
 
 . . . 
 
-[Prompt]{.alert}: Existem outros módulos Python que eu deveria considerar para tratar essa tarefa?
+
+::: {.callout-caution title="Prompt" icon="false"}
+Existem outros módulos Python que eu deveria considerar para tratar essa tarefa?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Sim! Além do **PyPDF2**, você pode considerar outros módulos Python para manipulação de PDFs:
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+Sim! Além do **PyPDF2**, você pode considerar outros módulos Python para manipulação de PDFs:
 
 - **pypdf**: É uma continuação moderna do PyPDF2, com mais recursos e manutenção ativa.
 - **PyMuPDF (fitz)**: Muito rápido e poderoso, permite manipular, mesclar, dividir e até extrair texto e imagens de PDFs.
@@ -1071,12 +1122,15 @@ Mas antes de seguirmos com o `pypdf`, vamos entender melhor os prós e contras d
 
 . . .
 
-[Prompt]{.alert}: Quais são os prós e contras de cada um desses módulos?
+
+::: {.callout-caution title="Prompt" icon="false"}
+Quais são os prós e contras de cada um desses módulos?
+:::
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot]{.alert}: Aqui está um resumo dos prós e contras dos principais módulos Python para manipulação de PDFs:
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+ Aqui está um resumo dos prós e contras dos principais módulos Python para manipulação de PDFs:
 
 ---
 
@@ -1097,8 +1151,8 @@ Mas antes de seguirmos com o `pypdf`, vamos entender melhor os prós e contras d
 
 ##
 
-::: {.fontsize70 .nonincremental}
-[GitHub Copilot _(continuação)_]{.alert}: 
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
+ .
 
 ### **2. pypdf**
 
@@ -1117,8 +1171,8 @@ Mas antes de seguirmos com o `pypdf`, vamos entender melhor os prós e contras d
 
 ##
 
-::: {.r-fit-text .nonincremental}
-[GitHub Copilot _(continuação)_]{.alert}: 
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental} 
+.
 
 ### **3. PyMuPDF (fitz)**
 
@@ -1133,12 +1187,13 @@ Mas antes de seguirmos com o `pypdf`, vamos entender melhor os prós e contras d
 
 - API um pouco mais complexa para tarefas simples.
 - Pode ser mais pesado para instalar (depende de bibliotecas C).
+
 :::
 
 ##
 
-::: {.fontsize70  .nonincremental}
-[GitHub Copilot _(continuação)_]{.alert}: 
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
+ .
 
 ### **4. pdfrw**
 
@@ -1157,8 +1212,8 @@ Mas antes de seguirmos com o `pypdf`, vamos entender melhor os prós e contras d
 
 ##
 
-::: {.fontsize70  .nonincremental}
-[GitHub Copilot _(continuação)_]{.alert}: 
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
+ .
 
 ### **5. pdfminer.six**
 
@@ -1200,7 +1255,7 @@ Vamos partir para a criação da ferramenta.
 
 ::: {.callout-tip}
 Antes de continuarmos, vale a pena chamar a atenção para [cuidados]{.alert} que devemos 
-tomar ao fazer automatizações que lidam com arquivos.
+tomar **ao fazer automatizações** que lidam com arquivos.
 
 Se a ferramenta que criarmos estiver incorreta, podemos perder arquivos em nosso computador.
 Algumas dicas são:
@@ -1230,9 +1285,28 @@ E podemos importar a bibliteca `pypdf` que já sabemos que vamos usar.
 
 ##
 
+Lembre-se também que precisamos seguir o mesmo procedimento do exemplo anterior
+para criar o ambiente virtual e instalar o módulo `pypdf`.
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install pypdf
+pip freeze > requirements.txt
+```
+
+. . .
+
+Lembre-se também de configurar o VS Code para usar o Python do ambiente virtual.
+
+##
+
+Vamos então criar um arquivo Python e definir a assinatura da função e a docstring.
+
 ::: {.r-fit-text .nonincremental}
 ```python
 import pypdf
+
 def adicionar_capas_a_pdfs(pasta_capas, pasta_relatorios, pasta_saida):
     """
     Adiciona capas personalizadas a arquivos PDF de relatórios.
@@ -1251,6 +1325,8 @@ def adicionar_capas_a_pdfs(pasta_capas, pasta_relatorios, pasta_saida):
 :::
 
 ##
+
+Esse foi o código gerado pelo Copilot no meu caso.
 
 ::: {.r-fit-text .nonincremental}
 ```python
@@ -1312,3 +1388,356 @@ if __name__ == "__main__":
     adicionar_capas_a_pdfs('pasta_capas', 'pasta_relatorios', 'pasta_saida')
 ```
 :::
+
+##
+
+Vamos agora copiar as pastas de capas e relatórios para dentro do nosso projeto.
+
+- E criar uma pasta `saida` vazia para onde os arquivos gerados serão salvos.
+- E vamos acertar os nomes das pastas no script.
+
+. . .
+
+Exemplo:
+
+```python
+if __name__ == "__main__":
+    # Exemplo de uso
+    adicionar_capas_a_pdfs('capas', 'relatorios', 'saida')
+```
+
+##
+
+Hora de testar o programa!
+
+- Confira, por amostragem, pelo menos 3 arquivos gerados para conferir se deu certo.
+
+## Reutilizando a ferramenta
+
+Vamos supor que essa operação fosse necessária mais vezes.
+
+- E que precisasse ser feita por alguém que não é programador.
+- Que tal pedirmos o Copilot para gerar uma interface gráfica simples para a ferramenta?
+
+. . .
+
+
+::: {.callout-caution title="Prompt" icon="false"}
+Eu gostaria de criar uma interface gráfica simples para essa ferramenta. Pode me ajudar?
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+ Claro! Você pode criar uma interface gráfica simples usando o Tkinter, que já vem com o Python. Vou sugerir um exemplo básico onde o usuário pode selecionar as três pastas (capas, relatórios e saída) e clicar em um botão para executar a função.
+
+Adicione o seguinte código ao final do seu arquivo junta_capas.py:
+
+```python
+# ...existing code...
+
+import tkinter as tk
+from tkinter import filedialog, messagebox
+
+def selecionar_pasta(entry_widget):
+    pasta = filedialog.askdirectory()
+    if pasta:
+        entry_widget.delete(0, tk.END)
+        entry_widget.insert(0, pasta)
+
+def executar():
+    pasta_capas = entry_capas.get()
+    pasta_relatorios = entry_relatorios.get()
+    pasta_saida = entry_saida.get()
+    try:
+        adicionar_capas_a_pdfs(pasta_capas, pasta_relatorios, pasta_saida)
+        messagebox.showinfo("Sucesso", "Arquivos gerados com sucesso!")
+    except Exception as e:
+        messagebox.showerror("Erro", str(e))
+```
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
+
+```python
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("Juntar Capas em PDFs")
+
+    tk.Label(root, text="Pasta das Capas:").grid(row=0, column=0, sticky="e")
+    entry_capas = tk.Entry(root, width=40)
+    entry_capas.grid(row=0, column=1)
+    tk.Button(root, text="Selecionar", command=lambda: selecionar_pasta(entry_capas)).grid(row=0, column=2)
+
+    tk.Label(root, text="Pasta dos Relatórios:").grid(row=1, column=0, sticky="e")
+    entry_relatorios = tk.Entry(root, width=40)
+    entry_relatorios.grid(row=1, column=1)
+    tk.Button(root, text="Selecionar", command=lambda: selecionar_pasta(entry_relatorios)).grid(row=1, column=2)
+
+    tk.Label(root, text="Pasta de Saída:").grid(row=2, column=0, sticky="e")
+    entry_saida = tk.Entry(root, width=40)
+    entry_saida.grid(row=2, column=1)
+    tk.Button(root, text="Selecionar", command=lambda: selecionar_pasta(entry_saida)).grid(row=2, column=2)
+
+    tk.Button(root, text="Executar", command=executar, width=20).grid(row=3, column=0, columnspan=3, pady=10)
+
+    root.mainloop()
+# ...existing code...
+```
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
+
+**Como funciona:**
+
+- O usuário seleciona as três pastas usando os botões "Selecionar".
+- Ao clicar em "Executar", a função é chamada e mostra uma mensagem de sucesso ou erro.
+
+Se quiser, pode separar a interface em outro arquivo, mas assim fica tudo em um só. Se precisar de melhorias, é só pedir!
+:::
+
+##
+
+Com esse código, temos uma interface gráfica simples, mas bem prática:
+
+::: {.columns}
+::: {.column}
+![](imagens/tela_programa_juntar_capas_pdfs.png){fig-align="center" fig-alt="Tela principal do programa para juntar capas em PDFs." style="max-height: 50vh; width: auto;"}
+:::
+::: {.column}
+![](imagens/tela_programa_juntar_capas_pdfs_selecionar.png){fig-align="center" fig-alt="Tela para navegar na estrutura de pastas e selecionar uma pasta." style="max-height: 50vh; width: auto;"}
+:::
+:::
+
+. . .
+
+Se quiséssemos poderíamos novamente criar um atalho na área de trabalho para abrir essa interface gráfica.
+
+
+# Fluxo de trabalho para usar módulos do Python com o Copilot {background-color="#40666e"}
+
+##
+
+Após termos feito esses dois exemplos, podemos pensar em um fluxo de trabalho para usar o Copilot
+na criação de ferramentas que usem módulos do Python.
+
+1. Pedir ao Copilot (ou ChatGPT) para listar módulos do Python que podem ser usados para a tarefa de interesse.
+2. Perguntar ao Copilot sobre os prós e contras de cada módulo.
+3. Escolher o módulo que parece mais adequado.
+4. Se necessário, criar um ambiente virtual e instalar o módulo.
+5. Seguir o Ciclo de Projeto de Funções que vimos anteriormente, incluindo o módulo escolhido.
+6. Se ficarmos travados, tentamos um módulo diferente.
+
+
+# Exemplo 3: Interface para Oficina de Programação de Jogos {background-color="#40666e"}
+
+##
+
+Nós acabamos de ter o 8º UFLA de Portas Abertas.
+
+- E, dentro do evento, tivemos a Oficina de Programação de Jogos.
+
+. . .
+
+Nessa oficina, os participantes do evento experimentam, e modificam, jogos 
+implementados como trabalho da disciplina IPOO de Sistemas de Informação.
+
+- E um jogo para ensino de Python, desenvolvimento como TCC de Ciência da Computação.
+
+##
+
+No evento do ano anterior tínhamos duas dificuldades:
+
+- Deixávamos todos os jogos em todas as máquinas, mas abríamos um jogo
+  em cada máquina alternadamente.
+  - A ideia era que os participantes percebessem que havia vários jogos.
+- Depois que os participantes alteravam o código de um jogo,
+  precisávamos restaurar o código original para a próxima turma.
+- Dava uma trabalheira fazer isso na mão.
+
+##
+
+Usei então o ChatGPT para criar uma interface gráfica simples
+
+- que funcionasse como uma tela inicial (_launcher_) que mostrasse os jogos disponíveis.
+  - Que permitisse iniciar os jogos ao clicar neles.
+- E que também tivesse um botão para restaurar o código original do jogo.
+  - Para isso, usei um repositório git local para cada jogo.
+  - Restaurar o jogo era simplesmente rodar o comando `git restore .` na pasta do jogo.
+
+##
+
+Esse foi meu primeiro prompt para o ChatGPT:
+
+::: {.callout-caution title="Prompt" icon="false"}
+Tenho alguns jogos desenvolvidos em Java usando a IDE Greenfoot que gostaria de utilizar em uma demonstração. A ideia é que a pessoa chegue e jogue os 7 jogos disponíveis no computador. Para jogar cada jogo é necessário abrir o projeto no Greenfoot e executar. Para facilitar esse processo, gostaria de ter uma espécie de "landing page" que mostrasse uma imagem de cada jogo e que, quando o usuário clicasse na imagem, o Greenfoot fosse aberto com o projeto do jogo em questão. Estou usando Linux Ubuntu e creio que para abrir o Greenfoot bastaria executar uma linha de comando passando o caminho do projeto como parâmetro. Essa "landing page" pode ser com qualquer tipo de tecnologia que seja fácil de fazer (pode ser web rodando local, ou uma aplicação Python, enfim, qualquer coisa). Procuro algo simples e rápido de fazer ou alterar.
+:::
+
+##
+
+O ChatGPT sugeriu três opções, já com exemplos de código
+
+1. Uma página HTML que precisaria ser aberta com Electron ou com um servidor Python para conseguir executar scripts locais.
+2. Uma aplicação Python com interface gráfica usando `Tkinter`.
+3. Um menu no terminal para a escolha do jogo.
+
+. . .
+
+Não entendi porque ele sugeriu a opção 3 :)
+
+- Mas, enfim, escolhi a opção 2, que me pareceu mais prática.
+
+##
+
+Usei o prompt:
+
+::: {.callout-caution title="Prompt" icon="false"}
+Gostei da opção 2. Mas gostaria que a aplicação fosse aberta maximizada e que as imagens dos jogos ficasse todas do mesmo tamanho em um grid com 2 linhas e 4 colunas
+:::
+
+. . .
+
+Não vou colocar todos os prompts aqui, não fiz de forma muito estruturada.
+
+- De um certo ponto em diante passei para o Copilot.
+
+##
+
+Mas alguns dos passos foram:
+
+- Foram geradas algumas versões de código que geravam erro (eu colava o erro no ChatGPT).
+- Durante o processo, às vezes aparecia só o primeiro jogo, outra hora o primeiro e o quinto.
+- Quando apareceram todos os jogos, a janela deixou de ficar maximizada.
+- Depois, pedi para substituir um dos espaços de jogo por uma imagem.
+- Pedi que, ao abrir um jogo, a IDE fosse fechada antes (para não deixar várias instâncias em execução).
+
+##
+
+Mas alguns dos passos foram:
+
+- Acrescentei um dos jogos que era via Godot Engine e não via Greenfoot.
+- Acrescentei o botão para restaurar o código original dos jogos.
+
+. . .
+
+E esse foi o resultado final...
+
+##
+
+![](imagens/oficina_programacao_jogos.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh; width: auto;"}
+
+##
+
+No dia do evento, ainda tivemos uma surpresa.
+
+- Eu tinha testado o programa em uma máquina do laboratório.
+  - E como, em tese, todas as máquinas têm a mesma imagem, tudo funcionaria.
+- Mas ao fazer a instalação pela manhã, vimos que o programa não funcionava em algumas máquinas.
+  - Por que o módulo `tkinter` depende de instalação no sistema operacional.
+- Consegui apoio para fazer a instalação (dependia de senha de administrador).
+
+##
+
+Mas enquanto estava tentando isso, usei o ChatGPT e ele informou que uma alternativa seria usar o `pygame`.
+
+- Pois é um módulo Python que não depende de instalação no sistema operacional.
+
+. . .
+
+Pretendo fazer isso no próximo ano :)
+
+# Exemplo 4: Juntando fotos de vários celulares {background-color="#40666e"}
+
+##
+
+Imagine que queremos juntar fotos dos nossos celulares e de nossos familiares.
+
+- A ideia é ter tudo acessível em um único lugar.
+- Para que todos possam ter acesso a todas as fotos.
+- Mas, provavelmente, existem fotos repetidas, que uma pessoa mandou para outra.
+
+. . .
+
+Vamos então criar uma ferramenta que faça isso para nós.
+
+- Obs.: não vou colocar todos os passos aqui, apenas os prompts usados no livro. 
+Mas o processo é parecido com os exemplos anteriores.
+
+##
+
+::: {.callout-caution title="Prompt" icon="false"}
+Eu preciso escrever um programa em Python que copia arquivos. Como posso fazer isso?
+:::
+
+. . .
+
+A ideia de copiar arquivos em vez de movê-los é para evitar perda de dados.
+
+::: {.callout-caution title="Prompt" icon="false"}
+O módulo `shutil` precisa ser instalado?
+:::
+
+##
+
+::: {.callout-caution title="Prompt" icon="false"}
+Como eu posso descobrir se dois arquivos PNG são idênticos usando Python?
+:::
+
+::: {.callout-caution title="Prompt" icon="false"}
+E se eu tiver centenas de arquivos PNG e quiser encontrar arquivos duplicados?
+Essa abordagem ainda funciona?
+:::
+
+::: {.callout-caution title="Prompt" icon="false"}
+Como eu posso descobrir se dois arquivos PNG são idênticos usando Python?
+:::
+
+##
+
+A partir daí o livro usa [decomposição de problemas]{.alert} para criar a ferramenta.
+
+. . .
+
+Define as funções abaixo usando **_design top-down_**:
+
+1. Fazer cópias de vários arquivos em uma pasta de destino, apenas se ele não for duplicado.
+2. Fazer cópia de um arquivo em uma pasta de destino, apenas se ele não for duplicado.
+3. Obter um bom nome para o arquivo copiado (para evitar perda de dados com conflito de nomes).
+
+##
+
+Em seguida, são apresentas as assinaturas e docstrings das funções usadas no livro.
+
+```python
+def obter_bom_nome_arquivo(caminho_arquivo):
+    """
+    caminho_arquivo é o nome de um arquivo PNG.
+
+    Enquanto o arquivo caminho_arquivo existir, acrescenta
+    um caractere _ logo antes do .png e retorna o novo nome.
+    Ex.: 9595.png se torna 9595_.png.
+
+    Retorna o nome resultante do arquivo.
+    """
+```
+
+##
+
+```python
+def fazer_copia(caminho_arquivo, pasta_destino):
+    """
+    """
+```
+
+##
+
+```python
+def fazer_varias_copias(pastas, pasta_destino):
+    """
+    
+    """
+```
