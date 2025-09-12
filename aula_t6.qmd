@@ -574,12 +574,15 @@ if __name__ == "__main__":
 ##
 
 :::{.callout-tip}
-Como nós criamos o ambiente virtual pelo termninal do VS Code, se tentarmos usar a opção `Run` do VS Code, ele não vai funcionar.
+Como nós criamos o ambiente virtual pelo terminal do VS Code, precisamos conferir se o
+VS Code identificou automaticamente o ambiente virtual, caso contrário, se tentarmos usar 
+a opção `Run`, o programa não vai funcionar.
 
 Precisamos escolher a versão do Python que está dentro do ambiente virtual.
 Basta clicar no canto inferior esquerdo do VS Code e escolher o Python correto.
 
-Obs.: se tivéssemos criado o ambiente virtual pelo VS Code (`Ctrl_Shift_P` e escolher `Python: Create Environment`), o VS Code já teria escolhido o Python correto.
+Obs.: se criarmos o ambiente virtual pelo VS Code (`Ctrl_Shift_P` e escolher 
+`Python: Create Environment`), o VS Code já escolhe o Python correto.
 :::
 
 ##
@@ -671,8 +674,15 @@ def gerar_lista_numerada():
 if __name__ == "__main__":
     gerar_lista_numerada()
 ````
+:::
+
+##
+
+::: {.r-fit-text .nonincremental}
+[GitHub Copilot _(continuação)_]{.alert}: 
 
 Agora, palavras acentuadas serão ordenadas corretamente conforme o português.  
+
 **Obs:** Certifique-se de que o locale `pt_BR.UTF-8` está instalado no seu sistema Linux. Se não estiver, instale com:
 
 ```bash
@@ -768,9 +778,52 @@ Legal! Agora podemos abrir um terminal, rodar o comando `gerador-lista-numerada`
 
 - Teremos nossa lista de compras numerada na Área de Transferência.
 
-. . . 
+. . .
+
+Bom, sistemas em produção são sempre mais complicados.
+
+- O código que apresentei até aqui funcionou no meu computador.
+- Mas ao testar no notebook para preparar a aula, tive que fazer alguns ajustes.
+  - Porque nele, a versão do Ubuntu e do Python são mais recentes.
+- E, claro, o Copilot me ajudou a fazer as alterações necessárias.
+
+##
+
+O problema é que nas versões mais recentes do Python, o comando abaixo não é permitido:
+
+```bash
+pip install --user --editable .
+```
+
+. . .
+
+Isso para proteger a integridade do sistema, evitando instalação de pacotes sem usar um ambiente virtual.
+
+- Mas, para o nosso caso, queremos mesmo instalar o pacote para o usuário.
+- E, assim, termos o comando disponível globalmente.
+
+##
+
+Perguntando então ao Copilot, precisei instalar com o comando abaixo:
+
+```bash
+pip install --user --break-system-packages .
+```
+
+. . .
+
+E também precisei rodar os comandos abaixo para garantir que o diretório `~/.local/bin` estivesse no meu `$PATH`.
+
+```bash
+echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
+source ~/.bashrc
+```
+
+##
 
 Mas será que não podemos fazer algo ainda mais prático?
+
+- Para um usuário leigo, é ruim ter que abrir um terminal e saber o nome do comando.
 
 . . . 
 
@@ -827,6 +880,28 @@ Se aparecer um aviso de segurança, clique em "Confiar" ou "Permitir execução"
 
 ##
 
+Aqui tive que fazer outra adaptação para rodar no notebook.
+
+- Referente ao caminho do executável que precisa ser completo no Ubuntu mais recente.
+
+. . . 
+
+No final das contas utilizei esse arquivo `GeradorListaNumerada.desktop`:
+
+```ini
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Gerador Lista Numerada
+Comment=Gera uma lista numerada a partir da área de transferência
+Exec=/home/julio/.local/bin/gerador-lista-numerada
+Icon=/home/julio/Área de trabalho/icone.png
+Terminal=false
+Categories=Utility;
+```
+
+##
+
 Bacana! Temos agora um programa disponível na área de trabalho.
 
 - Ficou muito mais rápido gerar a lista numerada.
@@ -835,19 +910,405 @@ Bacana! Temos agora um programa disponível na área de trabalho.
 
 Poderíamos melhorar nosso programa dando algum retorno de que ele foi executado com sucesso.
 
-- Mas vamos tratar outra demanda tediosa agora.
+- E, claro, para criar o atalho na Área de Trabalho do Windows o processo seria diferente.
+
+##
+
+Poderíamos também pensar em outros exemplos de programas com abordagem parecida:
+
+- Copiar duas colunas de uma planilha contendo e-mail e nota dos alunos e gerar texto
+  para um e-mail para a secretaria informando o número de aprovados e reprovados.
+- Copiar trechos do arquivo PDF da Resolução CEPE 473 e acertar as quebras de linha.
+
+. . .
+
+Mas vamos tratar outra demanda tediosa agora.
 
 # Exemplo 2: Adicionando capas a arquivos PDF {background-color="#40666e"}
 
 ##
 
+Vamos voltar ao cenário comentado no início da aula.
+
+- Suponha que temos 100 arquivos PDF, cada um com um relatório diferente.
+- E que precisamos adicionar uma capa personalizada a cada um desses arquivos.
+
+. . .
+
+Primeiramente, vale ressaltar que não é possível ler arquivos PDF da mesma forma que lemos arquivos texto e CSV.
+
+- Arquivos PDF, do Word, Excel, etc., possuem uma estrutura interna diferente.
+
+##
+
+O arquivo [AulaT6-ex2.zip](dados/AulaT6-ex2.zip) contém duas pastas:
+
+- `capas`: com as 100 capas individuais em PDF.
+- `relatorios`: com os 100 relatórios individuais também em PDF.
+
+. . .
+
+Poderíamos usar algum software, como o Adobe Acrobat, para fazer isso manualmente.
+
+- Mas imagina a trabalheira que daria.
+- Em vez disso, vamos pedir ao Copilot para criar uma ferramenta que faça isso para nós.
+
+##
+
+Antes de pedirmos o Copilot para criar a ferramenta completa, vamos explorar como
+podemos lidar com a junção (_merge_) de arquivos PDF em Python.
+
+[Prompt]{.alert}: Eu gostaria de escrever um programa em Python que junte dois arquivos PDF em um só. Como posso fazer isso?
+
+##
+
+::: {.r-fit-text .nonincremental}
+[GitHub Copilot]{.alert}: Você pode usar a biblioteca `PyPDF2` para juntar dois arquivos PDF em Python. Veja um exemplo simples:
+
+1. Instale a biblioteca (caso ainda não tenha):
+```bash
+pip install PyPDF2
+```
+
+2. Código para juntar dois PDFs:
+
+````python
+from PyPDF2 import PdfMerger
+
+# Lista dos arquivos PDF a serem unidos
+arquivos = ['arquivo1.pdf', 'arquivo2.pdf']
+
+merger = PdfMerger()
+
+for pdf in arquivos:
+    merger.append(pdf)
+
+merger.write('pdf_unido.pdf')
+merger.close()
+````
+
+Basta substituir `'arquivo1.pdf'` e `'arquivo2.pdf'` pelos nomes dos seus arquivos. O resultado será salvo como `pdf_unido.pdf`.
+:::
+
+##
+
+Já temos então uma opção que parece atender o que precisamos.
+
+- Mas vamos explorar se existe alguma opção com módulo _built-in_.
+
+. . .
+
+[Prompt]{.alert}: Existe alguma forma de fazer isso sem precisar instalar um módulo Python?
+
+##
+
+::: {.r-fit-text .nonincremental}
+[GitHub Copilot]{.alert}: Não existe uma forma nativa em Python puro para manipular ou juntar arquivos PDF, pois o formato PDF é complexo e não é suportado pela biblioteca padrão do Python. 
+
+Se você não quiser instalar módulos Python, pode usar ferramentas externas já instaladas no Linux, como o `pdftk` ou o `qpdf`. Por exemplo, usando o terminal:
+
+**Com `pdftk`:**
+```bash
+pdftk arquivo1.pdf arquivo2.pdf cat output pdf_unido.pdf
+```
+
+**Com `qpdf`:**
+```bash
+qpdf --empty --pages arquivo1.pdf arquivo2.pdf -- pdf_unido.pdf
+```
+
+Essas ferramentas precisam estar instaladas no seu sistema, mas não exigem instalar módulos Python. Se preferir uma solução 100% Python, será necessário instalar um módulo como o `PyPDF2`.
+:::
+
+##
+
+Bom, a solução apresentada depende da instalação de programas externos, o que parece mais complicado do que instalar um módulo Python.
+
+- Obs.: no livro, o Copilot sugeriu criar um script Python que no final das contas usava esses programas.
+
+. . .
+
+A primeira opção parece boa, mas vamos explorar se existem alternativas.
+
+. . . 
+
+[Prompt]{.alert}: Existem outros módulos Python que eu deveria considerar para tratar essa tarefa?
+
+##
+
+::: {.r-fit-text .nonincremental}
+[GitHub Copilot]{.alert}: Sim! Além do **PyPDF2**, você pode considerar outros módulos Python para manipulação de PDFs:
+
+- **pypdf**: É uma continuação moderna do PyPDF2, com mais recursos e manutenção ativa.
+- **PyMuPDF (fitz)**: Muito rápido e poderoso, permite manipular, mesclar, dividir e até extrair texto e imagens de PDFs.
+- **pdfminer.six**: Focado em extração de texto, mas também pode manipular PDFs em alguns casos.
+- **pdfrw**: Permite ler e escrever PDFs, além de mesclar e dividir arquivos.
+
+Para tarefas simples de juntar PDFs, **pypdf** e **PyMuPDF** são ótimas opções. Exemplo com pypdf:
+
+````python
+from pypdf import PdfMerger
+
+merger = PdfMerger()
+merger.append("arquivo1.pdf")
+merger.append("arquivo2.pdf")
+merger.write("pdf_unido.pdf")
+merger.close()
+````
+
+Escolha o módulo conforme suas necessidades e preferências!
+:::
+
+##
+
+A resposta do Copilot nos mostrou que existe um módulo mais moderno que o `PyPDF2`, o `pypdf`.
+
+- E cujo exemplo de código parece bem simples.
+
+. . . 
+
+Mas antes de seguirmos com o `pypdf`, vamos entender melhor os prós e contras de cada módulo sugerido.
+
+. . .
+
+[Prompt]{.alert}: Quais são os prós e contras de cada um desses módulos?
+
+##
+
+::: {.r-fit-text .nonincremental}
+[GitHub Copilot]{.alert}: Aqui está um resumo dos prós e contras dos principais módulos Python para manipulação de PDFs:
+
+---
+
+### **1. PyPDF2**
+
+**Prós:**
+
+- Fácil de usar para tarefas básicas (juntar, dividir, rotacionar).
+- Bastante documentado e com muitos exemplos.
+- Não depende de bibliotecas externas.
+
+**Contras:**
+
+- Desenvolvimento desacelerado (pode estar desatualizado).
+- Suporte limitado para PDFs complexos ou protegidos.
+- Algumas funções avançadas podem não funcionar corretamente.
+:::
+
+##
+
+::: {.fontsize70 .nonincremental}
+[GitHub Copilot _(continuação)_]{.alert}: 
+
+### **2. pypdf**
+
+**Prós:**
+
+- Continuação moderna do PyPDF2, com manutenção ativa.
+- Interface semelhante ao PyPDF2, facilitando a migração.
+- Corrige bugs e adiciona novos recursos.
+- Boa documentação.
+
+**Contras:**
+
+- Ainda pode ter limitações com PDFs muito complexos.
+- Algumas funções avançadas podem não estar presentes.
+:::
+
+##
+
+::: {.r-fit-text .nonincremental}
+[GitHub Copilot _(continuação)_]{.alert}: 
+
+### **3. PyMuPDF (fitz)**
+
+**Prós:**
+
+- Muito rápido e eficiente.
+- Suporte avançado para manipulação de páginas, extração de texto, imagens e metadados.
+- Suporta PDFs complexos e outros formatos (XPS, EPUB).
+- Documentação detalhada.
+
+**Contras:**
+
+- API um pouco mais complexa para tarefas simples.
+- Pode ser mais pesado para instalar (depende de bibliotecas C).
+:::
+
+##
+
+::: {.fontsize70  .nonincremental}
+[GitHub Copilot _(continuação)_]{.alert}: 
+
+### **4. pdfrw**
+
+**Prós:**
+
+- Leve e puro Python.
+- Permite mesclar, dividir e modificar PDFs.
+- Útil para manipulação de formulários PDF.
+
+**Contras:**
+
+- Menos mantido e atualizado.
+- Suporte limitado para PDFs complexos.
+- Documentação menos detalhada.
+:::
+
+##
+
+::: {.fontsize70  .nonincremental}
+[GitHub Copilot _(continuação)_]{.alert}: 
+
+### **5. pdfminer.six**
+
+**Prós:**
+
+- Excelente para extração de texto detalhada.
+- Suporta PDFs complexos e multilíngues.
+
+**Contras:**
+
+- Não é focado em manipulação (juntar/dividir) de PDFs.
+- API mais complexa para tarefas simples de manipulação.
+
+---
+
+**Resumo:**  
+
+- Para juntar/dividir PDFs: **pypdf** ou **PyMuPDF** são as melhores opções.
+- Para extração de texto: **pdfminer.six** ou **PyMuPDF**.
+- Para manipulação leve e sem dependências: **pdfrw**.
+
+Escolha conforme sua necessidade!
+:::
+
 ## 
-Possibilidades para o primeiro exemplo:
-- Copiar uma lista de palavras como `arroz feijao café` e gerar uma lista numerada com um por linha.
-- Ou copiar duas colunas de uma planilha contendo e-mail e nota e gerar e-mail informando para secretaria
-  um e-mail relatando o número de aprovados e reprovados.
-- Copiar trechos da CEPE 473 e acertar as quebras de linha.
-- Copiar a CEPE inteira e obter o artigo que fala sobre um determinado assunto.
 
-feijão, arroz, café, batata, óleo, cebola
+A resposta do Copilot nos ajudou a entender melhor as opções.
 
+- O `pypdf` parece ser uma boa escolha, pois é uma versão mais moderna do `PyPDF2`.
+- E o exemplo de código que ele nos deu é bem simples.
+
+. . .
+
+Vamos partir para a criação da ferramenta. 
+
+- Vamos definir a assinatura da função e a docstring com o que queremos.
+
+##
+
+::: {.callout-tip}
+Antes de continuarmos, vale a pena chamar a atenção para [cuidados]{.alert} que devemos 
+tomar ao fazer automatizações que lidam com arquivos.
+
+Se a ferramenta que criarmos estiver incorreta, podemos perder arquivos em nosso computador.
+Algumas dicas são:
+
+- Sempre trabalhar com cópias dos arquivos, nunca com os originais.
+- Verifique se os arquivos que a ferramenta vai processar estão corretos.
+  - Ex.: podemos comentar as linhas que abrem os arquivos e imprimir os nomes dos arquivos que seriam processados.
+  - Assim conseguimos conferir se são realmente os arquivos que pretendemos usar.
+- Sempre fazer testes com poucos arquivos, antes de rodar a ferramenta com todos os arquivos.
+:::
+
+##
+
+Para definirmos a assinatura da função, veja que precisaremos de três parâmetros: 
+
+- as pastas das capas, dos relatórios e de onde queremos colocar os arquivos gerados.
+
+. . .
+
+Também precisaremos explicar o padrão de nomes dos arquivos.
+
+- Para que o Copilot gera um código que junte a capa correta com o relatório correto.
+
+. . .
+
+E podemos importar a bibliteca `pypdf` que já sabemos que vamos usar.
+
+##
+
+::: {.r-fit-text .nonincremental}
+```python
+import pypdf
+def adicionar_capas_a_pdfs(pasta_capas, pasta_relatorios, pasta_saida):
+    """
+    Adiciona capas personalizadas a arquivos PDF de relatórios.
+
+    Parâmetros:
+    - pasta_capas: Caminho da pasta contendo os arquivos PDF das capas.
+      Os arquivos têm nome cover1.pdf, cover2.pdf, etc.
+    - pasta_relatorios: Caminho da pasta contendo os arquivos PDF dos relatórios.
+      Os arquivos têm nome 1.pdf, 2.pdf, etc.
+    - pasta_saida: Caminho da pasta onde os arquivos PDF resultantes serão salvos.
+
+    A função lê cada arquivo de capa e o respectivo relatório,
+    junta os dois em um único arquivo PDF e salva na pasta de saída.
+    """
+```
+:::
+
+##
+
+::: {.r-fit-text .nonincremental}
+```python
+import pypdf
+
+def adicionar_capas_a_pdfs(pasta_capas, pasta_relatorios, pasta_saida):
+    """
+    Adiciona capas personalizadas a arquivos PDF de relatórios.
+
+    Parâmetros:
+    - pasta_capas: Caminho da pasta contendo os arquivos PDF das capas.
+      Os arquivos têm nome cover1.pdf, cover2.pdf, etc.
+    - pasta_relatorios: Caminho da pasta contendo os arquivos PDF dos relatórios.
+      Os arquivos têm nome 1.pdf, 2.pdf, etc.
+    - pasta_saida: Caminho da pasta onde os arquivos PDF resultantes serão salvos.
+
+    A função lê cada arquivo de capa e o respectivo relatório,
+    junta os dois em um único arquivo PDF e salva na pasta de saída.
+    """
+    import os
+
+    # Lista os arquivos de capa e relatório
+    capas = sorted([f for f in os.listdir(pasta_capas) if f.startswith('cover') and f.endswith('.pdf')])
+    relatorios = sorted([f for f in os.listdir(pasta_relatorios) if f.endswith('.pdf')])
+
+    # Verifica se o número de capas e relatórios é o mesmo
+    if len(capas) != len(relatorios):
+        raise ValueError("O número de capas e relatórios deve ser o mesmo.")
+
+    for capa, relatorio in zip(capas, relatorios):
+        caminho_capa = os.path.join(pasta_capas, capa)
+        caminho_relatorio = os.path.join(pasta_relatorios, relatorio)
+        caminho_saida = os.path.join(pasta_saida, relatorio)
+
+        # Lê os arquivos PDF
+        leitor_capa = pypdf.PdfReader(caminho_capa)
+        leitor_relatorio = pypdf.PdfReader(caminho_relatorio)
+
+        escritor_pdf = pypdf.PdfWriter()
+
+        # Adiciona a capa
+        for pagina in leitor_capa.pages:
+            escritor_pdf.add_page(pagina)
+
+        # Adiciona o relatório
+        for pagina in leitor_relatorio.pages:
+            escritor_pdf.add_page(pagina)
+
+        # Salva o novo arquivo PDF com a capa adicionada
+        with open(caminho_saida, 'wb') as arquivo_saida:
+            escritor_pdf.write(arquivo_saida)
+
+# Exemplo de uso:
+# adicionar_capas_a_pdfs('pasta_capas', 'pasta_relatorios',
+#                          'pasta_saida')
+
+if __name__ == "__main__":
+    # Exemplo de uso
+    adicionar_capas_a_pdfs('pasta_capas', 'pasta_relatorios', 'pasta_saida')
+```
+:::
