@@ -1672,23 +1672,48 @@ Imagine que queremos juntar fotos dos nossos celulares e de nossos familiares.
 - A ideia é ter tudo acessível em um único lugar.
 - Para que todos possam ter acesso a todas as fotos.
 - Mas, provavelmente, existem fotos repetidas, que uma pessoa mandou para outra.
+  - e não queremos ter fotos repetidas no nosso acervo.
 
 . . .
 
 Vamos então criar uma ferramenta que faça isso para nós.
 
-- Obs.: não vou colocar todos os passos aqui, apenas os prompts usados no livro. 
-Mas o processo é parecido com os exemplos anteriores.
+
 
 ##
+
+Para testar, vamos usar o arquivo [AulaT6-ex4.zip](dados/AulaT6-ex4.zip) que contém várias figuras em PNG.
+
+- Existem duas subpastas, `figuras1` e `figuras2`, cada uma com várias figuras.
+- Não são fotos reais, mas servem para testar a ferramenta.
+
+##
+
+A pasta `figuras1` tem 98 figuras e a pasta `figuras2` tem 112.
+
+- No total são então 210 figuras, mas 10 são repetidas.
+  - Por ex.: a figura 1566.png da pasta `figuras1` é idêntica à figura 2471.png da pasta `figuras2`.
+- Portanto, se nossa ferramenta funcionar corretamente, no final teremos 200 figuras.
+- Além disso, devemos tomar cuidado pois podem existir fotos diferentes nas duas pastas mas com o mesmo nome.
+  - Por ex.: a figura 9595.png da pasta `figuras1` é diferente da figura 9595.png da pasta `figuras2`.
+  - Nesse caso nós não queremos perder nenhuma das duas, e precisaremos renomear uma delas.
+
+##
+
+Para esse exemplo, não vou colocar aqui nos slides o passo a passo completo.
+
+- Vou colocar os prompts usados no livro, mas sem apresentar os resutados do Copilot.
+- Repita os passos no seu computador e teste com o arquivo mencionado.
+
+## 
 
 ::: {.callout-caution title="Prompt" icon="false"}
 Eu preciso escrever um programa em Python que copia arquivos. Como posso fazer isso?
 :::
 
-. . .
+- A ideia de copiar arquivos em vez de movê-los é para evitar perda de dados.
 
-A ideia de copiar arquivos em vez de movê-los é para evitar perda de dados.
+. . .
 
 ::: {.callout-caution title="Prompt" icon="false"}
 O módulo `shutil` precisa ser instalado?
@@ -1715,11 +1740,16 @@ Como eu posso descobrir se dois arquivos PNG são idênticos usando Python?
 
 ##
 
-A partir daí o livro usa [decomposição de problemas]{.alert} para criar a ferramenta.
+A partir daí os autores livro usam [decomposição de problemas]{.alert} para criar a ferramenta.
 
-. . .
+- A ideia é criar uma ferramenta mais genérica de forma que possa ser usada em mais situações.
+- Por exemplo, ela poderia receber várias pastas de figuras e não apenas duas.
+- E poderia copiar as fotos para uma pasta de destino,
+  - sempre verificando se a foto já existe lá (para evitar duplicatas).
 
-Define as funções abaixo usando **_design top-down_**:
+##
+
+Os autores, usando **_design top-down_**, definem então as funções abaixo. 
 
 1. Fazer cópias de vários arquivos em uma pasta de destino, apenas se ele não for duplicado.
 2. Fazer cópia de um arquivo em uma pasta de destino, apenas se ele não for duplicado.
@@ -1730,13 +1760,14 @@ Define as funções abaixo usando **_design top-down_**:
 Essas são as assinaturas e docstrings das funções usadas no livro.
 
 - Como já vimos antes, na hora de implementar seguimos o caminho _bottom-up_.
+- Portanto, será apresentada primeira a 3ª função, depois a 2ª e por fim a 1ª.
 
-. . .
+##
 
 ```python
-def obter_bom_nome_arquivo(caminho_arquivo):
+def obter_bom_nome_arquivo(nome_arquivo):
     """
-    caminho_arquivo é o nome de um arquivo PNG.
+    nome_arquivo é o nome de um arquivo PNG.
 
     Enquanto o arquivo caminho_arquivo existir, acrescenta
     um caractere _ logo antes do .png e retorna o novo nome.
@@ -1749,8 +1780,15 @@ def obter_bom_nome_arquivo(caminho_arquivo):
 ##
 
 ```python
-def fazer_copia(caminho_arquivo, pasta_destino):
+def fazer_copia(nome_arquivo, pasta_destino):
     """
+    nome_arquivo é um nome de arquivo, como figuras1/1262.png.
+    pasta_destino é o nome de uma pasta.
+
+    Compara o arquivo apontado por nome_arquivo com todos os 
+    arquivos na pasta_destino
+    Se o arquivo não for idêntico a nenhum arquivo na pasta_destino,
+    faz uma cópia do arquivo na pasta_destino.
     """
 ```
 
@@ -1759,6 +1797,12 @@ def fazer_copia(caminho_arquivo, pasta_destino):
 ```python
 def fazer_varias_copias(pastas, pasta_destino):
     """
-    
+    pastas é uma lista de nomes de pastas.
+    pasta_destino é o nome de uma pasta.
+
+    Verifica cada arquivo nas pastas da lista pastas
+    e compara com todos os arquivos em pasta_destino.
+    Se um arquivo não for idêntico a nenhum arquivo em pasta_destino,
+    faz uma cópia do arquivo em pasta_destino.
     """
 ```

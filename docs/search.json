@@ -4358,46 +4358,81 @@
     "href": "aula_t6.html#section-97",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Imagine que queremos juntar fotos dos nossos celulares e de nossos familiares.\n\nA ideia é ter tudo acessível em um único lugar.\nPara que todos possam ter acesso a todas as fotos.\nMas, provavelmente, existem fotos repetidas, que uma pessoa mandou para outra.\n\n\nVamos então criar uma ferramenta que faça isso para nós.\n\nObs.: não vou colocar todos os passos aqui, apenas os prompts usados no livro. Mas o processo é parecido com os exemplos anteriores."
+    "text": "Imagine que queremos juntar fotos dos nossos celulares e de nossos familiares.\n\nA ideia é ter tudo acessível em um único lugar.\nPara que todos possam ter acesso a todas as fotos.\nMas, provavelmente, existem fotos repetidas, que uma pessoa mandou para outra.\n\ne não queremos ter fotos repetidas no nosso acervo.\n\n\n\nVamos então criar uma ferramenta que faça isso para nós."
   },
   {
     "objectID": "aula_t6.html#section-98",
     "href": "aula_t6.html#section-98",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Prompt\n\n\nEu preciso escrever um programa em Python que copia arquivos. Como posso fazer isso?\n\n\n\n\n\nA ideia de copiar arquivos em vez de movê-los é para evitar perda de dados.\n\n\n\n\nPrompt\n\n\nO módulo shutil precisa ser instalado?"
+    "text": "Para testar, vamos usar o arquivo AulaT6-ex4.zip que contém várias figuras em PNG.\n\nExistem duas subpastas, figuras1 e figuras2, cada uma com várias figuras.\nNão são fotos reais, mas servem para testar a ferramenta."
   },
   {
     "objectID": "aula_t6.html#section-99",
     "href": "aula_t6.html#section-99",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Prompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?\n\n\n\n\n\n\n\n\n\nPrompt\n\n\nE se eu tiver centenas de arquivos PNG e quiser encontrar arquivos duplicados? Essa abordagem ainda funciona?\n\n\n\n\n\n\n\n\n\n\nPrompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?"
+    "text": "A pasta figuras1 tem 98 figuras e a pasta figuras2 tem 112.\n\nNo total são então 210 figuras, mas 10 são repetidas.\n\nPor ex.: a figura 1566.png da pasta figuras1 é idêntica à figura 2471.png da pasta figuras2.\n\nPortanto, se nossa ferramenta funcionar corretamente, no final teremos 200 figuras.\nAlém disso, devemos tomar cuidado pois podem existir fotos diferentes nas duas pastas mas com o mesmo nome.\n\nPor ex.: a figura 9595.png da pasta figuras1 é diferente da figura 9595.png da pasta figuras2.\nNesse caso nós não queremos perder nenhuma das duas, e precisaremos renomear uma delas."
   },
   {
     "objectID": "aula_t6.html#section-100",
     "href": "aula_t6.html#section-100",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "A partir daí o livro usa decomposição de problemas para criar a ferramenta.\n\nDefine as funções abaixo usando design top-down:\n\nFazer cópias de vários arquivos em uma pasta de destino, apenas se ele não for duplicado.\nFazer cópia de um arquivo em uma pasta de destino, apenas se ele não for duplicado.\nObter um bom nome para o arquivo copiado (para evitar perda de dados com conflito de nomes)."
+    "text": "Para esse exemplo, não vou colocar aqui nos slides o passo a passo completo.\n\nVou colocar os prompts usados no livro, mas sem apresentar os resutados do Copilot.\nRepita os passos no seu computador e teste com o arquivo mencionado."
   },
   {
     "objectID": "aula_t6.html#section-101",
     "href": "aula_t6.html#section-101",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Essas são as assinaturas e docstrings das funções usadas no livro.\n\nComo já vimos antes, na hora de implementar seguimos o caminho bottom-up.\n\ndef obter_bom_nome_arquivo(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo PNG.\n\n    Enquanto o arquivo caminho_arquivo existir, acrescenta\n    um caractere _ logo antes do .png e retorna o novo nome.\n    Ex.: 9595.png se torna 9595_.png.\n\n    Retorna o nome resultante do arquivo.\n    \"\"\""
+    "text": "Prompt\n\n\nEu preciso escrever um programa em Python que copia arquivos. Como posso fazer isso?\n\n\n\n\n\nA ideia de copiar arquivos em vez de movê-los é para evitar perda de dados.\n\n\n\n\n\n\nPrompt\n\n\nO módulo shutil precisa ser instalado?"
   },
   {
     "objectID": "aula_t6.html#section-102",
     "href": "aula_t6.html#section-102",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "def fazer_copia(caminho_arquivo, pasta_destino):\n    \"\"\"\n    \"\"\""
+    "text": "Prompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?\n\n\n\n\n\n\n\n\n\nPrompt\n\n\nE se eu tiver centenas de arquivos PNG e quiser encontrar arquivos duplicados? Essa abordagem ainda funciona?\n\n\n\n\n\n\n\n\n\n\nPrompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?"
   },
   {
     "objectID": "aula_t6.html#section-103",
     "href": "aula_t6.html#section-103",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "A partir daí os autores livro usam decomposição de problemas para criar a ferramenta.\n\nA ideia é criar uma ferramenta mais genérica de forma que possa ser usada em mais situações.\nPor exemplo, ela poderia receber várias pastas de figuras e não apenas duas.\nE poderia copiar as fotos para uma pasta de destino,\n\nsempre verificando se a foto já existe lá (para evitar duplicatas)."
+  },
+  {
+    "objectID": "aula_t6.html#section-104",
+    "href": "aula_t6.html#section-104",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Os autores, usando design top-down, definem então as funções abaixo.\n\nFazer cópias de vários arquivos em uma pasta de destino, apenas se ele não for duplicado.\nFazer cópia de um arquivo em uma pasta de destino, apenas se ele não for duplicado.\nObter um bom nome para o arquivo copiado (para evitar perda de dados com conflito de nomes)."
+  },
+  {
+    "objectID": "aula_t6.html#section-105",
+    "href": "aula_t6.html#section-105",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Essas são as assinaturas e docstrings das funções usadas no livro.\n\nComo já vimos antes, na hora de implementar seguimos o caminho bottom-up.\nPortanto, será apresentada primeira a 3ª função, depois a 2ª e por fim a 1ª."
+  },
+  {
+    "objectID": "aula_t6.html#section-106",
+    "href": "aula_t6.html#section-106",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "def obter_bom_nome_arquivo(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo PNG.\n\n    Enquanto o arquivo caminho_arquivo existir, acrescenta\n    um caractere _ logo antes do .png e retorna o novo nome.\n    Ex.: 9595.png se torna 9595_.png.\n\n    Retorna o nome resultante do arquivo.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t6.html#section-107",
+    "href": "aula_t6.html#section-107",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "def fazer_copia(caminho_arquivo, pasta_destino):\n    \"\"\"\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t6.html#section-108",
+    "href": "aula_t6.html#section-108",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
     "text": "def fazer_varias_copias(pastas, pasta_destino):\n    \"\"\"\n    \n    \"\"\""
