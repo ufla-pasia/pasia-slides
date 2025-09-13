@@ -3644,7 +3644,7 @@
     "href": "aula_t6.html#section-1",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Suponha qe você seja responsável por criar 100 relatórios, cada um para uma pessoa diferente.\n\nPoderia ser um professor que precisa enviar correções para seus estudantes.\nOu alguém em um departamento de RH que precisa enviar a avaliação anual para cada funcionário.\n\n\nSuponha que você tenha decidido preparar os relatórios em arquivos PDF.\n\nE que você precisa de uma capa para os arquivos que é customizada para cada pessoa.\nSeu colega, designer gráfico, preparou essas capas para você."
+    "text": "Suponha que você seja responsável por criar 100 relatórios, cada um para uma pessoa diferente.\n\nPoderia ser um professor que precisa enviar correções para seus estudantes.\nOu alguém em um departamento de RH que precisa enviar a avaliação anual para cada funcionário.\n\n\nSuponha que você tenha decidido preparar os relatórios em arquivos PDF.\n\nE que você precisa de uma capa para os arquivos que é customizada para cada pessoa.\nSeu colega, designer gráfico, preparou essas capas para você."
   },
   {
     "objectID": "aula_t6.html#section-2",
@@ -3665,21 +3665,21 @@
     "href": "aula_t6.html#section-4",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Nessa aula vamos ver como escrever programas que automatizam tarefas tediosas.\n\nUma das tarefas será essa dos PDFs.\nMas também veremos outras tarefas que podem ser automatizadas."
+    "text": "Nessa aula vamos ver como escrever programas que automatizam tarefas tediosas.\n\nUma das tarefas será essa dos PDFs.\nMas também veremos outras tipos de tarefas manuais com as quais podemos ganhar tempo automatizando-as."
   },
   {
     "objectID": "aula_t6.html#section-5",
     "href": "aula_t6.html#section-5",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Muitas vezes os programadores se definem como preguiçosos.\n\nNão no sentido de que não queremos fazer nosso trabalho.\nMas sim, que não queremos fazer tarefas que são reptitivas, chatas, tediosas 😒.\n\nPara as quais os computadores são muito melhores que nós.\n\n\n\nBons programadores costumam ter um “sentido aranha” 🕸️ para identificar tarefas penosas."
+    "text": "Muitas vezes os programadores se definem como preguiçosos.\n\nNão no sentido de que não queremos fazer nosso trabalho.\nMas sim, que não queremos fazer tarefas que são repetitivas, chatas, tediosas 😒.\n\nTipos de tarefas que os computadores são muito melhores que nós.\n\n\n\nBons programadores costumam ter um 🕷️ “sentido aranha” 🕸️ para identificar tarefas penosas."
   },
   {
     "objectID": "aula_t6.html#section-6",
     "href": "aula_t6.html#section-6",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Suponha, por exemplo, que tenhamos centenas de fotos que juntamos de uma viagem.\n\nE que queremos remover as fotos duplicadas.\nNão queremos olhar uma por uma, pois isso levaria muito tempo.\n\n\nOu suponha que um professor tenha que enviar um e-mail com notas para cada um de seus estudantes.\n\nSe forem poucos alunos ele pode escrever um e-mail para cada um.\nMas se forem muitos, nenhum professor vair querer fazer isso manualmente."
+    "text": "Suponha, por exemplo, que tenhamos centenas de fotos que juntamos de uma viagem. 🖼️\n\nE queremos remover as fotos duplicadas.\nE, claro, não queremos ter o trabalho de verificar uma por uma, pois isso levaria muito tempo.\n\n\nOu suponha que um professor tenha que enviar um e-mail com notas para cada um de seus estudantes.\n\nSe forem poucos alunos ele pode escrever um e-mail para cada um.\nMas se forem muitos, nenhum professor vair querer fazer isso manualmente."
   },
   {
     "objectID": "aula_t6.html#section-7",
@@ -3714,7 +3714,7 @@
     "href": "aula_t6.html#section-11",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Muitas vezes precisamos usar módulos (bibliotecas) do Python para realizar alguma tarefa que precisamos.\n\nPode ser que seja uma biblioteca incluída (built-in) do Python.\n\nEx.: csv, json, zipfile, etc.\n\nOu uma biblioteca que precisamos instalar antes de usá-la."
+    "text": "Muitas vezes precisamos usar módulos (bibliotecas) do Python para realizar alguma tarefa que precisamos.\n\nPode ser que seja uma biblioteca incluída (built-in) do Python.\n\nEx.: csv, json, zipfile, etc.\n\nOu uma biblioteca que precisamos instalar antes de usar."
   },
   {
     "objectID": "aula_t6.html#section-12",
@@ -3735,7 +3735,7 @@
     "href": "aula_t6.html#section-14",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Ao fazer isso, devemos seguir o processo que já vimos antes:\n\nverificar a corretude do código (testes),\ncorrigir os bugs,\ne talvez decompor o problema.\n\n\nMas aqui na aula vamos nos concentrar na interação com o Copilot para automizarmos a tarefa que precisamos.\n\nPara manter o foco no conteúdo que estamos trabalhando aqui."
+    "text": "Ao fazer isso, devemos seguir o processo que já vimos antes:\n\nverificar a corretude do código (testes),\ncorrigir os bugs,\ne talvez decompor o problema.\n\n\nMas aqui na aula vamos nos concentrar na interação com o Copilot para automizarmos a tarefa que precisamos.\n\nPara manter o foco no conteúdo que estamos trabalhando neste capítulo."
   },
   {
     "objectID": "aula_t6.html#section-15",
@@ -3763,7 +3763,7 @@
     "href": "aula_t6.html#section-18",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Essa Área de Transferência é onde ficam os últimos dados que copiamos com o Ctrl+c.\n\nPodemos então criar uma ferramenta que obtenha as palavras da Área de Transferência.\nGere a lista numerada.\nE copie a lista numerada de volta para a Área de Transferência.\n\n\nAssim, depois de rodar a ferramenta, podemos simplesmente colar (Ctrl+v) a lista numerada onde quisermos."
+    "text": "Essa Área de Transferência é onde ficam os últimos dados que copiamos com o Ctrl+c.\n\nPodemos então criar uma ferramenta que obtenha as palavras da Área de Transferência;\n\ngere a lista numerada;\ne copie a lista numerada de volta para a Área de Transferência.\n\n\n\nAssim, depois de rodar a ferramenta, podemos simplesmente colar (Ctrl+v) a lista numerada onde quisermos."
   },
   {
     "objectID": "aula_t6.html#section-19",
@@ -3798,7 +3798,7 @@
     "href": "aula_t6.html#section-23",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "A resposta do Copilot nos ensina que podemos usar o módulo pyperclip para interagir com a Área de Transferência em um programa em Python.\n\nEle também nos dá um exemplo de como usar o módulo.\nEle também nos diz como instalar o módulo.\n\nO que mostra que ele é não é built-in.\n\n\n\nMas será que não daria para fazer nossa ferramenta sem instalar um módulo?\n\nVamos perguntar ao Copilot."
+    "text": "A resposta do Copilot nos ensina que podemos usar o módulo pyperclip para interagir com a Área de Transferência em um programa em Python.\n\nE nos dá um exemplo de como usar o módulo.\nEle também nos diz como instalar o módulo.\n\nO que mostra que ele é não é built-in.\n\n\n\nMas será que não daria para fazer nossa ferramenta sem instalar um módulo?\n\nVamos perguntar ao Copilot."
   },
   {
     "objectID": "aula_t6.html#section-24",
@@ -3840,14 +3840,14 @@
     "href": "aula_t6.html#section-29",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Bom, essa resposta não ajudou muito, afinal continua basicamente fazendo a mesma coisa.\n\nNo livro, a primeira solução do Copilot foi usar o módulo tkinter.\n\nQue tem a limitação de só funcionar em ambientes gráficos (não funciona em servidores Linux, por exemplo).\n\n\n\nAo pedir outra opção, o Copilot sugeriu um código específico para Windows usando win32clipboard.\n\nPorque os autores estavam em ambiente Windows.\nMas tem o mesmo tipo de limitação da nossa solução com xclip."
+    "text": "Bom, essa resposta não ajudou muito, afinal continua basicamente fazendo a mesma coisa da resposta anterior\n\nNo livro, a primeira solução dada pelo Copilot usava o módulo tkinter.\n\nQue tem a limitação de só funcionar em ambientes gráficos (não funciona em servidores Linux, por exemplo).\n\n\n\nAo pedir outra opção, o Copilot sugeriu um código específico para Windows usando win32clipboard.\n\nPorque os autores estavam em ambiente Windows.\nMas tem o mesmo tipo de limitação da nossa solução com xclip."
   },
   {
     "objectID": "aula_t6.html#section-30",
     "href": "aula_t6.html#section-30",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Avaliando então as opções que temos, a melhor é usar o módulo pyperclip.\n\nAfinal instalar um módulo não é algo tão complicado.\nE o pyperclip funciona em Linux, Windows e macOS.\nE não depende de programas externos."
+    "text": "Avaliando então as opções que temos, a melhor é usar o módulo pyperclip.\n\nAfinal instalar um módulo não é algo tão complicado.\nE o pyperclip funciona em Linux, Windows e macOS,\n\nsem depender de programas externos."
   },
   {
     "objectID": "aula_t6.html#section-31",
@@ -3917,7 +3917,7 @@
     "href": "aula_t6.html#section-39",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Dica\n\n\nComo nós criamos o ambiente virtual pelo terminal do VS Code, precisamos conferir se o VS Code identificou automaticamente o ambiente virtual, caso contrário, se tentarmos usar a opção Run, o programa não vai funcionar.\nPrecisamos escolher a versão do Python que está dentro do ambiente virtual. Basta clicar no canto inferior esquerdo do VS Code e escolher o Python correto.\nObs.: se criarmos o ambiente virtual pelo VS Code (Ctrl_Shift_P e escolher Python: Create Environment), o VS Code já escolhe o Python correto."
+    "text": "Dica\n\n\nComo nós criamos o ambiente virtual pelo terminal do VS Code, precisamos conferir se o VS Code identificou automaticamente o ambiente virtual, caso contrário, se tentarmos usar a opção Run, o programa não vai funcionar (pois não conseguirá importar o módulo pyperclip).\nPrecisamos escolher a versão do Python que está dentro do ambiente virtual. Basta clicar no canto inferior direito do VS Code e escolher o Python correto.\nObs.: se criarmos o ambiente virtual pelo VS Code (Ctrl+Shift+P e escolhendo Python: Create Environment), o VS Code já escolhe o Python correto."
   },
   {
     "objectID": "aula_t6.html#section-40",
@@ -3945,7 +3945,7 @@
     "href": "aula_t6.html#section-43",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot\n\n\nClaro! O problema ocorre porque a ordenação padrão do Python (sorted) não considera corretamente os acentos para a ordem alfabética em português. Para corrigir, você pode usar o módulo locale e configurar para 'pt_BR.UTF-8'. Veja como ajustar:\nimport pyperclip\nimport locale\n\ndef gerar_lista_numerada():\n    \"\"\"\n    A área de transferêcia tem linhas de texto contendo\n    palavras separadas por espaços e/ou vírgulas.\n\n    A função extrai as palavras obtidas da área de transferência,\n    ordena-as em ordem alfabética e cria uma lista numerada com\n    um item por linha.\n\n    O resultado é copiado de volta para a área de transferência.    \n    \"\"\"\n    # Configura a ordenação para o padrão do português do Brasil\n    locale.setlocale(locale.LC_COLLATE, 'pt_BR.UTF-8')\n\n    # Obtém o texto da área de transferência\n    texto = pyperclip.paste()\n\n    # Substitui vírgulas por espaços e divide o texto em palavras\n    palavras = texto.replace(',', ' ').split()\n\n    # Remove duplicatas e ordena as palavras em ordem alfabética considerando acentos\n    palavras_unicas = sorted(set(palavras), key=locale.strxfrm)\n\n    # Cria a lista numerada\n    lista_numerada = [f\"{i + 1}. {palavra}\" for i, palavra in enumerate(palavras_unicas)]\n\n    # Junta a lista em uma única string com quebras de linha\n    resultado = '\\n'.join(lista_numerada)\n\n    # Copia o resultado de volta para a área de transferência\n    pyperclip.copy(resultado)\n\nif __name__ == \"__main__\":\n    gerar_lista_numerada()"
+    "text": "GitHub Copilot (início)\n\n\nClaro! O problema ocorre porque a ordenação padrão do Python (sorted) não considera corretamente os acentos para a ordem alfabética em português. Para corrigir, você pode usar o módulo locale e configurar para 'pt_BR.UTF-8'. Veja como ajustar:\nimport pyperclip\nimport locale\n\ndef gerar_lista_numerada():\n    \"\"\"\n    A área de transferêcia tem linhas de texto contendo\n    palavras separadas por espaços e/ou vírgulas.\n\n    A função extrai as palavras obtidas da área de transferência,\n    ordena-as em ordem alfabética e cria uma lista numerada com\n    um item por linha.\n\n    O resultado é copiado de volta para a área de transferência.    \n    \"\"\"\n    # Configura a ordenação para o padrão do português do Brasil\n    locale.setlocale(locale.LC_COLLATE, 'pt_BR.UTF-8')\n\n    # Obtém o texto da área de transferência\n    texto = pyperclip.paste()\n\n    # Substitui vírgulas por espaços e divide o texto em palavras\n    palavras = texto.replace(',', ' ').split()\n\n    # Remove duplicatas e ordena as palavras em ordem alfabética considerando acentos\n    palavras_unicas = sorted(set(palavras), key=locale.strxfrm)\n\n    # Cria a lista numerada\n    lista_numerada = [f\"{i + 1}. {palavra}\" for i, palavra in enumerate(palavras_unicas)]\n\n    # Junta a lista em uma única string com quebras de linha\n    resultado = '\\n'.join(lista_numerada)\n\n    # Copia o resultado de volta para a área de transferência\n    pyperclip.copy(resultado)\n\nif __name__ == \"__main__\":\n    gerar_lista_numerada()"
   },
   {
     "objectID": "aula_t6.html#section-44",
@@ -3973,21 +3973,21 @@
     "href": "aula_t6.html#section-47",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Prompt\n\n\nEu gostaria que esse programa estivesse disponível para o usuário como um comando de terminal. Sem precisar entrar na pasta do projeto, ativer o ambiente virtual e rodar o programa manualmente. Como posso fazer isso?"
+    "text": "Vamos conversar com o Copilot para descobrir como fazer isso.\n\n\n\n\n\nPrompt\n\n\nEu gostaria que esse programa estivesse disponível para o usuário como um comando de terminal. Sem precisar entrar na pasta do projeto, ativer o ambiente virtual e rodar o programa manualmente. Como posso fazer isso?"
   },
   {
     "objectID": "aula_t6.html#section-48",
     "href": "aula_t6.html#section-48",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot\n\n\nPara tornar seu programa disponível como um comando de terminal, você pode empacotá-lo como um script executável e instalá-lo no sistema. O jeito mais comum em projetos Python é criar um entry point usando o setuptools. Veja como fazer:\n1. Crie um arquivo setup.py na raiz do projeto:\nfrom setuptools import setup\n\nsetup(\n    name=\"gerador-lista-numerada\",\n    version=\"1.0\",\n    py_modules=[\"gerador_lista_numerada\"],\n    install_requires=[\"pyperclip\"],\n    entry_points={\n        \"console_scripts\": [\n            \"gerador-lista-numerada=gerador_lista_numerada:gerar_lista_numerada\",\n        ],\n    },\n)\n2. Instale o pacote no modo editável (para desenvolvimento):\nNo terminal, dentro da pasta do projeto:\npip install --user --editable ."
+    "text": "GitHub Copilot (início)\n\n\nPara tornar seu programa disponível como um comando de terminal, você pode empacotá-lo como um script executável e instalá-lo no sistema.\nO jeito mais comum em projetos Python é criar um entry point usando o setuptools. Veja como fazer:\n1. Crie um arquivo setup.py na raiz do projeto:\nfrom setuptools import setup\n\nsetup(\n    name=\"gerador-lista-numerada\",\n    version=\"1.0\",\n    py_modules=[\"gerador_lista_numerada\"],\n    install_requires=[\"pyperclip\"],\n    entry_points={\n        \"console_scripts\": [\n            \"gerador-lista-numerada=gerador_lista_numerada:gerar_lista_numerada\",\n        ],\n    },\n)"
   },
   {
     "objectID": "aula_t6.html#section-49",
     "href": "aula_t6.html#section-49",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot (continuação)\n\n\n.\n3. Use o comando no terminal\nAgora, você pode rodar o comando de qualquer lugar:\ngerador-lista-numerada\n\nDicas:\n\nO comando será instalado em ~/.local/bin (Linux). Certifique-se de que esse diretório está no seu $PATH.\nPara outros usuários do sistema, use sudo pip install . (não recomendado para ambientes compartilhados).\nSe quiser distribuir, pode empacotar e publicar no PyPI.\n\nSe quiser um nome de comando diferente, basta alterar em console_scripts."
+    "text": "GitHub Copilot (continuação)\n\n\n2. Instale o pacote no modo editável (para desenvolvimento):\nNo terminal, dentro da pasta do projeto:\npip install --user --editable .\n3. Use o comando no terminal\nAgora, você pode rodar o comando de qualquer lugar:\ngerador-lista-numerada\n\nDicas:\n\nO comando será instalado em ~/.local/bin (Linux). Certifique-se de que esse diretório está no seu $PATH.\nPara outros usuários do sistema, use sudo pip install . (não recomendado para ambientes compartilhados).\nSe quiser distribuir, pode empacotar e publicar no PyPI.\n\nSe quiser um nome de comando diferente, basta alterar em console_scripts."
   },
   {
     "objectID": "aula_t6.html#section-50",
@@ -4015,14 +4015,14 @@
     "href": "aula_t6.html#section-54",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot\n\n\nPara criar um atalho com ícone na área de trabalho (no Linux), siga estes passos:\n1. Crie um arquivo .desktop\nCrie um arquivo chamado, por exemplo, GeradorListaNumerada.desktop na sua área de trabalho (~/Área de Trabalho ou ~/Desktop):\n[Desktop Entry]\nVersion=1.0\nType=Application\nName=Gerador Lista Numerada\nComment=Gera uma lista numerada a partir da área de transferência\nExec=gerador-lista-numerada\nIcon=/caminho/para/um/icone.png\nTerminal=false\nCategories=Utility;\n\nExec: o comando instalado pelo seu script (gerador-lista-numerada).\nIcon: caminho para um arquivo de ícone (PNG, SVG, etc). Você pode usar um ícone próprio ou algum do sistema.\nTerminal: coloque true se quiser que abra um terminal, ou false para rodar em segundo plano."
+    "text": "GitHub Copilot (início)\n\n\nPara criar um atalho com ícone na área de trabalho (no Linux), siga estes passos:\n1. Crie um arquivo .desktop\nCrie um arquivo chamado, por exemplo, GeradorListaNumerada.desktop na sua área de trabalho (~/Área de Trabalho ou ~/Desktop):\n[Desktop Entry]\nVersion=1.0\nType=Application\nName=Gerador Lista Numerada\nComment=Gera uma lista numerada a partir da área de transferência\nExec=gerador-lista-numerada\nIcon=/caminho/para/um/icone.png\nTerminal=false\nCategories=Utility;\n\nExec: o comando instalado pelo seu script (gerador-lista-numerada).\nIcon: caminho para um arquivo de ícone (PNG, SVG, etc). Você pode usar um ícone próprio ou algum do sistema.\nTerminal: coloque true se quiser que abra um terminal, ou false para rodar em segundo plano."
   },
   {
     "objectID": "aula_t6.html#section-53",
     "href": "aula_t6.html#section-53",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Mas será que não podemos fazer algo ainda mais prático?\n\nPara um usuário leigo, é ruim ter que abrir um terminal e saber o nome do comando.\n\n\n\n\n\n\nPrompt\n\n\nE como faço para ter um ícone na área de trabalho para executar o programa?"
+    "text": "Mas será que não podemos fazer algo ainda mais prático?\n\nPara um usuário leigo, é ruim ter que abrir um terminal e saber o nome do comando.\n\n\nBora, conversar com o Copilot novamente.\n\n\n\n\nPrompt\n\n\nE como faço para ter um ícone na área de trabalho para executar o programa?"
   },
   {
     "objectID": "aula_t6.html#section-55",
@@ -4071,7 +4071,7 @@
     "href": "aula_t6.html#section-61",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Antes de pedirmos o Copilot para criar a ferramenta completa, vamos explorar como podemos lidar com a junção (merge) de arquivos PDF em Python.\n\n\n\n\nPrompt\n\n\nEu gostaria de escrever um programa em Python que junte dois arquivos PDF em um só. Como posso fazer isso?"
+    "text": "Antes de pedirmos o Copilot para criar a ferramenta completa,\n\nvamos explorar como podemos lidar com a junção (merge) de arquivos PDF em Python.\n\n\n\n\n\n\nPrompt\n\n\nEu gostaria de escrever um programa em Python que junte dois arquivos PDF em um só. Como posso fazer isso?"
   },
   {
     "objectID": "aula_t6.html#section-62",
@@ -4120,28 +4120,28 @@
     "href": "aula_t6.html#section-68",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot\n\n\nAqui está um resumo dos prós e contras dos principais módulos Python para manipulação de PDFs:\n\n1. PyPDF2\nPrós:\n\nFácil de usar para tarefas básicas (juntar, dividir, rotacionar).\nBastante documentado e com muitos exemplos.\nNão depende de bibliotecas externas.\n\nContras:\n\nDesenvolvimento desacelerado (pode estar desatualizado).\nSuporte limitado para PDFs complexos ou protegidos.\nAlgumas funções avançadas podem não funcionar corretamente."
+    "text": "GitHub Copilot (início)\n\n\nAqui está um resumo dos prós e contras dos principais módulos Python para manipulação de PDFs:\n\n1. PyPDF2\nPrós:\n\nFácil de usar para tarefas básicas (juntar, dividir, rotacionar).\nBastante documentado e com muitos exemplos.\nNão depende de bibliotecas externas.\n\nContras:\n\nDesenvolvimento desacelerado (pode estar desatualizado).\nSuporte limitado para PDFs complexos ou protegidos.\nAlgumas funções avançadas podem não funcionar corretamente."
   },
   {
     "objectID": "aula_t6.html#section-69",
     "href": "aula_t6.html#section-69",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot (continuação)\n\n\n.\n2. pypdf\nPrós:\n\nContinuação moderna do PyPDF2, com manutenção ativa.\nInterface semelhante ao PyPDF2, facilitando a migração.\nCorrige bugs e adiciona novos recursos.\nBoa documentação.\n\nContras:\n\nAinda pode ter limitações com PDFs muito complexos.\nAlgumas funções avançadas podem não estar presentes."
+    "text": "GitHub Copilot (continuação)\n\n\n2. pypdf\nPrós:\n\nContinuação moderna do PyPDF2, com manutenção ativa.\nInterface semelhante ao PyPDF2, facilitando a migração.\nCorrige bugs e adiciona novos recursos.\nBoa documentação.\n\nContras:\n\nAinda pode ter limitações com PDFs muito complexos.\nAlgumas funções avançadas podem não estar presentes."
   },
   {
     "objectID": "aula_t6.html#section-71",
     "href": "aula_t6.html#section-71",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot (continuação)\n\n\n.\n4. pdfrw\nPrós:\n\nLeve e puro Python.\nPermite mesclar, dividir e modificar PDFs.\nÚtil para manipulação de formulários PDF.\n\nContras:\n\nMenos mantido e atualizado.\nSuporte limitado para PDFs complexos.\nDocumentação menos detalhada."
+    "text": "GitHub Copilot (continuação)\n\n\n4. pdfrw\nPrós:\n\nLeve e puro Python.\nPermite mesclar, dividir e modificar PDFs.\nÚtil para manipulação de formulários PDF.\n\nContras:\n\nMenos mantido e atualizado.\nSuporte limitado para PDFs complexos.\nDocumentação menos detalhada."
   },
   {
     "objectID": "aula_t6.html#section-70",
     "href": "aula_t6.html#section-70",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot (continuação)\n\n\n.\n3. PyMuPDF (fitz)\nPrós:\n\nMuito rápido e eficiente.\nSuporte avançado para manipulação de páginas, extração de texto, imagens e metadados.\nSuporta PDFs complexos e outros formatos (XPS, EPUB).\nDocumentação detalhada.\n\nContras:\n\nAPI um pouco mais complexa para tarefas simples.\nPode ser mais pesado para instalar (depende de bibliotecas C)."
+    "text": "GitHub Copilot (continuação)\n\n\n3. PyMuPDF (fitz)\nPrós:\n\nMuito rápido e eficiente.\nSuporte avançado para manipulação de páginas, extração de texto, imagens e metadados.\nSuporta PDFs complexos e outros formatos (XPS, EPUB).\nDocumentação detalhada.\n\nContras:\n\nAPI um pouco mais complexa para tarefas simples.\nPode ser mais pesado para instalar (depende de bibliotecas C)."
   },
   {
     "objectID": "aula_t6.html#section-73",
@@ -4155,14 +4155,14 @@
     "href": "aula_t6.html#section-72",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot (continuação)\n\n\n.\n5. pdfminer.six\nPrós:\n\nExcelente para extração de texto detalhada.\nSuporta PDFs complexos e multilíngues.\n\nContras:\n\nNão é focado em manipulação (juntar/dividir) de PDFs.\nAPI mais complexa para tarefas simples de manipulação.\n\n\nResumo:\n\nPara juntar/dividir PDFs: pypdf ou PyMuPDF são as melhores opções.\nPara extração de texto: pdfminer.six ou PyMuPDF.\nPara manipulação leve e sem dependências: pdfrw.\n\nEscolha conforme sua necessidade!"
+    "text": "GitHub Copilot (continuação)\n\n\n5. pdfminer.six\nPrós:\n\nExcelente para extração de texto detalhada.\nSuporta PDFs complexos e multilíngues.\n\nContras:\n\nNão é focado em manipulação (juntar/dividir) de PDFs.\nAPI mais complexa para tarefas simples de manipulação.\n\n\nResumo:\n\nPara juntar/dividir PDFs: pypdf ou PyMuPDF são as melhores opções.\nPara extração de texto: pdfminer.six ou PyMuPDF.\nPara manipulação leve e sem dependências: pdfrw.\n\nEscolha conforme sua necessidade!"
   },
   {
     "objectID": "aula_t6.html#section-74",
     "href": "aula_t6.html#section-74",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Dica\n\n\nAntes de continuarmos, vale a pena chamar a atenção para cuidados que devemos tomar ao fazer automatizações que lidam com arquivos.\nSe a ferramenta que criarmos estiver incorreta, podemos perder arquivos em nosso computador. Algumas dicas são:\n\nSempre trabalhar com cópias dos arquivos, nunca com os originais.\nVerifique se os arquivos que a ferramenta vai processar estão corretos.\n\nEx.: podemos comentar as linhas que abrem os arquivos e imprimir os nomes dos arquivos que seriam processados.\nAssim conseguimos conferir se são realmente os arquivos que pretendemos usar.\n\nSempre fazer testes com poucos arquivos, antes de rodar a ferramenta com todos os arquivos."
+    "text": "Dica\n\n\nAntes de continuarmos, vale a pena chamar a atenção para cuidados que devemos tomar ao fazer automatizações que lidam com arquivos.\nSe a ferramenta que criarmos estiver incorreta, podemos perder arquivos em nosso computador. Algumas dicas são:\n\nSempre trabalhar com cópias dos arquivos, nunca com os originais.\nVerifique se os arquivos que a ferramenta vai processar estão corretos.\n\nEx.: podemos comentar as linhas que manipulam os arquivos e imprimir os nomes dos arquivos que seriam processados.\nAssim conseguimos conferir se são realmente os arquivos que pretendemos usar.\n\nSempre fazer testes com poucos arquivos, antes de rodar a ferramenta com todos os arquivos."
   },
   {
     "objectID": "aula_t6.html#section-75",
@@ -4176,7 +4176,7 @@
     "href": "aula_t6.html#section-76",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Lembre-se também que precisamos seguir o mesmo procedimento do exemplo anterior para criar o ambiente virtual e instalar o módulo pypdf.\npython3 -m venv venv\nsource venv/bin/activate\npip install pypdf\npip freeze &gt; requirements.txt\n\nLembre-se também de configurar o VS Code para usar o Python do ambiente virtual."
+    "text": "Lembre-se também que precisamos seguir o mesmo procedimento do exemplo anterior para criar o ambiente virtual e instalar o módulo pypdf.\n\npython3 -m venv venv\nsource venv/bin/activate\npip install pypdf\npip freeze &gt; requirements.txt\n\n\nLembre-se também de configurar o VS Code para usar o Python do ambiente virtual."
   },
   {
     "objectID": "aula_t6.html#section-77",
@@ -4197,7 +4197,7 @@
     "href": "aula_t6.html#section-79",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Vamos agora copiar as pastas de capas e relatórios para dentro do nosso projeto.\n\nE criar uma pasta saida vazia para onde os arquivos gerados serão salvos.\nE vamos acertar os nomes das pastas no script.\n\n\nExemplo:\nif __name__ == \"__main__\":\n    # Exemplo de uso\n    adicionar_capas_a_pdfs('capas', 'relatorios', 'saida')"
+    "text": "Vamos agora copiar as pastas de capas e relatórios para dentro do nosso projeto.\n\nE criar uma pasta saida vazia para onde os arquivos gerados serão salvos.\nPrecisamos acertar os nomes das pastas no script.\n\n\nExemplo:\nif __name__ == \"__main__\":\n    # Exemplo de uso\n    adicionar_capas_a_pdfs('capas', 'relatorios', 'saida')"
   },
   {
     "objectID": "aula_t6.html#section-80",
@@ -4218,7 +4218,7 @@
     "href": "aula_t6.html#section-81",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot\n\n\nClaro! Você pode criar uma interface gráfica simples usando o Tkinter, que já vem com o Python. Vou sugerir um exemplo básico onde o usuário pode selecionar as três pastas (capas, relatórios e saída) e clicar em um botão para executar a função.\nAdicione o seguinte código ao final do seu arquivo junta_capas.py:\n# ...existing code...\n\nimport tkinter as tk\nfrom tkinter import filedialog, messagebox\n\ndef selecionar_pasta(entry_widget):\n    pasta = filedialog.askdirectory()\n    if pasta:\n        entry_widget.delete(0, tk.END)\n        entry_widget.insert(0, pasta)\n\ndef executar():\n    pasta_capas = entry_capas.get()\n    pasta_relatorios = entry_relatorios.get()\n    pasta_saida = entry_saida.get()\n    try:\n        adicionar_capas_a_pdfs(pasta_capas, pasta_relatorios, pasta_saida)\n        messagebox.showinfo(\"Sucesso\", \"Arquivos gerados com sucesso!\")\n    except Exception as e:\n        messagebox.showerror(\"Erro\", str(e))"
+    "text": "GitHub Copilot (início)\n\n\nClaro! Você pode criar uma interface gráfica simples usando o Tkinter, que já vem com o Python. Vou sugerir um exemplo básico onde o usuário pode selecionar as três pastas (capas, relatórios e saída) e clicar em um botão para executar a função.\nAdicione o seguinte código ao final do seu arquivo junta_capas.py:\n# ...existing code...\n\nimport tkinter as tk\nfrom tkinter import filedialog, messagebox\n\ndef selecionar_pasta(entry_widget):\n    pasta = filedialog.askdirectory()\n    if pasta:\n        entry_widget.delete(0, tk.END)\n        entry_widget.insert(0, pasta)\n\ndef executar():\n    pasta_capas = entry_capas.get()\n    pasta_relatorios = entry_relatorios.get()\n    pasta_saida = entry_saida.get()\n    try:\n        adicionar_capas_a_pdfs(pasta_capas, pasta_relatorios, pasta_saida)\n        messagebox.showinfo(\"Sucesso\", \"Arquivos gerados com sucesso!\")\n    except Exception as e:\n        messagebox.showerror(\"Erro\", str(e))"
   },
   {
     "objectID": "aula_t6.html#section-82",
@@ -4253,7 +4253,7 @@
     "href": "aula_t6.html#section-86",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Nós acabamos de ter o 8º UFLA de Portas Abertas.\n\nE, dentro do evento, tivemos a Oficina de Programação de Jogos.\n\n\nNessa oficina, os participantes do evento experimentam, e modificam, jogos implementados como trabalho da disciplina IPOO de Sistemas de Informação.\n\nE um jogo para ensino de Python, desenvolvimento como TCC de Ciência da Computação."
+    "text": "Nós acabamos de ter o 8º UFLA de Portas Abertas.\n\nE, dentro do evento, tivemos a Oficina de Programação de Jogos.\n\n\nNessa oficina, os participantes do evento experimentam, e modificam, jogos implementados como trabalho da disciplina IPOO de Sistemas de Informação.\n\nE um jogo para ensino de Python, desenvolvido como TCC de Ciência da Computação."
   },
   {
     "objectID": "aula_t6.html#section-87",
@@ -4274,7 +4274,7 @@
     "href": "aula_t6.html#section-88",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Usei então o ChatGPT para criar uma interface gráfica simples\n\nque funcionasse como uma tela inicial (launcher) que mostrasse os jogos disponíveis.\n\nQue permitisse iniciar os jogos ao clicar neles.\n\nE que também tivesse um botão para restaurar o código original do jogo.\n\nPara isso, usei um repositório git local para cada jogo.\nRestaurar o jogo era simplesmente rodar o comando git restore . na pasta do jogo."
+    "text": "Usei então o ChatGPT e Copilot para criar uma interface gráfica simples\n\nque funcionasse como uma tela inicial (launcher) que mostrasse os jogos disponíveis.\n\nQue permitisse iniciar os jogos ao clicar neles.\n\nE que também tivesse um botão para restaurar o código original do jogo.\n\nPara isso, usei um repositório git local para cada jogo.\nRestaurar o jogo era simplesmente rodar o comando git restore . na pasta do jogo."
   },
   {
     "objectID": "aula_t6.html#section-89",
@@ -4295,7 +4295,7 @@
     "href": "aula_t6.html#section-90",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "O ChatGPT sugeriu três opções, já com exemplos de código\n\nUma página HTML que precisaria ser aberta com Electron ou com um servidor Python para conseguir executar scripts locais.\nUma aplicação Python com interface gráfica usando Tkinter.\nUm menu no terminal para a escolha do jogo.\n\n\nNão entendi porque ele sugeriu a opção 3 :)\n\nMas, enfim, escolhi a opção 2, que me pareceu mais prática."
+    "text": "O ChatGPT sugeriu três opções, já com exemplos de código\n\nUma página HTML que precisaria ser aberta com Electron ou com um servidor Python para conseguir executar scripts locais.\nUma aplicação Python com interface gráfica usando Tkinter.\nUm menu no terminal para a escolha do jogo.\n\n\nNão entendi porque ele sugeriu a opção 3 🤔\n\nMas, enfim, escolhi a opção 2, que me pareceu mais prática."
   },
   {
     "objectID": "aula_t6.html#section-91",
@@ -4344,7 +4344,7 @@
     "href": "aula_t6.html#section-96",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Mas enquanto estava tentando isso, usei o ChatGPT e ele informou que uma alternativa seria usar o pygame.\n\nPois é um módulo Python que não depende de instalação no sistema operacional.\n\n\nPretendo fazer isso no próximo ano :)"
+    "text": "Mas enquanto estava tentando isso, usei o ChatGPT e ele informou que uma alternativa seria usar o pygame.\n\nPois é um módulo Python que não depende de instalação no sistema operacional.\n\n\nPretendo fazer isso no próximo ano 😉"
   },
   {
     "objectID": "aula_t6.html#exemplo-4-juntando-fotos-de-vários-celulares",
@@ -4372,7 +4372,7 @@
     "href": "aula_t6.html#section-99",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Prompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?\n\n\n\n\n\n\n\n\nPrompt\n\n\nE se eu tiver centenas de arquivos PNG e quiser encontrar arquivos duplicados? Essa abordagem ainda funciona?\n\n\n\n\n\n\n\n\nPrompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?"
+    "text": "Prompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?\n\n\n\n\n\n\n\n\n\nPrompt\n\n\nE se eu tiver centenas de arquivos PNG e quiser encontrar arquivos duplicados? Essa abordagem ainda funciona?\n\n\n\n\n\n\n\n\n\n\nPrompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?"
   },
   {
     "objectID": "aula_t6.html#section-100",
@@ -4386,7 +4386,7 @@
     "href": "aula_t6.html#section-101",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Em seguida, são apresentas as assinaturas e docstrings das funções usadas no livro.\ndef obter_bom_nome_arquivo(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo PNG.\n\n    Enquanto o arquivo caminho_arquivo existir, acrescenta\n    um caractere _ logo antes do .png e retorna o novo nome.\n    Ex.: 9595.png se torna 9595_.png.\n\n    Retorna o nome resultante do arquivo.\n    \"\"\""
+    "text": "Essas são as assinaturas e docstrings das funções usadas no livro.\n\nComo já vimos antes, na hora de implementar seguimos o caminho bottom-up.\n\ndef obter_bom_nome_arquivo(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo PNG.\n\n    Enquanto o arquivo caminho_arquivo existir, acrescenta\n    um caractere _ logo antes do .png e retorna o novo nome.\n    Ex.: 9595.png se torna 9595_.png.\n\n    Retorna o nome resultante do arquivo.\n    \"\"\""
   },
   {
     "objectID": "aula_t6.html#section-102",

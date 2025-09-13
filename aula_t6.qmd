@@ -13,7 +13,7 @@ O conteúdo dessa aula é baseado no **capítulo 9** do livro abaixo.
 
 ##
 
-Suponha qe você seja responsável por criar 100 relatórios, cada um para uma pessoa diferente.
+Suponha que você seja responsável por criar 100 relatórios, cada um para uma pessoa diferente.
 
 - Poderia ser um professor que precisa enviar correções para seus estudantes.
 - Ou alguém em um departamento de RH que precisa enviar a avaliação anual para cada funcionário.
@@ -58,7 +58,8 @@ E perdemos tempo com tarefas que poderiam ser otimizadas.
 Nessa aula vamos ver como escrever programas que automatizam tarefas tediosas.
 
 - Uma das tarefas será essa dos PDFs.
-- Mas também veremos outras tarefas que podem ser automatizadas.
+- Mas também veremos outras tipos de tarefas manuais com as quais podemos ganhar tempo
+  automatizando-as.
 
 # Por que programadores criam ferramentas? {background-color="#40666e"}
 
@@ -67,19 +68,19 @@ Nessa aula vamos ver como escrever programas que automatizam tarefas tediosas.
 Muitas vezes os programadores se definem como _preguiçosos_.
 
 - Não no sentido de que não queremos fazer nosso trabalho.
-- Mas sim, que não queremos fazer tarefas que são **reptitivas**, **chatas**, **tediosas** 😒.
-  - Para as quais os computadores são muito melhores que nós.
+- Mas sim, que não queremos fazer tarefas que são **repetitivas**, **chatas**, **tediosas** 😒.
+  - Tipos de tarefas que os computadores são muito melhores que nós.
 
 . . .
 
-Bons programadores costumam ter um _"sentido aranha"_ 🕸️ para identificar tarefas penosas.
+Bons programadores costumam ter um 🕷️ _"sentido aranha"_ 🕸️ para identificar tarefas penosas.
 
 ##
 
-Suponha, por exemplo, que tenhamos centenas de fotos que juntamos de uma viagem.
+Suponha, por exemplo, que tenhamos centenas de fotos que juntamos de uma viagem. 🖼️
 
-- E que queremos remover as fotos duplicadas.
-- Não queremos olhar uma por uma, pois isso levaria muito tempo.
+- E queremos remover as fotos duplicadas.
+- E, claro, não queremos ter o trabalho de verificar uma por uma, pois isso levaria muito tempo.
 
 . . .
 
@@ -90,7 +91,7 @@ Ou suponha que um professor tenha que enviar um e-mail com notas para cada um de
 
 ##
 
-Sempre que um bom programador se depara com uma tarefa com passos repetitivos
+Sempre que um **bom programador** se depara com uma tarefa com passos repetitivos
 
 - ele pensa em como construir uma [ferramenta]{.alert} para automatizá-la.
 
@@ -142,12 +143,12 @@ Não faz sentido um programador não usar essas ferramentas para se ajudar.
 
 ##
 
-Muitas vezes precisamos usar módulos (bibliotecas) do Python para realizar alguma
+Muitas vezes precisamos usar [módulos]{.alert} (**bibliotecas**) do Python para realizar alguma
 tarefa que precisamos.
 
-- Pode ser que seja uma biblioteca incluída (_built-in_) do Python.
+- Pode ser que seja uma biblioteca incluída (**_built-in_**) do Python.
   - Ex.: `csv`, `json`, `zipfile`, etc.
-- Ou uma biblioteca que precisamos instalar antes de usá-la.
+- Ou uma biblioteca que precisamos **instalar** antes de usar.
 
 ##
 
@@ -190,7 +191,7 @@ Ao fazer isso, devemos seguir o processo que já vimos antes:
 
 Mas aqui na aula vamos nos concentrar na interação com o Copilot para automizarmos a tarefa que precisamos.
 
-- Para manter o foco no conteúdo que estamos trabalhando aqui.
+- Para manter o foco no conteúdo que estamos trabalhando neste capítulo.
 
 ## 
 
@@ -208,9 +209,9 @@ Acreditamos que vale a pena trabalharmos com funções, documentadas.
 
 ##
 
-Suponha que você precise enviar uma lista de compras para alguém por WhatsApp ou e-mail.
+Suponha que você precise enviar uma **lista de compras** para alguém por WhatsApp ou e-mail.
 
-- E que essa lista precise ser numerada, com um item por linha, e em ordem alfabética.
+- E que essa lista precise ser **numerada**, com **um item por linha**, e em **ordem alfabética**.
 
 . . .
 
@@ -227,8 +228,8 @@ Vamos usar o Copilot para automatizar essa tarefa.
 
 Como você recebeu os itens por e-mail ou WhatsApp,
 
-- a ferramenta será mais útil se pudermos copiar (Ctrl+c) os itens da mensagem.
-- e colar (Ctrl+v) na nossa ferramenta para ela gerar a lista numerada.
+- a ferramenta será mais útil se pudermos **copiar (Ctrl+c)** os itens da mensagem.
+- e **colar (Ctrl+v)** na nossa ferramenta para ela gerar a lista numerada.
 - Caso contrário, teríamos que redigitar a lista
   - e aí não estaríamos economizando tempo.
 
@@ -240,9 +241,13 @@ Para isso, precisaremos usar a [Área de Transferência]{.alert} (_Clipboard_) d
 
 Essa **Área de Transferência** é onde ficam os últimos dados que copiamos com o Ctrl+c.
 
-- Podemos então criar uma ferramenta que obtenha as palavras da Área de Transferência.
-- Gere a lista numerada.
-- E copie a lista numerada de volta para a Área de Transferência.
+. . .
+
+
+Podemos então criar uma ferramenta que obtenha as palavras da Área de Transferência;
+
+- gere a lista numerada;
+- e copie a lista numerada de volta para a Área de Transferência.
 
 . . .
 
@@ -315,7 +320,7 @@ Funciona em Linux, Windows e macOS.
 A resposta do Copilot nos ensina que podemos usar o módulo `pyperclip` para
 interagir com a Área de Transferência em um programa em Python.
 
-- Ele também nos dá um exemplo de como usar o módulo.
+- E nos dá um exemplo de como usar o módulo.
 - Ele também nos diz como instalar o módulo.
   - O que mostra que ele é não é _built-in_.
 
@@ -409,11 +414,12 @@ desde que o utilitário de área de transferência já esteja disponível no seu
 
 ##
 
-Bom, essa resposta não ajudou muito, afinal continua basicamente fazendo a mesma coisa.
+Bom, essa resposta não ajudou muito, afinal continua basicamente fazendo a mesma coisa
+da resposta anterior
 
 . . .
 
-No livro, a primeira solução do Copilot foi usar o módulo `tkinter`.
+No livro, a primeira solução dada pelo Copilot usava o módulo `tkinter`.
 
 - Que tem a limitação de só funcionar em ambientes gráficos (não funciona em servidores Linux, por exemplo).
 
@@ -429,8 +435,8 @@ Ao pedir outra opção, o Copilot sugeriu um código específico para Windows us
 Avaliando então as opções que temos, a melhor é usar o módulo `pyperclip`.
 
 - Afinal instalar um módulo não é algo tão complicado.
-- E o `pyperclip` funciona em Linux, Windows e macOS.
-- E não depende de programas externos.
+- E o `pyperclip` funciona em Linux, Windows e macOS,
+  - sem depender de programas externos.
 
 ##
 
@@ -611,12 +617,12 @@ if __name__ == "__main__":
 :::{.callout-tip}
 Como nós criamos o ambiente virtual pelo terminal do VS Code, precisamos conferir se o
 VS Code identificou automaticamente o ambiente virtual, caso contrário, se tentarmos usar 
-a opção `Run`, o programa não vai funcionar.
+a opção `Run`, o programa não vai funcionar (pois não conseguirá importar o módulo `pyperclip`).
 
 Precisamos escolher a versão do Python que está dentro do ambiente virtual.
-Basta clicar no canto inferior esquerdo do VS Code e escolher o Python correto.
+Basta clicar no canto inferior direito do VS Code e escolher o Python correto.
 
-Obs.: se criarmos o ambiente virtual pelo VS Code (`Ctrl_Shift_P` e escolher 
+Obs.: se criarmos o ambiente virtual pelo VS Code (`Ctrl+Shift+P` e escolhendo 
 `Python: Create Environment`), o VS Code já escolhe o Python correto.
 :::
 
@@ -670,7 +676,7 @@ A ordenação está errada, pois a palavra "óleo" deveria aparecer antes de "so
 
 ##
 
-::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+::: {.callout-note title="GitHub Copilot _(início)_" icon="false" .nonincremental}
  Claro! O problema ocorre porque a ordenação padrão do Python (`sorted`) não considera corretamente os acentos para a ordem alfabética em português. Para corrigir, você pode usar o módulo `locale` e configurar para `'pt_BR.UTF-8'`. Veja como ajustar:
 
 ````python
@@ -752,6 +758,9 @@ Seria melhor se pudéssemos simplesmente clicar duas vezes em um ícone na área
 
 ##
 
+Vamos conversar com o Copilot para descobrir como fazer isso.
+
+. . .
 
 ::: {.callout-caution title="Prompt" icon="false"}
 Eu gostaria que esse programa estivesse disponível para o usuário como um comando de terminal. Sem precisar entrar na pasta do projeto, ativer o ambiente virtual e rodar o programa manualmente. Como posso fazer isso?
@@ -759,10 +768,13 @@ Eu gostaria que esse programa estivesse disponível para o usuário como um coma
 
 ##
 
-::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
- Para tornar seu programa disponível como um comando de terminal, você pode empacotá-lo como um **script executável** e instalá-lo no sistema. O jeito mais comum em projetos Python é criar um **entry point** usando o `setuptools`. Veja como fazer:
+::: {.callout-note title="GitHub Copilot _(início)_" icon="false" .nonincremental}
+Para tornar seu programa disponível como um comando de terminal, você pode empacotá-lo 
+como um **script executável** e instalá-lo no sistema. 
+ 
+O jeito mais comum em projetos Python é criar um **entry point** usando o `setuptools`. Veja como fazer:
 
-### 1. Crie um arquivo `setup.py` na raiz do projeto:
+**1. Crie um arquivo `setup.py` na raiz do projeto:**
 
 ````python
 from setuptools import setup
@@ -779,21 +791,21 @@ setup(
     },
 )
 ````
-### 2. Instale o pacote no modo editável (para desenvolvimento):
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
+
+**2. Instale o pacote no modo editável (para desenvolvimento):**
 
 No terminal, dentro da pasta do projeto:
 
 ```bash
 pip install --user --editable .
 ```
-:::
 
-##
-
-::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
- .
-
-### 3. Use o comando no terminal
+**3. Use o comando no terminal**
 
 Agora, você pode rodar o comando de qualquer lugar:
 
@@ -869,6 +881,7 @@ Mas será que não podemos fazer algo ainda mais prático?
 
 . . . 
 
+Bora, conversar com o Copilot novamente.
 
 ::: {.callout-caution title="Prompt" icon="false"}
 E como faço para ter um ícone na área de trabalho para executar o programa?
@@ -876,10 +889,10 @@ E como faço para ter um ícone na área de trabalho para executar o programa?
 
 ##
 
-::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+::: {.callout-note title="GitHub Copilot _(início)_" icon="false" .nonincremental}
  Para criar um atalho com ícone na área de trabalho (no Linux), siga estes passos:
 
-### 1. Crie um arquivo `.desktop`
+**1. Crie um arquivo `.desktop`**
 
 Crie um arquivo chamado, por exemplo, `GeradorListaNumerada.desktop` na sua área de trabalho (`~/Área de Trabalho` ou `~/Desktop`):
 
@@ -904,7 +917,7 @@ Categories=Utility;
 
 ::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
 
-### 2. Torne o atalho executável
+**2. Torne o atalho executável**
 
 No terminal, rode:
 
@@ -912,7 +925,7 @@ No terminal, rode:
 chmod +x ~/Área\ de\ Trabalho/GeradorListaNumerada.desktop
 ```
 
-### 3. (Opcional) Escolha um ícone
+**3. (Opcional) Escolha um ícone**
 
 Se não tiver um ícone, pode baixar um PNG ou usar algum já presente no sistema, como `/usr/share/icons/hicolor/48x48/apps/accessories-text-editor.png`.
 
@@ -999,9 +1012,11 @@ Poderíamos usar algum software, como o Adobe Acrobat, para fazer isso manualmen
 
 ##
 
-Antes de pedirmos o Copilot para criar a ferramenta completa, vamos explorar como
-podemos lidar com a junção (_merge_) de arquivos PDF em Python.
+Antes de pedirmos o Copilot para criar a ferramenta completa, 
 
+- vamos explorar como podemos lidar com a junção (_merge_) de arquivos PDF em Python.
+
+. . .
 
 ::: {.callout-caution title="Prompt" icon="false"}
 Eu gostaria de escrever um programa em Python que junte dois arquivos PDF em um só. Como posso fazer isso?
@@ -1129,12 +1144,12 @@ Quais são os prós e contras de cada um desses módulos?
 
 ##
 
-::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+::: {.callout-note title="GitHub Copilot _(início)_" icon="false" .nonincremental}
  Aqui está um resumo dos prós e contras dos principais módulos Python para manipulação de PDFs:
 
 ---
 
-### **1. PyPDF2**
+**1. PyPDF2**
 
 **Prós:**
 
@@ -1152,9 +1167,8 @@ Quais são os prós e contras de cada um desses módulos?
 ##
 
 ::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
- .
 
-### **2. pypdf**
+**2. pypdf**
 
 **Prós:**
 
@@ -1172,9 +1186,8 @@ Quais são os prós e contras de cada um desses módulos?
 ##
 
 ::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental} 
-.
 
-### **3. PyMuPDF (fitz)**
+**3. PyMuPDF (fitz)**
 
 **Prós:**
 
@@ -1193,9 +1206,8 @@ Quais são os prós e contras de cada um desses módulos?
 ##
 
 ::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
- .
 
-### **4. pdfrw**
+**4. pdfrw**
 
 **Prós:**
 
@@ -1213,9 +1225,8 @@ Quais são os prós e contras de cada um desses módulos?
 ##
 
 ::: {.callout-note title="GitHub Copilot _(continuação)_" icon="false" .nonincremental}
- .
 
-### **5. pdfminer.six**
+**5. pdfminer.six**
 
 **Prós:**
 
@@ -1255,14 +1266,14 @@ Vamos partir para a criação da ferramenta.
 
 ::: {.callout-tip}
 Antes de continuarmos, vale a pena chamar a atenção para [cuidados]{.alert} que devemos 
-tomar **ao fazer automatizações** que lidam com arquivos.
+tomar **ao fazer automatizações que lidam com arquivos**.
 
 Se a ferramenta que criarmos estiver incorreta, podemos perder arquivos em nosso computador.
 Algumas dicas são:
 
 - Sempre trabalhar com cópias dos arquivos, nunca com os originais.
 - Verifique se os arquivos que a ferramenta vai processar estão corretos.
-  - Ex.: podemos comentar as linhas que abrem os arquivos e imprimir os nomes dos arquivos que seriam processados.
+  - Ex.: podemos comentar as linhas que manipulam os arquivos e imprimir os nomes dos arquivos que seriam processados.
   - Assim conseguimos conferir se são realmente os arquivos que pretendemos usar.
 - Sempre fazer testes com poucos arquivos, antes de rodar a ferramenta com todos os arquivos.
 :::
@@ -1288,7 +1299,9 @@ E podemos importar a bibliteca `pypdf` que já sabemos que vamos usar.
 Lembre-se também que precisamos seguir o mesmo procedimento do exemplo anterior
 para criar o ambiente virtual e instalar o módulo `pypdf`.
 
-```bash
+. . .
+
+```{.bash code-line-numbers="false"}
 python3 -m venv venv
 source venv/bin/activate
 pip install pypdf
@@ -1394,7 +1407,7 @@ if __name__ == "__main__":
 Vamos agora copiar as pastas de capas e relatórios para dentro do nosso projeto.
 
 - E criar uma pasta `saida` vazia para onde os arquivos gerados serão salvos.
-- E vamos acertar os nomes das pastas no script.
+- Precisamos acertar os nomes das pastas no script.
 
 . . .
 
@@ -1428,7 +1441,7 @@ Eu gostaria de criar uma interface gráfica simples para essa ferramenta. Pode m
 
 ##
 
-::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+::: {.callout-note title="GitHub Copilot _(início)_" icon="false" .nonincremental}
  Claro! Você pode criar uma interface gráfica simples usando o Tkinter, que já vem com o Python. Vou sugerir um exemplo básico onde o usuário pode selecionar as três pastas (capas, relatórios e saída) e clicar em um botão para executar a função.
 
 Adicione o seguinte código ao final do seu arquivo junta_capas.py:
@@ -1546,7 +1559,7 @@ Nós acabamos de ter o 8º UFLA de Portas Abertas.
 Nessa oficina, os participantes do evento experimentam, e modificam, jogos 
 implementados como trabalho da disciplina IPOO de Sistemas de Informação.
 
-- E um jogo para ensino de Python, desenvolvimento como TCC de Ciência da Computação.
+- E um jogo para ensino de Python, desenvolvido como TCC de Ciência da Computação.
 
 ##
 
@@ -1561,7 +1574,7 @@ No evento do ano anterior tínhamos duas dificuldades:
 
 ##
 
-Usei então o ChatGPT para criar uma interface gráfica simples
+Usei então o ChatGPT e Copilot para criar uma interface gráfica simples
 
 - que funcionasse como uma tela inicial (_launcher_) que mostrasse os jogos disponíveis.
   - Que permitisse iniciar os jogos ao clicar neles.
@@ -1587,7 +1600,7 @@ O ChatGPT sugeriu três opções, já com exemplos de código
 
 . . .
 
-Não entendi porque ele sugeriu a opção 3 :)
+Não entendi porque ele sugeriu a opção 3 🤔
 
 - Mas, enfim, escolhi a opção 2, que me pareceu mais prática.
 
@@ -1648,7 +1661,7 @@ Mas enquanto estava tentando isso, usei o ChatGPT e ele informou que uma alterna
 
 . . .
 
-Pretendo fazer isso no próximo ano :)
+Pretendo fazer isso no próximo ano 😉
 
 # Exemplo 4: Juntando fotos de vários celulares {background-color="#40666e"}
 
@@ -1687,10 +1700,14 @@ O módulo `shutil` precisa ser instalado?
 Como eu posso descobrir se dois arquivos PNG são idênticos usando Python?
 :::
 
+. . .
+
 ::: {.callout-caution title="Prompt" icon="false"}
 E se eu tiver centenas de arquivos PNG e quiser encontrar arquivos duplicados?
 Essa abordagem ainda funciona?
 :::
+
+. . .
 
 ::: {.callout-caution title="Prompt" icon="false"}
 Como eu posso descobrir se dois arquivos PNG são idênticos usando Python?
@@ -1710,7 +1727,11 @@ Define as funções abaixo usando **_design top-down_**:
 
 ##
 
-Em seguida, são apresentas as assinaturas e docstrings das funções usadas no livro.
+Essas são as assinaturas e docstrings das funções usadas no livro.
+
+- Como já vimos antes, na hora de implementar seguimos o caminho _bottom-up_.
+
+. . .
 
 ```python
 def obter_bom_nome_arquivo(caminho_arquivo):
