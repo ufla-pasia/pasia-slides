@@ -215,7 +215,7 @@
     </div>
 </div>
 
-  <p class="date">13/09/2025</p>
+  <p class="date">15/09/2025</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -2219,6 +2219,12 @@ Se aparecer um aviso de segurança, clique em “Confiar” ou “Permitir execu
 <li class="fragment">Vou colocar os prompts usados no livro, mas sem apresentar os resutados do Copilot.</li>
 <li class="fragment">Repita os passos no seu computador e teste com o arquivo mencionado.</li>
 </ul>
+<div class="fragment">
+<p><span class="alert">Atenção</span>: ao fazer no meu computador eu descobri que precisei fazer uma engenharia de Prompt e também vi que o código gerado perdia dois arquivos!</p>
+<ul>
+<li class="fragment">Portanto, é importante testar o código gerado até que ele esteja correto.</li>
+</ul>
+</div>
 </section>
 <section id="section-101" class="slide level2">
 <h2></h2>
@@ -2326,9 +2332,9 @@ Se aparecer um aviso de segurança, clique em “Confiar” ou “Permitir execu
 </section>
 <section id="section-106" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a><span class="kw">def</span> obter_bom_nome_arquivo(caminho_arquivo):</span>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a><span class="kw">def</span> obter_bom_nome_arquivo(nome_arquivo):</span>
 <span id="cb35-2"><a></a>    <span class="co">"""</span></span>
-<span id="cb35-3"><a></a><span class="co">    caminho_arquivo é o nome de um arquivo PNG.</span></span>
+<span id="cb35-3"><a></a><span class="co">    nome_arquivo é o nome de um arquivo PNG.</span></span>
 <span id="cb35-4"><a></a></span>
 <span id="cb35-5"><a></a><span class="co">    Enquanto o arquivo caminho_arquivo existir, acrescenta</span></span>
 <span id="cb35-6"><a></a><span class="co">    um caractere _ logo antes do .png e retorna o novo nome.</span></span>
@@ -2339,16 +2345,90 @@ Se aparecer um aviso de segurança, clique em “Confiar” ou “Permitir execu
 </section>
 <section id="section-107" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a><span class="kw">def</span> fazer_copia(caminho_arquivo, pasta_destino):</span>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a><span class="kw">def</span> fazer_copia(nome_arquivo, pasta_destino):</span>
 <span id="cb36-2"><a></a>    <span class="co">"""</span></span>
-<span id="cb36-3"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-3"><a></a><span class="co">    nome_arquivo é um nome de arquivo, como figuras1/1262.png.</span></span>
+<span id="cb36-4"><a></a><span class="co">    pasta_destino é o nome de uma pasta.</span></span>
+<span id="cb36-5"><a></a></span>
+<span id="cb36-6"><a></a><span class="co">    Compara o conteúdo do arquivo apontado por nome_arquivo com </span></span>
+<span id="cb36-7"><a></a><span class="co">    todos os arquivos na pasta_destino (não importa o nome do arquivo).</span></span>
+<span id="cb36-8"><a></a><span class="co">    Se o arquivo não for idêntico a nenhum arquivo na pasta_destino,</span></span>
+<span id="cb36-9"><a></a><span class="co">    faz uma cópia do arquivo na pasta_destino.</span></span>
+<span id="cb36-10"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="section-108" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a><span class="kw">def</span> fazer_varias_copias(pastas, pasta_destino):</span>
 <span id="cb37-2"><a></a>    <span class="co">"""</span></span>
-<span id="cb37-3"><a></a><span class="co">    </span></span>
-<span id="cb37-4"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-3"><a></a><span class="co">    pastas é uma lista de nomes de pastas.</span></span>
+<span id="cb37-4"><a></a><span class="co">    pasta_destino é o nome de uma pasta.</span></span>
+<span id="cb37-5"><a></a></span>
+<span id="cb37-6"><a></a><span class="co">    Verifica cada arquivo nas pastas da lista pastas</span></span>
+<span id="cb37-7"><a></a><span class="co">    e compara com todos os arquivos em pasta_destino.</span></span>
+<span id="cb37-8"><a></a><span class="co">    Se um arquivo não for idêntico a nenhum arquivo em pasta_destino,</span></span>
+<span id="cb37-9"><a></a><span class="co">    faz uma cópia do arquivo em pasta_destino.</span></span>
+<span id="cb37-10"><a></a><span class="co">    """</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-109" class="slide level2">
+<h2></h2>
+<p>Como eu tinha mencionado, o código gerado inicialmente pelo Copilot não estava correto.</p>
+<p>Primeiramente tive que mudar o prompt da função <code>fazer_copia</code>.</p>
+<ul>
+<li class="fragment">Pois, traduzindo diretamente o prompt do livro, a função estava olhando apenas os nomes dos arquivos e não o conteúdo.</li>
+</ul>
+</section>
+<section id="section-110" class="slide level2">
+<h2></h2>
+<p>Depois, ao usar o programa, vi que estavam sendo gerados 198 arquivos em vez de 200.</p>
+<ul>
+<li class="fragment">Os arquivos abaixo, por exemplo, estavam sendo identificados como idênticos pelo programa e um deles estava sendo perdido.</li>
+</ul>
+<div class="fragment">
+<div class="columns">
+<div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/3531.png" class="quarto-figure quarto-figure-center" style="max-height: 30vh; width: auto;" alt="Arquivo 3531.png da pasta figuras1."></p>
+</figure>
+</div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/8512.png" class="quarto-figure quarto-figure-center" style="max-height: 30vh; width: auto;" alt="Arquivo 8512.png da pasta figuras2."></p>
+</figure>
+</div>
+</div></div>
+</div>
+</section>
+<section id="section-111" class="slide level2">
+<h2></h2>
+<p>Como eu descobri isso?</p>
+<ul>
+<li class="fragment">A primeira coisa que fiz foi imprimir os nomes dos arquivos que estavam sendo considerados idênticos.</li>
+<li class="fragment">Como eu sabia que deveria ser 10 arquivos idênticos e estavam aparecendo 12, não seria tão complicado conferir manualmente.</li>
+<li class="fragment">E o primeiro par já foi esse que mostrei.</li>
+</ul>
+</section>
+<section id="section-112" class="slide level2">
+<h2></h2>
+<p>Perguntei então ao Copilot sobre como funciona a função <code>filecmp.cmp</code>, usada no código gerado pelo Copilot para comparar os arquivos.</p>
+<ul>
+<li class="fragment">E, na explicação, descobri que a função tem um parâmetro <code>shallow</code> que por padrão é <code>True</code>.</li>
+<li class="fragment">E, com esse valor, a função não compara o conteúdo dos arquivos, mas sim seus metadadados (tipo, tamanho e data de modificação).
+<ul>
+<li class="fragment">E as imagens que mostrei, por coincidência, tinham o mesmo tamanho, tipo e data de modificação.</li>
+</ul></li>
+<li class="fragment">Alterei então o código passando <code>shallow=False</code> como argumento da função e o problema foi resolvido.</li>
+</ul>
+</section>
+<section id="section-113" class="slide level2">
+<h2></h2>
+<p>Reforçando então:</p>
+<ul>
+<li class="fragment"><strong>Cuidado</strong> com automatizações que podem levar a perda de dados.</li>
+<li class="fragment">Faça <strong>testes</strong>.</li>
+<li class="fragment">Trabalhe com <strong>cópias</strong> dos dados originais.</li>
+</ul>
 
 
 </section></section>

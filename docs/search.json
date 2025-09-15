@@ -4379,7 +4379,7 @@
     "href": "aula_t6.html#section-100",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Para esse exemplo, não vou colocar aqui nos slides o passo a passo completo.\n\nVou colocar os prompts usados no livro, mas sem apresentar os resutados do Copilot.\nRepita os passos no seu computador e teste com o arquivo mencionado."
+    "text": "Para esse exemplo, não vou colocar aqui nos slides o passo a passo completo.\n\nVou colocar os prompts usados no livro, mas sem apresentar os resutados do Copilot.\nRepita os passos no seu computador e teste com o arquivo mencionado.\n\n\nAtenção: ao fazer no meu computador eu descobri que precisei fazer uma engenharia de Prompt e também vi que o código gerado perdia dois arquivos!\n\nPortanto, é importante testar o código gerado até que ele esteja correto."
   },
   {
     "objectID": "aula_t6.html#section-101",
@@ -4421,20 +4421,55 @@
     "href": "aula_t6.html#section-106",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "def obter_bom_nome_arquivo(caminho_arquivo):\n    \"\"\"\n    caminho_arquivo é o nome de um arquivo PNG.\n\n    Enquanto o arquivo caminho_arquivo existir, acrescenta\n    um caractere _ logo antes do .png e retorna o novo nome.\n    Ex.: 9595.png se torna 9595_.png.\n\n    Retorna o nome resultante do arquivo.\n    \"\"\""
+    "text": "def obter_bom_nome_arquivo(nome_arquivo):\n    \"\"\"\n    nome_arquivo é o nome de um arquivo PNG.\n\n    Enquanto o arquivo caminho_arquivo existir, acrescenta\n    um caractere _ logo antes do .png e retorna o novo nome.\n    Ex.: 9595.png se torna 9595_.png.\n\n    Retorna o nome resultante do arquivo.\n    \"\"\""
   },
   {
     "objectID": "aula_t6.html#section-107",
     "href": "aula_t6.html#section-107",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "def fazer_copia(caminho_arquivo, pasta_destino):\n    \"\"\"\n    \"\"\""
+    "text": "def fazer_copia(nome_arquivo, pasta_destino):\n    \"\"\"\n    nome_arquivo é um nome de arquivo, como figuras1/1262.png.\n    pasta_destino é o nome de uma pasta.\n\n    Compara o conteúdo do arquivo apontado por nome_arquivo com \n    todos os arquivos na pasta_destino (não importa o nome do arquivo).\n    Se o arquivo não for idêntico a nenhum arquivo na pasta_destino,\n    faz uma cópia do arquivo na pasta_destino.\n    \"\"\""
   },
   {
     "objectID": "aula_t6.html#section-108",
     "href": "aula_t6.html#section-108",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "def fazer_varias_copias(pastas, pasta_destino):\n    \"\"\"\n    \n    \"\"\""
+    "text": "def fazer_varias_copias(pastas, pasta_destino):\n    \"\"\"\n    pastas é uma lista de nomes de pastas.\n    pasta_destino é o nome de uma pasta.\n\n    Verifica cada arquivo nas pastas da lista pastas\n    e compara com todos os arquivos em pasta_destino.\n    Se um arquivo não for idêntico a nenhum arquivo em pasta_destino,\n    faz uma cópia do arquivo em pasta_destino.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_t6.html#section-109",
+    "href": "aula_t6.html#section-109",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Como eu tinha mencionado, o código gerado inicialmente pelo Copilot não estava correto.\nPrimeiramente tive que mudar o prompt da função fazer_copia.\n\nPois, traduzindo diretamente o prompt do livro, a função estava olhando apenas os nomes dos arquivos e não o conteúdo."
+  },
+  {
+    "objectID": "aula_t6.html#section-110",
+    "href": "aula_t6.html#section-110",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Depois, ao usar o programa, vi que estavam sendo gerados 198 arquivos em vez de 200.\n\nOs arquivos abaixo, por exemplo, estavam sendo identificados como idênticos pelo programa e um deles estava sendo perdido."
+  },
+  {
+    "objectID": "aula_t6.html#section-111",
+    "href": "aula_t6.html#section-111",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Como eu descobri isso?\n\nA primeira coisa que fiz foi imprimir os nomes dos arquivos que estavam sendo considerados idênticos.\nComo eu sabia que deveria ser 10 arquivos idênticos e estavam aparecendo 12, não seria tão complicado conferir manualmente.\nE o primeiro par já foi esse que mostrei."
+  },
+  {
+    "objectID": "aula_t6.html#section-112",
+    "href": "aula_t6.html#section-112",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Perguntei então ao Copilot sobre como funciona a função filecmp.cmp, usada no código gerado pelo Copilot para comparar os arquivos.\n\nE, na explicação, descobri que a função tem um parâmetro shallow que por padrão é True.\nE, com esse valor, a função não compara o conteúdo dos arquivos, mas sim seus metadadados (tipo, tamanho e data de modificação).\n\nE as imagens que mostrei, por coincidência, tinham o mesmo tamanho, tipo e data de modificação.\n\nAlterei então o código passando shallow=False como argumento da função e o problema foi resolvido."
+  },
+  {
+    "objectID": "aula_t6.html#section-113",
+    "href": "aula_t6.html#section-113",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Reforçando então:\n\nCuidado com automatizações que podem levar a perda de dados.\nFaça testes.\nTrabalhe com cópias dos dados originais."
   }
 ]

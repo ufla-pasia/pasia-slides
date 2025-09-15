@@ -1705,6 +1705,13 @@ Para esse exemplo, não vou colocar aqui nos slides o passo a passo completo.
 - Vou colocar os prompts usados no livro, mas sem apresentar os resutados do Copilot.
 - Repita os passos no seu computador e teste com o arquivo mencionado.
 
+. . .
+
+[Atenção]{.alert}: ao fazer no meu computador eu descobri que precisei fazer uma 
+engenharia de Prompt e também vi que o código gerado perdia dois arquivos!
+
+- Portanto, é importante testar o código gerado até que ele esteja correto.
+
 ## 
 
 ::: {.callout-caution title="Prompt" icon="false"}
@@ -1785,8 +1792,8 @@ def fazer_copia(nome_arquivo, pasta_destino):
     nome_arquivo é um nome de arquivo, como figuras1/1262.png.
     pasta_destino é o nome de uma pasta.
 
-    Compara o arquivo apontado por nome_arquivo com todos os 
-    arquivos na pasta_destino
+    Compara o conteúdo do arquivo apontado por nome_arquivo com 
+    todos os arquivos na pasta_destino (não importa o nome do arquivo).
     Se o arquivo não for idêntico a nenhum arquivo na pasta_destino,
     faz uma cópia do arquivo na pasta_destino.
     """
@@ -1806,3 +1813,57 @@ def fazer_varias_copias(pastas, pasta_destino):
     faz uma cópia do arquivo em pasta_destino.
     """
 ```
+
+##
+
+Como eu tinha mencionado, o código gerado inicialmente pelo Copilot não estava correto.
+
+
+Primeiramente tive que mudar o prompt da função `fazer_copia`.
+
+- Pois, traduzindo diretamente o prompt do livro, a função estava olhando apenas os
+  nomes dos arquivos e não o conteúdo.
+
+##
+
+Depois, ao usar o programa, vi que estavam sendo gerados 198 arquivos em vez de 200.
+
+- Os arquivos abaixo, por exemplo, estavam sendo identificados como idênticos pelo programa
+    e um deles estava sendo perdido.
+
+. . .
+
+::: {.columns}
+::: {.column}
+![](imagens/3531.png){fig-align="center" fig-alt="Arquivo 3531.png da pasta figuras1." style="max-height: 30vh; width: auto;"}
+:::
+::: {.column}
+![](imagens/8512.png){fig-align="center" fig-alt="Arquivo 8512.png da pasta figuras2." style="max-height: 30vh; width: auto;"}
+:::
+:::
+
+##
+
+Como eu descobri isso?
+
+- A primeira coisa que fiz foi imprimir os nomes dos arquivos que estavam sendo considerados idênticos.
+- Como eu sabia que deveria ser 10 arquivos idênticos e estavam aparecendo 12, não seria tão complicado conferir manualmente.
+- E o primeiro par já foi esse que mostrei.
+
+##
+
+Perguntei então ao Copilot sobre como funciona a função `filecmp.cmp`, usada no código gerado pelo Copilot para 
+comparar os arquivos.
+
+- E, na explicação, descobri que a função tem um parâmetro `shallow` que por padrão é `True`.
+- E, com esse valor, a função não compara o conteúdo dos arquivos, mas sim seus metadadados (tipo, tamanho e data de modificação).
+  - E as imagens que mostrei, por coincidência, tinham o mesmo tamanho, tipo e data de modificação.
+- Alterei então o código passando `shallow=False` como argumento da função e o problema foi resolvido.
+
+##
+
+Reforçando então:
+
+- **Cuidado** com automatizações que podem levar a perda de dados.
+- Faça **testes**.
+- Trabalhe com **cópias** dos dados originais.
