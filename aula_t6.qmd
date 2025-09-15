@@ -1818,6 +1818,7 @@ def fazer_varias_copias(pastas, pasta_destino):
 
 Como eu tinha mencionado, o código gerado inicialmente pelo Copilot não estava correto.
 
+. . .
 
 Primeiramente tive que mudar o prompt da função `fazer_copia`.
 
@@ -1844,10 +1845,17 @@ Depois, ao usar o programa, vi que estavam sendo gerados 198 arquivos em vez de 
 
 ##
 
-Como eu descobri isso?
+E o pior: ao comparar o código gerado com o do livro, a comparação usava a mesma função `filecmp.cmp`.
+
+- Como então funcionava no livro, mas não no meu computador?
+
+. . .
+
+Era de hora de usar ferramentas de [debugging]{.alert}.
+
 
 - A primeira coisa que fiz foi imprimir os nomes dos arquivos que estavam sendo considerados idênticos.
-- Como eu sabia que deveria ser 10 arquivos idênticos e estavam aparecendo 12, não seria tão complicado conferir manualmente.
+- Como eu sabia que deveriam ser 10 arquivos idênticos e estavam aparecendo 12, não seria tão complicado conferir manualmente.
 - E o primeiro par já foi esse que mostrei.
 
 ##
@@ -1856,13 +1864,27 @@ Perguntei então ao Copilot sobre como funciona a função `filecmp.cmp`, usada 
 comparar os arquivos.
 
 - E, na explicação, descobri que a função tem um parâmetro `shallow` que por padrão é `True`.
-- E, com esse valor, a função não compara o conteúdo dos arquivos, mas sim seus metadadados (tipo, tamanho e data de modificação).
+  - Obs.: em Python, parâmetros com valores padrões não precisam ser passados na chamada da função.
+- Com o valor padrão, a função não compara o conteúdo dos arquivos, mas sim seus metadadados (tipo, tamanho e data de modificação).
   - E as imagens que mostrei, por coincidência, tinham o mesmo tamanho, tipo e data de modificação.
-- Alterei então o código passando `shallow=False` como argumento da função e o problema foi resolvido.
 
 ##
 
-Reforçando então:
+Alterei então o código passando `shallow=False` como argumento da função e o problema foi resolvido.
+
+- Foram gerados os 200 arquivos esperados.
+
+. . .
+
+Mas por que então o código do livro funcionava?
+
+- A questão é que eu estava usando Ubuntu e os autores do livro estavam usando Windows.
+- E a data de modificação dos arquivos tem precisão diferente nos dois sistemas operacionais.
+- Enviei entao uma _errata_ para os autores do livro.
+
+##
+
+Aproveito esse episódio para reforçar alguns pontos:
 
 - **Cuidado** com automatizações que podem levar a perda de dados.
 - Faça **testes**.

@@ -4442,7 +4442,7 @@
     "href": "aula_t6.html#section-109",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Como eu tinha mencionado, o código gerado inicialmente pelo Copilot não estava correto.\nPrimeiramente tive que mudar o prompt da função fazer_copia.\n\nPois, traduzindo diretamente o prompt do livro, a função estava olhando apenas os nomes dos arquivos e não o conteúdo."
+    "text": "Como eu tinha mencionado, o código gerado inicialmente pelo Copilot não estava correto.\n\nPrimeiramente tive que mudar o prompt da função fazer_copia.\n\nPois, traduzindo diretamente o prompt do livro, a função estava olhando apenas os nomes dos arquivos e não o conteúdo."
   },
   {
     "objectID": "aula_t6.html#section-110",
@@ -4456,20 +4456,27 @@
     "href": "aula_t6.html#section-111",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Como eu descobri isso?\n\nA primeira coisa que fiz foi imprimir os nomes dos arquivos que estavam sendo considerados idênticos.\nComo eu sabia que deveria ser 10 arquivos idênticos e estavam aparecendo 12, não seria tão complicado conferir manualmente.\nE o primeiro par já foi esse que mostrei."
+    "text": "E o pior: ao comparar o código gerado com o do livro, a comparação usava a mesma função filecmp.cmp.\n\nComo então funcionava no livro, mas não no meu computador?\n\n\nEra de hora de usar ferramentas de debugging.\n\nA primeira coisa que fiz foi imprimir os nomes dos arquivos que estavam sendo considerados idênticos.\nComo eu sabia que deveriam ser 10 arquivos idênticos e estavam aparecendo 12, não seria tão complicado conferir manualmente.\nE o primeiro par já foi esse que mostrei."
   },
   {
     "objectID": "aula_t6.html#section-112",
     "href": "aula_t6.html#section-112",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Perguntei então ao Copilot sobre como funciona a função filecmp.cmp, usada no código gerado pelo Copilot para comparar os arquivos.\n\nE, na explicação, descobri que a função tem um parâmetro shallow que por padrão é True.\nE, com esse valor, a função não compara o conteúdo dos arquivos, mas sim seus metadadados (tipo, tamanho e data de modificação).\n\nE as imagens que mostrei, por coincidência, tinham o mesmo tamanho, tipo e data de modificação.\n\nAlterei então o código passando shallow=False como argumento da função e o problema foi resolvido."
+    "text": "Perguntei então ao Copilot sobre como funciona a função filecmp.cmp, usada no código gerado pelo Copilot para comparar os arquivos.\n\nE, na explicação, descobri que a função tem um parâmetro shallow que por padrão é True.\n\nObs.: em Python, parâmetros com valores padrões não precisam ser passados na chamada da função.\n\nCom o valor padrão, a função não compara o conteúdo dos arquivos, mas sim seus metadadados (tipo, tamanho e data de modificação).\n\nE as imagens que mostrei, por coincidência, tinham o mesmo tamanho, tipo e data de modificação."
   },
   {
     "objectID": "aula_t6.html#section-113",
     "href": "aula_t6.html#section-113",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Reforçando então:\n\nCuidado com automatizações que podem levar a perda de dados.\nFaça testes.\nTrabalhe com cópias dos dados originais."
+    "text": "Alterei então o código passando shallow=False como argumento da função e o problema foi resolvido.\n\nForam gerados os 200 arquivos esperados.\n\n\nMas por que então o código do livro funcionava?\n\nA questão é que eu estava usando Ubuntu e os autores do livro estavam usando Windows.\nE a data de modificação dos arquivos tem precisão diferente nos dois sistemas operacionais.\nEnviei entao uma errata para os autores do livro."
+  },
+  {
+    "objectID": "aula_t6.html#section-114",
+    "href": "aula_t6.html#section-114",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Aproveito esse episódio para reforçar alguns pontos:\n\nCuidado com automatizações que podem levar a perda de dados.\nFaça testes.\nTrabalhe com cópias dos dados originais."
   }
 ]
