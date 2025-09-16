@@ -4478,5 +4478,173 @@
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
     "text": "Aproveito esse episódio para reforçar alguns pontos:\n\nCuidado com automatizações que podem levar a perda de dados.\nFaça testes.\nTrabalhe com cópias dos dados originais."
+  },
+  {
+    "objectID": "aula_p6.html#section",
+    "href": "aula_p6.html#section",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Imagine que queremos juntar fotos dos nossos celulares e de nossos familiares.\n\nA ideia é ter tudo acessível em um único lugar.\nPara que todos possam ter acesso a todas as fotos.\nMas, provavelmente, existem fotos repetidas, que uma pessoa mandou para outra.\n\ne não queremos ter fotos repetidas no nosso acervo.\n\n\n\nVamos então criar uma ferramenta que faça isso para nós."
+  },
+  {
+    "objectID": "aula_p6.html#section-1",
+    "href": "aula_p6.html#section-1",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Para testar, vamos usar o arquivo AulaP6-tarefa1.zip que contém várias figuras em PNG.\n\nExistem duas subpastas, figuras1 e figuras2, cada uma com várias figuras.\nNão são fotos reais, mas servem para testar a ferramenta."
+  },
+  {
+    "objectID": "aula_p6.html#section-2",
+    "href": "aula_p6.html#section-2",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "A pasta figuras1 tem 98 figuras e a pasta figuras2 tem 112.\n\nNo total são então 210 figuras, mas 10 são repetidas.\n\nPor ex.: a figura 1566.png da pasta figuras1 é idêntica à figura 2471.png da pasta figuras2.\n\nPortanto, se nossa ferramenta funcionar corretamente, no final teremos 200 figuras.\nAlém disso, devemos tomar cuidado pois podem existir fotos diferentes nas duas pastas mas com o mesmo nome.\n\nPor ex.: a figura 9595.png da pasta figuras1 é diferente da figura 9595.png da pasta figuras2.\nNesse caso nós não queremos perder nenhuma das duas, e precisaremos renomear uma delas."
+  },
+  {
+    "objectID": "aula_p6.html#section-3",
+    "href": "aula_p6.html#section-3",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Tarefa 1\n\n\nA ideia é que você crie a ferramenta em Python para tratar essa demanda de juntar as fotos. A ferramenta deve ser suficientemente genérica para que possa ser usada para juntar fotos de várias pastas (e não apenas as duas do exemplo). Deve ser possível também usar a ferramenta novamente para acrescentar novas fotos na pasta que contém as fotos juntadas (sem duplicar fotos).\nLembre-se de usar o fluxo de trabalho que vimos na aula anterior (e que está repetido no próximo slide).\nDica: você deve usar os arquivos disponíveis em AulaP6-tarefa1.zip para realizar testes. Confira se são geradas 200 fotos no total.\nDepois de fazer o exercício, leia os slides seguintes que apresentam como o problema foi tratado pelos autores do livro e algumas dicas de como o professor lidou com problemas teve para construir a ferramenta."
+  },
+  {
+    "objectID": "aula_p6.html#section-4",
+    "href": "aula_p6.html#section-4",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Fluxo de trabalho para usar o Copilot na criação de ferramentas que usem módulos do Python.\n\nPedir ao Copilot (ou ChatGPT) para listar módulos do Python que podem ser usados para a tarefa de interesse.\nPerguntar ao Copilot sobre os prós e contras de cada módulo.\nEscolher o módulo que parece mais adequado.\nSe necessário, criar um ambiente virtual e instalar o módulo.\nSeguir o Ciclo de Projeto de Funções que vimos anteriormente, incluindo o módulo escolhido.\nSe ficarmos travados, tentamos um módulo diferente."
+  },
+  {
+    "objectID": "aula_p6.html#section-5",
+    "href": "aula_p6.html#section-5",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Para esse exemplo, não vou colocar o passo a passo completo nos slides como fiz na aula teórica.\n\nApresento a seguir os prompts usados no livro, mas sem incluir os resutados do Copilot.\nVocê pode repetir os passos no seu computador e teste com o arquivo mencionado.\n\n\nAtenção: ao fazer no meu computador eu descobri que precisei fazer uma engenharia de Prompt e também vi que o código gerado perdia dois arquivos!\n\nIsso reforça a importância de sempre testar bem uma ferramenta criada com suporte de Assistentes de IA."
+  },
+  {
+    "objectID": "aula_p6.html#section-6",
+    "href": "aula_p6.html#section-6",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Prompt\n\n\nEu preciso escrever um programa em Python que copia arquivos. Como posso fazer isso?\n\n\n\n\n\nA ideia de copiar arquivos em vez de movê-los é para evitar perda de dados.\n\n\n\n\n\n\nPrompt\n\n\nO módulo shutil precisa ser instalado?"
+  },
+  {
+    "objectID": "aula_p6.html#section-7",
+    "href": "aula_p6.html#section-7",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Prompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?\n\n\n\n\n\n\n\n\n\nPrompt\n\n\nE se eu tiver centenas de arquivos PNG e quiser encontrar arquivos duplicados? Essa abordagem ainda funciona?\n\n\n\n\n\n\n\n\n\n\nPrompt\n\n\nComo eu posso descobrir se dois arquivos PNG são idênticos usando Python?"
+  },
+  {
+    "objectID": "aula_p6.html#section-8",
+    "href": "aula_p6.html#section-8",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "A partir daí os autores livro usam decomposição de problemas para criar a ferramenta.\n\nA ideia é criar uma ferramenta mais genérica de forma que possa ser usada em mais situações.\nPor exemplo, ela poderia receber várias pastas de figuras e não apenas duas.\nE poderia copiar as fotos para uma pasta de destino,\n\nsempre verificando se a foto já existe lá (para evitar duplicatas)."
+  },
+  {
+    "objectID": "aula_p6.html#section-9",
+    "href": "aula_p6.html#section-9",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Os autores, usando design top-down, definem então as funções abaixo.\n\nfazer_varias_copias: faz cópias de várias fotos de várias pastas em uma pasta de destino, desde que elas não sejam duplicadas.\nfazer_copia: faz a cópia de uma única foto em uma pasta de destino, desde que ela não seja duplicada.\nobter_bom_nome_arquivo: gera um nome para a foto copiada de forma a evitar perda de dados por conflito de nomes."
+  },
+  {
+    "objectID": "aula_p6.html#section-10",
+    "href": "aula_p6.html#section-10",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Essas são as assinaturas e docstrings das funções usadas no livro.\n\nComo já vimos antes, na hora de implementar seguimos o caminho bottom-up.\nPortanto, será apresentada primeira a 3ª função, depois a 2ª e por fim a 1ª."
+  },
+  {
+    "objectID": "aula_p6.html#section-11",
+    "href": "aula_p6.html#section-11",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "def obter_bom_nome_arquivo(nome_arquivo):\n    \"\"\"\n    nome_arquivo é o nome de um arquivo PNG.\n\n    Enquanto o arquivo caminho_arquivo existir, acrescenta\n    um caractere _ logo antes do .png e retorna o novo nome.\n    Ex.: 9595.png se torna 9595_.png.\n\n    Retorna o nome resultante do arquivo.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_p6.html#section-12",
+    "href": "aula_p6.html#section-12",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "def fazer_copia(nome_arquivo, pasta_destino):\n    \"\"\"\n    nome_arquivo é um nome de arquivo, como figuras1/1262.png.\n    pasta_destino é o nome de uma pasta.\n\n    Compara o conteúdo do arquivo apontado por nome_arquivo com \n    todos os arquivos na pasta_destino (não importa o nome do arquivo).\n    Se o arquivo não for idêntico a nenhum arquivo na pasta_destino,\n    faz uma cópia do arquivo na pasta_destino.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_p6.html#section-13",
+    "href": "aula_p6.html#section-13",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "def fazer_varias_copias(pastas, pasta_destino):\n    \"\"\"\n    pastas é uma lista de nomes de pastas.\n    pasta_destino é o nome de uma pasta.\n\n    Verifica cada arquivo nas pastas da lista pastas\n    e compara com todos os arquivos em pasta_destino.\n    Se um arquivo não for idêntico a nenhum arquivo em pasta_destino,\n    faz uma cópia do arquivo em pasta_destino.\n    \"\"\""
+  },
+  {
+    "objectID": "aula_p6.html#section-14",
+    "href": "aula_p6.html#section-14",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Como eu tinha mencionado, nos meus testes, o código gerado inicialmente pelo Copilot não estava correto.\n\nPrimeiramente tive que mudar o prompt da função fazer_copia.\n\nPois, traduzindo diretamente o prompt do livro, a função estava olhando apenas os nomes dos arquivos e não o conteúdo."
+  },
+  {
+    "objectID": "aula_p6.html#section-15",
+    "href": "aula_p6.html#section-15",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Depois, ao usar o programa, vi que estavam sendo gerados 198 arquivos em vez de 200.\n\nOs arquivos abaixo, por exemplo, estavam sendo identificados como idênticos pelo programa e, portanto, um deles seria perdido."
+  },
+  {
+    "objectID": "aula_p6.html#section-16",
+    "href": "aula_p6.html#section-16",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "E o pior: ao comparar o código gerado com o do livro, a comparação usava a mesma função filecmp.cmp.\n\nComo então funcionava no livro, mas não no meu computador?"
+  },
+  {
+    "objectID": "aula_p6.html#section-17",
+    "href": "aula_p6.html#section-17",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Era de hora de usar ferramentas de debugging.\n\nA primeira coisa que fiz foi imprimir os nomes dos arquivos que estavam sendo considerados idênticos.\nComo eu sabia que deveriam ser 10 arquivos idênticos e estavam aparecendo 12, não seria tão complicado conferir manualmente.\nE o primeiro par de arquivos mostrado já foi o que mostrei no slide anterior."
+  },
+  {
+    "objectID": "aula_p6.html#section-18",
+    "href": "aula_p6.html#section-18",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Perguntei ao Copilot como funciona a função filecmp.cmp, usada no código gerado pelo Copilot para comparar os arquivos.\n\nE, na explicação, descobri que a função tem um parâmetro shallow que por padrão é True.\n\nObs.: em Python, parâmetros com valores padrões não precisam ser passados na chamada da função.\n\nCom o valor padrão shallow=True, a função não compara o conteúdo dos arquivos, mas sim seus metadadados (tipo, tamanho e data de modificação).\n\nE as imagens que mostrei, por coincidência, tinham o mesmo tamanho, tipo e data de modificação."
+  },
+  {
+    "objectID": "aula_p6.html#section-19",
+    "href": "aula_p6.html#section-19",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Alterei então o código passando shallow=False como argumento da função e o problema foi resolvido.\n\nForam gerados os 200 arquivos esperados.\n\n\nMas por que então o código do livro funcionava?\n\nA questão é que eu estava usando Ubuntu e os autores do livro estavam usando Windows.\nProvavelmente o erro se deve ao fato de que a data de modificação dos arquivos tem precisão diferente nos dois sistemas operacionais.\nEnviei então uma errata para os autores do livro."
+  },
+  {
+    "objectID": "aula_p6.html#section-20",
+    "href": "aula_p6.html#section-20",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Aproveito esse episódio para reforçar alguns pontos:\n\nCuidado com automatizações que podem levar a perda de dados.\nFaça testes.\nTrabalhe com cópias dos dados originais."
+  },
+  {
+    "objectID": "aula_p6.html#section-21",
+    "href": "aula_p6.html#section-21",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Tarefa 2\n\n\nO arquivo vendas_produtos.xlsx contém dados de vendas mensais de diferentes produtos. Sua tarefa é criar uma ferramenta em Python que leia o arquivo, calcule o total de vendas de cada produto, e escreva o resultado em um novo arquivo do Excel chamado vendas_totais.xlsx.\nA planilha de resultado deve ter três colunas: Descrição do Produto, Código do Produto e Total de Vendas.\nPara ajudar na validação, o próximo slide apresenta o resultado esperado."
+  },
+  {
+    "objectID": "aula_p6.html#section-22",
+    "href": "aula_p6.html#section-22",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Descrição do Produto\nCódigo do Produto\nTotal de Vendas\n\n\n\n\nCadeira Escritório\nP008\nR$ 17.982,43\n\n\nHD Externo Seagate\nP010\nR$ 3.699,33\n\n\nHeadset JBL\nP009\nR$ 22.404,40\n\n\nImpressora HP\nP005\nR$ 3.931,24\n\n\nMonitor LG\nP004\nR$ 28.756,69\n\n\nMouse Gamer\nP007\nR$ 25.156,30\n\n\nNotebook Dell\nP001\nR$ 19.085,25\n\n\nSmartphone Samsung\nP002\nR$ 4.438,86\n\n\nTablet Apple\nP003\nR$ 5.330,93\n\n\nTeclado Mecânico\nP006\nR$ 13.751,35"
+  },
+  {
+    "objectID": "aula_p6.html#section-23",
+    "href": "aula_p6.html#section-23",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "",
+    "text": "Tarefa 3\n\n\nPara quem gosta de ser bem informado, pode ser entediante consultar vários sites de notícias todos os dias para selecionar o que gostaria de ler.\nSua tarefa é escrever um webscraper em Python que extrai e exibe as manchetes e as URLs (links) das notícias mais recentes de um site de notícias.\nDica: provavelmente você precisará dos módulos beautifulsoup4 e requests."
   }
 ]
