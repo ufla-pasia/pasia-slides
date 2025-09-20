@@ -4646,5 +4646,180 @@
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
     "text": "Tarefa 3\n\n\nPara quem gosta de ser bem informado, pode ser entediante consultar vários sites de notícias todos os dias para selecionar o que gostaria de ler.\nSua tarefa é escrever um webscraper em Python que extrai e exibe as manchetes e as URLs (links) das notícias mais recentes de um site de notícias.\nDica: provavelmente você precisará dos módulos beautifulsoup4 e requests."
+  },
+  {
+    "objectID": "aula_t7.html#section",
+    "href": "aula_t7.html#section",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "O conteúdo dessa aula é inspirado:\n\nno capítulo 8 do livro Python para Ciência de Dados, de Yuli Vasiliev\ne no capítulo 15 do livro Curso Intensivo de Python, de Eric Matthes."
+  },
+  {
+    "objectID": "aula_t7.html#section-1",
+    "href": "aula_t7.html#section-1",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Imagine que você trabalha em uma empresa que comercializa um app para Smartphones.\n\nA empresa tem informações sobre a quantidade de licenças vendidas por mês.\nE sobre o perfil de usuário (como idade, país, etc.) relacionado a essas vendas.\n\n\nVocê precisa apresentar essas informações para a diretoria da empresa.\n\nO objetivo é ajudar a entender como aumentar o faturamento da empresa."
+  },
+  {
+    "objectID": "aula_t7.html#section-2",
+    "href": "aula_t7.html#section-2",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Como você apresentaria as informações para a diretoria?\n\nvocê mostraria os dados em tabelas?\nou você faria gráficos?\n\n\nA maioria das pessoas entende melhor informações apresentadas em gráficos do que em tabelas.\n\nUm formato visual traz muito mais clareza para os dados."
+  },
+  {
+    "objectID": "aula_t7.html#section-3",
+    "href": "aula_t7.html#section-3",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Mas veja que não basta mostrar os dados em um gráfico qualquer.\n\nÉ necessário que o gráfico seja simples e visualmente agradável\ne, principalmente, que permita que todos entendem claramente o que veem.\nCom isso, as pessoas conseguirão identificar padrões e tendências nos dados."
+  },
+  {
+    "objectID": "aula_t7.html#section-4",
+    "href": "aula_t7.html#section-4",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "É disso que se trata o que chamamos de visualização de dados.\n\nque é o uso de representações visuais para explorar e para evidenciar padrões em conjuntos de dados.\nOnde um conjunto de dados (ou dataset) pode ser desde uma simples lista de números até terabytes de dados com diversos tipos diferentes de inforamações.\n\n\nA visualização está estreitamente ligada ao que chamamos de análise exploratória de dados."
+  },
+  {
+    "objectID": "aula_t7.html#section-5",
+    "href": "aula_t7.html#section-5",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Python deve ser a linguagem mais usada em Ciência de Dados.\n\nExemplos de áreas que fazem uso intensivo de dados são:\n\ngenética, pesquisa climática, análise política, análise econômica,\ne diversas outras.\n\n\n\nMas há muitos outros usos mesmo para áreas que não são tão “intensas em dados” assim.\n\nQualquer empresa que queira tomar decisões baseadas em dados pode se beneficiar de visualizações eficazes."
+  },
+  {
+    "objectID": "aula_t7.html#section-6",
+    "href": "aula_t7.html#section-6",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "As bibliotecas mais usadas para visualização de dados em Python são:\n\nMatplotlib\nSeaborn\nPandas\nPlotly"
+  },
+  {
+    "objectID": "aula_t7.html#os-dados",
+    "href": "aula_t7.html#os-dados",
+    "title": "Visualizando Dados",
+    "section": "Os Dados",
+    "text": "Os Dados\nPara exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples.\n\n📊 Exemplo: Vendas mensais de três produtos\n\nimport pandas as pd\n\ndados = {\n    \"Mês\": [\"Jan\", \"Fev\", \"Mar\", \"Abr\", \"Mai\", \"Jun\"],\n    \"Produto A\": [150, 200, 250, 300, 280, 320],\n    \"Produto B\": [100, 120, 180, 160, 220, 210],\n    \"Produto C\": [80, 90, 100, 120, 140, 160]\n}\n\ndf = pd.DataFrame(dados)\nprint(df)"
+  },
+  {
+    "objectID": "aula_t7.html#section-7",
+    "href": "aula_t7.html#section-7",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Antes de demonstrarmos o uso das bibliotecas, vamos criar um arquivo requirements.txt com as bibliotecas que usaremos.\npandas\nmatplotlib\nseaborn\nplotly\n\nLembre-se que para instalar as bibliotecas, você deve criar um ambiente virtual e instalar as bibliotecas.\n\nVocê pode fazer isso manualente, como mostrei antes, ou…\n\npython3 -m venv venv\nsource venv/bin/activate  # Linux/Mac\nvenv\\Scripts\\activate     # Windows\npython -m pip install -r requirements.txt"
+  },
+  {
+    "objectID": "aula_t7.html#os-dados-1",
+    "href": "aula_t7.html#os-dados-1",
+    "title": "Visualizando Dados",
+    "section": "Os Dados",
+    "text": "Os Dados\nPara exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples.\n\n📊 Exemplo: Vendas mensais de três produtos\n\nimport pandas as pd\n\ndados = {\n    \"Mês\": [\"Jan\", \"Fev\", \"Mar\", \"Abr\", \"Mai\", \"Jun\"],\n    \"Produto A\": [150, 200, 250, 300, 280, 320],\n    \"Produto B\": [100, 120, 180, 160, 220, 210],\n    \"Produto C\": [80, 90, 100, 120, 140, 160]\n}\n\ndf = pd.DataFrame(dados)\nprint(df)"
+  },
+  {
+    "objectID": "aula_t7.html#matplotlib",
+    "href": "aula_t7.html#matplotlib",
+    "title": "Visualizando Dados",
+    "section": "Matplotlib",
+    "text": "Matplotlib\n\n📌 Biblioteca fundamental para gráficos em Python.\n\nSuporta grande variedade de gráficos 2D (linhas, barras, dispersão, histogramas).\n\nMuito flexível, mas exige mais código para personalizações.\n\nÉ a base de várias outras bibliotecas (como Seaborn e Pandas).\n\n\n# Exemplo simples\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 2, 3, 4], [10, 20, 25, 30])\nplt.title(\"Exemplo Matplotlib\")\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#seaborn",
+    "href": "aula_t7.html#seaborn",
+    "title": "Visualizando Dados",
+    "section": "Seaborn",
+    "text": "Seaborn\n\n📌 Construída sobre o Matplotlib.\nOferece visualizações estatísticas com aparência mais elegante.\nFacilita gráficos de distribuições, correlações e regressões.\nIdeal para análise exploratória de dados.\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\ntips = sns.load_dataset(\"tips\")\nsns.scatterplot(data=tips, x=\"total_bill\", y=\"tip\", hue=\"time\")\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#pandas-df.plot",
+    "href": "aula_t7.html#pandas-df.plot",
+    "title": "Visualizando Dados",
+    "section": "Pandas (df.plot)",
+    "text": "Pandas (df.plot)\n\n📌 Permite criar gráficos diretamente de DataFrames.\nBaseado no Matplotlib.\nMuito útil para análises rápidas e relatórios simples.\nMenos flexível para visualizações complexas.\n\nimport pandas as pd\n\ndf = pd.DataFrame({\n    \"Ano\": [2021, 2022, 2023],\n    \"Vendas\": [150, 200, 250]\n})\n\ndf.plot(x=\"Ano\", y=\"Vendas\", kind=\"bar\", title=\"Vendas por Ano\")"
+  },
+  {
+    "objectID": "aula_t7.html#plotly",
+    "href": "aula_t7.html#plotly",
+    "title": "Visualizando Dados",
+    "section": "Plotly",
+    "text": "Plotly\n\n📌 Biblioteca para gráficos interativos.\nSuporta zoom, hover, exportação e gráficos 3D.\nMuito usada em dashboards e relatórios dinâmicos.\nIntegra-se bem com Dash para aplicações web.\n\n```python import plotly.express as px\ndf = px.data.iris() fig = px.scatter(df, x=“sepal_width”, y=“sepal_length”, color=“species”) fig.show() ```python"
+  },
+  {
+    "objectID": "aula_t7.html#dados-de-exemplo",
+    "href": "aula_t7.html#dados-de-exemplo",
+    "title": "Visualizando Dados",
+    "section": "Dados de exemplo",
+    "text": "Dados de exemplo\nPara exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples sobre vendas mensais de três produtos 📊\n\n\n\n\nMês\nProduto A\nProduto B\nProduto C\n\n\n\n\nJan\n150\n100\n80\n\n\nFev\n200\n120\n90\n\n\nMar\n250\n180\n100\n\n\nAbr\n300\n160\n120\n\n\nMai\n280\n170\n140\n\n\nJun\n320\n150\n160"
+  },
+  {
+    "objectID": "aula_t7.html#section-8",
+    "href": "aula_t7.html#section-8",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Você pode, em vez de fazer manualmente, usar o VS Code para facilitar o processo.\n\nSe você criar um arquivo requirements.txt na raiz do projeto\n\ne depois acessar a opção paleta de comandos (Ctrl+Shift+P) e digitar Python: Create Environment\no VS Code cria o ambiente virtual e já instala as bibliotecas listadas no arquivo."
+  },
+  {
+    "objectID": "aula_t7.html#matplotlib-1",
+    "href": "aula_t7.html#matplotlib-1",
+    "title": "Visualizando Dados",
+    "section": "Matplotlib",
+    "text": "Matplotlib\n\n📌 Biblioteca fundamental para gráficos em Python.\n\nSuporta grande variedade de gráficos 2D (linhas, barras, dispersão, histogramas).\n\nMuito flexível, mas exige mais código para personalizações.\n\nÉ a base de várias outras bibliotecas (como Seaborn e Pandas).\n\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 2, 3, 4], [10, 20, 25, 30])\nplt.title(\"Exemplo Matplotlib\")\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-9",
+    "href": "aula_t7.html#section-9",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Com o exemplo anterior, seria mostrado o gráfico abaixo:\n\n\n\n\n\n\n\n\n\nNote que a primeira lista representa os valores do eixo X e a segunda os do eixo Y.\n\nplt.plot([1, 2, 3, 4], [10, 20, 25, 30])"
+  },
+  {
+    "objectID": "aula_t7.html#section-10",
+    "href": "aula_t7.html#section-10",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Vamos agora pedir ao Copilot para gerar um gráfico de linhas com os dados de vendas mensais usando a biblioteca Matplotlib.\n\n\n\n\n\nPrompt\n\n\nGere um gráfico de linhas usando Matplotlib com os dados abaixo que se referem às vendas mensais de três produtos.\nMês Produto A   Produto B   Produto C\nJan 150 100 80\nFev 200 120 90\nMar 250 180 100\nAbr 300 160 120\nMai 280 170 140\nJun 320 150 160"
+  },
+  {
+    "objectID": "aula_t7.html#section-11",
+    "href": "aula_t7.html#section-11",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\n\nmeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']\nproduto_a = [150, 200, 250, 300, 280, 320]\nproduto_b = [100, 120, 180, 160, 170, 150]\nproduto_c = [80, 90, 100, 120, 140, 160]\n\nplt.plot(meses, produto_a, marker='o', label='Produto A')\nplt.plot(meses, produto_b, marker='o', label='Produto B')\nplt.plot(meses, produto_c, marker='o', label='Produto C')\n\nplt.title('Vendas Mensais por Produto')\nplt.xlabel('Mês')\nplt.ylabel('Vendas')\nplt.legend()\nplt.grid(True)\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-12",
+    "href": "aula_t7.html#section-12",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Note que o Copilot criou uma lista para cada coluna dos dados.\n\nE o gráfico de resultado seria esse:\n\n\n\n\n\n\n\n\n\n\n\nLeia o código gerado pelo Copilot e tente identificar o que cada parte faz.\nDepois, compare o gráfico gerado com o primeiro mostrado como exemplo."
+  },
+  {
+    "objectID": "aula_t7.html#section-13",
+    "href": "aula_t7.html#section-13",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Com o Copilot é fácil alterarmos a forma como o gráfico é gerado.\n\nPodemos, por exemplo, pedir que use marcadores diferentes para cada produto,\nOu linhas mais grossas, cores diferentes, etc.\n\n\n\n\n\n\nPrompt\n\n\nAltere o gráfico usando marcadores diferentes para cada produto, linhas mais grossas e esconda nas linhas de grade."
+  },
+  {
+    "objectID": "aula_t7.html#section-14",
+    "href": "aula_t7.html#section-14",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Dava bastante trabalho customizar gráficos antes dos Assisentes de IA 😮‍💨\nAgora com o Copilot podemos concentrar mais atenção no que queremos mostrar com o gráfico 🤓\ne menos em como fazer isso."
+  },
+  {
+    "objectID": "aula_t7.html#section-15",
+    "href": "aula_t7.html#section-15",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "meses = [“Jan”, “Fev”, “Mar”, “Abr”, “Mai”, “Jun”] produto_a = [150, 200, 250, 300, 280, 320] produto_b = [100, 120, 180, 160, 220, 210] produto_c = [80, 90, 100, 120, 140, 160]\nPara ma\nSuponha que tenhamos esses dados de vendas em um dicionário Python:\n\nNote que as chaves dos dicionários representam os nomes das colunas\ne os valores são listas com os dados de cada coluna.\n\n. .\nimport pandas as pd\n\n\n\ndf = pd.DataFrame(dados)\nprint(df)"
+  },
+  {
+    "objectID": "aula_t7.html#section-16",
+    "href": "aula_t7.html#section-16",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.\n\nMas para usarmos aqui, vamos criar um dicionário Python com esses dados.\n\n\nvendas = {\n    \"Mês\": [\"Jan\", \"Fev\", \"Mar\", \"Abr\", \"Mai\", \"Jun\"],\n    \"Produto A\": [150, 200, 250, 300, 280, 320],\n    \"Produto B\": [100, 120, 180, 160, 220, 210],\n    \"Produto C\": [80, 90, 100, 120, 140, 160]\n}\nRepare que cada chave do dicionário representa o nome de uma coluna.\n\nE os valores são listas com os dados de cada coluna."
   }
 ]

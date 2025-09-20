@@ -1,0 +1,396 @@
+---
+title: Visualizando Dados
+subtitle: PASIA - Aula T.7
+---
+
+##  
+
+O conteúdo dessa aula é inspirado:
+
+- no **capítulo 8** do livro Python para Ciência de Dados, de Yuli Vasiliev 
+- e no **capítulo 15** do livro Curso Intensivo de Python, de Eric Matthes.
+
+# Introdução {background-color="#40666e"}
+
+## 
+
+Imagine que você trabalha em uma empresa que comercializa um app para Smartphones.
+
+- A empresa tem informações sobre a quantidade de licenças vendidas por mês.
+- E sobre o perfil de usuário (como idade, país, etc.) relacionado a essas vendas.
+
+. . .
+
+Você precisa apresentar essas informações para a diretoria da empresa.
+
+- O objetivo é ajudar a entender como aumentar o faturamento da empresa.
+
+## 
+
+Como você apresentaria as informações para a diretoria?
+
+- você mostraria os dados em tabelas?
+- ou você faria gráficos?
+
+. . .
+
+A maioria das pessoas entende melhor informações apresentadas em gráficos do que em tabelas.
+
+- Um formato visual traz muito mais clareza para os dados.
+
+##
+
+Mas veja que não basta mostrar os dados em um gráfico qualquer.
+
+- É necessário que o gráfico seja simples e visualmente agradável
+- e, principalmente, que permita que todos entendem claramente o que veem.
+- Com isso, as pessoas conseguirão identificar padrões e tendências nos dados.
+
+##
+
+É disso que se trata o que chamamos de [visualização de dados]{.alert}.
+
+- que é o uso de representações visuais para explorar e para evidenciar padrões em conjuntos de dados.
+- Onde um conjunto de dados (ou _dataset_) pode ser desde uma simples lista de números até 
+  terabytes de dados com diversos tipos diferentes de inforamações.
+
+. . . 
+
+A visualização está estreitamente ligada ao que chamamos de **análise exploratória de dados**.
+
+
+##
+
+Python deve ser a linguagem mais usada em Ciência de Dados.
+
+. . .
+
+Exemplos de áreas que fazem uso intensivo de dados são:
+
+- genética, pesquisa climática, análise política, análise econômica, 
+- e diversas outras.
+
+. . .
+
+Mas há muitos outros usos mesmo para áreas que não são tão _"intensas em dados"_ assim.
+
+- Qualquer empresa que queira tomar decisões baseadas em dados pode se beneficiar de visualizações eficazes.
+
+##
+
+As bibliotecas mais usadas para visualização de dados em Python são:
+
+- Matplotlib
+- Seaborn
+- Pandas
+- Plotly
+
+##
+
+Antes de demonstrarmos o uso das bibliotecas, vamos criar um arquivo
+`requirements.txt` com as bibliotecas que usaremos.
+
+```text
+pandas
+matplotlib
+seaborn
+plotly
+```
+
+. . .
+
+Lembre-se que para instalar as bibliotecas, você deve criar um ambiente virtual
+e instalar as bibliotecas.
+
+- Você pode fazer isso manualente, como mostrei antes, ou...
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+python -m pip install -r requirements.txt
+```
+
+##
+
+Você pode, em vez de fazer manualmente, usar o VS Code para facilitar o processo.
+
+. . .
+
+Se você criar um arquivo `requirements.txt` na raiz do projeto
+
+- e depois acessar a opção paleta de comandos (Ctrl+Shift+P) e digitar **Python: Create Environment**
+- o VS Code cria o ambiente virtual e já instala as bibliotecas listadas no arquivo.
+
+## Dados de exemplo
+
+Para exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples
+sobre **vendas mensais de três produtos** 📊
+
+. . .
+
+
+| Mês | Produto A | Produto B | Produto C |
+|-----|-----------|-----------|-----------|
+| Jan |   150     |   100     |    80     |
+| Fev |   200     |   120     |    90     |
+| Mar |   250     |   180     |   100     |
+| Abr |   300     |   160     |   120     |
+| Mai |   280     |   170     |   140     |
+| Jun |   320     |   150     |   160     |
+
+# Matplotlib {background-color="#40666e"}
+
+## Matplotlib
+
+- 📌 Biblioteca **fundamental** para gráficos em Python.  
+- Suporta grande variedade de gráficos 2D (linhas, barras, dispersão, histogramas).  
+- Muito flexível, mas exige mais código para personalizações.  
+- É a **base** de várias outras bibliotecas (como Seaborn e Pandas).  
+
+. . .
+
+```python
+# Exemplo simples
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [10, 20, 25, 30])
+plt.title("Exemplo Matplotlib")
+plt.show()
+```
+
+##
+
+Com o exemplo anterior, seria mostrado o gráfico abaixo:
+
+:::: {.columns}
+::: {.column width="50%"}
+![](imagens/exemplo_matplotlib.png){fig-align="center" fig-alt="Exemplo gráfico matplotlib." style="max-height: 50vh; width: auto;"}
+:::
+
+::: {.column width="50%"}
+- Note que a primeira lista representa os valores do eixo X e a segunda os do eixo Y.
+
+```{.python code-line-numbers="false"}
+plt.plot([1, 2, 3, 4], [10, 20, 25, 30])
+```
+:::
+::::
+
+##
+
+Vamos agora pedir ao Copilot para gerar um gráfico de linhas com os dados de vendas mensais
+usando a biblioteca Matplotlib.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+Gere um gráfico de linhas usando Matplotlib com os dados abaixo que se referem às vendas mensais 
+de três produtos.
+
+```
+Mês	Produto A	Produto B	Produto C
+Jan	150	100	80
+Fev	200	120	90
+Mar	250	180	100
+Abr	300	160	120
+Mai	280	170	140
+Jun	320	150	160
+```
+:::
+
+##
+
+```python
+import matplotlib.pyplot as plt
+
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+produto_a = [150, 200, 250, 300, 280, 320]
+produto_b = [100, 120, 180, 160, 170, 150]
+produto_c = [80, 90, 100, 120, 140, 160]
+
+plt.plot(meses, produto_a, marker='o', label='Produto A')
+plt.plot(meses, produto_b, marker='o', label='Produto B')
+plt.plot(meses, produto_c, marker='o', label='Produto C')
+
+plt.title('Vendas Mensais por Produto')
+plt.xlabel('Mês')
+plt.ylabel('Vendas')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+##  
+
+Note que o Copilot criou uma lista para cada coluna dos dados.
+
+- E o gráfico de resultado seria esse:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+![](imagens/matplotlib_vendas.png){fig-align="center" fig-alt="Gráfico de vendas mensais usando matplotlib." style="max-height: 50vh; width: auto;"}
+:::
+
+::: {.column width="50%"}
+
+- Leia o código gerado pelo Copilot e tente identificar o que cada parte faz.
+
+- Depois, compare o gráfico gerado com o primeiro mostrado como exemplo.
+:::
+::::
+
+##
+
+Com o Copilot é fácil alterarmos a forma como o gráfico é gerado.
+
+- Podemos, por exemplo, pedir que use marcadores diferentes para cada produto,
+- Ou linhas mais grossas, cores diferentes, etc.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+Altere o gráfico usando marcadores diferentes para cada produto, linhas mais grossas
+e esconda nas linhas de grade.
+:::
+
+##
+
+:::: {.columns}
+::: {.column width="50%"}
+![](imagens/matplotlib_vendas_alterado.png){fig-align="center" fig-alt="Gráfico de vendas mensais laterado usando matplotlib." style="max-height: 50vh; width: auto;"}
+:::
+
+::: {.column width="50%"}
+
+- Dava bastante trabalho customizar gráficos antes dos Assisentes de IA 😮‍💨
+- Agora com o Copilot podemos concentrar mais atenção no que queremos mostrar com o gráfico 🤓 
+- e menos em como fazer isso.
+:::
+::::
+
+# Seaborn {background-color="#40666e"}
+
+## Seaborn
+
+- 📌 Construída sobre o Matplotlib.
+- Oferece visualizações estatísticas com aparência mais elegante.
+- Facilita criação de gráficos de distribuições, correlações e regressões.
+- Ideal para análise exploratória de dados.
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.lineplot(x=[1, 2, 3, 4], y=[10, 20, 25, 30], marker="o")
+plt.title("Exemplo Seaborn")
+plt.show()
+```
+
+##
+
+
+meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"]
+produto_a = [150, 200, 250, 300, 280, 320]
+produto_b = [100, 120, 180, 160, 220, 210]
+produto_c = [80, 90, 100, 120, 140, 160]
+
+Para ma
+
+Suponha que tenhamos esses dados de vendas em um dicionário Python:
+
+- Note que as chaves dos dicionários representam os nomes das colunas
+- e os valores são listas com os dados de cada coluna.
+
+. . 
+
+```python
+import pandas as pd
+
+
+
+df = pd.DataFrame(dados)
+print(df)
+```
+
+## Os Dados
+
+Para exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples.
+
+- 📊 Exemplo: **Vendas mensais de três produtos**
+
+```python
+import pandas as pd
+
+dados = {
+    "Mês": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+    "Produto A": [150, 200, 250, 300, 280, 320],
+    "Produto B": [100, 120, 180, 160, 220, 210],
+    "Produto C": [80, 90, 100, 120, 140, 160]
+}
+
+df = pd.DataFrame(dados)
+print(df)
+```
+
+
+## Seaborn
+
+
+
+##
+
+Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.
+
+- Mas para usarmos aqui, vamos criar um dicionário Python com esses dados.
+
+. . .
+
+```python
+vendas = {
+    "Mês": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+    "Produto A": [150, 200, 250, 300, 280, 320],
+    "Produto B": [100, 120, 180, 160, 220, 210],
+    "Produto C": [80, 90, 100, 120, 140, 160]
+}
+```
+
+Repare que cada chave do dicionário representa o nome de uma coluna.
+
+- E os valores são listas com os dados de cada coluna.
+
+## Pandas (df.plot)
+
+- 📌 Permite criar gráficos diretamente de DataFrames.
+- Baseado no Matplotlib.
+- Muito útil para análises rápidas e relatórios simples.
+- Menos flexível para visualizações complexas.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({
+    "Ano": [2021, 2022, 2023],
+    "Vendas": [150, 200, 250]
+})
+
+df.plot(x="Ano", y="Vendas", kind="bar", title="Vendas por Ano")
+```
+
+## Plotly
+
+- 📌 Biblioteca para gráficos interativos.
+- Suporta zoom, hover, exportação e gráficos 3D.
+- Muito usada em dashboards e relatórios dinâmicos.
+- Integra-se bem com Dash para aplicações web.
+
+```python
+import plotly.express as px
+
+df = px.data.iris()
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species")
+fig.show()
+```python

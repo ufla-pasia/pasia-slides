@@ -484,17 +484,18 @@ python3 -m venv venv
 
 2. **Ative o ambiente virtual:**
 ```bash
-source venv/bin/activate
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
 ```
 
 3. **Instale o módulo desejado (exemplo: pyperclip):**
 ```bash
-pip install pyperclip
+python -m pip install pyperclip
 ```
 
 4. **(Opcional) Gere um arquivo de dependências:**
 ```bash
-pip freeze > requirements.txt
+python -m pip freeze > requirements.txt
 ```
 
 Assim, você mantém seu projeto organizado e fácil de compartilhar ou replicar em outros ambientes.
@@ -1303,9 +1304,10 @@ para criar o ambiente virtual e instalar o módulo `pypdf`.
 
 ```{.bash code-line-numbers="false"}
 python3 -m venv venv
-source venv/bin/activate
-pip install pypdf
-pip freeze > requirements.txt
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+python -m pip install pypdf
+python -m pip freeze > requirements.txt
 ```
 
 . . .
