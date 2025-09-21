@@ -215,7 +215,7 @@
     </div>
 </div>
 
-  <p class="date">20/09/2025</p>
+  <p class="date">21/09/2025</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -224,6 +224,11 @@
 <li class="fragment">no <strong>capítulo 8</strong> do livro Python para Ciência de Dados, de Yuli Vasiliev</li>
 <li class="fragment">e no <strong>capítulo 15</strong> do livro Curso Intensivo de Python, de Eric Matthes.</li>
 </ul>
+</section>
+<section>
+<section id="introdução" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Introdução</h1>
+
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
@@ -257,18 +262,27 @@
 <h2></h2>
 <p>Mas veja que não basta mostrar os dados em um gráfico qualquer.</p>
 <ul>
-<li class="fragment">É necessário que o gráfico seja simples e visualmente agradável</li>
+<li class="fragment">É necessário que o gráfico seja simples,</li>
+<li class="fragment">visualmente agradável</li>
 <li class="fragment">e, principalmente, que permita que todos entendem claramente o que veem.</li>
-<li class="fragment">Com isso, as pessoas conseguirão identificar padrões e tendências nos dados.</li>
 </ul>
+<div class="fragment">
+<p>Com isso, as pessoas conseguirão identificar padrões e tendências nos dados.</p>
+</div>
 </section>
 <section id="section-4" class="slide level2">
 <h2></h2>
-<p>É disso que se trata o que chamamos de <span class="alert">visualização de dados</span>.</p>
+<p>É disso que se trata o que chamamos de <span class="alert">visualização de dados</span>;</p>
 <ul>
 <li class="fragment">que é o uso de representações visuais para explorar e para evidenciar padrões em conjuntos de dados.</li>
-<li class="fragment">Onde um conjunto de dados (ou <em>dataset</em>) pode ser desde uma simples lista de números até terabytes de dados com diversos tipos diferentes de inforamações.</li>
 </ul>
+<div class="fragment">
+<p>Um conjunto de dados (ou <em>dataset</em>) pode ser:</p>
+<ul>
+<li class="fragment">desde uma simples lista de números</li>
+<li class="fragment">até terabytes de dados com diversos tipos diferentes de inforamações.</li>
+</ul>
+</div>
 <div class="fragment">
 <p>A visualização está estreitamente ligada ao que chamamos de <strong>análise exploratória de dados</strong>.</p>
 </div>
@@ -292,6 +306,15 @@
 </section>
 <section id="section-6" class="slide level2">
 <h2></h2>
+<p>Nosso foco aqui não será em Ciência dos Dados em si, nosso objetivo será:</p>
+<ul>
+<li class="fragment">Ter uma visão geral sobre as principais <strong>bibliotecas de visualização de dados</strong> em Python.</li>
+<li class="fragment">Conhecer alguns dos <strong>tipos de gráficos mais comuns</strong>.</li>
+<li class="fragment">E aprender a usar essas bibliotecas <strong>com a ajuda do GitHub Copilot</strong>.</li>
+</ul>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
 <p>As bibliotecas mais usadas para visualização de dados em Python são:</p>
 <ul>
 <li class="fragment">Matplotlib</li>
@@ -300,39 +323,105 @@
 <li class="fragment">Plotly</li>
 </ul>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
-<p>Antes de demonstrarmos o uso das bibliotecas, vamos criar um arquivo <code>requirements.txt</code> com as bibliotecas que usaremos.</p>
+<p>Antes de demonstrarmos o uso das bibliotecas, vamos criar uma pasta com um arquivo <code>requirements.txt</code> com as bibliotecas que usaremos e abri-la no VS Code.</p>
+<div class="fragment">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>pandas</span>
 <span id="cb1-2"><a></a>matplotlib</span>
 <span id="cb1-3"><a></a>seaborn</span>
 <span id="cb1-4"><a></a>plotly</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="fragment">
 <p>Lembre-se que para instalar as bibliotecas, você deve criar um ambiente virtual e instalar as bibliotecas.</p>
 <ul>
-<li class="fragment">Você pode fazer isso manualente, como mostrei antes, ou…</li>
+<li class="fragment">Você pode fazer isso manualmente, como mostrei antes, ou…</li>
 </ul>
+</div>
+<div class="fragment">
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="ex">python3</span> <span class="at">-m</span> venv venv</span>
 <span id="cb2-2"><a></a><span class="bu">source</span> venv/bin/activate  <span class="co"># Linux/Mac</span></span>
 <span id="cb2-3"><a></a><span class="ex">venv\Scripts\activate</span>     <span class="co"># Windows</span></span>
 <span id="cb2-4"><a></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-r</span> requirements.txt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
 <p>Você pode, em vez de fazer manualmente, usar o VS Code para facilitar o processo.</p>
 <div class="fragment">
-<p>Se você criar um arquivo <code>requirements.txt</code> na raiz do projeto</p>
+<p>Se você tiver um arquivo <code>requirements.txt</code> na raiz do projeto</p>
 <ul>
-<li class="fragment">e depois acessar a opção paleta de comandos (Ctrl+Shift+P) e digitar <strong>Python: Create Environment</strong></li>
+<li class="fragment">e depois acessar a paleta de comandos (Ctrl+Shift+P) e digitar <strong>Python: Create Environment</strong></li>
 <li class="fragment">o VS Code cria o ambiente virtual e já instala as bibliotecas listadas no arquivo.</li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="matplotlib" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Matplotlib</h1>
+
 </section>
-<section id="dados-de-exemplo" class="slide level2">
-<h2>Dados de exemplo</h2>
-<p>Para exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples sobre <strong>vendas mensais de três produtos</strong> 📊</p>
+<section id="matplotlib-1" class="slide level2">
+<h2>Matplotlib</h2>
+<ul>
+<li class="fragment">É a biblioteca <strong>fundamental</strong> para gráficos em Python.<br>
+</li>
+<li class="fragment">Suporta grande variedade de gráficos 2D (linhas, barras, dispersão, histogramas).<br>
+</li>
+<li class="fragment">Muito flexível, mas exige mais código para personalizações.<br>
+</li>
+<li class="fragment">É a <strong>base</strong> de várias outras bibliotecas (como Seaborn e Pandas).</li>
+</ul>
 <div class="fragment">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Exemplo simples</span></span>
+<span id="cb3-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>])</span>
+<span id="cb3-5"><a></a>plt.title(<span class="st">"Exemplo Matplotlib"</span>)</span>
+<span id="cb3-6"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<p>Com o exemplo anterior, seria mostrado o gráfico abaixo:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/exemplo_matplotlib.png" class="quarto-figure quarto-figure-center" alt="Exemplo gráfico matplotlib."></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment">Note que a primeira lista representa os valores do eixo X e a segunda os do eixo Y.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p>Repare que o gráfico é exibido em uma tela que possui uma barra de ferramentas na parte inferior.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/exemplo_matplotlib_tela.png" class="quarto-figure quarto-figure-center" alt="Tela do exemplo gráfico matplotlib."></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment">Com essa barra, podemos salvar o gráfico como uma imagem,</li>
+<li class="fragment">ou interagir com o gráfico, fazendo zoom, por exemplo.</li>
+<li class="fragment">Ou ainda alterando configurações como o tamanho e espaçamento do gráfico.</li>
+</ul>
+</div></div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p>Vamos usar agora, como exemplo, um conjunto de dados simples, sobre 📊 <strong>vendas mensais de três produtos</strong></p>
+<ul>
+<li class="fragment">Vamos pedir ao Copilot para gerar um gráfico de linhas com esses dados, usando a biblioteca Matplotlib.</li>
+</ul>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -381,49 +470,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 </section>
-<section id="matplotlib" class="slide level2">
-<h2>Matplotlib</h2>
-<ul>
-<li class="fragment">📌 Biblioteca <strong>fundamental</strong> para gráficos em Python.<br>
-</li>
-<li class="fragment">Suporta grande variedade de gráficos 2D (linhas, barras, dispersão, histogramas).<br>
-</li>
-<li class="fragment">Muito flexível, mas exige mais código para personalizações.<br>
-</li>
-<li class="fragment">É a <strong>base</strong> de várias outras bibliotecas (como Seaborn e Pandas).</li>
-</ul>
-<div class="fragment">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Exemplo simples</span></span>
-<span id="cb3-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>])</span>
-<span id="cb3-5"><a></a>plt.title(<span class="st">"Exemplo Matplotlib"</span>)</span>
-<span id="cb3-6"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="section-9" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
-<p>Com o exemplo anterior, seria mostrado o gráfico abaixo:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imagens/exemplo_matplotlib.png" class="quarto-figure quarto-figure-center" style="max-height: 50vh; width: auto;" alt="Exemplo gráfico matplotlib."></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Note que a primeira lista representa os valores do eixo X e a segunda os do eixo Y.</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-</section>
-<section id="section-10" class="slide level2">
-<h2></h2>
-<p>Vamos agora pedir ao Copilot para gerar um gráfico de linhas com os dados de vendas mensais usando a biblioteca Matplotlib.</p>
-<div class="fragment">
 <div title="Prompt">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -443,10 +492,16 @@ Jun 320 150 160</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-2"><a></a></span>
 <span id="cb6-3"><a></a>meses <span class="op">=</span> [<span class="st">'Jan'</span>, <span class="st">'Fev'</span>, <span class="st">'Mar'</span>, <span class="st">'Abr'</span>, <span class="st">'Mai'</span>, <span class="st">'Jun'</span>]</span>
@@ -465,8 +520,12 @@ Jun 320 150 160</code></pre>
 <span id="cb6-16"><a></a>plt.grid(<span class="va">True</span>)</span>
 <span id="cb6-17"><a></a>plt.tight_layout()</span>
 <span id="cb6-18"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="section-12" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <p>Note que o Copilot criou uma lista para cada coluna dos dados.</p>
 <ul>
@@ -477,18 +536,18 @@ Jun 320 150 160</code></pre>
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="imagens/matplotlib_vendas.png" class="quarto-figure quarto-figure-center" style="max-height: 50vh; width: auto;" alt="Gráfico de vendas mensais usando matplotlib."></p>
+<p><img data-src="imagens/matplotlib_vendas.png" class="quarto-figure quarto-figure-center" alt="Gráfico de vendas mensais usando matplotlib."></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li class="fragment"><p>Leia o código gerado pelo Copilot e tente identificar o que cada parte faz.</p></li>
-<li class="fragment"><p>Depois, compare o gráfico gerado com o primeiro mostrado como exemplo.</p></li>
+<li class="fragment"><p>Avalie o gráfico e o código gerado pelo Copilot e tente identificar o que cada parte do código faz.</p></li>
+<li class="fragment"><p>Depois, compare com o código e gráficos do primeiro exemplo mostrado.</p></li>
 </ul>
 </div></div>
 </div>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <p>Com o Copilot é fácil alterarmos a forma como o gráfico é gerado.</p>
 <ul>
@@ -510,24 +569,814 @@ Jun 320 150 160</code></pre>
 </div>
 </div>
 </section>
-<section id="section-14" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_vendas_alterado.png" class="quarto-figure quarto-figure-center" alt="Gráfico de vendas mensais alterado usando matplotlib."></p>
+</figure>
+</div>
+</section>
+<section id="section-18" class="slide level2">
+<h2></h2>
+<p>Dava bastante trabalho 😮‍💨 customizar gráficos antes dos Assisentes de IA;</p>
+<div class="fragment">
+<p>Agora com o Copilot podemos concentrar</p>
+<ul>
+<li class="fragment"><span class="alert">mais</span> atenção <span class="alert">no que queremos</span> mostrar 🤓 com o gráfico<br>
+</li>
+<li class="fragment">e <strong>menos em como</strong> fazer isso.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="tipos-de-gráficos-com-matplotlib" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Tipos de Gráficos com Matplotlib</h1>
+
+</section>
+<section id="gráfico-de-linhas" class="slide level2">
+<h2>Gráfico de Linhas</h2>
+<p><span class="alert">Gráficos de linhas</span>, como os que apresentamos, são úteis quando precisamos:</p>
+<ul>
+<li class="fragment">ilustrar tendências em dados ao longo de um período de tempo.</li>
+</ul>
+<div class="fragment">
+<p>Geral usamos períodos de tempo no eixo <code>X</code> (horizontal).</p>
+<ul>
+<li class="fragment">e uma ou mais colunas numéricas no eixo <code>Y</code> (vertical).</li>
+</ul>
+</div>
+</section>
+<section id="section-19" class="slide level2">
+<h2></h2>
+<p>Podemos fazer gráficos de linha mais complexos, como quando sobrepomos dados de diferentes escalas.</p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_linhas_escalas_diferentes.png" class="quarto-figure quarto-figure-center" alt="Gráfico de temperatura e umidade em diferentes escalas."></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="section-20" class="slide level2">
+<h2></h2>
+<p>O gráfico do slide anterior anterior foi gerado com o seguinte código:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="co"># Dados de exemplo</span></span>
+<span id="cb7-4"><a></a>dias <span class="op">=</span> [<span class="st">'Seg'</span>, <span class="st">'Ter'</span>, <span class="st">'Qua'</span>, <span class="st">'Qui'</span>, <span class="st">'Sex'</span>, <span class="st">'Sáb'</span>, <span class="st">'Dom'</span>]</span>
+<span id="cb7-5"><a></a>temperatura <span class="op">=</span> [<span class="dv">22</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">24</span>, <span class="dv">22</span>, <span class="dv">20</span>, <span class="dv">19</span>]</span>
+<span id="cb7-6"><a></a>umidade <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">58</span>, <span class="dv">55</span>, <span class="dv">62</span>, <span class="dv">70</span>, <span class="dv">75</span>]</span>
+<span id="cb7-7"><a></a></span>
+<span id="cb7-8"><a></a>fig, ax1 <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb7-9"><a></a></span>
+<span id="cb7-10"><a></a>ax1.plot(dias, temperatura, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'tab:red'</span>, label<span class="op">=</span><span class="st">'Temperatura (°C)'</span>)</span>
+<span id="cb7-11"><a></a>ax1.set_xlabel(<span class="st">'Dia'</span>)</span>
+<span id="cb7-12"><a></a>ax1.set_ylabel(<span class="st">'Temperatura (°C)'</span>, color<span class="op">=</span><span class="st">'tab:red'</span>)</span>
+<span id="cb7-13"><a></a>ax1.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, labelcolor<span class="op">=</span><span class="st">'tab:red'</span>)</span>
+<span id="cb7-14"><a></a></span>
+<span id="cb7-15"><a></a>ax2 <span class="op">=</span> ax1.twinx()</span>
+<span id="cb7-16"><a></a>ax2.plot(dias, umidade, marker<span class="op">=</span><span class="st">'s'</span>, color<span class="op">=</span><span class="st">'tab:blue'</span>, label<span class="op">=</span><span class="st">'Umidade (%)'</span>)</span>
+<span id="cb7-17"><a></a>ax2.set_ylabel(<span class="st">'Umidade (%)'</span>, color<span class="op">=</span><span class="st">'tab:blue'</span>)</span>
+<span id="cb7-18"><a></a>ax2.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, labelcolor<span class="op">=</span><span class="st">'tab:blue'</span>)</span>
+<span id="cb7-19"><a></a></span>
+<span id="cb7-20"><a></a>plt.title(<span class="st">'Temperatura e Umidade ao longo da semana'</span>)</span>
+<span id="cb7-21"><a></a>fig.tight_layout()</span>
+<span id="cb7-22"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-21" class="slide level2">
+<h2></h2>
+<p>Como esse é um exemplo um pouco mais complexo, vamos pedir ao Copilot para explicar o código linha a linha</p>
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p><code>/explain</code> Explique o código linha a linha.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-22" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot (início)">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot (início)</strong></p>
+</div>
+<div class="callout-content">
+<p>Vou explicar o código Python linha a linha. Este código cria um gráfico com dois eixos Y para mostrar temperatura e umidade ao longo da semana:</p>
+<p><span class="alert">Linha 1</span></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Importa a biblioteca matplotlib.pyplot com o alias <code>plt</code>. Esta biblioteca é usada para criar gráficos e visualizações em Python.</p>
+<p><span class="alert">Linhas 3-6</span></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># Dados de exemplo</span></span>
+<span id="cb9-2"><a></a>dias <span class="op">=</span> [<span class="st">'Seg'</span>, <span class="st">'Ter'</span>, <span class="st">'Qua'</span>, <span class="st">'Qui'</span>, <span class="st">'Sex'</span>, <span class="st">'Sáb'</span>, <span class="st">'Dom'</span>]</span>
+<span id="cb9-3"><a></a>temperatura <span class="op">=</span> [<span class="dv">22</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">24</span>, <span class="dv">22</span>, <span class="dv">20</span>, <span class="dv">19</span>]</span>
+<span id="cb9-4"><a></a>umidade <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">58</span>, <span class="dv">55</span>, <span class="dv">62</span>, <span class="dv">70</span>, <span class="dv">75</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Linha 3</strong>: Comentário indicando que os dados são de exemplo</li>
+<li><strong>Linha 4</strong>: Cria uma lista com os dias da semana abreviados</li>
+<li><strong>Linha 5</strong>: Cria uma lista com valores de temperatura em graus Celsius para cada dia</li>
+<li><strong>Linha 6</strong>: Cria uma lista com valores de umidade em percentual para cada dia</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-23" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot (continuação)">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot (continuação)</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="alert">Linha 8</span></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>fig, ax1 <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Cria uma figura (fig) e um eixo principal (ax1) com tamanho de 8x5 polegadas. A função <code>subplots()</code> retorna tanto a figura quanto o(s) eixo(s).</p>
+<p><span class="alert">Linhas 10-13</span></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>ax1.plot(dias, temperatura, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'tab:red'</span>, label<span class="op">=</span><span class="st">'Temperatura (°C)'</span>)</span>
+<span id="cb11-2"><a></a>ax1.set_xlabel(<span class="st">'Dia'</span>)</span>
+<span id="cb11-3"><a></a>ax1.set_ylabel(<span class="st">'Temperatura (°C)'</span>, color<span class="op">=</span><span class="st">'tab:red'</span>)</span>
+<span id="cb11-4"><a></a>ax1.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, labelcolor<span class="op">=</span><span class="st">'tab:red'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Linha 10</strong>: Plota a temperatura no eixo principal com marcadores circulares (‘o’) em cor vermelha</li>
+<li><strong>Linha 11</strong>: Define o rótulo do eixo X como ‘Dia’</li>
+<li><strong>Linha 12</strong>: Define o rótulo do eixo Y esquerdo como ‘Temperatura (°C)’ em cor vermelha</li>
+<li><strong>Linha 13</strong>: Configura a cor dos números do eixo Y esquerdo para vermelho</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-24" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot (continuação)">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot (continuação)</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="alert">Linhas 15-18</span></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>ax2 <span class="op">=</span> ax1.twinx()</span>
+<span id="cb12-2"><a></a>ax2.plot(dias, umidade, marker<span class="op">=</span><span class="st">'s'</span>, color<span class="op">=</span><span class="st">'tab:blue'</span>, label<span class="op">=</span><span class="st">'Umidade (%)'</span>)</span>
+<span id="cb12-3"><a></a>ax2.set_ylabel(<span class="st">'Umidade (%)'</span>, color<span class="op">=</span><span class="st">'tab:blue'</span>)</span>
+<span id="cb12-4"><a></a>ax2.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, labelcolor<span class="op">=</span><span class="st">'tab:blue'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Linha 15</strong>: Cria um segundo eixo Y (ax2) que compartilha o mesmo eixo X com ax1</li>
+<li><strong>Linha 16</strong>: Plota a umidade no segundo eixo com marcadores quadrados (‘s’) em cor azul</li>
+<li><strong>Linha 17</strong>: Define o rótulo do eixo Y direito como ‘Umidade (%)’ em cor azul</li>
+<li><strong>Linha 18</strong>: Configura a cor dos números do eixo Y direito para azul</li>
+</ul>
+<p><span class="alert">Linhas 20-23</span></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>plt.title(<span class="st">'Temperatura e Umidade ao longo da semana'</span>)</span>
+<span id="cb13-2"><a></a>fig.tight_layout()</span>
+<span id="cb13-3"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Linha 20</strong>: Define o título do gráfico</li>
+<li><strong>Linha 21</strong>: Ajusta automaticamente o layout para evitar sobreposição de elementos</li>
+<li><strong>Linha 22</strong>: Linha em branco para melhor legibilidade</li>
+<li><strong>Linha 23</strong>: Exibe o gráfico na tela</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-25" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot (continuação)">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot (continuação)</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="alert">Resultado</span></p>
+<p>O código gera um gráfico que mostra duas linhas:</p>
+<ul>
+<li>Uma linha vermelha com círculos mostrando a temperatura (eixo Y esquerdo)</li>
+<li>Uma linha azul com quadrados mostrando a umidade (eixo Y direito)</li>
+</ul>
+<p>Ambas as linhas compartilham o mesmo eixo X (dias da semana), permitindo comparar facilmente como temperatura e umidade variam ao longo da semana.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-26" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Você pode estar se perguntando para que pedir explicações sobre o código ao Copilot, se basta pedir a ele novamente se precisarmos fazer algo diferente.</p>
+<p>Repare que, quanto mais um programador conhece uma biblioteca, melhor uso ele consegue fazer dos assistentes de IA.</p>
+<p>Claro que não é necessário entender os detalhes de sintaxe e decorar as funções que fazem os gráficos. E dependendo do seu objetivo, talvez nem precise entender nada.</p>
+<p>Mas, dependendo do que precisa, pode ser especialmente útil saber o que a biblioteca é capaz de fazer e entender o suficiente do código para que tornar mais fácil o processo de depuração e customização do código gerado.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="gráficos-de-barras" class="slide level2">
+<h2>Gráficos de Barras</h2>
+<p><span class="alert">Gráficos de Barras</span>, também conhecidos como <strong>Gráficos de Colunas</strong>, são úteis para:</p>
+<ul>
+<li class="fragment">comparar quantidades entre diferentes categorias.</li>
+</ul>
+<div class="fragment">
+<p>Vamos usar o Copilot de maneira ligeiramente diferente que usamos antes.</p>
+<ul>
+<li class="fragment">Vamos pedir que ele não só gere o gráfico, como também totalize os dados mensais antes de gerar o gráfico.</li>
+</ul>
+</div>
+</section>
+<section id="section-27" class="slide level2">
+<h2></h2>
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Gere um gráfico de barras usando Matplotlib mostrando as vendas <strong>totais</strong> de cada produto a partir da tabela abaixo que contém dados de vendas mensais de três produtos.</p>
+<pre><code>Mês Produto A   Produto B   Produto C
+Jan 150 100 80
+Fev 200 120 90
+Mar 250 180 100
+Abr 300 160 120
+Mai 280 170 140
+Jun 320 150 160</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-28" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb15-2"><a></a></span>
+<span id="cb15-3"><a></a><span class="co"># Dados de vendas mensais</span></span>
+<span id="cb15-4"><a></a>meses <span class="op">=</span> [<span class="st">'Jan'</span>, <span class="st">'Fev'</span>, <span class="st">'Mar'</span>, <span class="st">'Abr'</span>, <span class="st">'Mai'</span>, <span class="st">'Jun'</span>]</span>
+<span id="cb15-5"><a></a>produto_a <span class="op">=</span> [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">280</span>, <span class="dv">320</span>]</span>
+<span id="cb15-6"><a></a>produto_b <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">150</span>]</span>
+<span id="cb15-7"><a></a>produto_c <span class="op">=</span> [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>, <span class="dv">160</span>]</span>
+<span id="cb15-8"><a></a></span>
+<span id="cb15-9"><a></a><span class="co"># Calculando vendas totais por produto</span></span>
+<span id="cb15-10"><a></a>total_a <span class="op">=</span> <span class="bu">sum</span>(produto_a)</span>
+<span id="cb15-11"><a></a>total_b <span class="op">=</span> <span class="bu">sum</span>(produto_b)</span>
+<span id="cb15-12"><a></a>total_c <span class="op">=</span> <span class="bu">sum</span>(produto_c)</span>
+<span id="cb15-13"><a></a></span>
+<span id="cb15-14"><a></a>produtos <span class="op">=</span> [<span class="st">'Produto A'</span>, <span class="st">'Produto B'</span>, <span class="st">'Produto C'</span>]</span>
+<span id="cb15-15"><a></a>totais <span class="op">=</span> [total_a, total_b, total_c]</span>
+<span id="cb15-16"><a></a></span>
+<span id="cb15-17"><a></a><span class="co"># Criando o gráfico de barras</span></span>
+<span id="cb15-18"><a></a>plt.bar(produtos, totais, color<span class="op">=</span>[<span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'orange'</span>])</span>
+<span id="cb15-19"><a></a>plt.title(<span class="st">'Vendas Totais por Produto (Jan-Jun)'</span>)</span>
+<span id="cb15-20"><a></a>plt.xlabel(<span class="st">'Produto'</span>)</span>
+<span id="cb15-21"><a></a>plt.ylabel(<span class="st">'Vendas Totais'</span>)</span>
+<span id="cb15-22"><a></a>plt.tight_layout()</span>
+<span id="cb15-23"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-29" class="slide level2">
+<h2></h2>
+<p>Esse é o gráfico gerado:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="imagens/matplotlib_vendas_alterado.png" class="quarto-figure quarto-figure-center" style="max-height: 50vh; width: auto;" alt="Gráfico de vendas mensais laterado usando matplotlib."></p>
+<p><img data-src="imagens/matplotlib_vendas_totais.png" class="quarto-figure quarto-figure-center" alt="Gráfico de vendas totais por produto usando matplotlib."></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li class="fragment">Dava bastante trabalho customizar gráficos antes dos Assisentes de IA 😮‍💨</li>
-<li class="fragment">Agora com o Copilot podemos concentrar mais atenção no que queremos mostrar com o gráfico 🤓</li>
-<li class="fragment">e menos em como fazer isso.</li>
+<li class="fragment">Veja que, no código, foi usado o método <code>bar</code> em vez do método <code>plot</code>.</li>
+<li class="fragment">Ele recebe como primeiro argumento uma lista com os nomes das categorias (produtos)</li>
+<li class="fragment">e como segundo argumento uma lista com os valores numéricos (vendas totais).</li>
 </ul>
 </div></div>
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-30" class="slide level2">
+<h2></h2>
+<p>Vamos ver outras melhorias de visualização que podemos fazer com a ajuda do Copilot.</p>
+<ul>
+<li class="fragment">Podemos, por exemplo, pedir que o gráfico seja gerado na horizontal,</li>
+<li class="fragment">ou que as barras sejam exibidas com cores diferentes.</li>
+</ul>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Altere o gráfico para que as barras sejam exibidas na horizontal, e os valores de cada barra sejam exibidos dentro da própria barra. Use uma paleta de cores. Também altere o título do eixo X para Produtos e mude a cor do Título e dos nomes dos eixos para azul escuro.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-31" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-2"><a></a></span>
+<span id="cb16-3"><a></a><span class="co"># Dados de vendas mensais</span></span>
+<span id="cb16-4"><a></a>meses <span class="op">=</span> [<span class="st">'Jan'</span>, <span class="st">'Fev'</span>, <span class="st">'Mar'</span>, <span class="st">'Abr'</span>, <span class="st">'Mai'</span>, <span class="st">'Jun'</span>]</span>
+<span id="cb16-5"><a></a>produto_a <span class="op">=</span> [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">280</span>, <span class="dv">320</span>]</span>
+<span id="cb16-6"><a></a>produto_b <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">150</span>]</span>
+<span id="cb16-7"><a></a>produto_c <span class="op">=</span> [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>, <span class="dv">160</span>]</span>
+<span id="cb16-8"><a></a></span>
+<span id="cb16-9"><a></a><span class="co"># Calculando vendas totais por produto</span></span>
+<span id="cb16-10"><a></a>total_a <span class="op">=</span> <span class="bu">sum</span>(produto_a)</span>
+<span id="cb16-11"><a></a>total_b <span class="op">=</span> <span class="bu">sum</span>(produto_b)</span>
+<span id="cb16-12"><a></a>total_c <span class="op">=</span> <span class="bu">sum</span>(produto_c)</span>
+<span id="cb16-13"><a></a></span>
+<span id="cb16-14"><a></a>produtos <span class="op">=</span> [<span class="st">'Produto A'</span>, <span class="st">'Produto B'</span>, <span class="st">'Produto C'</span>]</span>
+<span id="cb16-15"><a></a>totais <span class="op">=</span> [total_a, total_b, total_c]</span>
+<span id="cb16-16"><a></a></span>
+<span id="cb16-17"><a></a><span class="co"># Paleta de cores</span></span>
+<span id="cb16-18"><a></a>colors <span class="op">=</span> plt.cm.Set2.colors[:<span class="dv">3</span>]</span>
+<span id="cb16-19"><a></a></span>
+<span id="cb16-20"><a></a><span class="co"># Criando o gráfico de barras horizontais</span></span>
+<span id="cb16-21"><a></a>bars <span class="op">=</span> plt.barh(produtos, totais, color<span class="op">=</span>colors)</span>
+<span id="cb16-22"><a></a>plt.title(<span class="st">'Vendas Totais por Produto (Jan-Jun)'</span>, color<span class="op">=</span><span class="st">'#003366'</span>)</span>
+<span id="cb16-23"><a></a>plt.xlabel(<span class="st">'Vendas Totais'</span>, color<span class="op">=</span><span class="st">'#003366'</span>)</span>
+<span id="cb16-24"><a></a>plt.ylabel(<span class="st">'Produtos'</span>, color<span class="op">=</span><span class="st">'#003366'</span>)</span>
+<span id="cb16-25"><a></a></span>
+<span id="cb16-26"><a></a><span class="co"># Adicionando os valores dentro das barras</span></span>
+<span id="cb16-27"><a></a><span class="cf">for</span> bar <span class="kw">in</span> bars:</span>
+<span id="cb16-28"><a></a>    width <span class="op">=</span> bar.get_width()</span>
+<span id="cb16-29"><a></a>    plt.text(width <span class="op">/</span> <span class="dv">2</span>, bar.get_y() <span class="op">+</span> bar.get_height() <span class="op">/</span> <span class="dv">2</span>,</span>
+<span id="cb16-30"><a></a>             <span class="bu">str</span>(width),</span>
+<span id="cb16-31"><a></a>             ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>, color<span class="op">=</span><span class="st">'white'</span>, fontsize<span class="op">=</span><span class="dv">10</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb16-32"><a></a></span>
+<span id="cb16-33"><a></a>plt.tight_layout()</span>
+<span id="cb16-34"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-32" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_vendas_totais_alterado.png" class="quarto-figure quarto-figure-center" alt="Gráfico de vendas totais por produto alterado, usando Matplolib."></p>
+</figure>
+</div>
+<div class="fragment">
+<p>Você pode notar pelo código gerado, que a Matplotlib é uma biblioteca bastante flexível, mas que pode exigir bastante código para fazer gráficos como queremos.</p>
+</div>
+</section>
+<section id="gráficos-de-pizza" class="slide level2">
+<h2>Gráficos de Pizza</h2>
+<p><span class="alert">Gráficos de Pizza</span> são úteis para:</p>
+<ul>
+<li class="fragment">mostrar proporções de cada categoria em relação ao total,</li>
+<li class="fragment">geralmente expressas em porcentagens.</li>
+</ul>
+<div class="fragment">
+<p>Vamos pedir ao Copilot para mostrar as vendas totais de cada produto em um gráfico de pizza.</p>
+<ul>
+<li class="fragment">E, em seguida, entender que diferença faz mostrar esses dados em gráficos de barras ou de pizza.</li>
+</ul>
+</div>
+</section>
+<section id="section-33" class="slide level2">
+<h2></h2>
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Gere um gráfico de <strong>pizza</strong> usando Matplotlib mostrando as vendas totais de cada produto a partir da tabela abaixo que contém dados de vendas mensais de três produtos.</p>
+<pre><code>Mês Produto A   Produto B   Produto C
+Jan 150 100 80
+Fev 200 120 90
+Mar 250 180 100
+Abr 300 160 120
+Mai 280 170 140
+Jun 320 150 160</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-34" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb18-2"><a></a></span>
+<span id="cb18-3"><a></a><span class="co"># Dados de vendas mensais</span></span>
+<span id="cb18-4"><a></a>produtos <span class="op">=</span> [<span class="st">'Produto A'</span>, <span class="st">'Produto B'</span>, <span class="st">'Produto C'</span>]</span>
+<span id="cb18-5"><a></a>vendas <span class="op">=</span> [</span>
+<span id="cb18-6"><a></a>    [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">280</span>, <span class="dv">320</span>],  <span class="co"># Produto A</span></span>
+<span id="cb18-7"><a></a>    [<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">150</span>],  <span class="co"># Produto B</span></span>
+<span id="cb18-8"><a></a>    [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>, <span class="dv">160</span>]     <span class="co"># Produto C</span></span>
+<span id="cb18-9"><a></a>]</span>
+<span id="cb18-10"><a></a></span>
+<span id="cb18-11"><a></a><span class="co"># Soma das vendas de cada produto</span></span>
+<span id="cb18-12"><a></a>vendas_totais <span class="op">=</span> [<span class="bu">sum</span>(v) <span class="cf">for</span> v <span class="kw">in</span> vendas]</span>
+<span id="cb18-13"><a></a></span>
+<span id="cb18-14"><a></a><span class="co"># Gráfico de pizza</span></span>
+<span id="cb18-15"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb18-16"><a></a>plt.pie(vendas_totais, labels<span class="op">=</span>produtos, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, startangle<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb18-17"><a></a>plt.title(<span class="st">'Vendas Totais por Produto'</span>)</span>
+<span id="cb18-18"><a></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb18-19"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-35" class="slide level2">
+<h2></h2>
+<p>Esse é o gráfico gerado:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_vendas_totais_pizza.png" class="quarto-figure quarto-figure-center" alt="Gráfico de vendas totais por produto em gráfico de pizza usando Matplolib."></p>
+</figure>
+</div>
+</section>
+<section id="section-36" class="slide level2">
+<h2></h2>
+<p>Em que situações você preferiria usar o <strong>gráfico de barras</strong> ou o <strong>gráfico de pizza</strong>?</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_vendas_totais.png" class="quarto-figure quarto-figure-center" alt="Gráfico de vendas totais por produto usando matplotlib."></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_vendas_totais_pizza.png" class="quarto-figure quarto-figure-center" alt="Gráfico de vendas totais por produto em gráfico de pizza usando Matplolib."></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="section-37" class="slide level2">
+<h2></h2>
+<p>Repare que <strong>gráficos de barra</strong> são mais eficazes para comparar valores absolutos entre categorias.</p>
+<ul>
+<li class="fragment">Eles facilitam a visualização de diferenças entre os valores.</li>
+<li class="fragment">No nosso caso, conseguimos ver facilmente que o Produto A teve vendas muito maiores que os outros.</li>
+</ul>
+<div class="fragment">
+<p>Já <strong>gráficos de pizza</strong> são mais úteis para comparar as proporções em relação ao total.</p>
+<ul>
+<li class="fragment">Eles ajudam a entender a participação de cada categoria.</li>
+<li class="fragment">No nosso caso, conseguimos ver facilmente que o Produto A representa quase metade das vendas totais.</li>
+</ul>
+</div>
+</section>
+<section id="histogramas" class="slide level2">
+<h2>Histogramas</h2>
+<p>Os <span class="alert">histogramas</span> são úteis para:</p>
+<ul>
+<li class="fragment">mostrar distribuições de frequência,</li>
+<li class="fragment">ou seja, quantas vezes cada valor ou intervalo de valores ocorre em um conjunto de dados.</li>
+</ul>
+<div class="fragment">
+<p>Cada valor (ou intervalo) é representado por uma barra vertical, cuja altura corresponde à frequência daquele valor.</p>
+</div>
+</section>
+<section id="section-38" class="slide level2">
+<h2></h2>
+<p>Suponha, por exemplo, que um professor queira analisar as notas de uma turma.</p>
+<ul>
+<li class="fragment">Ele pode usar um histograma para visualizar a distribuição das notas.</li>
+</ul>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-2"><a></a></span>
+<span id="cb19-3"><a></a>notas <span class="op">=</span> [<span class="dv">91</span>, <span class="dv">92</span>, <span class="dv">60</span>, <span class="dv">82</span>, <span class="dv">94</span>, <span class="dv">54</span>, <span class="dv">83</span>, <span class="dv">81</span>, <span class="dv">74</span>, <span class="dv">91</span>, <span class="dv">75</span>, <span class="dv">70</span>, <span class="dv">81</span>, <span class="dv">48</span>, <span class="dv">0</span>, <span class="dv">82</span>, <span class="dv">90</span>, <span class="dv">65</span>, <span class="dv">88</span>, <span class="dv">89</span>, <span class="dv">56</span>, <span class="dv">51</span>, <span class="dv">64</span>, <span class="dv">63</span>, <span class="dv">60</span>, <span class="dv">61</span>, <span class="dv">80</span>, <span class="dv">66</span>, <span class="dv">65</span>, <span class="dv">79</span>, <span class="dv">49</span>, <span class="dv">71</span>, <span class="dv">44</span>, <span class="dv">72</span>, <span class="dv">78</span>, <span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">53</span>, <span class="dv">87</span>, <span class="dv">80</span>, <span class="dv">63</span>, <span class="dv">60</span>, <span class="dv">66</span>, <span class="dv">61</span>, <span class="dv">75</span>, <span class="dv">48</span>, <span class="dv">87</span>, <span class="dv">53</span>, <span class="dv">63</span>, <span class="dv">39</span>, <span class="dv">74</span>, <span class="dv">27</span>, <span class="dv">61</span>]</span>
+<span id="cb19-4"><a></a></span>
+<span id="cb19-5"><a></a><span class="co"># gerar um histograma com as notas, considerando intervalos de 10 em 10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-39" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb20-2"><a></a></span>
+<span id="cb20-3"><a></a>notas <span class="op">=</span> [<span class="dv">91</span>, <span class="dv">92</span>, <span class="dv">60</span>, <span class="dv">82</span>, <span class="dv">94</span>, <span class="dv">54</span>, <span class="dv">83</span>, <span class="dv">81</span>, <span class="dv">74</span>, <span class="dv">91</span>, <span class="dv">75</span>, <span class="dv">70</span>, <span class="dv">81</span>, <span class="dv">48</span>, <span class="dv">0</span>, <span class="dv">82</span>, <span class="dv">90</span>, <span class="dv">65</span>, <span class="dv">88</span>, <span class="dv">89</span>, <span class="dv">56</span>, <span class="dv">51</span>, <span class="dv">64</span>, <span class="dv">63</span>, <span class="dv">60</span>, <span class="dv">61</span>, <span class="dv">80</span>, <span class="dv">66</span>, <span class="dv">65</span>, <span class="dv">79</span>, <span class="dv">49</span>, <span class="dv">71</span>, <span class="dv">44</span>, <span class="dv">72</span>, <span class="dv">78</span>, <span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">53</span>, <span class="dv">87</span>, <span class="dv">80</span>, <span class="dv">63</span>, <span class="dv">60</span>, <span class="dv">66</span>, <span class="dv">61</span>, <span class="dv">75</span>, <span class="dv">48</span>, <span class="dv">87</span>, <span class="dv">53</span>, <span class="dv">63</span>, <span class="dv">39</span>, <span class="dv">74</span>, <span class="dv">27</span>, <span class="dv">61</span>]</span>
+<span id="cb20-4"><a></a></span>
+<span id="cb20-5"><a></a><span class="co"># gerar um histograma com as notas, considerando intervalos de 10 em 10</span></span>
+<span id="cb20-6"><a></a>plt.hist(notas, bins<span class="op">=</span><span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">10</span>), edgecolor<span class="op">=</span><span class="st">'black'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb20-7"><a></a>plt.title(<span class="st">'Distribuição de Notas'</span>)</span>
+<span id="cb20-8"><a></a>plt.xlabel(<span class="st">'Notas'</span>)</span>
+<span id="cb20-9"><a></a>plt.ylabel(<span class="st">'Número de Alunos'</span>)</span>
+<span id="cb20-10"><a></a>plt.xticks(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">101</span>, <span class="dv">10</span>))</span>
+<span id="cb20-11"><a></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, alpha<span class="op">=</span><span class="fl">0.75</span>)</span>
+<span id="cb20-12"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-40" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_histograma_notas.png" class="quarto-figure quarto-figure-center" alt="Histograma de notas usando Matplolib."></p>
+</figure>
+</div>
+<div class="fragment">
+<p>Analisando o histograma podemos ver que 15 alunos ficaram com nota entre 60 e 70.</p>
+<ul>
+<li class="fragment">E que a maioria das notas está entre 60 e 90.</li>
+</ul>
+</div>
+</section>
+<section id="gráficos-de-dispersão" class="slide level2">
+<h2>Gráficos de Dispersão</h2>
+<p>Os <span class="alert">gráficos de dispersão</span> são úteis para:</p>
+<ul>
+<li class="fragment">mostrar a relação entre duas (ou mais) variáveis numéricas.</li>
+<li class="fragment">Cada ponto do gráfico tem o valor de uma variável no eixo X e o valor da outra variável no eixo Y.</li>
+</ul>
+<div class="fragment">
+<p>Suponha, por exemplo, que um professor queira analisar a relação entre a presença nas aulas e as notas dos alunos.</p>
+<ul>
+<li class="fragment">Ele pode usar um gráfico de dispersão para visualizar essa relação.</li>
+</ul>
+</div>
+</section>
+<section id="section-41" class="slide level2">
+<h2></h2>
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb21-2"><a></a></span>
+<span id="cb21-3"><a></a>notas <span class="op">=</span> [<span class="dv">91</span>, <span class="dv">79</span>, <span class="dv">39</span>, <span class="dv">62</span>, <span class="dv">96</span>, <span class="dv">84</span>, <span class="dv">82</span>, <span class="dv">24</span>, <span class="dv">69</span>, <span class="dv">15</span>, <span class="dv">50</span>, <span class="dv">38</span>, <span class="dv">64</span>, <span class="dv">30</span>, <span class="dv">62</span>, <span class="dv">76</span>, <span class="dv">57</span>, <span class="dv">58</span>, <span class="dv">75</span>, <span class="dv">72</span>, <span class="dv">63</span>, <span class="dv">74</span>, <span class="dv">47</span>, <span class="dv">72</span>, <span class="dv">60</span>, <span class="dv">79</span>, <span class="dv">67</span>, <span class="dv">70</span>, <span class="dv">24</span>, <span class="dv">59</span>, <span class="dv">75</span>, <span class="dv">60</span>, <span class="dv">58</span>, <span class="dv">14</span>, <span class="dv">42</span>, <span class="dv">89</span>, <span class="dv">83</span>, <span class="dv">47</span>, <span class="dv">79</span>, <span class="dv">46</span>, <span class="dv">48</span>, <span class="dv">91</span>, <span class="dv">63</span>, <span class="dv">83</span>, <span class="dv">74</span>, <span class="dv">90</span>, <span class="dv">92</span>]</span>
+<span id="cb21-4"><a></a>faltas <span class="op">=</span> [<span class="dv">12</span>, <span class="dv">28</span>, <span class="dv">6</span>, <span class="dv">16</span>, <span class="dv">4</span>, <span class="dv">12</span>, <span class="dv">4</span>, <span class="dv">32</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">16</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">54</span>, <span class="dv">4</span>, <span class="dv">54</span>, <span class="dv">0</span>, <span class="dv">16</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">22</span>, <span class="dv">20</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">18</span>, <span class="dv">20</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">12</span>, <span class="dv">4</span>]</span>
+<span id="cb21-5"><a></a></span>
+<span id="cb21-6"><a></a><span class="co"># gerar um gráfico de dispersão relacionando notas e faltas</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-42" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb22-2"><a></a></span>
+<span id="cb22-3"><a></a>notas <span class="op">=</span> [<span class="dv">91</span>, <span class="dv">79</span>, <span class="dv">39</span>, <span class="dv">62</span>, <span class="dv">96</span>, <span class="dv">84</span>, <span class="dv">82</span>, <span class="dv">24</span>, <span class="dv">69</span>, <span class="dv">15</span>, <span class="dv">50</span>, <span class="dv">38</span>, <span class="dv">64</span>, <span class="dv">30</span>, <span class="dv">62</span>, <span class="dv">76</span>, <span class="dv">57</span>, <span class="dv">58</span>, <span class="dv">75</span>, <span class="dv">72</span>, <span class="dv">63</span>, <span class="dv">74</span>, <span class="dv">47</span>, <span class="dv">72</span>, <span class="dv">60</span>, <span class="dv">79</span>, <span class="dv">67</span>, <span class="dv">70</span>, <span class="dv">24</span>, <span class="dv">59</span>, <span class="dv">75</span>, <span class="dv">60</span>, <span class="dv">58</span>, <span class="dv">14</span>, <span class="dv">42</span>, <span class="dv">89</span>, <span class="dv">83</span>, <span class="dv">47</span>, <span class="dv">79</span>, <span class="dv">46</span>, <span class="dv">48</span>, <span class="dv">91</span>, <span class="dv">63</span>, <span class="dv">83</span>, <span class="dv">74</span>, <span class="dv">90</span>, <span class="dv">92</span>]</span>
+<span id="cb22-4"><a></a>faltas <span class="op">=</span> [<span class="dv">12</span>, <span class="dv">28</span>, <span class="dv">6</span>, <span class="dv">16</span>, <span class="dv">4</span>, <span class="dv">12</span>, <span class="dv">4</span>, <span class="dv">32</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">16</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">54</span>, <span class="dv">4</span>, <span class="dv">54</span>, <span class="dv">0</span>, <span class="dv">16</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">22</span>, <span class="dv">20</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">18</span>, <span class="dv">20</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">12</span>, <span class="dv">4</span>]</span>
+<span id="cb22-5"><a></a></span>
+<span id="cb22-6"><a></a><span class="co"># gerar um gráfico de dispersão relacionando notas e faltas</span></span>
+<span id="cb22-7"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb22-8"><a></a>plt.scatter(faltas, notas, color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb22-9"><a></a>plt.title(<span class="st">'Relação entre Notas e Faltas'</span>)</span>
+<span id="cb22-10"><a></a>plt.xlabel(<span class="st">'Número de Faltas'</span>)</span>
+<span id="cb22-11"><a></a>plt.ylabel(<span class="st">'Notas'</span>)</span>
+<span id="cb22-12"><a></a>plt.xlim(<span class="dv">0</span>, <span class="bu">max</span>(faltas) <span class="op">+</span> <span class="dv">5</span>)</span>
+<span id="cb22-13"><a></a>plt.ylim(<span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb22-14"><a></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb22-15"><a></a>plt.axhline(y<span class="op">=</span><span class="dv">60</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Nota de Corte'</span>)</span>
+<span id="cb22-16"><a></a>plt.legend()</span>
+<span id="cb22-17"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-43" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_dispersao_notas_faltas.png" class="quarto-figure quarto-figure-center" alt="Gráfico de dispersão relacionando notas e faltas usando Matplolib."></p>
+</figure>
+</div>
+</section>
+<section id="section-44" class="slide level2">
+<h2></h2>
+<p>Esse gráficos traz algumas questões interessantes.</p>
+<ol type="1">
+<li class="fragment">O Copilot adicionou, por conta própria, uma linha horizontal indicando a nota de corte (60).</li>
+</ol>
+<ul>
+<li class="fragment">Já que ele fez isso, seria interessante destacar também o limite de faltas para reprovação.</li>
+<li class="fragment">Que inclusive, depende se a nota é 60 ou 70.</li>
+</ul>
+</section>
+<section id="section-45" class="slide level2">
+<h2></h2>
+<ol start="2" type="1">
+<li class="fragment">Aĺém disso, tem dois pontos no gráfico bem estranhos.</li>
+</ol>
+<ul>
+<li class="fragment">Alunos que faltaram em quase todas as aulas e ainda assim passaram. O que poderia ser?</li>
+<li class="fragment">São alunos de matrícula especial (turma Z).</li>
+<li class="fragment">Esses dados deveriam excluídos (limpeza de dados) ou destacados de alguma forma no gráfico.</li>
+</ul>
+</section>
+<section id="section-46" class="slide level2">
+<h2></h2>
+<p>Vamos então alterar o gráfico:</p>
+<ul>
+<li class="fragment">removendo os alunos de turma Z.</li>
+<li class="fragment">destacando o limite de faltas/notas para reprovação.</li>
+</ul>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Altere o gráfico acrescentando uma nova linha de corte para a nota: 70 (em azul). E linhas de corte também para as faltas: 17 (em vermelho) e 23 (em azul).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-47" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb23-2"><a></a></span>
+<span id="cb23-3"><a></a>notas <span class="op">=</span> [<span class="dv">91</span>, <span class="dv">79</span>, <span class="dv">39</span>, <span class="dv">62</span>, <span class="dv">96</span>, <span class="dv">84</span>, <span class="dv">82</span>, <span class="dv">24</span>, <span class="dv">69</span>, <span class="dv">15</span>, <span class="dv">50</span>, <span class="dv">38</span>, <span class="dv">64</span>, <span class="dv">30</span>, <span class="dv">62</span>, <span class="dv">76</span>, <span class="dv">57</span>, <span class="dv">58</span>, <span class="dv">75</span>, <span class="dv">63</span>, <span class="dv">47</span>, <span class="dv">72</span>, <span class="dv">60</span>, <span class="dv">79</span>, <span class="dv">67</span>, <span class="dv">70</span>, <span class="dv">24</span>, <span class="dv">59</span>, <span class="dv">75</span>, <span class="dv">60</span>, <span class="dv">58</span>, <span class="dv">14</span>, <span class="dv">42</span>, <span class="dv">89</span>, <span class="dv">83</span>, <span class="dv">47</span>, <span class="dv">79</span>, <span class="dv">46</span>, <span class="dv">48</span>, <span class="dv">91</span>, <span class="dv">63</span>, <span class="dv">83</span>, <span class="dv">74</span>, <span class="dv">90</span>, <span class="dv">92</span>]</span>
+<span id="cb23-4"><a></a>faltas <span class="op">=</span> [<span class="dv">12</span>, <span class="dv">28</span>, <span class="dv">6</span>, <span class="dv">16</span>, <span class="dv">4</span>, <span class="dv">12</span>, <span class="dv">4</span>, <span class="dv">32</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">16</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">16</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">22</span>, <span class="dv">20</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">18</span>, <span class="dv">20</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">20</span>, <span class="dv">12</span>, <span class="dv">4</span>]</span>
+<span id="cb23-5"><a></a></span>
+<span id="cb23-6"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb23-7"><a></a>plt.scatter(faltas, notas, color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb23-8"><a></a>plt.title(<span class="st">'Relação entre Notas e Faltas'</span>)</span>
+<span id="cb23-9"><a></a>plt.xlabel(<span class="st">'Número de Faltas'</span>)</span>
+<span id="cb23-10"><a></a>plt.ylabel(<span class="st">'Notas'</span>)</span>
+<span id="cb23-11"><a></a>plt.xlim(<span class="dv">0</span>, <span class="bu">max</span>(faltas) <span class="op">+</span> <span class="dv">5</span>)</span>
+<span id="cb23-12"><a></a>plt.ylim(<span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb23-13"><a></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb23-14"><a></a></span>
+<span id="cb23-15"><a></a><span class="co"># Linhas horizontais de corte para notas</span></span>
+<span id="cb23-16"><a></a>plt.axhline(y<span class="op">=</span><span class="dv">60</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Nota de Corte 60'</span>)</span>
+<span id="cb23-17"><a></a>plt.axhline(y<span class="op">=</span><span class="dv">70</span>, color<span class="op">=</span><span class="st">'blue'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Nota de Corte 70'</span>)</span>
+<span id="cb23-18"><a></a></span>
+<span id="cb23-19"><a></a><span class="co"># Linhas verticais de corte para faltas</span></span>
+<span id="cb23-20"><a></a>plt.axvline(x<span class="op">=</span><span class="dv">17</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'-.'</span>, label<span class="op">=</span><span class="st">'Faltas Corte 17'</span>)</span>
+<span id="cb23-21"><a></a>plt.axvline(x<span class="op">=</span><span class="dv">23</span>, color<span class="op">=</span><span class="st">'blue'</span>, linestyle<span class="op">=</span><span class="st">'-.'</span>, label<span class="op">=</span><span class="st">'Faltas Corte 23'</span>)</span>
+<span id="cb23-22"><a></a></span>
+<span id="cb23-23"><a></a>plt.legend()</span>
+<span id="cb23-24"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-48" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_dispersao_notas_faltas_alterado.png" class="quarto-figure quarto-figure-center" alt="Gráfico de dispersão relacionando notas e faltas alterado, usando Matplolib."></p>
+</figure>
+</div>
+</section>
+<section id="outros-tipos-de-gráficos" class="slide level2">
+<h2>Outros tipos de gráficos</h2>
+<p>Como já citado anteriormente, o Copilot nos permite manter foco no que queremos,</p>
+<ul>
+<li class="fragment">em vez de preocuparmos sobre detalhes sobre como isso pode ser feito.</li>
+</ul>
+<div class="fragment">
+<p>Por isso, é interessante ter uma ideia do que é possível fazer com as bibliotecas de visualização como o Matplotlib.</p>
+<ul>
+<li class="fragment">Você pode explorar isso com o próprio Copilot.</li>
+<li class="fragment">Ou pode consultar a documentação oficial da biblioteca.</li>
+</ul>
+</div>
+</section>
+<section id="section-49" class="slide level2">
+<h2></h2>
+<p>Uma funcionalidade interessante da Matplotlib, por exemplo, é a possibilidade de criar vários subgráficos em uma única figura.</p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/matplotlib_exemplo_doutorado.png" class="quarto-figure quarto-figure-center" alt="Exemplo de vários gráficos em uma única figura usando Matplolib."></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="section-50" class="slide level2">
+<h2></h2>
+<p>Criei a figura do slide anterior para a minha tese de doutorado.</p>
+<ul>
+<li class="fragment">Além de mostrar o uso de vários gráficos em uma única figura,</li>
+<li class="fragment">ela também mostra que é possível usar preenchimento de área em gráficos de linha.</li>
+</ul>
+<div class="fragment">
+<p>Pena que não existia Copilot 😢😢 durante o meu doutorado.</p>
+</div>
+</section>
+<section id="section-51" class="slide level2">
+<h2></h2>
+<p>Veja os <a href="https://matplotlib.org/stable/plot_types/index.html#plot-types">tipos de gráficos do Matplotlib</a>.</p>
+<div class="fragment">
+<p>E a <a href="https://matplotlib.org/stable/gallery/index.html">galeria de exemplos do Matplotlib</a>.</p>
+</div>
+</section></section>
+<section>
+<section id="seaborn" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Seaborn</h1>
+
+</section>
+<section id="seaborn-1" class="slide level2">
+<h2>Seaborn</h2>
+<ul>
+<li class="fragment">📌 Construída sobre o Matplotlib.</li>
+<li class="fragment">Oferece visualizações estatísticas com aparência mais elegante.</li>
+<li class="fragment">Facilita criação de gráficos de distribuições, correlações e regressões.</li>
+<li class="fragment">Ideal para análise exploratória de dados.</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb24-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb24-3"><a></a></span>
+<span id="cb24-4"><a></a>sns.lineplot(x<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], y<span class="op">=</span>[<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>], marker<span class="op">=</span><span class="st">"o"</span>)</span>
+<span id="cb24-5"><a></a>plt.title(<span class="st">"Exemplo Seaborn"</span>)</span>
+<span id="cb24-6"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-52" class="slide level2">
 <h2></h2>
 <p>meses = [“Jan”, “Fev”, “Mar”, “Abr”, “Mai”, “Jun”] produto_a = [150, 200, 250, 300, 280, 320] produto_b = [100, 120, 180, 160, 220, 210] produto_c = [80, 90, 100, 120, 140, 160]</p>
 <p>Para ma</p>
@@ -537,12 +1386,12 @@ Jun 320 150 160</code></pre>
 <li class="fragment">e os valores são listas com os dados de cada coluna.</li>
 </ul>
 <p>. .</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb7-2"><a></a></span>
-<span id="cb7-3"><a></a></span>
-<span id="cb7-4"><a></a></span>
-<span id="cb7-5"><a></a>df <span class="op">=</span> pd.DataFrame(dados)</span>
-<span id="cb7-6"><a></a><span class="bu">print</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb25-2"><a></a></span>
+<span id="cb25-3"><a></a></span>
+<span id="cb25-4"><a></a></span>
+<span id="cb25-5"><a></a>df <span class="op">=</span> pd.DataFrame(dados)</span>
+<span id="cb25-6"><a></a><span class="bu">print</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="os-dados" class="slide level2">
 <h2>Os Dados</h2>
@@ -550,63 +1399,34 @@ Jun 320 150 160</code></pre>
 <ul>
 <li class="fragment">📊 Exemplo: <strong>Vendas mensais de três produtos</strong></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-2"><a></a></span>
-<span id="cb8-3"><a></a>dados <span class="op">=</span> {</span>
-<span id="cb8-4"><a></a>    <span class="st">"Mês"</span>: [<span class="st">"Jan"</span>, <span class="st">"Fev"</span>, <span class="st">"Mar"</span>, <span class="st">"Abr"</span>, <span class="st">"Mai"</span>, <span class="st">"Jun"</span>],</span>
-<span id="cb8-5"><a></a>    <span class="st">"Produto A"</span>: [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">280</span>, <span class="dv">320</span>],</span>
-<span id="cb8-6"><a></a>    <span class="st">"Produto B"</span>: [<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">220</span>, <span class="dv">210</span>],</span>
-<span id="cb8-7"><a></a>    <span class="st">"Produto C"</span>: [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>, <span class="dv">160</span>]</span>
-<span id="cb8-8"><a></a>}</span>
-<span id="cb8-9"><a></a></span>
-<span id="cb8-10"><a></a>df <span class="op">=</span> pd.DataFrame(dados)</span>
-<span id="cb8-11"><a></a><span class="bu">print</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb26-2"><a></a></span>
+<span id="cb26-3"><a></a>dados <span class="op">=</span> {</span>
+<span id="cb26-4"><a></a>    <span class="st">"Mês"</span>: [<span class="st">"Jan"</span>, <span class="st">"Fev"</span>, <span class="st">"Mar"</span>, <span class="st">"Abr"</span>, <span class="st">"Mai"</span>, <span class="st">"Jun"</span>],</span>
+<span id="cb26-5"><a></a>    <span class="st">"Produto A"</span>: [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">280</span>, <span class="dv">320</span>],</span>
+<span id="cb26-6"><a></a>    <span class="st">"Produto B"</span>: [<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">220</span>, <span class="dv">210</span>],</span>
+<span id="cb26-7"><a></a>    <span class="st">"Produto C"</span>: [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>, <span class="dv">160</span>]</span>
+<span id="cb26-8"><a></a>}</span>
+<span id="cb26-9"><a></a></span>
+<span id="cb26-10"><a></a>df <span class="op">=</span> pd.DataFrame(dados)</span>
+<span id="cb26-11"><a></a><span class="bu">print</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="matplotlib-1" class="slide level2">
-<h2>Matplotlib</h2>
-<ul>
-<li class="fragment">📌 Biblioteca <strong>fundamental</strong> para gráficos em Python.<br>
-</li>
-<li class="fragment">Suporta grande variedade de gráficos 2D (linhas, barras, dispersão, histogramas).<br>
-</li>
-<li class="fragment">Muito flexível, mas exige mais código para personalizações.<br>
-</li>
-<li class="fragment">É a <strong>base</strong> de várias outras bibliotecas (como Seaborn e Pandas).</li>
-</ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>])</span>
-<span id="cb9-4"><a></a>plt.title(<span class="st">"Exemplo Matplotlib"</span>)</span>
-<span id="cb9-5"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="seaborn" class="slide level2">
+<section id="seaborn-2" class="slide level2">
 <h2>Seaborn</h2>
-<ul>
-<li class="fragment">📌 Construída sobre o Matplotlib.</li>
-<li class="fragment">Oferece visualizações estatísticas com aparência mais elegante.</li>
-<li class="fragment">Facilita gráficos de distribuições, correlações e regressões.</li>
-<li class="fragment">Ideal para análise exploratória de dados.</li>
-</ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb10-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb10-3"><a></a></span>
-<span id="cb10-4"><a></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
-<span id="cb10-5"><a></a>sns.scatterplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, hue<span class="op">=</span><span class="st">"time"</span>)</span>
-<span id="cb10-6"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-53" class="slide level2">
 <h2></h2>
 <p>Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.</p>
 <ul>
 <li class="fragment">Mas para usarmos aqui, vamos criar um dicionário Python com esses dados.</li>
 </ul>
 <div class="fragment">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>vendas <span class="op">=</span> {</span>
-<span id="cb11-2"><a></a>    <span class="st">"Mês"</span>: [<span class="st">"Jan"</span>, <span class="st">"Fev"</span>, <span class="st">"Mar"</span>, <span class="st">"Abr"</span>, <span class="st">"Mai"</span>, <span class="st">"Jun"</span>],</span>
-<span id="cb11-3"><a></a>    <span class="st">"Produto A"</span>: [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">280</span>, <span class="dv">320</span>],</span>
-<span id="cb11-4"><a></a>    <span class="st">"Produto B"</span>: [<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">220</span>, <span class="dv">210</span>],</span>
-<span id="cb11-5"><a></a>    <span class="st">"Produto C"</span>: [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>, <span class="dv">160</span>]</span>
-<span id="cb11-6"><a></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>vendas <span class="op">=</span> {</span>
+<span id="cb27-2"><a></a>    <span class="st">"Mês"</span>: [<span class="st">"Jan"</span>, <span class="st">"Fev"</span>, <span class="st">"Mar"</span>, <span class="st">"Abr"</span>, <span class="st">"Mai"</span>, <span class="st">"Jun"</span>],</span>
+<span id="cb27-3"><a></a>    <span class="st">"Produto A"</span>: [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">280</span>, <span class="dv">320</span>],</span>
+<span id="cb27-4"><a></a>    <span class="st">"Produto B"</span>: [<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">220</span>, <span class="dv">210</span>],</span>
+<span id="cb27-5"><a></a>    <span class="st">"Produto C"</span>: [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>, <span class="dv">160</span>]</span>
+<span id="cb27-6"><a></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Repare que cada chave do dicionário representa o nome de uma coluna.</p>
 <ul>
 <li class="fragment">E os valores são listas com os dados de cada coluna.</li>
@@ -621,14 +1441,14 @@ Jun 320 150 160</code></pre>
 <li class="fragment">Muito útil para análises rápidas e relatórios simples.</li>
 <li class="fragment">Menos flexível para visualizações complexas.</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb12-2"><a></a></span>
-<span id="cb12-3"><a></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb12-4"><a></a>    <span class="st">"Ano"</span>: [<span class="dv">2021</span>, <span class="dv">2022</span>, <span class="dv">2023</span>],</span>
-<span id="cb12-5"><a></a>    <span class="st">"Vendas"</span>: [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>]</span>
-<span id="cb12-6"><a></a>})</span>
-<span id="cb12-7"><a></a></span>
-<span id="cb12-8"><a></a>df.plot(x<span class="op">=</span><span class="st">"Ano"</span>, y<span class="op">=</span><span class="st">"Vendas"</span>, kind<span class="op">=</span><span class="st">"bar"</span>, title<span class="op">=</span><span class="st">"Vendas por Ano"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb28-2"><a></a></span>
+<span id="cb28-3"><a></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb28-4"><a></a>    <span class="st">"Ano"</span>: [<span class="dv">2021</span>, <span class="dv">2022</span>, <span class="dv">2023</span>],</span>
+<span id="cb28-5"><a></a>    <span class="st">"Vendas"</span>: [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>]</span>
+<span id="cb28-6"><a></a>})</span>
+<span id="cb28-7"><a></a></span>
+<span id="cb28-8"><a></a>df.plot(x<span class="op">=</span><span class="st">"Ano"</span>, y<span class="op">=</span><span class="st">"Vendas"</span>, kind<span class="op">=</span><span class="st">"bar"</span>, title<span class="op">=</span><span class="st">"Vendas por Ano"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="plotly" class="slide level2">
 <h2>Plotly</h2>
@@ -642,7 +1462,7 @@ Jun 320 150 160</code></pre>
 <p>df = px.data.iris() fig = px.scatter(df, x=“sepal_width”, y=“sepal_length”, color=“species”) fig.show() ```python</p>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="imagens/logo_UFLA.png" class="slide-logo"></p>

@@ -42,17 +42,26 @@ A maioria das pessoas entende melhor informações apresentadas em gráficos do 
 
 Mas veja que não basta mostrar os dados em um gráfico qualquer.
 
-- É necessário que o gráfico seja simples e visualmente agradável
+- É necessário que o gráfico seja simples, 
+- visualmente agradável
 - e, principalmente, que permita que todos entendem claramente o que veem.
-- Com isso, as pessoas conseguirão identificar padrões e tendências nos dados.
+
+. . .
+
+Com isso, as pessoas conseguirão identificar padrões e tendências nos dados.
 
 ##
 
-É disso que se trata o que chamamos de [visualização de dados]{.alert}.
+É disso que se trata o que chamamos de [visualização de dados]{.alert};
 
 - que é o uso de representações visuais para explorar e para evidenciar padrões em conjuntos de dados.
-- Onde um conjunto de dados (ou _dataset_) pode ser desde uma simples lista de números até 
-  terabytes de dados com diversos tipos diferentes de inforamações.
+
+. . .
+
+Um conjunto de dados (ou _dataset_) pode ser:
+
+- desde uma simples lista de números 
+- até terabytes de dados com diversos tipos diferentes de inforamações.
 
 . . . 
 
@@ -78,6 +87,14 @@ Mas há muitos outros usos mesmo para áreas que não são tão _"intensas em da
 
 ##
 
+Nosso foco aqui não será em Ciência dos Dados em si, nosso objetivo será:
+
+- Ter uma visão geral sobre as principais **bibliotecas de visualização de dados** em Python.
+- Conhecer alguns dos **tipos de gráficos mais comuns**.
+- E aprender a usar essas bibliotecas **com a ajuda do GitHub Copilot**.
+
+##
+
 As bibliotecas mais usadas para visualização de dados em Python são:
 
 - Matplotlib
@@ -87,8 +104,10 @@ As bibliotecas mais usadas para visualização de dados em Python são:
 
 ##
 
-Antes de demonstrarmos o uso das bibliotecas, vamos criar um arquivo
-`requirements.txt` com as bibliotecas que usaremos.
+Antes de demonstrarmos o uso das bibliotecas, vamos criar uma pasta com um arquivo
+`requirements.txt` com as bibliotecas que usaremos e abri-la no VS Code.
+
+. . .
 
 ```text
 pandas
@@ -102,7 +121,9 @@ plotly
 Lembre-se que para instalar as bibliotecas, você deve criar um ambiente virtual
 e instalar as bibliotecas.
 
-- Você pode fazer isso manualente, como mostrei antes, ou...
+- Você pode fazer isso manualmente, como mostrei antes, ou...
+
+. . .
 
 ```bash
 python3 -m venv venv
@@ -117,33 +138,16 @@ Você pode, em vez de fazer manualmente, usar o VS Code para facilitar o process
 
 . . .
 
-Se você criar um arquivo `requirements.txt` na raiz do projeto
+Se você tiver um arquivo `requirements.txt` na raiz do projeto
 
-- e depois acessar a opção paleta de comandos (Ctrl+Shift+P) e digitar **Python: Create Environment**
+- e depois acessar a paleta de comandos (Ctrl+Shift+P) e digitar **Python: Create Environment**
 - o VS Code cria o ambiente virtual e já instala as bibliotecas listadas no arquivo.
-
-## Dados de exemplo
-
-Para exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples
-sobre **vendas mensais de três produtos** 📊
-
-. . .
-
-
-| Mês | Produto A | Produto B | Produto C |
-|-----|-----------|-----------|-----------|
-| Jan |   150     |   100     |    80     |
-| Fev |   200     |   120     |    90     |
-| Mar |   250     |   180     |   100     |
-| Abr |   300     |   160     |   120     |
-| Mai |   280     |   170     |   140     |
-| Jun |   320     |   150     |   160     |
 
 # Matplotlib {background-color="#40666e"}
 
 ## Matplotlib
 
-- 📌 Biblioteca **fundamental** para gráficos em Python.  
+- É a biblioteca **fundamental** para gráficos em Python.  
 - Suporta grande variedade de gráficos 2D (linhas, barras, dispersão, histogramas).  
 - Muito flexível, mas exige mais código para personalizações.  
 - É a **base** de várias outras bibliotecas (como Seaborn e Pandas).  
@@ -165,7 +169,7 @@ Com o exemplo anterior, seria mostrado o gráfico abaixo:
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](imagens/exemplo_matplotlib.png){fig-align="center" fig-alt="Exemplo gráfico matplotlib." style="max-height: 50vh; width: auto;"}
+![](imagens/exemplo_matplotlib.png){fig-align="center" fig-alt="Exemplo gráfico matplotlib."}
 :::
 
 ::: {.column width="50%"}
@@ -179,10 +183,41 @@ plt.plot([1, 2, 3, 4], [10, 20, 25, 30])
 
 ##
 
-Vamos agora pedir ao Copilot para gerar um gráfico de linhas com os dados de vendas mensais
+Repare que o gráfico é exibido em uma tela que possui uma barra de ferramentas na parte inferior.
+
+:::: {.columns}
+::: {.column width="50%"}
+![](imagens/exemplo_matplotlib_tela.png){fig-align="center" fig-alt="Tela do exemplo gráfico matplotlib."}
+:::
+
+::: {.column width="50%"}
+- Com essa barra, podemos salvar o gráfico como uma imagem,
+- ou interagir com o gráfico, fazendo zoom, por exemplo.
+- Ou ainda alterando configurações como o tamanho e espaçamento do gráfico.
+:::
+::::
+
+
+##
+
+Vamos usar agora, como exemplo, um conjunto de dados simples,
+sobre 📊 **vendas mensais de três produtos** 
+
+- Vamos pedir ao Copilot para gerar um gráfico de linhas com esses dados,
 usando a biblioteca Matplotlib.
 
-. . .
+
+
+| Mês | Produto A | Produto B | Produto C |
+|-----|-----------|-----------|-----------|
+| Jan |   150     |   100     |    80     |
+| Fev |   200     |   120     |    90     |
+| Mar |   250     |   180     |   100     |
+| Abr |   300     |   160     |   120     |
+| Mai |   280     |   170     |   140     |
+| Jun |   320     |   150     |   160     |
+
+##
 
 ::: {.callout-caution title="Prompt" icon="false"}
 Gere um gráfico de linhas usando Matplotlib com os dados abaixo que se referem às vendas mensais 
@@ -201,6 +236,7 @@ Jun	320	150	160
 
 ##
 
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
 ```python
 import matplotlib.pyplot as plt
 
@@ -221,6 +257,7 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+:::
 
 ##  
 
@@ -232,14 +269,14 @@ Note que o Copilot criou uma lista para cada coluna dos dados.
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](imagens/matplotlib_vendas.png){fig-align="center" fig-alt="Gráfico de vendas mensais usando matplotlib." style="max-height: 50vh; width: auto;"}
+![](imagens/matplotlib_vendas.png){fig-align="center" fig-alt="Gráfico de vendas mensais usando matplotlib."}
 :::
 
 ::: {.column width="50%"}
 
-- Leia o código gerado pelo Copilot e tente identificar o que cada parte faz.
+- Avalie o gráfico e o código gerado pelo Copilot e tente identificar o que cada parte do código faz.
 
-- Depois, compare o gráfico gerado com o primeiro mostrado como exemplo.
+- Depois, compare com o código e gráficos do primeiro exemplo mostrado.
 :::
 ::::
 
@@ -259,18 +296,646 @@ e esconda nas linhas de grade.
 
 ##
 
+![](imagens/matplotlib_vendas_alterado.png){fig-align="center" fig-alt="Gráfico de vendas mensais alterado usando matplotlib."}
+
+##
+
+Dava bastante trabalho 😮‍💨 customizar gráficos antes dos Assisentes de IA;
+
+. . .
+
+Agora com o Copilot podemos concentrar 
+
+- [mais]{.alert} atenção [no que queremos]{.alert} mostrar 🤓 com o gráfico  
+- e **menos em como** fazer isso.
+
+# Tipos de Gráficos com Matplotlib {background-color="#40666e"}
+
+## Gráfico de Linhas
+
+[Gráficos de linhas]{.alert}, como os que apresentamos, são úteis quando precisamos:
+
+- ilustrar tendências em dados ao longo de um período de tempo.
+
+. . .
+
+Geral usamos períodos de tempo no eixo `X` (horizontal).
+
+- e uma ou mais colunas numéricas no eixo `Y` (vertical).
+
+## 
+
+Podemos fazer gráficos de linha mais complexos, como quando sobrepomos dados de diferentes escalas.
+
+. . .
+
+![](imagens/matplotlib_linhas_escalas_diferentes.png){fig-align="center" fig-alt="Gráfico de temperatura e umidade em diferentes escalas."}
+
+##
+
+O gráfico do slide anterior anterior foi gerado com o seguinte código:
+
+```python
+import matplotlib.pyplot as plt
+
+# Dados de exemplo
+dias = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom']
+temperatura = [22, 21, 23, 24, 22, 20, 19]
+umidade = [60, 65, 58, 55, 62, 70, 75]
+
+fig, ax1 = plt.subplots(figsize=(8, 5))
+
+ax1.plot(dias, temperatura, marker='o', color='tab:red', label='Temperatura (°C)')
+ax1.set_xlabel('Dia')
+ax1.set_ylabel('Temperatura (°C)', color='tab:red')
+ax1.tick_params(axis='y', labelcolor='tab:red')
+
+ax2 = ax1.twinx()
+ax2.plot(dias, umidade, marker='s', color='tab:blue', label='Umidade (%)')
+ax2.set_ylabel('Umidade (%)', color='tab:blue')
+ax2.tick_params(axis='y', labelcolor='tab:blue')
+
+plt.title('Temperatura e Umidade ao longo da semana')
+fig.tight_layout()
+plt.show()
+```
+
+##
+
+Como esse é um exemplo um pouco mais complexo, vamos pedir ao Copilot para explicar o código linha a linha
+
+::: {.callout-caution title="Prompt" icon="false"}
+`/explain` Explique o código linha a linha.
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot (início)" icon="false" .nonincremental}
+
+Vou explicar o código Python linha a linha. Este código cria um gráfico com dois eixos Y para mostrar temperatura e umidade ao longo da semana:
+
+[Linha 1]{.alert}
+
+```python
+import matplotlib.pyplot as plt
+```
+Importa a biblioteca matplotlib.pyplot com o alias `plt`. Esta biblioteca é usada para criar gráficos e visualizações em Python.
+
+[Linhas 3-6]{.alert}
+
+```python
+# Dados de exemplo
+dias = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom']
+temperatura = [22, 21, 23, 24, 22, 20, 19]
+umidade = [60, 65, 58, 55, 62, 70, 75]
+```
+- **Linha 3**: Comentário indicando que os dados são de exemplo
+- **Linha 4**: Cria uma lista com os dias da semana abreviados
+- **Linha 5**: Cria uma lista com valores de temperatura em graus Celsius para cada dia
+- **Linha 6**: Cria uma lista com valores de umidade em percentual para cada dia
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot (continuação)" icon="false" .nonincremental}
+
+[Linha 8]{.alert}
+
+```python
+fig, ax1 = plt.subplots(figsize=(8, 5))
+```
+Cria uma figura (fig) e um eixo principal (ax1) com tamanho de 8x5 polegadas. A função `subplots()` retorna tanto a figura quanto o(s) eixo(s).
+
+[Linhas 10-13]{.alert}
+
+```python
+ax1.plot(dias, temperatura, marker='o', color='tab:red', label='Temperatura (°C)')
+ax1.set_xlabel('Dia')
+ax1.set_ylabel('Temperatura (°C)', color='tab:red')
+ax1.tick_params(axis='y', labelcolor='tab:red')
+```
+- **Linha 10**: Plota a temperatura no eixo principal com marcadores circulares ('o') em cor vermelha
+- **Linha 11**: Define o rótulo do eixo X como 'Dia'
+- **Linha 12**: Define o rótulo do eixo Y esquerdo como 'Temperatura (°C)' em cor vermelha
+- **Linha 13**: Configura a cor dos números do eixo Y esquerdo para vermelho
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot (continuação)" icon="false" .nonincremental}
+
+[Linhas 15-18]{.alert}
+
+```python
+ax2 = ax1.twinx()
+ax2.plot(dias, umidade, marker='s', color='tab:blue', label='Umidade (%)')
+ax2.set_ylabel('Umidade (%)', color='tab:blue')
+ax2.tick_params(axis='y', labelcolor='tab:blue')
+```
+- **Linha 15**: Cria um segundo eixo Y (ax2) que compartilha o mesmo eixo X com ax1
+- **Linha 16**: Plota a umidade no segundo eixo com marcadores quadrados ('s') em cor azul
+- **Linha 17**: Define o rótulo do eixo Y direito como 'Umidade (%)' em cor azul
+- **Linha 18**: Configura a cor dos números do eixo Y direito para azul
+
+[Linhas 20-23]{.alert}
+
+```python
+plt.title('Temperatura e Umidade ao longo da semana')
+fig.tight_layout()
+plt.show()
+```
+- **Linha 20**: Define o título do gráfico
+- **Linha 21**: Ajusta automaticamente o layout para evitar sobreposição de elementos
+- **Linha 22**: Linha em branco para melhor legibilidade
+- **Linha 23**: Exibe o gráfico na tela
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot (continuação)" icon="false" .nonincremental}
+
+[Resultado]{.alert}
+
+O código gera um gráfico que mostra duas linhas:
+
+- Uma linha vermelha com círculos mostrando a temperatura (eixo Y esquerdo)
+- Uma linha azul com quadrados mostrando a umidade (eixo Y direito)
+
+Ambas as linhas compartilham o mesmo eixo X (dias da semana), permitindo comparar facilmente como temperatura e umidade variam ao longo da semana.
+:::
+
+##
+
+::: {.callout-tip}
+Você pode estar se perguntando para que pedir explicações sobre o código ao Copilot,
+se basta pedir a ele novamente se precisarmos fazer algo diferente.
+
+Repare que, quanto mais um programador conhece uma biblioteca, melhor uso ele 
+consegue fazer dos assistentes de IA.
+
+Claro que não é necessário entender os detalhes de sintaxe e decorar as funções que 
+fazem os gráficos. E dependendo do seu objetivo, talvez nem precise entender nada.
+
+Mas, dependendo do que precisa, pode ser especialmente útil saber o que a biblioteca é
+capaz de fazer e entender o suficiente do código para que tornar mais fácil o processo 
+de depuração e customização do código gerado.
+:::
+
+## Gráficos de Barras
+
+[Gráficos de Barras]{.alert}, também conhecidos como **Gráficos de Colunas**, são úteis para:
+
+- comparar quantidades entre diferentes categorias.
+
+. . .
+
+Vamos usar o Copilot de maneira ligeiramente diferente que usamos antes.
+
+- Vamos pedir que ele não só gere o gráfico, como também totalize os dados mensais antes
+  de gerar o gráfico.
+
+##
+
+::: {.callout-caution title="Prompt" icon="false"}
+Gere um gráfico de barras usando Matplotlib mostrando as vendas **totais** de cada produto
+a partir da tabela abaixo que contém dados de vendas mensais de três produtos.
+
+```
+Mês	Produto A	Produto B	Produto C
+Jan	150	100	80
+Fev	200	120	90
+Mar	250	180	100
+Abr	300	160	120
+Mai	280	170	140
+Jun	320	150	160
+```
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import matplotlib.pyplot as plt
+
+# Dados de vendas mensais
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+produto_a = [150, 200, 250, 300, 280, 320]
+produto_b = [100, 120, 180, 160, 170, 150]
+produto_c = [80, 90, 100, 120, 140, 160]
+
+# Calculando vendas totais por produto
+total_a = sum(produto_a)
+total_b = sum(produto_b)
+total_c = sum(produto_c)
+
+produtos = ['Produto A', 'Produto B', 'Produto C']
+totais = [total_a, total_b, total_c]
+
+# Criando o gráfico de barras
+plt.bar(produtos, totais, color=['blue', 'green', 'orange'])
+plt.title('Vendas Totais por Produto (Jan-Jun)')
+plt.xlabel('Produto')
+plt.ylabel('Vendas Totais')
+plt.tight_layout()
+plt.show()
+```
+:::
+
+##
+
+Esse é o gráfico gerado:
+
 :::: {.columns}
 ::: {.column width="50%"}
-![](imagens/matplotlib_vendas_alterado.png){fig-align="center" fig-alt="Gráfico de vendas mensais laterado usando matplotlib." style="max-height: 50vh; width: auto;"}
+![](imagens/matplotlib_vendas_totais.png){fig-align="center" fig-alt="Gráfico de vendas totais por produto usando matplotlib."}
 :::
 
 ::: {.column width="50%"}
-
-- Dava bastante trabalho customizar gráficos antes dos Assisentes de IA 😮‍💨
-- Agora com o Copilot podemos concentrar mais atenção no que queremos mostrar com o gráfico 🤓 
-- e menos em como fazer isso.
+- Veja que, no código, foi usado o método `bar` em vez do método `plot`.
+- Ele recebe como primeiro argumento uma lista com os nomes das categorias (produtos)
+- e como segundo argumento uma lista com os valores numéricos (vendas totais).
 :::
 ::::
+
+##
+
+Vamos ver outras melhorias de visualização que podemos fazer com a ajuda do Copilot.
+
+- Podemos, por exemplo, pedir que o gráfico seja gerado na horizontal,
+- ou que as barras sejam exibidas com cores diferentes.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+Altere o gráfico para que as barras sejam exibidas na horizontal, e os valores de 
+cada barra sejam exibidos dentro da própria barra. Use uma paleta de cores.
+Também altere o título do eixo X para Produtos e mude a cor do Título e dos nomes dos
+eixos para azul escuro.
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import matplotlib.pyplot as plt
+
+# Dados de vendas mensais
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+produto_a = [150, 200, 250, 300, 280, 320]
+produto_b = [100, 120, 180, 160, 170, 150]
+produto_c = [80, 90, 100, 120, 140, 160]
+
+# Calculando vendas totais por produto
+total_a = sum(produto_a)
+total_b = sum(produto_b)
+total_c = sum(produto_c)
+
+produtos = ['Produto A', 'Produto B', 'Produto C']
+totais = [total_a, total_b, total_c]
+
+# Paleta de cores
+colors = plt.cm.Set2.colors[:3]
+
+# Criando o gráfico de barras horizontais
+bars = plt.barh(produtos, totais, color=colors)
+plt.title('Vendas Totais por Produto (Jan-Jun)', color='#003366')
+plt.xlabel('Vendas Totais', color='#003366')
+plt.ylabel('Produtos', color='#003366')
+
+# Adicionando os valores dentro das barras
+for bar in bars:
+    width = bar.get_width()
+    plt.text(width / 2, bar.get_y() + bar.get_height() / 2,
+             str(width),
+             ha='center', va='center', color='white', fontsize=10, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+
+##
+
+![](imagens/matplotlib_vendas_totais_alterado.png){fig-align="center" fig-alt="Gráfico de vendas totais por produto alterado, usando Matplolib."}
+
+. . .
+
+Você pode notar pelo código gerado, que a Matplotlib é uma biblioteca bastante flexível,
+mas que pode exigir bastante código para fazer gráficos como queremos.
+
+## Gráficos de Pizza
+
+[Gráficos de Pizza]{.alert} são úteis para:
+
+- mostrar proporções de cada categoria em relação ao total,
+- geralmente expressas em porcentagens.
+
+. . .
+
+Vamos pedir ao Copilot para mostrar as vendas totais de cada produto em um gráfico de pizza.
+
+- E, em seguida, entender que diferença faz mostrar esses dados em gráficos de barras ou de pizza.
+
+##
+
+::: {.callout-caution title="Prompt" icon="false"}
+Gere um gráfico de **pizza** usando Matplotlib mostrando as vendas totais de cada produto
+a partir da tabela abaixo que contém dados de vendas mensais de três produtos.
+
+```
+Mês	Produto A	Produto B	Produto C
+Jan	150	100	80
+Fev	200	120	90
+Mar	250	180	100
+Abr	300	160	120
+Mai	280	170	140
+Jun	320	150	160
+```
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import matplotlib.pyplot as plt
+
+# Dados de vendas mensais
+produtos = ['Produto A', 'Produto B', 'Produto C']
+vendas = [
+    [150, 200, 250, 300, 280, 320],  # Produto A
+    [100, 120, 180, 160, 170, 150],  # Produto B
+    [80, 90, 100, 120, 140, 160]     # Produto C
+]
+
+# Soma das vendas de cada produto
+vendas_totais = [sum(v) for v in vendas]
+
+# Gráfico de pizza
+plt.figure(figsize=(6, 6))
+plt.pie(vendas_totais, labels=produtos, autopct='%1.1f%%', startangle=90)
+plt.title('Vendas Totais por Produto')
+plt.axis('equal')
+plt.show()
+```
+:::
+
+##
+
+Esse é o gráfico gerado:
+
+![](imagens/matplotlib_vendas_totais_pizza.png){fig-align="center" fig-alt="Gráfico de vendas totais por produto em gráfico de pizza usando Matplolib."}
+
+## 
+
+Em que situações você preferiria usar o **gráfico de barras** ou o **gráfico de pizza**?
+
+:::: {.columns}
+::: {.column width="50%"}
+![](imagens/matplotlib_vendas_totais.png){fig-align="center" fig-alt="Gráfico de vendas totais por produto usando matplotlib."}
+:::
+
+::: {.column width="50%"}
+![](imagens/matplotlib_vendas_totais_pizza.png){fig-align="center" fig-alt="Gráfico de vendas totais por produto em gráfico de pizza usando Matplolib."}
+:::
+::::
+
+## 
+
+Repare que **gráficos de barra** são mais eficazes para comparar valores absolutos entre categorias.
+
+- Eles facilitam a visualização de diferenças entre os valores.
+- No nosso caso, conseguimos ver facilmente que o Produto A teve vendas muito maiores que os outros.
+
+. . .
+
+Já **gráficos de pizza** são mais úteis para comparar as proporções em relação ao total.
+
+- Eles ajudam a entender a participação de cada categoria.
+- No nosso caso, conseguimos ver facilmente que o Produto A representa quase metade das vendas totais.
+
+
+## Histogramas
+
+Os [histogramas]{.alert} são úteis para:
+
+- mostrar distribuições de frequência,
+- ou seja, quantas vezes cada valor ou intervalo de valores ocorre em um conjunto de dados. 
+
+. . .
+
+Cada valor (ou intervalo) é representado por uma barra vertical, cuja altura corresponde 
+à frequência daquele valor.
+
+##
+
+Suponha, por exemplo, que um professor queira analisar as notas de uma turma.
+
+- Ele pode usar um histograma para visualizar a distribuição das notas.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+```python
+import matplotlib.pyplot as plt
+
+notas = [91, 92, 60, 82, 94, 54, 83, 81, 74, 91, 75, 70, 81, 48, 0, 82, 90, 65, 88, 89, 56, 51, 64, 63, 60, 61, 80, 66, 65, 79, 49, 71, 44, 72, 78, 60, 55, 53, 87, 80, 63, 60, 66, 61, 75, 48, 87, 53, 63, 39, 74, 27, 61]
+
+# gerar um histograma com as notas, considerando intervalos de 10 em 10
+```
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import matplotlib.pyplot as plt
+
+notas = [91, 92, 60, 82, 94, 54, 83, 81, 74, 91, 75, 70, 81, 48, 0, 82, 90, 65, 88, 89, 56, 51, 64, 63, 60, 61, 80, 66, 65, 79, 49, 71, 44, 72, 78, 60, 55, 53, 87, 80, 63, 60, 66, 61, 75, 48, 87, 53, 63, 39, 74, 27, 61]
+
+# gerar um histograma com as notas, considerando intervalos de 10 em 10
+plt.hist(notas, bins=range(0, 101, 10), edgecolor='black', alpha=0.7)
+plt.title('Distribuição de Notas')
+plt.xlabel('Notas')
+plt.ylabel('Número de Alunos')
+plt.xticks(range(0, 101, 10))
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+```
+:::
+
+##
+
+![](imagens/matplotlib_histograma_notas.png){fig-align="center" fig-alt="Histograma de notas usando Matplolib."}
+
+. . .
+
+Analisando o histograma podemos ver que 15 alunos ficaram com nota entre 60 e 70.
+
+- E que a maioria das notas está entre 60 e 90.
+
+## Gráficos de Dispersão
+
+Os [gráficos de dispersão]{.alert} são úteis para:
+
+- mostrar a relação entre duas (ou mais) variáveis numéricas.
+- Cada ponto do gráfico tem o valor de uma variável no eixo X e o valor da outra variável no eixo Y.
+
+. . .
+
+Suponha, por exemplo, que um professor queira analisar a relação entre a presença nas aulas e as notas dos alunos.
+
+- Ele pode usar um gráfico de dispersão para visualizar essa relação.
+
+##
+
+::: {.callout-caution title="Prompt" icon="false"}
+```python
+import matplotlib.pyplot as plt
+
+notas = [91, 79, 39, 62, 96, 84, 82, 24, 69, 15, 50, 38, 64, 30, 62, 76, 57, 58, 75, 72, 63, 74, 47, 72, 60, 79, 67, 70, 24, 59, 75, 60, 58, 14, 42, 89, 83, 47, 79, 46, 48, 91, 63, 83, 74, 90, 92]
+faltas = [12, 28, 6, 16, 4, 12, 4, 32, 12, 12, 14, 14, 16, 16, 12, 8, 16, 2, 10, 54, 4, 54, 0, 16, 10, 8, 10, 8, 14, 16, 2, 12, 12, 22, 20, 2, 4, 18, 20, 6, 4, 4, 10, 2, 20, 12, 4]
+
+# gerar um gráfico de dispersão relacionando notas e faltas
+```
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import matplotlib.pyplot as plt
+
+notas = [91, 79, 39, 62, 96, 84, 82, 24, 69, 15, 50, 38, 64, 30, 62, 76, 57, 58, 75, 72, 63, 74, 47, 72, 60, 79, 67, 70, 24, 59, 75, 60, 58, 14, 42, 89, 83, 47, 79, 46, 48, 91, 63, 83, 74, 90, 92]
+faltas = [12, 28, 6, 16, 4, 12, 4, 32, 12, 12, 14, 14, 16, 16, 12, 8, 16, 2, 10, 54, 4, 54, 0, 16, 10, 8, 10, 8, 14, 16, 2, 12, 12, 22, 20, 2, 4, 18, 20, 6, 4, 4, 10, 2, 20, 12, 4]
+
+# gerar um gráfico de dispersão relacionando notas e faltas
+plt.figure(figsize=(10, 6))
+plt.scatter(faltas, notas, color='blue', alpha=0.6)
+plt.title('Relação entre Notas e Faltas')
+plt.xlabel('Número de Faltas')
+plt.ylabel('Notas')
+plt.xlim(0, max(faltas) + 5)
+plt.ylim(0, 100)
+plt.grid(True)
+plt.axhline(y=60, color='r', linestyle='--', label='Nota de Corte')
+plt.legend()
+plt.show()
+```
+:::
+
+##
+
+![](imagens/matplotlib_dispersao_notas_faltas.png){fig-align="center" fig-alt="Gráfico de dispersão relacionando notas e faltas usando Matplolib."}
+
+##
+
+Esse gráficos traz algumas questões interessantes.
+
+1. O Copilot adicionou, por conta própria, uma linha horizontal indicando a nota de corte (60).
+
+- Já que ele fez isso, seria interessante destacar também o limite de faltas para reprovação.
+- Que inclusive, depende se a nota é 60 ou 70. 
+
+##
+
+2. Aĺém disso, tem dois pontos no gráfico bem estranhos.
+
+- Alunos que faltaram em quase todas as aulas e ainda assim passaram. O que poderia ser?
+- São alunos de matrícula especial (turma Z).
+- Esses dados deveriam excluídos (limpeza de dados) ou destacados de alguma forma no gráfico.
+
+##
+
+Vamos então alterar o gráfico:
+
+- removendo os alunos de turma Z.
+- destacando o limite de faltas/notas para reprovação.
+
+. . . 
+
+::: {.callout-caution title="Prompt" icon="false"}
+Altere o gráfico acrescentando uma nova linha de corte para a nota: 70 (em azul).
+E linhas de corte também para as faltas: 17 (em vermelho) e 23 (em azul).
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import matplotlib.pyplot as plt
+
+notas = [91, 79, 39, 62, 96, 84, 82, 24, 69, 15, 50, 38, 64, 30, 62, 76, 57, 58, 75, 63, 47, 72, 60, 79, 67, 70, 24, 59, 75, 60, 58, 14, 42, 89, 83, 47, 79, 46, 48, 91, 63, 83, 74, 90, 92]
+faltas = [12, 28, 6, 16, 4, 12, 4, 32, 12, 12, 14, 14, 16, 16, 12, 8, 16, 2, 10, 4, 0, 16, 10, 8, 10, 8, 14, 16, 2, 12, 12, 22, 20, 2, 4, 18, 20, 6, 4, 4, 10, 2, 20, 12, 4]
+
+plt.figure(figsize=(10, 6))
+plt.scatter(faltas, notas, color='blue', alpha=0.6)
+plt.title('Relação entre Notas e Faltas')
+plt.xlabel('Número de Faltas')
+plt.ylabel('Notas')
+plt.xlim(0, max(faltas) + 5)
+plt.ylim(0, 100)
+plt.grid(True)
+
+# Linhas horizontais de corte para notas
+plt.axhline(y=60, color='r', linestyle='--', label='Nota de Corte 60')
+plt.axhline(y=70, color='blue', linestyle='--', label='Nota de Corte 70')
+
+# Linhas verticais de corte para faltas
+plt.axvline(x=17, color='r', linestyle='-.', label='Faltas Corte 17')
+plt.axvline(x=23, color='blue', linestyle='-.', label='Faltas Corte 23')
+
+plt.legend()
+plt.show()
+```
+:::
+
+##
+
+![](imagens/matplotlib_dispersao_notas_faltas_alterado.png){fig-align="center" fig-alt="Gráfico de dispersão relacionando notas e faltas alterado, usando Matplolib."}
+
+## Outros tipos de gráficos
+
+Como já citado anteriormente, o Copilot nos permite manter foco no que queremos,
+
+- em vez de preocuparmos sobre detalhes sobre como isso pode ser feito.
+
+. . .
+
+Por isso, é interessante ter uma ideia do que é possível fazer com as bibliotecas de visualização
+como o Matplotlib.
+
+- Você pode explorar isso com o próprio Copilot.
+- Ou pode consultar a documentação oficial da biblioteca.
+
+##
+
+Uma funcionalidade interessante da Matplotlib, por exemplo, é a possibilidade de criar vários subgráficos 
+em uma única figura.
+
+. . .
+
+![](imagens/matplotlib_exemplo_doutorado.png){fig-align="center" fig-alt="Exemplo de vários gráficos em uma única figura usando Matplolib."}
+
+##
+
+Criei a figura do slide anterior para a minha tese de doutorado.
+
+- Além de mostrar o uso de vários gráficos em uma única figura,
+- ela também mostra que é possível usar preenchimento de área em gráficos de linha.
+
+. . .
+
+Pena que não existia Copilot 😢😢 durante o meu doutorado.
+
+##
+
+Veja os [tipos de gráficos do Matplotlib](https://matplotlib.org/stable/plot_types/index.html#plot-types).
+
+. . .
+
+E a [galeria de exemplos do Matplotlib](https://matplotlib.org/stable/gallery/index.html).
+
+
 
 # Seaborn {background-color="#40666e"}
 
@@ -335,6 +1000,9 @@ dados = {
 df = pd.DataFrame(dados)
 print(df)
 ```
+
+
+
 
 
 ## Seaborn

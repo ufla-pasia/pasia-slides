@@ -4673,14 +4673,14 @@
     "href": "aula_t7.html#section-3",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Mas veja que não basta mostrar os dados em um gráfico qualquer.\n\nÉ necessário que o gráfico seja simples e visualmente agradável\ne, principalmente, que permita que todos entendem claramente o que veem.\nCom isso, as pessoas conseguirão identificar padrões e tendências nos dados."
+    "text": "Mas veja que não basta mostrar os dados em um gráfico qualquer.\n\nÉ necessário que o gráfico seja simples,\nvisualmente agradável\ne, principalmente, que permita que todos entendem claramente o que veem.\n\n\nCom isso, as pessoas conseguirão identificar padrões e tendências nos dados."
   },
   {
     "objectID": "aula_t7.html#section-4",
     "href": "aula_t7.html#section-4",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "É disso que se trata o que chamamos de visualização de dados.\n\nque é o uso de representações visuais para explorar e para evidenciar padrões em conjuntos de dados.\nOnde um conjunto de dados (ou dataset) pode ser desde uma simples lista de números até terabytes de dados com diversos tipos diferentes de inforamações.\n\n\nA visualização está estreitamente ligada ao que chamamos de análise exploratória de dados."
+    "text": "É disso que se trata o que chamamos de visualização de dados;\n\nque é o uso de representações visuais para explorar e para evidenciar padrões em conjuntos de dados.\n\n\nUm conjunto de dados (ou dataset) pode ser:\n\ndesde uma simples lista de números\naté terabytes de dados com diversos tipos diferentes de inforamações.\n\n\n\nA visualização está estreitamente ligada ao que chamamos de análise exploratória de dados."
   },
   {
     "objectID": "aula_t7.html#section-5",
@@ -4694,7 +4694,7 @@
     "href": "aula_t7.html#section-6",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "As bibliotecas mais usadas para visualização de dados em Python são:\n\nMatplotlib\nSeaborn\nPandas\nPlotly"
+    "text": "Nosso foco aqui não será em Ciência dos Dados em si, nosso objetivo será:\n\nTer uma visão geral sobre as principais bibliotecas de visualização de dados em Python.\nConhecer alguns dos tipos de gráficos mais comuns.\nE aprender a usar essas bibliotecas com a ajuda do GitHub Copilot."
   },
   {
     "objectID": "aula_t7.html#os-dados",
@@ -4708,7 +4708,7 @@
     "href": "aula_t7.html#section-7",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Antes de demonstrarmos o uso das bibliotecas, vamos criar um arquivo requirements.txt com as bibliotecas que usaremos.\npandas\nmatplotlib\nseaborn\nplotly\n\nLembre-se que para instalar as bibliotecas, você deve criar um ambiente virtual e instalar as bibliotecas.\n\nVocê pode fazer isso manualente, como mostrei antes, ou…\n\npython3 -m venv venv\nsource venv/bin/activate  # Linux/Mac\nvenv\\Scripts\\activate     # Windows\npython -m pip install -r requirements.txt"
+    "text": "As bibliotecas mais usadas para visualização de dados em Python são:\n\nMatplotlib\nSeaborn\nPandas\nPlotly"
   },
   {
     "objectID": "aula_t7.html#os-dados-1",
@@ -4750,74 +4750,389 @@
     "href": "aula_t7.html#dados-de-exemplo",
     "title": "Visualizando Dados",
     "section": "Dados de exemplo",
-    "text": "Dados de exemplo\nPara exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples sobre vendas mensais de três produtos 📊\n\n\n\n\nMês\nProduto A\nProduto B\nProduto C\n\n\n\n\nJan\n150\n100\n80\n\n\nFev\n200\n120\n90\n\n\nMar\n250\n180\n100\n\n\nAbr\n300\n160\n120\n\n\nMai\n280\n170\n140\n\n\nJun\n320\n150\n160"
+    "text": "Dados de exemplo\nPara exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples sobre 📊 vendas mensais de três produtos\n\n\n\n\nMês\nProduto A\nProduto B\nProduto C\n\n\n\n\nJan\n150\n100\n80\n\n\nFev\n200\n120\n90\n\n\nMar\n250\n180\n100\n\n\nAbr\n300\n160\n120\n\n\nMai\n280\n170\n140\n\n\nJun\n320\n150\n160"
   },
   {
     "objectID": "aula_t7.html#section-8",
     "href": "aula_t7.html#section-8",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Você pode, em vez de fazer manualmente, usar o VS Code para facilitar o processo.\n\nSe você criar um arquivo requirements.txt na raiz do projeto\n\ne depois acessar a opção paleta de comandos (Ctrl+Shift+P) e digitar Python: Create Environment\no VS Code cria o ambiente virtual e já instala as bibliotecas listadas no arquivo."
+    "text": "Antes de demonstrarmos o uso das bibliotecas, vamos criar uma pasta com um arquivo requirements.txt com as bibliotecas que usaremos e abri-la no VS Code.\n\npandas\nmatplotlib\nseaborn\nplotly\n\n\nLembre-se que para instalar as bibliotecas, você deve criar um ambiente virtual e instalar as bibliotecas.\n\nVocê pode fazer isso manualmente, como mostrei antes, ou…\n\n\n\npython3 -m venv venv\nsource venv/bin/activate  # Linux/Mac\nvenv\\Scripts\\activate     # Windows\npython -m pip install -r requirements.txt"
   },
   {
     "objectID": "aula_t7.html#matplotlib-1",
     "href": "aula_t7.html#matplotlib-1",
     "title": "Visualizando Dados",
     "section": "Matplotlib",
-    "text": "Matplotlib\n\n📌 Biblioteca fundamental para gráficos em Python.\n\nSuporta grande variedade de gráficos 2D (linhas, barras, dispersão, histogramas).\n\nMuito flexível, mas exige mais código para personalizações.\n\nÉ a base de várias outras bibliotecas (como Seaborn e Pandas).\n\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 2, 3, 4], [10, 20, 25, 30])\nplt.title(\"Exemplo Matplotlib\")\nplt.show()"
+    "text": "Matplotlib\n\nÉ a biblioteca fundamental para gráficos em Python.\n\nSuporta grande variedade de gráficos 2D (linhas, barras, dispersão, histogramas).\n\nMuito flexível, mas exige mais código para personalizações.\n\nÉ a base de várias outras bibliotecas (como Seaborn e Pandas).\n\n\n# Exemplo simples\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 2, 3, 4], [10, 20, 25, 30])\nplt.title(\"Exemplo Matplotlib\")\nplt.show()"
   },
   {
     "objectID": "aula_t7.html#section-9",
     "href": "aula_t7.html#section-9",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Com o exemplo anterior, seria mostrado o gráfico abaixo:\n\n\n\n\n\n\n\n\n\nNote que a primeira lista representa os valores do eixo X e a segunda os do eixo Y.\n\nplt.plot([1, 2, 3, 4], [10, 20, 25, 30])"
+    "text": "Você pode, em vez de fazer manualmente, usar o VS Code para facilitar o processo.\n\nSe você tiver um arquivo requirements.txt na raiz do projeto\n\ne depois acessar a paleta de comandos (Ctrl+Shift+P) e digitar Python: Create Environment\no VS Code cria o ambiente virtual e já instala as bibliotecas listadas no arquivo."
   },
   {
     "objectID": "aula_t7.html#section-10",
     "href": "aula_t7.html#section-10",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Vamos agora pedir ao Copilot para gerar um gráfico de linhas com os dados de vendas mensais usando a biblioteca Matplotlib.\n\n\n\n\n\nPrompt\n\n\nGere um gráfico de linhas usando Matplotlib com os dados abaixo que se referem às vendas mensais de três produtos.\nMês Produto A   Produto B   Produto C\nJan 150 100 80\nFev 200 120 90\nMar 250 180 100\nAbr 300 160 120\nMai 280 170 140\nJun 320 150 160"
+    "text": "Com o exemplo anterior, seria mostrado o gráfico abaixo:\n\n\n\n\n\n\n\n\n\nNote que a primeira lista representa os valores do eixo X e a segunda os do eixo Y.\n\nplt.plot([1, 2, 3, 4], [10, 20, 25, 30])"
   },
   {
     "objectID": "aula_t7.html#section-11",
     "href": "aula_t7.html#section-11",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "import matplotlib.pyplot as plt\n\nmeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']\nproduto_a = [150, 200, 250, 300, 280, 320]\nproduto_b = [100, 120, 180, 160, 170, 150]\nproduto_c = [80, 90, 100, 120, 140, 160]\n\nplt.plot(meses, produto_a, marker='o', label='Produto A')\nplt.plot(meses, produto_b, marker='o', label='Produto B')\nplt.plot(meses, produto_c, marker='o', label='Produto C')\n\nplt.title('Vendas Mensais por Produto')\nplt.xlabel('Mês')\nplt.ylabel('Vendas')\nplt.legend()\nplt.grid(True)\nplt.tight_layout()\nplt.show()"
+    "text": "Repare que o gráfico é exibido em uma tela que possui uma barra de ferramentas na parte inferior.\n\n\n\n\n\n\n\n\n\nCom essa barra, podemos salvar o gráfico como uma imagem,\nou interagir com o gráfico, fazendo zoom, por exemplo.\nOu ainda alterando configurações como o tamanho e espaçamento do gráfico."
   },
   {
     "objectID": "aula_t7.html#section-12",
     "href": "aula_t7.html#section-12",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Note que o Copilot criou uma lista para cada coluna dos dados.\n\nE o gráfico de resultado seria esse:\n\n\n\n\n\n\n\n\n\n\n\nLeia o código gerado pelo Copilot e tente identificar o que cada parte faz.\nDepois, compare o gráfico gerado com o primeiro mostrado como exemplo."
+    "text": "Vamos usar agora, como exemplo, um conjunto de dados simples, sobre 📊 vendas mensais de três produtos\n\nVamos pedir ao Copilot para gerar um gráfico de linhas com esses dados, usando a biblioteca Matplotlib.\n\n\n\n\nMês\nProduto A\nProduto B\nProduto C\n\n\n\n\nJan\n150\n100\n80\n\n\nFev\n200\n120\n90\n\n\nMar\n250\n180\n100\n\n\nAbr\n300\n160\n120\n\n\nMai\n280\n170\n140\n\n\nJun\n320\n150\n160"
   },
   {
     "objectID": "aula_t7.html#section-13",
     "href": "aula_t7.html#section-13",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Com o Copilot é fácil alterarmos a forma como o gráfico é gerado.\n\nPodemos, por exemplo, pedir que use marcadores diferentes para cada produto,\nOu linhas mais grossas, cores diferentes, etc.\n\n\n\n\n\n\nPrompt\n\n\nAltere o gráfico usando marcadores diferentes para cada produto, linhas mais grossas e esconda nas linhas de grade."
+    "text": "Prompt\n\n\nGere um gráfico de linhas usando Matplotlib com os dados abaixo que se referem às vendas mensais de três produtos.\nMês Produto A   Produto B   Produto C\nJan 150 100 80\nFev 200 120 90\nMar 250 180 100\nAbr 300 160 120\nMai 280 170 140\nJun 320 150 160"
   },
   {
     "objectID": "aula_t7.html#section-14",
     "href": "aula_t7.html#section-14",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Dava bastante trabalho customizar gráficos antes dos Assisentes de IA 😮‍💨\nAgora com o Copilot podemos concentrar mais atenção no que queremos mostrar com o gráfico 🤓\ne menos em como fazer isso."
+    "text": "GitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\nmeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']\nproduto_a = [150, 200, 250, 300, 280, 320]\nproduto_b = [100, 120, 180, 160, 170, 150]\nproduto_c = [80, 90, 100, 120, 140, 160]\n\nplt.plot(meses, produto_a, marker='o', label='Produto A')\nplt.plot(meses, produto_b, marker='o', label='Produto B')\nplt.plot(meses, produto_c, marker='o', label='Produto C')\n\nplt.title('Vendas Mensais por Produto')\nplt.xlabel('Mês')\nplt.ylabel('Vendas')\nplt.legend()\nplt.grid(True)\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "aula_t7.html#section-15",
     "href": "aula_t7.html#section-15",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "meses = [“Jan”, “Fev”, “Mar”, “Abr”, “Mai”, “Jun”] produto_a = [150, 200, 250, 300, 280, 320] produto_b = [100, 120, 180, 160, 220, 210] produto_c = [80, 90, 100, 120, 140, 160]\nPara ma\nSuponha que tenhamos esses dados de vendas em um dicionário Python:\n\nNote que as chaves dos dicionários representam os nomes das colunas\ne os valores são listas com os dados de cada coluna.\n\n. .\nimport pandas as pd\n\n\n\ndf = pd.DataFrame(dados)\nprint(df)"
+    "text": "Note que o Copilot criou uma lista para cada coluna dos dados.\n\nE o gráfico de resultado seria esse:\n\n\n\n\n\n\n\n\n\n\n\nAvalie o gráfico e o código gerado pelo Copilot e tente identificar o que cada parte do código faz.\nDepois, compare com o código e gráficos do primeiro exemplo mostrado."
   },
   {
     "objectID": "aula_t7.html#section-16",
     "href": "aula_t7.html#section-16",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Com o Copilot é fácil alterarmos a forma como o gráfico é gerado.\n\nPodemos, por exemplo, pedir que use marcadores diferentes para cada produto,\nOu linhas mais grossas, cores diferentes, etc.\n\n\n\n\n\n\nPrompt\n\n\nAltere o gráfico usando marcadores diferentes para cada produto, linhas mais grossas e esconda nas linhas de grade."
+  },
+  {
+    "objectID": "aula_t7.html#seaborn-1",
+    "href": "aula_t7.html#seaborn-1",
+    "title": "Visualizando Dados",
+    "section": "Seaborn",
+    "text": "Seaborn\n\n📌 Construída sobre o Matplotlib.\nOferece visualizações estatísticas com aparência mais elegante.\nFacilita criação de gráficos de distribuições, correlações e regressões.\nIdeal para análise exploratória de dados.\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.lineplot(x=[1, 2, 3, 4], y=[10, 20, 25, 30], marker=\"o\")\nplt.title(\"Exemplo Seaborn\")\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#seaborn-2",
+    "href": "aula_t7.html#seaborn-2",
+    "title": "Visualizando Dados",
+    "section": "Seaborn",
+    "text": "Seaborn"
+  },
+  {
+    "objectID": "aula_t7.html#section-17",
+    "href": "aula_t7.html#section-17",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Dava bastante trabalho 😮‍💨 customizar gráficos antes dos Assisentes de IA;\nAgora com o Copilot podemos concentrar mais atenção no que queremos mostrar 🤓 com o gráfico\n\ne menos em como fazer isso."
+  },
+  {
+    "objectID": "aula_t7.html#section-18",
+    "href": "aula_t7.html#section-18",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Dava bastante trabalho 😮‍💨 customizar gráficos antes dos Assisentes de IA;\n\nAgora com o Copilot podemos concentrar\n\nmais atenção no que queremos mostrar 🤓 com o gráfico\n\ne menos em como fazer isso."
+  },
+  {
+    "objectID": "aula_t7.html#gráfico-de-linhas",
+    "href": "aula_t7.html#gráfico-de-linhas",
+    "title": "Visualizando Dados",
+    "section": "Gráfico de Linhas",
+    "text": "Gráfico de Linhas\nGráficos de linhas, como os que apresentamos, são úteis quando precisamos:\n\nilustrar tendências em dados ao longo de um período de tempo.\n\n\nGeral usamos períodos de tempo no eixo X (horizontal).\n\ne uma ou mais colunas numéricas no eixo Y (vertical)."
+  },
+  {
+    "objectID": "aula_t7.html#section-19",
+    "href": "aula_t7.html#section-19",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Podemos fazer gráficos de linha mais complexos, como quando sobrepomos dados de diferentes escalas."
+  },
+  {
+    "objectID": "aula_t7.html#section-20",
+    "href": "aula_t7.html#section-20",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "O gráfico do slide anterior anterior foi gerado com o seguinte código:\nimport matplotlib.pyplot as plt\n\n# Dados de exemplo\ndias = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom']\ntemperatura = [22, 21, 23, 24, 22, 20, 19]\numidade = [60, 65, 58, 55, 62, 70, 75]\n\nfig, ax1 = plt.subplots(figsize=(8, 5))\n\nax1.plot(dias, temperatura, marker='o', color='tab:red', label='Temperatura (°C)')\nax1.set_xlabel('Dia')\nax1.set_ylabel('Temperatura (°C)', color='tab:red')\nax1.tick_params(axis='y', labelcolor='tab:red')\n\nax2 = ax1.twinx()\nax2.plot(dias, umidade, marker='s', color='tab:blue', label='Umidade (%)')\nax2.set_ylabel('Umidade (%)', color='tab:blue')\nax2.tick_params(axis='y', labelcolor='tab:blue')\n\nplt.title('Temperatura e Umidade ao longo da semana')\nfig.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-21",
+    "href": "aula_t7.html#section-21",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Como esse é um exemplo um pouco mais complexo, vamos pedir ao Copilot para explicar o código linha a linha\n\n\n\n\nPrompt\n\n\n/explain Explique o código linha a linha."
+  },
+  {
+    "objectID": "aula_t7.html#section-22",
+    "href": "aula_t7.html#section-22",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot (início)\n\n\nVou explicar o código Python linha a linha. Este código cria um gráfico com dois eixos Y para mostrar temperatura e umidade ao longo da semana:\nLinha 1\nimport matplotlib.pyplot as plt\nImporta a biblioteca matplotlib.pyplot com o alias plt. Esta biblioteca é usada para criar gráficos e visualizações em Python.\nLinhas 3-6\n# Dados de exemplo\ndias = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom']\ntemperatura = [22, 21, 23, 24, 22, 20, 19]\numidade = [60, 65, 58, 55, 62, 70, 75]\n\nLinha 3: Comentário indicando que os dados são de exemplo\nLinha 4: Cria uma lista com os dias da semana abreviados\nLinha 5: Cria uma lista com valores de temperatura em graus Celsius para cada dia\nLinha 6: Cria uma lista com valores de umidade em percentual para cada dia"
+  },
+  {
+    "objectID": "aula_t7.html#section-23",
+    "href": "aula_t7.html#section-23",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot (continuação)\n\n\nLinha 8\nfig, ax1 = plt.subplots(figsize=(8, 5))\nCria uma figura (fig) e um eixo principal (ax1) com tamanho de 8x5 polegadas. A função subplots() retorna tanto a figura quanto o(s) eixo(s).\nLinhas 10-13\nax1.plot(dias, temperatura, marker='o', color='tab:red', label='Temperatura (°C)')\nax1.set_xlabel('Dia')\nax1.set_ylabel('Temperatura (°C)', color='tab:red')\nax1.tick_params(axis='y', labelcolor='tab:red')\n\nLinha 10: Plota a temperatura no eixo principal com marcadores circulares (‘o’) em cor vermelha\nLinha 11: Define o rótulo do eixo X como ‘Dia’\nLinha 12: Define o rótulo do eixo Y esquerdo como ‘Temperatura (°C)’ em cor vermelha\nLinha 13: Configura a cor dos números do eixo Y esquerdo para vermelho"
+  },
+  {
+    "objectID": "aula_t7.html#section-24",
+    "href": "aula_t7.html#section-24",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot (continuação)\n\n\nLinhas 15-18\nax2 = ax1.twinx()\nax2.plot(dias, umidade, marker='s', color='tab:blue', label='Umidade (%)')\nax2.set_ylabel('Umidade (%)', color='tab:blue')\nax2.tick_params(axis='y', labelcolor='tab:blue')\n\nLinha 15: Cria um segundo eixo Y (ax2) que compartilha o mesmo eixo X com ax1\nLinha 16: Plota a umidade no segundo eixo com marcadores quadrados (‘s’) em cor azul\nLinha 17: Define o rótulo do eixo Y direito como ‘Umidade (%)’ em cor azul\nLinha 18: Configura a cor dos números do eixo Y direito para azul\n\nLinhas 20-23\nplt.title('Temperatura e Umidade ao longo da semana')\nfig.tight_layout()\nplt.show()\n\nLinha 20: Define o título do gráfico\nLinha 21: Ajusta automaticamente o layout para evitar sobreposição de elementos\nLinha 22: Linha em branco para melhor legibilidade\nLinha 23: Exibe o gráfico na tela"
+  },
+  {
+    "objectID": "aula_t7.html#section-25",
+    "href": "aula_t7.html#section-25",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot (continuação)\n\n\nResultado\nO código gera um gráfico que mostra duas linhas:\n\nUma linha vermelha com círculos mostrando a temperatura (eixo Y esquerdo)\nUma linha azul com quadrados mostrando a umidade (eixo Y direito)\n\nAmbas as linhas compartilham o mesmo eixo X (dias da semana), permitindo comparar facilmente como temperatura e umidade variam ao longo da semana."
+  },
+  {
+    "objectID": "aula_t7.html#section-26",
+    "href": "aula_t7.html#section-26",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Dica\n\n\nVocê pode estar se perguntando para que pedir explicações sobre o código ao Copilot, se basta pedir a ele novamente se precisarmos fazer algo diferente.\nRepare que, quanto mais um programador conhece uma biblioteca, melhor uso ele consegue fazer dos assistentes de IA.\nClaro que não é necessário entender os detalhes de sintaxe e decorar as funções que fazem os gráficos. E dependendo do seu objetivo, talvez nem precise entender nada.\nMas, dependendo do que precisa, pode ser especialmente útil saber o que a biblioteca é capaz de fazer e entender o suficiente do código para que tornar mais fácil o processo de depuração e customização do código gerado."
+  },
+  {
+    "objectID": "aula_t7.html#linha-1",
+    "href": "aula_t7.html#linha-1",
+    "title": "Visualizando Dados",
+    "section": "Linha 1",
+    "text": "Linha 1\nimport matplotlib.pyplot as plt\nImporta a biblioteca matplotlib.pyplot com o alias plt. Esta biblioteca é usada para criar gráficos e visualizações em Python.\nLinhas 3-6\n# Dados de exemplo\ndias = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom']\ntemperatura = [22, 21, 23, 24, 22, 20, 19]\numidade = [60, 65, 58, 55, 62, 70, 75]\n\nLinha 3: Comentário indicando que os dados são de exemplo\nLinha 4: Cria uma lista com os dias da semana abreviados\nLinha 5: Cria uma lista com valores de temperatura em graus Celsius para cada dia\nLinha 6: Cria uma lista com valores de umidade em percentual para cada dia"
+  },
+  {
+    "objectID": "aula_t7.html#section-27",
+    "href": "aula_t7.html#section-27",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Prompt\n\n\nGere um gráfico de barras usando Matplotlib mostrando as vendas totais de cada produto a partir da tabela abaixo que contém dados de vendas mensais de três produtos.\nMês Produto A   Produto B   Produto C\nJan 150 100 80\nFev 200 120 90\nMar 250 180 100\nAbr 300 160 120\nMai 280 170 140\nJun 320 150 160"
+  },
+  {
+    "objectID": "aula_t7.html#gráficos-de-barras",
+    "href": "aula_t7.html#gráficos-de-barras",
+    "title": "Visualizando Dados",
+    "section": "Gráficos de Barras",
+    "text": "Gráficos de Barras\nGráficos de Barras, também conhecidos como Gráficos de Colunas, são úteis para:\n\ncomparar quantidades entre diferentes categorias.\n\n\nVamos usar o Copilot de maneira ligeiramente diferente que usamos antes.\n\nVamos pedir que ele não só gere o gráfico, como também totalize os dados mensais antes de gerar o gráfico."
+  },
+  {
+    "objectID": "aula_t7.html#section-28",
+    "href": "aula_t7.html#section-28",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\n# Dados de vendas mensais\nmeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']\nproduto_a = [150, 200, 250, 300, 280, 320]\nproduto_b = [100, 120, 180, 160, 170, 150]\nproduto_c = [80, 90, 100, 120, 140, 160]\n\n# Calculando vendas totais por produto\ntotal_a = sum(produto_a)\ntotal_b = sum(produto_b)\ntotal_c = sum(produto_c)\n\nprodutos = ['Produto A', 'Produto B', 'Produto C']\ntotais = [total_a, total_b, total_c]\n\n# Criando o gráfico de barras\nplt.bar(produtos, totais, color=['blue', 'green', 'orange'])\nplt.title('Vendas Totais por Produto (Jan-Jun)')\nplt.xlabel('Produto')\nplt.ylabel('Vendas Totais')\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-29",
+    "href": "aula_t7.html#section-29",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Esse é o gráfico gerado:\n\n\n\n\n\n\n\n\n\nVeja que, no código, foi usado o método bar em vez do método plot.\nEle recebe como primeiro argumento uma lista com os nomes das categorias (produtos)\ne como segundo argumento uma lista com os valores numéricos (vendas totais)."
+  },
+  {
+    "objectID": "aula_t7.html#section-30",
+    "href": "aula_t7.html#section-30",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Vamos ver outras melhorias de visualização que podemos fazer com a ajuda do Copilot.\n\nPodemos, por exemplo, pedir que o gráfico seja gerado na horizontal,\nou que as barras sejam exibidas com cores diferentes.\n\n\n\n\n\n\nPrompt\n\n\nAltere o gráfico para que as barras sejam exibidas na horizontal, e os valores de cada barra sejam exibidos dentro da própria barra. Use uma paleta de cores. Também altere o título do eixo X para Produtos e mude a cor do Título e dos nomes dos eixos para azul escuro."
+  },
+  {
+    "objectID": "aula_t7.html#section-31",
+    "href": "aula_t7.html#section-31",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\n# Dados de vendas mensais\nmeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']\nproduto_a = [150, 200, 250, 300, 280, 320]\nproduto_b = [100, 120, 180, 160, 170, 150]\nproduto_c = [80, 90, 100, 120, 140, 160]\n\n# Calculando vendas totais por produto\ntotal_a = sum(produto_a)\ntotal_b = sum(produto_b)\ntotal_c = sum(produto_c)\n\nprodutos = ['Produto A', 'Produto B', 'Produto C']\ntotais = [total_a, total_b, total_c]\n\n# Paleta de cores\ncolors = plt.cm.Set2.colors[:3]\n\n# Criando o gráfico de barras horizontais\nbars = plt.barh(produtos, totais, color=colors)\nplt.title('Vendas Totais por Produto (Jan-Jun)', color='#003366')\nplt.xlabel('Vendas Totais', color='#003366')\nplt.ylabel('Produtos', color='#003366')\n\n# Adicionando os valores dentro das barras\nfor bar in bars:\n    width = bar.get_width()\n    plt.text(width / 2, bar.get_y() + bar.get_height() / 2,\n             str(width),\n             ha='center', va='center', color='white', fontsize=10, fontweight='bold')\n\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-32",
+    "href": "aula_t7.html#section-32",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Você pode notar pelo código gerado, que a Matplotlib é uma biblioteca bastante flexível, mas que pode exigir bastante código para fazer gráficos como queremos."
+  },
+  {
+    "objectID": "aula_t7.html#section-33",
+    "href": "aula_t7.html#section-33",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Prompt\n\n\nGere um gráfico de pizza usando Matplotlib mostrando as vendas totais de cada produto a partir da tabela abaixo que contém dados de vendas mensais de três produtos.\nMês Produto A   Produto B   Produto C\nJan 150 100 80\nFev 200 120 90\nMar 250 180 100\nAbr 300 160 120\nMai 280 170 140\nJun 320 150 160"
+  },
+  {
+    "objectID": "aula_t7.html#section-34",
+    "href": "aula_t7.html#section-34",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\n# Dados de vendas mensais\nprodutos = ['Produto A', 'Produto B', 'Produto C']\nvendas = [\n    [150, 200, 250, 300, 280, 320],  # Produto A\n    [100, 120, 180, 160, 170, 150],  # Produto B\n    [80, 90, 100, 120, 140, 160]     # Produto C\n]\n\n# Soma das vendas de cada produto\nvendas_totais = [sum(v) for v in vendas]\n\n# Gráfico de pizza\nplt.figure(figsize=(6, 6))\nplt.pie(vendas_totais, labels=produtos, autopct='%1.1f%%', startangle=90)\nplt.title('Vendas Totais por Produto')\nplt.axis('equal')\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#gráficos-de-pizza",
+    "href": "aula_t7.html#gráficos-de-pizza",
+    "title": "Visualizando Dados",
+    "section": "Gráficos de Pizza",
+    "text": "Gráficos de Pizza\nGráficos de Pizza são úteis para:\n\nmostrar proporções de cada categoria em relação ao total,\ngeralmente expressas em porcentagens.\n\n\nVamos pedir ao Copilot para mostrar as vendas totais de cada produto em um gráfico de pizza.\n\nE, em seguida, entender que diferença faz mostrar esses dados em gráficos de barras ou de pizza."
+  },
+  {
+    "objectID": "aula_t7.html#section-36",
+    "href": "aula_t7.html#section-36",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Em que situações você preferiria usar o gráfico de barras ou o gráfico de pizza?"
+  },
+  {
+    "objectID": "aula_t7.html#section-37",
+    "href": "aula_t7.html#section-37",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Repare que gráficos de barra são mais eficazes para comparar valores absolutos entre categorias.\n\nEles facilitam a visualização de diferenças entre os valores.\nNo nosso caso, conseguimos ver facilmente que o Produto A teve vendas muito maiores que os outros.\n\n\nJá gráficos de pizza são mais úteis para comparar as proporções em relação ao total.\n\nEles ajudam a entender a participação de cada categoria.\nNo nosso caso, conseguimos ver facilmente que o Produto A representa quase metade das vendas totais."
+  },
+  {
+    "objectID": "aula_t7.html#section-35",
+    "href": "aula_t7.html#section-35",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Esse é o gráfico gerado:"
+  },
+  {
+    "objectID": "aula_t7.html#section-38",
+    "href": "aula_t7.html#section-38",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Suponha, por exemplo, que um professor queira analisar as notas de uma turma.\n\nEle pode usar um histograma para visualizar a distribuição das notas.\n\n\n\n\n\n\nPrompt\n\n\nimport matplotlib.pyplot as plt\n\nnotas = [91, 92, 60, 82, 94, 54, 83, 81, 74, 91, 75, 70, 81, 48, 0, 82, 90, 65, 88, 89, 56, 51, 64, 63, 60, 61, 80, 66, 65, 79, 49, 71, 44, 72, 78, 60, 55, 53, 87, 80, 63, 60, 66, 61, 75, 48, 87, 53, 63, 39, 74, 27, 61]\n\n# gerar um histograma com as notas, considerando intervalos de 10 em 10"
+  },
+  {
+    "objectID": "aula_t7.html#section-39",
+    "href": "aula_t7.html#section-39",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\nnotas = [91, 92, 60, 82, 94, 54, 83, 81, 74, 91, 75, 70, 81, 48, 0, 82, 90, 65, 88, 89, 56, 51, 64, 63, 60, 61, 80, 66, 65, 79, 49, 71, 44, 72, 78, 60, 55, 53, 87, 80, 63, 60, 66, 61, 75, 48, 87, 53, 63, 39, 74, 27, 61]\n\n# gerar um histograma com as notas, considerando intervalos de 10 em 10\nplt.hist(notas, bins=range(0, 101, 10), edgecolor='black', alpha=0.7)\nplt.title('Distribuição de Notas')\nplt.xlabel('Notas')\nplt.ylabel('Número de Alunos')\nplt.xticks(range(0, 101, 10))\nplt.grid(axis='y', alpha=0.75)\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#histogramas",
+    "href": "aula_t7.html#histogramas",
+    "title": "Visualizando Dados",
+    "section": "Histogramas",
+    "text": "Histogramas\nOs histogramas são úteis para:\n\nmostrar distribuições de frequência,\nou seja, quantas vezes cada valor ou intervalo de valores ocorre em um conjunto de dados.\n\n\nCada valor (ou intervalo) é representado por uma barra vertical, cuja altura corresponde à frequência daquele valor."
+  },
+  {
+    "objectID": "aula_t7.html#section-40",
+    "href": "aula_t7.html#section-40",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Analisando o histograma podemos ver que 15 alunos ficaram com nota entre 60 e 70.\n\nE que a maioria das notas está entre 60 e 90."
+  },
+  {
+    "objectID": "aula_t7.html#section-41",
+    "href": "aula_t7.html#section-41",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Prompt\n\n\nimport matplotlib.pyplot as plt\n\nnotas = [91, 79, 39, 62, 96, 84, 82, 24, 69, 15, 50, 38, 64, 30, 62, 76, 57, 58, 75, 72, 63, 74, 47, 72, 60, 79, 67, 70, 24, 59, 75, 60, 58, 14, 42, 89, 83, 47, 79, 46, 48, 91, 63, 83, 74, 90, 92]\nfaltas = [12, 28, 6, 16, 4, 12, 4, 32, 12, 12, 14, 14, 16, 16, 12, 8, 16, 2, 10, 54, 4, 54, 0, 16, 10, 8, 10, 8, 14, 16, 2, 12, 12, 22, 20, 2, 4, 18, 20, 6, 4, 4, 10, 2, 20, 12, 4]\n\n# gerar um gráfico de dispersão relacionando notas e faltas"
+  },
+  {
+    "objectID": "aula_t7.html#section-42",
+    "href": "aula_t7.html#section-42",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\nnotas = [91, 79, 39, 62, 96, 84, 82, 24, 69, 15, 50, 38, 64, 30, 62, 76, 57, 58, 75, 72, 63, 74, 47, 72, 60, 79, 67, 70, 24, 59, 75, 60, 58, 14, 42, 89, 83, 47, 79, 46, 48, 91, 63, 83, 74, 90, 92]\nfaltas = [12, 28, 6, 16, 4, 12, 4, 32, 12, 12, 14, 14, 16, 16, 12, 8, 16, 2, 10, 54, 4, 54, 0, 16, 10, 8, 10, 8, 14, 16, 2, 12, 12, 22, 20, 2, 4, 18, 20, 6, 4, 4, 10, 2, 20, 12, 4]\n\n# gerar um gráfico de dispersão relacionando notas e faltas\nplt.figure(figsize=(10, 6))\nplt.scatter(faltas, notas, color='blue', alpha=0.6)\nplt.title('Relação entre Notas e Faltas')\nplt.xlabel('Número de Faltas')\nplt.ylabel('Notas')\nplt.xlim(0, max(faltas) + 5)\nplt.ylim(0, 100)\nplt.grid(True)\nplt.axhline(y=60, color='r', linestyle='--', label='Nota de Corte')\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#gráficos-de-dispersão",
+    "href": "aula_t7.html#gráficos-de-dispersão",
+    "title": "Visualizando Dados",
+    "section": "Gráficos de Dispersão",
+    "text": "Gráficos de Dispersão\nOs gráficos de dispersão são úteis para:\n\nmostrar a relação entre duas (ou mais) variáveis numéricas.\nCada ponto do gráfico tem o valor de uma variável no eixo X e o valor da outra variável no eixo Y.\n\n\nSuponha, por exemplo, que um professor queira analisar a relação entre a presença nas aulas e as notas dos alunos.\n\nEle pode usar um gráfico de dispersão para visualizar essa relação."
+  },
+  {
+    "objectID": "aula_t7.html#section-44",
+    "href": "aula_t7.html#section-44",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Esse gráficos traz algumas questões interessantes.\n\nO Copilot adicionou, por conta própria, uma linha horizontal indicando a nota de corte (60).\n\n\nJá que ele fez isso, seria interessante destacar também o limite de faltas para reprovação.\nQue inclusive, depende se a nota é 60 ou 70."
+  },
+  {
+    "objectID": "aula_t7.html#section-45",
+    "href": "aula_t7.html#section-45",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Aĺém disso, tem dois pontos no gráfico bem estranhos.\n\n\nAlunos que faltaram em quase todas as aulas e ainda assim passaram. O que poderia ser?\nSão alunos de matrícula especial (turma Z).\nEsses dados deveriam excluídos (limpeza de dados) ou destacados de alguma forma no gráfico."
+  },
+  {
+    "objectID": "aula_t7.html#section-46",
+    "href": "aula_t7.html#section-46",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Vamos então alterar o gráfico:\n\nremovendo os alunos de turma Z.\ndestacando o limite de faltas/notas para reprovação.\n\n\n\n\n\n\nPrompt\n\n\nAltere o gráfico acrescentando uma nova linha de corte para a nota: 70 (em azul). E linhas de corte também para as faltas: 17 (em vermelho) e 23 (em azul)."
+  },
+  {
+    "objectID": "aula_t7.html#section-48",
+    "href": "aula_t7.html#section-48",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "meses = [“Jan”, “Fev”, “Mar”, “Abr”, “Mai”, “Jun”] produto_a = [150, 200, 250, 300, 280, 320] produto_b = [100, 120, 180, 160, 220, 210] produto_c = [80, 90, 100, 120, 140, 160]\nPara ma\nSuponha que tenhamos esses dados de vendas em um dicionário Python:\n\nNote que as chaves dos dicionários representam os nomes das colunas\ne os valores são listas com os dados de cada coluna.\n\n. .\nimport pandas as pd\n\n\n\ndf = pd.DataFrame(dados)\nprint(df)"
+  },
+  {
+    "objectID": "aula_t7.html#section-49",
+    "href": "aula_t7.html#section-49",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Uma funcionalidade interessante da Matplotlib, por exemplo, é a possibilidade de criar vários subgráficos em uma única figura."
+  },
+  {
+    "objectID": "aula_t7.html#section-47",
+    "href": "aula_t7.html#section-47",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\nnotas = [91, 79, 39, 62, 96, 84, 82, 24, 69, 15, 50, 38, 64, 30, 62, 76, 57, 58, 75, 63, 47, 72, 60, 79, 67, 70, 24, 59, 75, 60, 58, 14, 42, 89, 83, 47, 79, 46, 48, 91, 63, 83, 74, 90, 92]\nfaltas = [12, 28, 6, 16, 4, 12, 4, 32, 12, 12, 14, 14, 16, 16, 12, 8, 16, 2, 10, 4, 0, 16, 10, 8, 10, 8, 14, 16, 2, 12, 12, 22, 20, 2, 4, 18, 20, 6, 4, 4, 10, 2, 20, 12, 4]\n\nplt.figure(figsize=(10, 6))\nplt.scatter(faltas, notas, color='blue', alpha=0.6)\nplt.title('Relação entre Notas e Faltas')\nplt.xlabel('Número de Faltas')\nplt.ylabel('Notas')\nplt.xlim(0, max(faltas) + 5)\nplt.ylim(0, 100)\nplt.grid(True)\n\n# Linhas horizontais de corte para notas\nplt.axhline(y=60, color='r', linestyle='--', label='Nota de Corte 60')\nplt.axhline(y=70, color='blue', linestyle='--', label='Nota de Corte 70')\n\n# Linhas verticais de corte para faltas\nplt.axvline(x=17, color='r', linestyle='-.', label='Faltas Corte 17')\nplt.axvline(x=23, color='blue', linestyle='-.', label='Faltas Corte 23')\n\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-50",
+    "href": "aula_t7.html#section-50",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Criei a figura do slide anterior para a minha tese de doutorado.\n\nAlém de mostrar o uso de vários gráficos em uma única figura,\nela também mostra que é possível usar preenchimento de área em gráficos de linha.\n\n\nPena que não existia Copilot 😢😢 durante o meu doutorado."
+  },
+  {
+    "objectID": "aula_t7.html#outros-tipos-de-gráficos",
+    "href": "aula_t7.html#outros-tipos-de-gráficos",
+    "title": "Visualizando Dados",
+    "section": "Outros tipos de gráficos",
+    "text": "Outros tipos de gráficos\nComo já citado anteriormente, o Copilot nos permite manter foco no que queremos,\n\nem vez de preocuparmos sobre detalhes sobre como isso pode ser feito.\n\n\nPor isso, é interessante ter uma ideia do que é possível fazer com as bibliotecas de visualização como o Matplotlib.\n\nVocê pode explorar isso com o próprio Copilot.\nOu pode consultar a documentação oficial da biblioteca."
+  },
+  {
+    "objectID": "aula_t7.html#section-51",
+    "href": "aula_t7.html#section-51",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Veja os tipos de gráficos do Matplotlib.\n\nE a galeria de exemplos do Matplotlib."
+  },
+  {
+    "objectID": "aula_t7.html#section-52",
+    "href": "aula_t7.html#section-52",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "meses = [“Jan”, “Fev”, “Mar”, “Abr”, “Mai”, “Jun”] produto_a = [150, 200, 250, 300, 280, 320] produto_b = [100, 120, 180, 160, 220, 210] produto_c = [80, 90, 100, 120, 140, 160]\nPara ma\nSuponha que tenhamos esses dados de vendas em um dicionário Python:\n\nNote que as chaves dos dicionários representam os nomes das colunas\ne os valores são listas com os dados de cada coluna.\n\n. .\nimport pandas as pd\n\n\n\ndf = pd.DataFrame(dados)\nprint(df)"
+  },
+  {
+    "objectID": "aula_t7.html#section-53",
+    "href": "aula_t7.html#section-53",
     "title": "Visualizando Dados",
     "section": "",
     "text": "Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.\n\nMas para usarmos aqui, vamos criar um dicionário Python com esses dados.\n\n\nvendas = {\n    \"Mês\": [\"Jan\", \"Fev\", \"Mar\", \"Abr\", \"Mai\", \"Jun\"],\n    \"Produto A\": [150, 200, 250, 300, 280, 320],\n    \"Produto B\": [100, 120, 180, 160, 220, 210],\n    \"Produto C\": [80, 90, 100, 120, 140, 160]\n}\nRepare que cada chave do dicionário representa o nome de uma coluna.\n\nE os valores são listas com os dados de cada coluna."
