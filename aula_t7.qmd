@@ -935,7 +935,25 @@ Veja os [tipos de gráficos do Matplotlib](https://matplotlib.org/stable/plot_ty
 
 E a [galeria de exemplos do Matplotlib](https://matplotlib.org/stable/gallery/index.html).
 
+# Pandas {background-color="#40666e"}
 
+## Pandas (df.plot)
+
+- 📌 Permite criar gráficos diretamente de DataFrames.
+- Baseado no Matplotlib.
+- Muito útil para análises rápidas e relatórios simples.
+- Menos flexível para visualizações complexas.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({
+    "Ano": [2021, 2022, 2023],
+    "Vendas": [150, 200, 250]
+})
+
+df.plot(x="Ano", y="Vendas", kind="bar", title="Vendas por Ano")
+```
 
 # Seaborn {background-color="#40666e"}
 
@@ -1003,12 +1021,6 @@ print(df)
 
 
 
-
-
-## Seaborn
-
-
-
 ##
 
 Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.
@@ -1030,23 +1042,7 @@ Repare que cada chave do dicionário representa o nome de uma coluna.
 
 - E os valores são listas com os dados de cada coluna.
 
-## Pandas (df.plot)
-
-- 📌 Permite criar gráficos diretamente de DataFrames.
-- Baseado no Matplotlib.
-- Muito útil para análises rápidas e relatórios simples.
-- Menos flexível para visualizações complexas.
-
-```python
-import pandas as pd
-
-df = pd.DataFrame({
-    "Ano": [2021, 2022, 2023],
-    "Vendas": [150, 200, 250]
-})
-
-df.plot(x="Ano", y="Vendas", kind="bar", title="Vendas por Ano")
-```
+# Plotly {background-color="#40666e"}
 
 ## Plotly
 
@@ -1061,4 +1057,4 @@ import plotly.express as px
 df = px.data.iris()
 fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species")
 fig.show()
-```python
+```
