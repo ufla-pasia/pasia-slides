@@ -1,0 +1,136 @@
+---
+title: Visualizando Dados
+subtitle: PASIA - Aula P.7
+---
+
+##
+
+Ideias:
+
+- Usar colormap para visualizar temperatura ou chuvas em uma mapa.
+
+# Pandas {background-color="#40666e"}
+
+## Pandas (df.plot)
+
+- 📌 Permite criar gráficos diretamente de DataFrames.
+- Baseado no Matplotlib.
+- Muito útil para análises rápidas e relatórios simples.
+- Menos flexível para visualizações complexas.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({
+    "Ano": [2021, 2022, 2023],
+    "Vendas": [150, 200, 250]
+})
+
+df.plot(x="Ano", y="Vendas", kind="bar", title="Vendas por Ano")
+```
+
+# Seaborn {background-color="#40666e"}
+
+## Seaborn
+
+- 📌 Construída sobre o Matplotlib.
+- Oferece visualizações estatísticas com aparência mais elegante.
+- Facilita criação de gráficos de distribuições, correlações e regressões.
+- Ideal para análise exploratória de dados.
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.lineplot(x=[1, 2, 3, 4], y=[10, 20, 25, 30], marker="o")
+plt.title("Exemplo Seaborn")
+plt.show()
+```
+
+##
+
+
+meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"]
+produto_a = [150, 200, 250, 300, 280, 320]
+produto_b = [100, 120, 180, 160, 220, 210]
+produto_c = [80, 90, 100, 120, 140, 160]
+
+Para ma
+
+Suponha que tenhamos esses dados de vendas em um dicionário Python:
+
+- Note que as chaves dos dicionários representam os nomes das colunas
+- e os valores são listas com os dados de cada coluna.
+
+. . 
+
+```python
+import pandas as pd
+
+
+
+df = pd.DataFrame(dados)
+print(df)
+```
+
+## Os Dados
+
+Para exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples.
+
+- 📊 Exemplo: **Vendas mensais de três produtos**
+
+```python
+import pandas as pd
+
+dados = {
+    "Mês": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+    "Produto A": [150, 200, 250, 300, 280, 320],
+    "Produto B": [100, 120, 180, 160, 220, 210],
+    "Produto C": [80, 90, 100, 120, 140, 160]
+}
+
+df = pd.DataFrame(dados)
+print(df)
+```
+
+
+
+##
+
+Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.
+
+- Mas para usarmos aqui, vamos criar um dicionário Python com esses dados.
+
+. . .
+
+```python
+vendas = {
+    "Mês": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+    "Produto A": [150, 200, 250, 300, 280, 320],
+    "Produto B": [100, 120, 180, 160, 220, 210],
+    "Produto C": [80, 90, 100, 120, 140, 160]
+}
+```
+
+Repare que cada chave do dicionário representa o nome de uma coluna.
+
+- E os valores são listas com os dados de cada coluna.
+
+# Plotly {background-color="#40666e"}
+
+## Plotly
+
+- 📌 Biblioteca para gráficos interativos.
+- Suporta zoom, hover, exportação e gráficos 3D.
+- Muito usada em dashboards e relatórios dinâmicos.
+- Integra-se bem com Dash para aplicações web.
+
+```python
+import plotly.express as px
+
+df = px.data.iris()
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species")
+fig.show()
+```
+
+#

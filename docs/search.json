@@ -4694,7 +4694,7 @@
     "href": "aula_t7.html#section-6",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Nosso foco aqui não será em Ciência dos Dados em si, nosso objetivo será:\n\nTer uma visão geral sobre as principais bibliotecas de visualização de dados em Python.\nConhecer alguns dos tipos de gráficos mais comuns.\nE aprender a usar essas bibliotecas com a ajuda do GitHub Copilot."
+    "text": "Nosso foco na disciplina não será em Ciência dos Dados em si, nosso objetivo será:\n\nTer uma visão geral sobre as principais bibliotecas de visualização de dados em Python.\nConhecer alguns dos tipos de gráficos mais comuns.\nTratar alguns exemplos de geração de dados.\nE aprender a usar essas bibliotecas com a ajuda do GitHub Copilot."
   },
   {
     "objectID": "aula_t7.html#os-dados",
@@ -5121,20 +5121,307 @@
     "href": "aula_t7.html#section-51",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Veja os tipos de gráficos do Matplotlib.\n\nE a galeria de exemplos do Matplotlib."
+    "text": "Outra funcionalidade interessante do Matplotlib são seus estilos predefinidos.\n\nCada estilo tem uma variedade de configurações padrões para cores de fundo, linhas da grade, espessura de linha, fontes, etc.\nAssim podemos tornar nossas visualizações mais elegantes, sem precisar fazer muitas customizações.\n\n\nPara demonstrar essas funcionalidades, vamos pedir ao Copilot para gerar o gráfico de linhas de vendas, mas com diferentes estilos."
   },
   {
     "objectID": "aula_t7.html#section-52",
     "href": "aula_t7.html#section-52",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "meses = [“Jan”, “Fev”, “Mar”, “Abr”, “Mai”, “Jun”] produto_a = [150, 200, 250, 300, 280, 320] produto_b = [100, 120, 180, 160, 220, 210] produto_c = [80, 90, 100, 120, 140, 160]\nPara ma\nSuponha que tenhamos esses dados de vendas em um dicionário Python:\n\nNote que as chaves dos dicionários representam os nomes das colunas\ne os valores são listas com os dados de cada coluna.\n\n. .\nimport pandas as pd\n\n\n\ndf = pd.DataFrame(dados)\nprint(df)"
+    "text": "Prompt\n\n\nOs dados abaixo que se referem às vendas mensais de três produtos. Gostaria de ver, em uma única figura, vários gráficos de linha com estilos diferentes usando Matplotlib.\nMês Produto A   Produto B   Produto C\nJan 150 100 80\nFev 200 120 90\nMar 250 180 100\nAbr 300 160 120\nMai 280 170 140\nJun 320 150 160"
   },
   {
     "objectID": "aula_t7.html#section-53",
     "href": "aula_t7.html#section-53",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.\n\nMas para usarmos aqui, vamos criar um dicionário Python com esses dados.\n\n\nvendas = {\n    \"Mês\": [\"Jan\", \"Fev\", \"Mar\", \"Abr\", \"Mai\", \"Jun\"],\n    \"Produto A\": [150, 200, 250, 300, 280, 320],\n    \"Produto B\": [100, 120, 180, 160, 220, 210],\n    \"Produto C\": [80, 90, 100, 120, 140, 160]\n}\nRepare que cada chave do dicionário representa o nome de uma coluna.\n\nE os valores são listas com os dados de cada coluna."
+    "text": "Não era o bem o que eu queria."
+  },
+  {
+    "objectID": "aula_t7.html#plotly-1",
+    "href": "aula_t7.html#plotly-1",
+    "title": "Visualizando Dados",
+    "section": "Plotly",
+    "text": "Plotly\n\n📌 Biblioteca para gráficos interativos.\nSuporta zoom, hover, exportação e gráficos 3D.\nMuito usada em dashboards e relatórios dinâmicos.\nIntegra-se bem com Dash para aplicações web.\n\nimport plotly.express as px\n\ndf = px.data.iris()\nfig = px.scatter(df, x=\"sepal_width\", y=\"sepal_length\", color=\"species\")\nfig.show()"
+  },
+  {
+    "objectID": "aula_t7.html#outros-tipos-de-gráficos-e-funcionalidades-do-matplotlib",
+    "href": "aula_t7.html#outros-tipos-de-gráficos-e-funcionalidades-do-matplotlib",
+    "title": "Visualizando Dados",
+    "section": "Outros tipos de gráficos e funcionalidades do Matplotlib",
+    "text": "Outros tipos de gráficos e funcionalidades do Matplotlib\nComo já citado anteriormente, o Copilot nos permite manter foco no que queremos,\n\nem vez de preocuparmos sobre detalhes sobre como isso pode ser feito.\n\n\nPor isso, é interessante ter uma ideia do que é possível fazer com as bibliotecas de visualização como o Matplotlib.\n\nVocê pode explorar isso com o próprio Copilot.\nOu pode consultar a documentação oficial da biblioteca."
+  },
+  {
+    "objectID": "aula_t7.html#section-54",
+    "href": "aula_t7.html#section-54",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Pelo código vemos que o Copilot entendeu que queríamos diferentes estilos de linha para cada produto.\n\n\n\n\nGitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\n# Dados\nmeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']\nproduto_a = [150, 200, 250, 300, 280, 320]\nproduto_b = [100, 120, 180, 160, 170, 150]\nproduto_c = [80, 90, 100, 120, 140, 160]\n\nplt.figure(figsize=(10, 6))\n\n# Gráficos de linha com estilos diferentes\nplt.plot(meses, produto_a, label='Produto A', color='blue', linestyle='-', marker='o')\nplt.plot(meses, produto_b, label='Produto B', color='green', linestyle='--', marker='s')\nplt.plot(meses, produto_c, label='Produto C', color='red', linestyle='-.', marker='^')\n\nplt.title('Vendas Mensais por Produto')\nplt.xlabel('Mês')\nplt.ylabel('Quantidade Vendida')\nplt.legend()\nplt.grid(True)\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-55",
+    "href": "aula_t7.html#section-55",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Vamos então fazer um pouco de Engenharia de Prompt para tentar obter o que queremos.\n\n\n\n\nPrompt\n\n\nOs dados abaixo que se referem às vendas mensais de três produtos. Gostaria de experimentar diferentes estilos padrões disponíveis na biblioteca matplotlib. Para isso, gostaria que gerasse vários subgráficos em uma única figura, de forma que cada subgráfico usasse um estilo diferente da biblioteca.\nMês Produto A   Produto B   Produto C\nJan 150 100 80\nFev 200 120 90\nMar 250 180 100\nAbr 300 160 120\nMai 280 170 140\nJun 320 150 160"
+  },
+  {
+    "objectID": "aula_t7.html#section-56",
+    "href": "aula_t7.html#section-56",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Pelo menos agora foram gerados subgráficos.\n\nMas o resultado ainda me pareceu decepcionante."
+  },
+  {
+    "objectID": "aula_t7.html#section-57",
+    "href": "aula_t7.html#section-57",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "No código, vemos que foi usada uma lista de estilos predefinidos do Matplotlib.\n\nE foi gerado um subgráfico usando cada estilo.\n\n\n\n\n\nGitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\n# Dados\nmeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']\nproduto_a = [150, 200, 250, 300, 280, 320]\nproduto_b = [100, 120, 180, 160, 170, 150]\nproduto_c = [80, 90, 100, 120, 140, 160]\n\n# Seleciona alguns estilos disponíveis\nestilos = ['default', 'ggplot', 'seaborn-v0_8', 'bmh', 'classic', 'Solarize_Light2']\n\nfig, axs = plt.subplots(2, 3, figsize=(18, 8))\naxs = axs.flatten()\n\nfor i, estilo in enumerate(estilos):\n    plt.style.use(estilo)\n    ax = axs[i]\n    ax.plot(meses, produto_a, marker='o', label='Produto A')\n    ax.plot(meses, produto_b, marker='s', label='Produto B')\n    ax.plot(meses, produto_c, marker='^', label='Produto C')\n    ax.set_title(f'Estilo: {estilo}')\n    ax.set_xlabel('Mês')\n    ax.set_ylabel('Vendas')\n    ax.legend()\n\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-58",
+    "href": "aula_t7.html#section-58",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Durante a preparação do material, a minha hipótese foi de que misturar diferentes estilos em uma mesma figura pode não funcionar muito bem.\n\nPedi então ao Copilot para alterar o código\n\n\n\n\nPrompt\n\n\nAltere o código de forma que cada estilo seja usado em uma figura separada, em vez de se utilizar subgráficos."
+  },
+  {
+    "objectID": "aula_t7.html#section-60",
+    "href": "aula_t7.html#section-60",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Veja que o método plt.show() é chamado separadamente para cada estilo.\n\n\n\n\n\nGitHub Copilot\n\n\nimport matplotlib.pyplot as plt\n\n# Dados\nmeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']\nproduto_a = [150, 200, 250, 300, 280, 320]\nproduto_b = [100, 120, 180, 160, 170, 150]\nproduto_c = [80, 90, 100, 120, 140, 160]\n\n# Seleciona alguns estilos disponíveis\nestilos = ['default', 'ggplot', 'seaborn-v0_8', 'bmh', 'classic', 'Solarize_Light2']\n\nfor estilo in estilos:\n    plt.style.use(estilo)\n    fig, ax = plt.subplots(figsize=(8, 5))\n    ax.plot(meses, produto_a, marker='o', label='Produto A')\n    ax.plot(meses, produto_b, marker='s', label='Produto B')\n    ax.plot(meses, produto_c, marker='^', label='Produto C')\n    ax.set_title(f'Estilo: {estilo}')\n    ax.set_xlabel('Mês')\n    ax.set_ylabel('Vendas')\n    ax.legend()\n    plt.tight_layout()\n    plt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-61",
+    "href": "aula_t7.html#section-61",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Pelo comentário no código gerado, vemos que o Copilot selecionou apenas alguns dos estilos disponíveis.\n\nPerguntei a ele então como saber quais estilos estão disponíveis.\n\nEle gerou a linha de código abaixo.\n\n\n\nprint(plt.style.available)\n\n\nQue trouxe o seguinte resultado:\n['Solarize_Light2', '_classic_test_patch', '_mpl-gallery', '_mpl-gallery-nogrid', \n 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', \n 'grayscale', 'petroff10', 'seaborn-v0_8', 'seaborn-v0_8-bright', 'seaborn-v0_8-colorblind', \n 'seaborn-v0_8-dark', 'seaborn-v0_8-dark-palette', 'seaborn-v0_8-darkgrid', 'seaborn-v0_8-deep', \n 'seaborn-v0_8-muted', 'seaborn-v0_8-notebook', 'seaborn-v0_8-paper', 'seaborn-v0_8-pastel', \n 'seaborn-v0_8-poster', 'seaborn-v0_8-talk', 'seaborn-v0_8-ticks', 'seaborn-v0_8-white', \n 'seaborn-v0_8-whitegrid', 'tableau-colorblind10']"
+  },
+  {
+    "objectID": "aula_t7.html#exemplo-1-números-quadrados",
+    "href": "aula_t7.html#exemplo-1-números-quadrados",
+    "title": "Visualizando Dados",
+    "section": "Exemplo 1: Números quadrados",
+    "text": "Exemplo 1: Números quadrados\nVamos começar mostrar um gráfico simples dos números quadrados de 1 a 1000.\n\n\n\n\n\nPrompt\n\n\nGere um gráfico de dispersão usando Matplotlib mostrando os números quadrados de 1 a 1000. Use o estilo seaborn."
+  },
+  {
+    "objectID": "aula_t7.html#section-62",
+    "href": "aula_t7.html#section-62",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Nós também podemos salvar os gráficos gerados em arquivos de imagem, via código.\n\nO Copilot pode nos ajudar com isso também.\n\n\n\n\n\n\nPrompt\n\n\nAltere o código para que cada gráfico seja salvo em um arquivo PNG, em vez de ser exibido na tela."
+  },
+  {
+    "objectID": "aula_t7.html#section-63",
+    "href": "aula_t7.html#section-63",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\n\n# Dados\nmeses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']\nproduto_a = [150, 200, 250, 300, 280, 320]\nproduto_b = [100, 120, 180, 160, 170, 150]\nproduto_c = [80, 90, 100, 120, 140, 160]\n\n# Seleciona alguns estilos disponíveis\nestilos = ['default', 'ggplot', 'seaborn-v0_8', 'bmh', 'classic', 'Solarize_Light2']\n\nfor estilo in estilos:\n    plt.style.use(estilo)\n    fig, ax = plt.subplots(figsize=(8, 5))\n    ax.plot(meses, produto_a, marker='o', label='Produto A')\n    ax.plot(meses, produto_b, marker='s', label='Produto B')\n    ax.plot(meses, produto_c, marker='^', label='Produto C')\n    ax.set_title(f'Estilo: {estilo}')\n    ax.set_xlabel('Mês')\n    ax.set_ylabel('Vendas')\n    ax.legend()\n    plt.tight_layout()\n    # Salva o gráfico em um arquivo PNG\n    fig.savefig(f'grafico_{estilo}.png')\n    plt.close(fig)"
+  },
+  {
+    "objectID": "aula_t7.html#section-64",
+    "href": "aula_t7.html#section-64",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Você pode conhecer o que a biblioteca Matplotlib é capaz de fazer consultando a documentação oficial.\n\nVeja, por exemplo, os tipos de gráficos disponíveis.\nE a galeria de exemplos."
+  },
+  {
+    "objectID": "aula_t7.html#section-65",
+    "href": "aula_t7.html#section-65",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Os exemplos que vimos até agora geraram visualizações para dados que já tínhamos.\n\nMas há situações nas quais nossos próprios programas podem gerar os dados que precisamos.\n\n\nVeremos a seguir dois exemplos simples dessa ideia."
+  },
+  {
+    "objectID": "aula_t7.html#section-66",
+    "href": "aula_t7.html#section-66",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport numpy as np\n\nimport matplotlib.pyplot as plt\n\nplt.style.use('seaborn-v0_8')\n\nx = np.arange(1, 1001)\ny = x ** 2\n\nplt.scatter(x, y)\nplt.title('Números Quadrados de 1 a 1000')\nplt.xlabel('Número')\nplt.ylabel('Quadrado')\nplt.show()\n\n\n\n\nVemos que o código gerado usa a biblioteca NumPy.\n\nVamos conhecer mais sobre ela com a ajuda do Copilot."
+  },
+  {
+    "objectID": "aula_t7.html#section-67",
+    "href": "aula_t7.html#section-67",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport numpy as np\n\nimport matplotlib.pyplot as plt\n\nplt.style.use('seaborn-v0_8')\n\nx = np.arange(1, 1001)\ny = x ** 2\n\nplt.scatter(x, y)\nplt.title('Números Quadrados de 1 a 1000')\nplt.xlabel('Número')\nplt.ylabel('Quadrado')\nplt.show()\n\n\n\n\nVemos que o código gerado usa a biblioteca NumPy.\n\nVamos conhecer mais sobre ela com a ajuda do Copilot."
+  },
+  {
+    "objectID": "aula_t7.html#section-68",
+    "href": "aula_t7.html#section-68",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Prompt\n\n\nDê uma visão geral sobre a biblioteca Numpy e explique o uso dela nesse exemplo.\n\n\n\n\n\n\n\n\n\nGitHub Copilot (início)\n\n\nA biblioteca NumPy (Numerical Python) é uma das principais bibliotecas para computação numérica em Python. Ela fornece suporte para arrays multidimensionais e funções matemáticas eficientes, sendo amplamente utilizada em ciência de dados, machine learning e processamento de imagens.\nPrincipais características do NumPy:\n\nArrays eficientes: Estruturas de dados otimizadas para operações matemáticas rápidas.\nFunções matemáticas: Grande variedade de funções para álgebra linear, estatística, transformadas, etc.\nIntegração: Compatível com outras bibliotecas como Pandas, Matplotlib e SciPy."
+  },
+  {
+    "objectID": "aula_t7.html#section-69",
+    "href": "aula_t7.html#section-69",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot (continuação)\n\n\nUso do NumPy no exemplo (app.py):\nNo seu código, o NumPy é utilizado para criar um array de números inteiros de 1 a 1000:\nx = np.arange(1, 1001)\n\nnp.arange(1, 1001): Gera um array NumPy com valores de 1 até 1000 (inclusive).\nEm seguida, o array x é elevado ao quadrado para criar o array y:\ny = x ** 2\nO uso do NumPy permite que essas operações sejam feitas de forma vetorizada, ou seja, sem a necessidade de loops explícitos, tornando o código mais simples e eficiente.\n\nResumindo: NumPy facilita a criação e manipulação de grandes conjuntos de dados numéricos, como no exemplo onde gera rapidamente os números e seus quadrados para visualização."
+  },
+  {
+    "objectID": "aula_t7.html#section-70",
+    "href": "aula_t7.html#section-70",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Vamos aproveitar esse exemplo para mostrar outra funcionalidade do Matplotlib: Color Maps.\n\n(ou mapas de cores) são gradientes de cores usados para representar valores numéricos em gráficos.\nO gradiente varia de uma cor inicial a uma cor final.\nEles ajudam a visualizar a densidade ou intensidade dos dados.\n\n\nPodemos, por exemplo, usar cores claras para valores baixos e cores escuras para valores altos."
+  },
+  {
+    "objectID": "aula_t7.html#section-71",
+    "href": "aula_t7.html#section-71",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Vamos demonstrar o uso de Color Maps no gráfico dos números quadrados.\n\n\n\n\nPrompt\n\n\nAltere o gráfico de dispersão dos números quadrados de 1 a 1000 para usar um mapa de cores (Color Map) que vá do azul claro (valores baixos) ao azul escuro (valores altos)."
+  },
+  {
+    "objectID": "aula_t7.html#section-72",
+    "href": "aula_t7.html#section-72",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nplt.style.use('seaborn-v0_8')\n\nx = np.arange(1, 1001)\ny = x ** 2\n\n# Usando o colormap 'Blues' para ir do azul claro ao azul escuro\nplt.scatter(x, y, c=y, cmap='Blues')\nplt.title('Números Quadrados de 1 a 1000')\nplt.xlabel('Número')\nplt.ylabel('Quadrado')\nplt.colorbar(label='Quadrado')  # Adiciona a barra de cores\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-73",
+    "href": "aula_t7.html#section-73",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nplt.style.use('seaborn-v0_8')\n\nx = np.arange(1, 1001)\ny = x ** 2\n\n# Usando o colormap 'Blues' para ir do azul claro ao azul escuro\nplt.scatter(x, y, c=y, cmap='Blues')\nplt.title('Números Quadrados de 1 a 1000')\nplt.xlabel('Número')\nplt.ylabel('Quadrado')\nplt.colorbar(label='Quadrado')  # Adiciona a barra de cores\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-74",
+    "href": "aula_t7.html#section-74",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Um uso mais interessante de Color Maps é em gráficos de dispersão com muitas observações.\n\nPodemos usar a densidade de pontos para definir as cores.\nAssim, regiões com muitos pontos ficam mais escuras, e regiões com poucos pontos ficam mais claras.\n\n\nOutra possibilidade é usar Color Maps para representar uma terceira variável em gráficos de dispersão 2D.\n\nNesse caso, cada ponto do gráfico tem uma cor que representa o valor dessa terceira variável."
+  },
+  {
+    "objectID": "aula_t7.html#section-75",
+    "href": "aula_t7.html#section-75",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Vamos ver um exemplo disso, usando um arquivo Excel com dados de municípios de Minas Gerais, obtidos do IBGE.\n\n\n\n\n\nPrompt\n\n\nO arquivo municipios-mg.xlsx possui dados sobre os municípios de Minas Gerais. A terceira linha possui a identificação das colunas e os dados vêm a partir da quarta linha. Gostaria que o gráfico incluísse apenas os 40 municípios mais populosos.\nGostaria de gerar um gráfico de dispersão que mostrasse no eixo X o PIB per capita (coluna N) , no eixo Y a população (coluna F) e como mapa de cores o IDH (coluna J). Gostaria que o nome do município fosse exibido (coluna A)."
+  },
+  {
+    "objectID": "aula_t7.html#section-76",
+    "href": "aula_t7.html#section-76",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Carregar o arquivo Excel, pulando as duas primeiras linhas (header na linha 2)\ndf = pd.read_excel('municipios-mg.xlsx', header=2)\n\n# Selecionar apenas as colunas necessárias usando índices\n# Supondo que as colunas estejam assim:\n# Coluna F (índice 5): População\n# Coluna J (índice 9): IDH\n# Coluna N (índice 13): PIB per capita\n# Coluna B (índice 0): Nome do município\n\ndf = df.iloc[:, [0, 5, 9, 13]]\n\n# Renomear as colunas para facilitar\ndf.columns = ['municipio', 'populacao', 'idh', 'pib_per_capita']\n\n# Selecionar os 40 municípios mais populosos\ndf_top40 = df.sort_values(by='populacao', ascending=False).head(40)\n\n# Plotar o gráfico de dispersão\nplt.figure(figsize=(12, 8))\nscatter = plt.scatter(\n    df_top40['pib_per_capita'],\n    df_top40['populacao'],\n    c=df_top40['idh'],\n    cmap='viridis',\n    s=100,\n    alpha=0.7\n)\nplt.colorbar(scatter, label='IDH')\nplt.xlabel('PIB per capita')\nplt.ylabel('População')\nplt.title('40 municípios mais populosos de MG: PIB per capita x População (cores = IDH)')\n\n# Adicionar o nome dos municípios\nfor i, row in df_top40.iterrows():\n    plt.text(row['pib_per_capita'], row['populacao'], row['municipio'], fontsize=8, alpha=0.7)\n\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-77",
+    "href": "aula_t7.html#section-77",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Ao tentar executar o código gerado pela primeira vez, obtive o seguinte erro:\n  File \"/home/julio/Downloads/aula_t7/.venv/lib/python3.11/site-packages/pandas/compat/_optional.py\", line 138, in import_optional_dependency\n    raise ImportError(msg)\nImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.\n\nO código gerado usa a biblioteca Pandas para ler o arquivo Excel.\n\nE ela depende uma biblioteca externa chamada openpyxl."
+  },
+  {
+    "objectID": "aula_t7.html#section-78",
+    "href": "aula_t7.html#section-78",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Como nós havíamos criado um arquivo requirements.txt para o projeto,\n\nbasta incluirmos uma linha com o nome da biblioteca que queremos instalar.\nE depois rodarmos o comando pip install -r requirements.txt para instalar todas as dependências do projeto.\n\nNão esqueça de rodar com o ambiente virtual ativado."
+  },
+  {
+    "objectID": "aula_t7.html#section-79",
+    "href": "aula_t7.html#section-79",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "É melhor analisar esse gráfico pela tela do programa.\n\nE, mais adiante, conheceremos melhor a biblioteca Pandas com mais detalhes."
+  },
+  {
+    "objectID": "aula_t7.html#exemplo-2-passeios-aleatórios",
+    "href": "aula_t7.html#exemplo-2-passeios-aleatórios",
+    "title": "Visualizando Dados",
+    "section": "Exemplo 2: Passeios aleatórios",
+    "text": "Exemplo 2: Passeios aleatórios\nVamos ver outro exemplo simples de geração de dados: Passeios Aleatórios.\n\nVamos usar o Python para gerar dados a partir de um passeio aleatório.\nE depois usar a Matplotlib para criar uma representação visual desse passeio.\n\n\nUm passeio aleatório é um caminho determinado por uma série de decisões simples, tomadas inteiramente ao acaso."
+  },
+  {
+    "objectID": "aula_t7.html#section-80",
+    "href": "aula_t7.html#section-80",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "É melhor analisar esse gráfico pela tela do programa.\n\nE, mais adiante, conheceremos melhor a biblioteca Pandas com mais detalhes."
+  },
+  {
+    "objectID": "aula_t7.html#section-81",
+    "href": "aula_t7.html#section-81",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Um passeio aleatório pode ser, por exemplo:\n\nO caminho de que uma formiga confusa tomaria se desse cada passo em uma direção aleatória.\n\n\nEsses passeios têm usos práticos na natureza, na física, biologia, química e economia.\n\nUm grão de pólen, por ex., flutua sobre uma gota de água que se move de um lado por outro devido ao movimento das moléculas de água,\ne o movimento molecular da água é aleatório,\nfazendo com que o caminho percorrido pelo grão de pólen seja um passeio aleatório."
+  },
+  {
+    "objectID": "aula_t7.html#section-82",
+    "href": "aula_t7.html#section-82",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Portanto, o código abaixo modela muitas situações do mundo cotidiano.\nfrom random import choice\n\ndef gerar_passeio_aleatorio(num_pontos):\n    # passeios começam na coordenada (0,0)\n    valores_x = [0]\n    valores_y = [0]\n\n    while len(valores_x) &lt; num_pontos:\n        \n        # Decide qual direção toma, e até onde ir\n        direcao_x = choice([1,-1])\n        distancia_x = choice([0,1,2,3,4])\n        passo_x = direcao_x * distancia_x\n\n        direcao_y = choice([1,-1])\n        distancia_y = choice([0,1,2,3,4])\n        passo_y = direcao_y * distancia_y\n\n        # Rejeita movimentos que não vão a lugar algum\n        if passo_x == 0 and passo_y == 0:\n            continue\n\n        # Calcula a nova posição\n        x = valores_x[-1] + passo_x\n        y = valores_y[-1] + passo_y\n\n        valores_x.append(x)\n        valores_y.append(y)\n\n    return valores_x, valores_y"
+  },
+  {
+    "objectID": "aula_t7.html#section-83",
+    "href": "aula_t7.html#section-83",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Prompt\n\n\n# Gera um gráfico de dispersão usando a biblioteca matplotlib\n# de um passeio aleatório de 5000 pontos.\n# Use pontos de tamanho 15.\n# Mantenha os eixos x e y com a mesma escala"
+  },
+  {
+    "objectID": "aula_t7.html#section-84",
+    "href": "aula_t7.html#section-84",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "if __name__ == '__main__':\n    import matplotlib.pyplot as plt\n\n    x, y = gerar_passeio_aleatorio(5000)\n\n    plt.figure(figsize=(10,6))\n    plt.scatter(x, y, s=15)\n    plt.title('Passeio Aleatório em 2D')\n    plt.xlabel('X')\n    plt.ylabel('Y')\n    plt.grid(True)\n    plt.axis('equal')\n    plt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-85",
+    "href": "aula_t7.html#section-85",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Vamos usar mapas de cores para destacar o início e o fim do passeio.\n\nE também destacar o ponto inicial na cor verde e final na cor vermelha.\n\n\n\n\n\n\nPrompt\n\n\nAltere o gráfico do passeio aleatório para usar um mapa de cores que vá do azul claro (início do passeio) ao azul escuro (fim do passeio). Além disso, destaque o ponto inicial na cor verde e o ponto final na cor vermelha (ambos com tamanho 100)."
+  },
+  {
+    "objectID": "aula_t7.html#section-86",
+    "href": "aula_t7.html#section-86",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "if __name__ == '__main__':    \n    x, y = gerar_passeio_aleatorio(5000)\n\n    pontos = np.arange(len(x))\n    cmap = cm.get_cmap('Blues')\n\n    plt.figure(figsize=(10,6))\n    plt.scatter(x, y, c=pontos, cmap=cmap, s=15)\n    # Destaca o ponto inicial em verde\n    plt.scatter(x[0], y[0], c='green', s=100, label='Início')\n    # Destaca o ponto final em vermelho\n    plt.scatter(x[-1], y[-1], c='red', s=100, label='Fim')\n    plt.title('Passeio Aleatório em 2D')\n    plt.xlabel('X')\n    plt.ylabel('Y')\n    plt.grid(True)\n    plt.axis('equal')\n    plt.legend()\n    plt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-87",
+    "href": "aula_t7.html#section-87",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Vamos alterar o código para gerar 50 mil pontos no passeio aleatório,\n\ne vamos diminuir o tamanho para 1 para que a visualização fique mais interessante."
+  },
+  {
+    "objectID": "aula_t7.html#section-88",
+    "href": "aula_t7.html#section-88",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Agora vamos gerar vários passeios aleatórios com o mesmo código.\n\nCada um deles terá uma cor diferente.\n\n\n\n\n\nPrompt\n\n\nAltere o código para gerar 3 passeios aleatórios, cada um com uma cor diferente e com 50000 pontos cada (use pontos de tamanho 1). Mantenha os eixos x e y com a mesma escala, os pontos do início e do fim de cada passeio destacados e os mapas de cores dos pontos."
+  },
+  {
+    "objectID": "aula_t7.html#section-89",
+    "href": "aula_t7.html#section-89",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "if __name__ == '__main__':    \n    num_passeios = 3\n    num_pontos = 50000\n    cores = ['Blues', 'Oranges', 'Greens']\n    labels = ['Passeio 1', 'Passeio 2', 'Passeio 3']\n    inicios = ['green', 'lime', 'yellow']\n    fins = ['red', 'magenta', 'black']\n\n    plt.figure(figsize=(12, 8))\n\n    for i in range(num_passeios):\n        x, y = gerar_passeio_aleatorio(num_pontos)\n        pontos = np.arange(len(x))\n        cmap = cm.get_cmap(cores[i])\n        plt.scatter(x, y, c=pontos, cmap=cmap, s=1, label=labels[i], alpha=0.6)\n        plt.scatter(x[0], y[0], c=inicios[i], s=60, edgecolors='k', marker='o', label=f'Início {i+1}')\n        plt.scatter(x[-1], y[-1], c=fins[i], s=60, edgecolors='k', marker='X', label=f'Fim {i+1}')\n\n    plt.title('3 Passeios Aleatórios em 2D')\n    plt.xlabel('X')\n    plt.ylabel('Y')\n    plt.grid(True)\n    plt.axis('equal')\n    plt.legend()\n    plt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-90",
+    "href": "aula_t7.html#section-90",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Para um gráfico como esse o valor em si da coordenadas X e Y não é tão importante.\n\nVamos então remover os valores dos eixos X e Y.\n\n\n\n\n\n\nPrompt\n\n\nAltere o gráfico para que os valores dos eixos X e Y não sejam exibidos (e nem as linhas da grade e títulos de eixo)."
+  },
+  {
+    "objectID": "aula_t7.html#section-91",
+    "href": "aula_t7.html#section-91",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "if __name__ == '__main__':    \n    num_passeios = 3\n    num_pontos = 50000\n    cores = ['Blues', 'Oranges', 'Greens']\n    labels = ['Passeio 1', 'Passeio 2', 'Passeio 3']\n    inicios = ['green', 'lime', 'yellow']\n    fins = ['red', 'magenta', 'black']\n\n    plt.figure(figsize=(12, 8))\n\n    for i in range(num_passeios):\n        x, y = gerar_passeio_aleatorio(num_pontos)\n        pontos = np.arange(len(x))\n        cmap = cm.get_cmap(cores[i])\n        plt.scatter(x, y, c=pontos, cmap=cmap, s=1, label=labels[i], alpha=0.6)\n        plt.scatter(x[0], y[0], c=inicios[i], s=60, edgecolors='k', marker='o', label=f'Início {i+1}')\n        plt.scatter(x[-1], y[-1], c=fins[i], s=60, edgecolors='k', marker='X', label=f'Fim {i+1}')\n\n    plt.title('3 Passeios Aleatórios em 2D')\n    plt.axis('equal')\n    plt.legend()\n    plt.xticks([])  # Remove valores do eixo X\n    plt.yticks([])  # Remove valores do eixo Y\n    plt.grid(False) # Remove linhas da grade\n    plt.show()"
   }
 ]

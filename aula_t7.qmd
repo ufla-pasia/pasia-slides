@@ -87,10 +87,11 @@ Mas há muitos outros usos mesmo para áreas que não são tão _"intensas em da
 
 ##
 
-Nosso foco aqui não será em Ciência dos Dados em si, nosso objetivo será:
+Nosso foco na disciplina não será em Ciência dos Dados em si, nosso objetivo será:
 
 - Ter uma visão geral sobre as principais **bibliotecas de visualização de dados** em Python.
 - Conhecer alguns dos **tipos de gráficos mais comuns**.
+- Tratar alguns exemplos de **geração de dados**.
 - E aprender a usar essas bibliotecas **com a ajuda do GitHub Copilot**.
 
 ##
@@ -893,7 +894,7 @@ plt.show()
 
 ![](imagens/matplotlib_dispersao_notas_faltas_alterado.png){fig-align="center" fig-alt="Gráfico de dispersão relacionando notas e faltas alterado, usando Matplolib."}
 
-## Outros tipos de gráficos
+## Outros tipos de gráficos e funcionalidades do Matplotlib
 
 Como já citado anteriormente, o Copilot nos permite manter foco no que queremos,
 
@@ -929,132 +930,757 @@ Pena que não existia Copilot 😢😢 durante o meu doutorado.
 
 ##
 
-Veja os [tipos de gráficos do Matplotlib](https://matplotlib.org/stable/plot_types/index.html#plot-types).
+Outra funcionalidade interessante do Matplotlib são seus estilos predefinidos.
+
+- Cada estilo tem uma variedade de configurações padrões para cores de fundo,
+   linhas da grade, espessura de linha, fontes, etc.
+- Assim podemos tornar nossas visualizações mais elegantes, sem precisar fazer muitas customizações.
 
 . . .
 
-E a [galeria de exemplos do Matplotlib](https://matplotlib.org/stable/gallery/index.html).
+Para demonstrar essas funcionalidades, vamos pedir ao Copilot para gerar o gráfico
+de linhas de vendas, mas com diferentes estilos.
+
+##
+
+::: {.callout-caution title="Prompt" icon="false"}
+Os dados abaixo que se referem às vendas mensais de três produtos.
+Gostaria de ver, em uma única figura, vários gráficos de linha com estilos diferentes
+usando Matplotlib.
+
+```
+Mês	Produto A	Produto B	Produto C
+Jan	150	100	80
+Fev	200	120	90
+Mar	250	180	100
+Abr	300	160	120
+Mai	280	170	140
+Jun	320	150	160
+```
+:::
+
+##
+
+Não era o bem o que eu queria.
+
+![](imagens/matplotlib_vendas_linhas_dif_estilos.png){fig-align="center" fig-alt="Gráfico de vendas mensais com linhas de diferentes estilos usando Matplolib."}
+
+##
+
+Pelo código vemos que o Copilot entendeu que queríamos diferentes estilos de linha para cada produto.
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import matplotlib.pyplot as plt
+
+# Dados
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+produto_a = [150, 200, 250, 300, 280, 320]
+produto_b = [100, 120, 180, 160, 170, 150]
+produto_c = [80, 90, 100, 120, 140, 160]
+
+plt.figure(figsize=(10, 6))
+
+# Gráficos de linha com estilos diferentes
+plt.plot(meses, produto_a, label='Produto A', color='blue', linestyle='-', marker='o')
+plt.plot(meses, produto_b, label='Produto B', color='green', linestyle='--', marker='s')
+plt.plot(meses, produto_c, label='Produto C', color='red', linestyle='-.', marker='^')
+
+plt.title('Vendas Mensais por Produto')
+plt.xlabel('Mês')
+plt.ylabel('Quantidade Vendida')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+:::
+
+##
+
+Vamos então fazer um pouco de **Engenharia de Prompt** para tentar obter o que queremos.
+
+::: {.callout-caution title="Prompt" icon="false"}
+Os dados abaixo que se referem às vendas mensais de três produtos.
+Gostaria de experimentar diferentes estilos padrões disponíveis na biblioteca matplotlib.
+Para isso, gostaria que gerasse vários subgráficos em uma única figura, de forma que
+cada subgráfico usasse um estilo diferente da biblioteca.
+
+```
+Mês	Produto A	Produto B	Produto C
+Jan	150	100	80
+Fev	200	120	90
+Mar	250	180	100
+Abr	300	160	120
+Mai	280	170	140
+Jun	320	150	160
+```
+:::
+
+##
+
+![](imagens/matplotlib_vendas_sugraficos_dif_estilos.png){fig-align="center" fig-alt="Gráfico de vendas mensais com linhas de diferentes estilos usando Matplolib."}
+
+Pelo menos agora foram gerados subgráficos.
+
+- Mas o resultado ainda me pareceu decepcionante.
+
+##
+
+No código, vemos que foi usada uma lista de estilos predefinidos do Matplotlib.
+
+- E foi gerado um subgráfico usando cada estilo.
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import matplotlib.pyplot as plt
+
+# Dados
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+produto_a = [150, 200, 250, 300, 280, 320]
+produto_b = [100, 120, 180, 160, 170, 150]
+produto_c = [80, 90, 100, 120, 140, 160]
+
+# Seleciona alguns estilos disponíveis
+estilos = ['default', 'ggplot', 'seaborn-v0_8', 'bmh', 'classic', 'Solarize_Light2']
+
+fig, axs = plt.subplots(2, 3, figsize=(18, 8))
+axs = axs.flatten()
+
+for i, estilo in enumerate(estilos):
+    plt.style.use(estilo)
+    ax = axs[i]
+    ax.plot(meses, produto_a, marker='o', label='Produto A')
+    ax.plot(meses, produto_b, marker='s', label='Produto B')
+    ax.plot(meses, produto_c, marker='^', label='Produto C')
+    ax.set_title(f'Estilo: {estilo}')
+    ax.set_xlabel('Mês')
+    ax.set_ylabel('Vendas')
+    ax.legend()
+
+plt.tight_layout()
+plt.show()
+```
+:::
+
+##
+
+Durante a preparação do material, a minha hipótese foi de que misturar diferentes
+estilos em uma mesma figura pode não funcionar muito bem.
+
+. . .
+
+Pedi então ao Copilot para alterar o código
+
+::: {.callout-caution title="Prompt" icon="false"}
+Altere o código de forma que cada estilo seja usado em uma figura separada, em vez de se utilizar subgráficos.
+:::
+
+##
+
+:::: {.columns}
+::: {.column width="33%"}
+![](imagens/matplotlib_vendas_sugraficos_estilo_default.png){fig-align="center" fig-alt="Estilo default"}
+![](imagens/matplotlib_vendas_sugraficos_estilo_ggplot.png){fig-align="center" fig-alt="Estilo ggplot"}
+:::
+::: {.column width="33%"}
+![](imagens/matplotlib_vendas_sugraficos_estilo_seaborn.png){fig-align="center" fig-alt="Estilo seaborn"}
+![](imagens/matplotlib_vendas_sugraficos_estilo_bmh.png){fig-align="center" fig-alt="Estilo bmh"}
+:::
+::: {.column width="33%"}
+![](imagens/matplotlib_vendas_sugraficos_estilo_classic.png){fig-align="center" fig-alt="Estilo classic"}
+![](imagens/matplotlib_vendas_sugraficos_estilo_solarize.png){fig-align="center" fig-alt="Estilo solarize"}
+:::
+::::
+
+##
+
+- Veja que o método `plt.show()` é chamado separadamente para cada estilo.
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import matplotlib.pyplot as plt
+
+# Dados
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+produto_a = [150, 200, 250, 300, 280, 320]
+produto_b = [100, 120, 180, 160, 170, 150]
+produto_c = [80, 90, 100, 120, 140, 160]
+
+# Seleciona alguns estilos disponíveis
+estilos = ['default', 'ggplot', 'seaborn-v0_8', 'bmh', 'classic', 'Solarize_Light2']
+
+for estilo in estilos:
+    plt.style.use(estilo)
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.plot(meses, produto_a, marker='o', label='Produto A')
+    ax.plot(meses, produto_b, marker='s', label='Produto B')
+    ax.plot(meses, produto_c, marker='^', label='Produto C')
+    ax.set_title(f'Estilo: {estilo}')
+    ax.set_xlabel('Mês')
+    ax.set_ylabel('Vendas')
+    ax.legend()
+    plt.tight_layout()
+    plt.show()
+```
+:::
+
+##
+
+Pelo comentário no código gerado, vemos que o Copilot selecionou apenas alguns dos estilos disponíveis.
+
+. . .
+
+Perguntei a ele então como saber quais estilos estão disponíveis.
+
+- Ele gerou a linha de código abaixo.
+
+. . .
+
+```python
+print(plt.style.available)
+```
+
+. . .
+
+Que trouxe o seguinte resultado:
+
+```python
+['Solarize_Light2', '_classic_test_patch', '_mpl-gallery', '_mpl-gallery-nogrid', 
+ 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', 
+ 'grayscale', 'petroff10', 'seaborn-v0_8', 'seaborn-v0_8-bright', 'seaborn-v0_8-colorblind', 
+ 'seaborn-v0_8-dark', 'seaborn-v0_8-dark-palette', 'seaborn-v0_8-darkgrid', 'seaborn-v0_8-deep', 
+ 'seaborn-v0_8-muted', 'seaborn-v0_8-notebook', 'seaborn-v0_8-paper', 'seaborn-v0_8-pastel', 
+ 'seaborn-v0_8-poster', 'seaborn-v0_8-talk', 'seaborn-v0_8-ticks', 'seaborn-v0_8-white', 
+ 'seaborn-v0_8-whitegrid', 'tableau-colorblind10']
+```
+
+## 
+
+Nós também podemos salvar os gráficos gerados em arquivos de imagem, via código.
+
+- O Copilot pode nos ajudar com isso também.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+Altere o código para que cada gráfico seja salvo em um arquivo PNG, em vez de ser
+exibido na tela.
+:::
+
+
+##
+
+```python
+import matplotlib.pyplot as plt
+
+# Dados
+meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+produto_a = [150, 200, 250, 300, 280, 320]
+produto_b = [100, 120, 180, 160, 170, 150]
+produto_c = [80, 90, 100, 120, 140, 160]
+
+# Seleciona alguns estilos disponíveis
+estilos = ['default', 'ggplot', 'seaborn-v0_8', 'bmh', 'classic', 'Solarize_Light2']
+
+for estilo in estilos:
+    plt.style.use(estilo)
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.plot(meses, produto_a, marker='o', label='Produto A')
+    ax.plot(meses, produto_b, marker='s', label='Produto B')
+    ax.plot(meses, produto_c, marker='^', label='Produto C')
+    ax.set_title(f'Estilo: {estilo}')
+    ax.set_xlabel('Mês')
+    ax.set_ylabel('Vendas')
+    ax.legend()
+    plt.tight_layout()
+    # Salva o gráfico em um arquivo PNG
+    fig.savefig(f'grafico_{estilo}.png')
+    plt.close(fig)
+```
+
+##
+
+Você pode conhecer o que a biblioteca Matplotlib é capaz de fazer consultando a documentação oficial.
+
+- Veja, por exemplo, os [tipos de gráficos disponíveis](https://matplotlib.org/stable/plot_types/index.html#plot-types).
+- E a [galeria de exemplos](https://matplotlib.org/stable/gallery/index.html).
+
+# Geração de dados {background-color="#40666e"}
+
+##
+
+Os exemplos que vimos até agora geraram visualizações para dados que já tínhamos.
+
+- Mas há situações nas quais nossos próprios programas podem gerar os dados que precisamos.
+
+. . .
+
+Veremos a seguir dois exemplos simples dessa ideia.
+
+## Exemplo 1: Números quadrados
+
+Vamos começar mostrar um gráfico simples dos números quadrados de 1 a 1000.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+Gere um gráfico de dispersão usando Matplotlib mostrando os números quadrados de 1 a 1000.
+Use o estilo seaborn.
+:::
+
+##
+
+![](imagens/matplotlib_numeros_quadrados.png){fig-align="center" fig-alt="Gráfico de dispersão dos números quadrados de 1 a 1000 usando Matplolib."}
+
+## 
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8')
+
+x = np.arange(1, 1001)
+y = x ** 2
+
+plt.scatter(x, y)
+plt.title('Números Quadrados de 1 a 1000')
+plt.xlabel('Número')
+plt.ylabel('Quadrado')
+plt.show()
+```
+:::
+
+Vemos que o código gerado usa a biblioteca `NumPy`.
+
+- Vamos conhecer mais sobre ela com a ajuda do Copilot.
+
+## 
+
+::: {.callout-caution title="Prompt" icon="false"}
+Dê uma visão geral sobre a biblioteca Numpy e explique o uso dela nesse exemplo.
+:::
+
+. . .
+
+::: {.callout-note title="GitHub Copilot (início)" icon="false" .nonincremental}
+A biblioteca **NumPy** (Numerical Python) é uma das principais bibliotecas para computação numérica em Python. Ela fornece suporte para arrays multidimensionais e funções matemáticas eficientes, sendo amplamente utilizada em ciência de dados, machine learning e processamento de imagens.
+
+[Principais características do NumPy]{.alert}:
+
+- **Arrays eficientes:** Estruturas de dados otimizadas para operações matemáticas rápidas.
+- **Funções matemáticas:** Grande variedade de funções para álgebra linear, estatística, transformadas, etc.
+- **Integração:** Compatível com outras bibliotecas como Pandas, Matplotlib e SciPy.
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot (continuação)" icon="false" .nonincremental}
+
+[Uso do NumPy no exemplo (app.py)]{.alert}:
+
+No seu código, o NumPy é utilizado para criar um array de números inteiros de 1 a 1000:
+
+```python
+x = np.arange(1, 1001)
+```
+
+- **`np.arange(1, 1001)`**: Gera um array NumPy com valores de 1 até 1000 (inclusive).
+- Em seguida, o array `x` é elevado ao quadrado para criar o array `y`:
+  
+  ```python
+  y = x ** 2
+  ```
+
+- O uso do NumPy permite que essas operações sejam feitas de forma vetorizada, ou seja, sem a necessidade de loops explícitos, tornando o código mais simples e eficiente.
+
+Resumindo: **NumPy** facilita a criação e manipulação de grandes conjuntos de dados numéricos, como no exemplo onde gera rapidamente os números e seus quadrados para visualização.
+:::
+
+##
+
+Vamos aproveitar esse exemplo para mostrar outra funcionalidade do Matplotlib: [`Color Maps`]{.alert}.
+
+- (ou mapas de cores) são gradientes de cores usados para representar valores numéricos em gráficos.
+- O gradiente varia de uma cor inicial a uma cor final.
+- Eles ajudam a visualizar a densidade ou intensidade dos dados.
+
+. . .
+
+Podemos, por exemplo, usar cores claras para valores baixos e cores escuras para valores altos.
+
+##
+
+Vamos demonstrar o uso de `Color Maps` no gráfico dos números quadrados.
+
+::: {.callout-caution title="Prompt" icon="false"}
+Altere o gráfico de dispersão dos números quadrados de 1 a 1000 para
+usar um mapa de cores (Color Map) que vá do azul claro (valores baixos) ao azul escuro (valores altos).
+:::
+
+##
+
+![](imagens/matplotlib_numeros_quadrados_colormap.png){fig-align="center" fig-alt="Gráfico de dispersão dos números quadrados de 1 a 1000 usando Matplolib com Color Map."}
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-v0_8')
+
+x = np.arange(1, 1001)
+y = x ** 2
+
+# Usando o colormap 'Blues' para ir do azul claro ao azul escuro
+plt.scatter(x, y, c=y, cmap='Blues')
+plt.title('Números Quadrados de 1 a 1000')
+plt.xlabel('Número')
+plt.ylabel('Quadrado')
+plt.colorbar(label='Quadrado')  # Adiciona a barra de cores
+plt.show()
+```
+:::
+
+##
+
+Um uso mais interessante de Color Maps é em gráficos de dispersão com muitas observações.
+
+- Podemos usar a densidade de pontos para definir as cores.
+- Assim, regiões com muitos pontos ficam mais escuras, e regiões com poucos pontos ficam mais claras.
+
+. . .
+
+Outra possibilidade é usar Color Maps para representar uma terceira variável em gráficos de dispersão 2D.
+
+- Nesse caso, cada ponto do gráfico tem uma cor que representa o valor dessa terceira variável.
+
+##
+
+Vamos ver um exemplo disso, usando um [arquivo Excel](dados/municipios-mg.xlsx) com dados de municípios de Minas Gerais, obtidos do IBGE.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+O arquivo municipios-mg.xlsx possui dados sobre os municípios de Minas Gerais. A terceira linha possui a identificação das colunas e os dados vêm a partir da quarta linha. Gostaria que o gráfico incluísse apenas os 40 municípios mais populosos.
+
+Gostaria de gerar um gráfico de dispersão que mostrasse no eixo X o PIB per capita (coluna N) , no eixo Y a população (coluna F) e como mapa de cores o IDH (coluna J). Gostaria que o nome do município fosse exibido (coluna A).
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Carregar o arquivo Excel, pulando as duas primeiras linhas (header na linha 2)
+df = pd.read_excel('municipios-mg.xlsx', header=2)
+
+# Selecionar apenas as colunas necessárias usando índices
+# Supondo que as colunas estejam assim:
+# Coluna F (índice 5): População
+# Coluna J (índice 9): IDH
+# Coluna N (índice 13): PIB per capita
+# Coluna B (índice 0): Nome do município
+
+df = df.iloc[:, [0, 5, 9, 13]]
+
+# Renomear as colunas para facilitar
+df.columns = ['municipio', 'populacao', 'idh', 'pib_per_capita']
+
+# Selecionar os 40 municípios mais populosos
+df_top40 = df.sort_values(by='populacao', ascending=False).head(40)
+
+# Plotar o gráfico de dispersão
+plt.figure(figsize=(12, 8))
+scatter = plt.scatter(
+    df_top40['pib_per_capita'],
+    df_top40['populacao'],
+    c=df_top40['idh'],
+    cmap='viridis',
+    s=100,
+    alpha=0.7
+)
+plt.colorbar(scatter, label='IDH')
+plt.xlabel('PIB per capita')
+plt.ylabel('População')
+plt.title('40 municípios mais populosos de MG: PIB per capita x População (cores = IDH)')
+
+# Adicionar o nome dos municípios
+for i, row in df_top40.iterrows():
+    plt.text(row['pib_per_capita'], row['populacao'], row['municipio'], fontsize=8, alpha=0.7)
+
+plt.tight_layout()
+plt.show()
+```
+:::
+
+##
+
+Ao tentar executar o código gerado pela primeira vez, obtive o seguinte erro:
+
+```bash
+  File "/home/julio/Downloads/aula_t7/.venv/lib/python3.11/site-packages/pandas/compat/_optional.py", line 138, in import_optional_dependency
+    raise ImportError(msg)
+ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+```
+
+. . .
+
+O código gerado usa a biblioteca `Pandas` para ler o arquivo Excel.
+
+- E ela depende uma biblioteca externa chamada `openpyxl`.
+
+##
+
+Como nós havíamos criado um arquivo `requirements.txt` para o projeto,
+
+- basta incluirmos uma linha com o nome da biblioteca que queremos instalar.
+- E depois rodarmos o comando `pip install -r requirements.txt` para instalar todas as dependências do projeto.
+  - Não esqueça de rodar com o ambiente virtual ativado.
+
+##
+
+![](imagens/matplotlib_dados_municipios.png){fig-align="center" fig-alt="Gráfico de dispersão dos municípios mais populosos de Minas Gerais, mostrando PIB per capita, população e IDH usando Matplolib."}
+
+##
+
+É melhor analisar esse gráfico pela tela do programa.
+
+. . .
+
+E, mais adiante, conheceremos melhor a biblioteca `Pandas` com mais detalhes.
+
+## Exemplo 2: Passeios aleatórios
+
+Vamos ver outro exemplo simples de geração de dados: [Passeios Aleatórios]{.alert}.
+
+- Vamos usar o Python para gerar dados a partir de um passeio aleatório.
+- E depois usar a Matplotlib para criar uma representação visual desse passeio.
+
+. . .
+
+Um **passeio aleatório** é um caminho determinado por uma série de decisões simples,
+tomadas inteiramente ao acaso.
+
+##
+
+Um passeio aleatório pode ser, por exemplo:
+
+- O caminho de que uma formiga confusa tomaria se desse cada passo em uma direção aleatória.
+
+. . .
+
+Esses passeios têm usos práticos na natureza, na física, biologia, química e economia.
+
+- Um grão de pólen, por ex., flutua sobre uma gota de água que se move de um lado por outro 
+  devido ao movimento das moléculas de água,
+- e o movimento molecular da água é aleatório,
+- fazendo com que o caminho percorrido pelo grão de pólen seja um passeio aleatório.
+
+##
+
+Portanto, o código abaixo modela muitas situações do mundo cotidiano.
+
+```python
+from random import choice
+
+def gerar_passeio_aleatorio(num_pontos):
+    # passeios começam na coordenada (0,0)
+    valores_x = [0]
+    valores_y = [0]
+
+    while len(valores_x) < num_pontos:
+        
+        # Decide qual direção toma, e até onde ir
+        direcao_x = choice([1,-1])
+        distancia_x = choice([0,1,2,3,4])
+        passo_x = direcao_x * distancia_x
+
+        direcao_y = choice([1,-1])
+        distancia_y = choice([0,1,2,3,4])
+        passo_y = direcao_y * distancia_y
+
+        # Rejeita movimentos que não vão a lugar algum
+        if passo_x == 0 and passo_y == 0:
+            continue
+
+        # Calcula a nova posição
+        x = valores_x[-1] + passo_x
+        y = valores_y[-1] + passo_y
+
+        valores_x.append(x)
+        valores_y.append(y)
+
+    return valores_x, valores_y
+```
+
+##
+
+::: {.callout-caution title="Prompt" icon="false"}
+```python
+# Gera um gráfico de dispersão usando a biblioteca matplotlib
+# de um passeio aleatório de 5000 pontos.
+# Use pontos de tamanho 15.
+# Mantenha os eixos x e y com a mesma escala
+```
+:::
+
+##
+
+```python
+if __name__ == '__main__':
+    import matplotlib.pyplot as plt
+
+    x, y = gerar_passeio_aleatorio(5000)
+
+    plt.figure(figsize=(10,6))
+    plt.scatter(x, y, s=15)
+    plt.title('Passeio Aleatório em 2D')
+    plt.xlabel('X')
+    plt.ylabel('Y')
+    plt.grid(True)
+    plt.axis('equal')
+    plt.show()
+```
+
+##
+
+Vamos usar mapas de cores para destacar o início e o fim do passeio.
+
+- E também destacar o ponto inicial na cor verde e final na cor vermelha.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+Altere  o gráfico do passeio aleatório para usar um mapa de cores que vá do azul claro (início do passeio) ao azul escuro (fim do passeio).
+Além disso, destaque o ponto inicial na cor verde e o ponto final na cor vermelha (ambos com tamanho 100).
+:::
+
+##
+
+```python
+if __name__ == '__main__':    
+    x, y = gerar_passeio_aleatorio(5000)
+
+    pontos = np.arange(len(x))
+    cmap = cm.get_cmap('Blues')
+
+    plt.figure(figsize=(10,6))
+    plt.scatter(x, y, c=pontos, cmap=cmap, s=15)
+    # Destaca o ponto inicial em verde
+    plt.scatter(x[0], y[0], c='green', s=100, label='Início')
+    # Destaca o ponto final em vermelho
+    plt.scatter(x[-1], y[-1], c='red', s=100, label='Fim')
+    plt.title('Passeio Aleatório em 2D')
+    plt.xlabel('X')
+    plt.ylabel('Y')
+    plt.grid(True)
+    plt.axis('equal')
+    plt.legend()
+    plt.show()
+```
+
+##
+
+Vamos alterar o código para gerar 50 mil pontos no passeio aleatório,
+
+- e vamos diminuir o tamanho para 1 para que a visualização fique mais interessante.
+
+##
+
+Agora vamos gerar vários passeios aleatórios com o mesmo código.
+
+- Cada um deles terá uma cor diferente.
+
+::: {.callout-caution title="Prompt" icon="false"}
+Altere o código para gerar 3 passeios aleatórios, cada um com uma cor diferente
+e com 50000 pontos cada (use pontos de tamanho 1).
+Mantenha os eixos x e y com a mesma escala, os pontos do início e do fim de cada passeio destacados
+e os mapas de cores dos pontos.
+:::
+
+##
+
+```python
+if __name__ == '__main__':    
+    num_passeios = 3
+    num_pontos = 50000
+    cores = ['Blues', 'Oranges', 'Greens']
+    labels = ['Passeio 1', 'Passeio 2', 'Passeio 3']
+    inicios = ['green', 'lime', 'yellow']
+    fins = ['red', 'magenta', 'black']
+
+    plt.figure(figsize=(12, 8))
+
+    for i in range(num_passeios):
+        x, y = gerar_passeio_aleatorio(num_pontos)
+        pontos = np.arange(len(x))
+        cmap = cm.get_cmap(cores[i])
+        plt.scatter(x, y, c=pontos, cmap=cmap, s=1, label=labels[i], alpha=0.6)
+        plt.scatter(x[0], y[0], c=inicios[i], s=60, edgecolors='k', marker='o', label=f'Início {i+1}')
+        plt.scatter(x[-1], y[-1], c=fins[i], s=60, edgecolors='k', marker='X', label=f'Fim {i+1}')
+
+    plt.title('3 Passeios Aleatórios em 2D')
+    plt.xlabel('X')
+    plt.ylabel('Y')
+    plt.grid(True)
+    plt.axis('equal')
+    plt.legend()
+    plt.show()
+```
+
+##
+
+Para um gráfico como esse o valor em si da coordenadas X e Y não é tão importante.
+
+- Vamos então remover os valores dos eixos X e Y.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+Altere o gráfico para que os valores dos eixos X e Y não sejam exibidos 
+(e nem as linhas da grade e títulos de eixo).
+:::
+
+##
+
+```python
+if __name__ == '__main__':    
+    num_passeios = 3
+    num_pontos = 50000
+    cores = ['Blues', 'Oranges', 'Greens']
+    labels = ['Passeio 1', 'Passeio 2', 'Passeio 3']
+    inicios = ['green', 'lime', 'yellow']
+    fins = ['red', 'magenta', 'black']
+
+    plt.figure(figsize=(12, 8))
+
+    for i in range(num_passeios):
+        x, y = gerar_passeio_aleatorio(num_pontos)
+        pontos = np.arange(len(x))
+        cmap = cm.get_cmap(cores[i])
+        plt.scatter(x, y, c=pontos, cmap=cmap, s=1, label=labels[i], alpha=0.6)
+        plt.scatter(x[0], y[0], c=inicios[i], s=60, edgecolors='k', marker='o', label=f'Início {i+1}')
+        plt.scatter(x[-1], y[-1], c=fins[i], s=60, edgecolors='k', marker='X', label=f'Fim {i+1}')
+
+    plt.title('3 Passeios Aleatórios em 2D')
+    plt.axis('equal')
+    plt.legend()
+    plt.xticks([])  # Remove valores do eixo X
+    plt.yticks([])  # Remove valores do eixo Y
+    plt.grid(False) # Remove linhas da grade
+    plt.show()
+```
 
 # Pandas {background-color="#40666e"}
 
-## Pandas (df.plot)
-
-- 📌 Permite criar gráficos diretamente de DataFrames.
-- Baseado no Matplotlib.
-- Muito útil para análises rápidas e relatórios simples.
-- Menos flexível para visualizações complexas.
-
-```python
-import pandas as pd
-
-df = pd.DataFrame({
-    "Ano": [2021, 2022, 2023],
-    "Vendas": [150, 200, 250]
-})
-
-df.plot(x="Ano", y="Vendas", kind="bar", title="Vendas por Ano")
-```
-
-# Seaborn {background-color="#40666e"}
-
-## Seaborn
-
-- 📌 Construída sobre o Matplotlib.
-- Oferece visualizações estatísticas com aparência mais elegante.
-- Facilita criação de gráficos de distribuições, correlações e regressões.
-- Ideal para análise exploratória de dados.
-
-```python
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-sns.lineplot(x=[1, 2, 3, 4], y=[10, 20, 25, 30], marker="o")
-plt.title("Exemplo Seaborn")
-plt.show()
-```
-
 ##
 
 
-meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"]
-produto_a = [150, 200, 250, 300, 280, 320]
-produto_b = [100, 120, 180, 160, 220, 210]
-produto_c = [80, 90, 100, 120, 140, 160]
-
-Para ma
-
-Suponha que tenhamos esses dados de vendas em um dicionário Python:
-
-- Note que as chaves dos dicionários representam os nomes das colunas
-- e os valores são listas com os dados de cada coluna.
-
-. . 
-
-```python
-import pandas as pd
-
-
-
-df = pd.DataFrame(dados)
-print(df)
-```
-
-## Os Dados
-
-Para exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples.
-
-- 📊 Exemplo: **Vendas mensais de três produtos**
-
-```python
-import pandas as pd
-
-dados = {
-    "Mês": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
-    "Produto A": [150, 200, 250, 300, 280, 320],
-    "Produto B": [100, 120, 180, 160, 220, 210],
-    "Produto C": [80, 90, 100, 120, 140, 160]
-}
-
-df = pd.DataFrame(dados)
-print(df)
-```
-
-
-
-##
-
-Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.
-
-- Mas para usarmos aqui, vamos criar um dicionário Python com esses dados.
-
-. . .
-
-```python
-vendas = {
-    "Mês": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
-    "Produto A": [150, 200, 250, 300, 280, 320],
-    "Produto B": [100, 120, 180, 160, 220, 210],
-    "Produto C": [80, 90, 100, 120, 140, 160]
-}
-```
-
-Repare que cada chave do dicionário representa o nome de uma coluna.
-
-- E os valores são listas com os dados de cada coluna.
-
-# Plotly {background-color="#40666e"}
-
-## Plotly
-
-- 📌 Biblioteca para gráficos interativos.
-- Suporta zoom, hover, exportação e gráficos 3D.
-- Muito usada em dashboards e relatórios dinâmicos.
-- Integra-se bem com Dash para aplicações web.
-
-```python
-import plotly.express as px
-
-df = px.data.iris()
-fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species")
-fig.show()
-```
