@@ -4827,7 +4827,7 @@
     "href": "aula_t7.html#seaborn-1",
     "title": "Visualizando Dados",
     "section": "Seaborn",
-    "text": "Seaborn\n\n📌 Construída sobre o Matplotlib.\nOferece visualizações estatísticas com aparência mais elegante.\nFacilita criação de gráficos de distribuições, correlações e regressões.\nIdeal para análise exploratória de dados.\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.lineplot(x=[1, 2, 3, 4], y=[10, 20, 25, 30], marker=\"o\")\nplt.title(\"Exemplo Seaborn\")\nplt.show()"
+    "text": "Seaborn\n\nBiblioteca construída sobre o Matplotlib.\nOferece visualizações estatísticas com aparência mais elegante.\nFacilita criação de gráficos de distribuições, correlações e regressões.\nIdeal para análise exploratória de dados."
   },
   {
     "objectID": "aula_t7.html#seaborn-2",
@@ -5423,5 +5423,61 @@
     "title": "Visualizando Dados",
     "section": "",
     "text": "if __name__ == '__main__':    \n    num_passeios = 3\n    num_pontos = 50000\n    cores = ['Blues', 'Oranges', 'Greens']\n    labels = ['Passeio 1', 'Passeio 2', 'Passeio 3']\n    inicios = ['green', 'lime', 'yellow']\n    fins = ['red', 'magenta', 'black']\n\n    plt.figure(figsize=(12, 8))\n\n    for i in range(num_passeios):\n        x, y = gerar_passeio_aleatorio(num_pontos)\n        pontos = np.arange(len(x))\n        cmap = cm.get_cmap(cores[i])\n        plt.scatter(x, y, c=pontos, cmap=cmap, s=1, label=labels[i], alpha=0.6)\n        plt.scatter(x[0], y[0], c=inicios[i], s=60, edgecolors='k', marker='o', label=f'Início {i+1}')\n        plt.scatter(x[-1], y[-1], c=fins[i], s=60, edgecolors='k', marker='X', label=f'Fim {i+1}')\n\n    plt.title('3 Passeios Aleatórios em 2D')\n    plt.axis('equal')\n    plt.legend()\n    plt.xticks([])  # Remove valores do eixo X\n    plt.yticks([])  # Remove valores do eixo Y\n    plt.grid(False) # Remove linhas da grade\n    plt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-92",
+    "href": "aula_t7.html#section-92",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "O Pandas é a principal biblioteca de análise e manipulação de dados em Python.\n\nEle fornece duas estruturas de dados fundamentais:\n\nSeries → colunas unidimensionais (semelhantes a vetores ou colunas de uma tabela).\nDataFrame → tabelas bidimensionais (semelhantes a planilhas do Excel ou tabelas de Banco de Dados)."
+  },
+  {
+    "objectID": "aula_t7.html#para-que-serve-o-pandas",
+    "href": "aula_t7.html#para-que-serve-o-pandas",
+    "title": "Visualizando Dados",
+    "section": "Para que serve o Pandas?",
+    "text": "Para que serve o Pandas?\nLeitura e escrita de dados\n\nPermite lidar facilmente com arquivos CSV, Excel, JSON, SQL e muitos outros.\n\n\nLimpeza e preparação de dados\n\nFacilita o tratamento de valores ausentes, remoção de duplicatas, correção de tipos de dados, etc."
+  },
+  {
+    "objectID": "aula_t7.html#para-que-serve-o-pandas-1",
+    "href": "aula_t7.html#para-que-serve-o-pandas-1",
+    "title": "Visualizando Dados",
+    "section": "Para que serve o Pandas?",
+    "text": "Para que serve o Pandas?\nTransformação e manipulação\n\nRealiza operações de seleção de colunas, filtro de linhas, agrupamento de dados (groupby), ordenação, etc.\nPermite criar novas colunas com base em cálculos ou funções.\n\n\nAnálise estatística\n\nMédias, somas, contagens, desvios padrão, correlações."
+  },
+  {
+    "objectID": "aula_t7.html#para-que-serve-o-pandas-2",
+    "href": "aula_t7.html#para-que-serve-o-pandas-2",
+    "title": "Visualizando Dados",
+    "section": "Para que serve o Pandas?",
+    "text": "Para que serve o Pandas?\nIntegração\n\nFunciona muito bem com NumPy, Matplotlib, Seaborn, Scikit-learn e outras bibliotecas.\n\n\nGráficos\n\nFacilita a geração de gráficos básicos diretamente a partir de DataFrames.\nUsa, internamente, a biblioteca Matplotlib."
+  },
+  {
+    "objectID": "aula_t7.html#section-93",
+    "href": "aula_t7.html#section-93",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Como nosso foco aqui é em visualização de dados, não entraremos em detalhes sobre o Pandas.\n\nMas vamos ver exemplos de geração de gráficos com ele.\n\n\n\n\n\n\nPrompt\n\n\nOs dados abaixo que se referem às vendas mensais de três produtos. Armazene os dados em um DataFrame do Pandas e gere um gráfico de linhas.\nMês Produto A   Produto B   Produto C\nJan 150 100 80\nFev 200 120 90\nMar 250 180 100\nAbr 300 160 120\nMai 280 170 140\nJun 320 150 160"
+  },
+  {
+    "objectID": "aula_t7.html#section-94",
+    "href": "aula_t7.html#section-94",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport pandas as pd\n\nimport matplotlib.pyplot as plt\n\n# Dados das vendas mensais\ndados = {\n    'Mês': ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],\n    'Produto A': [150, 200, 250, 300, 280, 320],\n    'Produto B': [100, 120, 180, 160, 170, 150],\n    'Produto C': [80, 90, 100, 120, 140, 160]\n}\n\n# Criar DataFrame\ndf = pd.DataFrame(dados)\n\n# Definir a coluna 'Mês' como índice\ndf.set_index('Mês', inplace=True)\n\n# Gerar gráfico de linhas\ndf.plot(marker='o')\n\nplt.show()"
+  },
+  {
+    "objectID": "aula_t7.html#section-95",
+    "href": "aula_t7.html#section-95",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "Prompt\n\n\nCalcule o total de vendas de cada produto e mostre em um gráfico de barras."
+  },
+  {
+    "objectID": "aula_t7.html#section-96",
+    "href": "aula_t7.html#section-96",
+    "title": "Visualizando Dados",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Dados das vendas mensais\ndados = {\n    'Mês': ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],\n    'Produto A': [150, 200, 250, 300, 280, 320],\n    'Produto B': [100, 120, 180, 160, 170, 150],\n    'Produto C': [80, 90, 100, 120, 140, 160]\n}\n\n# Criar DataFrame\ndf = pd.DataFrame(dados)\n\n# Definir a coluna 'Mês' como índice\ndf.set_index('Mês', inplace=True)\n\n# Calcular o total de vendas de cada produto\ntotais = df.sum()\n\n# Gerar gráfico de barras\ntotais.plot(kind='bar', color=['blue', 'orange', 'green'])\nplt.ylabel('Total de Vendas')\nplt.title('Total de Vendas por Produto')\nplt.show()"
   }
 ]

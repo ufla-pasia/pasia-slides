@@ -2421,12 +2421,195 @@ Jun 320 150 160</code></pre>
 <span id="cb43-23"><a></a>    plt.yticks([])  <span class="co"># Remove valores do eixo Y</span></span>
 <span id="cb43-24"><a></a>    plt.grid(<span class="va">False</span>) <span class="co"># Remove linhas da grade</span></span>
 <span id="cb43-25"><a></a>    plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="pandas" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Pandas</h1>
+
 </section>
 <section id="section-92" class="slide level2">
 <h2></h2>
+<p>O <span class="alert">Pandas</span> é a principal biblioteca de análise e manipulação de dados em Python.</p>
+<div class="fragment">
+<p>Ele fornece duas estruturas de dados fundamentais:</p>
+<ul>
+<li class="fragment"><code>Series</code> → colunas unidimensionais (semelhantes a vetores ou colunas de uma tabela).</li>
+<li class="fragment"><code>DataFrame</code> → tabelas bidimensionais (semelhantes a planilhas do Excel ou tabelas de Banco de Dados).</li>
+</ul>
+</div>
+</section>
+<section id="para-que-serve-o-pandas" class="slide level2">
+<h2>Para que serve o Pandas?</h2>
+<p><strong>Leitura e escrita de dados</strong></p>
+<ul>
+<li class="fragment">Permite lidar facilmente com arquivos CSV, Excel, JSON, SQL e muitos outros.</li>
+</ul>
+<div class="fragment">
+<p><strong>Limpeza e preparação de dados</strong></p>
+<ul>
+<li class="fragment">Facilita o tratamento de valores ausentes, remoção de duplicatas, correção de tipos de dados, etc.</li>
+</ul>
+</div>
+</section>
+<section id="para-que-serve-o-pandas-1" class="slide level2">
+<h2>Para que serve o Pandas?</h2>
+<p><strong>Transformação e manipulação</strong></p>
+<ul>
+<li class="fragment">Realiza operações de seleção de colunas, filtro de linhas, agrupamento de dados (<em>groupby</em>), ordenação, etc.</li>
+<li class="fragment">Permite criar novas colunas com base em cálculos ou funções.</li>
+</ul>
+<div class="fragment">
+<p><strong>Análise estatística</strong></p>
+<ul>
+<li class="fragment">Médias, somas, contagens, desvios padrão, correlações.</li>
+</ul>
+</div>
+</section>
+<section id="para-que-serve-o-pandas-2" class="slide level2">
+<h2>Para que serve o Pandas?</h2>
+<p><strong>Integração</strong></p>
+<ul>
+<li class="fragment">Funciona muito bem com NumPy, Matplotlib, Seaborn, Scikit-learn e outras bibliotecas.</li>
+</ul>
+<div class="fragment">
+<p><strong>Gráficos</strong></p>
+<ul>
+<li class="fragment">Facilita a geração de gráficos básicos diretamente a partir de DataFrames.</li>
+<li class="fragment">Usa, internamente, a biblioteca Matplotlib.</li>
+</ul>
+</div>
 </section>
 <section id="section-93" class="slide level2">
 <h2></h2>
+<p>Como nosso foco aqui é em visualização de dados, não entraremos em detalhes sobre o Pandas.</p>
+<ul>
+<li class="fragment">Mas vamos ver exemplos de geração de gráficos com ele.</li>
+</ul>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Os dados abaixo que se referem às vendas mensais de três produtos. Armazene os dados em um DataFrame do Pandas e gere um gráfico de linhas.</p>
+<pre><code>Mês Produto A   Produto B   Produto C
+Jan 150 100 80
+Fev 200 120 90
+Mar 250 180 100
+Abr 300 160 120
+Mai 280 170 140
+Jun 320 150 160</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-94" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb45-2"><a></a></span>
+<span id="cb45-3"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb45-4"><a></a></span>
+<span id="cb45-5"><a></a><span class="co"># Dados das vendas mensais</span></span>
+<span id="cb45-6"><a></a>dados <span class="op">=</span> {</span>
+<span id="cb45-7"><a></a>    <span class="st">'Mês'</span>: [<span class="st">'Jan'</span>, <span class="st">'Fev'</span>, <span class="st">'Mar'</span>, <span class="st">'Abr'</span>, <span class="st">'Mai'</span>, <span class="st">'Jun'</span>],</span>
+<span id="cb45-8"><a></a>    <span class="st">'Produto A'</span>: [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">280</span>, <span class="dv">320</span>],</span>
+<span id="cb45-9"><a></a>    <span class="st">'Produto B'</span>: [<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">150</span>],</span>
+<span id="cb45-10"><a></a>    <span class="st">'Produto C'</span>: [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>, <span class="dv">160</span>]</span>
+<span id="cb45-11"><a></a>}</span>
+<span id="cb45-12"><a></a></span>
+<span id="cb45-13"><a></a><span class="co"># Criar DataFrame</span></span>
+<span id="cb45-14"><a></a>df <span class="op">=</span> pd.DataFrame(dados)</span>
+<span id="cb45-15"><a></a></span>
+<span id="cb45-16"><a></a><span class="co"># Definir a coluna 'Mês' como índice</span></span>
+<span id="cb45-17"><a></a>df.set_index(<span class="st">'Mês'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb45-18"><a></a></span>
+<span id="cb45-19"><a></a><span class="co"># Gerar gráfico de linhas</span></span>
+<span id="cb45-20"><a></a>df.plot(marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb45-21"><a></a></span>
+<span id="cb45-22"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-95" class="slide level2">
+<h2></h2>
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Calcule o total de vendas de cada produto e mostre em um gráfico de barras.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-96" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb46-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb46-3"><a></a></span>
+<span id="cb46-4"><a></a><span class="co"># Dados das vendas mensais</span></span>
+<span id="cb46-5"><a></a>dados <span class="op">=</span> {</span>
+<span id="cb46-6"><a></a>    <span class="st">'Mês'</span>: [<span class="st">'Jan'</span>, <span class="st">'Fev'</span>, <span class="st">'Mar'</span>, <span class="st">'Abr'</span>, <span class="st">'Mai'</span>, <span class="st">'Jun'</span>],</span>
+<span id="cb46-7"><a></a>    <span class="st">'Produto A'</span>: [<span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">280</span>, <span class="dv">320</span>],</span>
+<span id="cb46-8"><a></a>    <span class="st">'Produto B'</span>: [<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">150</span>],</span>
+<span id="cb46-9"><a></a>    <span class="st">'Produto C'</span>: [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">140</span>, <span class="dv">160</span>]</span>
+<span id="cb46-10"><a></a>}</span>
+<span id="cb46-11"><a></a></span>
+<span id="cb46-12"><a></a><span class="co"># Criar DataFrame</span></span>
+<span id="cb46-13"><a></a>df <span class="op">=</span> pd.DataFrame(dados)</span>
+<span id="cb46-14"><a></a></span>
+<span id="cb46-15"><a></a><span class="co"># Definir a coluna 'Mês' como índice</span></span>
+<span id="cb46-16"><a></a>df.set_index(<span class="st">'Mês'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb46-17"><a></a></span>
+<span id="cb46-18"><a></a><span class="co"># Calcular o total de vendas de cada produto</span></span>
+<span id="cb46-19"><a></a>totais <span class="op">=</span> df.<span class="bu">sum</span>()</span>
+<span id="cb46-20"><a></a></span>
+<span id="cb46-21"><a></a><span class="co"># Gerar gráfico de barras</span></span>
+<span id="cb46-22"><a></a>totais.plot(kind<span class="op">=</span><span class="st">'bar'</span>, color<span class="op">=</span>[<span class="st">'blue'</span>, <span class="st">'orange'</span>, <span class="st">'green'</span>])</span>
+<span id="cb46-23"><a></a>plt.ylabel(<span class="st">'Total de Vendas'</span>)</span>
+<span id="cb46-24"><a></a>plt.title(<span class="st">'Total de Vendas por Produto'</span>)</span>
+<span id="cb46-25"><a></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="seaborn" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Seaborn</h1>
+
+</section>
+<section id="seaborn-1" class="slide level2">
+<h2>Seaborn</h2>
+<ul>
+<li class="fragment">Biblioteca construída sobre o Matplotlib.</li>
+<li class="fragment">Oferece visualizações estatísticas com aparência mais elegante.</li>
+<li class="fragment">Facilita criação de gráficos de distribuições, correlações e regressões.</li>
+<li class="fragment">Ideal para análise exploratória de dados.</li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <p><img src="imagens/logo_UFLA.png" class="slide-logo"></p>
