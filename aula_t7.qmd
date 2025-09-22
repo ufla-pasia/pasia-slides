@@ -1683,4 +1683,15 @@ if __name__ == '__main__':
 
 ##
 
+# Seaborn {background-color="#40666e"}
+
+## Seaborn
+
+- Biblioteca construída sobre o Matplotlib.
+- Oferece visualizações estatísticas com aparência mais elegante.
+- Facilita criação de gráficos de distribuições, correlações e regressões.
+- Ideal para análise exploratória de dados.
+
+
+
 
