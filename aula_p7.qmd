@@ -3,20 +3,26 @@ title: Visualizando Dados
 subtitle: PASIA - Aula P.7
 ---
 
-# Pandas {background-color="#40666e"}
-
 ##
 
-O [Pandas]{.alert} é a principal biblioteca de análise e manipulação de dados em Python.
+Na aula de hoje vamos praticar a [análise e visualização de dados]{.alert} em Python.
+
+- Trabalharemos com análise de dados, conhecendo um pouco da biblioteca [Pandas]{.alert}.
 
 . . .
 
-Ele fornece duas estruturas de dados fundamentais:
+Já em relação à visualização, não usaremos a biblioteca Matplotlib.
 
-- `Series` → colunas unidimensionais (semelhantes a vetores ou colunas de uma tabela).
-- `DataFrame` → tabelas bidimensionais (semelhantes a planilhas do Excel ou tabelas de Banco de Dados).
+- Em vez disso vamos explorar a biblioteca [Plotly]{.alert}.
+- Veremos que ela tem uma proposta diferente, focada em gráficos interativos.
+
+# Pandas {background-color="#40666e"}
 
 ## Para que serve o Pandas?
+
+O [Pandas]{.alert} é a principal biblioteca de **análise** e **manipulação de dados** em Python.
+
+. . .
 
 **Leitura e escrita de dados**
 
@@ -56,15 +62,63 @@ Ele fornece duas estruturas de dados fundamentais:
 
 ##
 
-Como nosso foco aqui é em visualização de dados, não entraremos em detalhes sobre o Pandas.
+Como mencionado, Pandas trabalha com dados tabulares
 
-- Mas vamos ver exemplos de geração de gráficos com ele.
+- como planilhas do Excel ou tabelas de banco de dados.
+
+- E possui duas estruturas de dados principais: [DataFrame]{.alert} e [Series]{.alert}.
+
+
+## DataFrame
+
+Um **DataFrame** é uma **tabela bidimensional**.
+
+- Cada coluna pode ter um tipo de dado diferente (números, texto, datas, etc).
+- Cada linha representa um registro ou observação.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](imagens/pandas_dataframe.svg){fig-align="center" fig-alt="Ilustração de um DataFrame do Pandas." style="max-height: 50vh; width: auto;"}
+:::
+
+::: {.column width="50%"}
+- Pandas tem suporte para leitura e escrita de dados em diversos formatos.
+- Como CSV, Excel, JSON, SQL, entre outros.
+:::
+
+::::
+
+
+## Series
+
+Cada **coluna** de um DataFrame é uma **Series**.
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](imagens/pandas_series.svg){fig-align="center" fig-alt="Ilustração de uma Series do Pandas." style="max-height: 50vh; width: auto;"}
+:::
+
+::: {.column width="50%"}
+- Uma Series é uma estrutura unidimensional, como uma lista ou array.
+- Tem um índice associado a cada valor.
+- E tem um tipo de dado único.
+:::
+
+::::
+
+## Exemplo
+
+Para ilustrar esse conceito vamos criar um DataFrame simples,
+
+- basedo no mesmo exemplo vendas de produtos que vimos na aula passada.
 
 . . .
 
 ::: {.callout-caution title="Prompt" icon="false"}
-Os dados abaixo que se referem às vendas mensais de três produtos.
-Armazene os dados em um DataFrame do Pandas e gere um gráfico de linhas.
+Crie um dataframe do Pandas com os dados abaixo que se referem às vendas mensais de três produtos.
 
 ```
 Mês	Produto A	Produto B	Produto C
@@ -79,11 +133,13 @@ Jun	320	150	160
 
 ##
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
 ::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
 ```python
 import pandas as pd
-
-import matplotlib.pyplot as plt
 
 # Dados das vendas mensais
 dados = {
@@ -93,198 +149,369 @@ dados = {
     'Produto C': [80, 90, 100, 120, 140, 160]
 }
 
-# Criar DataFrame
 df = pd.DataFrame(dados)
 
-# Definir a coluna 'Mês' como índice
-df.set_index('Mês', inplace=True)
-
-# Gerar gráfico de linhas
-df.plot(marker='o')
-
-plt.show()
-```
-:::
-
-##
-
-::: {.callout-caution title="Prompt" icon="false"}
-Calcule o total de vendas de cada produto e mostre em um gráfico de barras.
-:::
-
-##
-
-::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Dados das vendas mensais
-dados = {
-    'Mês': ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
-    'Produto A': [150, 200, 250, 300, 280, 320],
-    'Produto B': [100, 120, 180, 160, 170, 150],
-    'Produto C': [80, 90, 100, 120, 140, 160]
-}
-
-# Criar DataFrame
-df = pd.DataFrame(dados)
-
-# Definir a coluna 'Mês' como índice
-df.set_index('Mês', inplace=True)
-
-# Calcular o total de vendas de cada produto
-totais = df.sum()
-
-# Gerar gráfico de barras
-totais.plot(kind='bar', color=['blue', 'orange', 'green'])
-plt.ylabel('Total de Vendas')
-plt.title('Total de Vendas por Produto')
-plt.show()
-```
-:::
-
-# Seaborn {background-color="#40666e"}
-
-## Seaborn
-
-- Biblioteca construída sobre o Matplotlib.
-- Oferece visualizações estatísticas com aparência mais elegante.
-- Facilita criação de gráficos de distribuições, correlações e regressões.
-- Ideal para análise exploratória de dados.
-
-
-
-
-
-
-# Pandas {background-color="#40666e"}
-
-## Pandas (df.plot)
-
-- 📌 Permite criar gráficos diretamente de DataFrames.
-- Baseado no Matplotlib.
-- Muito útil para análises rápidas e relatórios simples.
-- Menos flexível para visualizações complexas.
-
-```python
-import pandas as pd
-
-df = pd.DataFrame({
-    "Ano": [2021, 2022, 2023],
-    "Vendas": [150, 200, 250]
-})
-
-df.plot(x="Ano", y="Vendas", kind="bar", title="Vendas por Ano")
-```
-
-# Seaborn {background-color="#40666e"}
-
-## Seaborn
-
-- 📌 Construída sobre o Matplotlib.
-- Oferece visualizações estatísticas com aparência mais elegante.
-- Facilita criação de gráficos de distribuições, correlações e regressões.
-- Ideal para análise exploratória de dados.
-
-```python
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-sns.lineplot(x=[1, 2, 3, 4], y=[10, 20, 25, 30], marker="o")
-plt.title("Exemplo Seaborn")
-plt.show()
-```
-
-##
-
-
-meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"]
-produto_a = [150, 200, 250, 300, 280, 320]
-produto_b = [100, 120, 180, 160, 220, 210]
-produto_c = [80, 90, 100, 120, 140, 160]
-
-Para ma
-
-Suponha que tenhamos esses dados de vendas em um dicionário Python:
-
-- Note que as chaves dos dicionários representam os nomes das colunas
-- e os valores são listas com os dados de cada coluna.
-
-. . 
-
-```python
-import pandas as pd
-
-
-
-df = pd.DataFrame(dados)
 print(df)
 ```
+:::
 
-## Os Dados
-
-Para exemplicar o uso das bibliotecas, vamos usar um conjunto de dados simples.
-
-- 📊 Exemplo: **Vendas mensais de três produtos**
-
-```python
-import pandas as pd
-
-dados = {
-    "Mês": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
-    "Produto A": [150, 200, 250, 300, 280, 320],
-    "Produto B": [100, 120, 180, 160, 220, 210],
-    "Produto C": [80, 90, 100, 120, 140, 160]
-}
-
-df = pd.DataFrame(dados)
-print(df)
+```text
+   Mês  Produto A  Produto B  Produto C
+0  Jan        150        100         80
+1  Fev        200        120         90
+2  Mar        250        180        100
+3  Abr        300        160        120
+4  Mai        280        170        140
+5  Jun        320        150        160
 ```
+:::
 
+::: {.column width="40%"}
+- O DataFrame foi criado a partir de um dicionário Python.
+- As chaves do dicionário representam os nomes das colunas.
+- E os valores são listas com os dados de cada coluna (se tornam as Series).
+:::
 
+::::
 
-##
+## Operações comuns com DataFrames 
 
-Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.
+. . .
 
-- Mas para usarmos aqui, vamos criar um dicionário Python com esses dados.
+**Seleção de colunas**
+
+- Sintaxe: dataframe[nome_da_coluna]
 
 . . .
 
 ```python
-vendas = {
-    "Mês": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
-    "Produto A": [150, 200, 250, 300, 280, 320],
-    "Produto B": [100, 120, 180, 160, 220, 210],
-    "Produto C": [80, 90, 100, 120, 140, 160]
-}
+print("Vendas do Produto A:")
+print(df['Produto A'])
 ```
 
-Repare que cada chave do dicionário representa o nome de uma coluna.
+. . .
 
-- E os valores são listas com os dados de cada coluna.
+```
+Vendas do Produto A:
+0    150
+1    200
+2    250
+3    300
+4    280
+5    320
+Name: Produto A, dtype: int64
+```
+
+##
+
+**Filtragem de dados (linhas)**
+
+- Sintaxe: dataframe[condição]
+
+. . .
+
+```python
+print("\nMeses com vendas do Produto B acima de 150:")
+print(df[df['Produto B'] > 150])
+```
+
+. . .
+
+```
+Meses com vendas do Produto B acima de 150:
+   Mês  Produto A  Produto B  Produto C
+2  Mar        250        180        100
+3  Abr        300        160        120
+4  Mai        280        170        140
+```
+
+##
+
+**Ordenação de dados**
+
+. . .
+
+```python
+# Exemplo de 
+print("\nDados ordenados por vendas do Produto A (decrescente):")
+print(df.sort_values(by='Produto A', ascending=False))
+```
+
+. . .
+
+```
+Dados ordenados por vendas do Produto A (decrescente):
+   Mês  Produto A  Produto B  Produto C
+5  Jun        320        150        160
+3  Abr        300        160        120
+4  Mai        280        170        140
+2  Mar        250        180        100
+1  Fev        200        120         90
+0  Jan        150        100         80
+```
+
+##
+
+**Criação de novas colunas**
+
+- Sintaxe: dataframe[nova_coluna] = expressão
+
+. . .
+
+```python
+# Exemplo de adição de nova coluna
+df['Total Vendas'] = df['Produto A'] + df['Produto B'] + df['Produto C']
+print("\nDataFrame com coluna de Total de Vendas por Mês:")
+print(df)
+```
+
+. . .
+
+```
+DataFrame com coluna de Total de Vendas:
+   Mês  Produto A  Produto B  Produto C  Total Vendas
+0  Jan        150        100         80           330
+1  Fev        200        120         90           410
+2  Mar        250        180        100           530
+3  Abr        300        160        120           580
+4  Mai        280        170        140           590
+5  Jun        320        150        160           630
+```
+
+##
+
+**Estatísticas básicas**
+
+- Sintaxe: dataframe.funcao()
+
+. . .
+
+```python
+print("\nMaior Venda Mensal do Produto A:")
+print(df['Produto A'].max())
+```
+
+. . .
+
+```
+Maior Venda Mensal do Produto A:
+320
+```
+
+. . .
+
+```python
+print("\nMédia de vendas por produto:")
+print(df[['Produto A', 'Produto B', 'Produto C']].mean())
+```
+
+. . .
+
+```
+Média de vendas por produto:
+Produto A    250.000000
+Produto B    146.666667
+Produto C    115.000000
+dtype: float64
+```
+
+##
+
+A função `describe()` gera várias estatísticas descritivas de uma só vez.
+
+. . .
+
+```python
+print("\nEstatísticas descritivas dos produtos:")
+print(df[['Produto A', 'Produto B', 'Produto C']].describe())
+```
+
+. . .
+
+```
+Estatísticas descritivas dos produtos:
+        Produto A   Produto B  Produto C
+count    6.000000    6.000000    6.00000
+mean   250.000000  146.666667  115.00000
+std     64.498062   30.767949   30.82207
+min    150.000000  100.000000   80.00000
+25%    212.500000  127.500000   92.50000
+50%    265.000000  155.000000  110.00000
+75%    295.000000  167.500000  135.00000
+max    320.000000  180.000000  160.00000
+```
+
+##
+
+Podemos gerar **gráficos** facilmente a partir de DataFrames.
+
+. . .
+
+```python
+import matplotlib.pyplot as plt
+
+# A geração do gráfico em si é feita nessa chamada
+df.set_index('Mês')[['Produto A', 'Produto B', 'Produto C']].plot(marker='o')
+
+plt.title('Vendas Mensais por Produto')
+plt.xlabel('Mês')
+plt.ylabel('Vendas')
+plt.legend()
+plt.grid()
+plt.show()
+```
+
+##
+
+O Pandas possui integração com Matplotlib para gerar os gráficos.
+
+
+![](imagens/pandas_grafico_vendas.png){fig-align="center" fig-alt="Gráfico de linhas gerado com Pandas." style="max-height: 50vh; width: auto;"}
+
+## 
+
+Vamos agora utilizar o Pandas, com a ajuda do Copilot, para analisar consumo de refeições do RU.
+
+- Você pode baixar o CSV diretamente do [Portal de Dados Abertos](https://dados.ufla.br/dataset/relacao-de-estudantes-contemplados-com-o-restaurante-universitario-ru/resource/342c5912-ff29-4a4f-b150-46ebc06e7424?inner_span=True) da UFLA:
+- Ou então baixar da página da disciplina no Campus Virtual.
+
+##
+
+A ideia dos exercícios é ganhar familiaridade com o Pandas.
+
+- Portanto, copiar e colar enunciado da questão e copiar e
+  só rodar o programa não vai agregar muito ao seu aprendizado.
+
+##
+
+:::: {.callout-note title="Tarefa 1" icon=false, .nonincremental}
+Faça a leitura do arquivo CSV com os dados de Consumo do RU.
+
+Identifique, via código, as colunas que estão disponíveis no conjunto de dados
+e exiba na tela os nomes das colunas.
+
+Observando o nome das colunas, identifique qual coluna indica a data das refeições
+e exiba o número total de refeições e o período no qual se referem os dados 
+(data inicial e final).
+::::
+
+##
+
+:::: {.callout-note title="Tarefa 2" icon=false, .nonincremental}
+Exiba um gráfico de linhas mostrando a quantidade de refeições consumidas por mês
+por estudantes dos cursos de Ciência da Computação e de Sistemas de Informação
+(separadamente).
+
+Dica: lembre-se de filtrar o tipo de usuário.
+:::
+
+. . .
+
+:::: {.callout-note title="Tarefa 3" icon=false, .nonincremental}
+Considerando em conjunto as refeições de estudantes dos cursos de Ciência da Computação 
+e de Sistemas de Informação, exiba um gráfico de colunas mostrando a quantidade de
+refeições consumidas de acordo com a cidade de nascimento do estudante.
+
+O gráfico deve mostrar primeiro as cidades com maior número de refeições consumidas.
+:::
+
+##
 
 # Plotly {background-color="#40666e"}
 
 ## Plotly
 
-- 📌 Biblioteca para gráficos interativos.
-- Suporta zoom, hover, exportação e gráficos 3D.
+- É uma biblioteca para criação de gráficos interativos.
+- Possui alta qualidade visual, com design moderno.
+- Possui layout responsivo, que se adapta a diferentes tamanhos de tela.
+- Suporta zoom e _hover_ (informação adicional ao passar o mouse), por exemplo.
+- Permite seleção, destaque e filtragem de dados diretamente no gráfico.
 - Muito usada em dashboards e relatórios dinâmicos.
-- Integra-se bem com Dash para aplicações web.
 
-```python
-import plotly.express as px
+##
 
-df = px.data.iris()
-fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species")
-fig.show()
-```
+Plotly suporta vários tipos de gráficos.
 
-#
+- Vale a pena dar uma olhada no site para ter uma visão geral.
+- [plotly.com/python](https://plotly.com/python/)
+
+##
+
+Vamos agora usar o Pandas e Plotly para criar gráficos interativos com os dados de municípios brasileiros.
+
+- Para os próximos exercícios, baixe o [arquivo Excel](dados/municipios-mg.xlsx) com dados de municípios de Minas Gerais, obtidos do IBGE.
 
 
-Ideias:
+##
 
-- Usar colormap para visualizar temperatura ou chuvas em uma mapa.
+:::: {.callout-note title="Tarefa 4" icon=false, .nonincremental}
+Faça a leitura do arquivo Excel com os dados dos municípios de Minas Gerais,
+usando a biblioteca Pandas.
+
+Crie um gráfico, usando Plotly, que mostre a população estimada em 2025 dos
+20 municípios mais populosos de Minas Gerais.
+::::
+
+. . .
+
+:::: {.callout-note title="Tarefa 5" icon=false, .nonincremental}
+Exiba um gráfico de pizza mostrando a proporção de receitas realizadas em 2024
+dos 5 maiores municípios do sul de Minas Gerais 
+(Poços de Caldas, Pouso Alegre, Varginha, Passos e Lavras).
+::::
+
+##
+
+:::: {.callout-note title="Tarefa 6" icon=false, .nonincremental}
+Crie um gráfico de dispersão que mostre a relação entre o nível de escolarização,
+a mortalidade infantil, a população estimada e o PIB per capta dos 40 municípios mais populosos de Minas Gerais.
+
+Utilize:
+
+- o eixo X para representar representar o PIB per capta,
+- o eixo Y para representar a população estimada,
+- o tamanho dos pontos para representar a mortalidade infantil,
+- e a cor dos pontos para representar o nível de escolarização.
+::::
+
+# Dash {background-color="#40666e"}
+
+## Dash
+
+É um framework **_low code_** para construir aplicações web interativas baseadas em dados.
+
+- Integrada ao Plotly para criar dashboards e visualizações complexas com pouco código.
+- Usa componentes pré-construídos para gráficos, tabelas, controles deslizantes, botões, etc.
+- Suporta callbacks para atualizar gráficos e componentes com base em interações do usuário.
+
+##
+
+Dê uma olhada no catálogo de exemplos do Dash:
+
+- [dash-example-index.herokuapp.com](https://dash-example-index.herokuapp.com/)
+
+##
+
+:::: {.callout-note title="Tarefa 7" icon=false, .nonincremental}
+Crie uma aplicação web interativa para mostrar o gráfico da Tarefa 6.
+
+A aplicação deve permitir que o usuário selecione o número de municípios a serem exibidos no gráfico,
+usando um controle deslizante (_slider_).
+::::
+
+. . .
+
+:::: {.callout-note title="Tarefa 8" icon=false, .nonincremental}
+Altere a aplicação web para que ela permita que o usuário altere o critério de seleção dos municípios 
+a serem exibidos (maios populosos, de maior PIB per capta, etc), usando um menu suspenso (_dropdown_).
+::::
+
+##
+
+:::: {.callout-note title="Tarefa 9" icon=false, .nonincremental}
+Altere a aplicação Web de forma que o usuário consiga escolher quais colunas serão usadas
+no gráfico de dispersão.
+
+Ou seja, quais colunas representarão os eixos X e Y e o tamanho e a cor dos pontos.
+::::
+
