@@ -3,11 +3,160 @@ title: Visualizando Dados
 subtitle: PASIA - Aula P.7
 ---
 
+# Pandas {background-color="#40666e"}
+
 ##
 
-Ideias:
+O [Pandas]{.alert} é a principal biblioteca de análise e manipulação de dados em Python.
 
-- Usar colormap para visualizar temperatura ou chuvas em uma mapa.
+. . .
+
+Ele fornece duas estruturas de dados fundamentais:
+
+- `Series` → colunas unidimensionais (semelhantes a vetores ou colunas de uma tabela).
+- `DataFrame` → tabelas bidimensionais (semelhantes a planilhas do Excel ou tabelas de Banco de Dados).
+
+## Para que serve o Pandas?
+
+**Leitura e escrita de dados**
+
+- Permite lidar facilmente com arquivos CSV, Excel, JSON, SQL e muitos outros.
+
+. . .
+
+**Limpeza e preparação de dados**
+
+- Facilita o tratamento de valores ausentes, remoção de duplicatas, correção de tipos de dados, etc.
+
+## Para que serve o Pandas?
+
+**Transformação e manipulação**
+
+- Realiza operações de seleção de colunas, filtro de linhas, agrupamento de dados (_groupby_), ordenação, etc.
+- Permite criar novas colunas com base em cálculos ou funções.
+
+. . .
+
+**Análise estatística**
+
+- Médias, somas, contagens, desvios padrão, correlações.
+
+## Para que serve o Pandas?
+
+**Integração**
+
+- Funciona muito bem com NumPy, Matplotlib, Seaborn, Scikit-learn e outras bibliotecas.
+
+. . .
+
+**Gráficos**
+
+- Facilita a geração de gráficos básicos diretamente a partir de DataFrames.
+- Usa, internamente, a biblioteca Matplotlib.
+
+##
+
+Como nosso foco aqui é em visualização de dados, não entraremos em detalhes sobre o Pandas.
+
+- Mas vamos ver exemplos de geração de gráficos com ele.
+
+. . .
+
+::: {.callout-caution title="Prompt" icon="false"}
+Os dados abaixo que se referem às vendas mensais de três produtos.
+Armazene os dados em um DataFrame do Pandas e gere um gráfico de linhas.
+
+```
+Mês	Produto A	Produto B	Produto C
+Jan	150	100	80
+Fev	200	120	90
+Mar	250	180	100
+Abr	300	160	120
+Mai	280	170	140
+Jun	320	150	160
+```
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+# Dados das vendas mensais
+dados = {
+    'Mês': ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+    'Produto A': [150, 200, 250, 300, 280, 320],
+    'Produto B': [100, 120, 180, 160, 170, 150],
+    'Produto C': [80, 90, 100, 120, 140, 160]
+}
+
+# Criar DataFrame
+df = pd.DataFrame(dados)
+
+# Definir a coluna 'Mês' como índice
+df.set_index('Mês', inplace=True)
+
+# Gerar gráfico de linhas
+df.plot(marker='o')
+
+plt.show()
+```
+:::
+
+##
+
+::: {.callout-caution title="Prompt" icon="false"}
+Calcule o total de vendas de cada produto e mostre em um gráfico de barras.
+:::
+
+##
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Dados das vendas mensais
+dados = {
+    'Mês': ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+    'Produto A': [150, 200, 250, 300, 280, 320],
+    'Produto B': [100, 120, 180, 160, 170, 150],
+    'Produto C': [80, 90, 100, 120, 140, 160]
+}
+
+# Criar DataFrame
+df = pd.DataFrame(dados)
+
+# Definir a coluna 'Mês' como índice
+df.set_index('Mês', inplace=True)
+
+# Calcular o total de vendas de cada produto
+totais = df.sum()
+
+# Gerar gráfico de barras
+totais.plot(kind='bar', color=['blue', 'orange', 'green'])
+plt.ylabel('Total de Vendas')
+plt.title('Total de Vendas por Produto')
+plt.show()
+```
+:::
+
+# Seaborn {background-color="#40666e"}
+
+## Seaborn
+
+- Biblioteca construída sobre o Matplotlib.
+- Oferece visualizações estatísticas com aparência mais elegante.
+- Facilita criação de gráficos de distribuições, correlações e regressões.
+- Ideal para análise exploratória de dados.
+
+
+
+
+
 
 # Pandas {background-color="#40666e"}
 
@@ -134,3 +283,8 @@ fig.show()
 ```
 
 #
+
+
+Ideias:
+
+- Usar colormap para visualizar temperatura ou chuvas em uma mapa.

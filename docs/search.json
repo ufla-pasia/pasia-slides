@@ -4652,7 +4652,7 @@
     "href": "aula_t7.html#section",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "O conteúdo dessa aula é inspirado:\n\nno capítulo 8 do livro Python para Ciência de Dados, de Yuli Vasiliev\ne no capítulo 15 do livro Curso Intensivo de Python, de Eric Matthes."
+    "text": "O conteúdo dessa aula é inspirado:\n\n\nNo capítulo 8 do livro:\n\n\n\n\n\n\nE no capítulo 15 do livro:"
   },
   {
     "objectID": "aula_t7.html#section-1",
@@ -4687,7 +4687,7 @@
     "href": "aula_t7.html#section-5",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Python deve ser a linguagem mais usada em Ciência de Dados.\n\nExemplos de áreas que fazem uso intensivo de dados são:\n\ngenética, pesquisa climática, análise política, análise econômica,\ne diversas outras.\n\n\n\nMas há muitos outros usos mesmo para áreas que não são tão “intensas em dados” assim.\n\nQualquer empresa que queira tomar decisões baseadas em dados pode se beneficiar de visualizações eficazes."
+    "text": "Exemplos de áreas que fazem uso intensivo de dados são:\n\ngenética, pesquisa climática, análise política, análise econômica,\ne diversas outras.\n\n\nMas há muitos outros usos mesmo para áreas que não são tão “intensas em dados” assim.\n\nQualquer empresa que queira tomar decisões baseadas em dados pode se beneficiar de visualizações eficazes.\nParticipei, por exemplo, de projeto com mineradora brasileira no qual a primeira fase consistia em uma análise exploratória de dados."
   },
   {
     "objectID": "aula_t7.html#section-6",
@@ -4708,7 +4708,7 @@
     "href": "aula_t7.html#section-7",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "As bibliotecas mais usadas para visualização de dados em Python são:\n\nMatplotlib\nSeaborn\nPandas\nPlotly"
+    "text": "Python deve ser a linguagem mais usada em Ciência de Dados.\n\nE as bibliotecas mais usadas para visualização de dados em Python são:\n\nMatplotlib\nSeaborn\nPandas\nPlotly"
   },
   {
     "objectID": "aula_t7.html#os-dados-1",
@@ -5429,7 +5429,7 @@
     "href": "aula_t7.html#section-92",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "O Pandas é a principal biblioteca de análise e manipulação de dados em Python.\n\nEle fornece duas estruturas de dados fundamentais:\n\nSeries → colunas unidimensionais (semelhantes a vetores ou colunas de uma tabela).\nDataFrame → tabelas bidimensionais (semelhantes a planilhas do Excel ou tabelas de Banco de Dados)."
+    "text": "Nessa aula pudemos conhecer a biblioteca Matplotlib para visualização de dados.\n\nRevisamos para que servem alguns tipos de gráficos mais comuns.\nE trabalhamos com alguns exemplos simples de geração de dados.\n\n\nNa aula prática, vamos trabalhar com a biblioteca Pandas\n\ne experimentar um tipo diferente de visualização de dados."
   },
   {
     "objectID": "aula_t7.html#para-que-serve-o-pandas",
