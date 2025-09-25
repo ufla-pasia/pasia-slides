@@ -1,0 +1,11 @@
+---
+title: APIs e Dados Geográficos
+subtitle: PASIA - Aula P.8
+---
+
+##  
+
+Ideias:
+
+- Usar API de países do IBGE para mostrar informações em uma mapa.
+  https://servicodados.ibge.gov.br/api/docs/paises

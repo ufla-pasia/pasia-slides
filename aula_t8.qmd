@@ -1,0 +1,73 @@
+---
+title: Trabalhando com APIs
+subtitle: PASIA - Aula T.8
+---
+
+##  
+
+O conteúdo dessa aula é inspirado no **capítulo 17** do livro:
+
+
+![](imagens/livro_curso_intensivo_python.jpg){fig-align="center" fig-alt="Capa do livro de Curso Intensivo de Python." style="max-height: 50vh; width: auto;"}
+
+
+# Introdução {background-color="#40666e"}
+
+## 
+
+Livro: introdução capítulo
+
+Livro: Using an API
+
+# Usando a API do GitHub {background-color="#40666e"}
+
+## Obtendo dados através de uma chamada de API
+
+## Módulo Requests
+
+## Processando uma Resposta de API
+
+## Trabalhando com o Dicionário de Resposta
+
+## Resumo dos Repositórios Top
+
+## Monitorando Limites de Taxa de Acesso
+
+# Visualizando dados do GitHub com Plotly {background-color="#40666e"}
+
+## Gráfico básico com os repositórios
+
+## Customizando tooltip
+
+## Adicionando links clicáveis
+
+# Usando API de Nomes do IBGE {background-color="#40666e"}
+
+## Documentação e Copilot
+
+https://servicodados.ibge.gov.br/api/docs/nomes?versao=2
+
+
+## Consultando ranking dos nomes mais comuns
+
+## Consultando frequência de um nome
+
+## Verificando por município
+
+# Usando API da FIPE {background-color="#40666e"}
+
+## 
+
+usar API de alguma IA como a do GEmini
+- https://ai.google.dev/gemini-api/docs/rate-limits?hl=pt-br
+- https://ai.google.dev/gemini-api/docs/image-generation?hl=pt-br#limitations
+
+https://deividfortuna.github.io/fipe/v2/
+
+Outros:
+https://brasilapi.com.br/
+
+https://github.com/M-Media-Group/Cartes.io/wiki/API
+
+https://github.com/public-apis/public-apis
+
