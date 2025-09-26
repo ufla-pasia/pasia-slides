@@ -503,7 +503,7 @@ usando um controle deslizante (_slider_).
 
 :::: {.callout-note title="Tarefa 8" icon=false, .nonincremental}
 Altere a aplicação web para que ela permita que o usuário altere o critério de seleção dos municípios 
-a serem exibidos (maios populosos, de maior PIB per capta, etc), usando um menu suspenso (_dropdown_).
+a serem exibidos (mais populosos, de maior PIB per capta, etc), usando um menu suspenso (_dropdown_).
 ::::
 
 ##
@@ -512,6 +512,6 @@ a serem exibidos (maios populosos, de maior PIB per capta, etc), usando um menu 
 Altere a aplicação Web de forma que o usuário consiga escolher quais colunas serão usadas
 no gráfico de dispersão.
 
-Ou seja, quais colunas representarão os eixos X e Y e o tamanho e a cor dos pontos.
+Ou seja, quais colunas representarão os eixos X e Y, o tamanho dos pontos e a cor dos pontos.
 ::::
 

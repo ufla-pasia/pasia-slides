@@ -15,15 +15,104 @@ O conteúdo dessa aula é inspirado no **capítulo 17** do livro:
 
 ## 
 
-Livro: introdução capítulo
+Nesta aula vamos aprender a fazer programas que apresentam visualização de dados acessados via APIs.
 
-Livro: Using an API
+- Usaremos [APIs]{.alert} (_Interfaces de Prgramação de Aplicações_) para **requisitar** 
+  automaticamente **informações** específicas de um site.
+- E usaremos essas informações para gerar visualizações.
+
+. . .
+
+O bacana dessa abordagem é que sempre que executarmos nossa aplicação
+
+- Ela utilizará os dados mais recentes disponíveis.
+
+## Usando uma API
+
+Uma API (web) é a parte de um site desenvolvida para interagir com programas.
+
+- Os programas que acessam uma API usam URLs ("links") bem específicos para requisitar
+  determinadas informações.
+- Nós chamamos esse tipo de requisição de [chamada de API]{.alert}.
+
+. . .
+
+Os dados solicitados sãp retornados em um formato que facilita o processamento.
+
+- Geralmente JSON ou CSV.
+- A maioria das aplicações que usa algum tipo de fonte externa de dados,
+  - como apps que se integram a sites de redes sociais
+  - dependem de chamadas de APIs.
 
 # Usando a API do GitHub {background-color="#40666e"}
 
-## Obtendo dados através de uma chamada de API
+## Requisitando dados através de uma chamada de API
+
+Começaremos com um exemplo de uso da API do GitHub.
+
+- Ela permite a busca de diversas informações relacionadas, por exemplo,
+  aos repositórios da plataforma.
+
+. . .
+
+Antes de fazermos chamada de API via código, podemos ter uma ideia
+do que é uma chamada dessas acessando o link abaixo no nosso navegador.
+
+- [https://api.github.com/search/repositories?q=language:python+sort:stars](https://api.github.com/search/repositories?q=language:python+sort:stars)
+- Essa chamada retorna informações sobre repositórios Python mais populares atualmente hospedados no GitHub.
+
+##
+
+Vamos entender cada parte da URL de requisição.
+
+- Primeira parte `https://api.github.com/`: direciona a requisição para a parte do site do GitHub que responde às chamadas de API.
+- `search/repositories`: instrui a API a realizar uma pesquisa em todos os repositórios públicos no GitHub.
+  - Cada API pode ter uma ou mais instruções disponíveis.
+- `?`: indica que vamos passar parâmetros para a instrução.
+- `q=`: o _q_ vem de _query_, indicando que vamos fazer uma consulta.
+-`language:python`: parâmetro que indica que queremos apenas os repositórios cuja linguagem principal seja Python.
+- `+sort:stars`: ordena o problema pelo número de estrelas recebidas.
+
+##
+
+Quanto ao resultado da requisição, podemos ver que é retornado um JSON.
+
+- Esse formato facilita o processamento por um programa.
+- Não é um formato para a leitura direta como estamos fazendo :)
+
+. . .
+
+De todo modo, os campos no primeiro nível da hierarquia são:
+
+- `"total_count"`: indica quantos repositórios atendem aos critérios da busca.
+  - No caso é o total de projetos Python públicos existentes atualmente no GitHub.
+- `"incomplete_results"`: indica se a consulta foi feita de forma completa ou se foi interrompida.
+  - Ela pode ser interrompida se a consulta passar de limite de tempo.
+  - Isso é feito para evitar que a API fique sobrecarregada e deixe de responder a todos os usuários.
+- `"items"`: 
+  - É a lista com os dados dos repositórios consultados.
+
+##
+
+Apesar do resultado ser grande, dá para perceber que não foram retornados os dados
+de todos os milhões de repositórios Python.
+
+- Isso porque as APIs geralmente retornam apenas parte dos dados solicitados.
+- Para evitar sobrecarregar tanto a API, quanto o programa que está fazendo a consulta.
+- Cada "parte" retornada é geralmente chamada de página e cada página tem um tamanho padrão.
+
+. . .
+
+Assim, a consulta feita retornou apenas a primeira página de informações.
+
+- Se quisermos os dados da próxima página, podemos passar mais um parâmetro para a requisição.
+- Usamos `&` seguido do parâmetro, que no caso seria `page:2`.
+- Portanto a consulta da nova página seria:
+  [https://api.github.com/search/repositories?q=language:python+sort:stars+page:2](https://api.github.com/search/repositories?q=language:python+sort:stars+page:2)
 
 ## Módulo Requests
+
+
 
 ## Processando uma Resposta de API
 
