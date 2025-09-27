@@ -2235,9 +2235,10 @@ web_commit_signoff_required</code></pre>
 <span id="cb30-8"><a></a>    return requests.get(url).json()['modelos']</span>
 <span id="cb30-9"><a></a>           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^</span>
 <span id="cb30-10"><a></a>KeyError: 'modelos'</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment">
+</section>
+<section id="section-56" class="slide level2">
+<h2></h2>
 <p>Joguei o erro no chat do Copilot e obtive a resposta abaixo, junto com o código alterado.</p>
-</div>
 <div class="fragment">
 <div title="GitHub Copilot">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -2253,7 +2254,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-56" class="slide level2">
+<section id="section-57" class="slide level2">
 <h2></h2>
 <p>Continuou gerando erro:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb31-1"><a></a>Traceback (most recent call last):</span>
@@ -2279,7 +2280,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-57" class="slide level2">
+<section id="section-58" class="slide level2">
 <h2></h2>
 <p>Junto com a resposta veio um código alterado com proteções mas que não retornava nenhuma informação.</p>
 <ul>
@@ -2289,7 +2290,7 @@ web_commit_signoff_required</code></pre>
 <p>Usando o depurador vi que estava sendo retornada uma mensagem de erro dizendo que a taxa de requisições da API tinha sido excedida.</p>
 </div>
 </section>
-<section id="section-58" class="slide level2">
+<section id="section-59" class="slide level2">
 <h2></h2>
 <div title="Prompt">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
@@ -2304,7 +2305,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-59" class="slide level2">
+<section id="section-60" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a><span class="im">import</span> requests</span>
 <span id="cb32-2"><a></a></span>

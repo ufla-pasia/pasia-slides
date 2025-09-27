@@ -1828,7 +1828,7 @@ Traceback (most recent call last):
 KeyError: 'modelos'
 ```
 
-. . .
+##
 
 Joguei o erro no chat do Copilot e obtive a resposta abaixo, junto com o código alterado.
 
@@ -1975,3 +1975,27 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## 
+
+Sobre a questão do código não parecer estar consultando informações
+específicas sobre Minas Gerais, escrevi o seguinte prompt.
+
+::: {.callout-caution title="Prompt" icon="false"}
+No início eu tinha pedido preços de Minas Gerais. Mas não há nada no código que indique que os preços se referem ao estado. Existe alguma forma de fazer a consulta por estado?
+:::
+
+##
+
+E tive a seguinte resposta:
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+Atualmente, a API pública da FIPE (https://parallelum.com.br/fipe/api/v1/) **não permite consultar preços por estado**. O valor retornado é sempre o preço médio nacional calculado pela FIPE, sem distinção regional.
+
+**Resumo:**
+- O preço retornado é nacional, não estadual.
+- Não há parâmetro ou endpoint para filtrar por estado (ex: Minas Gerais).
+- Se precisar de preços regionais, será necessário buscar fontes alternativas, como portais de classificados ou APIs privadas de mercado automotivo.
+
+Se precisar, posso adicionar uma mensagem ao seu programa informando ao usuário que o valor exibido é nacional.
+:::
