@@ -5738,5 +5738,467 @@
     "title": "Visualizando Dados",
     "section": "",
     "text": "Tarefa 9\n\n\nAltere a aplicação Web de forma que o usuário consiga escolher quais colunas serão usadas no gráfico de dispersão.\nOu seja, quais colunas representarão os eixos X e Y e o tamanho e a cor dos pontos."
+  },
+  {
+    "objectID": "aula_t8.html#section",
+    "href": "aula_t8.html#section",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "O conteúdo dessa aula é inspirado no capítulo 17 do livro:"
+  },
+  {
+    "objectID": "aula_t8.html#section-1",
+    "href": "aula_t8.html#section-1",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Nesta aula vamos aprender a fazer programas que apresentam visualização de dados acessados via APIs.\n\nUsaremos APIs (Interfaces de Programação de Aplicações) para requisitar automaticamente informações específicas de um site.\nE usaremos essas informações para gerar visualizações.\n\n\nO bacana dessa abordagem é que sempre que executarmos nossa aplicação\n\nserão utilizados os dados mais recentes disponíveis."
+  },
+  {
+    "objectID": "aula_t8.html#usando-uma-api",
+    "href": "aula_t8.html#usando-uma-api",
+    "title": "Trabalhando com APIs",
+    "section": "Usando uma API",
+    "text": "Usando uma API\nUma API (web) é a parte de um site desenvolvida para interagir com programas.\n\nOs programas que acessam uma API usam URLs (“links”) bem específicas para requisitar determinadas informações.\nNós chamamos esse tipo de requisição de chamada de API.\n\n\nOs dados solicitados são retornados em um formato que facilita o processamento.\n\nGeralmente JSON ou CSV."
+  },
+  {
+    "objectID": "aula_t8.html#requisitando-dados-através-de-uma-chamada-de-api",
+    "href": "aula_t8.html#requisitando-dados-através-de-uma-chamada-de-api",
+    "title": "Trabalhando com APIs",
+    "section": "Requisitando dados através de uma chamada de API",
+    "text": "Requisitando dados através de uma chamada de API\n\nAntes de fazermos chamada de API via código, podemos ter uma ideia do que é uma chamada dessas acessando o link abaixo no nosso navegador.\n\nhttps://api.github.com/search/repositories?q=language:python+sort:stars\nEssa chamada retorna informações sobre repositórios Python mais populares atualmente hospedados no GitHub.\n\n\n\nVamos entender cada parte da URL de requisição."
+  },
+  {
+    "objectID": "aula_t8.html#section-2",
+    "href": "aula_t8.html#section-2",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "A maioria das aplicações que usa algum tipo de fonte externa de dados,\n\ncomo apps que se integram a sites de redes sociais,\ndependem de chamadas de APIs.\n\n\nInclusive, é muito comum que um app de smartphone ou um site utilize várias APIs ao mesmo tempo."
+  },
+  {
+    "objectID": "aula_t8.html#section-3",
+    "href": "aula_t8.html#section-3",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Começaremos com um exemplo de uso da API do GitHub.\n\nEla permite a busca de diversas informações relacionadas, por exemplo, aos repositórios da plataforma."
+  },
+  {
+    "objectID": "aula_t8.html#section-4",
+    "href": "aula_t8.html#section-4",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "https://api.github.com/: direciona a requisição para a parte do site do GitHub que responde às chamadas de API.\nsearch/repositories: instrui a API a realizar uma pesquisa em todos os repositórios públicos no GitHub.\n\nCada API pode ter uma ou mais instruções disponíveis.\n\n?: indica que vamos passar parâmetros para a instrução.\nq=: o q vem de query, indicando que vamos fazer uma consulta.\nlanguage:python: parâmetro que indica que queremos apenas os repositórios cuja linguagem principal seja Python.\n+sort:stars: ordena os repositórios pelo número de estrelas recebidas."
+  },
+  {
+    "objectID": "aula_t8.html#módulo-requests",
+    "href": "aula_t8.html#módulo-requests",
+    "title": "Trabalhando com APIs",
+    "section": "Módulo Requests",
+    "text": "Módulo Requests\nO módulo requests permite que um programa Python faça requisições em sites.\n\nEle não é um módulo built-in e, portanto, precisa ser instalado.\nDica: como já vimos, o ideal é criar um ambiente virtual para fazer a instalação.\n\n\nVamos utilizá-lo para fazer uma requisição à API do GitHub."
+  },
+  {
+    "objectID": "aula_t8.html#processando-uma-resposta-de-api",
+    "href": "aula_t8.html#processando-uma-resposta-de-api",
+    "title": "Trabalhando com APIs",
+    "section": "Processando uma Resposta de API",
+    "text": "Processando uma Resposta de API\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nurl += \"?q=language:python+sort:stars\"\nurl += \"+stars:&gt;50000\"\n\n\nImportamos o módulo requests para fazer requisições HTTP.\nMontamos a URL da API com os parâmetros de busca.\n\nEstamos acrescentando aqui um filtro para só buscar repositórios com mais de 50 mil estrelas"
+  },
+  {
+    "objectID": "aula_t8.html#trabalhando-com-o-dicionário-de-resposta",
+    "href": "aula_t8.html#trabalhando-com-o-dicionário-de-resposta",
+    "title": "Trabalhando com APIs",
+    "section": "Trabalhando com o Dicionário de Resposta",
+    "text": "Trabalhando com o Dicionário de Resposta\nVamos agora processar os dados que guardamos no dicionário\n\nacrescentando o seguinte trecho ao código anterior:\n\n\n    print(f\"Total de repositórios: {dados['total_count']}\")\n    print(f\"Resultados são completos? {'Não' if dados['incomplete_results'] else 'Sim'}\")\n    print(f\"Número de repositórios retornados: {len(dados['items'])}\\n\")\n\n    # Mostra dados do primeiro repositório\n    repositorio = dados['items'][0]\n    print(f\"Chaves disponíveis: {len(repositorio)}\")\n    for chave in sorted(repositorio.keys()):\n        print(chave)"
+  },
+  {
+    "objectID": "aula_t8.html#resumo-dos-repositórios-top",
+    "href": "aula_t8.html#resumo-dos-repositórios-top",
+    "title": "Trabalhando com APIs",
+    "section": "Resumo dos Repositórios Top",
+    "text": "Resumo dos Repositórios Top\nCom o código que fizemos conseguimos agora mostrar facilmente as informações selecionadas de todos os repositórios retornados.\n\n    print(\"Informações dos repositórios retornados:\")\n    for repositorio in dados['items']:\n        print(f\"\\nNome: {repositorio['name']}\")\n        print(f\"  Descrição: {repositorio['description']}\")\n        print(f\"  Proprietário: {repositorio['owner']['login']}\")\n        print(f\"  Número de estrelas: {repositorio['stargazers_count']}\")\n        print(f\"  URL: {repositorio['html_url']}\")"
+  },
+  {
+    "objectID": "aula_t8.html#monitorando-limites-de-taxa-de-acesso",
+    "href": "aula_t8.html#monitorando-limites-de-taxa-de-acesso",
+    "title": "Trabalhando com APIs",
+    "section": "Monitorando Limites de Taxa de Acesso",
+    "text": "Monitorando Limites de Taxa de Acesso"
+  },
+  {
+    "objectID": "aula_t8.html#gráfico-básico-com-os-repositórios",
+    "href": "aula_t8.html#gráfico-básico-com-os-repositórios",
+    "title": "Trabalhando com APIs",
+    "section": "Gráfico básico com os repositórios",
+    "text": "Gráfico básico com os repositórios\nVamos, com ajuda do Copilot, criar um gráfico com os dados que obtivemos.\n\n\n\n\nPrompt\n\n\n\n# Exibe gráfico no plotly mostrando os nomes dos repositórios no eixo x \n# e o número de estrelas no eixo y\n\n\n\n\n\n\n\n\n\n\nGitHub Copilot\n\n\n\n    import plotly.express as px\n    \n    nomes = [item['name'] for item in dados['items']]\n    estrelas = [item['stargazers_count'] for item in dados['items']]\n    fig = px.bar(x=nomes, y=estrelas, labels={'x': 'Repositório', 'y': 'Estrelas'},\n                 title='Repositórios Python mais populares no GitHub')\n    fig.show()"
+  },
+  {
+    "objectID": "aula_t8.html#customizando-tooltip",
+    "href": "aula_t8.html#customizando-tooltip",
+    "title": "Trabalhando com APIs",
+    "section": "Customizando tooltip",
+    "text": "Customizando tooltip\nVamos agora customizar as tooltips do gráfico.\n\nSão as informações que aparecem quando passamos o mouse sobre as barras do gráfico.\n\n\n\n\n\n\nPrompt\n\n\nAltere as tooltips do gráfico para mostrar a descrição e o proprietário do repositório junto com o número de estrelas."
+  },
+  {
+    "objectID": "aula_t8.html#adicionando-links-clicáveis",
+    "href": "aula_t8.html#adicionando-links-clicáveis",
+    "title": "Trabalhando com APIs",
+    "section": "Adicionando links clicáveis",
+    "text": "Adicionando links clicáveis\nO Plotly permite o uso de HTML nos seus textos.\n\nCom isso, podemos transformar os nomes dos repositórios em links clicáveis.\n\n\n\n\n\n\nPrompt\n\n\nAltere os nomes dos repositórios no eixo x para que sejam links clicáveis que direcionem para a página do repositório no GitHub."
+  },
+  {
+    "objectID": "aula_t8.html#documentação-e-copilot",
+    "href": "aula_t8.html#documentação-e-copilot",
+    "title": "Trabalhando com APIs",
+    "section": "Documentação e Copilot",
+    "text": "Documentação e Copilot\nPara usar uma API, podemos consultar sua documentação.\n\nAlém, é claro, de usar Assistentes de IA para ajudar a escrever o código.\nA documentação da API citada está disponível no link abaixo: https://servicodados.ibge.gov.br/api/docs/nomes?versao=2."
+  },
+  {
+    "objectID": "aula_t8.html#consultando-ranking-dos-nomes-mais-comuns",
+    "href": "aula_t8.html#consultando-ranking-dos-nomes-mais-comuns",
+    "title": "Trabalhando com APIs",
+    "section": "Consultando ranking dos nomes mais comuns",
+    "text": "Consultando ranking dos nomes mais comuns\nVamos então usar o Copilot para criar um código que:\n\nconsulte o ranking dos nomes mais comuns\ne exiba o resultado em um gráfico usando plotly.\n\n\n\n\n\n\nPrompt\n\n\nGostaria de gerar um gráfico usando Plotly que mostrasse o ranking dos nomes mais comuns no Brasil. Essa informação pode ser obtida da API do IBGE, disponível no link https://servicodados.ibge.gov.br/api/docs/nomes?versao=2"
+  },
+  {
+    "objectID": "aula_t8.html#consultando-frequência-de-um-nome",
+    "href": "aula_t8.html#consultando-frequência-de-um-nome",
+    "title": "Trabalhando com APIs",
+    "section": "Consultando frequência de um nome",
+    "text": "Consultando frequência de um nome\nA API do IBGE também permite consultar a frequência de um nome específico.\n\nVamos criar outro programa agora para fazer essa consulta.\n\n\n\n\n\n\nPrompt\n\n\nGostaria de um programa em Python que consultasse a frequência de um nome específico no Brasil usando a API do IBGE. O programa deve solicitar ao usuário que digite um nome e, em seguida, exibir a frequência desse nome ao longo dos anos em um gráfico usando Plotly."
+  },
+  {
+    "objectID": "aula_t8.html#verificando-por-município",
+    "href": "aula_t8.html#verificando-por-município",
+    "title": "Trabalhando com APIs",
+    "section": "Verificando por município",
+    "text": "Verificando por município\nPara finalizar, os exemplos com a API de nomes do IBGE, podemos verificar a frequência de um nome por município.\n\nA API permite essa consulta, mas exige o código do município.\nEsses códigos podem ser obtidos na API de municípios do IBGE.\n\n\n\n\n\n\nPrompt\n\n\nGostaria de um programa em Python que consultasse a frequência de um nome específico em um município do Brasil usando a API do IBGE. O programa deve solicitar ao usuário que digite um nome e um município. Em seguida, deve usar a API do IBGE para descobrir o código do município e então seguida exibir a frequência desse nome no município em um gráfico usando Plotly."
+  },
+  {
+    "objectID": "aula_t8.html#section-5",
+    "href": "aula_t8.html#section-5",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Quanto ao resultado da requisição, podemos ver que é retornado um JSON.\n\nEsse formato facilita o processamento por um programa.\nNão é feito para a leitura direta como estamos fizemos :)\n\n\nDe todo modo, vamos avaliar pelos menos os campos no primeiro nível da hierarquia."
+  },
+  {
+    "objectID": "aula_t8.html#section-6",
+    "href": "aula_t8.html#section-6",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "\"total_count\": indica quantos repositórios atendem aos critérios da busca.\n\nNo caso é o total de projetos Python públicos existentes atualmente no GitHub.\n\n\"incomplete_results\": indica se a consulta foi feita de forma completa ou se foi interrompida.\n\nEla pode ser interrompida se a consulta passar de limite de tempo, por exemplo.\nIsso é feito para evitar que a API fique sobrecarregada e deixe de responder a todos os usuários.\n\n\"items\":\n\nÉ a lista com os dados dos repositórios consultados."
+  },
+  {
+    "objectID": "aula_t8.html#section-7",
+    "href": "aula_t8.html#section-7",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Apesar do resultado ser grande, dá para perceber que não foram retornados os dados de todos os milhões de repositórios Python.\n\nIsso porque as APIs geralmente retornam apenas parte dos dados solicitados.\nPara evitar sobrecarregar tanto a API, quanto o programa que está fazendo a consulta.\nCada “parte” retornada é geralmente chamada de página e cada página tem um tamanho padrão.\n\n\nAssim, a consulta feita retornou apenas a primeira página de informações."
+  },
+  {
+    "objectID": "aula_t8.html#section-8",
+    "href": "aula_t8.html#section-8",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Se quisermos os dados da próxima página, podemos passar mais parâmetros para a requisição.\n\nUsamos & para separar os parâmetros.\npage=2: especifica que queremos a segunda página.\nper_page=30: é recomendável explicitar quantos itens queremos em cada página.\nPortanto a consulta dos dados da segunda página seria: https://api.github.com/search/repositories?q=language:python+sort:stars&per_page=30&page=2"
+  },
+  {
+    "objectID": "aula_t8.html#section-9",
+    "href": "aula_t8.html#section-9",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Observação importante:\n\nA API do GitHub não garante que os resultados são determinísticos.\n\nespecialmente quando são retornados muitos dados.\n\nE, claro, se o campo \"incomplete_results\" retornar true, chamadas sucessivas não terão consistência garantida.\n\n\nDica: use outros parâmetros para refinar a busca de forma que ela tenha menos resultados disponíveis no total."
+  },
+  {
+    "objectID": "aula_t8.html#section-10",
+    "href": "aula_t8.html#section-10",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "import requests\n\nurl = \"https://api.github.com/search/repositories\"\nurl += \"?q=language:python+sort:stars\"\nurl += \"+stars:&gt;50000\" \n\ncabecalhos = {\"Accept\": \"application/vnd.github.v3+json\"}\nresposta = requests.get(url, headers=cabecalhos)\n\nif resposta.status_code == 200:\n  dados = resposta.json()\n  print(dados.keys())\n\n\nConvertemos a resposta JSON em um dicionário Python.\nE mostramos as chaves principais do dicionário retornado."
+  },
+  {
+    "objectID": "aula_t8.html#section-11",
+    "href": "aula_t8.html#section-11",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Quando fiz essa consulta, obtive o seguinte resultado.\n\nUse a barra de rolagem para ver o retorno completo.\n\nTotal de repositórios: 69\nResultados são completos? Sim\nNúmero de repositórios retornados: 30\n\nChaves disponíveis: 80\nallow_forking\narchive_url\narchived\nassignees_url\nblobs_url\nbranches_url\nclone_url\ncollaborators_url\ncomments_url\ncommits_url\ncompare_url\ncontents_url\ncontributors_url\ncreated_at\ndefault_branch\ndeployments_url\ndescription\ndisabled\ndownloads_url\nevents_url\nfork\nforks\nforks_count\nforks_url\nfull_name\ngit_commits_url\ngit_refs_url\ngit_tags_url\ngit_url\nhas_discussions\nhas_downloads\nhas_issues\nhas_pages\nhas_projects\nhas_wiki\nhomepage\nhooks_url\nhtml_url\nid\nis_template\nissue_comment_url\nissue_events_url\nissues_url\nkeys_url\nlabels_url\nlanguage\nlanguages_url\nlicense\nmerges_url\nmilestones_url\nmirror_url\nname\nnode_id\nnotifications_url\nopen_issues\nopen_issues_count\nowner\nprivate\npulls_url\npushed_at\nreleases_url\nscore\nsize\nssh_url\nstargazers_count\nstargazers_url\nstatuses_url\nsubscribers_url\nsubscription_url\nsvn_url\ntags_url\nteams_url\ntopics\ntrees_url\nupdated_at\nurl\nvisibility\nwatchers\nwatchers_count\nweb_commit_signoff_required"
+  },
+  {
+    "objectID": "aula_t8.html#entendendo-o-código-passo-a-passo",
+    "href": "aula_t8.html#entendendo-o-código-passo-a-passo",
+    "title": "Trabalhando com APIs",
+    "section": "Entendendo o Código Passo a Passo",
+    "text": "Entendendo o Código Passo a Passo\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nurl += \"?q=language:python+sort:stars\"\nurl += \"+stars:&gt;50000\" \n\ncabecalhos = {\"Accept\": \"application/vnd.github.v3+json\"}\nresposta = requests.get(url, headers=cabecalhos)\nprint(f\"Status code: {resposta.status_code}\")\n\ndados = resposta.json()\n\nprint(dados.keys())\na\n\nImportação do módulo: Importamos o módulo requests para fazer requisições HTTP.\n\n\nConstrução da URL: Montamos a URL da API com os parâmetros de busca.\n\n\nCabeçalhos: Definimos os cabeçalhos da requisição para especificar a versão da API.\n\n\nRequisição: Fazemos a chamada GET para a API com a URL e cabeçalhos.\n\n\nVerificação: Imprimimos o código de status para verificar se a requisição foi bem-sucedida.\n\n\nConversão: Convertemos a resposta JSON em um dicionário Python.\n\n\nExploração: Mostramos as chaves principais do dicionário retornado."
+  },
+  {
+    "objectID": "aula_t8.html#section-12",
+    "href": "aula_t8.html#section-12",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Verificando as chaves retornadas vamos escolher algumas informações a serem exibidos para o primeiro repositório retornado.\n\n    repositorio = dados['items'][0]\n    print(\"Primeiro repositório:\")\n    print(f\"Nome: {repositorio['name']}\")\n    print(f\"Descrição: {repositorio['description']}\")\n    print(f\"Proprietário: {repositorio['owner']['login']}\")\n    print(f\"Número de estrelas: {repositorio['stargazers_count']}\")\n    print(f\"URL: {repositorio['html_url']}\")"
+  },
+  {
+    "objectID": "aula_t8.html#section-13",
+    "href": "aula_t8.html#section-13",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "repositorio = dados['items'][0]\n    print(\"Primeiro repositório:\")\n    print(f\"Nome: {repositorio['name']}\")\n    print(f\"Descrição: {repositorio['description']}\")\n    print(f\"Proprietário: {repositorio['owner']['login']}\")\n    print(f\"Número de estrelas: {repositorio['stargazers_count']}\")\n    print(f\"URL: {repositorio['html_url']}\")\nResultado:\nPrimeiro repositório:\nNome: free-programming-books\nDescrição: :books: Freely available programming books\nProprietário: EbookFoundation\nNúmero de estrelas: 370665\nURL: https://github.com/EbookFoundation/free-programming-books"
+  },
+  {
+    "objectID": "aula_t8.html#processando-uma-resposta-de-api-1",
+    "href": "aula_t8.html#processando-uma-resposta-de-api-1",
+    "title": "Trabalhando com APIs",
+    "section": "Processando uma Resposta de API",
+    "text": "Processando uma Resposta de API\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nurl += \"?q=language:python+sort:stars\"\nurl += \"+stars:&gt;50000\" \n\ncabecalhos = {\"Accept\": \"application/vnd.github.v3+json\"}\n\n\nDefinimos os cabeçalhos da requisição especificando:\n\na versão da API.\no formato de retorno da resposta"
+  },
+  {
+    "objectID": "aula_t8.html#processando-uma-resposta-de-api-2",
+    "href": "aula_t8.html#processando-uma-resposta-de-api-2",
+    "title": "Trabalhando com APIs",
+    "section": "Processando uma Resposta de API",
+    "text": "Processando uma Resposta de API\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nurl += \"?q=language:python+sort:stars\"\nurl += \"+stars:&gt;50000\" \n\ncabecalhos = {\"Accept\": \"application/vnd.github.v3+json\"}\nresposta = requests.get(url, headers=cabecalhos)\n\n\nFazemos a chamada GET para a API com a URL e os cabeçalhos.\nE guardamos a resposta retornada."
+  },
+  {
+    "objectID": "aula_t8.html#processando-uma-resposta-de-api-3",
+    "href": "aula_t8.html#processando-uma-resposta-de-api-3",
+    "title": "Trabalhando com APIs",
+    "section": "Processando uma Resposta de API",
+    "text": "Processando uma Resposta de API\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nurl += \"?q=language:python+sort:stars\"\nurl += \"+stars:&gt;50000\" \n\ncabecalhos = {\"Accept\": \"application/vnd.github.v3+json\"}\nresposta = requests.get(url, headers=cabecalhos)\n\nif resposta.status_code == 200:\n\n\nVerificamos se a requisição foi bem-sucedida.\nExistem diferentes valores que podem ser retornados como, por exemplo: 404 (não encontrado) ou 403 (proibido)."
+  },
+  {
+    "objectID": "aula_t8.html#processando-uma-resposta-de-api-4",
+    "href": "aula_t8.html#processando-uma-resposta-de-api-4",
+    "title": "Trabalhando com APIs",
+    "section": "Processando uma Resposta de API",
+    "text": "Processando uma Resposta de API\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nurl += \"?q=language:python+sort:stars\"\nurl += \"+stars:&gt;50000\" \n\ncabecalhos = {\"Accept\": \"application/vnd.github.v3+json\"}\nresposta = requests.get(url, headers=cabecalhos)\n\nif resposta.status_code == 200:\n  dados = resposta.json()\n  print(dados.keys())\n\n\nConvertemos a resposta JSON em um dicionário Python.\nE mostramos as chaves principais do dicionário retornado."
+  },
+  {
+    "objectID": "aula_t8.html#section-14",
+    "href": "aula_t8.html#section-14",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Se fizermos muitas consultas consecutivas, podemos receber uma mensagem de erro\n\nA mensagem indica que atingimos o limite de requisições.\nNesse caso, precisamos aguardar um tempo antes de fazer novas requisições.\n\n\n\n\n\n\n\n\nDica\n\n\nMuitas APIs exigem o registro e obtenção de uma chave de API ou token de acesso para fazer chamadas de API.\nNo caso do GitHub, podemos fazer chamadas sem autenticação. Mas, usando autenticação, podemos fazer um número maior de requisições."
+  },
+  {
+    "objectID": "aula_t8.html#monitorando-limites-de-requisições-da-api",
+    "href": "aula_t8.html#monitorando-limites-de-requisições-da-api",
+    "title": "Trabalhando com APIs",
+    "section": "Monitorando Limites de Requisições da API",
+    "text": "Monitorando Limites de Requisições da API\nA maioria das APIs públicas impõe limites de requisições.\n\nou seja, um número máximo de chamadas que podem ser feitas em um determinado período de tempo.\nIsso é feito para evitar que a API fique sobrecarregada e deixe de responder a todos os usuários.\n\n\nNo caso da API do GitHub, podemos consultar esses limites pelo seguinte link:\n\nhttps://api.github.com/rate_limit"
+  },
+  {
+    "objectID": "aula_t8.html#section-15",
+    "href": "aula_t8.html#section-15",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Observação:\n\nPara executar o código gerado, foi necessário instalar os módulos abaixo no ambiente virtual:\nplotly[express]\npandas"
+  },
+  {
+    "objectID": "aula_t8.html#section-16",
+    "href": "aula_t8.html#section-16",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Observação:\n\nPara executar o código gerado, foi necessário instalar os módulos abaixo no ambiente virtual:\nplotly[express]\npandas"
+  },
+  {
+    "objectID": "aula_t8.html#section-17",
+    "href": "aula_t8.html#section-17",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "GitHub Copilot\n\n\n\nnomes = [item['name'] for item in dados['items']]\n    estrelas = [item['stargazers_count'] for item in dados['items']]\n    descricoes = [item['description'] for item in dados['items']]\n    proprietarios = [item['owner']['login'] for item in dados['items']]\n\n    fig = px.bar(\n        x=nomes,\n        y=estrelas,\n        labels={'x': 'Repositório', 'y': 'Estrelas'},\n        title='Repositórios Python mais populares no GitHub',\n        hover_data={\n            'Descrição': descricoes,\n            'Proprietário': proprietarios,\n            'Estrelas': estrelas\n        }\n    )\n    fig.show()"
+  },
+  {
+    "objectID": "aula_t8.html#section-18",
+    "href": "aula_t8.html#section-18",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Vamos agora customizar as tooltips do gráfico.\n\nSão as informações que aparecem quando passamos o mouse sobre as barras do gráfico.\n\n\n\n\n\n\nPrompt\n\n\nAltere as tooltips do gráfico para mostrar a descrição e o proprietário do repositório junto com o número de estrelas."
+  },
+  {
+    "objectID": "aula_t8.html#section-19",
+    "href": "aula_t8.html#section-19",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "GitHub Copilot\n\n\n    nomes = [item['name'] for item in dados['items']]\n    estrelas = [item['stargazers_count'] for item in dados['items']]\n    descricoes = [item['description'] for item in dados['items']]\n    proprietarios = [item['owner']['login'] for item in dados['items']]\n    urls = [item['html_url'] for item in dados['items']]\n\n    # Cria nomes como links HTML\n    nomes_links = [f'&lt;a href=\"{url}\"&gt;{nome}&lt;/a&gt;' for nome, url in zip(nomes, urls)]\n\n    fig = px.bar(\n        x=nomes_links,\n        y=estrelas,\n        labels={'x': 'Repositório', 'y': 'Estrelas'},\n        title='Repositórios Python mais populares no GitHub',\n        hover_data={\n            'Descrição': descricoes,\n            'Proprietário': proprietarios,\n            'Estrelas': estrelas\n        }\n    )\n    fig.update_xaxes(tickfont=dict(size=10), tickmode='array', tickvals=nomes_links, ticktext=nomes_links)\n    fig.update_layout(xaxis_tickangle=-45)\n    fig.update_traces(hovertemplate='&lt;b&gt;%{x}&lt;/b&gt;&lt;br&gt;Estrelas: %{y}&lt;extra&gt;&lt;/extra&gt;', selector=dict(type='bar'))\n    fig.show()"
+  },
+  {
+    "objectID": "aula_t8.html#section-20",
+    "href": "aula_t8.html#section-20",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Vamos agora passar a outro exemplo.\n\nO IBGE possui diversas APIs públicas, com informações interessantes.\nUma delas é a API de Nomes, que disponibiliza dados sobre a frequência de nomes no Brasil."
+  },
+  {
+    "objectID": "aula_t8.html#section-21",
+    "href": "aula_t8.html#section-21",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "import requests\nimport plotly.express as px\nimport plotly.graph_objects as go\nimport pandas as pd\n\ndef obter_ranking_nomes(limite=20):\n    \"\"\"\n    Obtém o ranking dos nomes mais comuns no Brasil usando a API do IBGE\n    \n    Args:\n        limite (int): Número de nomes para exibir no ranking\n        \n    Returns:\n        pd.DataFrame: DataFrame com os nomes e suas frequências\n    \"\"\"\n    try:\n        # URL da API do IBGE para ranking de nomes\n        url = f\"https://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking?qtd={limite}\"\n        \n        # Fazendo a requisição\n        response = requests.get(url)\n        response.raise_for_status()  # Levanta exceção se houver erro HTTP\n        \n        # Convertendo para JSON\n        dados = response.json()\n        \n        # Extraindo nomes e frequências\n        nomes = []\n        frequencias = []\n        \n        for item in dados[0]['res']:  # dados[0]['res'] contém a lista de nomes\n            nomes.append(item['nome'])\n            frequencias.append(item['freq'])\n        \n        # Criando DataFrame\n        df = pd.DataFrame({\n            'Nome': nomes,\n            'Frequência': frequencias,\n            'Posição': range(1, len(nomes) + 1)\n        })\n        \n        return df\n        \n    except requests.exceptions.RequestException as e:\n        print(f\"Erro ao acessar a API: {e}\")\n        return None\n    except KeyError as e:\n        print(f\"Erro ao processar dados da API: {e}\")\n        return None\n\ndef criar_grafico_ranking(df, titulo=\"Ranking dos Nomes Mais Comuns no Brasil\"):\n    \"\"\"\n    Cria gráfico de barras horizontais com o ranking dos nomes\n    \n    Args:\n        df (pd.DataFrame): DataFrame com os dados dos nomes\n        titulo (str): Título do gráfico\n        \n    Returns:\n        plotly.graph_objects.Figure: Figura do Plotly\n    \"\"\"\n    # Ordenando por frequência (decrescente) para garantir ordem correta\n    df_ordenado = df.sort_values('Frequência', ascending=True)  # True para barras horizontais\n    \n    # Criando gráfico de barras horizontais\n    fig = px.bar(\n        df_ordenado,\n        x='Frequência',\n        y='Nome',\n        orientation='h',\n        title=titulo,\n        labels={'Frequência': 'Número de Pessoas', 'Nome': 'Nome'},\n        color='Frequência',\n        color_continuous_scale='viridis',\n        text='Frequência'\n    )\n    \n    # Personalizando o layout\n    fig.update_layout(\n        height=600,\n        width=1000,\n        title_font_size=16,\n        xaxis_title_font_size=14,\n        yaxis_title_font_size=14,\n        showlegend=False,\n        title_x=0.5  # Centraliza o título\n    )\n    \n    # Personalizando as barras\n    fig.update_traces(\n        texttemplate='%{text:,.0f}',  # Formato dos números\n        textposition='outside',\n        marker_line_color='rgba(0,0,0,0.3)',\n        marker_line_width=1\n    )\n    \n    # Ajustando eixos\n    fig.update_xaxes(tickformat=',.0f')  # Formato dos números no eixo X\n    \n    return fig\n\ndef criar_grafico_top10(df):\n    \"\"\"\n    Cria um gráfico circular (pizza) com os top 10 nomes\n    \n    Args:\n        df (pd.DataFrame): DataFrame com os dados dos nomes\n        \n    Returns:\n        plotly.graph_objects.Figure: Figura do Plotly\n    \"\"\"\n    # Pegando apenas os top 10\n    df_top10 = df.head(10)\n    \n    fig = px.pie(\n        df_top10,\n        values='Frequência',\n        names='Nome',\n        title='Top 10 Nomes Mais Comuns no Brasil',\n        color_discrete_sequence=px.colors.qualitative.Set3\n    )\n    \n    fig.update_traces(\n        textposition='inside',\n        textinfo='percent+label',\n        hovertemplate='&lt;b&gt;%{label}&lt;/b&gt;&lt;br&gt;Pessoas: %{value:,.0f}&lt;br&gt;Percentual: %{percent}&lt;extra&gt;&lt;/extra&gt;'\n    )\n    \n    fig.update_layout(\n        title_font_size=16,\n        title_x=0.5,\n        height=600,\n        width=800\n    )\n    \n    return fig\n\ndef main():\n    \"\"\"Função principal que executa o programa\"\"\"\n    print(\"Buscando dados dos nomes mais comuns no Brasil...\")\n    \n    # Obtendo os dados\n    df_nomes = obter_ranking_nomes(limite=25)\n    \n    if df_nomes is not None:\n        print(f\"✅ Dados obtidos com sucesso! {len(df_nomes)} nomes encontrados.\\n\")\n        \n        # Exibindo os primeiros 10 nomes\n        print(\"🏆 Top 10 Nomes Mais Comuns:\")\n        print(\"-\" * 40)\n        for idx, row in df_nomes.head(10).iterrows():\n            print(f\"{row['Posição']:2d}º - {row['Nome']:&lt;15} ({row['Frequência']:,} pessoas)\")\n        \n        # Criando e exibindo gráfico de barras\n        print(\"\\n📊 Gerando gráfico de barras...\")\n        fig_barras = criar_grafico_ranking(df_nomes)\n        fig_barras.show()\n        \n        # Criando e exibindo gráfico de pizza\n        print(\"🥧 Gerando gráfico de pizza...\")\n        fig_pizza = criar_grafico_top10(df_nomes)\n        fig_pizza.show()\n        \n        # Salvando os gráficos (opcional)\n        print(\"\\n💾 Salvando gráficos...\")\n        fig_barras.write_html(\"ranking_nomes_barras.html\")\n        fig_pizza.write_html(\"ranking_nomes_pizza.html\")\n        print(\"Gráficos salvos como 'ranking_nomes_barras.html' e 'ranking_nomes_pizza.html'\")\n        \n    else:\n        print(\"❌ Erro ao obter dados da API do IBGE.\")\n\nif __name__ == \"__main__\":\n    main()"
+  },
+  {
+    "objectID": "aula_t8.html#section-22",
+    "href": "aula_t8.html#section-22",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "O código gerado deu erro na linha 33:\n\nindicando que a chave 'freq' não existia no dicionário de resposta.\n\n            frequencias.append(item['freq'])\n\nUsei o depurador do VSCode para inspecionar o conteúdo de item.\n\nE percebi que a chave correta era 'frequencia'.\n\n\n\n            frequencias.append(item['frequencia'])"
+  },
+  {
+    "objectID": "aula_t8.html#section-23",
+    "href": "aula_t8.html#section-23",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "O código gerado foi bem completo.\n\nInclusive foram gerados dois gráficos em vez de apenas um como eu tinha pedido.\n\n\nTalvez porque eu estava usando o Cladue Sonnet 4 como modelo no Copilot.\n\nEm vez do GPT-4.1 que eu vinha usando até então."
+  },
+  {
+    "objectID": "aula_t8.html#section-25",
+    "href": "aula_t8.html#section-25",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "usar API de alguma IA como a do GEmini - https://ai.google.dev/gemini-api/docs/rate-limits?hl=pt-br - https://ai.google.dev/gemini-api/docs/image-generation?hl=pt-br#limitations\nhttps://deividfortuna.github.io/fipe/v2/\nOutros: https://brasilapi.com.br/\nhttps://github.com/M-Media-Group/Cartes.io/wiki/API\nhttps://github.com/public-apis/public-apis"
+  },
+  {
+    "objectID": "aula_t8.html#section-26",
+    "href": "aula_t8.html#section-26",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport requests\nimport plotly.express as px\nimport plotly.graph_objects as go\nimport pandas as pd\n\ndef obter_frequencia_nome(nome):\n    \"\"\"\n    Obtém a frequência de um nome específico ao longo dos anos usando a API do IBGE\n    \n    Args:\n        nome (str): Nome para consultar\n        \n    Returns:\n        tuple: (pd.DataFrame, dict) DataFrame com dados anuais e dict com informações gerais\n    \"\"\"\n    try:\n        # URL da API do IBGE para consulta de nome específico\n        url = f\"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}\"\n        \n        # Fazendo a requisição\n        response = requests.get(url)\n        response.raise_for_status()\n        \n        # Convertendo para JSON\n        dados = response.json()\n        \n        if not dados or len(dados) == 0:\n            return None, None\n            \n        # Extraindo informações gerais\n        info_geral = {\n            'nome': dados[0]['nome'],\n            'sexo': dados[0].get('sexo', 'Não informado'),\n            'localidade': dados[0]['localidade'],\n            'frequencia_total': dados[0]['freq']\n        }\n        \n        # Extraindo dados por década/período\n        anos = []\n        frequencias = []\n        \n        for item in dados[0]['res']:\n            anos.append(item['periodo'])\n            frequencias.append(item['frequencia'])\n        \n        # Criando DataFrame\n        df = pd.DataFrame({\n            'Período': anos,\n            'Frequência': frequencias\n        })\n        \n        # Ordenando por período\n        df = df.sort_values('Período')\n        \n        return df, info_geral\n        \n    except requests.exceptions.RequestException as e:\n        print(f\"Erro ao acessar a API: {e}\")\n        return None, None\n    except (KeyError, IndexError) as e:\n        print(f\"Nome não encontrado ou erro ao processar dados: {e}\")\n        return None, None\n\ndef criar_grafico_linha_temporal(df, info_geral):\n    \"\"\"\n    Cria gráfico de linha mostrando a evolução da frequência do nome ao longo do tempo\n    \n    Args:\n        df (pd.DataFrame): DataFrame com dados temporais\n        info_geral (dict): Informações gerais do nome\n        \n    Returns:\n        plotly.graph_objects.Figure: Figura do Plotly\n    \"\"\"\n    nome = info_geral['nome']\n    \n    fig = px.line(\n        df,\n        x='Período',\n        y='Frequência',\n        title=f'Evolução da Frequência do Nome \"{nome}\" no Brasil',\n        markers=True,\n        line_shape='linear'\n    )\n    \n    # Personalizando a linha\n    fig.update_traces(\n        line=dict(color='#1f77b4', width=3),\n        marker=dict(size=8, color='#ff7f0e'),\n        hovertemplate='&lt;b&gt;Período:&lt;/b&gt; %{x}&lt;br&gt;&lt;b&gt;Nascimentos:&lt;/b&gt; %{y:,.0f}&lt;extra&gt;&lt;/extra&gt;'\n    )\n    \n    # Personalizando o layout\n    fig.update_layout(\n        height=500,\n        width=1000,\n        title_font_size=16,\n        xaxis_title=\"Período (Década)\",\n        yaxis_title=\"Número de Nascimentos\",\n        xaxis_title_font_size=14,\n        yaxis_title_font_size=14,\n        title_x=0.5,\n        hovermode='x unified',\n        plot_bgcolor='white',\n        paper_bgcolor='white'\n    )\n    \n    # Personalizando eixos\n    fig.update_xaxes(\n        showgrid=True,\n        gridwidth=1,\n        gridcolor='lightgray',\n        tickformat='d'\n    )\n    \n    fig.update_yaxes(\n        showgrid=True,\n        gridwidth=1,\n        gridcolor='lightgray',\n        tickformat=',.0f'\n    )\n    \n    # Adicionando anotação com total\n    total = info_geral['frequencia_total']\n    fig.add_annotation(\n        text=f\"Total de pessoas com este nome: {total:,}\",\n        xref=\"paper\", yref=\"paper\",\n        x=0.02, y=0.98,\n        showarrow=False,\n        font=dict(size=12, color=\"black\"),\n        bgcolor=\"rgba(255,255,255,0.8)\",\n        bordercolor=\"gray\",\n        borderwidth=1\n    )\n    \n    return fig\n\ndef criar_grafico_barras_decadas(df, info_geral):\n    \"\"\"\n    Cria gráfico de barras por década\n    \n    Args:\n        df (pd.DataFrame): DataFrame com dados temporais\n        info_geral (dict): Informações gerais do nome\n        \n    Returns:\n        plotly.graph_objects.Figure: Figura do Plotly\n    \"\"\"\n    nome = info_geral['nome']\n    \n    # Criando gráfico de barras\n    fig = px.bar(\n        df,\n        x='Período',\n        y='Frequência',\n        title=f'Distribuição por Década - Nome \"{nome}\"',\n        color='Frequência',\n        color_continuous_scale='viridis',\n        text='Frequência'\n    )\n    \n    # Personalizando as barras\n    fig.update_traces(\n        texttemplate='%{text:,.0f}',\n        textposition='outside',\n        hovertemplate='&lt;b&gt;Década:&lt;/b&gt; %{x}&lt;br&gt;&lt;b&gt;Nascimentos:&lt;/b&gt; %{y:,.0f}&lt;extra&gt;&lt;/extra&gt;'\n    )\n    \n    # Personalizando layout\n    fig.update_layout(\n        height=500,\n        width=1000,\n        title_font_size=16,\n        xaxis_title=\"Década\",\n        yaxis_title=\"Número de Nascimentos\",\n        xaxis_title_font_size=14,\n        yaxis_title_font_size=14,\n        title_x=0.5,\n        showlegend=False,\n        plot_bgcolor='white'\n    )\n    \n    fig.update_xaxes(tickformat='d')\n    fig.update_yaxes(tickformat=',.0f')\n    \n    return fig\n\ndef exibir_estatisticas(df, info_geral):\n    \"\"\"\n    Exibe estatísticas resumidas do nome\n    \n    Args:\n        df (pd.DataFrame): DataFrame com dados temporais\n        info_geral (dict): Informações gerais do nome\n    \"\"\"\n    nome = info_geral['nome']\n    total = info_geral['frequencia_total']\n    \n    print(f\"\\n📊 ESTATÍSTICAS DO NOME '{nome.upper()}'\")\n    print(\"=\" * 50)\n    print(f\"🏆 Total de pessoas: {total:,}\")\n    print(f\"📅 Períodos disponíveis: {len(df)} décadas\")\n    print(f\"🔝 Década com mais nascimentos: {df.loc[df['Frequência'].idxmax(), 'Período']}\")\n    print(f\"📈 Maior frequência: {df['Frequência'].max():,} nascimentos\")\n    print(f\"📉 Menor frequência: {df['Frequência'].min():,} nascimentos\")\n    print(f\"📊 Média por década: {df['Frequência'].mean():,.0f} nascimentos\")\n    \n    print(f\"\\n📋 DISTRIBUIÇÃO POR DÉCADA:\")\n    print(\"-\" * 30)\n    for _, row in df.iterrows():\n        percentual = (row['Frequência'] / total) * 100\n        print(f\"{row['Período']}: {row['Frequência']:7,} ({percentual:4.1f}%)\")\n\ndef main():\n    \"\"\"Função principal que executa o programa\"\"\"\n    print(\"🔍 CONSULTA DE FREQUÊNCIA DE NOMES NO BRASIL\")\n    print(\"=\" * 50)\n    print(\"Digite um nome para consultar sua frequência ao longo dos anos.\")\n    print(\"Exemplos: Maria, João, Ana, Carlos, etc.\")\n    print(\"-\" * 50)\n    \n    while True:\n        # Solicitando nome ao usuário\n        nome = input(\"\\n📝 Digite o nome que deseja consultar (ou 'sair' para encerrar): \").strip()\n        \n        if nome.lower() == 'sair':\n            print(\"👋 Encerrando programa...\")\n            break\n            \n        if not nome:\n            print(\"❌ Por favor, digite um nome válido.\")\n            continue\n            \n        print(f\"\\n🔎 Buscando informações sobre o nome '{nome}'...\")\n        \n        # Obtendo dados da API\n        df_temporal, info_geral = obter_frequencia_nome(nome)\n        \n        if df_temporal is not None and info_geral is not None:\n            print(\"✅ Dados encontrados!\")\n            \n            # Exibindo estatísticas\n            exibir_estatisticas(df_temporal, info_geral)\n            \n            # Criando e exibindo gráficos\n            print(\"\\n📊 Gerando gráficos...\")\n            \n            # Gráfico de linha temporal\n            fig_linha = criar_grafico_linha_temporal(df_temporal, info_geral)\n            fig_linha.show()\n            \n            # Gráfico de barras por década\n            fig_barras = criar_grafico_barras_decadas(df_temporal, info_geral)\n            fig_barras.show()\n            \n            # Opção de salvar gráficos\n            salvar = input(\"\\n💾 Deseja salvar os gráficos? (s/n): \").lower()\n            if salvar == 's':\n                nome_arquivo = nome.lower().replace(' ', '_')\n                fig_linha.write_html(f\"{nome_arquivo}_linha_temporal.html\")\n                fig_barras.write_html(f\"{nome_arquivo}_barras_decadas.html\")\n                print(f\"✅ Gráficos salvos como '{nome_arquivo}_linha_temporal.html' e '{nome_arquivo}_barras_decadas.html'\")\n            \n        else:\n            print(f\"❌ Nome '{nome}' não encontrado na base de dados do IBGE.\")\n            print(\"💡 Dica: Verifique a grafia ou tente variações do nome.\")\n        \n        # Perguntando se deseja continuar\n        continuar = input(\"\\n🔄 Deseja consultar outro nome? (s/n): \").lower()\n        if continuar != 's':\n            print(\"👋 Encerrando programa...\")\n            break\n\nif __name__ == \"__main__\":\n    main()"
+  },
+  {
+    "objectID": "aula_t8.html#section-27",
+    "href": "aula_t8.html#section-27",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "O código gerado mais uma vez foi muito completo.\n\nE mais uma vez gerou erro, mas agora um pouco mais complicado.\n\n\nO erro ocorreu na linha 35:\n    'frequencia_total': dados[0]['freq']\n\n\nExperimentei mudar para frequencia mas não resolveu.\n\nE depurei o código e vi que não tinha essa informação."
+  },
+  {
+    "objectID": "aula_t8.html#section-28",
+    "href": "aula_t8.html#section-28",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Pedi então ao Copilot para corrigir o erro.\n\n\n\n\n\nPrompt\n\n\n/fix não há um campo com informação de frequência total nos dados retornados.\n\n\n\n\n\n\nA resposta do Copilot modificou o código para somar as frequências de cada década.\n\nE considerar isso como a frequência total.\nMas isso faz sentido?"
+  },
+  {
+    "objectID": "aula_t8.html#section-29",
+    "href": "aula_t8.html#section-29",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Isso não faz sentido, pois a mesma pessoa seria contada várias vezes.\n\nExperimentei comentar a linha, mas isso causava outros problemas no código.\n\nInclusive percebi que esse total era usado para calcular a frequência relativa de um nome.\nMas isso não era correto."
+  },
+  {
+    "objectID": "aula_t8.html#section-30",
+    "href": "aula_t8.html#section-30",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Fica a dica!\n\n\nCuidado com respostas de Assistentes de IA.\nPrecisamos saber o que queremos em vez de simplesmente entrar em um ciclo de pedir correções.\nNesse caso, a solução não fazia sentido com o que eu estava solicitando."
+  },
+  {
+    "objectID": "aula_t8.html#section-31",
+    "href": "aula_t8.html#section-31",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Tentei então pedir ao Copilot para remover completamente o tratamento referente a uma frequência total.\n\n\n\n\n\nPrompt\n\n\nOs dados retornados não possuem uma frequência total e não faz sentido calcular a soma das frequências de cada década como uma frequência total. Remova qualquer referência a uma frequência total. Quero apenas um gráfico simples, de barras, que mostre a frequência do nome escolhido a cada década.\n\n\n\n\n\n\nE aí funcionou!"
+  },
+  {
+    "objectID": "aula_t8.html#section-34",
+    "href": "aula_t8.html#section-34",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Dessa vez eu mudei o modelo do Copilot para o GPT-4.1.\n\nMeu objetivo foi comparar o tipo de resposta com o modelo Claude Sonnet 4 que eu vinha usando.\n\n\nComo verá no código a seguir, o código gerado foi bem mais sucinto.\n\nFoi direto ao ponto sobre o que eu tinha solicitado."
+  },
+  {
+    "objectID": "aula_t8.html#section-35",
+    "href": "aula_t8.html#section-35",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Dessa vez eu mudei o modelo do Copilot para o GPT-4.1.\n\nMeu objetivo foi comparar o tipo de resposta com o modelo Claude Sonnet 4 que eu vinha usando.\nObs.: note que eu não forneci o link da documentação da API dessa vez.\n\n\nComo verá no código a seguir, o código gerado foi bem mais sucinto.\n\nFoi direto ao ponto sobre o que eu tinha solicitado."
+  },
+  {
+    "objectID": "aula_t8.html#section-37",
+    "href": "aula_t8.html#section-37",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "usar API de alguma IA como a do GEmini - https://ai.google.dev/gemini-api/docs/rate-limits?hl=pt-br - https://ai.google.dev/gemini-api/docs/image-generation?hl=pt-br#limitations\nhttps://deividfortuna.github.io/fipe/v2/\nOutros: https://brasilapi.com.br/\nhttps://github.com/M-Media-Group/Cartes.io/wiki/API\nhttps://github.com/public-apis/public-apis"
+  },
+  {
+    "objectID": "aula_t8.html#section-32",
+    "href": "aula_t8.html#section-32",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport requests\nimport plotly.express as px\nimport pandas as pd\n\ndef obter_frequencia_nome(nome):\n    \"\"\"\n    Obtém a frequência de um nome específico ao longo dos anos usando a API do IBGE\n    \n    Args:\n        nome (str): Nome para consultar\n        \n    Returns:\n        tuple: (pd.DataFrame, dict) DataFrame com dados anuais e dict com informações gerais\n    \"\"\"\n    try:\n        # URL da API do IBGE para consulta de nome específico\n        url = f\"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}\"\n        \n        # Fazendo a requisição\n        response = requests.get(url)\n        response.raise_for_status()\n        \n        # Convertendo para JSON\n        dados = response.json()\n        \n        if not dados or len(dados) == 0:\n            return None, None\n            \n        # Extraindo informações gerais\n        info_geral = {\n            'nome': dados[0]['nome'],\n            'sexo': dados[0].get('sexo', 'Não informado'),\n            'localidade': dados[0]['localidade']\n        }\n        \n        # Extraindo dados por década/período\n        anos = []\n        frequencias = []\n        \n        for item in dados[0]['res']:\n            anos.append(item['periodo'])\n            frequencias.append(item['frequencia'])\n        \n        # Criando DataFrame\n        df = pd.DataFrame({\n            'Período': anos,\n            'Frequência': frequencias\n        })\n        \n        # Ordenando por período\n        df = df.sort_values('Período')\n        \n        return df, info_geral\n        \n    except requests.exceptions.RequestException as e:\n        print(f\"Erro ao acessar a API: {e}\")\n        return None, None\n    except (KeyError, IndexError) as e:\n        print(f\"Nome não encontrado ou erro ao processar dados: {e}\")\n        return None, None\n\ndef criar_grafico_barras_decadas(df, info_geral):\n    \"\"\"\n    Cria gráfico de barras por década\n    \n    Args:\n        df (pd.DataFrame): DataFrame com dados temporais\n        info_geral (dict): Informações gerais do nome\n        \n    Returns:\n        plotly.graph_objects.Figure: Figura do Plotly\n    \"\"\"\n    nome = info_geral['nome']\n    \n    # Criando gráfico de barras\n    fig = px.bar(\n        df,\n        x='Período',\n        y='Frequência',\n        title=f'Frequência do Nome \"{nome}\" por Década no Brasil',\n        color='Frequência',\n        color_continuous_scale='viridis',\n        text='Frequência'\n    )\n    \n    # Personalizando as barras\n    fig.update_traces(\n        texttemplate='%{text:,.0f}',\n        textposition='outside',\n        hovertemplate='&lt;b&gt;Década:&lt;/b&gt; %{x}&lt;br&gt;&lt;b&gt;Nascimentos:&lt;/b&gt; %{y:,.0f}&lt;extra&gt;&lt;/extra&gt;'\n    )\n    \n    # Personalizando layout\n    fig.update_layout(\n        height=500,\n        width=1000,\n        title_font_size=16,\n        xaxis_title=\"Década\",\n        yaxis_title=\"Número de Nascimentos\",\n        xaxis_title_font_size=14,\n        yaxis_title_font_size=14,\n        title_x=0.5,\n        showlegend=False,\n        plot_bgcolor='white'\n    )\n    \n    fig.update_xaxes(tickformat='d')\n    fig.update_yaxes(tickformat=',.0f')\n    \n    return fig\n\ndef exibir_estatisticas(df, info_geral):\n    \"\"\"\n    Exibe estatísticas resumidas do nome\n    \n    Args:\n        df (pd.DataFrame): DataFrame com dados temporais\n        info_geral (dict): Informações gerais do nome\n    \"\"\"\n    nome = info_geral['nome']\n    \n    print(f\"\\n📊 ESTATÍSTICAS DO NOME '{nome.upper()}'\")\n    print(\"=\" * 50)\n    print(f\"📅 Períodos disponíveis: {len(df)} décadas\")\n    print(f\"🔝 Década com mais nascimentos: {df.loc[df['Frequência'].idxmax(), 'Período']}\")\n    print(f\"📈 Maior frequência: {df['Frequência'].max():,} nascimentos\")\n    print(f\"📉 Menor frequência: {df['Frequência'].min():,} nascimentos\")\n    print(f\"📊 Média por década: {df['Frequência'].mean():,.0f} nascimentos\")\n    \n    print(f\"\\n📋 DISTRIBUIÇÃO POR DÉCADA:\")\n    print(\"-\" * 30)\n    for _, row in df.iterrows():\n        print(f\"{row['Período']}: {row['Frequência']:7,} nascimentos\")\n\ndef main():\n    \"\"\"Função principal que executa o programa\"\"\"\n    print(\"🔍 CONSULTA DE FREQUÊNCIA DE NOMES NO BRASIL\")\n    print(\"=\" * 50)\n    print(\"Digite um nome para consultar sua frequência ao longo dos anos.\")\n    print(\"Exemplos: Maria, João, Ana, Carlos, etc.\")\n    print(\"-\" * 50)\n    \n    while True:\n        # Solicitando nome ao usuário\n        nome = input(\"\\n📝 Digite o nome que deseja consultar (ou 'sair' para encerrar): \").strip()\n        \n        if nome.lower() == 'sair':\n            print(\"👋 Encerrando programa...\")\n            break\n            \n        if not nome:\n            print(\"❌ Por favor, digite um nome válido.\")\n            continue\n            \n        print(f\"\\n🔎 Buscando informações sobre o nome '{nome}'...\")\n        \n        # Obtendo dados da API\n        df_temporal, info_geral = obter_frequencia_nome(nome)\n        \n        if df_temporal is not None and info_geral is not None:\n            print(\"✅ Dados encontrados!\")\n            \n            # Exibindo estatísticas\n            exibir_estatisticas(df_temporal, info_geral)\n            \n            # Criando e exibindo gráfico\n            print(\"\\n📊 Gerando gráfico...\")\n            \n            # Gráfico de barras por década\n            fig_barras = criar_grafico_barras_decadas(df_temporal, info_geral)\n            fig_barras.show()\n            \n            # Opção de salvar gráfico\n            salvar = input(\"\\n💾 Deseja salvar o gráfico? (s/n): \").lower()\n            if salvar == 's':\n                nome_arquivo = nome.lower().replace(' ', '_')\n                fig_barras.write_html(f\"{nome_arquivo}_frequencia_decadas.html\")\n                print(f\"✅ Gráfico salvo como '{nome_arquivo}_frequencia_decadas.html'\")\n            \n        else:\n            print(f\"❌ Nome '{nome}' não encontrado na base de dados do IBGE.\")\n            print(\"💡 Dica: Verifique a grafia ou tente variações do nome.\")\n        \n        # Perguntando se deseja continuar\n        continuar = input(\"\\n🔄 Deseja consultar outro nome? (s/n): \").lower()\n        if continuar != 's':\n            print(\"👋 Encerrando programa...\")\n            break\n\nif __name__ == \"__main__\":\n    main()"
+  },
+  {
+    "objectID": "aula_t8.html#section-36",
+    "href": "aula_t8.html#section-36",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nimport requests\nimport plotly.graph_objects as go\n\ndef buscar_codigo_municipio(nome_municipio):\n    url = f\"https://servicodados.ibge.gov.br/api/v1/localidades/municipios\"\n    resposta = requests.get(url)\n    municipios = resposta.json()\n    for municipio in municipios:\n        if municipio['nome'].lower() == nome_municipio.lower():\n            return municipio['id']\n    return None\n\ndef buscar_frequencia_nome(nome, codigo_municipio):\n    url = f\"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}?localidade={codigo_municipio}\"\n    resposta = requests.get(url)\n    if resposta.status_code == 200 and resposta.json():\n        return resposta.json()[0]['res']\n    return []\n\ndef main():\n    nome = input(\"Digite o nome a ser pesquisado: \").strip()\n    municipio = input(\"Digite o nome do município: \").strip()\n\n    codigo = buscar_codigo_municipio(municipio)\n    if not codigo:\n        print(\"Município não encontrado.\")\n        return\n\n    frequencias = buscar_frequencia_nome(nome, codigo)\n    if not frequencias:\n        print(\"Nome não encontrado ou sem dados para este município.\")\n        return\n\n    periodos = [item['periodo'] for item in frequencias]\n    valores = [item['frequencia'] for item in frequencias]\n\n    fig = go.Figure([go.Bar(x=periodos, y=valores)])\n    fig.update_layout(title=f\"Frequência do nome '{nome}' em {municipio}\",\n                     xaxis_title=\"Período\",\n                     yaxis_title=\"Frequência\")\n    fig.show()\n\nif __name__ == \"__main__\":\n    main()"
+  },
+  {
+    "objectID": "aula_t8.html#section-38",
+    "href": "aula_t8.html#section-38",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Para fechar os exemplos de uso de API da aula, vamos ver um exemplo com a API da FIPE.\n\nA API da FIPE disponibiliza dados sobre preços de veículos no Brasil.\n\n\nMas, dessa vez, segui uma abordagem diferente.\n\nEm vez de consultar a documentação da API antes planejar o que o programa faria,\neu fiz uma conversa exploratória com o Copilot antes para entender o que eu poderia fazer."
+  },
+  {
+    "objectID": "aula_t8.html#section-39",
+    "href": "aula_t8.html#section-39",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Eu criei um projeto vazio no VS Code.\n\nE usei o Copilot com o modelo GPT-4.1 no modo Ask.\n\n\n\n\n\n\nPrompt\n\n\nEu gostaria de usar a API da FIPE para consultar dados sobre veículos no Brasil. Que tipo de informações eu posso obter dessa API?"
+  },
+  {
+    "objectID": "aula_t8.html#section-40",
+    "href": "aula_t8.html#section-40",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "GitHub Copilot\n\n\nA API da FIPE permite consultar diversas informações sobre veículos no Brasil, como:\n\nMarcas de carros, motos e caminhões\nModelos disponíveis para cada marca\nAnos/modelos de fabricação\nPreço médio de mercado (valor FIPE) para cada veículo\nTipo de combustível\nCódigo FIPE do veículo\nInformações sobre atualizações de preços\n\nEsses dados são úteis para consultas de valores de compra, venda, seguros e avaliações de veículos."
+  },
+  {
+    "objectID": "aula_t8.html#section-41",
+    "href": "aula_t8.html#section-41",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Resolvi então pedir ao Copilot para criar um programa que usasse a API.\n\n\n\n\n\nPrompt\n\n\nGostaria de criar um programa Python no qual eu informasse o nome de um modelo de Carro e o programa me informasse o preço atual desse modelo em Minas Gerais."
+  },
+  {
+    "objectID": "aula_t8.html#section-42",
+    "href": "aula_t8.html#section-42",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "O Copilot gerou uma sugestão de estrutura de projeto completa como resposta.\n\nIncluindo requirements.txt e um arquivo README.md."
+  },
+  {
+    "objectID": "aula_t8.html#section-43",
+    "href": "aula_t8.html#section-43",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Mas, para a minha decepção, o código gerado era apenas um esqueleto.\n\nNão fazia nenhuma chamada real à API da FIPE.\n\n\ndef get_car_price(car_model):\n    # This function simulates fetching the car price from a database or an API.\n    # In a real application, you would replace this with actual data fetching logic.\n    car_prices = {\n        \"Fusca\": 30000,\n        \"Civic\": 120000,\n        \"Corolla\": 115000,\n        \"Onix\": 70000,\n        \"HB20\": 75000\n    }\n    return car_prices.get(car_model, \"Model not found\")\n\ndef main():\n    car_model = input(\"Enter the car model: \")\n    price = get_car_price(car_model)\n    print(f\"The current price of {car_model} in Minas Gerais is: {price}\")\n\nif __name__ == \"__main__\":\n    main()"
+  },
+  {
+    "objectID": "aula_t8.html#section-44",
+    "href": "aula_t8.html#section-44",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "Esse print não mostra o estado real da resposta do Copilot.\n\n\n\n\n\n\n\n\nPor que na hora que ela apareceu, logo à frente de Workspace, tinha um link:\n\nrerun wihtot: que significa refazer a pergunta sem usar o agente @workspace.\nE aí a resposta foi bem diferente."
+  },
+  {
+    "objectID": "aula_t8.html#section-45",
+    "href": "aula_t8.html#section-45",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "GitHub Copilot (início)\n\n\nVocê pode fazer isso utilizando a API pública da Tabela FIPE, que não exige autenticação. Abaixo está um exemplo de programa Python que solicita o nome do modelo, busca o modelo correspondente e exibe o preço atual em Minas Gerais:\nimport requests\n\ndef buscar_marcas():\n    url = \"https://parallelum.com.br/fipe/api/v1/carros/marcas\"\n    return requests.get(url).json()\n\ndef buscar_modelos(codigo_marca):\n    url = f\"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos\"\n    return requests.get(url).json()['modelos']\n\ndef buscar_anos(codigo_marca, codigo_modelo):\n    url = f\"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos/{codigo_modelo}/anos\"\n    return requests.get(url).json()\n\ndef buscar_preco(codigo_marca, codigo_modelo, codigo_ano):\n    url = f\"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos/{codigo_modelo}/anos/{codigo_ano}\"\n    return requests.get(url).json()"
+  },
+  {
+    "objectID": "aula_t8.html#section-46",
+    "href": "aula_t8.html#section-46",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "GitHub Copilot (continuação)\n\n\ndef main():\n    modelo_nome = input(\"Digite o nome do modelo do carro: \").strip().lower()\n    marcas = buscar_marcas()\n    print(\"Buscando marcas...\")\n    for marca in marcas:\n        modelos = buscar_modelos(marca['codigo'])\n        for modelo in modelos:\n            if modelo_nome in modelo['nome'].lower():\n                print(f\"Modelo encontrado: {modelo['nome']} ({marca['nome']})\")\n                anos = buscar_anos(marca['codigo'], modelo['codigo'])\n                if anos:\n                    # Pega o ano mais recente\n                    ano = anos[-1]['codigo']\n                    preco = buscar_preco(marca['codigo'], modelo['codigo'], ano)\n                    print(f\"Preço FIPE em MG: {preco['Valor']} ({preco['AnoModelo']})\")\n                    print(f\"Marca: {preco['Marca']}, Modelo: {preco['Modelo']}, Combustível: {preco['Combustivel']}\")\n                    return\n    print(\"Modelo não encontrado.\")\n\nif __name__ == \"__main__\":\n    main()"
+  },
+  {
+    "objectID": "aula_t8.html#section-47",
+    "href": "aula_t8.html#section-47",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "GitHub Copilot (continuação)\n\n\nObservações: - A API FIPE não retorna preços por estado, apenas o preço médio nacional. O preço exibido é o valor FIPE nacional, não específico de Minas Gerais. - O programa busca o modelo pelo nome informado e retorna o preço do ano mais recente disponível. - Para refinar a busca, você pode adaptar o código para listar opções caso haja mais de um modelo correspondente.\nSe precisar de ajustes, me avise!"
   }
 ]

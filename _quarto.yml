@@ -23,6 +23,7 @@ format:
         width: 100%
       }
     }
+    code-block-height: 650px
 
 revealjs-plugins:
   - pointer
@@ -42,6 +43,7 @@ date-format: "DD/MM/YYYY"
 filters:
   - roughnotation
   - code-fullscreen
+
 
 highlight-style: github
 

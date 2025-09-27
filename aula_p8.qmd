@@ -9,3 +9,16 @@ Ideias:
 
 - Usar API de países do IBGE para mostrar informações em uma mapa.
   https://servicodados.ibge.gov.br/api/docs/paises
+
+usar API de alguma IA como a do GEmini
+- https://ai.google.dev/gemini-api/docs/rate-limits?hl=pt-br
+- https://ai.google.dev/gemini-api/docs/image-generation?hl=pt-br#limitations
+
+https://deividfortuna.github.io/fipe/v2/
+
+Outros:
+https://brasilapi.com.br/
+
+https://github.com/M-Media-Group/Cartes.io/wiki/API
+
+https://github.com/public-apis/public-apis
