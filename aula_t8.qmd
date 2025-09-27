@@ -1517,8 +1517,9 @@ Para fechar os exemplos de uso de API da aula, vamos ver um exemplo com a API da
 
 Mas, dessa vez, segui uma abordagem diferente.
 
-- Em vez de consultar a documentação da API antes planejar o que o programa faria, 
-- eu fiz uma conversa exploratória com o Copilot antes para entender o que eu poderia fazer.
+- Em vez de consultar a documentação da API antes e planejar o que o programa faria, 
+- eu tive conversa exploratória com o Copilot e meio _vibe coding_ mesmo.
+  - A ideia foi explorar possibilidades.
 
 ##
 
@@ -1551,6 +1552,9 @@ Esses dados são úteis para consultas de valores de compra, venda, seguros e av
 ##
 
 Resolvi então pedir ao Copilot para criar um programa que usasse a API.
+
+- O mais recomendado seria continuar explorando em mais detalhes,
+  mas tentei ir direto ao ponto.
 
 . . .
 
@@ -1612,7 +1616,7 @@ Esse print não mostra o estado real da resposta do Copilot.
 Por que na hora que ela apareceu, logo à frente de _Workspace_, tinha um link:
 
 - `rerun wihtot`: que significa refazer a pergunta sem usar o agente `@workspace`.
-- E aí a resposta foi bem diferente.
+- Usei essa opção e aí a resposta foi bem diferente.
 :::
 
 ::::
@@ -1705,10 +1709,10 @@ Mas, analisando o código gerado percebi algumas coisas.
 
 ##
 
-1. Meu prompt original não era muito bom pois eu coloquei "preço atual do modelo",
+1. Meu prompt original não era bom pois eu coloquei "preço atual do modelo",
 mas o preço é diferente dependendo do ano do carro.
 2. Além disso, o mesmo modelo, no mesmo ano, pode ter várias variações (LX, EX, etc.).
-3. E, além disso, não há nenhum referência no código que indica que os dados se refiram a Minas Gerais.
+3. E, por fim, não há nenhum referência no código que indique que os dados se refiram a Minas Gerais.
 
 . . .
 
@@ -1774,6 +1778,14 @@ não era exatamente `1985`
 
 - mas sim `1985 Gasolina`, por exemplo.
 
+. . .
+
+Assim a comparação abaixo não funcionava.
+
+```python
+if ano_usuario == ano['nome']:
+```
+
 ##
 
 Fiz então um novo prompt para o Copilot corrigir esse problema.
@@ -1791,15 +1803,17 @@ O código gerado funcionava, mas vi outro problema.
 - Ele parava no primeiro modelo encontrado com o nome informado.
 - Assim, procurando `Onix`, por exemplo, ele olhava apenas um modelo específico.
   - `ONIX  Lollapalooza 1.0 F.Power 5p Mec.` 
-  - e não encontrava o ano `2024`, por exemplo.
+  - e não encontrava dados para ano `2024`, já que esse modelo só teve produção em 2014.
 
 . . .
 
 ::: {.callout-caution title="Prompt" icon="false"}
 Podem existir vários modelos com o nome passado pelo usuário. Assim como foi feito com o ano, gostaria que fossem exibidos todos os modelos para que o usuário escolhesse o que deseja.
-::: {.callout-caution title="Prompt" icon="false"}
+:::
 
 ##
+
+O código gerado gerou o seguinte erro:
 
 ```output
 Traceback (most recent call last):
@@ -1816,7 +1830,148 @@ KeyError: 'modelos'
 
 . . .
 
-::: {}
+Joguei o erro no chat do Copilot e obtive a resposta abaixo, junto com o código alterado.
 
+. . .
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
 O erro KeyError: 'modelos' ocorre porque algumas marcas não possuem modelos cadastrados, e a resposta da API pode não conter a chave 'modelos'. Para evitar esse erro, faça uma verificação antes de acessar 'modelos':
 :::
+
+##
+
+Continuou gerando erro:
+
+```output
+Traceback (most recent call last):
+  File "/home/julio/Downloads/projeto/app.py", line 84, in <module>
+    main()
+  File "/home/julio/Downloads/projeto/app.py", line 28, in main
+    modelos = buscar_modelos(marca['codigo'])
+                             ~~~~~^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+```
+
+. . .
+
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
+O erro ocorre porque a lista `marcas` contém dicionários, mas em algum momento ela pode estar vindo como uma lista de strings. Isso geralmente acontece se a API retorna algo inesperado ou se o código espera um dicionário, mas recebe uma string.
+
+Para garantir que cada item de `marcas` seja um dicionário, ajuste o loop para verificar o tipo e trate possíveis inconsistências. Além disso, adicione tratamento de erro para garantir que a API está retornando o esperado.
+:::
+
+##
+
+Junto com a resposta veio um código alterado com proteções mas que
+não retornava nenhuma informação.
+
+- O que você acha que estava acontecendo?
+
+. . .
+
+Usando o depurador vi que estava sendo retornada uma mensagem de erro
+dizendo que a taxa de requisições da API tinha sido excedida.
+
+##
+
+::: {.callout-caution title="Prompt" icon="false"}
+Depurando, eu notei que a variável marcas está agora vindo com o valor {'error': 'limite de taxa excedido. Por favor, visite https://fipe.online para obter um token'}. Altere o código para identificar essa situação e informar o suário que não é possível consultar a informação no momento.
+:::
+
+##
+
+```python
+import requests
+
+def buscar_marcas():
+    url = "https://parallelum.com.br/fipe/api/v1/carros/marcas"
+    return requests.get(url).json()
+
+def buscar_modelos(codigo_marca):
+    url = f"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos"
+    resposta = requests.get(url).json()
+    return resposta.get('modelos', [])
+
+def buscar_anos(codigo_marca, codigo_modelo):
+    url = f"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos/{codigo_modelo}/anos"
+    return requests.get(url).json()
+
+def buscar_preco(codigo_marca, codigo_modelo, codigo_ano):
+    url = f"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos/{codigo_modelo}/anos/{codigo_ano}"
+    return requests.get(url).json()
+
+def main():
+    modelo_nome = input("Digite o nome do modelo do carro: ").strip().lower()
+    ano_usuario = input("Digite o ano do carro (ex: 2015): ").strip()
+    marcas = buscar_marcas()
+
+    # Verifica se houve erro de limite de taxa
+    if isinstance(marcas, dict) and 'error' in marcas:
+        print("Não foi possível consultar a informação no momento: limite de taxa da API excedido.")
+        print("Tente novamente mais tarde ou acesse https://fipe.online para obter um token.")
+        return
+
+    print("Buscando modelos que correspondem ao nome informado...")
+
+    modelos_encontrados = []
+    for marca in marcas:
+        if not isinstance(marca, dict) or 'codigo' not in marca or 'nome' not in marca:
+            continue
+        modelos = buscar_modelos(marca['codigo'])
+        for modelo in modelos:
+            if modelo_nome in modelo['nome'].lower():
+                modelos_encontrados.append({
+                    'marca': marca,
+                    'modelo': modelo
+                })
+
+    if not modelos_encontrados:
+        print("Nenhum modelo encontrado com esse nome.")
+        return
+
+    print("\nModelos encontrados:")
+    for idx, item in enumerate(modelos_encontrados):
+        print(f"{idx}: {item['modelo']['nome']} ({item['marca']['nome']})")
+
+    escolha_modelo = input("Escolha o número correspondente ao modelo desejado: ").strip()
+    try:
+        escolha_modelo_idx = int(escolha_modelo)
+        modelo_escolhido = modelos_encontrados[escolha_modelo_idx]
+    except (ValueError, IndexError):
+        print("Opção de modelo inválida.")
+        return
+
+    anos = buscar_anos(modelo_escolhido['marca']['codigo'], modelo_escolhido['modelo']['codigo'])
+    opcoes_ano = [
+        (i, ano) for i, ano in enumerate(anos)
+        if ano_usuario in ano['nome']
+    ]
+    if not opcoes_ano:
+        print("Nenhuma opção de ano encontrada para esse modelo.")
+        return
+
+    print("\nOpções de ano encontradas:")
+    for idx, ano in opcoes_ano:
+        print(f"{idx}: {ano['nome']}")
+
+    escolha_ano = input("Escolha o número correspondente ao ano desejado: ").strip()
+    try:
+        escolha_ano_idx = int(escolha_ano)
+        ano_escolhido = opcoes_ano[escolha_ano_idx][1]
+    except (ValueError, IndexError):
+        print("Opção de ano inválida.")
+        return
+
+    preco = buscar_preco(
+        modelo_escolhido['marca']['codigo'],
+        modelo_escolhido['modelo']['codigo'],
+        ano_escolhido['codigo']
+    )
+
+    print("\nDetalhes do veículo:")
+    for chave, valor in preco.items():
+        print(f"{chave}: {valor}")
+
+if __name__ == "__main__":
+    main()
+```

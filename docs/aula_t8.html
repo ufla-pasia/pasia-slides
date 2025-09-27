@@ -1858,8 +1858,11 @@ web_commit_signoff_required</code></pre>
 <div class="fragment">
 <p>Mas, dessa vez, segui uma abordagem diferente.</p>
 <ul>
-<li class="fragment">Em vez de consultar a documentação da API antes planejar o que o programa faria,</li>
-<li class="fragment">eu fiz uma conversa exploratória com o Copilot antes para entender o que eu poderia fazer.</li>
+<li class="fragment">Em vez de consultar a documentação da API antes e planejar o que o programa faria,</li>
+<li class="fragment">eu tive conversa exploratória com o Copilot e meio <em>vibe coding</em> mesmo.
+<ul>
+<li class="fragment">A ideia foi explorar possibilidades.</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -1912,6 +1915,9 @@ web_commit_signoff_required</code></pre>
 <section id="section-41" class="slide level2">
 <h2></h2>
 <p>Resolvi então pedir ao Copilot para criar um programa que usasse a API.</p>
+<ul>
+<li class="fragment">O mais recomendado seria continuar explorando em mais detalhes, mas tentei ir direto ao ponto.</li>
+</ul>
 <div class="fragment">
 <div title="Prompt">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
@@ -1983,7 +1989,7 @@ web_commit_signoff_required</code></pre>
 <p>Por que na hora que ela apareceu, logo à frente de <em>Workspace</em>, tinha um link:</p>
 <ul>
 <li class="fragment"><code>rerun wihtot</code>: que significa refazer a pergunta sem usar o agente <code>@workspace</code>.</li>
-<li class="fragment">E aí a resposta foi bem diferente.</li>
+<li class="fragment">Usei essa opção e aí a resposta foi bem diferente.</li>
 </ul>
 </div></div>
 </section>
@@ -2069,6 +2075,330 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </div>
+</section>
+<section id="section-48" class="slide level2">
+<h2></h2>
+<p>A boa notícia é que o código gerado funciona.</p>
+<div class="fragment">
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb27-1"><a></a>Digite o nome do modelo do carro: Fusca</span>
+<span id="cb27-2"><a></a>Buscando marcas...</span>
+<span id="cb27-3"><a></a>Modelo encontrado: Fusca (VW - VolksWagen)</span>
+<span id="cb27-4"><a></a>Preço FIPE em MG: R$ 27.357,00 (1985)</span>
+<span id="cb27-5"><a></a>Marca: VW - VolksWagen, Modelo: Fusca, Combustível: Gasolina</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Mas, analisando o código gerado percebi algumas coisas.</p>
+</div>
+</section>
+<section id="section-49" class="slide level2">
+<h2></h2>
+<ol type="1">
+<li class="fragment">Meu prompt original não era bom pois eu coloquei “preço atual do modelo”, mas o preço é diferente dependendo do ano do carro.</li>
+<li class="fragment">Além disso, o mesmo modelo, no mesmo ano, pode ter várias variações (LX, EX, etc.).</li>
+<li class="fragment">E, por fim, não há nenhum referência no código que indique que os dados se refiram a Minas Gerais.</li>
+</ol>
+<div class="fragment">
+<p>Sem contar que a busca é lenta porque procura o carro em todas as marcas.</p>
+</div>
+</section>
+<section id="section-50" class="slide level2">
+<h2></h2>
+<p>Comecei então pedindo que o Copilot alterasse o código para que o usuário informasse o ano do carro.</p>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Altere o programa para que o ano do carro seja pedido ao usuário.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Foi gerado um código que parecia fazer sentido.</p>
+</div>
+</section>
+<section id="section-51" class="slide level2">
+<h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb28" data-startfrom="19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python" style="counter-reset: source-line 18;"><span id="cb28-19"><a></a><span class="kw">def</span> main():</span>
+<span id="cb28-20"><a></a>    modelo_nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Digite o nome do modelo do carro: "</span>).strip().lower()</span>
+<span id="cb28-21"><a></a>    ano_usuario <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Digite o ano do carro: "</span>).strip()</span>
+<span id="cb28-22"><a></a>    marcas <span class="op">=</span> buscar_marcas()</span>
+<span id="cb28-23"><a></a>    <span class="bu">print</span>(<span class="st">"Buscando marcas..."</span>)</span>
+<span id="cb28-24"><a></a>    <span class="cf">for</span> marca <span class="kw">in</span> marcas:</span>
+<span id="cb28-25"><a></a>        modelos <span class="op">=</span> buscar_modelos(marca[<span class="st">'codigo'</span>])</span>
+<span id="cb28-26"><a></a>        <span class="cf">for</span> modelo <span class="kw">in</span> modelos:</span>
+<span id="cb28-27"><a></a>            <span class="cf">if</span> modelo_nome <span class="kw">in</span> modelo[<span class="st">'nome'</span>].lower():</span>
+<span id="cb28-28"><a></a>                <span class="bu">print</span>(<span class="ss">f"Modelo encontrado: </span><span class="sc">{</span>modelo[<span class="st">'nome'</span>]<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>marca[<span class="st">'nome'</span>]<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb28-29"><a></a>                anos <span class="op">=</span> buscar_anos(marca[<span class="st">'codigo'</span>], modelo[<span class="st">'codigo'</span>])</span>
+<span id="cb28-30"><a></a>                ano_encontrado <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb28-31"><a></a>                <span class="cf">for</span> ano <span class="kw">in</span> anos:</span>
+<span id="cb28-32"><a></a>                    <span class="cf">if</span> ano_usuario <span class="op">==</span> ano[<span class="st">'nome'</span>]:</span>
+<span id="cb28-33"><a></a>                        ano_encontrado <span class="op">=</span> ano[<span class="st">'codigo'</span>]</span>
+<span id="cb28-34"><a></a>                        <span class="cf">break</span></span>
+<span id="cb28-35"><a></a>                <span class="cf">if</span> ano_encontrado:</span>
+<span id="cb28-36"><a></a>                    preco <span class="op">=</span> buscar_preco(marca[<span class="st">'codigo'</span>], modelo[<span class="st">'codigo'</span>], ano_encontrado)</span>
+<span id="cb28-37"><a></a>                    <span class="bu">print</span>(<span class="ss">f"Preço FIPE em MG: </span><span class="sc">{</span>preco[<span class="st">'Valor'</span>]<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>preco[<span class="st">'AnoModelo'</span>]<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb28-38"><a></a>                    <span class="bu">print</span>(<span class="ss">f"Marca: </span><span class="sc">{</span>preco[<span class="st">'Marca'</span>]<span class="sc">}</span><span class="ss">, Modelo: </span><span class="sc">{</span>preco[<span class="st">'Modelo'</span>]<span class="sc">}</span><span class="ss">, Combustível: </span><span class="sc">{</span>preco[<span class="st">'Combustivel'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb28-39"><a></a>                    <span class="cf">return</span></span>
+<span id="cb28-40"><a></a>                <span class="cf">else</span>:</span>
+<span id="cb28-41"><a></a>                    <span class="bu">print</span>(<span class="st">"Ano não encontrado para este modelo."</span>)</span>
+<span id="cb28-42"><a></a>                    <span class="cf">return</span></span>
+<span id="cb28-43"><a></a>    <span class="bu">print</span>(<span class="st">"Modelo não encontrado."</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-52" class="slide level2">
+<h2></h2>
+<p>Mas ao testar usando <code>Fusca</code>e ano <code>1985</code>, o programa não encontrou a informação.</p>
+<ul>
+<li class="fragment">Mas o dado do <code>Fusca</code> exibido na versão anterior do programa mostrava <code>1985</code> como o ano mais recente disponível.</li>
+</ul>
+<div class="fragment">
+<p>Usando o depurador do VS Code, percebi que o dado retornado pela API não era exatamente <code>1985</code></p>
+<ul>
+<li class="fragment">mas sim <code>1985 Gasolina</code>, por exemplo.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Assim a comparação abaixo não funcionava.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="cf">if</span> ano_usuario <span class="op">==</span> ano[<span class="st">'nome'</span>]:</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-53" class="slide level2">
+<h2></h2>
+<p>Fiz então um novo prompt para o Copilot corrigir esse problema.</p>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>O programa não está funcionando porque o ano retornado pode ser “1985 gasolina”, por exemplo, em vez de “1985”. Gostaria que o programa mostrasse todas as opções retornadas do ano solicitado para que o usuário escolhesse qual ele deseja. Além disso, na hora de exibir o resultado, mostre o máximo de detalhes possível.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-54" class="slide level2">
+<h2></h2>
+<p>O código gerado funcionava, mas vi outro problema.</p>
+<ul>
+<li class="fragment">Ele parava no primeiro modelo encontrado com o nome informado.</li>
+<li class="fragment">Assim, procurando <code>Onix</code>, por exemplo, ele olhava apenas um modelo específico.
+<ul>
+<li class="fragment"><code>ONIX  Lollapalooza 1.0 F.Power 5p Mec.</code></li>
+<li class="fragment">e não encontrava dados para ano <code>2024</code>, já que esse modelo só teve produção em 2014.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Podem existir vários modelos com o nome passado pelo usuário. Assim como foi feito com o ano, gostaria que fossem exibidos todos os modelos para que o usuário escolhesse o que deseja.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-55" class="slide level2">
+<h2></h2>
+<p>O código gerado gerou o seguinte erro:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb30-1"><a></a>Traceback (most recent call last):</span>
+<span id="cb30-2"><a></a>  File "/home/julio/Downloads/projeto/app.py", line 83, in &lt;module&gt;</span>
+<span id="cb30-3"><a></a>    main()</span>
+<span id="cb30-4"><a></a>  File "/home/julio/Downloads/projeto/app.py", line 27, in main</span>
+<span id="cb30-5"><a></a>    modelos = buscar_modelos(marca['codigo'])</span>
+<span id="cb30-6"><a></a>              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<span id="cb30-7"><a></a>  File "/home/julio/Downloads/projeto/app.py", line 9, in buscar_modelos</span>
+<span id="cb30-8"><a></a>    return requests.get(url).json()['modelos']</span>
+<span id="cb30-9"><a></a>           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^</span>
+<span id="cb30-10"><a></a>KeyError: 'modelos'</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Joguei o erro no chat do Copilot e obtive a resposta abaixo, junto com o código alterado.</p>
+</div>
+<div class="fragment">
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<p>O erro KeyError: ‘modelos’ ocorre porque algumas marcas não possuem modelos cadastrados, e a resposta da API pode não conter a chave ‘modelos’. Para evitar esse erro, faça uma verificação antes de acessar ‘modelos’:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-56" class="slide level2">
+<h2></h2>
+<p>Continuou gerando erro:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb31-1"><a></a>Traceback (most recent call last):</span>
+<span id="cb31-2"><a></a>  File "/home/julio/Downloads/projeto/app.py", line 84, in &lt;module&gt;</span>
+<span id="cb31-3"><a></a>    main()</span>
+<span id="cb31-4"><a></a>  File "/home/julio/Downloads/projeto/app.py", line 28, in main</span>
+<span id="cb31-5"><a></a>    modelos = buscar_modelos(marca['codigo'])</span>
+<span id="cb31-6"><a></a>                             ~~~~~^^^^^^^^^^</span>
+<span id="cb31-7"><a></a>TypeError: string indices must be integers, not 'str'</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<p>O erro ocorre porque a lista <code>marcas</code> contém dicionários, mas em algum momento ela pode estar vindo como uma lista de strings. Isso geralmente acontece se a API retorna algo inesperado ou se o código espera um dicionário, mas recebe uma string.</p>
+<p>Para garantir que cada item de <code>marcas</code> seja um dicionário, ajuste o loop para verificar o tipo e trate possíveis inconsistências. Além disso, adicione tratamento de erro para garantir que a API está retornando o esperado.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-57" class="slide level2">
+<h2></h2>
+<p>Junto com a resposta veio um código alterado com proteções mas que não retornava nenhuma informação.</p>
+<ul>
+<li class="fragment">O que você acha que estava acontecendo?</li>
+</ul>
+<div class="fragment">
+<p>Usando o depurador vi que estava sendo retornada uma mensagem de erro dizendo que a taxa de requisições da API tinha sido excedida.</p>
+</div>
+</section>
+<section id="section-58" class="slide level2">
+<h2></h2>
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Depurando, eu notei que a variável marcas está agora vindo com o valor {‘error’: ‘limite de taxa excedido. Por favor, visite https://fipe.online para obter um token’}. Altere o código para identificar essa situação e informar o suário que não é possível consultar a informação no momento.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-59" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a><span class="im">import</span> requests</span>
+<span id="cb32-2"><a></a></span>
+<span id="cb32-3"><a></a><span class="kw">def</span> buscar_marcas():</span>
+<span id="cb32-4"><a></a>    url <span class="op">=</span> <span class="st">"https://parallelum.com.br/fipe/api/v1/carros/marcas"</span></span>
+<span id="cb32-5"><a></a>    <span class="cf">return</span> requests.get(url).json()</span>
+<span id="cb32-6"><a></a></span>
+<span id="cb32-7"><a></a><span class="kw">def</span> buscar_modelos(codigo_marca):</span>
+<span id="cb32-8"><a></a>    url <span class="op">=</span> <span class="ss">f"https://parallelum.com.br/fipe/api/v1/carros/marcas/</span><span class="sc">{</span>codigo_marca<span class="sc">}</span><span class="ss">/modelos"</span></span>
+<span id="cb32-9"><a></a>    resposta <span class="op">=</span> requests.get(url).json()</span>
+<span id="cb32-10"><a></a>    <span class="cf">return</span> resposta.get(<span class="st">'modelos'</span>, [])</span>
+<span id="cb32-11"><a></a></span>
+<span id="cb32-12"><a></a><span class="kw">def</span> buscar_anos(codigo_marca, codigo_modelo):</span>
+<span id="cb32-13"><a></a>    url <span class="op">=</span> <span class="ss">f"https://parallelum.com.br/fipe/api/v1/carros/marcas/</span><span class="sc">{</span>codigo_marca<span class="sc">}</span><span class="ss">/modelos/</span><span class="sc">{</span>codigo_modelo<span class="sc">}</span><span class="ss">/anos"</span></span>
+<span id="cb32-14"><a></a>    <span class="cf">return</span> requests.get(url).json()</span>
+<span id="cb32-15"><a></a></span>
+<span id="cb32-16"><a></a><span class="kw">def</span> buscar_preco(codigo_marca, codigo_modelo, codigo_ano):</span>
+<span id="cb32-17"><a></a>    url <span class="op">=</span> <span class="ss">f"https://parallelum.com.br/fipe/api/v1/carros/marcas/</span><span class="sc">{</span>codigo_marca<span class="sc">}</span><span class="ss">/modelos/</span><span class="sc">{</span>codigo_modelo<span class="sc">}</span><span class="ss">/anos/</span><span class="sc">{</span>codigo_ano<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb32-18"><a></a>    <span class="cf">return</span> requests.get(url).json()</span>
+<span id="cb32-19"><a></a></span>
+<span id="cb32-20"><a></a><span class="kw">def</span> main():</span>
+<span id="cb32-21"><a></a>    modelo_nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Digite o nome do modelo do carro: "</span>).strip().lower()</span>
+<span id="cb32-22"><a></a>    ano_usuario <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Digite o ano do carro (ex: 2015): "</span>).strip()</span>
+<span id="cb32-23"><a></a>    marcas <span class="op">=</span> buscar_marcas()</span>
+<span id="cb32-24"><a></a></span>
+<span id="cb32-25"><a></a>    <span class="co"># Verifica se houve erro de limite de taxa</span></span>
+<span id="cb32-26"><a></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(marcas, <span class="bu">dict</span>) <span class="kw">and</span> <span class="st">'error'</span> <span class="kw">in</span> marcas:</span>
+<span id="cb32-27"><a></a>        <span class="bu">print</span>(<span class="st">"Não foi possível consultar a informação no momento: limite de taxa da API excedido."</span>)</span>
+<span id="cb32-28"><a></a>        <span class="bu">print</span>(<span class="st">"Tente novamente mais tarde ou acesse https://fipe.online para obter um token."</span>)</span>
+<span id="cb32-29"><a></a>        <span class="cf">return</span></span>
+<span id="cb32-30"><a></a></span>
+<span id="cb32-31"><a></a>    <span class="bu">print</span>(<span class="st">"Buscando modelos que correspondem ao nome informado..."</span>)</span>
+<span id="cb32-32"><a></a></span>
+<span id="cb32-33"><a></a>    modelos_encontrados <span class="op">=</span> []</span>
+<span id="cb32-34"><a></a>    <span class="cf">for</span> marca <span class="kw">in</span> marcas:</span>
+<span id="cb32-35"><a></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(marca, <span class="bu">dict</span>) <span class="kw">or</span> <span class="st">'codigo'</span> <span class="kw">not</span> <span class="kw">in</span> marca <span class="kw">or</span> <span class="st">'nome'</span> <span class="kw">not</span> <span class="kw">in</span> marca:</span>
+<span id="cb32-36"><a></a>            <span class="cf">continue</span></span>
+<span id="cb32-37"><a></a>        modelos <span class="op">=</span> buscar_modelos(marca[<span class="st">'codigo'</span>])</span>
+<span id="cb32-38"><a></a>        <span class="cf">for</span> modelo <span class="kw">in</span> modelos:</span>
+<span id="cb32-39"><a></a>            <span class="cf">if</span> modelo_nome <span class="kw">in</span> modelo[<span class="st">'nome'</span>].lower():</span>
+<span id="cb32-40"><a></a>                modelos_encontrados.append({</span>
+<span id="cb32-41"><a></a>                    <span class="st">'marca'</span>: marca,</span>
+<span id="cb32-42"><a></a>                    <span class="st">'modelo'</span>: modelo</span>
+<span id="cb32-43"><a></a>                })</span>
+<span id="cb32-44"><a></a></span>
+<span id="cb32-45"><a></a>    <span class="cf">if</span> <span class="kw">not</span> modelos_encontrados:</span>
+<span id="cb32-46"><a></a>        <span class="bu">print</span>(<span class="st">"Nenhum modelo encontrado com esse nome."</span>)</span>
+<span id="cb32-47"><a></a>        <span class="cf">return</span></span>
+<span id="cb32-48"><a></a></span>
+<span id="cb32-49"><a></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Modelos encontrados:"</span>)</span>
+<span id="cb32-50"><a></a>    <span class="cf">for</span> idx, item <span class="kw">in</span> <span class="bu">enumerate</span>(modelos_encontrados):</span>
+<span id="cb32-51"><a></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>idx<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>item[<span class="st">'modelo'</span>][<span class="st">'nome'</span>]<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>item[<span class="st">'marca'</span>][<span class="st">'nome'</span>]<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb32-52"><a></a></span>
+<span id="cb32-53"><a></a>    escolha_modelo <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Escolha o número correspondente ao modelo desejado: "</span>).strip()</span>
+<span id="cb32-54"><a></a>    <span class="cf">try</span>:</span>
+<span id="cb32-55"><a></a>        escolha_modelo_idx <span class="op">=</span> <span class="bu">int</span>(escolha_modelo)</span>
+<span id="cb32-56"><a></a>        modelo_escolhido <span class="op">=</span> modelos_encontrados[escolha_modelo_idx]</span>
+<span id="cb32-57"><a></a>    <span class="cf">except</span> (<span class="pp">ValueError</span>, <span class="pp">IndexError</span>):</span>
+<span id="cb32-58"><a></a>        <span class="bu">print</span>(<span class="st">"Opção de modelo inválida."</span>)</span>
+<span id="cb32-59"><a></a>        <span class="cf">return</span></span>
+<span id="cb32-60"><a></a></span>
+<span id="cb32-61"><a></a>    anos <span class="op">=</span> buscar_anos(modelo_escolhido[<span class="st">'marca'</span>][<span class="st">'codigo'</span>], modelo_escolhido[<span class="st">'modelo'</span>][<span class="st">'codigo'</span>])</span>
+<span id="cb32-62"><a></a>    opcoes_ano <span class="op">=</span> [</span>
+<span id="cb32-63"><a></a>        (i, ano) <span class="cf">for</span> i, ano <span class="kw">in</span> <span class="bu">enumerate</span>(anos)</span>
+<span id="cb32-64"><a></a>        <span class="cf">if</span> ano_usuario <span class="kw">in</span> ano[<span class="st">'nome'</span>]</span>
+<span id="cb32-65"><a></a>    ]</span>
+<span id="cb32-66"><a></a>    <span class="cf">if</span> <span class="kw">not</span> opcoes_ano:</span>
+<span id="cb32-67"><a></a>        <span class="bu">print</span>(<span class="st">"Nenhuma opção de ano encontrada para esse modelo."</span>)</span>
+<span id="cb32-68"><a></a>        <span class="cf">return</span></span>
+<span id="cb32-69"><a></a></span>
+<span id="cb32-70"><a></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Opções de ano encontradas:"</span>)</span>
+<span id="cb32-71"><a></a>    <span class="cf">for</span> idx, ano <span class="kw">in</span> opcoes_ano:</span>
+<span id="cb32-72"><a></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>idx<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>ano[<span class="st">'nome'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb32-73"><a></a></span>
+<span id="cb32-74"><a></a>    escolha_ano <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Escolha o número correspondente ao ano desejado: "</span>).strip()</span>
+<span id="cb32-75"><a></a>    <span class="cf">try</span>:</span>
+<span id="cb32-76"><a></a>        escolha_ano_idx <span class="op">=</span> <span class="bu">int</span>(escolha_ano)</span>
+<span id="cb32-77"><a></a>        ano_escolhido <span class="op">=</span> opcoes_ano[escolha_ano_idx][<span class="dv">1</span>]</span>
+<span id="cb32-78"><a></a>    <span class="cf">except</span> (<span class="pp">ValueError</span>, <span class="pp">IndexError</span>):</span>
+<span id="cb32-79"><a></a>        <span class="bu">print</span>(<span class="st">"Opção de ano inválida."</span>)</span>
+<span id="cb32-80"><a></a>        <span class="cf">return</span></span>
+<span id="cb32-81"><a></a></span>
+<span id="cb32-82"><a></a>    preco <span class="op">=</span> buscar_preco(</span>
+<span id="cb32-83"><a></a>        modelo_escolhido[<span class="st">'marca'</span>][<span class="st">'codigo'</span>],</span>
+<span id="cb32-84"><a></a>        modelo_escolhido[<span class="st">'modelo'</span>][<span class="st">'codigo'</span>],</span>
+<span id="cb32-85"><a></a>        ano_escolhido[<span class="st">'codigo'</span>]</span>
+<span id="cb32-86"><a></a>    )</span>
+<span id="cb32-87"><a></a></span>
+<span id="cb32-88"><a></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Detalhes do veículo:"</span>)</span>
+<span id="cb32-89"><a></a>    <span class="cf">for</span> chave, valor <span class="kw">in</span> preco.items():</span>
+<span id="cb32-90"><a></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>chave<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>valor<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb32-91"><a></a></span>
+<span id="cb32-92"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb32-93"><a></a>    main()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section></section>
