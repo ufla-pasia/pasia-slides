@@ -2400,6 +2400,40 @@ web_commit_signoff_required</code></pre>
 <span id="cb32-91"><a></a></span>
 <span id="cb32-92"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb32-93"><a></a>    main()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-61" class="slide level2">
+<h2></h2>
+<p>Sobre a questão do código não parecer estar consultando informações específicas sobre Minas Gerais, escrevi o seguinte prompt.</p>
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>No início eu tinha pedido preços de Minas Gerais. Mas não há nada no código que indique que os preços se referem ao estado. Existe alguma forma de fazer a consulta por estado?</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-62" class="slide level2">
+<h2></h2>
+<p>E tive a seguinte resposta:</p>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
+<p>Atualmente, a API pública da FIPE (https://parallelum.com.br/fipe/api/v1/) <strong>não permite consultar preços por estado</strong>. O valor retornado é sempre o preço médio nacional calculado pela FIPE, sem distinção regional.</p>
+<p><strong>Resumo:</strong> - O preço retornado é nacional, não estadual. - Não há parâmetro ou endpoint para filtrar por estado (ex: Minas Gerais). - Se precisar de preços regionais, será necessário buscar fontes alternativas, como portais de classificados ou APIs privadas de mercado automotivo.</p>
+<p>Se precisar, posso adicionar uma mensagem ao seu programa informando ao usuário que o valor exibido é nacional.</p>
+</div>
+</div>
+</div>
+</div>
 
 
 </section></section>

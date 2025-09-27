@@ -1999,3 +1999,11 @@ Atualmente, a API pública da FIPE (https://parallelum.com.br/fipe/api/v1/) **n�
 
 Se precisar, posso adicionar uma mensagem ao seu programa informando ao usuário que o valor exibido é nacional.
 :::
+
+## Dicas Finais
+
+Se a API que você estiver consultando for muito específica, talvez seja melhor ler a documentação antes de pedir ao Copilot para gerar o código.
+
+Saber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados.
+
+Na Aula Prática veremos exemplo de API que precisa de autenticação.
