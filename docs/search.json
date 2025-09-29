@@ -6319,5 +6319,75 @@
     "title": "Trabalhando com APIs",
     "section": "",
     "text": "E tive a seguinte resposta:\n\n\n\n\nGitHub Copilot\n\n\nAtualmente, a API pública da FIPE (https://parallelum.com.br/fipe/api/v1/) não permite consultar preços por estado. O valor retornado é sempre o preço médio nacional calculado pela FIPE, sem distinção regional.\nResumo:\n\nO preço retornado é nacional, não estadual.\nNão há parâmetro ou endpoint para filtrar por estado (ex: Minas Gerais).\nSe precisar de preços regionais, será necessário buscar fontes alternativas, como portais de classificados ou APIs privadas de mercado automotivo.\n\nSe precisar, posso adicionar uma mensagem ao seu programa informando ao usuário que o valor exibido é nacional."
+  },
+  {
+    "objectID": "aula_p8.html#section",
+    "href": "aula_p8.html#section",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "Nesta aula, vamos praticar o uso de APIs para obtenção e visualização de dados.\n\nFaremos isso dois tipos de APIs bem diferentes.\n\n\nPrimeiro, vamos usar as APIs de Malhas e de Municípios do IBGE.\n\nVamos plotar mapas com informações sobre municípios brasileiros.\nNesse processo, vamos conhecer o formato GeoJSON."
+  },
+  {
+    "objectID": "aula_p8.html#section-1",
+    "href": "aula_p8.html#section-1",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "Depois vamos fazer um programa em Python que usa a API do Gemini!\n\nNesse exemplo faremos algumas coisas de forma diferente do que vimos até então.\n\n\nPrecisaremos usar autenticação.\nUsaremos uma biblioteca que encapsula o acesso à API.\nConseguiremos criar programas baseados em LLMs."
+  },
+  {
+    "objectID": "aula_p8.html#section-2",
+    "href": "aula_p8.html#section-2",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "A API de Malhas do IBGE permite consultar os polígonos dos municípios brasileiros em formato GeoJSON.\n\nUm GeoJSON é um JSON com um formato específico para representar informações geográficas.\n\n\nVamos fazer uma consulta de exemplo na API de Malhas do IBGE.\n\nVamos usar a versão 4 da API, cuja documentação está disponível em: https://servicodados.ibge.gov.br/api/docs/malhas?versao=4"
+  },
+  {
+    "objectID": "aula_p8.html#section-3",
+    "href": "aula_p8.html#section-3",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "Pela documentação, vemos que existe uma consulta por município:\n\nhttps://servicodados.ibge.gov.br/api/v4/malhas/municipios/{id}\n\n\nPara a qual devemos informar o id (ou código) do município desejado.\n\nAntes de implementarmos um programa Python, vamos fazer um teste no navegador."
+  },
+  {
+    "objectID": "aula_p8.html#section-4",
+    "href": "aula_p8.html#section-4",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "Buscando no Google, descobri que o código IBGE de Lavras é 3138203.\n\nPortanto, podemos consultar o polígono de Lavras com a URL: https://servicodados.ibge.gov.br/api/v4/malhas/municipios/3138203"
+  },
+  {
+    "objectID": "aula_p8.html#section-6",
+    "href": "aula_p8.html#section-6",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "Mas, na própria documentação da API, vemos que podemos pedir o formato GeoJSON.\n\nSe quisermos testar pelo navegador, precisamos acrescentar ?formato=application/vnd.geo+json à URL.\nJá se quiséssemos fazer a consulta por código, devemos especificar o formato no cabeçalho Accept.\n\n\nVamos testar pelo navegador para verificar como os dados são retornados."
+  },
+  {
+    "objectID": "aula_p8.html#section-7",
+    "href": "aula_p8.html#section-7",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "A parte inicial dos dados retornados é mostrada abaixo:\n\nVemos que é um arquivo JSON com um formato específico para dados geográficos.\n\n{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Polygon\",\n        \"coordinates\": [\n          [\n            [-44.8693, -21.2122],\n            [-44.8704, -21.2122],"
+  },
+  {
+    "objectID": "aula_p8.html#section-5",
+    "href": "aula_p8.html#section-5",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "Com essa consulta, obtemos uma imagem (SVG) do município de Lavras."
+  },
+  {
+    "objectID": "aula_p8.html#section-8",
+    "href": "aula_p8.html#section-8",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "Vamos destacar o que é mais importante do formato GeoJson.\n{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": {\n        \"type\": \"Polygon\",\n        \"coordinates\": [\n          [\n            [-44.8693, -21.2122],\n            [-44.8704, -21.2122],\n\nTemos um campo \"features\" que traz todos os dados geográficos.\nTemos uma geometria dentro do campo \"geometry\" e vemos que ela é do tipo \"Polygon\".\nPor fim, temos os valores das coordenadas do polígono."
+  },
+  {
+    "objectID": "aula_p8.html#section-9",
+    "href": "aula_p8.html#section-9",
+    "title": "APIs - Dados Geográficos, Autenticação e LLMs",
+    "section": "",
+    "text": "Ideias:\n\nMalhas municipais https://servicodados.ibge.gov.br/api/docs/malhas?versao=4\n\nusar API de alguma IA como a do GEmini - https://ai.google.dev/gemini-api/docs/rate-limits?hl=pt-br - https://ai.google.dev/gemini-api/docs/image-generation?hl=pt-br#limitations"
   }
 ]

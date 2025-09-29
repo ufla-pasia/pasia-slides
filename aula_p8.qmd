@@ -1,24 +1,199 @@
 ---
-title: APIs e Dados Geográficos
+title: APIs - Dados Geográficos, Autenticação e LLMs
 subtitle: PASIA - Aula P.8
 ---
 
 ##  
 
+Nesta aula, vamos praticar o uso de APIs para obtenção e visualização de dados.
+
+- Faremos isso dois tipos de APIs bem diferentes.
+
+. . .
+
+Primeiro, vamos usar as APIs de Malhas e de Municípios do IBGE.
+
+- Vamos plotar mapas com informações sobre municípios brasileiros.
+- Nesse processo, vamos conhecer o formato GeoJSON.
+
+##
+
+Depois vamos fazer um programa em Python que usa a API do Gemini!
+
+- Nesse exemplo faremos algumas coisas de forma diferente do que vimos até então.
+ 1. Precisaremos usar autenticação.
+ 2. Usaremos uma biblioteca que encapsula o acesso à API.
+ 3. Conseguiremos criar programas baseados em LLMs.
+
+
+# API de Dados Geográficos {background-color="#40666e"}
+
+##
+
+A API de Malhas do IBGE permite consultar os polígonos dos municípios 
+brasileiros em formato GeoJSON.
+
+- Um GeoJSON é um JSON com um formato específico para representar informações geográficas.
+
+. . .
+
+Vamos fazer uma consulta de exemplo na API de Malhas do IBGE.
+
+- Vamos usar a versão 4 da API, cuja documentação está disponível em:
+  [https://servicodados.ibge.gov.br/api/docs/malhas?versao=4](https://servicodados.ibge.gov.br/api/docs/malhas?versao=4)
+
+##
+
+Pela documentação, vemos que existe uma consulta por município:
+
+  - [https://servicodados.ibge.gov.br/api/v4/malhas/municipios/{id}
+  ](https://servicodados.ibge.gov.br/api/v4/malhas/municipios/{id})
+
+. . .
+
+Para a qual devemos informar o id (ou código) do município desejado.
+
+- Antes de implementarmos um programa Python, vamos fazer um teste no navegador.
+
+##
+
+Buscando no Google, descobri que o código IBGE de Lavras é `3138203`.
+
+- Portanto, podemos consultar o polígono de Lavras com a URL:
+  [https://servicodados.ibge.gov.br/api/v4/malhas/municipios/3138203](https://servicodados.ibge.gov.br/api/v4/malhas/municipios/3138203)
+
+##
+
+Com essa consulta, obtemos uma imagem (SVG) do município de Lavras.
+
+![](imagens/svg_poligono_lavras.png){fig-align="center" style="max-height: 50vh; width: auto;"}
+
+##
+
+Mas, na própria documentação da API, vemos que podemos pedir o formato GeoJSON.
+
+- Se quisermos testar pelo navegador, precisamos acrescentar `?formato=application/vnd.geo+json` à URL.
+- Já se quiséssemos fazer a consulta por código, devemos especificar o formato no cabeçalho `Accept`.
+
+. . .
+
+Vamos testar pelo navegador para verificar como os dados são retornados.
+
+##
+
+A parte inicial dos dados retornados é mostrada abaixo:
+
+- Vemos que é um arquivo JSON com um formato específico para dados geográficos.
+
+
+```{.json}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-44.8693, -21.2122],
+            [-44.8704, -21.2122],
+
+```
+
+##
+
+Vamos destacar o que é mais importante do formato GeoJson.
+
+```{.json code-line-numbers=3|6-7|8-11}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-44.8693, -21.2122],
+            [-44.8704, -21.2122],
+
+```
+
+1. Temos um campo `"features"` que traz todos os dados geográficos.
+2. Temos uma geometria dentro do campo `"geometry"` e vemos que ela é do tipo `"Polygon"`.
+3. Por fim, temos os valores das coordenadas do polígono.
+
+##
+
+Para conseguirmos exibir esse polígono podemos usar a biblioteca plotly.
+
+- Ela possui um método `scatter_geo` que consegue interpretar o formato GeoJSON.
+
+. . .
+
+Nos slides a seguir são apresentados os exercícios a serem feitos com essa ideia.
+
+- Lembre-se de usar o arquivo `requirements.txt` e ambiente virtual.
+
+##
+
+:::: {.callout-note title="Tarefa 1 - Identificando um município" icon=false, .nonincremental}
+Faça um programa em Python que:
+
+- Peça ao usuário o nome (ou parte do nome) de um município brasileiro.
+- O programa deverá então fazer uma consulta à API de Municípios do IBGE.
+- E exibir os nomes e códigos de todos os municípios que contenham o nome informado.
+::::
+
+##
+
+:::: {.callout-note title="Tarefa 2 - Exibindo polígono do município" icon=false, .nonincremental}
+Incremente o programa do passo anterior de forma que:
+
+- O usuário possa escolher um dos municípios listados.
+- O programa deverá então fazer uma consulta à API de Malhas do IBGE.
+- E exibir o polígono do município escolhido, usando a API Plotly.
+::::
+
+##
+
+:::: {.callout-note title="Tarefa 3 - Exibindo polígono no mapa-mundi" icon=false, .nonincremental}
+É possível que no passo anterior você tenha conseguido exibir o polígono do município, mas isolado, 
+sem o mapa-mundi de fundo.
+
+- Incremente o programa do passo anterior de forma que o polígono do município seja exibido sobre o mapa-mundi.
+
+Dica: use zoom-out na hora de testar.
+::::
+
+##
+
+:::: {.callout-note title="Tarefa 4 - Incluindo mais informações no mapa" icon=false, .nonincremental}
+Altere o programa para que ele use a API de Municípios do IBGE para obter mais informações sobre o município escolhido.
+
+- Inclua o população e o PIB per capita do município como tooltip no polígono.
+::::
+
+##
+
+:::: {.callout-note title="Tarefa 5 - Incluindo mais municípios" icon=false, .nonincremental}
+Altere o programa para que o usuário possa escolher vários municípios e sejam exibidos os polígonos e
+tooltips de todos eles no mapa.
+::::
+
+# API do Google Gemini {background-color="#40666e"}
+
+
+##
+
 Ideias:
 
-- Usar API de países do IBGE para mostrar informações em uma mapa.
-  https://servicodados.ibge.gov.br/api/docs/paises
+- Malhas municipais
+https://servicodados.ibge.gov.br/api/docs/malhas?versao=4
+
 
 usar API de alguma IA como a do GEmini
 - https://ai.google.dev/gemini-api/docs/rate-limits?hl=pt-br
 - https://ai.google.dev/gemini-api/docs/image-generation?hl=pt-br#limitations
 
-https://deividfortuna.github.io/fipe/v2/
-
-Outros:
-https://brasilapi.com.br/
-
-https://github.com/M-Media-Group/Cartes.io/wiki/API
-
-https://github.com/public-apis/public-apis
