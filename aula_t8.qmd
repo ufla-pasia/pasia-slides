@@ -1427,7 +1427,7 @@ if __name__ == "__main__":
 Para finalizar, os exemplos com a API de nomes do IBGE, podemos verificar a frequência de um nome por município.
 
 - A API permite essa consulta, mas exige o código do município.
-- Esses códigos podem ser obtidos na API de municípios do IBGE.
+- E esse código pode ser obtido de outra API do IBGE (de municípios).
 
 . . .
 
@@ -1519,8 +1519,8 @@ Para fechar os exemplos de uso de API da aula, vamos ver um exemplo com a API da
 Mas, dessa vez, segui uma abordagem diferente.
 
 - Em vez de consultar a documentação da API antes e planejar o que o programa faria, 
-- eu tive conversa exploratória com o Copilot e meio _vibe coding_ mesmo.
-  - A ideia foi explorar possibilidades.
+- eu tive uma conversa exploratória com o Copilot e entrei no modo _vibe coding_.
+  - A ideia era explorar possibilidades.
 
 ##
 
@@ -1554,8 +1554,8 @@ Esses dados são úteis para consultas de valores de compra, venda, seguros e av
 
 Resolvi então pedir ao Copilot para criar um programa que usasse a API.
 
-- O mais recomendado seria continuar explorando em mais detalhes,
-  mas tentei ir direto ao ponto.
+- O mais recomendado seria, na verdade, continuar explorando a API em mais detalhes.
+- Mas, em vez disso, tentei ir direto ao ponto.
 
 . . .
 
@@ -1578,6 +1578,7 @@ O Copilot gerou uma sugestão de estrutura de projeto completa como resposta.
 Mas, para a minha decepção, o código gerado era apenas um esqueleto.
 
 - Não fazia nenhuma chamada real à API da FIPE.
+- E meu chamou a atenção também que todo o código e comentários foram gerados em inglês.
 
 . . .
 
@@ -1607,6 +1608,8 @@ if __name__ == "__main__":
 
 Esse print não mostra o estado real da resposta do Copilot.
 
+- Por que na hora que ela apareceu, logo à frente de _Workspace_, tinha um link:
+
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -1614,10 +1617,11 @@ Esse print não mostra o estado real da resposta do Copilot.
 :::
 
 ::: {.column width="50%"}
-Por que na hora que ela apareceu, logo à frente de _Workspace_, tinha um link:
-
-- `rerun wihtot`: que significa refazer a pergunta sem usar o agente `@workspace`.
-- Usei essa opção e aí a resposta foi bem diferente.
+::: {.smaller}
+- `rerun without`: que significa refazer a pergunta sem usar o agente `@workspace`.
+  - Na verdade eu nem tinha pedido para usar o agente `@workspace`.
+- Clique então na opção e aí a resposta foi bem diferente.
+:::
 :::
 
 ::::
@@ -1683,6 +1687,7 @@ if __name__ == "__main__":
 
 
 **Observações:**
+
 - A API FIPE não retorna preços por estado, apenas o preço médio nacional. O preço exibido é o valor FIPE nacional, não específico de Minas Gerais.
 - O programa busca o modelo pelo nome informado e retorna o preço do ano mais recente disponível.
 - Para refinar a busca, você pode adaptar o código para listar opções caso haja mais de um modelo correspondente.
@@ -1706,14 +1711,15 @@ Marca: VW - VolksWagen, Modelo: Fusca, Combustível: Gasolina
 
 . . .
 
-Mas, analisando o código gerado percebi algumas coisas.
+Mas, vendo as observações finais do Copilot e analisando o código gerado 
+percebemos alguns pontos importantes.
 
 ##
 
 1. Meu prompt original não era bom pois eu coloquei "preço atual do modelo",
 mas o preço é diferente dependendo do ano do carro.
+  - O copilot avisou nas observações que estava usando o ano mais recente disponível.
 2. Além disso, o mesmo modelo, no mesmo ano, pode ter várias variações (LX, EX, etc.).
-3. E, por fim, não há nenhum referência no código que indique que os dados se refiram a Minas Gerais.
 
 . . .
 
@@ -1767,9 +1773,9 @@ def main():
 
 ##
 
-Mas ao testar usando `Fusca`e ano `1985`, o programa não encontrou a informação.
+Mas ao testar usando `Fusca` e ano `1985`, o programa não encontrou a informação.
 
-- Mas o dado do `Fusca` exibido na versão anterior do programa mostrava `1985` como
+- Mas a resposta da versão anterior do programa para o carro `Fusca` mostrava `1985` como
   o ano mais recente disponível.
 
 . . .
@@ -1806,15 +1812,19 @@ O código gerado funcionava, mas vi outro problema.
   - `ONIX  Lollapalooza 1.0 F.Power 5p Mec.` 
   - e não encontrava dados para ano `2024`, já que esse modelo só teve produção em 2014.
 
+##
+
+Alterei então o prompt:
+
 . . .
 
 ::: {.callout-caution title="Prompt" icon="false"}
 Podem existir vários modelos com o nome passado pelo usuário. Assim como foi feito com o ano, gostaria que fossem exibidos todos os modelos para que o usuário escolhesse o que deseja.
 :::
 
-##
+. . .
 
-O código gerado gerou o seguinte erro:
+Mas o código gerou o seguinte erro:
 
 ```output
 Traceback (most recent call last):
@@ -1841,7 +1851,7 @@ O erro KeyError: 'modelos' ocorre porque algumas marcas não possuem modelos cad
 
 ##
 
-Continuou gerando erro:
+Apliquei a correção sugerido, mas continuou gerando um erro (agora no `codigo`).
 
 ```output
 Traceback (most recent call last):
@@ -1854,6 +1864,10 @@ TypeError: string indices must be integers, not 'str'
 ```
 
 . . .
+
+Joguei o erro novamente no Copilot.
+
+##
 
 ::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
 O erro ocorre porque a lista `marcas` contém dicionários, mas em algum momento ela pode estar vindo como uma lista de strings. Isso geralmente acontece se a API retorna algo inesperado ou se o código espera um dicionário, mas recebe uma string.
@@ -1876,7 +1890,7 @@ dizendo que a taxa de requisições da API tinha sido excedida.
 ##
 
 ::: {.callout-caution title="Prompt" icon="false"}
-Depurando, eu notei que a variável marcas está agora vindo com o valor {'error': 'limite de taxa excedido. Por favor, visite https://fipe.online para obter um token'}. Altere o código para identificar essa situação e informar o suário que não é possível consultar a informação no momento.
+Depurando, eu notei que a variável marcas está agora vindo com o valor {'error': 'limite de taxa excedido. Por favor, visite https://fipe.online para obter um token'}. Altere o código para identificar essa situação e informar o u suário que não é possível consultar a informação no momento.
 :::
 
 ##
@@ -1979,8 +1993,12 @@ if __name__ == "__main__":
 
 ## 
 
-Sobre a questão do código não parecer estar consultando informações
+Sobre a questão do código não estar consultando informações
 específicas sobre Minas Gerais, escrevi o seguinte prompt.
+
+- Obs.: o Copilot já tinha alertado sobre isso.
+
+. . .
 
 ::: {.callout-caution title="Prompt" icon="false"}
 No início eu tinha pedido preços de Minas Gerais. Mas não há nada no código que indique que os preços se referem ao estado. Existe alguma forma de fazer a consulta por estado?
@@ -1994,6 +2012,7 @@ E tive a seguinte resposta:
 Atualmente, a API pública da FIPE (https://parallelum.com.br/fipe/api/v1/) **não permite consultar preços por estado**. O valor retornado é sempre o preço médio nacional calculado pela FIPE, sem distinção regional.
 
 **Resumo:**
+
 - O preço retornado é nacional, não estadual.
 - Não há parâmetro ou endpoint para filtrar por estado (ex: Minas Gerais).
 - Se precisar de preços regionais, será necessário buscar fontes alternativas, como portais de classificados ou APIs privadas de mercado automotivo.
@@ -2003,8 +2022,18 @@ Se precisar, posso adicionar uma mensagem ao seu programa informando ao usuário
 
 ## Dicas Finais
 
-Se a API que você estiver consultando for muito específica, talvez seja melhor ler a documentação antes de pedir ao Copilot para gerar o código.
+::: {.callout-warning}
+Cuidado com o _vibe coding_!
 
-Saber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados.
+Saber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados,
+do que ficar simplesmente fazendo um bate e volta com o Assistente de IA.
+:::
 
-Na Aula Prática veremos exemplo de API que precisa de autenticação.
+. . .
+
+::: {.callout-tip}
+Se a API que você estiver consultando for muito específica, talvez seja melhor ler a documentação 
+antes de pedir ao Copilot para gerar o código.
+
+Outra possibilidade seria fornecer trechos da documentação junto com o seu prompt.
+:::

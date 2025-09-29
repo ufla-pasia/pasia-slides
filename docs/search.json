@@ -5870,7 +5870,7 @@
     "href": "aula_t8.html#verificando-por-município",
     "title": "Trabalhando com APIs",
     "section": "Verificando por município",
-    "text": "Verificando por município\nPara finalizar, os exemplos com a API de nomes do IBGE, podemos verificar a frequência de um nome por município.\n\nA API permite essa consulta, mas exige o código do município.\nEsses códigos podem ser obtidos na API de municípios do IBGE.\n\n\n\n\n\n\nPrompt\n\n\nGostaria de um programa em Python que consultasse a frequência de um nome específico em um município do Brasil usando a API do IBGE. O programa deve solicitar ao usuário que digite um nome e um município. Em seguida, deve usar a API do IBGE para descobrir o código do município e então seguida exibir a frequência desse nome no município em um gráfico usando Plotly."
+    "text": "Verificando por município\nPara finalizar, os exemplos com a API de nomes do IBGE, podemos verificar a frequência de um nome por município.\n\nA API permite essa consulta, mas exige o código do município.\nE esse código pode ser obtido de outra API do IBGE (de municípios).\n\n\n\n\n\n\nPrompt\n\n\nGostaria de um programa em Python que consultasse a frequência de um nome específico em um município do Brasil usando a API do IBGE. O programa deve solicitar ao usuário que digite um nome e um município. Em seguida, deve usar a API do IBGE para descobrir o código do município e então seguida exibir a frequência desse nome no município em um gráfico usando Plotly."
   },
   {
     "objectID": "aula_t8.html#section-5",
@@ -6045,7 +6045,7 @@
     "href": "aula_t8.html#section-23",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "O código gerado foi bem completo.\n\nInclusive foram gerados dois gráficos em vez de apenas um como eu tinha pedido.\n\n\nTalvez porque eu estava usando o Cladue Sonnet 4 como modelo no Copilot.\n\nEm vez do GPT-4.1 que eu vinha usando até então."
+    "text": "O código gerado foi bem completo.\n\nInclusive foram gerados dois gráficos em vez de apenas um como eu tinha pedido.\n\n\nTalvez porque eu estava usando o Claude Sonnet 4 como modelo no Copilot.\n\nEm vez do GPT-4.1 que eu vinha usando até então."
   },
   {
     "objectID": "aula_t8.html#section-25",
@@ -6087,7 +6087,7 @@
     "href": "aula_t8.html#section-30",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Fica a dica!\n\n\nCuidado com respostas de Assistentes de IA.\nPrecisamos saber o que queremos em vez de simplesmente entrar em um ciclo de pedir correções.\nNesse caso, a solução não fazia sentido com o que eu estava solicitando."
+    "text": "Fica a dica!\n\n\nCuidado com respostas de Assistentes de IA.\nPrecisamos saber o que queremos em vez de simplesmente entrar em um ciclo de pedir correções.\nNesse caso, a solução não fazia sentido."
   },
   {
     "objectID": "aula_t8.html#section-31",
@@ -6136,7 +6136,7 @@
     "href": "aula_t8.html#section-38",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Para fechar os exemplos de uso de API da aula, vamos ver um exemplo com a API da FIPE.\n\nA API da FIPE disponibiliza dados sobre preços de veículos no Brasil.\n\n\nMas, dessa vez, segui uma abordagem diferente.\n\nEm vez de consultar a documentação da API antes e planejar o que o programa faria,\neu tive conversa exploratória com o Copilot e meio vibe coding mesmo.\n\nA ideia foi explorar possibilidades."
+    "text": "Para fechar os exemplos de uso de API da aula, vamos ver um exemplo com a API da FIPE.\n\nA API da FIPE disponibiliza dados sobre preços de veículos no Brasil.\n\n\nMas, dessa vez, segui uma abordagem diferente.\n\nEm vez de consultar a documentação da API antes e planejar o que o programa faria,\neu tive uma conversa exploratória com o Copilot e entrei no modo vibe coding.\n\nA ideia era explorar possibilidades."
   },
   {
     "objectID": "aula_t8.html#section-39",
@@ -6157,7 +6157,7 @@
     "href": "aula_t8.html#section-41",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Resolvi então pedir ao Copilot para criar um programa que usasse a API.\n\nO mais recomendado seria continuar explorando em mais detalhes, mas tentei ir direto ao ponto.\n\n\n\n\n\n\nPrompt\n\n\nGostaria de criar um programa Python no qual eu informasse o nome de um modelo de Carro e o programa me informasse o preço atual desse modelo em Minas Gerais."
+    "text": "Resolvi então pedir ao Copilot para criar um programa que usasse a API.\n\nO mais recomendado seria, na verdade, continuar explorando a API em mais detalhes.\nMas, em vez disso, tentei ir direto ao ponto.\n\n\n\n\n\n\nPrompt\n\n\nGostaria de criar um programa Python no qual eu informasse o nome de um modelo de Carro e o programa me informasse o preço atual desse modelo em Minas Gerais."
   },
   {
     "objectID": "aula_t8.html#section-42",
@@ -6171,14 +6171,14 @@
     "href": "aula_t8.html#section-43",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Mas, para a minha decepção, o código gerado era apenas um esqueleto.\n\nNão fazia nenhuma chamada real à API da FIPE.\n\n\ndef get_car_price(car_model):\n    # This function simulates fetching the car price from a database or an API.\n    # In a real application, you would replace this with actual data fetching logic.\n    car_prices = {\n        \"Fusca\": 30000,\n        \"Civic\": 120000,\n        \"Corolla\": 115000,\n        \"Onix\": 70000,\n        \"HB20\": 75000\n    }\n    return car_prices.get(car_model, \"Model not found\")\n\ndef main():\n    car_model = input(\"Enter the car model: \")\n    price = get_car_price(car_model)\n    print(f\"The current price of {car_model} in Minas Gerais is: {price}\")\n\nif __name__ == \"__main__\":\n    main()"
+    "text": "Mas, para a minha decepção, o código gerado era apenas um esqueleto.\n\nNão fazia nenhuma chamada real à API da FIPE.\nE meu chamou a atenção também que todo o código e comentários foram gerados em inglês.\n\n\ndef get_car_price(car_model):\n    # This function simulates fetching the car price from a database or an API.\n    # In a real application, you would replace this with actual data fetching logic.\n    car_prices = {\n        \"Fusca\": 30000,\n        \"Civic\": 120000,\n        \"Corolla\": 115000,\n        \"Onix\": 70000,\n        \"HB20\": 75000\n    }\n    return car_prices.get(car_model, \"Model not found\")\n\ndef main():\n    car_model = input(\"Enter the car model: \")\n    price = get_car_price(car_model)\n    print(f\"The current price of {car_model} in Minas Gerais is: {price}\")\n\nif __name__ == \"__main__\":\n    main()"
   },
   {
     "objectID": "aula_t8.html#section-44",
     "href": "aula_t8.html#section-44",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Esse print não mostra o estado real da resposta do Copilot.\n\n\n\n\n\n\n\n\nPor que na hora que ela apareceu, logo à frente de Workspace, tinha um link:\n\nrerun wihtot: que significa refazer a pergunta sem usar o agente @workspace.\nUsei essa opção e aí a resposta foi bem diferente."
+    "text": "Esse print não mostra o estado real da resposta do Copilot.\n\nPor que na hora que ela apareceu, logo à frente de Workspace, tinha um link:\n\n\n\n\n\n\n\n\n\n\n\nrerun without: que significa refazer a pergunta sem usar o agente @workspace.\n\nNa verdade eu nem tinha pedido para usar o agente @workspace.\n\nClique então na opção e aí a resposta foi bem diferente."
   },
   {
     "objectID": "aula_t8.html#section-45",
@@ -6199,21 +6199,21 @@
     "href": "aula_t8.html#section-47",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "GitHub Copilot (continuação)\n\n\nObservações: - A API FIPE não retorna preços por estado, apenas o preço médio nacional. O preço exibido é o valor FIPE nacional, não específico de Minas Gerais. - O programa busca o modelo pelo nome informado e retorna o preço do ano mais recente disponível. - Para refinar a busca, você pode adaptar o código para listar opções caso haja mais de um modelo correspondente.\nSe precisar de ajustes, me avise!"
+    "text": "GitHub Copilot (continuação)\n\n\nObservações:\n\nA API FIPE não retorna preços por estado, apenas o preço médio nacional. O preço exibido é o valor FIPE nacional, não específico de Minas Gerais.\nO programa busca o modelo pelo nome informado e retorna o preço do ano mais recente disponível.\nPara refinar a busca, você pode adaptar o código para listar opções caso haja mais de um modelo correspondente.\n\nSe precisar de ajustes, me avise!"
   },
   {
     "objectID": "aula_t8.html#section-48",
     "href": "aula_t8.html#section-48",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "A boa notícia é que o código gerado funciona.\n\nDigite o nome do modelo do carro: Fusca\nBuscando marcas...\nModelo encontrado: Fusca (VW - VolksWagen)\nPreço FIPE em MG: R$ 27.357,00 (1985)\nMarca: VW - VolksWagen, Modelo: Fusca, Combustível: Gasolina\n\n\nMas, analisando o código gerado percebi algumas coisas."
+    "text": "A boa notícia é que o código gerado funciona.\n\nDigite o nome do modelo do carro: Fusca\nBuscando marcas...\nModelo encontrado: Fusca (VW - VolksWagen)\nPreço FIPE em MG: R$ 27.357,00 (1985)\nMarca: VW - VolksWagen, Modelo: Fusca, Combustível: Gasolina\n\n\nMas, vendo as observações finais do Copilot e analisando o código gerado percebemos alguns pontos importantes."
   },
   {
     "objectID": "aula_t8.html#section-49",
     "href": "aula_t8.html#section-49",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Meu prompt original não era bom pois eu coloquei “preço atual do modelo”, mas o preço é diferente dependendo do ano do carro.\nAlém disso, o mesmo modelo, no mesmo ano, pode ter várias variações (LX, EX, etc.).\nE, por fim, não há nenhum referência no código que indique que os dados se refiram a Minas Gerais.\n\n\nSem contar que a busca é lenta porque procura o carro em todas as marcas."
+    "text": "Meu prompt original não era bom pois eu coloquei “preço atual do modelo”, mas o preço é diferente dependendo do ano do carro.\n\n\nO copilot avisou nas observações que estava usando o ano mais recente disponível.\n\n\nAlém disso, o mesmo modelo, no mesmo ano, pode ter várias variações (LX, EX, etc.).\n\n\nSem contar que a busca é lenta porque procura o carro em todas as marcas."
   },
   {
     "objectID": "aula_t8.html#section-50",
@@ -6234,7 +6234,7 @@
     "href": "aula_t8.html#section-52",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Mas ao testar usando Fuscae ano 1985, o programa não encontrou a informação.\n\nMas o dado do Fusca exibido na versão anterior do programa mostrava 1985 como o ano mais recente disponível.\n\n\nUsando o depurador do VS Code, percebi que o dado retornado pela API não era exatamente 1985\n\nmas sim 1985 Gasolina, por exemplo.\n\n\n\nAssim a comparação abaixo não funcionava.\nif ano_usuario == ano['nome']:"
+    "text": "Mas ao testar usando Fusca e ano 1985, o programa não encontrou a informação.\n\nMas a resposta da versão anterior do programa para o carro Fusca mostrava 1985 como o ano mais recente disponível.\n\n\nUsando o depurador do VS Code, percebi que o dado retornado pela API não era exatamente 1985\n\nmas sim 1985 Gasolina, por exemplo.\n\n\n\nAssim a comparação abaixo não funcionava.\nif ano_usuario == ano['nome']:"
   },
   {
     "objectID": "aula_t8.html#section-53",
@@ -6248,14 +6248,14 @@
     "href": "aula_t8.html#section-54",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "O código gerado funcionava, mas vi outro problema.\n\nEle parava no primeiro modelo encontrado com o nome informado.\nAssim, procurando Onix, por exemplo, ele olhava apenas um modelo específico.\n\nONIX  Lollapalooza 1.0 F.Power 5p Mec.\ne não encontrava dados para ano 2024, já que esse modelo só teve produção em 2014.\n\n\n\n\n\n\n\nPrompt\n\n\nPodem existir vários modelos com o nome passado pelo usuário. Assim como foi feito com o ano, gostaria que fossem exibidos todos os modelos para que o usuário escolhesse o que deseja."
+    "text": "O código gerado funcionava, mas vi outro problema.\n\nEle parava no primeiro modelo encontrado com o nome informado.\nAssim, procurando Onix, por exemplo, ele olhava apenas um modelo específico.\n\nONIX  Lollapalooza 1.0 F.Power 5p Mec.\ne não encontrava dados para ano 2024, já que esse modelo só teve produção em 2014."
   },
   {
     "objectID": "aula_t8.html#section-55",
     "href": "aula_t8.html#section-55",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "O código gerado gerou o seguinte erro:\nTraceback (most recent call last):\n  File \"/home/julio/Downloads/projeto/app.py\", line 83, in &lt;module&gt;\n    main()\n  File \"/home/julio/Downloads/projeto/app.py\", line 27, in main\n    modelos = buscar_modelos(marca['codigo'])\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/julio/Downloads/projeto/app.py\", line 9, in buscar_modelos\n    return requests.get(url).json()['modelos']\n           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\nKeyError: 'modelos'"
+    "text": "Alterei então o prompt:\n\n\n\n\n\nPrompt\n\n\nPodem existir vários modelos com o nome passado pelo usuário. Assim como foi feito com o ano, gostaria que fossem exibidos todos os modelos para que o usuário escolhesse o que deseja.\n\n\n\n\n\n\nMas o código gerou o seguinte erro:\nTraceback (most recent call last):\n  File \"/home/julio/Downloads/projeto/app.py\", line 83, in &lt;module&gt;\n    main()\n  File \"/home/julio/Downloads/projeto/app.py\", line 27, in main\n    modelos = buscar_modelos(marca['codigo'])\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/julio/Downloads/projeto/app.py\", line 9, in buscar_modelos\n    return requests.get(url).json()['modelos']\n           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\nKeyError: 'modelos'"
   },
   {
     "objectID": "aula_t8.html#section-56",
@@ -6269,48 +6269,55 @@
     "href": "aula_t8.html#section-57",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Continuou gerando erro:\nTraceback (most recent call last):\n  File \"/home/julio/Downloads/projeto/app.py\", line 84, in &lt;module&gt;\n    main()\n  File \"/home/julio/Downloads/projeto/app.py\", line 28, in main\n    modelos = buscar_modelos(marca['codigo'])\n                             ~~~~~^^^^^^^^^^\nTypeError: string indices must be integers, not 'str'\n\n\n\n\n\nGitHub Copilot\n\n\nO erro ocorre porque a lista marcas contém dicionários, mas em algum momento ela pode estar vindo como uma lista de strings. Isso geralmente acontece se a API retorna algo inesperado ou se o código espera um dicionário, mas recebe uma string.\nPara garantir que cada item de marcas seja um dicionário, ajuste o loop para verificar o tipo e trate possíveis inconsistências. Além disso, adicione tratamento de erro para garantir que a API está retornando o esperado."
+    "text": "Apliquei a correção sugerido, mas continuou gerando um erro (agora no codigo).\nTraceback (most recent call last):\n  File \"/home/julio/Downloads/projeto/app.py\", line 84, in &lt;module&gt;\n    main()\n  File \"/home/julio/Downloads/projeto/app.py\", line 28, in main\n    modelos = buscar_modelos(marca['codigo'])\n                             ~~~~~^^^^^^^^^^\nTypeError: string indices must be integers, not 'str'\n\nJoguei o erro novamente no Copilot."
   },
   {
     "objectID": "aula_t8.html#section-58",
     "href": "aula_t8.html#section-58",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Junto com a resposta veio um código alterado com proteções mas que não retornava nenhuma informação.\n\nO que você acha que estava acontecendo?\n\n\nUsando o depurador vi que estava sendo retornada uma mensagem de erro dizendo que a taxa de requisições da API tinha sido excedida."
+    "text": "GitHub Copilot\n\n\nO erro ocorre porque a lista marcas contém dicionários, mas em algum momento ela pode estar vindo como uma lista de strings. Isso geralmente acontece se a API retorna algo inesperado ou se o código espera um dicionário, mas recebe uma string.\nPara garantir que cada item de marcas seja um dicionário, ajuste o loop para verificar o tipo e trate possíveis inconsistências. Além disso, adicione tratamento de erro para garantir que a API está retornando o esperado."
   },
   {
     "objectID": "aula_t8.html#section-59",
     "href": "aula_t8.html#section-59",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Prompt\n\n\nDepurando, eu notei que a variável marcas está agora vindo com o valor {‘error’: ‘limite de taxa excedido. Por favor, visite https://fipe.online para obter um token’}. Altere o código para identificar essa situação e informar o suário que não é possível consultar a informação no momento."
+    "text": "Junto com a resposta veio um código alterado com proteções mas que não retornava nenhuma informação.\n\nO que você acha que estava acontecendo?\n\n\nUsando o depurador vi que estava sendo retornada uma mensagem de erro dizendo que a taxa de requisições da API tinha sido excedida."
   },
   {
     "objectID": "aula_t8.html#section-60",
     "href": "aula_t8.html#section-60",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "import requests\n\ndef buscar_marcas():\n    url = \"https://parallelum.com.br/fipe/api/v1/carros/marcas\"\n    return requests.get(url).json()\n\ndef buscar_modelos(codigo_marca):\n    url = f\"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos\"\n    resposta = requests.get(url).json()\n    return resposta.get('modelos', [])\n\ndef buscar_anos(codigo_marca, codigo_modelo):\n    url = f\"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos/{codigo_modelo}/anos\"\n    return requests.get(url).json()\n\ndef buscar_preco(codigo_marca, codigo_modelo, codigo_ano):\n    url = f\"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos/{codigo_modelo}/anos/{codigo_ano}\"\n    return requests.get(url).json()\n\ndef main():\n    modelo_nome = input(\"Digite o nome do modelo do carro: \").strip().lower()\n    ano_usuario = input(\"Digite o ano do carro (ex: 2015): \").strip()\n    marcas = buscar_marcas()\n\n    # Verifica se houve erro de limite de taxa\n    if isinstance(marcas, dict) and 'error' in marcas:\n        print(\"Não foi possível consultar a informação no momento: limite de taxa da API excedido.\")\n        print(\"Tente novamente mais tarde ou acesse https://fipe.online para obter um token.\")\n        return\n\n    print(\"Buscando modelos que correspondem ao nome informado...\")\n\n    modelos_encontrados = []\n    for marca in marcas:\n        if not isinstance(marca, dict) or 'codigo' not in marca or 'nome' not in marca:\n            continue\n        modelos = buscar_modelos(marca['codigo'])\n        for modelo in modelos:\n            if modelo_nome in modelo['nome'].lower():\n                modelos_encontrados.append({\n                    'marca': marca,\n                    'modelo': modelo\n                })\n\n    if not modelos_encontrados:\n        print(\"Nenhum modelo encontrado com esse nome.\")\n        return\n\n    print(\"\\nModelos encontrados:\")\n    for idx, item in enumerate(modelos_encontrados):\n        print(f\"{idx}: {item['modelo']['nome']} ({item['marca']['nome']})\")\n\n    escolha_modelo = input(\"Escolha o número correspondente ao modelo desejado: \").strip()\n    try:\n        escolha_modelo_idx = int(escolha_modelo)\n        modelo_escolhido = modelos_encontrados[escolha_modelo_idx]\n    except (ValueError, IndexError):\n        print(\"Opção de modelo inválida.\")\n        return\n\n    anos = buscar_anos(modelo_escolhido['marca']['codigo'], modelo_escolhido['modelo']['codigo'])\n    opcoes_ano = [\n        (i, ano) for i, ano in enumerate(anos)\n        if ano_usuario in ano['nome']\n    ]\n    if not opcoes_ano:\n        print(\"Nenhuma opção de ano encontrada para esse modelo.\")\n        return\n\n    print(\"\\nOpções de ano encontradas:\")\n    for idx, ano in opcoes_ano:\n        print(f\"{idx}: {ano['nome']}\")\n\n    escolha_ano = input(\"Escolha o número correspondente ao ano desejado: \").strip()\n    try:\n        escolha_ano_idx = int(escolha_ano)\n        ano_escolhido = opcoes_ano[escolha_ano_idx][1]\n    except (ValueError, IndexError):\n        print(\"Opção de ano inválida.\")\n        return\n\n    preco = buscar_preco(\n        modelo_escolhido['marca']['codigo'],\n        modelo_escolhido['modelo']['codigo'],\n        ano_escolhido['codigo']\n    )\n\n    print(\"\\nDetalhes do veículo:\")\n    for chave, valor in preco.items():\n        print(f\"{chave}: {valor}\")\n\nif __name__ == \"__main__\":\n    main()"
+    "text": "Prompt\n\n\nDepurando, eu notei que a variável marcas está agora vindo com o valor {‘error’: ‘limite de taxa excedido. Por favor, visite https://fipe.online para obter um token’}. Altere o código para identificar essa situação e informar o u suário que não é possível consultar a informação no momento."
   },
   {
     "objectID": "aula_t8.html#section-61",
     "href": "aula_t8.html#section-61",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Sobre a questão do código não parecer estar consultando informações específicas sobre Minas Gerais, escrevi o seguinte prompt.\n\n\n\n\nPrompt\n\n\nNo início eu tinha pedido preços de Minas Gerais. Mas não há nada no código que indique que os preços se referem ao estado. Existe alguma forma de fazer a consulta por estado?"
+    "text": "import requests\n\ndef buscar_marcas():\n    url = \"https://parallelum.com.br/fipe/api/v1/carros/marcas\"\n    return requests.get(url).json()\n\ndef buscar_modelos(codigo_marca):\n    url = f\"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos\"\n    resposta = requests.get(url).json()\n    return resposta.get('modelos', [])\n\ndef buscar_anos(codigo_marca, codigo_modelo):\n    url = f\"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos/{codigo_modelo}/anos\"\n    return requests.get(url).json()\n\ndef buscar_preco(codigo_marca, codigo_modelo, codigo_ano):\n    url = f\"https://parallelum.com.br/fipe/api/v1/carros/marcas/{codigo_marca}/modelos/{codigo_modelo}/anos/{codigo_ano}\"\n    return requests.get(url).json()\n\ndef main():\n    modelo_nome = input(\"Digite o nome do modelo do carro: \").strip().lower()\n    ano_usuario = input(\"Digite o ano do carro (ex: 2015): \").strip()\n    marcas = buscar_marcas()\n\n    # Verifica se houve erro de limite de taxa\n    if isinstance(marcas, dict) and 'error' in marcas:\n        print(\"Não foi possível consultar a informação no momento: limite de taxa da API excedido.\")\n        print(\"Tente novamente mais tarde ou acesse https://fipe.online para obter um token.\")\n        return\n\n    print(\"Buscando modelos que correspondem ao nome informado...\")\n\n    modelos_encontrados = []\n    for marca in marcas:\n        if not isinstance(marca, dict) or 'codigo' not in marca or 'nome' not in marca:\n            continue\n        modelos = buscar_modelos(marca['codigo'])\n        for modelo in modelos:\n            if modelo_nome in modelo['nome'].lower():\n                modelos_encontrados.append({\n                    'marca': marca,\n                    'modelo': modelo\n                })\n\n    if not modelos_encontrados:\n        print(\"Nenhum modelo encontrado com esse nome.\")\n        return\n\n    print(\"\\nModelos encontrados:\")\n    for idx, item in enumerate(modelos_encontrados):\n        print(f\"{idx}: {item['modelo']['nome']} ({item['marca']['nome']})\")\n\n    escolha_modelo = input(\"Escolha o número correspondente ao modelo desejado: \").strip()\n    try:\n        escolha_modelo_idx = int(escolha_modelo)\n        modelo_escolhido = modelos_encontrados[escolha_modelo_idx]\n    except (ValueError, IndexError):\n        print(\"Opção de modelo inválida.\")\n        return\n\n    anos = buscar_anos(modelo_escolhido['marca']['codigo'], modelo_escolhido['modelo']['codigo'])\n    opcoes_ano = [\n        (i, ano) for i, ano in enumerate(anos)\n        if ano_usuario in ano['nome']\n    ]\n    if not opcoes_ano:\n        print(\"Nenhuma opção de ano encontrada para esse modelo.\")\n        return\n\n    print(\"\\nOpções de ano encontradas:\")\n    for idx, ano in opcoes_ano:\n        print(f\"{idx}: {ano['nome']}\")\n\n    escolha_ano = input(\"Escolha o número correspondente ao ano desejado: \").strip()\n    try:\n        escolha_ano_idx = int(escolha_ano)\n        ano_escolhido = opcoes_ano[escolha_ano_idx][1]\n    except (ValueError, IndexError):\n        print(\"Opção de ano inválida.\")\n        return\n\n    preco = buscar_preco(\n        modelo_escolhido['marca']['codigo'],\n        modelo_escolhido['modelo']['codigo'],\n        ano_escolhido['codigo']\n    )\n\n    print(\"\\nDetalhes do veículo:\")\n    for chave, valor in preco.items():\n        print(f\"{chave}: {valor}\")\n\nif __name__ == \"__main__\":\n    main()"
   },
   {
     "objectID": "aula_t8.html#section-62",
     "href": "aula_t8.html#section-62",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "E tive a seguinte resposta:\n\n\n\n\nGitHub Copilot\n\n\nAtualmente, a API pública da FIPE (https://parallelum.com.br/fipe/api/v1/) não permite consultar preços por estado. O valor retornado é sempre o preço médio nacional calculado pela FIPE, sem distinção regional.\nResumo: - O preço retornado é nacional, não estadual. - Não há parâmetro ou endpoint para filtrar por estado (ex: Minas Gerais). - Se precisar de preços regionais, será necessário buscar fontes alternativas, como portais de classificados ou APIs privadas de mercado automotivo.\nSe precisar, posso adicionar uma mensagem ao seu programa informando ao usuário que o valor exibido é nacional."
+    "text": "Sobre a questão do código não estar consultando informações específicas sobre Minas Gerais, escrevi o seguinte prompt.\n\nObs.: o Copilot já tinha alertado sobre isso.\n\n\n\n\n\n\nPrompt\n\n\nNo início eu tinha pedido preços de Minas Gerais. Mas não há nada no código que indique que os preços se referem ao estado. Existe alguma forma de fazer a consulta por estado?"
   },
   {
     "objectID": "aula_t8.html#dicas-finais",
     "href": "aula_t8.html#dicas-finais",
     "title": "Trabalhando com APIs",
     "section": "Dicas Finais",
-    "text": "Dicas Finais\nSe a API que você estiver consultando for muito específica, talvez seja melhor ler a documentação antes de pedir ao Copilot para gerar o código.\nSaber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados.\nNa Aula Prática veremos exemplo de API que precisa de autenticação."
+    "text": "Dicas Finais\n\n\n\n\n\n\nAviso\n\n\nCuidado com o vibe coding!\nSaber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados, do que ficar simplesmente fazendo um bate e volta com o Assistente de IA.\n\n\n\n\n\n\n\n\n\n\nDica\n\n\nSe a API que você estiver consultando for muito específica, talvez seja melhor ler a documentação antes de pedir ao Copilot para gerar o código.\nOutra possibilidade seria fornecer trechos da documentação junto com o seu prompt."
+  },
+  {
+    "objectID": "aula_t8.html#section-63",
+    "href": "aula_t8.html#section-63",
+    "title": "Trabalhando com APIs",
+    "section": "",
+    "text": "E tive a seguinte resposta:\n\n\n\n\nGitHub Copilot\n\n\nAtualmente, a API pública da FIPE (https://parallelum.com.br/fipe/api/v1/) não permite consultar preços por estado. O valor retornado é sempre o preço médio nacional calculado pela FIPE, sem distinção regional.\nResumo:\n\nO preço retornado é nacional, não estadual.\nNão há parâmetro ou endpoint para filtrar por estado (ex: Minas Gerais).\nSe precisar de preços regionais, será necessário buscar fontes alternativas, como portais de classificados ou APIs privadas de mercado automotivo.\n\nSe precisar, posso adicionar uma mensagem ao seu programa informando ao usuário que o valor exibido é nacional."
   }
 ]

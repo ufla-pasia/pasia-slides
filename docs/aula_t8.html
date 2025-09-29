@@ -1295,7 +1295,7 @@ web_commit_signoff_required</code></pre>
 <li class="fragment">Inclusive foram gerados dois gráficos em vez de apenas um como eu tinha pedido.</li>
 </ul>
 <div class="fragment">
-<p>Talvez porque eu estava usando o <code>Cladue Sonnet 4</code> como modelo no Copilot.</p>
+<p>Talvez porque eu estava usando o <code>Claude Sonnet 4</code> como modelo no Copilot.</p>
 <ul>
 <li class="fragment">Em vez do <code>GPT-4.1</code> que eu vinha usando até então.</li>
 </ul>
@@ -1693,7 +1693,7 @@ web_commit_signoff_required</code></pre>
 <div class="callout-content">
 <p>Cuidado com respostas de Assistentes de IA.</p>
 <p>Precisamos saber o que queremos em vez de simplesmente entrar em um ciclo de pedir correções.</p>
-<p>Nesse caso, a solução não fazia sentido com o que eu estava solicitando.</p>
+<p>Nesse caso, a solução não fazia sentido.</p>
 </div>
 </div>
 </div>
@@ -1945,7 +1945,7 @@ web_commit_signoff_required</code></pre>
 <p>Para finalizar, os exemplos com a API de nomes do IBGE, podemos verificar a frequência de um nome por município.</p>
 <ul>
 <li class="fragment">A API permite essa consulta, mas exige o código do município.</li>
-<li class="fragment">Esses códigos podem ser obtidos na API de municípios do IBGE.</li>
+<li class="fragment">E esse código pode ser obtido de outra API do IBGE (de municípios).</li>
 </ul>
 <div class="fragment">
 <div title="Prompt">
@@ -2057,9 +2057,9 @@ web_commit_signoff_required</code></pre>
 <p>Mas, dessa vez, segui uma abordagem diferente.</p>
 <ul>
 <li class="fragment">Em vez de consultar a documentação da API antes e planejar o que o programa faria,</li>
-<li class="fragment">eu tive conversa exploratória com o Copilot e meio <em>vibe coding</em> mesmo.
+<li class="fragment">eu tive uma conversa exploratória com o Copilot e entrei no modo <em>vibe coding</em>.
 <ul>
-<li class="fragment">A ideia foi explorar possibilidades.</li>
+<li class="fragment">A ideia era explorar possibilidades.</li>
 </ul></li>
 </ul>
 </div>
@@ -2114,7 +2114,8 @@ web_commit_signoff_required</code></pre>
 <h2></h2>
 <p>Resolvi então pedir ao Copilot para criar um programa que usasse a API.</p>
 <ul>
-<li class="fragment">O mais recomendado seria continuar explorando em mais detalhes, mas tentei ir direto ao ponto.</li>
+<li class="fragment">O mais recomendado seria, na verdade, continuar explorando a API em mais detalhes.</li>
+<li class="fragment">Mas, em vez disso, tentei ir direto ao ponto.</li>
 </ul>
 <div class="fragment">
 <div title="Prompt">
@@ -2150,6 +2151,7 @@ web_commit_signoff_required</code></pre>
 <p>Mas, para a minha decepção, o código gerado era apenas um esqueleto.</p>
 <ul>
 <li class="fragment">Não fazia nenhuma chamada real à API da FIPE.</li>
+<li class="fragment">E meu chamou a atenção também que todo o código e comentários foram gerados em inglês.</li>
 </ul>
 <div class="fragment">
 <div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="kw">def</span> get_car_price(car_model):</span>
@@ -2176,6 +2178,9 @@ web_commit_signoff_required</code></pre>
 <section id="section-44" class="slide level2">
 <h2></h2>
 <p>Esse print não mostra o estado real da resposta do Copilot.</p>
+<ul>
+<li class="fragment">Por que na hora que ela apareceu, logo à frente de <em>Workspace</em>, tinha um link:</li>
+</ul>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -2184,11 +2189,15 @@ web_commit_signoff_required</code></pre>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
-<p>Por que na hora que ela apareceu, logo à frente de <em>Workspace</em>, tinha um link:</p>
+<div class="smaller">
 <ul>
-<li class="fragment"><code>rerun wihtot</code>: que significa refazer a pergunta sem usar o agente <code>@workspace</code>.</li>
-<li class="fragment">Usei essa opção e aí a resposta foi bem diferente.</li>
+<li class="fragment"><code>rerun without</code>: que significa refazer a pergunta sem usar o agente <code>@workspace</code>.
+<ul>
+<li class="fragment">Na verdade eu nem tinha pedido para usar o agente <code>@workspace</code>.</li>
+</ul></li>
+<li class="fragment">Clique então na opção e aí a resposta foi bem diferente.</li>
 </ul>
+</div>
 </div></div>
 </section>
 <section id="section-45" class="slide level2">
@@ -2267,7 +2276,12 @@ web_commit_signoff_required</code></pre>
 <p><strong>GitHub Copilot (continuação)</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Observações:</strong> - A API FIPE não retorna preços por estado, apenas o preço médio nacional. O preço exibido é o valor FIPE nacional, não específico de Minas Gerais. - O programa busca o modelo pelo nome informado e retorna o preço do ano mais recente disponível. - Para refinar a busca, você pode adaptar o código para listar opções caso haja mais de um modelo correspondente.</p>
+<p><strong>Observações:</strong></p>
+<ul>
+<li>A API FIPE não retorna preços por estado, apenas o preço médio nacional. O preço exibido é o valor FIPE nacional, não específico de Minas Gerais.</li>
+<li>O programa busca o modelo pelo nome informado e retorna o preço do ano mais recente disponível.</li>
+<li>Para refinar a busca, você pode adaptar o código para listar opções caso haja mais de um modelo correspondente.</li>
+</ul>
 <p>Se precisar de ajustes, me avise!</p>
 </div>
 </div>
@@ -2285,15 +2299,19 @@ web_commit_signoff_required</code></pre>
 <span id="cb27-5"><a></a>Marca: VW - VolksWagen, Modelo: Fusca, Combustível: Gasolina</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
-<p>Mas, analisando o código gerado percebi algumas coisas.</p>
+<p>Mas, vendo as observações finais do Copilot e analisando o código gerado percebemos alguns pontos importantes.</p>
 </div>
 </section>
 <section id="section-49" class="slide level2">
 <h2></h2>
 <ol type="1">
 <li class="fragment">Meu prompt original não era bom pois eu coloquei “preço atual do modelo”, mas o preço é diferente dependendo do ano do carro.</li>
+</ol>
+<ul>
+<li class="fragment">O copilot avisou nas observações que estava usando o ano mais recente disponível.</li>
+</ul>
+<ol start="2" type="1">
 <li class="fragment">Além disso, o mesmo modelo, no mesmo ano, pode ter várias variações (LX, EX, etc.).</li>
-<li class="fragment">E, por fim, não há nenhum referência no código que indique que os dados se refiram a Minas Gerais.</li>
 </ol>
 <div class="fragment">
 <p>Sem contar que a busca é lenta porque procura o carro em todas as marcas.</p>
@@ -2361,9 +2379,9 @@ web_commit_signoff_required</code></pre>
 </section>
 <section id="section-52" class="slide level2">
 <h2></h2>
-<p>Mas ao testar usando <code>Fusca</code>e ano <code>1985</code>, o programa não encontrou a informação.</p>
+<p>Mas ao testar usando <code>Fusca</code> e ano <code>1985</code>, o programa não encontrou a informação.</p>
 <ul>
-<li class="fragment">Mas o dado do <code>Fusca</code> exibido na versão anterior do programa mostrava <code>1985</code> como o ano mais recente disponível.</li>
+<li class="fragment">Mas a resposta da versão anterior do programa para o carro <code>Fusca</code> mostrava <code>1985</code> como o ano mais recente disponível.</li>
 </ul>
 <div class="fragment">
 <p>Usando o depurador do VS Code, percebi que o dado retornado pela API não era exatamente <code>1985</code></p>
@@ -2405,6 +2423,10 @@ web_commit_signoff_required</code></pre>
 <li class="fragment">e não encontrava dados para ano <code>2024</code>, já que esse modelo só teve produção em 2014.</li>
 </ul></li>
 </ul>
+</section>
+<section id="section-55" class="slide level2">
+<h2></h2>
+<p>Alterei então o prompt:</p>
 <div class="fragment">
 <div title="Prompt">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
@@ -2419,10 +2441,8 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section id="section-55" class="slide level2">
-<h2></h2>
-<p>O código gerado gerou o seguinte erro:</p>
+<div class="fragment">
+<p>Mas o código gerou o seguinte erro:</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb30-1"><a></a>Traceback (most recent call last):</span>
 <span id="cb30-2"><a></a>  File "/home/julio/Downloads/projeto/app.py", line 83, in &lt;module&gt;</span>
 <span id="cb30-3"><a></a>    main()</span>
@@ -2433,6 +2453,7 @@ web_commit_signoff_required</code></pre>
 <span id="cb30-8"><a></a>    return requests.get(url).json()['modelos']</span>
 <span id="cb30-9"><a></a>           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^</span>
 <span id="cb30-10"><a></a>KeyError: 'modelos'</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="section-56" class="slide level2">
 <h2></h2>
@@ -2454,7 +2475,7 @@ web_commit_signoff_required</code></pre>
 </section>
 <section id="section-57" class="slide level2">
 <h2></h2>
-<p>Continuou gerando erro:</p>
+<p>Apliquei a correção sugerido, mas continuou gerando um erro (agora no <code>codigo</code>).</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb31-1"><a></a>Traceback (most recent call last):</span>
 <span id="cb31-2"><a></a>  File "/home/julio/Downloads/projeto/app.py", line 84, in &lt;module&gt;</span>
 <span id="cb31-3"><a></a>    main()</span>
@@ -2463,6 +2484,11 @@ web_commit_signoff_required</code></pre>
 <span id="cb31-6"><a></a>                             ~~~~~^^^^^^^^^^</span>
 <span id="cb31-7"><a></a>TypeError: string indices must be integers, not 'str'</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
+<p>Joguei o erro novamente no Copilot.</p>
+</div>
+</section>
+<section id="section-58" class="slide level2">
+<h2></h2>
 <div title="GitHub Copilot">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -2476,9 +2502,8 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="section-58" class="slide level2">
+<section id="section-59" class="slide level2">
 <h2></h2>
 <p>Junto com a resposta veio um código alterado com proteções mas que não retornava nenhuma informação.</p>
 <ul>
@@ -2488,7 +2513,7 @@ web_commit_signoff_required</code></pre>
 <p>Usando o depurador vi que estava sendo retornada uma mensagem de erro dizendo que a taxa de requisições da API tinha sido excedida.</p>
 </div>
 </section>
-<section id="section-59" class="slide level2">
+<section id="section-60" class="slide level2">
 <h2></h2>
 <div title="Prompt">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
@@ -2497,13 +2522,13 @@ web_commit_signoff_required</code></pre>
 <p><strong>Prompt</strong></p>
 </div>
 <div class="callout-content">
-<p>Depurando, eu notei que a variável marcas está agora vindo com o valor {‘error’: ‘limite de taxa excedido. Por favor, visite https://fipe.online para obter um token’}. Altere o código para identificar essa situação e informar o suário que não é possível consultar a informação no momento.</p>
+<p>Depurando, eu notei que a variável marcas está agora vindo com o valor {‘error’: ‘limite de taxa excedido. Por favor, visite https://fipe.online para obter um token’}. Altere o código para identificar essa situação e informar o u suário que não é possível consultar a informação no momento.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="section-60" class="slide level2">
+<section id="section-61" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a><span class="im">import</span> requests</span>
 <span id="cb32-2"><a></a></span>
@@ -2599,9 +2624,13 @@ web_commit_signoff_required</code></pre>
 <span id="cb32-92"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb32-93"><a></a>    main()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-61" class="slide level2">
+<section id="section-62" class="slide level2">
 <h2></h2>
-<p>Sobre a questão do código não parecer estar consultando informações específicas sobre Minas Gerais, escrevi o seguinte prompt.</p>
+<p>Sobre a questão do código não estar consultando informações específicas sobre Minas Gerais, escrevi o seguinte prompt.</p>
+<ul>
+<li class="fragment">Obs.: o Copilot já tinha alertado sobre isso.</li>
+</ul>
+<div class="fragment">
 <div title="Prompt">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -2614,8 +2643,9 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
-<section id="section-62" class="slide level2">
+<section id="section-63" class="slide level2">
 <h2></h2>
 <p>E tive a seguinte resposta:</p>
 <div title="GitHub Copilot">
@@ -2626,7 +2656,12 @@ web_commit_signoff_required</code></pre>
 </div>
 <div class="callout-content">
 <p>Atualmente, a API pública da FIPE (https://parallelum.com.br/fipe/api/v1/) <strong>não permite consultar preços por estado</strong>. O valor retornado é sempre o preço médio nacional calculado pela FIPE, sem distinção regional.</p>
-<p><strong>Resumo:</strong> - O preço retornado é nacional, não estadual. - Não há parâmetro ou endpoint para filtrar por estado (ex: Minas Gerais). - Se precisar de preços regionais, será necessário buscar fontes alternativas, como portais de classificados ou APIs privadas de mercado automotivo.</p>
+<p><strong>Resumo:</strong></p>
+<ul>
+<li>O preço retornado é nacional, não estadual.</li>
+<li>Não há parâmetro ou endpoint para filtrar por estado (ex: Minas Gerais).</li>
+<li>Se precisar de preços regionais, será necessário buscar fontes alternativas, como portais de classificados ou APIs privadas de mercado automotivo.</li>
+</ul>
 <p>Se precisar, posso adicionar uma mensagem ao seu programa informando ao usuário que o valor exibido é nacional.</p>
 </div>
 </div>
@@ -2635,14 +2670,41 @@ web_commit_signoff_required</code></pre>
 </section>
 <section id="dicas-finais" class="slide level2">
 <h2>Dicas Finais</h2>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Aviso</strong></p>
+</div>
+<div class="callout-content">
+<p>Cuidado com o <em>vibe coding</em>!</p>
+<p>Saber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados, do que ficar simplesmente fazendo um bate e volta com o Assistente de IA.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
 <p>Se a API que você estiver consultando for muito específica, talvez seja melhor ler a documentação antes de pedir ao Copilot para gerar o código.</p>
-<p>Saber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados.</p>
-<p>Na Aula Prática veremos exemplo de API que precisa de autenticação.</p>
+<p>Outra possibilidade seria fornecer trechos da documentação junto com o seu prompt.</p>
+</div>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="imagens/logo_UFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
+</div>
 </div>
 </div>
 </section></section>
