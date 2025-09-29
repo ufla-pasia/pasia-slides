@@ -5933,7 +5933,7 @@
     "href": "aula_t8.html#section-12",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Verificando as chaves retornadas vamos escolher algumas informações a serem exibidos para o primeiro repositório retornado.\n\n    repositorio = dados['items'][0]\n    print(\"Primeiro repositório:\")\n    print(f\"Nome: {repositorio['name']}\")\n    print(f\"Descrição: {repositorio['description']}\")\n    print(f\"Proprietário: {repositorio['owner']['login']}\")\n    print(f\"Número de estrelas: {repositorio['stargazers_count']}\")\n    print(f\"URL: {repositorio['html_url']}\")"
+    "text": "Verificando as chaves retornadas, vamos escolher algumas informações a serem exibidas para o primeiro repositório retornado.\n\n    repositorio = dados['items'][0]\n    print(\"Primeiro repositório:\")\n    print(f\"Nome: {repositorio['name']}\")\n    print(f\"Descrição: {repositorio['description']}\")\n    print(f\"Proprietário: {repositorio['owner']['login']}\")\n    print(f\"Número de estrelas: {repositorio['stargazers_count']}\")\n    print(f\"URL: {repositorio['html_url']}\")"
   },
   {
     "objectID": "aula_t8.html#section-13",
@@ -5975,7 +5975,7 @@
     "href": "aula_t8.html#section-14",
     "title": "Trabalhando com APIs",
     "section": "",
-    "text": "Se fizermos muitas consultas consecutivas, podemos receber uma mensagem de erro\n\nA mensagem indica que atingimos o limite de requisições.\nNesse caso, precisamos aguardar um tempo antes de fazer novas requisições.\n\n\n\n\n\n\n\n\nDica\n\n\nMuitas APIs exigem o registro e obtenção de uma chave de API ou token de acesso para fazer chamadas de API.\nNo caso do GitHub, podemos fazer chamadas sem autenticação. Mas, usando autenticação, podemos fazer um número maior de requisições."
+    "text": "Se fizermos muitas consultas consecutivas, podemos receber uma mensagem de erro\n\nA mensagem indica que atingimos o limite de requisições.\nNesse caso, precisamos aguardar um tempo antes de fazer novas requisições.\n\n\n\n\n\n\n\n\nDica\n\n\nMuitas APIs exigem o registro e obtenção de uma chave de API ou token de acesso para fazer chamadas de API.\nNo caso do GitHub, podemos fazer chamadas sem autenticação. Mas, usando autenticação, podemos fazer um número maior de requisições a cada período de tempo."
   },
   {
     "objectID": "aula_t8.html#monitorando-limites-de-requisições-da-api",
@@ -6305,5 +6305,12 @@
     "title": "Trabalhando com APIs",
     "section": "",
     "text": "E tive a seguinte resposta:\n\n\n\n\nGitHub Copilot\n\n\nAtualmente, a API pública da FIPE (https://parallelum.com.br/fipe/api/v1/) não permite consultar preços por estado. O valor retornado é sempre o preço médio nacional calculado pela FIPE, sem distinção regional.\nResumo: - O preço retornado é nacional, não estadual. - Não há parâmetro ou endpoint para filtrar por estado (ex: Minas Gerais). - Se precisar de preços regionais, será necessário buscar fontes alternativas, como portais de classificados ou APIs privadas de mercado automotivo.\nSe precisar, posso adicionar uma mensagem ao seu programa informando ao usuário que o valor exibido é nacional."
+  },
+  {
+    "objectID": "aula_t8.html#dicas-finais",
+    "href": "aula_t8.html#dicas-finais",
+    "title": "Trabalhando com APIs",
+    "section": "Dicas Finais",
+    "text": "Dicas Finais\nSe a API que você estiver consultando for muito específica, talvez seja melhor ler a documentação antes de pedir ao Copilot para gerar o código.\nSaber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados.\nNa Aula Prática veremos exemplo de API que precisa de autenticação."
   }
 ]

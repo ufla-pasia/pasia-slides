@@ -369,8 +369,8 @@ web_commit_signoff_required
 
 ##
 
-Verificando as chaves retornadas vamos escolher algumas informações
-a serem exibidos para o primeiro repositório retornado.
+Verificando as chaves retornadas, vamos escolher algumas informações
+a serem exibidas para o primeiro repositório retornado.
 
 . . .
 
@@ -452,7 +452,8 @@ Muitas APIs exigem o registro e obtenção de uma chave de API ou token de acess
 para fazer chamadas de API.
 
 No caso do GitHub, podemos fazer chamadas sem autenticação.
-Mas, usando autenticação, podemos fazer um número maior de requisições.
+Mas, usando autenticação, podemos fazer um número maior de requisições a
+cada período de tempo.
 :::
 
 # Visualizando dados do GitHub com Plotly {background-color="#40666e"}
@@ -830,7 +831,7 @@ O código gerado foi bem completo.
 
 . . . 
 
-Talvez porque eu estava usando o `Cladue Sonnet 4` como modelo no Copilot.
+Talvez porque eu estava usando o `Claude Sonnet 4` como modelo no Copilot.
 
 - Em vez do `GPT-4.1` que eu vinha usando até então.
 
@@ -1195,7 +1196,7 @@ Cuidado com respostas de Assistentes de IA.
 Precisamos saber o que queremos em vez de simplesmente entrar em um ciclo de
 pedir correções.
 
-Nesse caso, a solução não fazia sentido com o que eu estava solicitando.
+Nesse caso, a solução não fazia sentido.
 :::
 
 ##
