@@ -7,7 +7,7 @@ subtitle: PASIA - Aula P.8
 
 Nesta aula, vamos praticar o uso de APIs para obtenção e visualização de dados.
 
-- Faremos isso dois tipos de APIs bem diferentes.
+- Faremos isso com dois tipos de APIs bem diferentes.
 
 . . .
 
@@ -46,8 +46,7 @@ Vamos fazer uma consulta de exemplo na API de Malhas do IBGE.
 
 Pela documentação, vemos que existe uma consulta por município:
 
-  - [https://servicodados.ibge.gov.br/api/v4/malhas/municipios/{id}
-  ](https://servicodados.ibge.gov.br/api/v4/malhas/municipios/{id})
+  - [https://servicodados.ibge.gov.br/api/v4/malhas/municipios/{id}](https://servicodados.ibge.gov.br/api/v4/malhas/municipios/{id})
 
 . . .
 
@@ -126,15 +125,22 @@ Vamos destacar o que é mais importante do formato GeoJson.
 
 ##
 
-Para conseguirmos exibir esse polígono podemos usar a biblioteca plotly.
+Para conseguirmos exibir esse polígono poderíamos usar a biblioteca plotly.
 
 - Ela possui um método `scatter_geo` que consegue interpretar o formato GeoJSON.
 
 . . .
 
+Mas vamos aproveitar para conhecer outra biblioteca interessante: a `folium`.
+
+- Ela é especializada em dados geográficos e também consegue interpretar o formato GeoJSON.
+
+##
+
 Nos slides a seguir são apresentados os exercícios a serem feitos com essa ideia.
 
 - Lembre-se de usar o arquivo `requirements.txt` e ambiente virtual.
+- Você precisará instalar, no mínimo, as bibliotecas `requests`, `folium` e `webbrowser`.
 
 ##
 
@@ -148,39 +154,45 @@ Faça um programa em Python que:
 
 ##
 
-:::: {.callout-note title="Tarefa 2 - Exibindo polígono do município" icon=false, .nonincremental}
+:::: {.callout-note title="Tarefa 2 - Obtendo polígono do município" icon=false, .nonincremental}
 Incremente o programa do passo anterior de forma que:
 
 - O usuário possa escolher um dos municípios listados.
 - O programa deverá então fazer uma consulta à API de Malhas do IBGE.
-- E exibir o polígono do município escolhido, usando a API Plotly.
+- E salvar um arquivo HTML que mostre o polígono do município em um mapa.
+
+Obs.: para testar, você pode abrir o arquivo HTML no navegador para ver o resultado.
 ::::
 
 ##
 
-:::: {.callout-note title="Tarefa 3 - Exibindo polígono no mapa-mundi" icon=false, .nonincremental}
-É possível que no passo anterior você tenha conseguido exibir o polígono do município, mas isolado, 
-sem o mapa-mundi de fundo.
-
-- Incremente o programa do passo anterior de forma que o polígono do município seja exibido sobre o mapa-mundi.
-
-Dica: use zoom-out na hora de testar.
+:::: {.callout-note title="Tarefa 3 - Exibindo resultado" icon=false, .nonincremental}
+Nesse passo você deve alterar o seu programa de forma que o arquivo HTML
+gerado seja aberto automaticamente usando o módulo `webbrowser` do Python.
 ::::
 
 ##
 
-:::: {.callout-note title="Tarefa 4 - Incluindo mais informações no mapa" icon=false, .nonincremental}
-Altere o programa para que ele use a API de Municípios do IBGE para obter mais informações sobre o município escolhido.
-
-- Inclua o população e o PIB per capita do município como tooltip no polígono.
+:::: {.callout-note title="Tarefa 4 - Incluindo mais municípios" icon=false, .nonincremental}
+Você deve agora alterar o programa de forma que o usuário possa escolher vários
+muncípios (quantos ele quiser) e os polígonos de todos eles sejam exibidos no mapa.
 ::::
 
 ##
 
-:::: {.callout-note title="Tarefa 5 - Incluindo mais municípios" icon=false, .nonincremental}
-Altere o programa para que o usuário possa escolher vários municípios e sejam exibidos os polígonos e
-tooltips de todos eles no mapa.
+
+:::: {.callout-note title="Tarefa 5 - Incluindo mais informações" icon=false, .nonincremental}
+Altere o programa para que ele use a API de Agregados do IBGE para obter o PIB per capita de
+cada município escolhido. E inclua o valor do PIB per capita como tooltip de cada polígono.
 ::::
+
+##
+
+
+:::: {.callout-note title="Tarefa 6 - Incluindo mais informações" icon=false, .nonincremental}
+Use um mapa de cores para colorir os polígonos dos municípios de acordo com o valor do PIB per capita.
+::::
+
 
 # API do Google Gemini {background-color="#40666e"}
 
