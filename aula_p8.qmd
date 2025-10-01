@@ -1,28 +1,35 @@
 ---
-title: APIs - Dados Geográficos, Autenticação e LLMs
+title: APIs - GeoJSON e APIs do GMail e Gemini
 subtitle: PASIA - Aula P.8
 ---
 
 ##  
 
-Nesta aula, vamos praticar o uso de APIs para obtenção e visualização de dados.
+Nesta aula, vamos praticar o uso de [APIs]{.alert} em um contexto bem diferente do que
+vimos na aula anterior.
 
-- Faremos isso com dois tipos de APIs bem diferentes.
+- Faremos isso com três tipos de APIs.
 
 . . .
 
-Primeiro, vamos usar as APIs de Malhas e de Municípios do IBGE.
+Primeiro, vamos usar [APIs do IBGE]{.alert} (de Malhas, de Municípios e a Agregados).
 
 - Vamos plotar mapas com informações sobre municípios brasileiros.
-- Nesse processo, vamos conhecer o formato GeoJSON.
+- Nesse processo, vamos conhecer o formato [GeoJSON]{.alert}.
 
 ##
 
-Depois vamos fazer um programa em Python que usa a API do Gemini!
+Depois vamos usar as [APIs do GMail e do Gemini]{.alert} em nosso programa Python.
 
-- Nesse exemplo faremos algumas coisas de forma diferente do que vimos até então.
+- com elas, nosso programa enviará, automaticamente, um e-mail com o mapa gerado.
+- e o texto do e-mail será gerado pelo Gemini.
+
+. . .
+
+O objetivo é trabalhar com conceitos que não vimos na aula anterior.
+
  1. Precisaremos usar autenticação.
- 2. Usaremos uma biblioteca que encapsula o acesso à API.
+ 2. Usaremos bibliotecas que encapsulam o acesso às APIs.
  3. Conseguiremos criar programas baseados em LLMs.
 
 
@@ -31,15 +38,15 @@ Depois vamos fazer um programa em Python que usa a API do Gemini!
 ##
 
 A API de Malhas do IBGE permite consultar os polígonos dos municípios 
-brasileiros em formato GeoJSON.
+brasileiros em [formato GeoJSON]{.alert}.
 
-- Um GeoJSON é um JSON com um formato específico para representar informações geográficas.
+- Um **GeoJSON** é um **JSON** com um formato específico para representar informações geográficas.
 
 . . .
 
-Vamos fazer uma consulta de exemplo na API de Malhas do IBGE.
+Vamos começar fazendo uma consulta de exemplo na API de Malhas do IBGE.
 
-- Vamos usar a versão 4 da API, cuja documentação está disponível em:
+- Usaremos a versão 4 da API, cuja documentação está disponível em:
   [https://servicodados.ibge.gov.br/api/docs/malhas?versao=4](https://servicodados.ibge.gov.br/api/docs/malhas?versao=4)
 
 ##
@@ -100,7 +107,7 @@ A parte inicial dos dados retornados é mostrada abaixo:
 
 ```
 
-##
+## {.smaller}
 
 Vamos destacar o que é mais importante do formato GeoJson.
 
@@ -121,17 +128,18 @@ Vamos destacar o que é mais importante do formato GeoJson.
 
 1. Temos um campo `"features"` que traz todos os dados geográficos.
 2. Temos uma geometria dentro do campo `"geometry"` e vemos que ela é do tipo `"Polygon"`.
+  - Aqui há uma única geometria, mas poderiam ser várias.
 3. Por fim, temos os valores das coordenadas do polígono.
 
 ##
 
-Para conseguirmos exibir esse polígono poderíamos usar a biblioteca plotly.
+Para conseguirmos exibir esse polígono poderíamos usar a biblioteca **`plotly`**.
 
 - Ela possui um método `scatter_geo` que consegue interpretar o formato GeoJSON.
 
 . . .
 
-Mas vamos aproveitar para conhecer outra biblioteca interessante: a `folium`.
+Mas vamos aproveitar para conhecer outra biblioteca interessante: a [`folium`]{.alert}.
 
 - Ela é especializada em dados geográficos e também consegue interpretar o formato GeoJSON.
 
@@ -144,7 +152,7 @@ Nos slides a seguir são apresentados os exercícios a serem feitos com essa ide
 
 ##
 
-:::: {.callout-note title="Tarefa 1 - Identificando um município" icon=false, .nonincremental}
+:::: {.callout-note title="Tarefa 1.1 - Identificando um município" icon=false, .nonincremental}
 Faça um programa em Python que:
 
 - Peça ao usuário o nome (ou parte do nome) de um município brasileiro.
@@ -154,26 +162,26 @@ Faça um programa em Python que:
 
 ##
 
-:::: {.callout-note title="Tarefa 2 - Obtendo polígono do município" icon=false, .nonincremental}
+:::: {.callout-note title="Tarefa 1.2 - Obtendo polígono do município" icon=false, .nonincremental}
 Incremente o programa do passo anterior de forma que:
 
 - O usuário possa escolher um dos municípios listados.
 - O programa deverá então fazer uma consulta à API de Malhas do IBGE.
 - E salvar um arquivo HTML que mostre o polígono do município em um mapa.
 
-Obs.: para testar, você pode abrir o arquivo HTML no navegador para ver o resultado.
+Obs.: para testar, você deve abrir o arquivo HTML no navegador para ver o resultado.
 ::::
 
 ##
 
-:::: {.callout-note title="Tarefa 3 - Exibindo resultado" icon=false, .nonincremental}
+:::: {.callout-note title="Tarefa 1.3 - Exibindo resultado" icon=false, .nonincremental}
 Nesse passo você deve alterar o seu programa de forma que o arquivo HTML
-gerado seja aberto automaticamente usando o módulo `webbrowser` do Python.
+gerado seja aberto automaticamente pelo seu programa, usando o módulo `webbrowser` do Python.
 ::::
 
 ##
 
-:::: {.callout-note title="Tarefa 4 - Incluindo mais municípios" icon=false, .nonincremental}
+:::: {.callout-note title="Tarefa 1.4 - Incluindo mais municípios" icon=false, .nonincremental}
 Você deve agora alterar o programa de forma que o usuário possa escolher vários
 muncípios (quantos ele quiser) e os polígonos de todos eles sejam exibidos no mapa.
 ::::
@@ -181,31 +189,171 @@ muncípios (quantos ele quiser) e os polígonos de todos eles sejam exibidos no 
 ##
 
 
-:::: {.callout-note title="Tarefa 5 - Incluindo mais informações" icon=false, .nonincremental}
+:::: {.callout-note title="Tarefa 1.5 - Incluindo mais informações" icon=false, .nonincremental}
 Altere o programa para que ele use a API de Agregados do IBGE para obter o PIB per capita de
-cada município escolhido. E inclua o valor do PIB per capita como tooltip de cada polígono.
+cada município escolhido. E inclua o valor do PIB per capita como _tooltip_ de cada polígono.
+::::
+
+# API do GMail {background-color="#40666e"}
+
+
+##
+
+Vamos agora usar a **API do GMail** para que nosso programa possa enviar
+o arquivo HTML gerado por e-mail.
+
+- A API do GMail é usada de forma diferente das APIs que vimos até agora.
+
+. . . 
+
+Primeiramente, não usaremos o módulo `requests`.
+
+- Em vez disso usaremos módulos Python fornecidos pela própria Google,
+  para acessar a API do GMail.
+- E, além disso, teremos que autenticar em nossa conta do Google para conseguir
+  usar a API
+
+## Observação sobre os exercícios
+
+As tarefas a seguir estão descritas em alto nível.
+
+- Se necessário, use o Copilot ou o ChatGPT para entender maiores detalhes 
+  para conseguir fazer as tarefas.
+
+##
+
+:::: {.callout-note title="Tarefa 2.1 - Configurar o Projeto no Google Cloud" icon=false, .nonincremental}
+1. Crie um projeto no [Google Cloud Console](https://console.cloud.google.com/)  
+2. Ative a **API do GMail**
+3. Crie credenciais **OAuth 2.0 – Desktop App**  
+4. Baixe o arquivo `credentials.json` ⚠️
+::::
+
+::: {.callout-warning .nonincremental}
+O arquivo `credentials.json` contém as credenciais da sua conta.
+
+- ⚠️⚠️ **Não compartilhe esse arquivo** com ninguém! ⚠️⚠️
+- Portanto, não suba em um repositório do GitHub e lembre-se de apagar ao
+  enviar o exercício no Campus Virtual
+:::
+
+##
+
+:::: {.callout-note title="Tarefa 2.2 - Instalar as dependências" icon=false, .nonincremental}
+Inclua os módulos adicionais necessários no arquivo `requirements.txt`.
+
+Possivelmente, você precisará dos módulos abaixo:
+
+```text
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+```
+
+Atualize o Ambiente Virtual com o comando abaixo:
+
+```bash
+python -m pip install -r requirements.txt
+```
 ::::
 
 ##
 
+:::: {.callout-note title="Tarefa 2.3 - Tratar Autenticação" icon=false, .nonincremental}
+Para que nosso programa use a API do GMail, ele precisa de um **token** que
+é gerado a partir do arquivo de credenciais que baixamos na Tarefa 2.1.
 
-:::: {.callout-note title="Tarefa 6 - Incluindo mais informações" icon=false, .nonincremental}
-Use um mapa de cores para colorir os polígonos dos municípios de acordo com o valor do PIB per capita.
+O arquivo com o Token pode ser gerado como mostrado no exemplo abaixo.
+
+- Na primeira execução o navegador é aberto para que você logue na sua conta.
+
+```python
+from google_auth_oauthlib.flow import InstalledAppFlow
+
+SCOPES = [
+  "https://www.googleapis.com/auth/gmail.modify",
+  "https://www.googleapis.com/auth/drive.metadata.readonly"
+]
+
+flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
+creds = flow.run_local_server(port=0)
+```
 ::::
 
+##
+
+:::: {.callout-note title="Tarefa 2.4 - Enviar e-mail" icon=false, .nonincremental}
+Agora, enfim, altere seu programa Python para que ele envie, por e-mail,
+o arquivo HTML de mapa gerado nos exercícios da primeira parte da aula.
+
+Você pode deixar o usuário escolher o destinatário do e-mail e testar
+enviando para você mesmo.
+
+Escolha um título para o e-mail e um texto sucinto no corpo do e-mail, apenas para testes.
+::::
 
 # API do Google Gemini {background-color="#40666e"}
 
 
 ##
 
-Ideias:
+Como forma de demonstrar como podemos **Assistentes de IA** dentro de um
+programa em Python
 
-- Malhas municipais
-https://servicodados.ibge.gov.br/api/docs/malhas?versao=4
+- vamos gerar o texto do corpo do e-mail usando o [Gemini]{.alert}.
+
+. . .
+
+Lembre-se que existem limitações no acesso gratuito ao Gemini.
+
+- Portanto, teste com moderação durante a aula :)
+- Você pode conferir os limites de acesso [aqui](https://ai.google.dev/gemini-api/docs/rate-limits?utm_source=chatgpt.com&hl=pt-br).
 
 
-usar API de alguma IA como a do GEmini
-- https://ai.google.dev/gemini-api/docs/rate-limits?hl=pt-br
-- https://ai.google.dev/gemini-api/docs/image-generation?hl=pt-br#limitations
+##
 
+:::: {.callout-note title="Tarefa 3.1 - Configurar a Chave de API do Gemini" icon=false, .nonincremental}
+Acesse [https://aistudio.google.com/](https://aistudio.google.com/) e crie uma
+chave para acesso à API do Gemini.
+
+Você precisará criar um projeto e uma chave de API associado a ele.
+::::
+
+##
+
+:::: {.callout-note title="Tarefa 3.2 - Instalar as dependências" icon=false, .nonincremental}
+Inclua os módulos adicionais necessários no arquivo `requirements.txt`.
+
+Possivelmente, você precisará do módulo `google-generativeai` (além do que já tinha incluído antes).
+
+Atualize o Ambiente Virtual com o comando abaixo:
+
+```bash
+python -m pip install -r requirements.txt
+```
+::::
+
+##
+
+
+:::: {.callout-note title="Tarefa 3.3 - Gerar texto do e-mail com o Gemini" icon=false, .nonincremental}
+Vamos agora alterar nosso programa Python para que o texto do corpo do e-mail
+seja gerado pelo Gemini.
+
+Para isso, você precisará de um `prompt` que instrua o Gemini sobre o que você
+precisa.
+
+- Abaixo está um exemplo, mas não precisa ser necessariamente esse.
+
+```python
+"Escreva um e-mail formal e conciso apresentando um mapa com polígonos e PIB per capita dos municípios A, B e C."
+```
+::::
+
+##
+
+Legal, não?
+
+- Nessa aula vimos que podemos usar APIs através de módulos Python que as encapsulam.
+- Aprendemos como autenticar o acesso a uma API.
+- E ainda usamos um Assistente de IA dentro do nosso programa.
