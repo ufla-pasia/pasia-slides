@@ -16,6 +16,7 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Prof.&nbsp;Julio César Alves">
+  <meta name="dcterms.date" content="2025-01-10">
   <title>GAC126 - Programação Aplicada com Suporte de IA – Trabalhando com APIs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -413,7 +414,7 @@
     </div>
 </div>
 
-  <p class="date">29/09/2025</p>
+  <p class="date">01/10/2025</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -1665,40 +1666,14 @@ web_commit_signoff_required</code></pre>
 <p>A resposta do Copilot modificou o código para somar as frequências de cada década.</p>
 <ul>
 <li class="fragment">E considerar isso como a frequência total.</li>
-<li class="fragment">Mas isso faz sentido?</li>
+<li class="fragment">Mas eu não estava interessado nos valores totais.
+<ul>
+<li class="fragment">Experimentei comentar a linha, mas isso causava outros problemas no código.</li>
+</ul></li>
 </ul>
 </div>
 </section>
 <section id="section-29" class="slide level2">
-<h2></h2>
-<p>Isso não faz sentido, pois a mesma pessoa seria contada várias vezes.</p>
-<div class="fragment">
-<p>Experimentei comentar a linha, mas isso causava outros problemas no código.</p>
-<ul>
-<li class="fragment">Inclusive percebi que esse total era usado para calcular a frequência relativa de um nome.</li>
-<li class="fragment">Mas isso não era correto.</li>
-</ul>
-</div>
-</section>
-<section id="section-30" class="slide level2">
-<h2></h2>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Fica a dica!</strong></p>
-</div>
-<div class="callout-content">
-<p>Cuidado com respostas de Assistentes de IA.</p>
-<p>Precisamos saber o que queremos em vez de simplesmente entrar em um ciclo de pedir correções.</p>
-<p>Nesse caso, a solução não fazia sentido.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="section-31" class="slide level2">
 <h2></h2>
 <p>Tentei então pedir ao Copilot para remover completamente o tratamento referente a uma frequência total.</p>
 <div class="fragment">
@@ -1709,7 +1684,7 @@ web_commit_signoff_required</code></pre>
 <p><strong>Prompt</strong></p>
 </div>
 <div class="callout-content">
-<p>Os dados retornados não possuem uma frequência total e não faz sentido calcular a soma das frequências de cada década como uma frequência total. Remova qualquer referência a uma frequência total. Quero apenas um gráfico simples, de barras, que mostre a frequência do nome escolhido a cada década.</p>
+<p>Remova qualquer referência a uma frequência total. Quero apenas um gráfico simples, de barras, que mostre a frequência do nome escolhido a cada década.</p>
 </div>
 </div>
 </div>
@@ -1719,7 +1694,7 @@ web_commit_signoff_required</code></pre>
 <p>E aí funcionou!</p>
 </div>
 </section>
-<section id="section-32" class="slide level2">
+<section id="section-30" class="slide level2">
 <h2></h2>
 <div title="GitHub Copilot">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -1924,7 +1899,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-33" class="slide level2">
+<section id="section-31" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1932,7 +1907,7 @@ web_commit_signoff_required</code></pre>
 </figure>
 </div>
 </section>
-<section id="section-34" class="slide level2">
+<section id="section-32" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1962,7 +1937,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-35" class="slide level2">
+<section id="section-33" class="slide level2">
 <h2></h2>
 <p>Dessa vez eu mudei o modelo do Copilot para o <code>GPT-4.1</code>.</p>
 <ul>
@@ -1976,7 +1951,7 @@ web_commit_signoff_required</code></pre>
 </ul>
 </div>
 </section>
-<section id="section-36" class="slide level2">
+<section id="section-34" class="slide level2">
 <h2></h2>
 <div title="GitHub Copilot">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -2034,7 +2009,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-37" class="slide level2">
+<section id="section-35" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2047,7 +2022,7 @@ web_commit_signoff_required</code></pre>
 <h1>Usando API da FIPE</h1>
 
 </section>
-<section id="section-38" class="slide level2">
+<section id="section-36" class="slide level2">
 <h2></h2>
 <p>Para fechar os exemplos de uso de API da aula, vamos ver um exemplo com a API da FIPE.</p>
 <ul>
@@ -2064,7 +2039,7 @@ web_commit_signoff_required</code></pre>
 </ul>
 </div>
 </section>
-<section id="section-39" class="slide level2">
+<section id="section-37" class="slide level2">
 <h2></h2>
 <p>Eu criei um projeto vazio no VS Code.</p>
 <ul>
@@ -2085,7 +2060,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-40" class="slide level2">
+<section id="section-38" class="slide level2">
 <h2></h2>
 <div title="GitHub Copilot">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -2110,7 +2085,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-41" class="slide level2">
+<section id="section-39" class="slide level2">
 <h2></h2>
 <p>Resolvi então pedir ao Copilot para criar um programa que usasse a API.</p>
 <ul>
@@ -2132,7 +2107,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-42" class="slide level2">
+<section id="section-40" class="slide level2">
 <h2></h2>
 <p>O Copilot gerou uma sugestão de estrutura de projeto completa como resposta.</p>
 <ul>
@@ -2146,7 +2121,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-43" class="slide level2">
+<section id="section-41" class="slide level2">
 <h2></h2>
 <p>Mas, para a minha decepção, o código gerado era apenas um esqueleto.</p>
 <ul>
@@ -2175,7 +2150,7 @@ web_commit_signoff_required</code></pre>
 <span id="cb24-19"><a></a>    main()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-44" class="slide level2">
+<section id="section-42" class="slide level2">
 <h2></h2>
 <p>Esse print não mostra o estado real da resposta do Copilot.</p>
 <ul>
@@ -2195,12 +2170,12 @@ web_commit_signoff_required</code></pre>
 <ul>
 <li class="fragment">Na verdade eu nem tinha pedido para usar o agente <code>@workspace</code>.</li>
 </ul></li>
-<li class="fragment">Clique então na opção e aí a resposta foi bem diferente.</li>
+<li class="fragment">Cliquei então na opção e aí a resposta foi bem diferente.</li>
 </ul>
 </div>
 </div></div>
 </section>
-<section id="section-45" class="slide level2">
+<section id="section-43" class="slide level2">
 <h2></h2>
 <div title="GitHub Copilot (início)">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -2232,7 +2207,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-46" class="slide level2">
+<section id="section-44" class="slide level2">
 <h2></h2>
 <div title="GitHub Copilot (continuação)">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -2267,7 +2242,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-47" class="slide level2">
+<section id="section-45" class="slide level2">
 <h2></h2>
 <div title="GitHub Copilot (continuação)">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -2288,7 +2263,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-48" class="slide level2">
+<section id="section-46" class="slide level2">
 <h2></h2>
 <p>A boa notícia é que o código gerado funciona.</p>
 <div class="fragment">
@@ -2302,7 +2277,7 @@ web_commit_signoff_required</code></pre>
 <p>Mas, vendo as observações finais do Copilot e analisando o código gerado percebemos alguns pontos importantes.</p>
 </div>
 </section>
-<section id="section-49" class="slide level2">
+<section id="section-47" class="slide level2">
 <h2></h2>
 <ol type="1">
 <li class="fragment">Meu prompt original não era bom pois eu coloquei “preço atual do modelo”, mas o preço é diferente dependendo do ano do carro.</li>
@@ -2317,7 +2292,7 @@ web_commit_signoff_required</code></pre>
 <p>Sem contar que a busca é lenta porque procura o carro em todas as marcas.</p>
 </div>
 </section>
-<section id="section-50" class="slide level2">
+<section id="section-48" class="slide level2">
 <h2></h2>
 <p>Comecei então pedindo que o Copilot alterasse o código para que o usuário informasse o ano do carro.</p>
 <div class="fragment">
@@ -2338,7 +2313,7 @@ web_commit_signoff_required</code></pre>
 <p>Foi gerado um código que parecia fazer sentido.</p>
 </div>
 </section>
-<section id="section-51" class="slide level2">
+<section id="section-49" class="slide level2">
 <h2></h2>
 <div title="GitHub Copilot">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -2377,7 +2352,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-52" class="slide level2">
+<section id="section-50" class="slide level2">
 <h2></h2>
 <p>Mas ao testar usando <code>Fusca</code> e ano <code>1985</code>, o programa não encontrou a informação.</p>
 <ul>
@@ -2394,7 +2369,7 @@ web_commit_signoff_required</code></pre>
 <div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="cf">if</span> ano_usuario <span class="op">==</span> ano[<span class="st">'nome'</span>]:</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-53" class="slide level2">
+<section id="section-51" class="slide level2">
 <h2></h2>
 <p>Fiz então um novo prompt para o Copilot corrigir esse problema.</p>
 <div class="fragment">
@@ -2412,7 +2387,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-54" class="slide level2">
+<section id="section-52" class="slide level2">
 <h2></h2>
 <p>O código gerado funcionava, mas vi outro problema.</p>
 <ul>
@@ -2424,7 +2399,7 @@ web_commit_signoff_required</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="section-55" class="slide level2">
+<section id="section-53" class="slide level2">
 <h2></h2>
 <p>Alterei então o prompt:</p>
 <div class="fragment">
@@ -2455,7 +2430,7 @@ web_commit_signoff_required</code></pre>
 <span id="cb30-10"><a></a>KeyError: 'modelos'</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-56" class="slide level2">
+<section id="section-54" class="slide level2">
 <h2></h2>
 <p>Joguei o erro no chat do Copilot e obtive a resposta abaixo, junto com o código alterado.</p>
 <div class="fragment">
@@ -2473,9 +2448,9 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-57" class="slide level2">
+<section id="section-55" class="slide level2">
 <h2></h2>
-<p>Apliquei a correção sugerido, mas continuou gerando um erro (agora no <code>codigo</code>).</p>
+<p>Apliquei a correção sugerida, mas continuou gerando um erro (agora no <code>codigo</code>).</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb31-1"><a></a>Traceback (most recent call last):</span>
 <span id="cb31-2"><a></a>  File "/home/julio/Downloads/projeto/app.py", line 84, in &lt;module&gt;</span>
 <span id="cb31-3"><a></a>    main()</span>
@@ -2487,7 +2462,7 @@ web_commit_signoff_required</code></pre>
 <p>Joguei o erro novamente no Copilot.</p>
 </div>
 </section>
-<section id="section-58" class="slide level2">
+<section id="section-56" class="slide level2">
 <h2></h2>
 <div title="GitHub Copilot">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -2503,17 +2478,17 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-59" class="slide level2">
+<section id="section-57" class="slide level2">
 <h2></h2>
 <p>Junto com a resposta veio um código alterado com proteções mas que não retornava nenhuma informação.</p>
 <ul>
 <li class="fragment">O que você acha que estava acontecendo?</li>
 </ul>
 <div class="fragment">
-<p>Usando o depurador vi que estava sendo retornada uma mensagem de erro dizendo que a taxa de requisições da API tinha sido excedida.</p>
+<p>Usando o depurador vi que estava sendo retornada uma mensagem de erro dizendo que a taxa de requisições da API tinha sido excedida. 😁</p>
 </div>
 </section>
-<section id="section-60" class="slide level2">
+<section id="section-58" class="slide level2">
 <h2></h2>
 <div title="Prompt">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
@@ -2528,8 +2503,15 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-61" class="slide level2">
+<section id="section-59" class="slide level2">
 <h2></h2>
+<div title="GitHub Copilot">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>GitHub Copilot</strong></p>
+</div>
+<div class="callout-content">
 <div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a><span class="im">import</span> requests</span>
 <span id="cb32-2"><a></a></span>
 <span id="cb32-3"><a></a><span class="kw">def</span> buscar_marcas():</span>
@@ -2623,8 +2605,12 @@ web_commit_signoff_required</code></pre>
 <span id="cb32-91"><a></a></span>
 <span id="cb32-92"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb32-93"><a></a>    main()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="section-62" class="slide level2">
+<section id="section-60" class="slide level2">
 <h2></h2>
 <p>Sobre a questão do código não estar consultando informações específicas sobre Minas Gerais, escrevi o seguinte prompt.</p>
 <ul>
@@ -2645,7 +2631,7 @@ web_commit_signoff_required</code></pre>
 </div>
 </div>
 </section>
-<section id="section-63" class="slide level2">
+<section id="section-61" class="slide level2">
 <h2></h2>
 <p>E tive a seguinte resposta:</p>
 <div title="GitHub Copilot">
@@ -2681,6 +2667,7 @@ web_commit_signoff_required</code></pre>
 <div class="callout-content">
 <p>Cuidado com o <em>vibe coding</em>!</p>
 <p>Saber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados, do que ficar simplesmente fazendo um bate e volta com o Assistente de IA.</p>
+<p>Com certeza gastei bem mais tempo para fazer esse exemplo da FIPE do que teria gastado se tivesse dado uma olhada na documentação primeiro.</p>
 </div>
 </div>
 </div>

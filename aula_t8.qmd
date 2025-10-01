@@ -1173,31 +1173,8 @@ Pedi então ao Copilot para corrigir o erro.
 A resposta do Copilot modificou o código para somar as frequências de cada década.
 
 - E considerar isso como a frequência total.
-- Mas isso faz sentido?
-
-##
-
-Isso não faz sentido, pois a mesma pessoa seria contada várias vezes.
-
-. . .
-
-Experimentei comentar a linha, mas isso causava outros problemas no código.
-
-- Inclusive percebi que esse total era usado para calcular a frequência relativa de um nome.
-- Mas isso não era correto.
-
-##
-
-::: {.callout-warning}
-## Fica a dica!
-
-Cuidado com respostas de Assistentes de IA.
-
-Precisamos saber o que queremos em vez de simplesmente entrar em um ciclo de
-pedir correções.
-
-Nesse caso, a solução não fazia sentido.
-:::
+- Mas eu não estava interessado nos valores totais.
+  - Experimentei comentar a linha, mas isso causava outros problemas no código.
 
 ##
 
@@ -1207,7 +1184,7 @@ referente a uma frequência total.
 . . .
 
 ::: {.callout-caution title="Prompt" icon="false"}
-Os dados retornados não possuem uma frequência total e não faz sentido calcular a soma das frequências de cada década como uma frequência total. Remova qualquer referência a uma frequência total. Quero apenas um gráfico simples, de barras, que mostre a frequência do nome escolhido a cada década.
+Remova qualquer referência a uma frequência total. Quero apenas um gráfico simples, de barras, que mostre a frequência do nome escolhido a cada década.
 :::
 
 . . .
@@ -1620,7 +1597,7 @@ Esse print não mostra o estado real da resposta do Copilot.
 ::: {.smaller}
 - `rerun without`: que significa refazer a pergunta sem usar o agente `@workspace`.
   - Na verdade eu nem tinha pedido para usar o agente `@workspace`.
-- Clique então na opção e aí a resposta foi bem diferente.
+- Cliquei então na opção e aí a resposta foi bem diferente.
 :::
 :::
 
@@ -1851,7 +1828,7 @@ O erro KeyError: 'modelos' ocorre porque algumas marcas não possuem modelos cad
 
 ##
 
-Apliquei a correção sugerido, mas continuou gerando um erro (agora no `codigo`).
+Apliquei a correção sugerida, mas continuou gerando um erro (agora no `codigo`).
 
 ```output
 Traceback (most recent call last):
@@ -1885,7 +1862,7 @@ não retornava nenhuma informação.
 . . .
 
 Usando o depurador vi que estava sendo retornada uma mensagem de erro
-dizendo que a taxa de requisições da API tinha sido excedida.
+dizendo que a taxa de requisições da API tinha sido excedida. 😁
 
 ##
 
@@ -1895,6 +1872,7 @@ Depurando, eu notei que a variável marcas está agora vindo com o valor {'error
 
 ##
 
+::: {.callout-note title="GitHub Copilot" icon="false" .nonincremental}
 ```python
 import requests
 
@@ -1990,6 +1968,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+:::
 
 ## 
 
@@ -2027,6 +2006,9 @@ Cuidado com o _vibe coding_!
 
 Saber exatamente o que você deseja e validar os retornos a cada passo produz melhores resultados,
 do que ficar simplesmente fazendo um bate e volta com o Assistente de IA.
+
+Com certeza gastei bem mais tempo para fazer esse exemplo da FIPE do que teria
+gastado se tivesse dado uma olhada na documentação primeiro.
 :::
 
 . . .
