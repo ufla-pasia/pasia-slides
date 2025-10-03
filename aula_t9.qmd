@@ -1,0 +1,33 @@
+---
+title: Desenvolvendo Jogos e POO
+subtitle: PASIA - Aula T.9
+---
+
+##  
+
+O conteúdo dessa aula é baseado nos **capítulos 9, 12, 13 e 14** do livro:
+
+
+![](imagens/livro_curso_intensivo_python.jpg){fig-align="center" fig-alt="Capa do livro de Curso Intensivo de Python." style="max-height: 50vh; width: auto;"}
+
+##
+
+Nessa aula nós vamos [desenvolver um jogo]{.alert} usando a biblioteca `pygame`.
+
+- Para desenvolver o jogo usaremos conceitos de POO: [Programação Orientada a Objetos]{.alert}.
+
+. . .
+
+Usaremos POO porque um jogo é um projeto bem mais complexo do que os
+exemplos que vimos na disciplina até agora.
+
+- Em vez de apresentar como se implementa OO em Python e depois desenvolver o jogo,
+- vamos aprender a usar OO à medida que o jogo é desenvolvido.
+
+## Ideias
+
+1. Seguir o roteiro do livro acrescentando apresentação de OO.
+2. Usar um Assistente de IA e entrar em modo interativo de treinamento ensinando a
+   fazer jogo.
+
+## 
