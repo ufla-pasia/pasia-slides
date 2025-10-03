@@ -148,7 +148,7 @@ Mas vamos aproveitar para conhecer outra biblioteca interessante: a [`folium`]{.
 Nos slides a seguir são apresentados os exercícios a serem feitos com essa ideia.
 
 - Lembre-se de usar o arquivo `requirements.txt` e ambiente virtual.
-- Você precisará instalar, no mínimo, as bibliotecas `requests`, `folium` e `webbrowser`.
+- Você precisará instalar, no mínimo, as bibliotecas `requests` e `folium`.
 
 ##
 
