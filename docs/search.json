@@ -6515,5 +6515,474 @@
     "title": "Trabalhando com APIs",
     "section": "",
     "text": "Dessa vez eu mudei o modelo do Copilot para o GPT-4.1.\n\nMeu objetivo foi comparar o tipo de resposta com o modelo Claude Sonnet 4 que eu vinha usando.\nObs.: note que eu não forneci o link da documentação da API dessa vez.\n\n\nComo verá no código a seguir, o código gerado foi bem mais sucinto.\n\nFoi direto ao ponto sobre o que eu tinha solicitado."
+  },
+  {
+    "objectID": "aula_t9.html#section",
+    "href": "aula_t9.html#section",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "O conteúdo dessa aula é baseado nos capítulos 9, 12 e 13 do livro:"
+  },
+  {
+    "objectID": "aula_t9.html#section-1",
+    "href": "aula_t9.html#section-1",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "Nessa aula nós vamos desenvolver um jogo usando a biblioteca pygame.\n\nPara desenvolver o jogo usaremos conceitos de POO: Programação Orientada a Objetos.\n\n\nUsaremos POO porque um jogo é um projeto bem mais complexo do que os exemplos que vimos na disciplina até agora.\n\nEm vez de apresentar como se implementa OO em Python e depois desenvolver o jogo,\nvamos aprender a usar OO à medida que o jogo é desenvolvido."
+  },
+  {
+    "objectID": "aula_t9.html#ideias",
+    "href": "aula_t9.html#ideias",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Ideias",
+    "text": "Ideias\n\nSeguir o roteiro do livro acrescentando apresentação de OO.\nUsar um Assistente de IA e entrar em modo interativo de treinamento ensinando a fazer jogo."
+  },
+  {
+    "objectID": "aula_t9.html#sessão-com-copilot-gpt-4.1-modo-ask",
+    "href": "aula_t9.html#sessão-com-copilot-gpt-4.1-modo-ask",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Sessão com Copilot GPT 4.1 Modo Ask",
+    "text": "Sessão com Copilot GPT 4.1 Modo Ask\nGostaria de iniciar uma sessão interativa para aprender a usar a biblioteca pygame para desenvolver um jogo 2D em Python. Nesta seção considere que conheço o básico de Python, mas nunca utilizei Orientação a Objetos nessa linguagem (eu aprendi usando Java). Gostaria que o jogo fosse construído um passo de cada vez, de forma bem didática. O jogo se chamará Invasão Alienígena. O jogador controlará uma nave que ficará na parte inferior da tela e poderá se movimentar da direita para a esquerda. A nave consegue atirar. Os inimigos são naves alienígenas que aparecem no topo da tela e se movimentam lateralmente, hora para esquerda, hora para a direita e também se movimentam verticalmente, descendo em direção à nave do jogador. Se as nave alienígenas atingirem a nave do jogador, o jogo termina. Se o tiro da nave do jogador atinge uma nave alienígena, ela é eliminada.\nRodou com @workspace, gerou uma estrutura de projeto com o jogo já “pronto” e sem nenhuma interação.\n\nProjeto tinha vários erros.\n\nCliquei em Rerun without\n\nAí sim, o jogo começou a ser gerado em um processo interativo.\nE assim eu podia direcionar a sequência da conversa pedindo mais ou menos detalhes.\nMas percebi que o resultado não era tão bom quanto os capítulos de livro\n\nMuita coisa era feita de forma direta, sem uma explicação clara."
+  },
+  {
+    "objectID": "aula_t9.html#section-2",
+    "href": "aula_t9.html#section-2",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "Ao preparar a aula, estudei os capítulos do livro.\n\nE também experimentei usar um Assistente de IA em modo interativo.\n\n\nTestei primeiro com o Copilot e depois com o ChatGPT.\n\nApresento a seguir um resumo dessas tentativas."
+  },
+  {
+    "objectID": "aula_t9.html#planejando-seu-projeto",
+    "href": "aula_t9.html#planejando-seu-projeto",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Planejando seu projeto",
+    "text": "Planejando seu projeto\nImportância de definir bem o que se quer desenvolver antes de sair fazendo."
+  },
+  {
+    "objectID": "aula_t9.html#instalando-pygame",
+    "href": "aula_t9.html#instalando-pygame",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Instalando PyGame",
+    "text": "Instalando PyGame\nPygame não é um módulo built-in, portanto, precisa ser instalado."
+  },
+  {
+    "objectID": "aula_t9.html#iniciando-o-projeto-do-jogo",
+    "href": "aula_t9.html#iniciando-o-projeto-do-jogo",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Iniciando o Projeto do Jogo",
+    "text": "Iniciando o Projeto do Jogo\n\n\ninvasao_alien.py\n\nimport sys\n\nimport pygame\n\nclass InvasaoAlien:\n    \"\"\"Classe geral para gerenciar ativos e comportamento do jogo.\"\"\"\n\n    def __init__(self):\n        \"\"\"Inicializa o jogo e cria os recursos do jogo.\"\"\"\n1        pygame.init()\n\n2        self.tela = pygame.display.set_mode((1200, 800))\n        pygame.display.set_caption(\"Invasão Alienígena\")\n        \n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n3        while True:\n            # Observa eventos de teclado e mouse.\n4            for evento in pygame.event.get():\n5                if evento.type == pygame.QUIT:\n                    sys.exit()\n\n6            pygame.display.flip()\n\nif __name__ == '__main__':\n    ai = InvasaoAlien()                                   \n    ai.executar_jogo()                                    \n\n\n1\n\nInicializa as configurações de background.\n\n2\n\nCria uma janela para exibição (Surface).\n\n3\n\nLoop de jogo.\n\n4\n\nLoop dos eventos detectados desde a última iteração.\n\n5\n\nEvento gerado quando o jogador clica no botão de fechar a janela.\n\n6\n\nAtualiza o desenho na tela (double buffer). :::"
+  },
+  {
+    "objectID": "aula_t9.html#section-3",
+    "href": "aula_t9.html#section-3",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "O copilot rodou com @workspace, gerando uma estrutura de projeto com o jogo já “pronto” e sem nenhuma interação.\n\nMas o projeto tinha vários erros.\n\n\nCliquei em Rerun without\n\nAí sim, o jogo começou a ser gerado em um processo interativo.\nE eu podia direcionar a sequência da conversa pedindo mais ou menos detalhes.\nMas percebi que o resultado não era tão bom quanto os capítulos de livro\n\nMuita coisa era feita de forma direta, sem uma explicação clara."
+  },
+  {
+    "objectID": "aula_t9.html#controlando-o-frame-rate",
+    "href": "aula_t9.html#controlando-o-frame-rate",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Controlando o frame rate",
+    "text": "Controlando o frame rate\n\n\ninvasao_alien.py\n\n    def __init__(self):\n        \"\"\"Inicializa o jogo e cria os recursos do jogo.\"\"\"\n        pygame.init()\n        self.clock = pygame.time.Clock()\n        # -- trecho de código omitido -- \n        \n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            # -- trecho de código omitido -- \n            pygame.display.flip()\n            self.clock.tick(60)  # Limita a 60 quadros por segundo"
+  },
+  {
+    "objectID": "aula_t9.html#definindo-a-cor-de-fundo",
+    "href": "aula_t9.html#definindo-a-cor-de-fundo",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Definindo a cor de fundo",
+    "text": "Definindo a cor de fundo\n\n\ninvasao_alien.py\n\n    def __init__(self):\n        # -- trecho de código omitido -- \n        pygame.display.set_caption(\"Invasão Alienígena\")\n\n        # Define a cor de fundo\n        self.cor_fundo = (230, 230, 230)\n        \n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            # Observa eventos de teclado e mouse.\n            for evento in pygame.event.get():\n                if evento.type == pygame.QUIT:\n                    sys.exit()\n            \n            # Redesenha a tela a cada passagem pelo loop.\n            self.tela.fill(self.cor_fundo)\n\n            pygame.display.flip()\n            self.clock.tick(60)  # Limita a 60 quadros por segundo"
+  },
+  {
+    "objectID": "aula_t9.html#criando-uma-classe-settings",
+    "href": "aula_t9.html#criando-uma-classe-settings",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Criando uma classe Settings",
+    "text": "Criando uma classe Settings\n\n\nconfig.py\n\nclass Settings:\n    \"\"\" Classe para armazenar as configurações do jogo Invasão Alienígena. \"\"\"\n\n    def __init__(self):\n        \"\"\" Inicializa as configurações do jogo. \"\"\"\n        # Configurações da tela\n        self.largura_tela = 1200\n        self.altura_tela = 800\n        self.cor_fundo = (230, 230, 230)  # Cor de fundo cinza claro"
+  },
+  {
+    "objectID": "aula_t9.html#classes-em-python",
+    "href": "aula_t9.html#classes-em-python",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Classes em Python",
+    "text": "Classes em Python"
+  },
+  {
+    "objectID": "aula_t9.html#adicionado-a-imagem-da-nave",
+    "href": "aula_t9.html#adicionado-a-imagem-da-nave",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Adicionado a imagem da Nave",
+    "text": "Adicionado a imagem da Nave\n\n\n\n\nChatGPT\n\n\n🌐 Sites de Sprites Gratuitos\n\nOpenGameArt.org 🔗 https://opengameart.org\n\n\nGigante repositório de sprites gratuitos.\nMuitos já vêm em pixel art ou estilo retrô arcade.\n\n\nItch.io – Asset Packs gratuitos 🔗 https://itch.io/game-assets/free\n\n\nPacks de sprites feitos por artistas independentes.\nMuitos permitem uso em jogos comerciais.\n\n\nKenney.nl 🔗 https://kenney.nl/assets\n\n\nSprites profissionais e organizados.\nTudo em CC0 (sem restrição de uso).\n\n\nCraftPix.net (Freebies) 🔗 https://craftpix.net/freebies/\n\n\nArte mais elaborada.\nTem alguns pacotes gratuitos, mas muitos são pagos.\n\n\nGoogle + Filtros de Licença 🔗 Vá em Google Images\n\n\nEm Ferramentas &gt; Direitos de uso, filtre por Creative Commons.\nAssim evita problemas de copyright."
+  },
+  {
+    "objectID": "aula_t9.html#criando-a-classe-nave",
+    "href": "aula_t9.html#criando-a-classe-nave",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Criando a classe Nave",
+    "text": "Criando a classe Nave\n\n\nnave.py\n\nimport pygame\n\nclass Nave:\n    \"\"\" Classe para cuidar da nave do jogador \"\"\"\n\n    def __init__(self, jogo):\n        \"\"\" Inicializa a nave e define sua posição inicial. \"\"\"\n        self.tela = jogo.tela\n        self.ret_tela = jogo.tela.get_rect()\n\n        # Sobe a imagem da nave e obtém seu retângulo.\n        # Método convert é importante para melhorar desempenho!\n        self.imagem = pygame.image.load('imagens/nave.png').convert()\n        self.ret = self.imagem.get_rect()\n\n        # Começa cada nave nova no centro inferior da tela.\n        self.ret.midbottom = self.ret_tela.midbottom\n\n    def desenhar(self):\n        \"\"\" Desenha a nave em sua posição atual. \"\"\"\n        self.tela.blit(self.imagem, self.ret)"
+  },
+  {
+    "objectID": "aula_t9.html#desenhando-a-nave-na-tela",
+    "href": "aula_t9.html#desenhando-a-nave-na-tela",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Desenhando a nave na tela",
+    "text": "Desenhando a nave na tela\n\n\ninvasao_alien.py\n\nfrom config import Config\nfrom nave import Nave\n\nclass InvasaoAlien:\n    \"\"\"Classe geral para gerenciar ativos e comportamento do jogo.\"\"\"\n\n    def __init__(self):\n        # -- trecho de código omitido -- \n        pygame.display.set_caption(\"Invasão Alienígena\")\n\n        self.nave = Nave(self)\n        \n    def executar_jogo(self):\n            # -- trecho de código omitido -- \n            # Redesenha a tela a cada passagem pelo loop.\n            self.tela.fill(self.config.cor_fundo)\n            self.nave.desenhar()"
+  },
+  {
+    "objectID": "aula_t9.html#refatoração-método-_verificar_eventos-e-_atualizar_tela",
+    "href": "aula_t9.html#refatoração-método-_verificar_eventos-e-_atualizar_tela",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Refatoração: método _verificar_eventos() e _atualizar_tela()",
+    "text": "Refatoração: método _verificar_eventos() e _atualizar_tela()\n\n\ninvasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            self._atualizar_tela()\n            self.clock.tick(60)\n    \n    def _verificar_eventos(self):\n        \"\"\"Responde a eventos de teclado e mouse.\"\"\"\n        for evento in pygame.event.get():\n            if evento.type == pygame.QUIT:\n                sys.exit()\n    \n    def _atualizar_tela(self):\n        \"\"\"Desenha a nova imagem da tela do jogo e a utiliza na tela.\"\"\"\n        self.tela.fill(self.config.cor_fundo)\n        self.nave.desenhar()\n        \n        pygame.display.flip()"
+  },
+  {
+    "objectID": "aula_t9.html#pilotando-a-nave",
+    "href": "aula_t9.html#pilotando-a-nave",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Pilotando a nave",
+    "text": "Pilotando a nave\n\n\ninvasao_alien.py\n\n    def _verificar_eventos(self):\n        \"\"\"Responde a eventos de teclado e mouse.\"\"\"\n        for evento in pygame.event.get():\n            if evento.type == pygame.QUIT:\n                sys.exit()\n            elif evento.type == pygame.KEYDOWN:\n                if evento.key == pygame.K_RIGHT:\n                    self.nave.ret.x += 1"
+  },
+  {
+    "objectID": "aula_t9.html#movimento-contínuo",
+    "href": "aula_t9.html#movimento-contínuo",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Movimento contínuo",
+    "text": "Movimento contínuo\n\n\nnave.py\n\n    def __init__(self, jogo):\n        # -- trecho de código omitido --\n\n        # Começa cada nave nova no centro inferior da tela.\n        self.ret.midbottom = self.ret_tela.midbottom\n\n        # Flag de movimento; começa com uma nave que não está se movendo.\n        self.movendo_direita = False\n    \n    def atualizar(self):\n        \"\"\" Atualiza a posição da nave com base na flag de movimento. \"\"\"\n        if self.movendo_direita:\n            self.ret.x += 1"
+  },
+  {
+    "objectID": "aula_t9.html#section-4",
+    "href": "aula_t9.html#section-4",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "Mas, no geral, o material do livro era realmente bem mais didático.\n\nE usava construções / funcionalidades importantes do pygame.\nque eram ignoradas nas sessões com Assitentes de AI.\n\n\nDecidi então basear a aula nos capítulos do livro.\n\nE, na Aula Prática, a ideia é que vocês incrementem o jogo com ajuda do Copilot."
+  },
+  {
+    "objectID": "aula_t9.html#movendo-nas-duas-direções",
+    "href": "aula_t9.html#movendo-nas-duas-direções",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Movendo nas duas direções",
+    "text": "Movendo nas duas direções\n\n\nnave.py\n\n    def __init__(self, jogo):\n        # -- trecho de código omitido --\n\n        # Flags de movimento; começa com uma nave que não está se movendo.\n        self.movendo_direita = False\n        self.movendo_esquerda = False\n    \n    def atualizar(self):\n        \"\"\" Atualiza a posição da nave com base nas flags de movimento. \"\"\"\n        if self.movendo_direita:\n            self.ret.x += 1\n        if self.movendo_esquerda:\n            self.ret.x -= 1"
+  },
+  {
+    "objectID": "aula_t9.html#section-5",
+    "href": "aula_t9.html#section-5",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "invasao_alien.py\n\nimport sys\n\nimport pygame\n\nfrom config import Config\n\nclass InvasaoAlien:\n    \"\"\"Classe geral para gerenciar ativos e comportamento do jogo.\"\"\"\n\n    def __init__(self):\n        \"\"\"Inicializa o jogo e cria os recursos do jogo.\"\"\"\n        pygame.init()\n        self.clock = pygame.time.Clock()\n        self.config = Config()\n\n        self.tela = pygame.display.set_mode(\n            (self.config.largura_tela, self.config.altura_tela))\n        pygame.display.set_caption(\"Invasão Alienígena\")\n        \n    def executar_jogo(self):\n            # -- trecho de código omitido -- \n            \n            # Redesenha a tela a cada passagem pelo loop.\n            self.tela.fill(self.config.cor_fundo)\n\n            pygame.display.flip()\n            self.clock.tick(60)  # Limita a 60 quadros por segundo"
+  },
+  {
+    "objectID": "aula_t9.html#ajustando-a-velocidade-da-nave",
+    "href": "aula_t9.html#ajustando-a-velocidade-da-nave",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Ajustando a velocidade da nave",
+    "text": "Ajustando a velocidade da nave\n\n\nconfig.py\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Configurações da nave\n        self.velocidade_nave = 10.0\n\nAjuste a velocidade testando o jogo."
+  },
+  {
+    "objectID": "aula_t9.html#section-6",
+    "href": "aula_t9.html#section-6",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "ChatGPT\n\n\n\nCraftPix.net (Freebies) 🔗 https://craftpix.net/freebies/\n\n\nArte mais elaborada.\nTem alguns pacotes gratuitos, mas muitos são pagos.\n\n\nGoogle + Filtros de Licença 🔗 Vá em Google Images\n\n\nEm Ferramentas &gt; Direitos de uso, filtre por Creative Commons.\nAssim evita problemas de copyright."
+  },
+  {
+    "objectID": "aula_t9.html#restringindo-o-alcance-da-nave",
+    "href": "aula_t9.html#restringindo-o-alcance-da-nave",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Restringindo o alcance da Nave",
+    "text": "Restringindo o alcance da Nave\n\n\nnave.py\n\n    def atualizar(self):\n        \"\"\" Atualiza a posição da nave com base nas flags de movimento. \"\"\"\n        if self.movendo_direita and self.ret.right &lt; self.ret_tela.right:\n            self.x += self.config.velocidade_nave\n        if self.movendo_esquerda and self.ret.left &gt; 0:\n            self.x -= self.config.velocidade_nave\n        \n        self.ret.x = int(self.x)"
+  },
+  {
+    "objectID": "aula_t9.html#refatorando-o-método-_verificar_eventos",
+    "href": "aula_t9.html#refatorando-o-método-_verificar_eventos",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Refatorando o método _verificar_eventos()",
+    "text": "Refatorando o método _verificar_eventos()\n\n\ninvasao_alien.py\n\n    def _verificar_eventos(self):\n        \"\"\"Responde a eventos de teclado e mouse.\"\"\"\n        for evento in pygame.event.get():\n            if evento.type == pygame.QUIT:\n                sys.exit()\n            elif evento.type == pygame.KEYDOWN:\n                self._verificar_eventos_tecla_pressionada(evento)\n            elif evento.type == pygame.KEYUP:\n                self._verificar_eventos_tecla_liberada(evento)\n    \n    def _verificar_eventos_tecla_pressionada(self, evento):\n        \"\"\" Responde a teclas pressioandas\"\"\"\n        if evento.key == pygame.K_RIGHT:\n            self.nave.movendo_direita = True\n        elif evento.key == pygame.K_LEFT:\n            self.nave.movendo_esquerda = True\n    \n    def _verificar_eventos_tecla_liberada(self, evento):\n        \"\"\" Responde a teclas liberadas\"\"\"\n        if evento.key == pygame.K_LEFT:\n            self.nave.movendo_esquerda = False\n        elif evento.key == pygame.K_RIGHT:\n            self.nave.movendo_direita = False"
+  },
+  {
+    "objectID": "aula_t9.html#fechar-o-jogo-com-a-tecla-q",
+    "href": "aula_t9.html#fechar-o-jogo-com-a-tecla-q",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Fechar o jogo com a tecla q",
+    "text": "Fechar o jogo com a tecla q\n\n\ninvasao_alien.py\n\n    def _verificar_eventos_tecla_pressionada(self, evento):\n        \"\"\" Responde a teclas pressioandas\"\"\"\n        if evento.key == pygame.K_RIGHT:\n            self.nave.movendo_direita = True\n        elif evento.key == pygame.K_LEFT:\n            self.nave.movendo_esquerda = True\n        elif evento.key == pygame.K_q:\n            sys.exit()"
+  },
+  {
+    "objectID": "aula_t9.html#executando-o-jogo-em-modo-tela-cheia",
+    "href": "aula_t9.html#executando-o-jogo-em-modo-tela-cheia",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Executando o jogo em modo Tela Cheia",
+    "text": "Executando o jogo em modo Tela Cheia\n\n\ninvasao_alien.py\n\n    def __init__(self):\n        \"\"\"Inicializa o jogo e cria os recursos do jogo.\"\"\"\n        pygame.init()\n        self.clock = pygame.time.Clock()\n        self.config = Config()\n\n        self.tela = pygame.display.set_mode((0,0), pygame.FULLSCREEN)\n        self.config.largura_tela = self.tela.get_rect().width\n        self.config.altura_tela = self.tela.get_rect().height\n        pygame.display.set_caption(\"Invasão Alienígena\")\n\n\nAgora a largura e altura do jogo não é pré-definida.\nProvavelmente pode ser interessante mudar a velocidade da nave.\n\n\n\n\n\n\n\n\nAviso\n\n\nSe não tivéssemos tratado a tecla q para sair do jogo, não teríamos uma forma de sair do jogo no modo tela cheia."
+  },
+  {
+    "objectID": "aula_t9.html#section-7",
+    "href": "aula_t9.html#section-7",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "invasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            self.nave.atualizar()\n            self._atualizar_tela()\n            self.clock.tick(60)\n    \n    def _verificar_eventos(self):\n        \"\"\"Responde a eventos de teclado e mouse.\"\"\"\n        for evento in pygame.event.get():\n            if evento.type == pygame.QUIT:\n                sys.exit()\n            elif evento.type == pygame.KEYDOWN:\n                if evento.key == pygame.K_RIGHT:\n                    self.nave.movendo_direita = True\n            elif evento.type == pygame.KEYUP:\n                if evento.key == pygame.K_RIGHT:\n                    self.nave.movendo_direita = False"
+  },
+  {
+    "objectID": "aula_t9.html#configuração-dos-projéteis",
+    "href": "aula_t9.html#configuração-dos-projéteis",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Configuração dos projéteis",
+    "text": "Configuração dos projéteis\n\n\nconfig.py\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Configurações dos projéteis\n        self.velocidade_projetil = 15.0\n        self.largura_projetil = 3\n        self.altura_projetil = 15\n        self.cor_projetil = (60, 60, 60)  # Cor cinza escuro"
+  },
+  {
+    "objectID": "aula_t9.html#classe-projetil",
+    "href": "aula_t9.html#classe-projetil",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Classe Projetil",
+    "text": "Classe Projetil\n\n\nprojetil.py\n\nimport pygame\nfrom pygame.sprite import Sprite\n\nclass Projetil(Sprite):\n    \"\"\" Classe para gerenciar projéteis disparados pela nave. \"\"\"\n\n    def __init__(self, ai_game):\n        \"\"\" Cria um objeto de projétil na posição atual da nave. \"\"\"\n        super().__init__()\n        self.tela = ai_game.tela\n        self.config = ai_game.config\n        self.cor = self.config.cor_projetil\n\n        # Cria um projétil na posição (0,0) e depois define a posição correta.\n        self.ret = pygame.Rect(0, 0, self.config.largura_projetil,\n            self.config.altura_projetil)\n        self.ret.midtop = ai_game.nave.ret.midtop\n\n        # Guarda a posição do projétil como um float.\n        self.y = float(self.ret.y)\n\n    def update(self):\n        \"\"\" Move o projétil para cima na tela. \n            Exemplo de sobrescrita de método.\n            Útil para usarmos em um grupo de sprites.\n        \"\"\"\n        # Atualiza a posição exata do projétil.\n        self.y -= self.config.velocidade_projetil\n        # Atualiza a posição do retângulo.\n        self.ret.y = self.y\n\n    def desenhar(self):\n        \"\"\" Desenha o projétil na tela. \"\"\"\n        pygame.draw.rect(self.tela, self.cor, self.ret)"
+  },
+  {
+    "objectID": "aula_t9.html#herança-em-python",
+    "href": "aula_t9.html#herança-em-python",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Herança em Python",
+    "text": "Herança em Python"
+  },
+  {
+    "objectID": "aula_t9.html#grupos-de-projéteis",
+    "href": "aula_t9.html#grupos-de-projéteis",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Grupos de projéteis",
+    "text": "Grupos de projéteis\n\n\ninvasao_alien.py\n\nfrom nave import Nave\nfrom projetil import Projetil\n\nclass InvasaoAlien:\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        self.nave = Nave(self)\n        self.projeteis = pygame.sprite.Group()\n        \n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            self.nave.atualizar()\n            self.projeteis.update()\n            self._atualizar_tela()\n            self.clock.tick(60)"
+  },
+  {
+    "objectID": "aula_t9.html#disparando-projéteis",
+    "href": "aula_t9.html#disparando-projéteis",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Disparando projéteis",
+    "text": "Disparando projéteis\n\n\ninvasao_alien.py\n\n    def _verificar_eventos_tecla_pressionada(self, evento):\n        # -- trecho de código omitido --\n        elif evento.key == pygame.K_q:\n            sys.exit()\n        elif evento.key == pygame.K_SPACE:\n            self._disparar_projetil()\n    \n    def _verificar_eventos_tecla_liberada(self, evento):\n        # -- trecho de código omitido --\n\n    def _disparar_projetil(self):\n        \"\"\" Cria um novo projétil e o adiciona ao grupo de projéteis. \"\"\"\n        novo_projetil = Projetil(self)\n        self.projeteis.add(novo_projetil)\n    \n    def _atualizar_tela(self):\n        \"\"\"Desenha a nova imagem da tela do jogo e a utiliza na tela.\"\"\"\n        self.tela.fill(self.config.cor_fundo)\n        for projetil in self.projeteis.sprites():\n            projetil.desenhar()\n        self.nave.desenhar()\n        \n        pygame.display.flip()"
+  },
+  {
+    "objectID": "aula_t9.html#apagando-projéteis-fora-da-tela",
+    "href": "aula_t9.html#apagando-projéteis-fora-da-tela",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Apagando projéteis fora da tela",
+    "text": "Apagando projéteis fora da tela\n\n\ninvasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            self.nave.atualizar()\n            self.projeteis.update()\n\n            # Descarta os projéteis que desapareceram\n            for projetil in self.projeteis.copy():\n                if projetil.ret.bottom &lt;= 0:\n                    self.projeteis.remove(projetil)\n            print(len(self.projeteis)) # REMOVER DEPOIS DE TESTAR!\n\n            self._atualizar_tela()\n            self.clock.tick(60)"
+  },
+  {
+    "objectID": "aula_t9.html#limitando-o-número-de-projéteis",
+    "href": "aula_t9.html#limitando-o-número-de-projéteis",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Limitando o número de projéteis",
+    "text": "Limitando o número de projéteis\n\n\nconfig.py\n\n    def __init__(self):\n        # -- trecho de código omitido --\n        self.cor_projetil = (60, 60, 60)  # Cor cinza escuro\n        self.max_projeteis = 5\n\n\n\ninvasao_alien.py\n\n    def _disparar_projetil(self):\n        \"\"\" Cria um novo projétil e o adiciona ao grupo de projéteis. \"\"\"\n        if len(self.projeteis) &lt; self.config.max_projeteis:\n            novo_projetil = Projetil(self)\n            self.projeteis.add(novo_projetil)"
+  },
+  {
+    "objectID": "aula_t9.html#criando-o-método-atualizar-projéteis",
+    "href": "aula_t9.html#criando-o-método-atualizar-projéteis",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Criando o método atualizar projéteis",
+    "text": "Criando o método atualizar projéteis\n\n\ninvasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            self.nave.atualizar()\n            self._atualizar_projeteis()\n            self._atualizar_tela()\n            self.clock.tick(60)\n    \n    # -- trecho de código omitido --\n\n    def _atualizar_projeteis(self):\n        \"\"\" Atualiza a posição dos projéteis e descarta os projéteis antigos. \"\"\"\n        self.projeteis.update()\n\n        # Livra-se dos projéteis que desapareceram.\n        for projetil in self.projeteis.copy():\n            if projetil.ret.bottom &lt;= 0:\n                self.projeteis.remove(projetil)"
+  },
+  {
+    "objectID": "aula_t9.html#criando-a-classe-alien",
+    "href": "aula_t9.html#criando-a-classe-alien",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Criando a classe Alien",
+    "text": "Criando a classe Alien\n\n\nalien.py\n\nimport pygame\n\nfrom pygame.sprite import Sprite\n\n\nclass Alien(Sprite):\n    \"\"\" Classe para representar um único alien de um esquadrão. \"\"\"\n\n    def __init__(self, ai_game):\n        \"\"\" Inicializa o alien e define sua posição inicial. \"\"\"\n        super().__init__()\n        self.tela = ai_game.tela\n\n        # Carrega a imagem do alien e define seu atributo retangulo.\n        # ATENÇÃO: aqui precisamos usar os nomes image e rect, pois\n        # são esses nomes que o Pygame espera e usa internamente.\n        self.image = pygame.image.load('imagens/alien.png')\n        self.rect = self.image.get_rect()\n\n        # Começa cada novo alien próximo ao canto superior esquerdo da tela.\n        # Considera um espaço a partir da borda, do tamanho do retângulo.\n        self.rect.x = self.rect.width\n        self.rect.y = self.rect.height\n\n        # Armazena a posição horizontal exata do alien.\n        self.x = float(self.rect.x)"
+  },
+  {
+    "objectID": "aula_t9.html#criando-uma-instância-do-alienígena",
+    "href": "aula_t9.html#criando-uma-instância-do-alienígena",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Criando uma instância do alienígena",
+    "text": "Criando uma instância do alienígena\n\n\ninvasao_alien.py\n\nfrom projetil import Projetil\nfrom alien import Alien\n\nclass InvasaoAlien:\n    \"\"\"Classe geral para gerenciar ativos e comportamento do jogo.\"\"\"\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        self.nave = Nave(self)\n        self.projeteis = pygame.sprite.Group()\n        self.aliens = pygame.sprite.Group()\n\n        self._criar_esquadrão()\n\n    def _criar_esquadrão(self):\n        \"\"\"Cria um esquadrão completo de aliens.\"\"\"\n        # por enquanto vamos criar apenas um alien\n        alien = Alien(self)\n        self.aliens.add(alien)\n    \n    def _atualizar_tela(self):\n        # -- trecho de código omitido --\n        self.nave.desenhar()\n        # ATENÇÃO: para que todos os aliens sejam desenhados automaticamente\n        # ele deve ter atributos chamados image e rect\n        self.aliens.draw(self.tela)\n        \n        pygame.display.flip()"
+  },
+  {
+    "objectID": "aula_t9.html#criando-uma-fileira-de-alienígenas",
+    "href": "aula_t9.html#criando-uma-fileira-de-alienígenas",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Criando uma fileira de alienígenas",
+    "text": "Criando uma fileira de alienígenas\n\n\ninvasao_alien.py\n\n    def _criar_esquadrão(self):\n        \"\"\"Cria um esquadrão completo de aliens.\"\"\"\n        # Cria um alienígena e continua criando aliens até que não haja mais espaço.\n        # O distanciamento entre os aliens é a largura de um alien.\n        alien = Alien(self)\n        largura_alien = alien.rect.width\n\n        x_atual = largura_alien\n        while x_atual &lt; (self.config.largura_tela - 2 * largura_alien):\n            self._criar_alien(x_atual)\n            x_atual += 2 * largura_alien\n\n    def _criar_alien(self, posicao_x):\n        \"\"\" Cria um alien e coloca-o no esquadrão. \"\"\"\n        novo_alien = Alien(self)\n        novo_alien.x = posicao_x\n        novo_alien.rect.x = posicao_x\n        self.aliens.add(novo_alien)"
+  },
+  {
+    "objectID": "aula_t9.html#adicionando-fileiras",
+    "href": "aula_t9.html#adicionando-fileiras",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Adicionando fileiras",
+    "text": "Adicionando fileiras\n\n\ninvasao_alien.py\n\n    def _criar_esquadrão(self):\n        \"\"\"Cria um esquadrão completo de aliens.\"\"\"\n        # Cria um alienígena e continua criando aliens até que não haja mais espaço.\n        # O distanciamento entre os aliens é a largura de um alien.\n        alien = Alien(self)\n        largura_alien, altura_alien = alien.rect.size\n\n        x_atual, y_atual = largura_alien, altura_alien\n        while y_atual &lt; (self.config.altura_tela - 5 * altura_alien):            \n            while x_atual &lt; (self.config.largura_tela - 2 * largura_alien):\n                self._criar_alien(x_atual, y_atual)\n                x_atual += 2 * largura_alien\n\n            x_atual = largura_alien\n            y_atual += 2 * altura_alien"
+  },
+  {
+    "objectID": "aula_t9.html#movendo-os-alienígenas-para-a-direita",
+    "href": "aula_t9.html#movendo-os-alienígenas-para-a-direita",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Movendo os alienígenas para a direita",
+    "text": "Movendo os alienígenas para a direita\n\n\nconfig.py\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Configurações dos aliens\n        self.velocidade_alien = 1.0\n\n\n\n\nalien.py\n\n    def __init__(self, ai_game):\n        \"\"\" Inicializa o alien e define sua posição inicial. \"\"\"\n        super().__init__()\n        self.tela = ai_game.tela\n        self.config = ai_game.config\n\n        # -- trecho de código omitido --\n\n    def update(self):\n        \"\"\" Move o alien para a direita. \"\"\"\n        self.x += self.config.velocidade_alien\n        self.rect.x = self.x"
+  },
+  {
+    "objectID": "aula_t9.html#section-8",
+    "href": "aula_t9.html#section-8",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "invasao_alien.py\n\n    def _verificar_eventos(self):\n            # -- trecho de código omitido --  \n            elif evento.type == pygame.KEYDOWN:\n                if evento.key == pygame.K_LEFT:\n                    self.nave.movendo_esquerda = True\n            elif evento.type == pygame.KEYUP:\n                if evento.key == pygame.K_LEFT:\n                    self.nave.movendo_esquerda = False"
+  },
+  {
+    "objectID": "aula_t9.html#configurando-descida-e-mudança-de-direção",
+    "href": "aula_t9.html#configurando-descida-e-mudança-de-direção",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Configurando descida e mudança de direção",
+    "text": "Configurando descida e mudança de direção\n\n\nconfig.py\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Configurações dos aliens\n        self.velocidade_alien = 1.0\n        self.velocidade_descida_esquadrao = 10.0\n        self.direcao_esquadrao = 1  # 1 representa a direita; -1 representa a esquerda"
+  },
+  {
+    "objectID": "aula_t9.html#tratando-direção-e-criando-método-para-verificar-borda",
+    "href": "aula_t9.html#tratando-direção-e-criando-método-para-verificar-borda",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Tratando direção e criando método para verificar borda",
+    "text": "Tratando direção e criando método para verificar borda\n\n\nalien.py\n\n    def update(self):\n        \"\"\" Move o alien para a direita ou para a esquerda. \"\"\"\n        self.x += self.config.velocidade_alien * self.config.direcao_esquadrao\n        self.rect.x = self.x\n    \n    def verificar_borda(self):\n        \"\"\" Retorna True se o alien estiver na borda da tela. \"\"\"\n        ret_tela = self.tela.get_rect()\n        return self.rect.right &gt;= ret_tela.right or self.rect.left &lt;= 0"
+  },
+  {
+    "objectID": "aula_t9.html#fazendo-a-frota-descer-e-mudar-de-direção",
+    "href": "aula_t9.html#fazendo-a-frota-descer-e-mudar-de-direção",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Fazendo a frota descer e mudar de direção",
+    "text": "Fazendo a frota descer e mudar de direção\n\n\ninvasao_alien.py\n\n    def _atualizar_aliens(self):\n        \"\"\" Verifica se o esquadrão está na borda e atualiza as posições dos aliens. \"\"\"\n        self._verificar_bordas_esquadrao()\n        self.aliens.update()\n\n    def _verificar_bordas_esquadrao(self):\n        \"\"\" Faz o esquadrão descer se um dos aliens atingiu uma borda. \"\"\"\n        for alien in self.aliens.sprites():\n            if alien.verificar_borda():\n                self._descer_esquadrao()\n                break\n    \n    def _descer_esquadrao(self):\n        \"\"\" Desce o esquadrão e muda sua direção. \"\"\"\n        for alien in self.aliens.sprites():\n            alien.rect.y += self.config.velocidade_descida_esquadrao\n        self.config.direcao_esquadrao *= -1"
+  },
+  {
+    "objectID": "aula_t9.html#detectando-colisões-de-projéteis",
+    "href": "aula_t9.html#detectando-colisões-de-projéteis",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Detectando colisões de projéteis",
+    "text": "Detectando colisões de projéteis\n\n\ninvasao_alien.py\n\n    def _atualizar_projeteis(self):\n        # -- trecho de código omitido --\n\n        # Verifica se algum projétil atingiu um alien.\n        # Se sim, descarta tanto o projétil quanto o alien.\n        colisoes = pygame.sprite.groupcollide(\n            self.projeteis, self.aliens, True, True)"
+  },
+  {
+    "objectID": "aula_t9.html#section-9",
+    "href": "aula_t9.html#section-9",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "nave.py\n\n    def __init__(self, jogo):\n        \"\"\" Inicializa a nave e define sua posição inicial. \"\"\"\n        self.tela = jogo.tela\n        self.ret_tela = jogo.tela.get_rect()\n        self.config = jogo.config\n        \n        # -- trecho de código omitido --\n\n        # Armazena um float para guardar a posição horizontal exata da nave\n        self.x = float(self.ret.x)\n    \n    def atualizar(self):\n        \"\"\" Atualiza a posição da nave com base nas flags de movimento. \"\"\"\n        if self.movendo_direita:\n            self.x += self.config.velocidade_nave\n        if self.movendo_esquerda:\n            self.x -= self.config.velocidade_nave\n        \n        self.ret.x = int(self.x)"
+  },
+  {
+    "objectID": "aula_t9.html#criando-projéteis-maiores-para-testes",
+    "href": "aula_t9.html#criando-projéteis-maiores-para-testes",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Criando projéteis maiores para testes",
+    "text": "Criando projéteis maiores para testes\nPara facilitar os testes.\n\nVamos experimentar 400."
+  },
+  {
+    "objectID": "aula_t9.html#recriando-o-esquadrão",
+    "href": "aula_t9.html#recriando-o-esquadrão",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Recriando o esquadrão",
+    "text": "Recriando o esquadrão\n\n\ninvasao_alien.py\n\n    def _atualizar_projeteis(self):\n        # -- trecho de código omitido --\n        \n        if not self.aliens:\n            # Destrói os projéteis existentes e cria um novo esquadrão.\n            self.projeteis.empty()\n            self._criar_esquadrão()"
+  },
+  {
+    "objectID": "aula_t9.html#refatorando-_atualizar_projeteis",
+    "href": "aula_t9.html#refatorando-_atualizar_projeteis",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Refatorando _atualizar_projeteis()",
+    "text": "Refatorando _atualizar_projeteis()\n\n\ninvasao_alien.py\n\n    def _atualizar_projeteis(self):\n        \"\"\" Atualiza a posição dos projéteis e descarta os projéteis antigos. \"\"\"\n        self.projeteis.update()\n\n        # Livra-se dos projéteis que desapareceram.\n        for projetil in self.projeteis.copy():\n            if projetil.rect.bottom &lt;= 0:\n                self.projeteis.remove(projetil)\n\n        self._verificar_colisoes_projeteis_aliens()\n    \n    def _verificar_colisoes_projeteis_aliens(self):\n        \"\"\" Responde a colisões entre projéteis e aliens. \"\"\"\n        # Verifica se algum projétil atingiu um alien.\n        # Se sim, descarta tanto o projétil quanto o alien.\n        colisoes = pygame.sprite.groupcollide(\n            self.projeteis, self.aliens, True, True)\n        \n        if not self.aliens:\n            # Destrói os projéteis existentes e cria um novo esquadrão.\n            self.projeteis.empty()\n            self._criar_esquadrão()"
+  },
+  {
+    "objectID": "aula_t9.html#detectando-colisões-entre-naves-e-aliens",
+    "href": "aula_t9.html#detectando-colisões-entre-naves-e-aliens",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Detectando colisões entre naves e aliens",
+    "text": "Detectando colisões entre naves e aliens\n\n\ninvasao_alien.py\n\n\n# -- trecho de código omitido --\n    def _atualizar_aliens(self):\n        \"\"\" Verifica se o esquadrão está na borda e atualiza as posições dos aliens. \"\"\"\n        self._verificar_bordas_esquadrao()\n        self.aliens.update()\n\n        # Detecta colisões entre a nave e os aliens.\n        if pygame.sprite.spritecollideany(self.nave, self.aliens):\n            print(\"A nave foi atingida!\")\n\nTalvez seja interessante aumentar a velocidade (e de descida) dos aliens para testar."
+  },
+  {
+    "objectID": "aula_t9.html#section-10",
+    "href": "aula_t9.html#section-10",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "Nessa demonstração vamos ficar no modo janela mesmo.\n\nDevido ao tamanho das imagens e como foi planejada a inclusão de alienígenas."
+  },
+  {
+    "objectID": "aula_t9.html#tratando-as-colisões-entre-a-nave-e-aliens",
+    "href": "aula_t9.html#tratando-as-colisões-entre-a-nave-e-aliens",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Tratando as colisões entre a nave e aliens",
+    "text": "Tratando as colisões entre a nave e aliens\n\n\nconfig.py\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Configurações da nave\n        self.velocidade_nave = 10.0\n        self.max_naves = 3\n\n\n\n\nestatisticas.py\n\nclass Estatisticas:\n    \"\"\" Rastreia as estatísticas do jogo. \"\"\"\n\n    def __init__(self, jogo):\n        \"\"\" Inicializa as estatisticas \"\"\"\n        self.config = jogo.config\n        self.reiniciar()\n\n    def reiniciar(self):\n        \"\"\" Inicializa as estatísticas que podem mudar ao longo do jogo. \"\"\"\n        self.naves_restantes = self.config.max_naves"
+  },
+  {
+    "objectID": "aula_t9.html#section-11",
+    "href": "aula_t9.html#section-11",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "invasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            self.nave.atualizar()\n            self._atualizar_projeteis()\n            self._atualizar_aliens()\n            self._atualizar_tela()\n            self.clock.tick(60)\n\n    def _atualizar_aliens(self):\n        \"\"\"Atualiza as posições de todos os aliens do esquadrão.\"\"\"\n        self.aliens.update()"
+  },
+  {
+    "objectID": "aula_t9.html#section-12",
+    "href": "aula_t9.html#section-12",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "Traceback (most recent call last):\n  File \"/home/julio/Downloads/invasao-alienigena/invasao_alien.py\", line 141, in &lt;module&gt;\n    ai.executar_jogo()\n  File \"/home/julio/Downloads/invasao-alienigena/invasao_alien.py\", line 33, in executar_jogo\n    self._atualizar_projeteis()\n  File \"/home/julio/Downloads/invasao-alienigena/invasao_alien.py\", line 72, in _atualizar_projeteis\n    if projetil.ret.bottom &lt;= 0:\n       ^^^^^^^^^^^^\nAttributeError: 'Projetil' object has no attribute 'ret'. Did you mean: 'rect'?\n\nPrecisamos mudar o nome do atributo ret da classe Projetil para rect."
+  },
+  {
+    "objectID": "aula_t9.html#tratando-alienígenas-na-borda-inferior",
+    "href": "aula_t9.html#tratando-alienígenas-na-borda-inferior",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Tratando alienígenas na borda inferior",
+    "text": "Tratando alienígenas na borda inferior\n\n\ninvasao_alien.py\n\n    def _atualizar_aliens(self):\n        # -- trecho de código omitido --\n\n        # Detecta colisões entre a nave e os aliens.\n        if pygame.sprite.spritecollideany(self.nave, self.aliens):\n            self._acertar_nave()\n\n        # Verifica se algum alien atingiu a parte inferior da tela.\n        self._verificar_aliens_borda_inferior()\n\n    def _verificar_aliens_borda_inferior(self):\n        \"\"\" Verifica se algum alien atingiu a parte inferior da tela. \"\"\"\n        for alien in self.aliens.sprites():\n            if alien.rect.bottom &gt;= self.config.altura_tela:\n                # Trata esse caso do mesmo modo que se a nave tivesse sido atingida.\n                self._acertar_nave()\n                break"
+  },
+  {
+    "objectID": "aula_t9.html#game-over",
+    "href": "aula_t9.html#game-over",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Game Over!",
+    "text": "Game Over!\n\n\ninvasao_alien.py\n\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Inicializa o jogo em um estado ativo\n        self.jogo_ativo = True\n    \n    # -- trecho de código omitido --\n\n    def _acertar_nave(self):\n        \"\"\" Responde a uma colisão entre a nave e um alien. \"\"\"\n        if self.estatisticas.naves_restantes &lt;= 0:\n            self.jogo_ativo = False\n            return\n        \n        # -- trecho de código omitido --"
+  },
+  {
+    "objectID": "aula_t9.html#section-13",
+    "href": "aula_t9.html#section-13",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "Aqui, novamente, precisaremos usar atributo com nome rect em vez de ret.\n\nSe estiver usando um linter como o pylance você verá um warning em self.nave.\n\nIsso porque o método spritecollideany espera um Sprite, mas nossa classe Nave não herda dela.\nMesmo assim o código funciona, por que?\n\n\n\nDuck Typing"
+  },
+  {
+    "objectID": "aula_t9.html#exemplos-dentro-do-pygame",
+    "href": "aula_t9.html#exemplos-dentro-do-pygame",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Exemplos dentro do pygame",
+    "text": "Exemplos dentro do pygame"
+  },
+  {
+    "objectID": "aula_t9.html#tutoriais",
+    "href": "aula_t9.html#tutoriais",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Tutoriais",
+    "text": "Tutoriais"
+  },
+  {
+    "objectID": "aula_t9.html#experimentando-com-copilot-com-gpt-4.1-no-modo-ask",
+    "href": "aula_t9.html#experimentando-com-copilot-com-gpt-4.1-no-modo-ask",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Experimentando com Copilot com GPT 4.1 no modo Ask",
+    "text": "Experimentando com Copilot com GPT 4.1 no modo Ask\n\n\n\n\nPrompt\n\n\nGostaria de iniciar uma sessão interativa para aprender a usar a biblioteca pygame para desenvolver um jogo 2D em Python. Nesta seção considere que conheço o básico de Python, mas nunca utilizei Orientação a Objetos nessa linguagem (eu aprendi usando Java). Gostaria que o jogo fosse construído um passo de cada vez, de forma bem didática. O jogo se chamará Invasão Alienígena. O jogador controlará uma nave que ficará na parte inferior da tela e poderá se movimentar da direita para a esquerda. A nave consegue atirar. Os inimigos são naves alienígenas que aparecem no topo da tela e se movimentam lateralmente, hora para esquerda, hora para a direita e também se movimentam verticalmente, descendo em direção à nave do jogador. Se as nave alienígenas atingirem a nave do jogador, o jogo termina. Se o tiro da nave do jogador atinge uma nave alienígena, ela é eliminada."
+  },
+  {
+    "objectID": "aula_t9.html#experimentando-com-chatgpt",
+    "href": "aula_t9.html#experimentando-com-chatgpt",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "Experimentando com ChatGPT",
+    "text": "Experimentando com ChatGPT\nExperimentei o mesmo prompt no ChatGPT (veja aqui).\n\nO resultado foi mais interessante que usando o Copilot.\nAs partes do código que eram criadas eram explicadas em mais detalhes.\nApesar de ter alguns erros em exemplos (de Java) de vez em quando.\nForam também legais as sugestões de onde conseguir imagens."
+  },
+  {
+    "objectID": "aula_t9.html#section-14",
+    "href": "aula_t9.html#section-14",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "invasao_alien.py\n\nimport sys\nfrom time import sleep\n\nimport pygame\n\nfrom config import Config\nfrom estatisticas import Estatisticas\n\n# -- trecho de código omitido --\n\n    def __init__(self):\n        # -- trecho de código omitido --\n        pygame.display.set_caption(\"Invasão Alienígena\")\n\n        # Cria uma instância para armazenar estatísticas do jogo.\n        self.estatisticas = Estatisticas(self)\n\n    # -- trecho de código omitido --\n\n    def _atualizar_aliens(self):\n        # -- trecho de código omitido --\n\n        # Detecta colisões entre a nave e os aliens.\n        if pygame.sprite.spritecollideany(self.nave, self.aliens):\n            self._acertar_nave()\n    \n    def _acertar_nave(self):\n        \"\"\" Responde a uma colisão entre a nave e um alien. \"\"\"\n        # Decrementa naves_restantes.\n        self.estatisticas.naves_restantes -= 1\n\n        # Esvazia a lista de aliens e projéteis.\n        self.aliens.empty()\n        self.projeteis.empty()\n\n        # Cria um novo esquadrão e centraliza a nave.\n        self._criar_esquadrão()\n        self.nave.centralizar()\n\n        # Faz uma pausa.\n        sleep(0.5)"
+  },
+  {
+    "objectID": "aula_t9.html#section-15",
+    "href": "aula_t9.html#section-15",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "nave.py\n\n    def centralizar(self):\n        \"\"\" Centraliza a nave na tela. \"\"\"\n        self.rect.midbottom = self.ret_tela.midbottom\n        self.x = float(self.rect.x)\n\nRepare que sempre usamos a mesma instância da nave.\n\nNós não criamos outro objeto quando a nave é atingida.\nNós apenas a centralizamos.\nA classe de estatísticas cuida de lidar com quantas vidas existem."
+  },
+  {
+    "objectID": "aula_t9.html#sites-de-sprites-gratuitos",
+    "href": "aula_t9.html#sites-de-sprites-gratuitos",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "🌐 Sites de Sprites Gratuitos",
+    "text": "🌐 Sites de Sprites Gratuitos\n\n\n\n\nChatGPT\n\n\n\nOpenGameArt.org 🔗 https://opengameart.org\n\n\nGigante repositório de sprites gratuitos.\nMuitos já vêm em pixel art ou estilo retrô arcade.\n\n\nItch.io – Asset Packs gratuitos 🔗 https://itch.io/game-assets/free\n\n\nPacks de sprites feitos por artistas independentes.\nMuitos permitem uso em jogos comerciais.\n\n\nKenney.nl 🔗 https://kenney.nl/assets\n\n\nSprites profissionais e organizados.\nTudo em CC0 (sem restrição de uso)."
+  },
+  {
+    "objectID": "aula_t9.html#section-16",
+    "href": "aula_t9.html#section-16",
+    "title": "Desenvolvendo Jogos e POO",
+    "section": "",
+    "text": "invasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            \n            if self.jogo_ativo:\n                self.nave.atualizar()\n                self._atualizar_projeteis()\n                self._atualizar_aliens()\n\n            self._atualizar_tela()\n            self.clock.tick(60)"
   }
 ]

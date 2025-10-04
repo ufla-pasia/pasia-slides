@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-59898bd1c6b9d2bb783127feaa000c76.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
+<script src="site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
+<link href="site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/roughnotation-0.5.1/rough-notation.iife.js"></script>
+<script src="site_libs/quarto-contrib/roughnotation-init-1.0.0/rough.js"></script><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.33">
+
+  <meta name="author" content="Prof.&nbsp;Julio César Alves">
+  <meta name="dcterms.date" content="2025-04-10">
+  <title>GAC126 - Programação Aplicada com Suporte de IA – Desenvolvendo Jogos e POO</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d6ae9a43842369a25541586934f1fd37.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Desenvolvendo Jogos e POO</h1>
+  <p class="subtitle">PASIA - Aula T.9</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<a href="https://julio.dac.ufla.br">Prof.&nbsp;Julio César Alves</a> 
+</div>
+        <p class="quarto-title-affiliation">
+            DAC - ICET - Universidade Federal de Lavras
+          </p>
+    </div>
+</div>
+
+  <p class="date">04/10/2025</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>O conteúdo dessa aula é baseado nos <strong>capítulos 9, 12 e 13</strong> do livro:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/livro_curso_intensivo_python.jpg" class="quarto-figure quarto-figure-center" style="max-height: 50vh; width: auto;" alt="Capa do livro de Curso Intensivo de Python."></p>
+</figure>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>Nessa aula nós vamos <span class="alert">desenvolver um jogo</span> usando a biblioteca <code>pygame</code>.</p>
+<ul>
+<li class="fragment">Para desenvolver o jogo usaremos conceitos de POO: <span class="alert">Programação Orientada a Objetos</span>.</li>
+</ul>
+<div class="fragment">
+<p>Usaremos POO porque um jogo é um projeto bem mais complexo do que os exemplos que vimos na disciplina até agora.</p>
+<ul>
+<li class="fragment">Em vez de apresentar como se implementa OO em Python e depois desenvolver o jogo,</li>
+<li class="fragment">vamos aprender a usar OO à medida que o jogo é desenvolvido.</li>
+</ul>
+</div>
+</section>
+<section>
+<section id="ideias-sobre-o-formato-da-aula" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Ideias sobre o formato da aula</h1>
+
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p>Ao preparar a aula, estudei os capítulos do livro.</p>
+<ul>
+<li class="fragment">E também experimentei usar um Assistente de IA em modo interativo.</li>
+</ul>
+<div class="fragment">
+<p>Testei primeiro com o Copilot e depois com o ChatGPT.</p>
+<ul>
+<li class="fragment">Apresento a seguir um resumo dessas tentativas.</li>
+</ul>
+</div>
+</section>
+<section id="experimentando-com-copilot-com-gpt-4.1-no-modo-ask" class="slide level2">
+<h2>Experimentando com Copilot com GPT 4.1 no modo Ask</h2>
+<div title="Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Gostaria de iniciar uma sessão interativa para aprender a usar a biblioteca pygame para desenvolver um jogo 2D em Python. Nesta seção considere que conheço o básico de Python, mas nunca utilizei Orientação a Objetos nessa linguagem (eu aprendi usando Java). Gostaria que o jogo fosse construído um passo de cada vez, de forma bem didática. O jogo se chamará Invasão Alienígena. O jogador controlará uma nave que ficará na parte inferior da tela e poderá se movimentar da direita para a esquerda. A nave consegue atirar. Os inimigos são naves alienígenas que aparecem no topo da tela e se movimentam lateralmente, hora para esquerda, hora para a direita e também se movimentam verticalmente, descendo em direção à nave do jogador. Se as nave alienígenas atingirem a nave do jogador, o jogo termina. Se o tiro da nave do jogador atinge uma nave alienígena, ela é eliminada.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p>O copilot rodou com <code>@workspace</code>, gerando uma estrutura de projeto com o jogo já “pronto” e sem nenhuma interação.</p>
+<ul>
+<li class="fragment">Mas o projeto tinha vários erros.</li>
+</ul>
+<div class="fragment">
+<p>Cliquei em <code>Rerun without</code></p>
+<ul>
+<li class="fragment">Aí sim, o jogo começou a ser gerado em um processo interativo.</li>
+<li class="fragment">E eu podia direcionar a sequência da conversa pedindo mais ou menos detalhes.</li>
+<li class="fragment">Mas percebi que o resultado não era tão bom quanto os capítulos de livro
+<ul>
+<li class="fragment">Muita coisa era feita de forma direta, sem uma explicação clara.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="experimentando-com-chatgpt" class="slide level2">
+<h2>Experimentando com ChatGPT</h2>
+<p>Experimentei o mesmo prompt no ChatGPT (veja <a href="https://chatgpt.com/share/68e1078b-4544-800e-a468-29bfe8b4b34b">aqui</a>).</p>
+<ul>
+<li class="fragment">O resultado foi mais interessante que usando o Copilot.</li>
+<li class="fragment">As partes do código que eram criadas eram explicadas em mais detalhes.</li>
+<li class="fragment">Apesar de ter alguns erros em exemplos (de Java) de vez em quando.</li>
+<li class="fragment">Foram também legais as sugestões de onde conseguir imagens.</li>
+</ul>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p>Mas, no geral, o material do livro era realmente bem mais didático.</p>
+<ul>
+<li class="fragment">E usava construções / funcionalidades importantes do pygame.</li>
+<li class="fragment">que eram ignoradas nas sessões com Assitentes de AI.</li>
+</ul>
+<div class="fragment">
+<p>Decidi então basear a aula nos capítulos do livro.</p>
+<ul>
+<li class="fragment">E, na Aula Prática, a ideia é que vocês incrementem o jogo com ajuda do Copilot.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="invasão-alienígena" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Invasão Alienígena</h1>
+
+</section>
+<section id="planejando-seu-projeto" class="slide level2">
+<h2>Planejando seu projeto</h2>
+<p>Importância de definir bem o que se quer desenvolver antes de sair fazendo.</p>
+</section>
+<section id="instalando-pygame" class="slide level2">
+<h2>Instalando PyGame</h2>
+<p>Pygame não é um módulo <em>built-in</em>, portanto, precisa ser instalado.</p>
+</section>
+<section id="iniciando-o-projeto-do-jogo" class="slide level2">
+<h2>Iniciando o Projeto do Jogo</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="annotated-cell-1" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="im">import</span> sys</span>
+<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a></span>
+<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3"></a><span class="im">import</span> pygame</span>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a></span>
+<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5"></a><span class="kw">class</span> InvasaoAlien:</span>
+<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6"></a>    <span class="co">"""Classe geral para gerenciar ativos e comportamento do jogo."""</span></span>
+<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7"></a></span>
+<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9"></a>        <span class="co">"""Inicializa o jogo e cria os recursos do jogo."""</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10"></a>        pygame.init()</span>
+<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-12" class="code-annotation-target"><a href="#annotated-cell-1-12"></a>        <span class="va">self</span>.tela <span class="op">=</span> pygame.display.set_mode((<span class="dv">1200</span>, <span class="dv">800</span>))</span>
+<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13"></a>        pygame.display.set_caption(<span class="st">"Invasão Alienígena"</span>)</span>
+<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14"></a>        </span>
+<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15"></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="annotated-cell-1-16"><a href="#annotated-cell-1-16"></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-17" class="code-annotation-target"><a href="#annotated-cell-1-17"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="annotated-cell-1-18"><a href="#annotated-cell-1-18"></a>            <span class="co"># Observa eventos de teclado e mouse.</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-19" class="code-annotation-target"><a href="#annotated-cell-1-19"></a>            <span class="cf">for</span> evento <span class="kw">in</span> pygame.event.get():</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-20" class="code-annotation-target"><a href="#annotated-cell-1-20"></a>                <span class="cf">if</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.QUIT:</span>
+<span id="annotated-cell-1-21"><a href="#annotated-cell-1-21"></a>                    sys.exit()</span>
+<span id="annotated-cell-1-22"><a href="#annotated-cell-1-22"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-23" class="code-annotation-target"><a href="#annotated-cell-1-23"></a>            pygame.display.flip()</span>
+<span id="annotated-cell-1-24"><a href="#annotated-cell-1-24"></a></span>
+<span id="annotated-cell-1-25"><a href="#annotated-cell-1-25"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="annotated-cell-1-26"><a href="#annotated-cell-1-26"></a>    ai <span class="op">=</span> InvasaoAlien()                                   </span>
+<span id="annotated-cell-1-27"><a href="#annotated-cell-1-27"></a>    ai.executar_jogo()                                    </span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<dl class="code-annotation-container-grid">
+<dt class="fragment" data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="1">Inicializa as configurações de background.</span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-1" data-code-lines="12" data-code-annotation="2">Cria uma janela para exibição (<em>Surface</em>).</span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-1" data-code-lines="17" data-code-annotation="3">Loop de jogo.</span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-1" data-code-lines="19" data-code-annotation="4">Loop dos eventos detectados desde a última iteração.</span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-1" data-code-lines="20" data-code-annotation="5">Evento gerado quando o jogador clica no botão de fechar a janela.</span>
+</dd>
+<dt class="fragment" data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dd class="fragment">
+<span data-code-cell="annotated-cell-1" data-code-lines="23" data-code-annotation="6">Atualiza o desenho na tela (<em>double buffer</em>). :::</span>
+</dd>
+</dl>
+</section>
+<section id="classes-em-python" class="slide level2">
+<h2>Classes em Python</h2>
+</section>
+<section id="controlando-o-frame-rate" class="slide level2">
+<h2>Controlando o <em>frame rate</em></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb1-2"><a></a>        <span class="co">"""Inicializa o jogo e cria os recursos do jogo."""</span></span>
+<span id="cb1-3"><a></a>        pygame.init()</span>
+<span id="cb1-4"><a></a>        <span class="va">self</span>.clock <span class="op">=</span> pygame.time.Clock()</span>
+<span id="cb1-5"><a></a>        <span class="co"># -- trecho de código omitido -- </span></span>
+<span id="cb1-6"><a></a>        </span>
+<span id="cb1-7"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb1-8"><a></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<span id="cb1-9"><a></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-10"><a></a>            <span class="co"># -- trecho de código omitido -- </span></span>
+<span id="cb1-11"><a></a>            pygame.display.flip()</span>
+<span id="cb1-12"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)  <span class="co"># Limita a 60 quadros por segundo                                 </span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="definindo-a-cor-de-fundo" class="slide level2">
+<h2>Definindo a cor de fundo</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb2-2"><a></a>        <span class="co"># -- trecho de código omitido -- </span></span>
+<span id="cb2-3"><a></a>        pygame.display.set_caption(<span class="st">"Invasão Alienígena"</span>)</span>
+<span id="cb2-4"><a></a></span>
+<span id="cb2-5"><a></a>        <span class="co"># Define a cor de fundo</span></span>
+<span id="cb2-6"><a></a>        <span class="va">self</span>.cor_fundo <span class="op">=</span> (<span class="dv">230</span>, <span class="dv">230</span>, <span class="dv">230</span>)</span>
+<span id="cb2-7"><a></a>        </span>
+<span id="cb2-8"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb2-9"><a></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<span id="cb2-10"><a></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb2-11"><a></a>            <span class="co"># Observa eventos de teclado e mouse.</span></span>
+<span id="cb2-12"><a></a>            <span class="cf">for</span> evento <span class="kw">in</span> pygame.event.get():</span>
+<span id="cb2-13"><a></a>                <span class="cf">if</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.QUIT:</span>
+<span id="cb2-14"><a></a>                    sys.exit()</span>
+<span id="cb2-15"><a></a>            </span>
+<span id="cb2-16"><a></a>            <span class="co"># Redesenha a tela a cada passagem pelo loop.</span></span>
+<span id="cb2-17"><a></a>            <span class="va">self</span>.tela.fill(<span class="va">self</span>.cor_fundo)</span>
+<span id="cb2-18"><a></a></span>
+<span id="cb2-19"><a></a>            pygame.display.flip()</span>
+<span id="cb2-20"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)  <span class="co"># Limita a 60 quadros por segundo</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="criando-uma-classe-settings" class="slide level2">
+<h2>Criando uma classe Settings</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>config.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="config.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> Settings:</span>
+<span id="cb3-2"><a></a>    <span class="co">""" Classe para armazenar as configurações do jogo Invasão Alienígena. """</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb3-5"><a></a>        <span class="co">""" Inicializa as configurações do jogo. """</span></span>
+<span id="cb3-6"><a></a>        <span class="co"># Configurações da tela</span></span>
+<span id="cb3-7"><a></a>        <span class="va">self</span>.largura_tela <span class="op">=</span> <span class="dv">1200</span></span>
+<span id="cb3-8"><a></a>        <span class="va">self</span>.altura_tela <span class="op">=</span> <span class="dv">800</span></span>
+<span id="cb3-9"><a></a>        <span class="va">self</span>.cor_fundo <span class="op">=</span> (<span class="dv">230</span>, <span class="dv">230</span>, <span class="dv">230</span>)  <span class="co"># Cor de fundo cinza claro</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a><span class="im">import</span> pygame</span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="im">from</span> config <span class="im">import</span> Config</span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a><span class="kw">class</span> InvasaoAlien:</span>
+<span id="cb4-8"><a></a>    <span class="co">"""Classe geral para gerenciar ativos e comportamento do jogo."""</span></span>
+<span id="cb4-9"><a></a></span>
+<span id="cb4-10"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb4-11"><a></a>        <span class="co">"""Inicializa o jogo e cria os recursos do jogo."""</span></span>
+<span id="cb4-12"><a></a>        pygame.init()</span>
+<span id="cb4-13"><a></a>        <span class="va">self</span>.clock <span class="op">=</span> pygame.time.Clock()</span>
+<span id="cb4-14"><a></a>        <span class="va">self</span>.config <span class="op">=</span> Config()</span>
+<span id="cb4-15"><a></a></span>
+<span id="cb4-16"><a></a>        <span class="va">self</span>.tela <span class="op">=</span> pygame.display.set_mode(</span>
+<span id="cb4-17"><a></a>            (<span class="va">self</span>.config.largura_tela, <span class="va">self</span>.config.altura_tela))</span>
+<span id="cb4-18"><a></a>        pygame.display.set_caption(<span class="st">"Invasão Alienígena"</span>)</span>
+<span id="cb4-19"><a></a>        </span>
+<span id="cb4-20"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb4-21"><a></a>            <span class="co"># -- trecho de código omitido -- </span></span>
+<span id="cb4-22"><a></a>            </span>
+<span id="cb4-23"><a></a>            <span class="co"># Redesenha a tela a cada passagem pelo loop.</span></span>
+<span id="cb4-24"><a></a>            <span class="va">self</span>.tela.fill(<span class="va">self</span>.config.cor_fundo)</span>
+<span id="cb4-25"><a></a></span>
+<span id="cb4-26"><a></a>            pygame.display.flip()</span>
+<span id="cb4-27"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)  <span class="co"># Limita a 60 quadros por segundo</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="criando-uma-nave" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Criando uma nave</h1>
+
+</section>
+<section id="sites-de-sprites-gratuitos" class="slide level2">
+<h2>🌐 Sites de Sprites Gratuitos</h2>
+<div class="smaller" title="ChatGPT">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>ChatGPT</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>OpenGameArt.org 🔗 https://opengameart.org</li>
+</ol>
+<ul>
+<li>Gigante repositório de sprites gratuitos.</li>
+<li>Muitos já vêm em pixel art ou estilo retrô arcade.</li>
+</ul>
+<ol start="2" type="1">
+<li>Itch.io – Asset Packs gratuitos 🔗 https://itch.io/game-assets/free</li>
+</ol>
+<ul>
+<li>Packs de sprites feitos por artistas independentes.</li>
+<li>Muitos permitem uso em jogos comerciais.</li>
+</ul>
+<ol start="3" type="1">
+<li>Kenney.nl 🔗 https://kenney.nl/assets</li>
+</ol>
+<ul>
+<li>Sprites profissionais e organizados.</li>
+<li>Tudo em CC0 (sem restrição de uso).</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div class="smaller" title="ChatGPT">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>ChatGPT</strong></p>
+</div>
+<div class="callout-content">
+<ol start="4" type="1">
+<li>CraftPix.net (Freebies) 🔗 https://craftpix.net/freebies/</li>
+</ol>
+<ul>
+<li>Arte mais elaborada.</li>
+<li>Tem alguns pacotes gratuitos, mas muitos são pagos.</li>
+</ul>
+<ol start="5" type="1">
+<li>Google + Filtros de Licença 🔗 Vá em Google Images</li>
+</ol>
+<ul>
+<li>Em Ferramentas &gt; Direitos de uso, filtre por Creative Commons.</li>
+<li>Assim evita problemas de copyright.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="criando-a-classe-nave" class="slide level2">
+<h2>Criando a classe Nave</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>nave.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="nave.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> pygame</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a><span class="kw">class</span> Nave:</span>
+<span id="cb5-4"><a></a>    <span class="co">""" Classe para cuidar da nave do jogador """</span></span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jogo):</span>
+<span id="cb5-7"><a></a>        <span class="co">""" Inicializa a nave e define sua posição inicial. """</span></span>
+<span id="cb5-8"><a></a>        <span class="va">self</span>.tela <span class="op">=</span> jogo.tela</span>
+<span id="cb5-9"><a></a>        <span class="va">self</span>.ret_tela <span class="op">=</span> jogo.tela.get_rect()</span>
+<span id="cb5-10"><a></a></span>
+<span id="cb5-11"><a></a>        <span class="co"># Sobe a imagem da nave e obtém seu retângulo.</span></span>
+<span id="cb5-12"><a></a>        <span class="co"># Método convert é importante para melhorar desempenho!</span></span>
+<span id="cb5-13"><a></a>        <span class="va">self</span>.imagem <span class="op">=</span> pygame.image.load(<span class="st">'imagens/nave.png'</span>).convert()</span>
+<span id="cb5-14"><a></a>        <span class="va">self</span>.ret <span class="op">=</span> <span class="va">self</span>.imagem.get_rect()</span>
+<span id="cb5-15"><a></a></span>
+<span id="cb5-16"><a></a>        <span class="co"># Começa cada nave nova no centro inferior da tela.</span></span>
+<span id="cb5-17"><a></a>        <span class="va">self</span>.ret.midbottom <span class="op">=</span> <span class="va">self</span>.ret_tela.midbottom</span>
+<span id="cb5-18"><a></a></span>
+<span id="cb5-19"><a></a>    <span class="kw">def</span> desenhar(<span class="va">self</span>):</span>
+<span id="cb5-20"><a></a>        <span class="co">""" Desenha a nave em sua posição atual. """</span></span>
+<span id="cb5-21"><a></a>        <span class="va">self</span>.tela.blit(<span class="va">self</span>.imagem, <span class="va">self</span>.ret)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="desenhando-a-nave-na-tela" class="slide level2">
+<h2>Desenhando a nave na tela</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">from</span> config <span class="im">import</span> Config</span>
+<span id="cb6-2"><a></a><span class="im">from</span> nave <span class="im">import</span> Nave</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="kw">class</span> InvasaoAlien:</span>
+<span id="cb6-5"><a></a>    <span class="co">"""Classe geral para gerenciar ativos e comportamento do jogo."""</span></span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb6-8"><a></a>        <span class="co"># -- trecho de código omitido -- </span></span>
+<span id="cb6-9"><a></a>        pygame.display.set_caption(<span class="st">"Invasão Alienígena"</span>)</span>
+<span id="cb6-10"><a></a></span>
+<span id="cb6-11"><a></a>        <span class="va">self</span>.nave <span class="op">=</span> Nave(<span class="va">self</span>)</span>
+<span id="cb6-12"><a></a>        </span>
+<span id="cb6-13"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb6-14"><a></a>            <span class="co"># -- trecho de código omitido -- </span></span>
+<span id="cb6-15"><a></a>            <span class="co"># Redesenha a tela a cada passagem pelo loop.</span></span>
+<span id="cb6-16"><a></a>            <span class="va">self</span>.tela.fill(<span class="va">self</span>.config.cor_fundo)</span>
+<span id="cb6-17"><a></a>            <span class="va">self</span>.nave.desenhar()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="refatoração-método-_verificar_eventos-e-_atualizar_tela" class="slide level2">
+<h2>Refatoração: método <code>_verificar_eventos()</code> e <code>_atualizar_tela()</code></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb7-2"><a></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<span id="cb7-3"><a></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb7-4"><a></a>            <span class="va">self</span>._verificar_eventos()</span>
+<span id="cb7-5"><a></a>            <span class="va">self</span>._atualizar_tela()</span>
+<span id="cb7-6"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)</span>
+<span id="cb7-7"><a></a>    </span>
+<span id="cb7-8"><a></a>    <span class="kw">def</span> _verificar_eventos(<span class="va">self</span>):</span>
+<span id="cb7-9"><a></a>        <span class="co">"""Responde a eventos de teclado e mouse."""</span></span>
+<span id="cb7-10"><a></a>        <span class="cf">for</span> evento <span class="kw">in</span> pygame.event.get():</span>
+<span id="cb7-11"><a></a>            <span class="cf">if</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.QUIT:</span>
+<span id="cb7-12"><a></a>                sys.exit()</span>
+<span id="cb7-13"><a></a>    </span>
+<span id="cb7-14"><a></a>    <span class="kw">def</span> _atualizar_tela(<span class="va">self</span>):</span>
+<span id="cb7-15"><a></a>        <span class="co">"""Desenha a nova imagem da tela do jogo e a utiliza na tela."""</span></span>
+<span id="cb7-16"><a></a>        <span class="va">self</span>.tela.fill(<span class="va">self</span>.config.cor_fundo)</span>
+<span id="cb7-17"><a></a>        <span class="va">self</span>.nave.desenhar()</span>
+<span id="cb7-18"><a></a>        </span>
+<span id="cb7-19"><a></a>        pygame.display.flip()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pilotando-a-nave" class="slide level2">
+<h2>Pilotando a nave</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>    <span class="kw">def</span> _verificar_eventos(<span class="va">self</span>):</span>
+<span id="cb8-2"><a></a>        <span class="co">"""Responde a eventos de teclado e mouse."""</span></span>
+<span id="cb8-3"><a></a>        <span class="cf">for</span> evento <span class="kw">in</span> pygame.event.get():</span>
+<span id="cb8-4"><a></a>            <span class="cf">if</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.QUIT:</span>
+<span id="cb8-5"><a></a>                sys.exit()</span>
+<span id="cb8-6"><a></a>            <span class="cf">elif</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.KEYDOWN:</span>
+<span id="cb8-7"><a></a>                <span class="cf">if</span> evento.key <span class="op">==</span> pygame.K_RIGHT:</span>
+<span id="cb8-8"><a></a>                    <span class="va">self</span>.nave.ret.x <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="movimento-contínuo" class="slide level2">
+<h2>Movimento contínuo</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>nave.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="nave.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jogo):</span>
+<span id="cb9-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a>        <span class="co"># Começa cada nave nova no centro inferior da tela.</span></span>
+<span id="cb9-5"><a></a>        <span class="va">self</span>.ret.midbottom <span class="op">=</span> <span class="va">self</span>.ret_tela.midbottom</span>
+<span id="cb9-6"><a></a></span>
+<span id="cb9-7"><a></a>        <span class="co"># Flag de movimento; começa com uma nave que não está se movendo.</span></span>
+<span id="cb9-8"><a></a>        <span class="va">self</span>.movendo_direita <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb9-9"><a></a>    </span>
+<span id="cb9-10"><a></a>    <span class="kw">def</span> atualizar(<span class="va">self</span>):</span>
+<span id="cb9-11"><a></a>        <span class="co">""" Atualiza a posição da nave com base na flag de movimento. """</span></span>
+<span id="cb9-12"><a></a>        <span class="cf">if</span> <span class="va">self</span>.movendo_direita:</span>
+<span id="cb9-13"><a></a>            <span class="va">self</span>.ret.x <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb10-2"><a></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<span id="cb10-3"><a></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb10-4"><a></a>            <span class="va">self</span>._verificar_eventos()</span>
+<span id="cb10-5"><a></a>            <span class="va">self</span>.nave.atualizar()</span>
+<span id="cb10-6"><a></a>            <span class="va">self</span>._atualizar_tela()</span>
+<span id="cb10-7"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)</span>
+<span id="cb10-8"><a></a>    </span>
+<span id="cb10-9"><a></a>    <span class="kw">def</span> _verificar_eventos(<span class="va">self</span>):</span>
+<span id="cb10-10"><a></a>        <span class="co">"""Responde a eventos de teclado e mouse."""</span></span>
+<span id="cb10-11"><a></a>        <span class="cf">for</span> evento <span class="kw">in</span> pygame.event.get():</span>
+<span id="cb10-12"><a></a>            <span class="cf">if</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.QUIT:</span>
+<span id="cb10-13"><a></a>                sys.exit()</span>
+<span id="cb10-14"><a></a>            <span class="cf">elif</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.KEYDOWN:</span>
+<span id="cb10-15"><a></a>                <span class="cf">if</span> evento.key <span class="op">==</span> pygame.K_RIGHT:</span>
+<span id="cb10-16"><a></a>                    <span class="va">self</span>.nave.movendo_direita <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb10-17"><a></a>            <span class="cf">elif</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.KEYUP:</span>
+<span id="cb10-18"><a></a>                <span class="cf">if</span> evento.key <span class="op">==</span> pygame.K_RIGHT:</span>
+<span id="cb10-19"><a></a>                    <span class="va">self</span>.nave.movendo_direita <span class="op">=</span> <span class="va">False</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="movendo-nas-duas-direções" class="slide level2">
+<h2>Movendo nas duas direções</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>nave.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb11" data-filename="nave.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jogo):</span>
+<span id="cb11-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb11-3"><a></a></span>
+<span id="cb11-4"><a></a>        <span class="co"># Flags de movimento; começa com uma nave que não está se movendo.</span></span>
+<span id="cb11-5"><a></a>        <span class="va">self</span>.movendo_direita <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb11-6"><a></a>        <span class="va">self</span>.movendo_esquerda <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb11-7"><a></a>    </span>
+<span id="cb11-8"><a></a>    <span class="kw">def</span> atualizar(<span class="va">self</span>):</span>
+<span id="cb11-9"><a></a>        <span class="co">""" Atualiza a posição da nave com base nas flags de movimento. """</span></span>
+<span id="cb11-10"><a></a>        <span class="cf">if</span> <span class="va">self</span>.movendo_direita:</span>
+<span id="cb11-11"><a></a>            <span class="va">self</span>.ret.x <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb11-12"><a></a>        <span class="cf">if</span> <span class="va">self</span>.movendo_esquerda:</span>
+<span id="cb11-13"><a></a>            <span class="va">self</span>.ret.x <span class="op">-=</span> <span class="dv">1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb12" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>    <span class="kw">def</span> _verificar_eventos(<span class="va">self</span>):</span>
+<span id="cb12-2"><a></a>            <span class="co"># -- trecho de código omitido --  </span></span>
+<span id="cb12-3"><a></a>            <span class="cf">elif</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.KEYDOWN:</span>
+<span id="cb12-4"><a></a>                <span class="cf">if</span> evento.key <span class="op">==</span> pygame.K_LEFT:</span>
+<span id="cb12-5"><a></a>                    <span class="va">self</span>.nave.movendo_esquerda <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb12-6"><a></a>            <span class="cf">elif</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.KEYUP:</span>
+<span id="cb12-7"><a></a>                <span class="cf">if</span> evento.key <span class="op">==</span> pygame.K_LEFT:</span>
+<span id="cb12-8"><a></a>                    <span class="va">self</span>.nave.movendo_esquerda <span class="op">=</span> <span class="va">False</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ajustando-a-velocidade-da-nave" class="slide level2">
+<h2>Ajustando a velocidade da nave</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>config.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb13" data-filename="config.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb13-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb13-3"><a></a></span>
+<span id="cb13-4"><a></a>        <span class="co"># Configurações da nave</span></span>
+<span id="cb13-5"><a></a>        <span class="va">self</span>.velocidade_nave <span class="op">=</span> <span class="fl">10.0</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ajuste a velocidade testando o jogo.</p>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>nave.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb14" data-filename="nave.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jogo):</span>
+<span id="cb14-2"><a></a>        <span class="co">""" Inicializa a nave e define sua posição inicial. """</span></span>
+<span id="cb14-3"><a></a>        <span class="va">self</span>.tela <span class="op">=</span> jogo.tela</span>
+<span id="cb14-4"><a></a>        <span class="va">self</span>.ret_tela <span class="op">=</span> jogo.tela.get_rect()</span>
+<span id="cb14-5"><a></a>        <span class="va">self</span>.config <span class="op">=</span> jogo.config</span>
+<span id="cb14-6"><a></a>        </span>
+<span id="cb14-7"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb14-8"><a></a></span>
+<span id="cb14-9"><a></a>        <span class="co"># Armazena um float para guardar a posição horizontal exata da nave</span></span>
+<span id="cb14-10"><a></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="bu">float</span>(<span class="va">self</span>.ret.x)</span>
+<span id="cb14-11"><a></a>    </span>
+<span id="cb14-12"><a></a>    <span class="kw">def</span> atualizar(<span class="va">self</span>):</span>
+<span id="cb14-13"><a></a>        <span class="co">""" Atualiza a posição da nave com base nas flags de movimento. """</span></span>
+<span id="cb14-14"><a></a>        <span class="cf">if</span> <span class="va">self</span>.movendo_direita:</span>
+<span id="cb14-15"><a></a>            <span class="va">self</span>.x <span class="op">+=</span> <span class="va">self</span>.config.velocidade_nave</span>
+<span id="cb14-16"><a></a>        <span class="cf">if</span> <span class="va">self</span>.movendo_esquerda:</span>
+<span id="cb14-17"><a></a>            <span class="va">self</span>.x <span class="op">-=</span> <span class="va">self</span>.config.velocidade_nave</span>
+<span id="cb14-18"><a></a>        </span>
+<span id="cb14-19"><a></a>        <span class="va">self</span>.ret.x <span class="op">=</span> <span class="bu">int</span>(<span class="va">self</span>.x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="restringindo-o-alcance-da-nave" class="slide level2">
+<h2>Restringindo o alcance da Nave</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>nave.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb15" data-filename="nave.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>    <span class="kw">def</span> atualizar(<span class="va">self</span>):</span>
+<span id="cb15-2"><a></a>        <span class="co">""" Atualiza a posição da nave com base nas flags de movimento. """</span></span>
+<span id="cb15-3"><a></a>        <span class="cf">if</span> <span class="va">self</span>.movendo_direita <span class="kw">and</span> <span class="va">self</span>.ret.right <span class="op">&lt;</span> <span class="va">self</span>.ret_tela.right:</span>
+<span id="cb15-4"><a></a>            <span class="va">self</span>.x <span class="op">+=</span> <span class="va">self</span>.config.velocidade_nave</span>
+<span id="cb15-5"><a></a>        <span class="cf">if</span> <span class="va">self</span>.movendo_esquerda <span class="kw">and</span> <span class="va">self</span>.ret.left <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb15-6"><a></a>            <span class="va">self</span>.x <span class="op">-=</span> <span class="va">self</span>.config.velocidade_nave</span>
+<span id="cb15-7"><a></a>        </span>
+<span id="cb15-8"><a></a>        <span class="va">self</span>.ret.x <span class="op">=</span> <span class="bu">int</span>(<span class="va">self</span>.x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="refatorando-o-método-_verificar_eventos" class="slide level2">
+<h2>Refatorando o método <code>_verificar_eventos()</code></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb16" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>    <span class="kw">def</span> _verificar_eventos(<span class="va">self</span>):</span>
+<span id="cb16-2"><a></a>        <span class="co">"""Responde a eventos de teclado e mouse."""</span></span>
+<span id="cb16-3"><a></a>        <span class="cf">for</span> evento <span class="kw">in</span> pygame.event.get():</span>
+<span id="cb16-4"><a></a>            <span class="cf">if</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.QUIT:</span>
+<span id="cb16-5"><a></a>                sys.exit()</span>
+<span id="cb16-6"><a></a>            <span class="cf">elif</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.KEYDOWN:</span>
+<span id="cb16-7"><a></a>                <span class="va">self</span>._verificar_eventos_tecla_pressionada(evento)</span>
+<span id="cb16-8"><a></a>            <span class="cf">elif</span> evento.<span class="bu">type</span> <span class="op">==</span> pygame.KEYUP:</span>
+<span id="cb16-9"><a></a>                <span class="va">self</span>._verificar_eventos_tecla_liberada(evento)</span>
+<span id="cb16-10"><a></a>    </span>
+<span id="cb16-11"><a></a>    <span class="kw">def</span> _verificar_eventos_tecla_pressionada(<span class="va">self</span>, evento):</span>
+<span id="cb16-12"><a></a>        <span class="co">""" Responde a teclas pressioandas"""</span></span>
+<span id="cb16-13"><a></a>        <span class="cf">if</span> evento.key <span class="op">==</span> pygame.K_RIGHT:</span>
+<span id="cb16-14"><a></a>            <span class="va">self</span>.nave.movendo_direita <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb16-15"><a></a>        <span class="cf">elif</span> evento.key <span class="op">==</span> pygame.K_LEFT:</span>
+<span id="cb16-16"><a></a>            <span class="va">self</span>.nave.movendo_esquerda <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb16-17"><a></a>    </span>
+<span id="cb16-18"><a></a>    <span class="kw">def</span> _verificar_eventos_tecla_liberada(<span class="va">self</span>, evento):</span>
+<span id="cb16-19"><a></a>        <span class="co">""" Responde a teclas liberadas"""</span></span>
+<span id="cb16-20"><a></a>        <span class="cf">if</span> evento.key <span class="op">==</span> pygame.K_LEFT:</span>
+<span id="cb16-21"><a></a>            <span class="va">self</span>.nave.movendo_esquerda <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb16-22"><a></a>        <span class="cf">elif</span> evento.key <span class="op">==</span> pygame.K_RIGHT:</span>
+<span id="cb16-23"><a></a>            <span class="va">self</span>.nave.movendo_direita <span class="op">=</span> <span class="va">False</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="modo-tela-cheia" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Modo Tela Cheia</h1>
+
+</section>
+<section id="fechar-o-jogo-com-a-tecla-q" class="slide level2">
+<h2>Fechar o jogo com a tecla <code>q</code></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb17" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>    <span class="kw">def</span> _verificar_eventos_tecla_pressionada(<span class="va">self</span>, evento):</span>
+<span id="cb17-2"><a></a>        <span class="co">""" Responde a teclas pressioandas"""</span></span>
+<span id="cb17-3"><a></a>        <span class="cf">if</span> evento.key <span class="op">==</span> pygame.K_RIGHT:</span>
+<span id="cb17-4"><a></a>            <span class="va">self</span>.nave.movendo_direita <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb17-5"><a></a>        <span class="cf">elif</span> evento.key <span class="op">==</span> pygame.K_LEFT:</span>
+<span id="cb17-6"><a></a>            <span class="va">self</span>.nave.movendo_esquerda <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb17-7"><a></a>        <span class="cf">elif</span> evento.key <span class="op">==</span> pygame.K_q:</span>
+<span id="cb17-8"><a></a>            sys.exit()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="executando-o-jogo-em-modo-tela-cheia" class="slide level2">
+<h2>Executando o jogo em modo Tela Cheia</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb18" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb18-2"><a></a>        <span class="co">"""Inicializa o jogo e cria os recursos do jogo."""</span></span>
+<span id="cb18-3"><a></a>        pygame.init()</span>
+<span id="cb18-4"><a></a>        <span class="va">self</span>.clock <span class="op">=</span> pygame.time.Clock()</span>
+<span id="cb18-5"><a></a>        <span class="va">self</span>.config <span class="op">=</span> Config()</span>
+<span id="cb18-6"><a></a></span>
+<span id="cb18-7"><a></a>        <span class="va">self</span>.tela <span class="op">=</span> pygame.display.set_mode((<span class="dv">0</span>,<span class="dv">0</span>), pygame.FULLSCREEN)</span>
+<span id="cb18-8"><a></a>        <span class="va">self</span>.config.largura_tela <span class="op">=</span> <span class="va">self</span>.tela.get_rect().width</span>
+<span id="cb18-9"><a></a>        <span class="va">self</span>.config.altura_tela <span class="op">=</span> <span class="va">self</span>.tela.get_rect().height</span>
+<span id="cb18-10"><a></a>        pygame.display.set_caption(<span class="st">"Invasão Alienígena"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment">Agora a largura e altura do jogo não é pré-definida.</li>
+<li class="fragment">Provavelmente pode ser interessante mudar a velocidade da nave.</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Aviso</strong></p>
+</div>
+<div class="callout-content">
+<p>Se não tivéssemos tratado a tecla <code>q</code> para sair do jogo, não teríamos uma forma de sair do jogo no modo tela cheia.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<p>Nessa demonstração vamos ficar no modo janela mesmo.</p>
+<ul>
+<li class="fragment">Devido ao tamanho das imagens e como foi planejada a inclusão de alienígenas.</li>
+</ul>
+</section></section>
+<section>
+<section id="atirando" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Atirando</h1>
+
+</section>
+<section id="configuração-dos-projéteis" class="slide level2">
+<h2>Configuração dos projéteis</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>config.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb19" data-filename="config.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb19-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb19-3"><a></a></span>
+<span id="cb19-4"><a></a>        <span class="co"># Configurações dos projéteis</span></span>
+<span id="cb19-5"><a></a>        <span class="va">self</span>.velocidade_projetil <span class="op">=</span> <span class="fl">15.0</span></span>
+<span id="cb19-6"><a></a>        <span class="va">self</span>.largura_projetil <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb19-7"><a></a>        <span class="va">self</span>.altura_projetil <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb19-8"><a></a>        <span class="va">self</span>.cor_projetil <span class="op">=</span> (<span class="dv">60</span>, <span class="dv">60</span>, <span class="dv">60</span>)  <span class="co"># Cor cinza escuro</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="classe-projetil" class="slide level2">
+<h2>Classe Projetil</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>projetil.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb20" data-filename="projetil.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="im">import</span> pygame</span>
+<span id="cb20-2"><a></a><span class="im">from</span> pygame.sprite <span class="im">import</span> Sprite</span>
+<span id="cb20-3"><a></a></span>
+<span id="cb20-4"><a></a><span class="kw">class</span> Projetil(Sprite):</span>
+<span id="cb20-5"><a></a>    <span class="co">""" Classe para gerenciar projéteis disparados pela nave. """</span></span>
+<span id="cb20-6"><a></a></span>
+<span id="cb20-7"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ai_game):</span>
+<span id="cb20-8"><a></a>        <span class="co">""" Cria um objeto de projétil na posição atual da nave. """</span></span>
+<span id="cb20-9"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb20-10"><a></a>        <span class="va">self</span>.tela <span class="op">=</span> ai_game.tela</span>
+<span id="cb20-11"><a></a>        <span class="va">self</span>.config <span class="op">=</span> ai_game.config</span>
+<span id="cb20-12"><a></a>        <span class="va">self</span>.cor <span class="op">=</span> <span class="va">self</span>.config.cor_projetil</span>
+<span id="cb20-13"><a></a></span>
+<span id="cb20-14"><a></a>        <span class="co"># Cria um projétil na posição (0,0) e depois define a posição correta.</span></span>
+<span id="cb20-15"><a></a>        <span class="va">self</span>.ret <span class="op">=</span> pygame.Rect(<span class="dv">0</span>, <span class="dv">0</span>, <span class="va">self</span>.config.largura_projetil,</span>
+<span id="cb20-16"><a></a>            <span class="va">self</span>.config.altura_projetil)</span>
+<span id="cb20-17"><a></a>        <span class="va">self</span>.ret.midtop <span class="op">=</span> ai_game.nave.ret.midtop</span>
+<span id="cb20-18"><a></a></span>
+<span id="cb20-19"><a></a>        <span class="co"># Guarda a posição do projétil como um float.</span></span>
+<span id="cb20-20"><a></a>        <span class="va">self</span>.y <span class="op">=</span> <span class="bu">float</span>(<span class="va">self</span>.ret.y)</span>
+<span id="cb20-21"><a></a></span>
+<span id="cb20-22"><a></a>    <span class="kw">def</span> update(<span class="va">self</span>):</span>
+<span id="cb20-23"><a></a>        <span class="co">""" Move o projétil para cima na tela. </span></span>
+<span id="cb20-24"><a></a><span class="co">            Exemplo de sobrescrita de método.</span></span>
+<span id="cb20-25"><a></a><span class="co">            Útil para usarmos em um grupo de sprites.</span></span>
+<span id="cb20-26"><a></a><span class="co">        """</span></span>
+<span id="cb20-27"><a></a>        <span class="co"># Atualiza a posição exata do projétil.</span></span>
+<span id="cb20-28"><a></a>        <span class="va">self</span>.y <span class="op">-=</span> <span class="va">self</span>.config.velocidade_projetil</span>
+<span id="cb20-29"><a></a>        <span class="co"># Atualiza a posição do retângulo.</span></span>
+<span id="cb20-30"><a></a>        <span class="va">self</span>.ret.y <span class="op">=</span> <span class="va">self</span>.y</span>
+<span id="cb20-31"><a></a></span>
+<span id="cb20-32"><a></a>    <span class="kw">def</span> desenhar(<span class="va">self</span>):</span>
+<span id="cb20-33"><a></a>        <span class="co">""" Desenha o projétil na tela. """</span></span>
+<span id="cb20-34"><a></a>        pygame.draw.rect(<span class="va">self</span>.tela, <span class="va">self</span>.cor, <span class="va">self</span>.ret)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="herança-em-python" class="slide level2">
+<h2>Herança em Python</h2>
+</section>
+<section id="grupos-de-projéteis" class="slide level2">
+<h2>Grupos de projéteis</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb21" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="im">from</span> nave <span class="im">import</span> Nave</span>
+<span id="cb21-2"><a></a><span class="im">from</span> projetil <span class="im">import</span> Projetil</span>
+<span id="cb21-3"><a></a></span>
+<span id="cb21-4"><a></a><span class="kw">class</span> InvasaoAlien:</span>
+<span id="cb21-5"><a></a></span>
+<span id="cb21-6"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb21-7"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb21-8"><a></a></span>
+<span id="cb21-9"><a></a>        <span class="va">self</span>.nave <span class="op">=</span> Nave(<span class="va">self</span>)</span>
+<span id="cb21-10"><a></a>        <span class="va">self</span>.projeteis <span class="op">=</span> pygame.sprite.Group()</span>
+<span id="cb21-11"><a></a>        </span>
+<span id="cb21-12"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb21-13"><a></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<span id="cb21-14"><a></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb21-15"><a></a>            <span class="va">self</span>._verificar_eventos()</span>
+<span id="cb21-16"><a></a>            <span class="va">self</span>.nave.atualizar()</span>
+<span id="cb21-17"><a></a>            <span class="va">self</span>.projeteis.update()</span>
+<span id="cb21-18"><a></a>            <span class="va">self</span>._atualizar_tela()</span>
+<span id="cb21-19"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="disparando-projéteis" class="slide level2">
+<h2>Disparando projéteis</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb22" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>    <span class="kw">def</span> _verificar_eventos_tecla_pressionada(<span class="va">self</span>, evento):</span>
+<span id="cb22-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb22-3"><a></a>        <span class="cf">elif</span> evento.key <span class="op">==</span> pygame.K_q:</span>
+<span id="cb22-4"><a></a>            sys.exit()</span>
+<span id="cb22-5"><a></a>        <span class="cf">elif</span> evento.key <span class="op">==</span> pygame.K_SPACE:</span>
+<span id="cb22-6"><a></a>            <span class="va">self</span>._disparar_projetil()</span>
+<span id="cb22-7"><a></a>    </span>
+<span id="cb22-8"><a></a>    <span class="kw">def</span> _verificar_eventos_tecla_liberada(<span class="va">self</span>, evento):</span>
+<span id="cb22-9"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb22-10"><a></a></span>
+<span id="cb22-11"><a></a>    <span class="kw">def</span> _disparar_projetil(<span class="va">self</span>):</span>
+<span id="cb22-12"><a></a>        <span class="co">""" Cria um novo projétil e o adiciona ao grupo de projéteis. """</span></span>
+<span id="cb22-13"><a></a>        novo_projetil <span class="op">=</span> Projetil(<span class="va">self</span>)</span>
+<span id="cb22-14"><a></a>        <span class="va">self</span>.projeteis.add(novo_projetil)</span>
+<span id="cb22-15"><a></a>    </span>
+<span id="cb22-16"><a></a>    <span class="kw">def</span> _atualizar_tela(<span class="va">self</span>):</span>
+<span id="cb22-17"><a></a>        <span class="co">"""Desenha a nova imagem da tela do jogo e a utiliza na tela."""</span></span>
+<span id="cb22-18"><a></a>        <span class="va">self</span>.tela.fill(<span class="va">self</span>.config.cor_fundo)</span>
+<span id="cb22-19"><a></a>        <span class="cf">for</span> projetil <span class="kw">in</span> <span class="va">self</span>.projeteis.sprites():</span>
+<span id="cb22-20"><a></a>            projetil.desenhar()</span>
+<span id="cb22-21"><a></a>        <span class="va">self</span>.nave.desenhar()</span>
+<span id="cb22-22"><a></a>        </span>
+<span id="cb22-23"><a></a>        pygame.display.flip()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="apagando-projéteis-fora-da-tela" class="slide level2">
+<h2>Apagando projéteis fora da tela</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb23" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb23-2"><a></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<span id="cb23-3"><a></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb23-4"><a></a>            <span class="va">self</span>._verificar_eventos()</span>
+<span id="cb23-5"><a></a>            <span class="va">self</span>.nave.atualizar()</span>
+<span id="cb23-6"><a></a>            <span class="va">self</span>.projeteis.update()</span>
+<span id="cb23-7"><a></a></span>
+<span id="cb23-8"><a></a>            <span class="co"># Descarta os projéteis que desapareceram</span></span>
+<span id="cb23-9"><a></a>            <span class="cf">for</span> projetil <span class="kw">in</span> <span class="va">self</span>.projeteis.copy():</span>
+<span id="cb23-10"><a></a>                <span class="cf">if</span> projetil.ret.bottom <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb23-11"><a></a>                    <span class="va">self</span>.projeteis.remove(projetil)</span>
+<span id="cb23-12"><a></a>            <span class="bu">print</span>(<span class="bu">len</span>(<span class="va">self</span>.projeteis)) <span class="co"># REMOVER DEPOIS DE TESTAR!</span></span>
+<span id="cb23-13"><a></a></span>
+<span id="cb23-14"><a></a>            <span class="va">self</span>._atualizar_tela()</span>
+<span id="cb23-15"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="limitando-o-número-de-projéteis" class="slide level2">
+<h2>Limitando o número de projéteis</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>config.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb24" data-filename="config.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb24-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb24-3"><a></a>        <span class="va">self</span>.cor_projetil <span class="op">=</span> (<span class="dv">60</span>, <span class="dv">60</span>, <span class="dv">60</span>)  <span class="co"># Cor cinza escuro</span></span>
+<span id="cb24-4"><a></a>        <span class="va">self</span>.max_projeteis <span class="op">=</span> <span class="dv">5</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb25" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>    <span class="kw">def</span> _disparar_projetil(<span class="va">self</span>):</span>
+<span id="cb25-2"><a></a>        <span class="co">""" Cria um novo projétil e o adiciona ao grupo de projéteis. """</span></span>
+<span id="cb25-3"><a></a>        <span class="cf">if</span> <span class="bu">len</span>(<span class="va">self</span>.projeteis) <span class="op">&lt;</span> <span class="va">self</span>.config.max_projeteis:</span>
+<span id="cb25-4"><a></a>            novo_projetil <span class="op">=</span> Projetil(<span class="va">self</span>)</span>
+<span id="cb25-5"><a></a>            <span class="va">self</span>.projeteis.add(novo_projetil)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="criando-o-método-atualizar-projéteis" class="slide level2">
+<h2>Criando o método atualizar projéteis</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb26" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb26-2"><a></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<span id="cb26-3"><a></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb26-4"><a></a>            <span class="va">self</span>._verificar_eventos()</span>
+<span id="cb26-5"><a></a>            <span class="va">self</span>.nave.atualizar()</span>
+<span id="cb26-6"><a></a>            <span class="va">self</span>._atualizar_projeteis()</span>
+<span id="cb26-7"><a></a>            <span class="va">self</span>._atualizar_tela()</span>
+<span id="cb26-8"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)</span>
+<span id="cb26-9"><a></a>    </span>
+<span id="cb26-10"><a></a>    <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb26-11"><a></a></span>
+<span id="cb26-12"><a></a>    <span class="kw">def</span> _atualizar_projeteis(<span class="va">self</span>):</span>
+<span id="cb26-13"><a></a>        <span class="co">""" Atualiza a posição dos projéteis e descarta os projéteis antigos. """</span></span>
+<span id="cb26-14"><a></a>        <span class="va">self</span>.projeteis.update()</span>
+<span id="cb26-15"><a></a></span>
+<span id="cb26-16"><a></a>        <span class="co"># Livra-se dos projéteis que desapareceram.</span></span>
+<span id="cb26-17"><a></a>        <span class="cf">for</span> projetil <span class="kw">in</span> <span class="va">self</span>.projeteis.copy():</span>
+<span id="cb26-18"><a></a>            <span class="cf">if</span> projetil.ret.bottom <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb26-19"><a></a>                <span class="va">self</span>.projeteis.remove(projetil)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="alienígenas" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Alienígenas</h1>
+
+</section>
+<section id="criando-a-classe-alien" class="slide level2">
+<h2>Criando a classe Alien</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb27" data-filename="alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="im">import</span> pygame</span>
+<span id="cb27-2"><a></a></span>
+<span id="cb27-3"><a></a><span class="im">from</span> pygame.sprite <span class="im">import</span> Sprite</span>
+<span id="cb27-4"><a></a></span>
+<span id="cb27-5"><a></a></span>
+<span id="cb27-6"><a></a><span class="kw">class</span> Alien(Sprite):</span>
+<span id="cb27-7"><a></a>    <span class="co">""" Classe para representar um único alien de um esquadrão. """</span></span>
+<span id="cb27-8"><a></a></span>
+<span id="cb27-9"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ai_game):</span>
+<span id="cb27-10"><a></a>        <span class="co">""" Inicializa o alien e define sua posição inicial. """</span></span>
+<span id="cb27-11"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb27-12"><a></a>        <span class="va">self</span>.tela <span class="op">=</span> ai_game.tela</span>
+<span id="cb27-13"><a></a></span>
+<span id="cb27-14"><a></a>        <span class="co"># Carrega a imagem do alien e define seu atributo retangulo.</span></span>
+<span id="cb27-15"><a></a>        <span class="co"># ATENÇÃO: aqui precisamos usar os nomes image e rect, pois</span></span>
+<span id="cb27-16"><a></a>        <span class="co"># são esses nomes que o Pygame espera e usa internamente.</span></span>
+<span id="cb27-17"><a></a>        <span class="va">self</span>.image <span class="op">=</span> pygame.image.load(<span class="st">'imagens/alien.png'</span>)</span>
+<span id="cb27-18"><a></a>        <span class="va">self</span>.rect <span class="op">=</span> <span class="va">self</span>.image.get_rect()</span>
+<span id="cb27-19"><a></a></span>
+<span id="cb27-20"><a></a>        <span class="co"># Começa cada novo alien próximo ao canto superior esquerdo da tela.</span></span>
+<span id="cb27-21"><a></a>        <span class="co"># Considera um espaço a partir da borda, do tamanho do retângulo.</span></span>
+<span id="cb27-22"><a></a>        <span class="va">self</span>.rect.x <span class="op">=</span> <span class="va">self</span>.rect.width</span>
+<span id="cb27-23"><a></a>        <span class="va">self</span>.rect.y <span class="op">=</span> <span class="va">self</span>.rect.height</span>
+<span id="cb27-24"><a></a></span>
+<span id="cb27-25"><a></a>        <span class="co"># Armazena a posição horizontal exata do alien.</span></span>
+<span id="cb27-26"><a></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="bu">float</span>(<span class="va">self</span>.rect.x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="criando-uma-instância-do-alienígena" class="slide level2">
+<h2>Criando uma instância do alienígena</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb28" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a><span class="im">from</span> projetil <span class="im">import</span> Projetil</span>
+<span id="cb28-2"><a></a><span class="im">from</span> alien <span class="im">import</span> Alien</span>
+<span id="cb28-3"><a></a></span>
+<span id="cb28-4"><a></a><span class="kw">class</span> InvasaoAlien:</span>
+<span id="cb28-5"><a></a>    <span class="co">"""Classe geral para gerenciar ativos e comportamento do jogo."""</span></span>
+<span id="cb28-6"><a></a></span>
+<span id="cb28-7"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb28-8"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb28-9"><a></a></span>
+<span id="cb28-10"><a></a>        <span class="va">self</span>.nave <span class="op">=</span> Nave(<span class="va">self</span>)</span>
+<span id="cb28-11"><a></a>        <span class="va">self</span>.projeteis <span class="op">=</span> pygame.sprite.Group()</span>
+<span id="cb28-12"><a></a>        <span class="va">self</span>.aliens <span class="op">=</span> pygame.sprite.Group()</span>
+<span id="cb28-13"><a></a></span>
+<span id="cb28-14"><a></a>        <span class="va">self</span>._criar_esquadrão()</span>
+<span id="cb28-15"><a></a></span>
+<span id="cb28-16"><a></a>    <span class="kw">def</span> _criar_esquadrão(<span class="va">self</span>):</span>
+<span id="cb28-17"><a></a>        <span class="co">"""Cria um esquadrão completo de aliens."""</span></span>
+<span id="cb28-18"><a></a>        <span class="co"># por enquanto vamos criar apenas um alien</span></span>
+<span id="cb28-19"><a></a>        alien <span class="op">=</span> Alien(<span class="va">self</span>)</span>
+<span id="cb28-20"><a></a>        <span class="va">self</span>.aliens.add(alien)</span>
+<span id="cb28-21"><a></a>    </span>
+<span id="cb28-22"><a></a>    <span class="kw">def</span> _atualizar_tela(<span class="va">self</span>):</span>
+<span id="cb28-23"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb28-24"><a></a>        <span class="va">self</span>.nave.desenhar()</span>
+<span id="cb28-25"><a></a>        <span class="co"># ATENÇÃO: para que todos os aliens sejam desenhados automaticamente</span></span>
+<span id="cb28-26"><a></a>        <span class="co"># ele deve ter atributos chamados image e rect</span></span>
+<span id="cb28-27"><a></a>        <span class="va">self</span>.aliens.draw(<span class="va">self</span>.tela)</span>
+<span id="cb28-28"><a></a>        </span>
+<span id="cb28-29"><a></a>        pygame.display.flip()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="criando-uma-fileira-de-alienígenas" class="slide level2">
+<h2>Criando uma fileira de alienígenas</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb29" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>    <span class="kw">def</span> _criar_esquadrão(<span class="va">self</span>):</span>
+<span id="cb29-2"><a></a>        <span class="co">"""Cria um esquadrão completo de aliens."""</span></span>
+<span id="cb29-3"><a></a>        <span class="co"># Cria um alienígena e continua criando aliens até que não haja mais espaço.</span></span>
+<span id="cb29-4"><a></a>        <span class="co"># O distanciamento entre os aliens é a largura de um alien.</span></span>
+<span id="cb29-5"><a></a>        alien <span class="op">=</span> Alien(<span class="va">self</span>)</span>
+<span id="cb29-6"><a></a>        largura_alien <span class="op">=</span> alien.rect.width</span>
+<span id="cb29-7"><a></a></span>
+<span id="cb29-8"><a></a>        x_atual <span class="op">=</span> largura_alien</span>
+<span id="cb29-9"><a></a>        <span class="cf">while</span> x_atual <span class="op">&lt;</span> (<span class="va">self</span>.config.largura_tela <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> largura_alien):</span>
+<span id="cb29-10"><a></a>            <span class="va">self</span>._criar_alien(x_atual)</span>
+<span id="cb29-11"><a></a>            x_atual <span class="op">+=</span> <span class="dv">2</span> <span class="op">*</span> largura_alien</span>
+<span id="cb29-12"><a></a></span>
+<span id="cb29-13"><a></a>    <span class="kw">def</span> _criar_alien(<span class="va">self</span>, posicao_x):</span>
+<span id="cb29-14"><a></a>        <span class="co">""" Cria um alien e coloca-o no esquadrão. """</span></span>
+<span id="cb29-15"><a></a>        novo_alien <span class="op">=</span> Alien(<span class="va">self</span>)</span>
+<span id="cb29-16"><a></a>        novo_alien.x <span class="op">=</span> posicao_x</span>
+<span id="cb29-17"><a></a>        novo_alien.rect.x <span class="op">=</span> posicao_x</span>
+<span id="cb29-18"><a></a>        <span class="va">self</span>.aliens.add(novo_alien)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="adicionando-fileiras" class="slide level2">
+<h2>Adicionando fileiras</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb30" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a>    <span class="kw">def</span> _criar_esquadrão(<span class="va">self</span>):</span>
+<span id="cb30-2"><a></a>        <span class="co">"""Cria um esquadrão completo de aliens."""</span></span>
+<span id="cb30-3"><a></a>        <span class="co"># Cria um alienígena e continua criando aliens até que não haja mais espaço.</span></span>
+<span id="cb30-4"><a></a>        <span class="co"># O distanciamento entre os aliens é a largura de um alien.</span></span>
+<span id="cb30-5"><a></a>        alien <span class="op">=</span> Alien(<span class="va">self</span>)</span>
+<span id="cb30-6"><a></a>        largura_alien, altura_alien <span class="op">=</span> alien.rect.size</span>
+<span id="cb30-7"><a></a></span>
+<span id="cb30-8"><a></a>        x_atual, y_atual <span class="op">=</span> largura_alien, altura_alien</span>
+<span id="cb30-9"><a></a>        <span class="cf">while</span> y_atual <span class="op">&lt;</span> (<span class="va">self</span>.config.altura_tela <span class="op">-</span> <span class="dv">5</span> <span class="op">*</span> altura_alien):            </span>
+<span id="cb30-10"><a></a>            <span class="cf">while</span> x_atual <span class="op">&lt;</span> (<span class="va">self</span>.config.largura_tela <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> largura_alien):</span>
+<span id="cb30-11"><a></a>                <span class="va">self</span>._criar_alien(x_atual, y_atual)</span>
+<span id="cb30-12"><a></a>                x_atual <span class="op">+=</span> <span class="dv">2</span> <span class="op">*</span> largura_alien</span>
+<span id="cb30-13"><a></a></span>
+<span id="cb30-14"><a></a>            x_atual <span class="op">=</span> largura_alien</span>
+<span id="cb30-15"><a></a>            y_atual <span class="op">+=</span> <span class="dv">2</span> <span class="op">*</span> altura_alien</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="movendo-o-esquadrão" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Movendo o esquadrão</h1>
+
+</section>
+<section id="movendo-os-alienígenas-para-a-direita" class="slide level2">
+<h2>Movendo os alienígenas para a direita</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>config.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb31" data-filename="config.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb31-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb31-3"><a></a></span>
+<span id="cb31-4"><a></a>        <span class="co"># Configurações dos aliens</span></span>
+<span id="cb31-5"><a></a>        <span class="va">self</span>.velocidade_alien <span class="op">=</span> <span class="fl">1.0</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb32" data-filename="alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ai_game):</span>
+<span id="cb32-2"><a></a>        <span class="co">""" Inicializa o alien e define sua posição inicial. """</span></span>
+<span id="cb32-3"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb32-4"><a></a>        <span class="va">self</span>.tela <span class="op">=</span> ai_game.tela</span>
+<span id="cb32-5"><a></a>        <span class="va">self</span>.config <span class="op">=</span> ai_game.config</span>
+<span id="cb32-6"><a></a></span>
+<span id="cb32-7"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb32-8"><a></a></span>
+<span id="cb32-9"><a></a>    <span class="kw">def</span> update(<span class="va">self</span>):</span>
+<span id="cb32-10"><a></a>        <span class="co">""" Move o alien para a direita. """</span></span>
+<span id="cb32-11"><a></a>        <span class="va">self</span>.x <span class="op">+=</span> <span class="va">self</span>.config.velocidade_alien</span>
+<span id="cb32-12"><a></a>        <span class="va">self</span>.rect.x <span class="op">=</span> <span class="va">self</span>.x</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb33" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb33-2"><a></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<span id="cb33-3"><a></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb33-4"><a></a>            <span class="va">self</span>._verificar_eventos()</span>
+<span id="cb33-5"><a></a>            <span class="va">self</span>.nave.atualizar()</span>
+<span id="cb33-6"><a></a>            <span class="va">self</span>._atualizar_projeteis()</span>
+<span id="cb33-7"><a></a>            <span class="va">self</span>._atualizar_aliens()</span>
+<span id="cb33-8"><a></a>            <span class="va">self</span>._atualizar_tela()</span>
+<span id="cb33-9"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)</span>
+<span id="cb33-10"><a></a></span>
+<span id="cb33-11"><a></a>    <span class="kw">def</span> _atualizar_aliens(<span class="va">self</span>):</span>
+<span id="cb33-12"><a></a>        <span class="co">"""Atualiza as posições de todos os aliens do esquadrão."""</span></span>
+<span id="cb33-13"><a></a>        <span class="va">self</span>.aliens.update()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="configurando-descida-e-mudança-de-direção" class="slide level2">
+<h2>Configurando descida e mudança de direção</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>config.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb34" data-filename="config.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb34-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb34-3"><a></a></span>
+<span id="cb34-4"><a></a>        <span class="co"># Configurações dos aliens</span></span>
+<span id="cb34-5"><a></a>        <span class="va">self</span>.velocidade_alien <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb34-6"><a></a>        <span class="va">self</span>.velocidade_descida_esquadrao <span class="op">=</span> <span class="fl">10.0</span></span>
+<span id="cb34-7"><a></a>        <span class="va">self</span>.direcao_esquadrao <span class="op">=</span> <span class="dv">1</span>  <span class="co"># 1 representa a direita; -1 representa a esquerda</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tratando-direção-e-criando-método-para-verificar-borda" class="slide level2">
+<h2>Tratando direção e criando método para verificar borda</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb35" data-filename="alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>    <span class="kw">def</span> update(<span class="va">self</span>):</span>
+<span id="cb35-2"><a></a>        <span class="co">""" Move o alien para a direita ou para a esquerda. """</span></span>
+<span id="cb35-3"><a></a>        <span class="va">self</span>.x <span class="op">+=</span> <span class="va">self</span>.config.velocidade_alien <span class="op">*</span> <span class="va">self</span>.config.direcao_esquadrao</span>
+<span id="cb35-4"><a></a>        <span class="va">self</span>.rect.x <span class="op">=</span> <span class="va">self</span>.x</span>
+<span id="cb35-5"><a></a>    </span>
+<span id="cb35-6"><a></a>    <span class="kw">def</span> verificar_borda(<span class="va">self</span>):</span>
+<span id="cb35-7"><a></a>        <span class="co">""" Retorna True se o alien estiver na borda da tela. """</span></span>
+<span id="cb35-8"><a></a>        ret_tela <span class="op">=</span> <span class="va">self</span>.tela.get_rect()</span>
+<span id="cb35-9"><a></a>        <span class="cf">return</span> <span class="va">self</span>.rect.right <span class="op">&gt;=</span> ret_tela.right <span class="kw">or</span> <span class="va">self</span>.rect.left <span class="op">&lt;=</span> <span class="dv">0</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="fazendo-a-frota-descer-e-mudar-de-direção" class="slide level2">
+<h2>Fazendo a frota descer e mudar de direção</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb36" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a>    <span class="kw">def</span> _atualizar_aliens(<span class="va">self</span>):</span>
+<span id="cb36-2"><a></a>        <span class="co">""" Verifica se o esquadrão está na borda e atualiza as posições dos aliens. """</span></span>
+<span id="cb36-3"><a></a>        <span class="va">self</span>._verificar_bordas_esquadrao()</span>
+<span id="cb36-4"><a></a>        <span class="va">self</span>.aliens.update()</span>
+<span id="cb36-5"><a></a></span>
+<span id="cb36-6"><a></a>    <span class="kw">def</span> _verificar_bordas_esquadrao(<span class="va">self</span>):</span>
+<span id="cb36-7"><a></a>        <span class="co">""" Faz o esquadrão descer se um dos aliens atingiu uma borda. """</span></span>
+<span id="cb36-8"><a></a>        <span class="cf">for</span> alien <span class="kw">in</span> <span class="va">self</span>.aliens.sprites():</span>
+<span id="cb36-9"><a></a>            <span class="cf">if</span> alien.verificar_borda():</span>
+<span id="cb36-10"><a></a>                <span class="va">self</span>._descer_esquadrao()</span>
+<span id="cb36-11"><a></a>                <span class="cf">break</span></span>
+<span id="cb36-12"><a></a>    </span>
+<span id="cb36-13"><a></a>    <span class="kw">def</span> _descer_esquadrao(<span class="va">self</span>):</span>
+<span id="cb36-14"><a></a>        <span class="co">""" Desce o esquadrão e muda sua direção. """</span></span>
+<span id="cb36-15"><a></a>        <span class="cf">for</span> alien <span class="kw">in</span> <span class="va">self</span>.aliens.sprites():</span>
+<span id="cb36-16"><a></a>            alien.rect.y <span class="op">+=</span> <span class="va">self</span>.config.velocidade_descida_esquadrao</span>
+<span id="cb36-17"><a></a>        <span class="va">self</span>.config.direcao_esquadrao <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="eliminando-aliens" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Eliminando aliens</h1>
+
+</section>
+<section id="detectando-colisões-de-projéteis" class="slide level2">
+<h2>Detectando colisões de projéteis</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb37" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a>    <span class="kw">def</span> _atualizar_projeteis(<span class="va">self</span>):</span>
+<span id="cb37-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb37-3"><a></a></span>
+<span id="cb37-4"><a></a>        <span class="co"># Verifica se algum projétil atingiu um alien.</span></span>
+<span id="cb37-5"><a></a>        <span class="co"># Se sim, descarta tanto o projétil quanto o alien.</span></span>
+<span id="cb37-6"><a></a>        colisoes <span class="op">=</span> pygame.sprite.groupcollide(</span>
+<span id="cb37-7"><a></a>            <span class="va">self</span>.projeteis, <span class="va">self</span>.aliens, <span class="va">True</span>, <span class="va">True</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb38-1"><a></a>Traceback (most recent call last):</span>
+<span id="cb38-2"><a></a>  File "/home/julio/Downloads/invasao-alienigena/invasao_alien.py", line 141, in &lt;module&gt;</span>
+<span id="cb38-3"><a></a>    ai.executar_jogo()</span>
+<span id="cb38-4"><a></a>  File "/home/julio/Downloads/invasao-alienigena/invasao_alien.py", line 33, in executar_jogo</span>
+<span id="cb38-5"><a></a>    self._atualizar_projeteis()</span>
+<span id="cb38-6"><a></a>  File "/home/julio/Downloads/invasao-alienigena/invasao_alien.py", line 72, in _atualizar_projeteis</span>
+<span id="cb38-7"><a></a>    if projetil.ret.bottom &lt;= 0:</span>
+<span id="cb38-8"><a></a>       ^^^^^^^^^^^^</span>
+<span id="cb38-9"><a></a>AttributeError: 'Projetil' object has no attribute 'ret'. Did you mean: 'rect'?</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">Precisamos mudar o nome do atributo <code>ret</code> da classe <code>Projetil</code> para <code>rect</code>.</li>
+</ul>
+</section>
+<section id="criando-projéteis-maiores-para-testes" class="slide level2">
+<h2>Criando projéteis maiores para testes</h2>
+<p>Para facilitar os testes.</p>
+<ul>
+<li class="fragment">Vamos experimentar 400.</li>
+</ul>
+</section>
+<section id="recriando-o-esquadrão" class="slide level2">
+<h2>Recriando o esquadrão</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb39" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a>    <span class="kw">def</span> _atualizar_projeteis(<span class="va">self</span>):</span>
+<span id="cb39-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb39-3"><a></a>        </span>
+<span id="cb39-4"><a></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.aliens:</span>
+<span id="cb39-5"><a></a>            <span class="co"># Destrói os projéteis existentes e cria um novo esquadrão.</span></span>
+<span id="cb39-6"><a></a>            <span class="va">self</span>.projeteis.empty()</span>
+<span id="cb39-7"><a></a>            <span class="va">self</span>._criar_esquadrão()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="refatorando-_atualizar_projeteis" class="slide level2">
+<h2>Refatorando <code>_atualizar_projeteis()</code></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb40" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a>    <span class="kw">def</span> _atualizar_projeteis(<span class="va">self</span>):</span>
+<span id="cb40-2"><a></a>        <span class="co">""" Atualiza a posição dos projéteis e descarta os projéteis antigos. """</span></span>
+<span id="cb40-3"><a></a>        <span class="va">self</span>.projeteis.update()</span>
+<span id="cb40-4"><a></a></span>
+<span id="cb40-5"><a></a>        <span class="co"># Livra-se dos projéteis que desapareceram.</span></span>
+<span id="cb40-6"><a></a>        <span class="cf">for</span> projetil <span class="kw">in</span> <span class="va">self</span>.projeteis.copy():</span>
+<span id="cb40-7"><a></a>            <span class="cf">if</span> projetil.rect.bottom <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb40-8"><a></a>                <span class="va">self</span>.projeteis.remove(projetil)</span>
+<span id="cb40-9"><a></a></span>
+<span id="cb40-10"><a></a>        <span class="va">self</span>._verificar_colisoes_projeteis_aliens()</span>
+<span id="cb40-11"><a></a>    </span>
+<span id="cb40-12"><a></a>    <span class="kw">def</span> _verificar_colisoes_projeteis_aliens(<span class="va">self</span>):</span>
+<span id="cb40-13"><a></a>        <span class="co">""" Responde a colisões entre projéteis e aliens. """</span></span>
+<span id="cb40-14"><a></a>        <span class="co"># Verifica se algum projétil atingiu um alien.</span></span>
+<span id="cb40-15"><a></a>        <span class="co"># Se sim, descarta tanto o projétil quanto o alien.</span></span>
+<span id="cb40-16"><a></a>        colisoes <span class="op">=</span> pygame.sprite.groupcollide(</span>
+<span id="cb40-17"><a></a>            <span class="va">self</span>.projeteis, <span class="va">self</span>.aliens, <span class="va">True</span>, <span class="va">True</span>)</span>
+<span id="cb40-18"><a></a>        </span>
+<span id="cb40-19"><a></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.aliens:</span>
+<span id="cb40-20"><a></a>            <span class="co"># Destrói os projéteis existentes e cria um novo esquadrão.</span></span>
+<span id="cb40-21"><a></a>            <span class="va">self</span>.projeteis.empty()</span>
+<span id="cb40-22"><a></a>            <span class="va">self</span>._criar_esquadrão()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="dando-um-fim-ao-jogo" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Dando um fim ao jogo</h1>
+
+</section>
+<section id="detectando-colisões-entre-naves-e-aliens" class="slide level2">
+<h2>Detectando colisões entre naves e aliens</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb41" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a></a></span>
+<span id="cb41-2"><a></a><span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb41-3"><a></a>    <span class="kw">def</span> _atualizar_aliens(<span class="va">self</span>):</span>
+<span id="cb41-4"><a></a>        <span class="co">""" Verifica se o esquadrão está na borda e atualiza as posições dos aliens. """</span></span>
+<span id="cb41-5"><a></a>        <span class="va">self</span>._verificar_bordas_esquadrao()</span>
+<span id="cb41-6"><a></a>        <span class="va">self</span>.aliens.update()</span>
+<span id="cb41-7"><a></a></span>
+<span id="cb41-8"><a></a>        <span class="co"># Detecta colisões entre a nave e os aliens.</span></span>
+<span id="cb41-9"><a></a>        <span class="cf">if</span> pygame.sprite.spritecollideany(<span class="va">self</span>.nave, <span class="va">self</span>.aliens):</span>
+<span id="cb41-10"><a></a>            <span class="bu">print</span>(<span class="st">"A nave foi atingida!"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Talvez seja interessante aumentar a velocidade (e de descida) dos aliens para testar.</p>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<p>Aqui, novamente, precisaremos usar atributo com nome <code>rect</code> em vez de <code>ret</code>.</p>
+<div class="fragment">
+<p>Se estiver usando um linter como o pylance você verá um warning em <code>self.nave</code>.</p>
+<ul>
+<li class="fragment">Isso porque o método <code>spritecollideany</code> espera um <code>Sprite</code>, mas nossa classe <code>Nave</code> não herda dela.</li>
+<li class="fragment">Mesmo assim o código funciona, por que?</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="alert">Duck Typing</span></p>
+</div>
+</section>
+<section id="tratando-as-colisões-entre-a-nave-e-aliens" class="slide level2">
+<h2>Tratando as colisões entre a nave e aliens</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>config.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb42" data-filename="config.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb42-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb42-3"><a></a></span>
+<span id="cb42-4"><a></a>        <span class="co"># Configurações da nave</span></span>
+<span id="cb42-5"><a></a>        <span class="va">self</span>.velocidade_nave <span class="op">=</span> <span class="fl">10.0</span></span>
+<span id="cb42-6"><a></a>        <span class="va">self</span>.max_naves <span class="op">=</span> <span class="dv">3</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>estatisticas.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb43" data-filename="estatisticas.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a><span class="kw">class</span> Estatisticas:</span>
+<span id="cb43-2"><a></a>    <span class="co">""" Rastreia as estatísticas do jogo. """</span></span>
+<span id="cb43-3"><a></a></span>
+<span id="cb43-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jogo):</span>
+<span id="cb43-5"><a></a>        <span class="co">""" Inicializa as estatisticas """</span></span>
+<span id="cb43-6"><a></a>        <span class="va">self</span>.config <span class="op">=</span> jogo.config</span>
+<span id="cb43-7"><a></a>        <span class="va">self</span>.reiniciar()</span>
+<span id="cb43-8"><a></a></span>
+<span id="cb43-9"><a></a>    <span class="kw">def</span> reiniciar(<span class="va">self</span>):</span>
+<span id="cb43-10"><a></a>        <span class="co">""" Inicializa as estatísticas que podem mudar ao longo do jogo. """</span></span>
+<span id="cb43-11"><a></a>        <span class="va">self</span>.naves_restantes <span class="op">=</span> <span class="va">self</span>.config.max_naves</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb44" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb44-2"><a></a><span class="im">from</span> time <span class="im">import</span> sleep</span>
+<span id="cb44-3"><a></a></span>
+<span id="cb44-4"><a></a><span class="im">import</span> pygame</span>
+<span id="cb44-5"><a></a></span>
+<span id="cb44-6"><a></a><span class="im">from</span> config <span class="im">import</span> Config</span>
+<span id="cb44-7"><a></a><span class="im">from</span> estatisticas <span class="im">import</span> Estatisticas</span>
+<span id="cb44-8"><a></a></span>
+<span id="cb44-9"><a></a><span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb44-10"><a></a></span>
+<span id="cb44-11"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb44-12"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb44-13"><a></a>        pygame.display.set_caption(<span class="st">"Invasão Alienígena"</span>)</span>
+<span id="cb44-14"><a></a></span>
+<span id="cb44-15"><a></a>        <span class="co"># Cria uma instância para armazenar estatísticas do jogo.</span></span>
+<span id="cb44-16"><a></a>        <span class="va">self</span>.estatisticas <span class="op">=</span> Estatisticas(<span class="va">self</span>)</span>
+<span id="cb44-17"><a></a></span>
+<span id="cb44-18"><a></a>    <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb44-19"><a></a></span>
+<span id="cb44-20"><a></a>    <span class="kw">def</span> _atualizar_aliens(<span class="va">self</span>):</span>
+<span id="cb44-21"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb44-22"><a></a></span>
+<span id="cb44-23"><a></a>        <span class="co"># Detecta colisões entre a nave e os aliens.</span></span>
+<span id="cb44-24"><a></a>        <span class="cf">if</span> pygame.sprite.spritecollideany(<span class="va">self</span>.nave, <span class="va">self</span>.aliens):</span>
+<span id="cb44-25"><a></a>            <span class="va">self</span>._acertar_nave()</span>
+<span id="cb44-26"><a></a>    </span>
+<span id="cb44-27"><a></a>    <span class="kw">def</span> _acertar_nave(<span class="va">self</span>):</span>
+<span id="cb44-28"><a></a>        <span class="co">""" Responde a uma colisão entre a nave e um alien. """</span></span>
+<span id="cb44-29"><a></a>        <span class="co"># Decrementa naves_restantes.</span></span>
+<span id="cb44-30"><a></a>        <span class="va">self</span>.estatisticas.naves_restantes <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb44-31"><a></a></span>
+<span id="cb44-32"><a></a>        <span class="co"># Esvazia a lista de aliens e projéteis.</span></span>
+<span id="cb44-33"><a></a>        <span class="va">self</span>.aliens.empty()</span>
+<span id="cb44-34"><a></a>        <span class="va">self</span>.projeteis.empty()</span>
+<span id="cb44-35"><a></a></span>
+<span id="cb44-36"><a></a>        <span class="co"># Cria um novo esquadrão e centraliza a nave.</span></span>
+<span id="cb44-37"><a></a>        <span class="va">self</span>._criar_esquadrão()</span>
+<span id="cb44-38"><a></a>        <span class="va">self</span>.nave.centralizar()</span>
+<span id="cb44-39"><a></a></span>
+<span id="cb44-40"><a></a>        <span class="co"># Faz uma pausa.</span></span>
+<span id="cb44-41"><a></a>        sleep(<span class="fl">0.5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>nave.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb45" data-filename="nave.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a>    <span class="kw">def</span> centralizar(<span class="va">self</span>):</span>
+<span id="cb45-2"><a></a>        <span class="co">""" Centraliza a nave na tela. """</span></span>
+<span id="cb45-3"><a></a>        <span class="va">self</span>.rect.midbottom <span class="op">=</span> <span class="va">self</span>.ret_tela.midbottom</span>
+<span id="cb45-4"><a></a>        <span class="va">self</span>.x <span class="op">=</span> <span class="bu">float</span>(<span class="va">self</span>.rect.x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Repare que sempre usamos a mesma instância da nave.</p>
+<ul>
+<li class="fragment">Nós não criamos outro objeto quando a nave é atingida.</li>
+<li class="fragment">Nós apenas a centralizamos.</li>
+<li class="fragment">A classe de estatísticas cuida de lidar com quantas vidas existem.</li>
+</ul>
+</section>
+<section id="tratando-alienígenas-na-borda-inferior" class="slide level2">
+<h2>Tratando alienígenas na borda inferior</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb46" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a></a>    <span class="kw">def</span> _atualizar_aliens(<span class="va">self</span>):</span>
+<span id="cb46-2"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb46-3"><a></a></span>
+<span id="cb46-4"><a></a>        <span class="co"># Detecta colisões entre a nave e os aliens.</span></span>
+<span id="cb46-5"><a></a>        <span class="cf">if</span> pygame.sprite.spritecollideany(<span class="va">self</span>.nave, <span class="va">self</span>.aliens):</span>
+<span id="cb46-6"><a></a>            <span class="va">self</span>._acertar_nave()</span>
+<span id="cb46-7"><a></a></span>
+<span id="cb46-8"><a></a>        <span class="co"># Verifica se algum alien atingiu a parte inferior da tela.</span></span>
+<span id="cb46-9"><a></a>        <span class="va">self</span>._verificar_aliens_borda_inferior()</span>
+<span id="cb46-10"><a></a></span>
+<span id="cb46-11"><a></a>    <span class="kw">def</span> _verificar_aliens_borda_inferior(<span class="va">self</span>):</span>
+<span id="cb46-12"><a></a>        <span class="co">""" Verifica se algum alien atingiu a parte inferior da tela. """</span></span>
+<span id="cb46-13"><a></a>        <span class="cf">for</span> alien <span class="kw">in</span> <span class="va">self</span>.aliens.sprites():</span>
+<span id="cb46-14"><a></a>            <span class="cf">if</span> alien.rect.bottom <span class="op">&gt;=</span> <span class="va">self</span>.config.altura_tela:</span>
+<span id="cb46-15"><a></a>                <span class="co"># Trata esse caso do mesmo modo que se a nave tivesse sido atingida.</span></span>
+<span id="cb46-16"><a></a>                <span class="va">self</span>._acertar_nave()</span>
+<span id="cb46-17"><a></a>                <span class="cf">break</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="game-over" class="slide level2">
+<h2>Game Over!</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb47" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a></a></span>
+<span id="cb47-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb47-3"><a></a>        <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb47-4"><a></a></span>
+<span id="cb47-5"><a></a>        <span class="co"># Inicializa o jogo em um estado ativo</span></span>
+<span id="cb47-6"><a></a>        <span class="va">self</span>.jogo_ativo <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb47-7"><a></a>    </span>
+<span id="cb47-8"><a></a>    <span class="co"># -- trecho de código omitido --</span></span>
+<span id="cb47-9"><a></a></span>
+<span id="cb47-10"><a></a>    <span class="kw">def</span> _acertar_nave(<span class="va">self</span>):</span>
+<span id="cb47-11"><a></a>        <span class="co">""" Responde a uma colisão entre a nave e um alien. """</span></span>
+<span id="cb47-12"><a></a>        <span class="cf">if</span> <span class="va">self</span>.estatisticas.naves_restantes <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb47-13"><a></a>            <span class="va">self</span>.jogo_ativo <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb47-14"><a></a>            <span class="cf">return</span></span>
+<span id="cb47-15"><a></a>        </span>
+<span id="cb47-16"><a></a>        <span class="co"># -- trecho de código omitido --</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-16" class="slide level2">
+<h2></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>invasao_alien.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb48" data-filename="invasao_alien.py"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a></a>    <span class="kw">def</span> executar_jogo(<span class="va">self</span>):</span>
+<span id="cb48-2"><a></a>        <span class="co">"""Inicia o loop principal do jogo."""</span></span>
+<span id="cb48-3"><a></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb48-4"><a></a>            <span class="va">self</span>._verificar_eventos()</span>
+<span id="cb48-5"><a></a>            </span>
+<span id="cb48-6"><a></a>            <span class="cf">if</span> <span class="va">self</span>.jogo_ativo:</span>
+<span id="cb48-7"><a></a>                <span class="va">self</span>.nave.atualizar()</span>
+<span id="cb48-8"><a></a>                <span class="va">self</span>._atualizar_projeteis()</span>
+<span id="cb48-9"><a></a>                <span class="va">self</span>._atualizar_aliens()</span>
+<span id="cb48-10"><a></a></span>
+<span id="cb48-11"><a></a>            <span class="va">self</span>._atualizar_tela()</span>
+<span id="cb48-12"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exemplos-dentro-do-pygame" class="slide level2">
+<h2>Exemplos dentro do pygame</h2>
+</section>
+<section id="tutoriais" class="slide level2">
+<h2>Tutoriais</h2>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="imagens/logo_UFLA.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiada");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiada");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
