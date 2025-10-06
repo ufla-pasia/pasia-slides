@@ -536,7 +536,7 @@ class InvasaoAlien:
 ```{.python filename="invasao_alien.py" code-line-numbers="3-8"}
     def _verificar_eventos(self):
             # -- trecho de código omitido --  
-            elif evento.type == pygame.KEYDOWN:
+            if evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_LEFT:
                     self.nave.movendo_esquerda = True
             elif evento.type == pygame.KEYUP:
