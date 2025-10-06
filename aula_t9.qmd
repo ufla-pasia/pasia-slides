@@ -14,7 +14,7 @@ O conteúdo dessa aula é baseado nos **capítulos 9, 12 e 13** do livro:
 
 Nessa aula nós vamos [desenvolver um jogo]{.alert} usando a biblioteca [`pygame`]{.alert}.
 
-- Para desenvolver o jogo usaremos conceitos de POO: [Programação Orientada a Objetos]{.alert}.
+- E, para isso,  usaremos conceitos de POO: [Programação Orientada a Objetos]{.alert}.
 
 . . .
 
@@ -109,14 +109,14 @@ e como ele vai funcionar.
 Mas a descrição completa do jogo, dada no livro é:
 
 ::: {.callout-note title="Planejamento do Jogo" icon="false" .nonincremental .smaller}
-No jogo _Invasão Alienígena_, o jogador controla uma nave que apareceno centro inferir da tela.
+No jogo _Invasão Alienígena_, o jogador controla uma nave que aparece no centro inferior da tela.
 O jogador pode controlar a nave para a direita e para a esquerda, usando as setas do teclado e
 atirar usando a barra de espaço. Quando o jogo começa, um esquadrão de alienígenas toma conta do
 céu, deloscando-se para a esquerda e para a direita, enquanto desce pela tela. O jogador pode
 destruir os alienígenas ao disparar. Se o jogador destruir todos os alienígenas, aparece um
 novo esquadrão que se desloca mais rápido que o esquadrão anterior. Se algum alienígena 
 encostar na nave do jogador ou chegar à parte inferior da tela, o jogador perde uma nave.
-O jogo termina quando o jogador perder três naves.
+O jogo termina quando o jogador perde três naves.
 :::
 
 ## Instalando PyGame
@@ -181,7 +181,7 @@ Destaques no código:
   declarar um parâmetro chamado `self`.
   - `self` é o equivalente ao `this` do Java.
 - Os atributos da classe são criados dinamicamente.
-  - Eles não são previamente declaradas como em Java.
+  - Eles não são previamente declarados como em Java.
   - Assim, um atributo pode ser criado em qualquer método, mas, recomenda-se 
     criá-los no construtor da classe.
 
@@ -261,7 +261,7 @@ Destaques no código:
                 if evento.type == pygame.QUIT:
                     sys.exit()
             
-            # Redesenha a tela a cada passagem pelo loop.
+            # Redesenha a tela a cada passada do loop.
             self.tela.fill(self.cor_fundo)
 
             pygame.display.flip()
@@ -308,7 +308,7 @@ class InvasaoAlien:
     def executar_jogo(self):
             # -- trecho de código omitido -- 
             
-            # Redesenha a tela a cada passagem pelo loop.
+            # Redesenha a tela a cada passada do loop.
             self.tela.fill(self.config.cor_fundo)
 
             pygame.display.flip()
@@ -375,7 +375,7 @@ class Nave:
         self.tela = jogo.tela
         self.ret_tela = jogo.tela.get_rect()                          # 1
 
-        # Sobe a imagem da nave e obtém seu retângulo.
+        # Carrega a imagem da nave e obtém seu retângulo.
         # Método convert é importante para melhorar desempenho!       
         self.imagem = pygame.image.load('imagens/nave.png').convert() # 2
         self.ret = self.imagem.get_rect()
@@ -418,7 +418,7 @@ class InvasaoAlien:
         
     def executar_jogo(self):
             # -- trecho de código omitido -- 
-            # Redesenha a tela a cada passagem pelo loop.
+            # Redesenha a tela a cada passada do loop.
             self.tela.fill(self.config.cor_fundo)
             self.nave.desenhar()
 ```
@@ -462,7 +462,7 @@ class InvasaoAlien:
                     self.nave.ret.x += 1
 ```
 
-- Verificamo se um dos eventos é uma tecla pressionada.
+- Verificamos se um dos eventos é uma tecla pressionada.
 - Se a tecla pressionada for a seta para a direita, movemos a nave 1 pixel para a direita.
   - Até aqui precisamos ficar pressionando a tecla para mover a nave.
 
@@ -485,7 +485,7 @@ class InvasaoAlien:
 ```
 
 - Definimos um atributo para indicar se a nave está se movendo para a direita.
-- Na classe `InvasaoAlien`, vamos chamar atualizar a cada passo do loop do jogo.
+- Criamos um método `atualizar` que vai ser chamado a cada passo do loop na classe `InvasaoAlien`.
 
 ## Movimento contínuo
 
@@ -558,6 +558,8 @@ class InvasaoAlien:
 - Vamos incrementar por esse valor em vez de 1 a cada passo do loop do jogo.
 - Vamos criar um atributo na nave para guardar a posição da nave com o tipo `float`
   para dar mais precisão ao movimento.
+  - O atributo `x` guardará a posição mais precisa.
+  - E o atributo `ret.x` continuará guardando a posição arredondada para desenhar a nave.
 
 ##
 
@@ -721,10 +723,7 @@ class Projetil(Sprite):
         self.y = float(self.ret.y)
 
     def update(self):
-        """ Move o projétil para cima na tela. 
-            Exemplo de sobrescrita de método.
-            Útil para usarmos em um grupo de sprites.
-        """
+        """ Move o projétil para cima na tela. """
         # Atualiza a posição exata do projétil.
         self.y -= self.config.velocidade_projetil
         # Atualiza a posição do retângulo.
@@ -823,7 +822,7 @@ class InvasaoAlien:
 ```
 
 1. Fazemos cópia para conserguirmos remover dentro do loop.
-2. **Atenção**: `print` deve ser removido depois de testar! Afeta o desempenho.
+2. **Atenção**: `print` deve ser removido depois de testar! Pois afeta o desempenho.
 
 ## Limitando o número de projéteis
 
@@ -872,7 +871,7 @@ class InvasaoAlien:
 
 ##
 
-Vamos agora adicionar os inimgos do jogo: os alienígenas.
+Vamos agora adicionar os inimigos do jogo: os alienígenas.
 
 - Vamos definir uma classe para representar um alienígena.
 - Depois vamos criar um esquadrão de alienígenas.

@@ -3,6 +3,14 @@ title: Desenvolvendo Jogos
 subtitle: PASIA - Aula P.9
 ---
 
+##  
+
+Os exercícios dessa aula são baseados no **capítulo 14** do livro:
+
+
+![](imagens/livro_curso_intensivo_python.jpg){fig-align="center" fig-alt="Capa do livro de Curso Intensivo de Python." style="max-height: 50vh; width: auto;"}
+
+
 ##
 
 Na aula passada conhecemos o módulo `pygame`, que é uma biblioteca para desenvolvimento de jogos em Python.
