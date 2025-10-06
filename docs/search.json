@@ -6822,14 +6822,14 @@
     "href": "aula_t9.html#configurando-descida-e-mudança-de-direção",
     "title": "Desenvolvendo Jogos e POO",
     "section": "Configurando descida e mudança de direção",
-    "text": "Configurando descida e mudança de direção\n\n\nconfig.py\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Configurações dos aliens\n        self.velocidade_alien = 1.0\n        self.velocidade_descida_esquadrao = 10.0\n        self.direcao_esquadrao = 1  # 1 representa a direita; -1 representa a esquerda"
+    "text": "Configurando descida e mudança de direção\n\n\nconfig.py\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Configurações dos aliens\n        self.velocidade_alien = 1.0\n        self.velocidade_descida_esquadrao = 10.0\n        self.direcao_esquadrao = 1  # 1 representa a direita; -1 representa a esquerda\n\n\nConfiguramos o quanto os aliens descem quando atingem uma borda.\nE usamos um valor inteiro para a direção.\n\nPois aí podemos simplesmente multiplicar a velocidade pela direção, em vez de fazer uma verificação condicional."
   },
   {
     "objectID": "aula_t9.html#tratando-direção-e-criando-método-para-verificar-borda",
     "href": "aula_t9.html#tratando-direção-e-criando-método-para-verificar-borda",
     "title": "Desenvolvendo Jogos e POO",
     "section": "Tratando direção e criando método para verificar borda",
-    "text": "Tratando direção e criando método para verificar borda\n\n\nalien.py\n\n    def update(self):\n        \"\"\" Move o alien para a direita ou para a esquerda. \"\"\"\n        self.x += self.config.velocidade_alien * self.config.direcao_esquadrao\n        self.rect.x = self.x\n    \n    def verificar_borda(self):\n        \"\"\" Retorna True se o alien estiver na borda da tela. \"\"\"\n        ret_tela = self.tela.get_rect()\n        return self.rect.right &gt;= ret_tela.right or self.rect.left &lt;= 0\n\n\nO método verificar_borda() será usado na classe InvasaoAlien.\n\nSe um dos aliens atingir uma borda, o esquadrão deve descer e mudar de direção."
+    "text": "Tratando direção e criando método para verificar borda\n\n\nalien.py\n\n    def update(self):\n        \"\"\" Move o alien para a direita ou para a esquerda. \"\"\"\n        self.x += self.config.velocidade_alien * self.config.direcao_esquadrao\n        self.rect.x = self.x\n    \n    def verificar_borda(self):\n        \"\"\" Retorna True se o alien estiver na borda da tela. \"\"\"\n        ret_tela = self.tela.get_rect()\n        return self.rect.right &gt;= ret_tela.right or self.rect.left &lt;= 0\n\n\nO método verificar_borda() será usado na classe InvasaoAlien.\n\nSe um dos aliens atingir uma borda, todo o esquadrão deve descer e mudar de direção."
   },
   {
     "objectID": "aula_t9.html#fazendo-a-frota-descer-e-mudar-de-direção",
@@ -6843,7 +6843,7 @@
     "href": "aula_t9.html#detectando-colisões-de-projéteis",
     "title": "Desenvolvendo Jogos e POO",
     "section": "Detectando colisões de projéteis",
-    "text": "Detectando colisões de projéteis\n\n\ninvasao_alien.py\n\n    def _atualizar_projeteis(self):\n        # -- trecho de código omitido --\n\n        # Verifica se algum projétil atingiu um alien.\n        # Se sim, descarta tanto o projétil quanto o alien.\n        colisoes = pygame.sprite.groupcollide(\n            self.projeteis, self.aliens, True, True)\n\n\ngroupcollide() detecta colisões entre dois grupos.\nOs dois últimos argumentos indicam se os objetos envolvidos na colisão devem ser removidos.\n\nNo nosso caso, tanto o projétil quanto o alien são removidos."
+    "text": "Detectando colisões de projéteis\n\n\ninvasao_alien.py\n\n    def _atualizar_projeteis(self):\n        # -- trecho de código omitido --\n\n        # Verifica se algum projétil atingiu um alien.\n        # Se sim, descarta tanto o projétil quanto o alien.\n        colisoes = pygame.sprite.groupcollide(\n            self.projeteis, self.aliens, True, True)\n\n\ngroupcollide() detecta colisões entre dois grupos de sprites.\nOs dois últimos argumentos indicam se os objetos envolvidos na colisão devem ser removidos.\n\nNo nosso caso, tanto o projétil quanto o alien são removidos."
   },
   {
     "objectID": "aula_t9.html#section-9",
@@ -6878,7 +6878,7 @@
     "href": "aula_t9.html#detectando-colisões-entre-naves-e-aliens",
     "title": "Desenvolvendo Jogos e POO",
     "section": "Detectando colisões entre naves e aliens",
-    "text": "Detectando colisões entre naves e aliens\n\n\ninvasao_alien.py\n\n\n# -- trecho de código omitido --\n    def _atualizar_aliens(self):\n        \"\"\" Verifica se o esquadrão está na borda e atualiza as posições dos aliens. \"\"\"\n        self._verificar_bordas_esquadrao()\n        self.aliens.update()\n\n        # Detecta colisões entre a nave e os aliens.\n        if pygame.sprite.spritecollideany(self.nave, self.aliens):\n            print(\"A nave foi atingida!\")\n\n\nspritecollideany() verifica se um Sprite colidiu com qualquer sprite em um grupo.\nPor enquanto estamos apenas testando a colisão.\nPode ser interessante mudar a velocidade dos aliens para testar."
+    "text": "Detectando colisões entre naves e aliens\n\n\ninvasao_alien.py\n\n\n# -- trecho de código omitido --\n    def _atualizar_aliens(self):\n        \"\"\" Verifica se o esquadrão está na borda e atualiza as posições dos aliens. \"\"\"\n        self._verificar_bordas_esquadrao()\n        self.aliens.update()\n\n        # Detecta colisões entre a nave e os aliens.\n        if pygame.sprite.spritecollideany(self.nave, self.aliens):\n            print(\"A nave foi atingida!\")\n\n\nspritecollideany() verifica se um Sprite colidiu com algum sprite de um grupo.\nPor enquanto estamos apenas testando a colisão.\nObs.: pode ser interessante mudar a velocidade dos aliens para facilitar os testes."
   },
   {
     "objectID": "aula_t9.html#section-10",
@@ -6920,7 +6920,7 @@
     "href": "aula_t9.html#game-over",
     "title": "Desenvolvendo Jogos e POO",
     "section": "Game Over!",
-    "text": "Game Over!\n\n\ninvasao_alien.py\n\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Inicializa o jogo em um estado ativo\n        self.jogo_ativo = True\n    \n    # -- trecho de código omitido --\n\n    def _acertar_nave(self):\n        \"\"\" Responde a uma colisão entre a nave e um alien. \"\"\"\n        if self.estatisticas.naves_restantes &lt;= 0:\n            self.jogo_ativo = False\n            return\n        \n        # -- trecho de código omitido --"
+    "text": "Game Over!\n\n\ninvasao_alien.py\n\n\n    def __init__(self):\n        # -- trecho de código omitido --\n\n        # Inicializa o jogo em um estado ativo\n        self.jogo_ativo = True\n    \n    # -- trecho de código omitido --\n\n    def _acertar_nave(self):\n        \"\"\" Responde a uma colisão entre a nave e um alien. \"\"\"\n        if self.estatisticas.naves_restantes &lt;= 0:\n            self.jogo_ativo = False\n            return\n        \n        # -- trecho de código omitido --\n\n\nCriamos um atributo para indicar se o jogo está ativo ou se terminou."
   },
   {
     "objectID": "aula_t9.html#section-13",
@@ -6969,7 +6969,7 @@
     "href": "aula_t9.html#section-15",
     "title": "Desenvolvendo Jogos e POO",
     "section": "",
-    "text": "invasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            self.nave.atualizar()\n            self._atualizar_projeteis()\n            self._atualizar_aliens()\n            self._atualizar_tela()\n            self.clock.tick(60)\n\n    def _atualizar_aliens(self):\n        \"\"\"Atualiza as posições de todos os aliens do esquadrão.\"\"\"\n        self.aliens.update()"
+    "text": "invasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            self.nave.atualizar()\n            self._atualizar_projeteis()\n            self._atualizar_aliens()\n            self._atualizar_tela()\n            self.clock.tick(60)\n\n    def _atualizar_aliens(self):\n        \"\"\"Atualiza as posições de todos os aliens do esquadrão.\"\"\"\n        self.aliens.update()\n\n\nAté aqui os aliens se movem para a direita e continuam se movendo mesmo depois de saírem da tela.\nNo próximo passo vamos fazer o esquadrão descer e mudar de direção."
   },
   {
     "objectID": "aula_t9.html#sites-de-sprites-gratuitos",
@@ -7011,7 +7011,7 @@
     "href": "aula_t9.html#section-17",
     "title": "Desenvolvendo Jogos e POO",
     "section": "",
-    "text": "Aqui, novamente, precisaremos usar atributo com nome rect em vez de ret.\n\nDevido ao duck typing do Python, lembra?\n\n\nSe estiver usando um linter como o pylance você verá um warning em self.nave."
+    "text": "Aqui, novamente, precisaremos usar atributo com nome rect em vez de ret.\n\nDevido ao duck typing do Python, lembra?\n\n\nDica: se estiver usando um linter como o pylance você verá um warning em self.nave."
   },
   {
     "objectID": "aula_t9.html#section-18",
@@ -7053,7 +7053,7 @@
     "href": "aula_t9.html#section-20",
     "title": "Desenvolvendo Jogos e POO",
     "section": "",
-    "text": "Temos agora uma versão jogável do Invasão Alienígena.\n\nMas ainda temos muito o que melhorar.\nPrecisamos fazer com que os aliens fiquem mais rápidos a cada esquadrão destruído.\nPrecisamos também adicionar pontuação, por exemplo.\n\n\nFaremos isso na próxima aula."
+    "text": "Temos agora uma versão jogável do Invasão Alienígena.\n\nMas ainda temos muito o que melhorar.\nPrecisamos fazer com que os aliens fiquem mais rápidos a cada esquadrão destruído.\nPrecisamos também adicionar pontuação, por exemplo.\n\n\nFaremos essas e outras melhorias na próxima aula."
   },
   {
     "objectID": "aula_t9.html#criando-a-classe-nave-1",
@@ -7102,14 +7102,14 @@
     "href": "aula_t9.html#criando-a-classe-alien-1",
     "title": "Desenvolvendo Jogos e POO",
     "section": "Criando a classe Alien",
-    "text": "Criando a classe Alien\nAqui temos uma observação muito importante:\n\nO atributo da imagem do alien deve ser chamado image.\nE o do retângulo do alien rect.\n\n\nNecessários para que possamos usar grupos de sprites do pygame.\n\n\nIsso tem relação com o duck typing do Python."
+    "text": "Criando a classe Alien\nAqui temos uma observação muito importante:\n\nO atributo da imagem do alien deve ser chamado image.\nE o do retângulo do alien rect.\n\n\nNecessários para que possamos usar grupos de sprites do pygame.\n\n\nIsso tem relação com o conceito de duck typing do Python."
   },
   {
     "objectID": "aula_t9.html#duck-typing-em-python",
     "href": "aula_t9.html#duck-typing-em-python",
     "title": "Desenvolvendo Jogos e POO",
     "section": "Duck Typing em Python",
-    "text": "Duck Typing em Python\nSe um objeto tem os atributos e métodos esperados, ele pode ser usado.\n\nNão importa a classe do objeto.\n\n\nPortanto, não precisamos definir uma interface,\n\npois o Python se baseia no comportamento do objeto e não em tipos explícitos."
+    "text": "Duck Typing em Python\nSe um objeto tem os atributos e métodos esperados, ele pode ser usado.\n\nNão importa a classe do objeto.\n\n\nPortanto, não precisamos definir uma interface,\n\npois o Python se baseia no comportamento do objeto e não em tipos explícitos.\n\n\n\nVeja mais detalhes na conversa com o ChatGPT mencionada antes."
   },
   {
     "objectID": "aula_t9.html#criando-classe-estatisticas-antes-de-tratar-a-colisão",
@@ -7130,7 +7130,7 @@
     "href": "aula_t9.html#parando-execução-de-partes-do-jogo-no-game-over",
     "title": "Desenvolvendo Jogos e POO",
     "section": "Parando execução de partes do jogo no Game Over",
-    "text": "Parando execução de partes do jogo no Game Over\n\n\ninvasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            \n            if self.jogo_ativo:\n                self.nave.atualizar()\n                self._atualizar_projeteis()\n                self._atualizar_aliens()\n\n            self._atualizar_tela()\n            self.clock.tick(60)"
+    "text": "Parando execução de partes do jogo no Game Over\n\n\ninvasao_alien.py\n\n    def executar_jogo(self):\n        \"\"\"Inicia o loop principal do jogo.\"\"\"\n        while True:\n            self._verificar_eventos()\n            \n            if self.jogo_ativo:\n                self.nave.atualizar()\n                self._atualizar_projeteis()\n                self._atualizar_aliens()\n\n            self._atualizar_tela()\n            self.clock.tick(60)\n\n\nUsamos o atributo para que as atualizações do jogo parem."
   },
   {
     "objectID": "aula_p9.html#section",

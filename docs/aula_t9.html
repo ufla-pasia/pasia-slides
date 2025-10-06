@@ -1533,7 +1533,7 @@
 <li class="fragment">Necessários para que possamos usar grupos de sprites do <code>pygame</code>.</li>
 </ul>
 <div class="fragment">
-<p>Isso tem relação com o <em>duck typing</em> do Python.</p>
+<p>Isso tem relação com o conceito de <span class="alert"><em>duck typing</em></span> do Python.</p>
 </div>
 </section>
 <section id="duck-typing-em-python" class="slide level2">
@@ -1547,6 +1547,9 @@
 <ul>
 <li class="fragment">pois o Python se baseia no comportamento do objeto e não em tipos explícitos.</li>
 </ul>
+</div>
+<div class="fragment">
+<p>Veja mais detalhes na <a href="https://chatgpt.com/share/68e3b321-d30c-800e-a4dd-4fea8caf87f1">conversa com o ChatGPT</a> mencionada antes.</p>
 </div>
 </section>
 <section id="criando-uma-instância-do-alienígena" class="slide level2">
@@ -1695,6 +1698,10 @@
 <span id="cb34-12"><a></a>        <span class="co">"""Atualiza as posições de todos os aliens do esquadrão."""</span></span>
 <span id="cb34-13"><a></a>        <span class="va">self</span>.aliens.update()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li class="fragment">Até aqui os aliens se movem para a direita e continuam se movendo mesmo depois de saírem da tela.</li>
+<li class="fragment">No próximo passo vamos fazer o esquadrão descer e mudar de direção.</li>
+</ul>
 </section>
 <section id="configurando-descida-e-mudança-de-direção" class="slide level2">
 <h2>Configurando descida e mudança de direção</h2>
@@ -1710,6 +1717,13 @@
 <span id="cb35-6"><a></a>        <span class="va">self</span>.velocidade_descida_esquadrao <span class="op">=</span> <span class="fl">10.0</span></span>
 <span id="cb35-7"><a></a>        <span class="va">self</span>.direcao_esquadrao <span class="op">=</span> <span class="dv">1</span>  <span class="co"># 1 representa a direita; -1 representa a esquerda</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li class="fragment">Configuramos o quanto os aliens descem quando atingem uma borda.</li>
+<li class="fragment">E usamos um valor inteiro para a direção.
+<ul>
+<li class="fragment">Pois aí podemos simplesmente multiplicar a velocidade pela direção, em vez de fazer uma verificação condicional.</li>
+</ul></li>
+</ul>
 </section>
 <section id="tratando-direção-e-criando-método-para-verificar-borda" class="slide level2">
 <h2>Tratando direção e criando método para verificar borda</h2>
@@ -1730,7 +1744,7 @@
 <ul>
 <li class="fragment">O método <code>verificar_borda()</code> será usado na classe <code>InvasaoAlien</code>.
 <ul>
-<li class="fragment">Se um dos aliens atingir uma borda, o esquadrão deve descer e mudar de direção.</li>
+<li class="fragment">Se um dos aliens atingir uma borda, todo o esquadrão deve descer e mudar de direção.</li>
 </ul></li>
 </ul>
 </section>
@@ -1779,7 +1793,7 @@
 <span id="cb38-7"><a></a>            <span class="va">self</span>.projeteis, <span class="va">self</span>.aliens, <span class="va">True</span>, <span class="va">True</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li class="fragment"><code>groupcollide()</code> detecta colisões entre dois grupos.</li>
+<li class="fragment"><code>groupcollide()</code> detecta colisões entre dois grupos de sprites.</li>
 <li class="fragment">Os dois últimos argumentos indicam se os objetos envolvidos na colisão devem ser removidos.
 <ul>
 <li class="fragment">No nosso caso, tanto o projétil quanto o alien são removidos.</li>
@@ -1897,9 +1911,9 @@
 <span id="cb42-10"><a></a>            <span class="bu">print</span>(<span class="st">"A nave foi atingida!"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li class="fragment"><code>spritecollideany()</code> verifica se um <code>Sprite</code> colidiu com qualquer sprite em um grupo.</li>
+<li class="fragment"><code>spritecollideany()</code> verifica se um <code>Sprite</code> colidiu com algum sprite de um grupo.</li>
 <li class="fragment">Por enquanto estamos apenas testando a colisão.</li>
-<li class="fragment">Pode ser interessante mudar a velocidade dos aliens para testar.</li>
+<li class="fragment">Obs.: pode ser interessante mudar a velocidade dos aliens para facilitar os testes.</li>
 </ul>
 </section>
 <section id="section-17" class="slide level2">
@@ -1909,7 +1923,7 @@
 <li class="fragment">Devido ao <em>duck typing</em> do Python, lembra?</li>
 </ul>
 <div class="fragment">
-<p>Se estiver usando um <em>linter</em> como o <code>pylance</code> você verá um warning em <code>self.nave</code>.</p>
+<p>Dica: se estiver usando um <em>linter</em> como o <code>pylance</code> você verá um warning em <code>self.nave</code>.</p>
 </div>
 </section>
 <section id="criando-classe-estatisticas-antes-de-tratar-a-colisão" class="slide level2">
@@ -2057,6 +2071,9 @@
 <span id="cb48-15"><a></a>        </span>
 <span id="cb48-16"><a></a>        <span class="co"># -- trecho de código omitido --</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li class="fragment">Criamos um atributo para indicar se o jogo está ativo ou se terminou.</li>
+</ul>
 </section>
 <section id="parando-execução-de-partes-do-jogo-no-game-over" class="slide level2">
 <h2>Parando execução de partes do jogo no Game Over</h2>
@@ -2077,6 +2094,9 @@
 <span id="cb49-11"><a></a>            <span class="va">self</span>._atualizar_tela()</span>
 <span id="cb49-12"><a></a>            <span class="va">self</span>.clock.tick(<span class="dv">60</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li class="fragment">Usamos o atributo para que as atualizações do jogo parem.</li>
+</ul>
 </section>
 <section id="section-20" class="slide level2">
 <h2></h2>
@@ -2087,7 +2107,7 @@
 <li class="fragment">Precisamos também adicionar pontuação, por exemplo.</li>
 </ul>
 <div class="fragment">
-<p>Faremos isso na próxima aula.</p>
+<p>Faremos essas e outras melhorias na próxima aula.</p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="imagens/logo_UFLA.png" class="slide-logo"></p>

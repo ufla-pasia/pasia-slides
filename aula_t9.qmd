@@ -916,7 +916,7 @@ Aqui temos uma observação muito importante:
 
 . . .
 
-Isso tem relação com o _duck typing_ do Python.
+Isso tem relação com o conceito de [_duck typing_]{.alert} do Python.
 
 ## _Duck Typing_ em Python
 
@@ -929,6 +929,11 @@ Se um objeto tem os atributos e métodos esperados, ele pode ser usado.
 Portanto, não precisamos definir uma interface, 
 
 - pois o Python se baseia no comportamento do objeto e não em tipos explícitos. 
+
+. . .
+
+Veja mais detalhes na [conversa com o ChatGPT](https://chatgpt.com/share/68e3b321-d30c-800e-a4dd-4fea8caf87f1)
+mencionada antes.
 
 ## Criando uma instância do alienígena
 
@@ -1056,6 +1061,10 @@ class InvasaoAlien:
         self.aliens.update()
 ```
 
+- Até aqui os aliens se movem para a direita e continuam se 
+  movendo mesmo depois de saírem da tela.
+- No próximo passo vamos fazer o esquadrão descer e mudar de direção.
+
 ## Configurando descida e mudança de direção
 
 ```{.python filename="config.py"}
@@ -1067,6 +1076,11 @@ class InvasaoAlien:
         self.velocidade_descida_esquadrao = 10.0
         self.direcao_esquadrao = 1  # 1 representa a direita; -1 representa a esquerda
 ```
+
+- Configuramos o quanto os aliens descem quando atingem uma borda.
+- E usamos um valor inteiro para a direção.
+  - Pois aí podemos simplesmente multiplicar a velocidade pela direção,
+    em vez de fazer uma verificação condicional.
 
 ## Tratando direção e criando método para verificar borda
 
@@ -1083,7 +1097,7 @@ class InvasaoAlien:
 ```
 
 - O método `verificar_borda()` será usado na classe `InvasaoAlien`.
-  - Se um dos aliens atingir uma borda, o esquadrão deve descer e mudar de direção.
+  - Se um dos aliens atingir uma borda, todo o esquadrão deve descer e mudar de direção.
 
 ## Fazendo a frota descer e mudar de direção
 
@@ -1121,7 +1135,7 @@ class InvasaoAlien:
             self.projeteis, self.aliens, True, True)
 ```
 
-- `groupcollide()` detecta colisões entre dois grupos.
+- `groupcollide()` detecta colisões entre dois grupos de sprites.
 - Os dois últimos argumentos indicam se os objetos envolvidos na colisão devem ser removidos.
   - No nosso caso, tanto o projétil quanto o alien são removidos.
 
@@ -1224,9 +1238,9 @@ A principal funcionalidade do jogo é que os alienígenas são implacáveis.
 ```
 
 
-- `spritecollideany()` verifica se um `Sprite` colidiu com qualquer sprite em um grupo.
+- `spritecollideany()` verifica se um `Sprite` colidiu com algum sprite de um grupo.
 - Por enquanto estamos apenas testando a colisão.
-- Pode ser interessante mudar a velocidade dos aliens para testar. 
+- Obs.: pode ser interessante mudar a velocidade dos aliens para facilitar os testes. 
 
 ##
 
@@ -1236,7 +1250,7 @@ Aqui, novamente, precisaremos usar atributo com nome `rect` em vez de `ret`.
 
 . . .
 
-Se estiver usando um _linter_ como o `pylance` você verá um warning em `self.nave`.
+Dica: se estiver usando um _linter_ como o `pylance` você verá um warning em `self.nave`.
 
 
 ## Criando classe `Estatisticas` antes de tratar a colisão
@@ -1370,6 +1384,8 @@ Repare que sempre usamos a mesma instância da nave.
         # -- trecho de código omitido --
 ```
 
+- Criamos um atributo para indicar se o jogo está ativo ou se terminou.
+
 ## Parando execução de partes do jogo no Game Over
 
 ```{.python filename="invasao_alien.py" code-line-numbers="6-9"}
@@ -1387,6 +1403,8 @@ Repare que sempre usamos a mesma instância da nave.
             self.clock.tick(60)
 ```
 
+- Usamos o atributo para que as atualizações do jogo parem.
+
 ##
 
 Temos agora uma versão jogável do Invasão Alienígena.
@@ -1397,7 +1415,7 @@ Temos agora uma versão jogável do Invasão Alienígena.
 
 . . .
 
-Faremos isso na próxima aula.
+Faremos essas e outras melhorias na próxima aula.
 
 
 
