@@ -12,7 +12,7 @@ O conteúdo dessa aula é baseado nos **capítulos 9, 12 e 13** do livro:
 
 ##
 
-Nessa aula nós vamos [desenvolver um jogo]{.alert} usando a biblioteca `pygame`.
+Nessa aula nós vamos [desenvolver um jogo]{.alert} usando a biblioteca [`pygame`]{.alert}.
 
 - Para desenvolver o jogo usaremos conceitos de POO: [Programação Orientada a Objetos]{.alert}.
 
@@ -21,7 +21,7 @@ Nessa aula nós vamos [desenvolver um jogo]{.alert} usando a biblioteca `pygame`
 Usaremos POO porque um jogo é um projeto bem mais complexo do que os
 exemplos que vimos na disciplina até agora.
 
-- Em vez de apresentar como se implementa OO em Python e depois desenvolver o jogo,
+- Mas, em vez de apresentar como se implementa OO em Python e depois desenvolver o jogo,
 - vamos aprender a usar OO à medida que o jogo é desenvolvido.
 
 # Ideias sobre o formato da aula {background-color="#40666e"}
@@ -34,11 +34,13 @@ Ao preparar a aula, estudei os capítulos do livro.
 
 . . .
 
-Testei primeiro com o Copilot e depois com o ChatGPT.
+Testei primeiro o Copilot e depois o ChatGPT.
 
 - Apresento a seguir um resumo dessas tentativas.
 
-## Experimentando com Copilot com GPT 4.1 no modo Ask
+## Experimentando o Copilot
+
+_(com GPT 4.1 no modo Ask)_
 
 ::: {.callout-caution title="Prompt" icon="false"}
 Gostaria de iniciar uma sessão interativa para aprender a usar a biblioteca pygame para desenvolver um jogo 2D em Python. Nesta seção considere que conheço o básico de Python, mas nunca utilizei Orientação a Objetos nessa linguagem (eu aprendi usando Java). Gostaria que o jogo fosse construído um passo de cada vez, de forma bem didática. O jogo se chamará Invasão Alienígena. O jogador controlará uma nave que ficará na parte inferior da tela e poderá se movimentar da direita para a esquerda. A nave consegue atirar. Os inimigos são naves alienígenas que aparecem no topo da tela e se movimentam lateralmente, hora para esquerda, hora para a direita e também se movimentam verticalmente, descendo em direção à nave do jogador. Se as nave alienígenas atingirem a nave do jogador, o jogo termina. Se o tiro da nave do jogador atinge uma nave alienígena, ela é eliminada.
@@ -57,10 +59,10 @@ Cliquei em `Rerun without`
 
 - Aí sim, o jogo começou a ser gerado em um processo interativo.
 - E eu podia direcionar a sequência da conversa pedindo mais ou menos detalhes.
-- Mas percebi que o resultado não era tão bom quanto os capítulos de livro
-  - Muita coisa era feita de forma direta, sem uma explicação clara.
+- Mas o resultado não era tão bom quanto os capítulos de livro, pois muita coisa 
+  era feita de forma direta, sem uma explicação clara.
 
-## Experimentando com ChatGPT
+## Experimentando o ChatGPT
 
 Experimentei o mesmo prompt no ChatGPT (veja [aqui](https://chatgpt.com/share/68e1078b-4544-800e-a468-29bfe8b4b34b)).
 
@@ -73,27 +75,60 @@ Experimentei o mesmo prompt no ChatGPT (veja [aqui](https://chatgpt.com/share/68
 
 Mas, no geral, o material do livro era realmente bem mais didático.
 
-- E usava construções / funcionalidades importantes do pygame.
-- que eram ignoradas nas sessões com Assitentes de AI.
+- E usava construções e funcionalidades importantes do pygame que 
+  eram ignoradas nas sessões com Assitentes de AI.
 
 . . .
 
-Decidi então basear a aula nos capítulos do livro.
+Eu poderia tentar uma **Engenharia de Prompt** para melhorar o resultado.
 
+- Mas acabei decidindo basear a aula nos capítulos do livro mesmo.
 - E, na Aula Prática, a ideia é que vocês incrementem o jogo com ajuda do Copilot.
 
 # Invasão Alienígena {background-color="#40666e"}
 
 ## Planejando seu projeto
 
-Importância de definir bem o que se quer desenvolver antes de sair fazendo.
+. . .
+
+Antes de começar um projeto maior como um jogo,
+
+- é essencial definir bem o que se quer desenvolver.
+
+. . .
+
+No caso de um jogo, isso significa saber exatamente que jogo se quer desenvolver
+e como ele vai funcionar.
+
+- Para o nosso exemplo, o jogo será uma versão simplificada do clássico
+  _Space Invaders_.
+- A descrição dada no prompt usado com os Assistentes de AI é um começo.
+
+##
+
+Mas a descrição completa do jogo, dada no livro é:
+
+::: {.callout-note title="Planejamento do Jogo" icon="false" .nonincremental .smaller}
+No jogo _Invasão Alienígena_, o jogador controla uma nave que apareceno centro inferir da tela.
+O jogador pode controlar a nave para a direita e para a esquerda, usando as setas do teclado e
+atirar usando a barra de espaço. Quando o jogo começa, um esquadrão de alienígenas toma conta do
+céu, deloscando-se para a esquerda e para a direita, enquanto desce pela tela. O jogador pode
+destruir os alienígenas ao disparar. Se o jogador destruir todos os alienígenas, aparece um
+novo esquadrão que se desloca mais rápido que o esquadrão anterior. Se algum alienígena 
+encostar na nave do jogador ou chegar à parte inferior da tela, o jogador perde uma nave.
+O jogo termina quando o jogador perder três naves.
+:::
 
 ## Instalando PyGame
 
 Pygame não é um módulo _built-in_, portanto, precisa ser instalado.
 
+- Logo, vamos usar a estratégia de criar um arqiuvo `requirements.txt`.
+- E instalar o pygame em um ambiente virtual.
+
 ## Iniciando o Projeto do Jogo
 
+::: {.r-fit-code .nonincremental}
 ```{.python filename="invasao_alien.py"}
 import sys
 
@@ -104,39 +139,85 @@ class InvasaoAlien:
 
     def __init__(self):
         """Inicializa o jogo e cria os recursos do jogo."""
-        pygame.init()                                      # <1>
+        pygame.init()                                      # 1
 
-        self.tela = pygame.display.set_mode((1200, 800))   # <2>
+        self.tela = pygame.display.set_mode((1200, 800))   # 2
         pygame.display.set_caption("Invasão Alienígena")
         
     def executar_jogo(self):
         """Inicia o loop principal do jogo."""
-        while True:                                        # <3>
+        while True:                                        # 3
             # Observa eventos de teclado e mouse.
-            for evento in pygame.event.get():              # <4>
-                if evento.type == pygame.QUIT:             # <5>
+            for evento in pygame.event.get():              # 4
+                if evento.type == pygame.QUIT:             # 5
                     sys.exit()
 
-            pygame.display.flip()                          # <6>
+            pygame.display.flip()                          # 6
 
 if __name__ == '__main__':
     ai = InvasaoAlien()                                   
     ai.executar_jogo()                                    
 ```
+:::
 
-1. Inicializa as configurações de background.
+##
+
+Destaques no código:
+
+1. Inicializa as configurações que o `pygame` precisa para funcionar corretamente.
 2. Cria uma janela para exibição (_Surface_).
 3. Loop de jogo.
 4. Loop dos eventos detectados desde a última iteração.
 5. Evento gerado quando o jogador clica no botão de fechar a janela.
 6. Atualiza o desenho na tela (_double buffer_).
-:::
 
 ## Classes em Python
 
+- Classes são declaradas com a palavra-chave `class`.
+  - A convenção é usar nomes `camelCase` para classes.
+  - E `snake_case` para atributos e métodos.
+- O método `__init__()` é o construtor da classe.
+- Todos os métodos da classe precisam, obrigatoriamente,
+  declarar um parâmetro chamado `self`.
+  - `self` é o equivalente ao `this` do Java.
+- Os atributos da classe são criados dinamicamente.
+  - Eles não são previamente declaradas como em Java.
+  - Assim, um atributo pode ser criado em qualquer método, mas, recomenda-se 
+    criá-los no construtor da classe.
+
+## Classes em Python
+
+- Atributos e métodos da classe são sempre acessados usando `self.`.
+- Objetos são criados com a sintaxe `variavel = Classe()`.
+- Métodos são chamados com `variavel.metodo(param1, param2, ...`).
+  - Observação importante, não passamos valor para o parâmetro `self` explicitamente.
+  - Internamente, Python transforma a chamada acima em `metodo(variavel, param1, param2, ...)`.
+  - Portanto, `self` vai receber o endereço da `variavel`. 
+
+## Classes em Python
+
+- Todos os atributos e métodos são públicos em Python 😵‍💫
+- Por convenção, métodos iniciados com `_` são tratados como se fossem privados.
+- Os atributos geralmente são tratados como públicos.
+  - Assim, são acessados diretamente `objeto.atributo`.
+  - Mas podemos criar métodos com `@property` para ter a mesma proteção de métodos 
+    `get` e `set` sem quebrar a chamada acima.
+- Por convenção, podemos usar prefixo `_` para atributos que são protegidos.
+  - Ou ainda `__` que "dificulta" o acesso.
+
+## Classes em Python
+
+- Podemos ainda usar _type hints_  que ajudam muito a aumentar a produtividade
+  e evitar erros de implementação.
+- Como o foco aqui é em desenvolvimento de jogos, vamos usar apenas o básico de OO.
+  - Mas você pode ver mais detalhes [nessa conversa com o ChatGPT](https://chatgpt.com/share/68e3b321-d30c-800e-a4dd-4fea8caf87f1).
+
 ## Controlando o _frame rate_
 
-```{.python filename="invasao_alien.py"}
+:::: {.columns}
+
+::: {.column width="60%"}
+```{.python filename="invasao_alien.py" code-line-numbers="4,12"}
     def __init__(self):
         """Inicializa o jogo e cria os recursos do jogo."""
         pygame.init()
@@ -150,10 +231,21 @@ if __name__ == '__main__':
             pygame.display.flip()
             self.clock.tick(60)  # Limita a 60 quadros por segundo                                 
 ```
+:::
+
+::: {.column width="40%"}
+- `clock.tick(60)` evita que o loop rode mais de 60 vezes por segundo.
+  - Evita sobrecarga da CPU.
+  - Mantém consistência (FPS) do jogo.
+- Obs.: pode ser necessário ajustar o valor.
+:::
+
+::::
+
 
 ## Definindo a cor de fundo
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="5-6,16-17"}
     def __init__(self):
         # -- trecho de código omitido -- 
         pygame.display.set_caption("Invasão Alienígena")
@@ -190,13 +282,14 @@ class Settings:
         self.cor_fundo = (230, 230, 230)  # Cor de fundo cinza claro
 ```
 
+- Boa prática para facilitar alterações na aparência e comportamento do jogo.
+- Concentra as configurações em um único local, em vez de deixar espalhadas pelo código.
+
 ##
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="3,12,14-15,22"}
 import sys
-
 import pygame
-
 from config import Config
 
 class InvasaoAlien:
@@ -224,42 +317,53 @@ class InvasaoAlien:
 
 # Criando uma nave {background-color="#40666e"}
 
-## 🌐 Sites de Sprites Gratuitos
+##
 
-::: {.callout-note title="ChatGPT" icon="false" .nonincremental .smaller}
-1. OpenGameArt.org 🔗 https://opengameart.org
+Vamos agora criar a nave controlada pelo jogador.
 
-- Gigante repositório de sprites gratuitos.
-- Muitos já vêm em pixel art ou estilo retrô arcade.
+- Aqui vamos usar uma imagem escolhida pelos autores do livro.
+- Mas existem diversos sites com imagens gratuitas.
+  - Além dos Assistentes de IA que geram imagens.
 
-2. Itch.io – Asset Packs gratuitos 🔗 https://itch.io/game-assets/free
+##
 
-- Packs de sprites feitos por artistas independentes.
-- Muitos permitem uso em jogos comerciais.
+::: {.callout-note title="ChatGPT 🌐 Sites de Sprites Gratuitos" icon="false" .nonincremental}
 
-3. Kenney.nl 🔗 https://kenney.nl/assets
+[Kenney.nl](https://kenney.nl/assets)
 
-- Sprites profissionais e organizados.
-- Tudo em CC0 (sem restrição de uso).
+  - Sprites profissionais e organizados.
+  - Tudo em CC0 (sem restrição de uso).
+
+[OpenGameArt.org](https://opengameart.org)
+
+  - Gigante repositório de sprites gratuitos.
+  - Muitos já vêm em pixel art ou estilo retrô arcade.
+
+[Itch.io – Asset Packs gratuitos](https://itch.io/game-assets/free)
+
+  - Packs de sprites feitos por artistas independentes.
+  - Muitos permitem uso em jogos comerciais.
 :::
 
 ##
 
-::: {.callout-note title="ChatGPT" icon="false" .nonincremental .smaller}
-4. CraftPix.net (Freebies) 🔗 https://craftpix.net/freebies/
+::: {.callout-note title="ChatGPT 🌐 Sites de Sprites Gratuitos" icon="false" .nonincremental}
+
+[CraftPix.net (Freebies)](https://craftpix.net/freebies/)
 
 - Arte mais elaborada.
 - Tem alguns pacotes gratuitos, mas muitos são pagos.
 
-5. Google + Filtros de Licença 🔗 Vá em Google Images
+**Google + Filtros de Licença** 
 
-- Em Ferramentas > Direitos de uso, filtre por Creative Commons.
+- Vá em Google Images > Ferramentas > Direitos de uso, filtre por _Creative Commons_.
 - Assim evita problemas de copyright.
 :::
 
 ## Criando a classe Nave
 
 
+::: {.r-stretch}
 ```{.python filename="nave.py"}
 import pygame
 
@@ -269,24 +373,37 @@ class Nave:
     def __init__(self, jogo):
         """ Inicializa a nave e define sua posição inicial. """
         self.tela = jogo.tela
-        self.ret_tela = jogo.tela.get_rect()
+        self.ret_tela = jogo.tela.get_rect()                          # 1
 
         # Sobe a imagem da nave e obtém seu retângulo.
-        # Método convert é importante para melhorar desempenho!
-        self.imagem = pygame.image.load('imagens/nave.png').convert()
+        # Método convert é importante para melhorar desempenho!       
+        self.imagem = pygame.image.load('imagens/nave.png').convert() # 2
         self.ret = self.imagem.get_rect()
 
         # Começa cada nave nova no centro inferior da tela.
-        self.ret.midbottom = self.ret_tela.midbottom
+        self.ret.midbottom = self.ret_tela.midbottom                  # 3
 
     def desenhar(self):
         """ Desenha a nave em sua posição atual. """
-        self.tela.blit(self.imagem, self.ret)
+        self.tela.blit(self.imagem, self.ret)                         # 4
 ```
+:::
+
+## Criando a classe Nave {.smaller}
+
+1. `pygame` trata todos os objetos como retângulos (`Rect`).
+  - Permitindo tratamento de colisão e posicionamento mais eficientes.
+2. O método `convert()` melhora o desempenho do jogo.
+  - Converte a imagem para um formato do próprio `pygame`.
+3. Posiciona a nave no centro inferior da tela.
+  - Veja que posicionamos o retângulo da nave, não a imagem.
+  - Retângulos têm propriedades como `top`, `bottom`, `left`, `right`, `center`, etc.
+4. Desenha a imagem da nave na tela na posição definida pelo retângulo.
+  - Obs: `(0,0)` é o canto superior esquerdo da tela.
 
 ## Desenhando a nave na tela
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="2,11,17"}
 from config import Config
 from nave import Nave
 
@@ -306,9 +423,11 @@ class InvasaoAlien:
             self.nave.desenhar()
 ```
 
-## Refatoração: método `_verificar_eventos()` e `_atualizar_tela()`
+- Nave deve ser desenhada após o preenchimento do fundo.
 
-```{.python filename="invasao_alien.py"}
+## Refatoração
+
+```{.python filename="invasao_alien.py" code-line-numbers="4-5,8-19"}
     def executar_jogo(self):
         """Inicia o loop principal do jogo."""
         while True:
@@ -328,11 +447,11 @@ class InvasaoAlien:
         self.nave.desenhar()
         
         pygame.display.flip()
-```
+``` 
 
 ## Pilotando a nave
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="6-8"}
     def _verificar_eventos(self):
         """Responde a eventos de teclado e mouse."""
         for evento in pygame.event.get():
@@ -343,9 +462,13 @@ class InvasaoAlien:
                     self.nave.ret.x += 1
 ```
 
+- Verificamo se um dos eventos é uma tecla pressionada.
+- Se a tecla pressionada for a seta para a direita, movemos a nave 1 pixel para a direita.
+  - Até aqui precisamos ficar pressionando a tecla para mover a nave.
+
 ## Movimento contínuo
 
-```{.python filename="nave.py"}
+```{.python filename="nave.py" code-line-numbers="7-13"}
     def __init__(self, jogo):
         # -- trecho de código omitido --
 
@@ -361,9 +484,12 @@ class InvasaoAlien:
             self.ret.x += 1
 ```
 
-##
+- Definimos um atributo para indicar se a nave está se movendo para a direita.
+- Na classe `InvasaoAlien`, vamos chamar atualizar a cada passo do loop do jogo.
 
-```{.python filename="invasao_alien.py"}
+## Movimento contínuo
+
+```{.python filename="invasao_alien.py" code-line-numbers="5,14-19"}
     def executar_jogo(self):
         """Inicia o loop principal do jogo."""
         while True:
@@ -380,14 +506,14 @@ class InvasaoAlien:
             elif evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_RIGHT:
                     self.nave.movendo_direita = True
-            elif evento.type == pygame.KEYUP:
+            elif evento.type == pygame.KEYUP: # se for evento de tecla liberada
                 if evento.key == pygame.K_RIGHT:
                     self.nave.movendo_direita = False
 ```
 
 ## Movendo nas duas direções
 
-```{.python filename="nave.py"}
+```{.python filename="nave.py" code-line-numbers="6,12-13"}
     def __init__(self, jogo):
         # -- trecho de código omitido --
 
@@ -403,9 +529,11 @@ class InvasaoAlien:
             self.ret.x -= 1
 ```
 
+- Movimento para a esquerda é tratado de forma similar.
+
 ##
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="3-8"}
     def _verificar_eventos(self):
             # -- trecho de código omitido --  
             elif evento.type == pygame.KEYDOWN:
@@ -418,7 +546,7 @@ class InvasaoAlien:
 
 ## Ajustando a velocidade da nave
 
-```{.python filename="config.py"}
+```{.python filename="config.py" code-line-numbers="4-5"}
     def __init__(self):
         # -- trecho de código omitido --
 
@@ -426,11 +554,14 @@ class InvasaoAlien:
         self.velocidade_nave = 10.0
 ```
 
-Ajuste a velocidade testando o jogo.
+- Criamos uma configuração para definir a velocidade da nave.
+- Vamos incrementar por esse valor em vez de 1 a cada passo do loop do jogo.
+- Vamos criar um atributo na nave para guardar a posição da nave com o tipo `float`
+  para dar mais precisão ao movimento.
 
 ##
 
-```{.python filename="nave.py"}
+```{.python filename="nave.py" code-line-numbers="5,9-10,15,17,19"}
     def __init__(self, jogo):
         """ Inicializa a nave e define sua posição inicial. """
         self.tela = jogo.tela
@@ -454,7 +585,7 @@ Ajuste a velocidade testando o jogo.
 
 ## Restringindo o alcance da Nave
 
-```{.python filename="nave.py"}
+```{.python filename="nave.py" code-line-numbers="3,5"}
     def atualizar(self):
         """ Atualiza a posição da nave com base nas flags de movimento. """
         if self.movendo_direita and self.ret.right < self.ret_tela.right:
@@ -465,9 +596,12 @@ Ajuste a velocidade testando o jogo.
         self.ret.x = int(self.x)
 ```
 
+- Vamos evitar que a nave saia da tela.
+- Usamos as propriedades `right` e `left` do retângulo da nave e da tela.
+
 ## Refatorando o método `_verificar_eventos()`
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="6-23"}
     def _verificar_eventos(self):
         """Responde a eventos de teclado e mouse."""
         for evento in pygame.event.get():
@@ -497,7 +631,7 @@ Ajuste a velocidade testando o jogo.
 
 ## Fechar o jogo com a tecla `q`
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="7-8"}
     def _verificar_eventos_tecla_pressionada(self, evento):
         """ Responde a teclas pressioandas"""
         if evento.key == pygame.K_RIGHT:
@@ -508,9 +642,12 @@ Ajuste a velocidade testando o jogo.
             sys.exit()
 ```
 
+- `sys.exit()` não é a forma mais elegante de encerrar o jogo.
+- Mas estava assim no livro :)
+
 ## Executando o jogo em modo Tela Cheia
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="7-9"}
     def __init__(self):
         """Inicializa o jogo e cria os recursos do jogo."""
         pygame.init()
@@ -524,26 +661,26 @@ Ajuste a velocidade testando o jogo.
 ```
 
 - Agora a largura e altura do jogo não é pré-definida.
-- Provavelmente pode ser interessante mudar a velocidade da nave.
+    - Provavelmente pode ser interessante mudar a velocidade da nave.
 
-. . .
+##
 
 ::: {.callout-warning} 
 Se não tivéssemos tratado a tecla `q` para sair do jogo, não teríamos uma forma
 de sair do jogo no modo tela cheia.
 :::
 
-##
+. . .
 
 Nessa demonstração vamos ficar no modo janela mesmo.
 
-- Devido ao tamanho das imagens e como foi planejada a inclusão de alienígenas.
+- Devido ao tamanho das imagens e como foi planejada a inclusão dos alienígenas.
 
 # Atirando {background-color="#40666e"}
 
 ## Configuração dos projéteis
 
-```{.python filename="config.py"}
+```{.python filename="config.py" code-line-numbers="4-8"}
     def __init__(self):
         # -- trecho de código omitido --
 
@@ -553,6 +690,11 @@ Nessa demonstração vamos ficar no modo janela mesmo.
         self.altura_projetil = 15
         self.cor_projetil = (60, 60, 60)  # Cor cinza escuro
 ```
+
+- Vamos definir as configurações dos projéteis (balas).
+- Vamos criar uma classe para os projéteis.
+  - Nela vamos usar um retângulo simples para representar o projétil,
+    em vez de uma imagem.
 
 ## Classe Projetil
 
@@ -595,10 +737,22 @@ class Projetil(Sprite):
 
 ## Herança em Python
 
+Antes de criarmos os objetos projéteis no jogo, veja que estamos usando herança em Python.
+
+- A classe `Projetil` herda de `Sprite`, que é uma classe do `pygame`.
+  - Estamos fazendo isso para conseguirmos usar grupos de sprites do `pygame`.
+- A herança é declarada com a sintaxe `class ClasseFilha(ClassePai):`.
+- O construtor da classe pai é chamado com `super().__init__()`.
+
+## Herança em Python
+
+- Métodos da classe pai podem ser sobrescritos na classe filha.
+  - Como fizemos com o método `update()`.
+  - Podemos chamar métodos da classe pai com `super().metodo()`.
 
 ## Grupos de projéteis
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="2,10,17"}
 from nave import Nave
 from projetil import Projetil
 
@@ -615,19 +769,19 @@ class InvasaoAlien:
         while True:
             self._verificar_eventos()
             self.nave.atualizar()
-            self.projeteis.update()
+            self.projeteis.update() # Chama update() de cada projétil no grupo
             self._atualizar_tela()
             self.clock.tick(60)
 ```
 
 ## Disparando projéteis
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="5-6,11-14,19-20"}
     def _verificar_eventos_tecla_pressionada(self, evento):
         # -- trecho de código omitido --
         elif evento.key == pygame.K_q:
             sys.exit()
-        elif evento.key == pygame.K_SPACE:
+        elif evento.key == pygame.K_SPACE: # tiros serão disparados com espaço
             self._disparar_projetil()
     
     def _verificar_eventos_tecla_liberada(self, evento):
@@ -641,7 +795,7 @@ class InvasaoAlien:
     def _atualizar_tela(self):
         """Desenha a nova imagem da tela do jogo e a utiliza na tela."""
         self.tela.fill(self.config.cor_fundo)
-        for projetil in self.projeteis.sprites():
+        for projetil in self.projeteis.sprites(): # sprites() retorna uma lista
             projetil.desenhar()
         self.nave.desenhar()
         
@@ -650,7 +804,7 @@ class InvasaoAlien:
 
 ## Apagando projéteis fora da tela
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="8-12"}
     def executar_jogo(self):
         """Inicia o loop principal do jogo."""
         while True:
@@ -659,25 +813,28 @@ class InvasaoAlien:
             self.projeteis.update()
 
             # Descarta os projéteis que desapareceram
-            for projetil in self.projeteis.copy():
+            for projetil in self.projeteis.copy():   # 1
                 if projetil.ret.bottom <= 0:
                     self.projeteis.remove(projetil)
-            print(len(self.projeteis)) # REMOVER DEPOIS DE TESTAR!
+            print(len(self.projeteis))               # 2
 
             self._atualizar_tela()
             self.clock.tick(60)
 ```
 
+1. Fazemos cópia para conserguirmos remover dentro do loop.
+2. **Atenção**: `print` deve ser removido depois de testar! Afeta o desempenho.
+
 ## Limitando o número de projéteis
 
-```{.python filename="config.py"}
+```{.python filename="config.py" code-line-numbers="4"}
     def __init__(self):
         # -- trecho de código omitido --
         self.cor_projetil = (60, 60, 60)  # Cor cinza escuro
         self.max_projeteis = 5
 ```
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="3"}
     def _disparar_projetil(self):
         """ Cria um novo projétil e o adiciona ao grupo de projéteis. """
         if len(self.projeteis) < self.config.max_projeteis:
@@ -685,9 +842,11 @@ class InvasaoAlien:
             self.projeteis.add(novo_projetil)
 ```
 
-## Criando o método atualizar projéteis
+- Limitar o número de projéteis incentiva o jogador a atirar com mais precisão.
 
-```{.python filename="invasao_alien.py"}
+## Refatoração
+
+```{.python filename="invasao_alien.py" code-line-numbers="6,12-19"}
     def executar_jogo(self):
         """Inicia o loop principal do jogo."""
         while True:
@@ -711,13 +870,21 @@ class InvasaoAlien:
 
 # Alienígenas {background-color="#40666e"}
 
+##
+
+Vamos agora adicionar os inimgos do jogo: os alienígenas.
+
+- Vamos definir uma classe para representar um alienígena.
+- Depois vamos criar um esquadrão de alienígenas.
+  - Faremos isso passo a passo.
+  - Primeiro definindo uma linha de alienígenas.
+  - E depois adicionamos mais linhas.
+
 ## Criando a classe Alien
 
 ```{.python filename="alien.py"}
 import pygame
-
 from pygame.sprite import Sprite
-
 
 class Alien(Sprite):
     """ Classe para representar um único alien de um esquadrão. """
@@ -728,10 +895,8 @@ class Alien(Sprite):
         self.tela = ai_game.tela
 
         # Carrega a imagem do alien e define seu atributo retangulo.
-        # ATENÇÃO: aqui precisamos usar os nomes image e rect, pois
-        # são esses nomes que o Pygame espera e usa internamente.
-        self.image = pygame.image.load('imagens/alien.png')
-        self.rect = self.image.get_rect()
+        self.image = pygame.image.load('imagens/alien.png').convert()   # 1
+        self.rect = self.image.get_rect()                               # 2
 
         # Começa cada novo alien próximo ao canto superior esquerdo da tela.
         # Considera um espaço a partir da borda, do tamanho do retângulo.
@@ -742,9 +907,33 @@ class Alien(Sprite):
         self.x = float(self.rect.x)
 ```
 
+## Criando a classe Alien
+
+Aqui temos uma observação muito importante:
+
+1. O atributo da imagem do alien deve ser chamado `image`.
+2. E o do retângulo do alien `rect`.
+- Necessários para que possamos usar grupos de sprites do `pygame`.
+
+. . .
+
+Isso tem relação com o _duck typing_ do Python.
+
+## _Duck Typing_ em Python
+
+Se um objeto tem os atributos e métodos esperados, ele pode ser usado.
+
+- Não importa a classe do objeto.
+
+. . .
+
+Portanto, não precisamos definir uma interface, 
+
+- pois o Python se baseia no comportamento do objeto e não em tipos explícitos. 
+
 ## Criando uma instância do alienígena
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="2,12-20,25-27"}
 from projetil import Projetil
 from alien import Alien
 
@@ -770,7 +959,7 @@ class InvasaoAlien:
         # -- trecho de código omitido --
         self.nave.desenhar()
         # ATENÇÃO: para que todos os aliens sejam desenhados automaticamente
-        # ele deve ter atributos chamados image e rect
+        # eles devem ter atributos chamados image e rect
         self.aliens.draw(self.tela)
         
         pygame.display.flip()
@@ -819,6 +1008,8 @@ class InvasaoAlien:
             y_atual += 2 * altura_alien
 ```
 
+- `5 * altura_alien` indica a distância para a nave do jogador.
+
 # Movendo o esquadrão {background-color="#40666e"}
 
 ## Movendo os alienígenas para a direita
@@ -850,7 +1041,7 @@ class InvasaoAlien:
 
 ##
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="7,11-13"}
     def executar_jogo(self):
         """Inicia o loop principal do jogo."""
         while True:
@@ -892,6 +1083,9 @@ class InvasaoAlien:
         return self.rect.right >= ret_tela.right or self.rect.left <= 0
 ```
 
+- O método `verificar_borda()` será usado na classe `InvasaoAlien`.
+  - Se um dos aliens atingir uma borda, o esquadrão deve descer e mudar de direção.
+
 ## Fazendo a frota descer e mudar de direção
 
 ```{.python filename="invasao_alien.py"}
@@ -928,6 +1122,10 @@ class InvasaoAlien:
             self.projeteis, self.aliens, True, True)
 ```
 
+- `groupcollide()` detecta colisões entre dois grupos.
+- Os dois últimos argumentos indicam se os objetos envolvidos na colisão devem ser removidos.
+  - No nosso caso, tanto o projétil quanto o alien são removidos.
+
 ##
 
 ```output
@@ -943,14 +1141,33 @@ AttributeError: 'Projetil' object has no attribute 'ret'. Did you mean: 'rect'?
 ```
 
 - Precisamos mudar o nome do atributo `ret` da classe `Projetil` para `rect`.
+- Isso porque o método `groupcollide()` espera que os objetos tenham um atributo chamado `rect`.
+  - Veja que não precisamos, necessariamente, fazer `Projetil` herdar de `Sprite`.
+  - É um exemplo do _duck typing_ do Python.
 
 ## Criando projéteis maiores para testes
 
-Para facilitar os testes.
+. . .
+
+Em um jogo é muito comum precisarmos avançar a um certo ponto para conseguir fazer testes.
+
+- E é muito mais produtivo alterarmos, temporariamente, alguma configuração do jogo.
+- Do que ter que jogar "normalmente" até chegar ao ponto desejado.
+
+. . .
+
+Para facilitar os testes de colisão, por exemplo, podemos aumentar a largura dos projéteis.
 
 - Vamos experimentar 400.
 
 ## Recriando o esquadrão
+
+A principal funcionalidade do jogo é que os alienígenas são implacáveis.
+
+- Sempre que o esquadrão for destruído, um novo aparece.
+- Vamos implementar isso agora.
+
+. . .
 
 ```{.python filename="invasao_alien.py"}
     def _atualizar_projeteis(self):
@@ -994,7 +1211,7 @@ Para facilitar os testes.
 
 ## Detectando colisões entre naves e aliens
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="8-10"}
 
 # -- trecho de código omitido --
     def _atualizar_aliens(self):
@@ -1007,25 +1224,23 @@ Para facilitar os testes.
             print("A nave foi atingida!")
 ```
 
-Talvez seja interessante aumentar a velocidade (e de descida) dos aliens para testar. 
+
+- `spritecollideany()` verifica se um `Sprite` colidiu com qualquer sprite em um grupo.
+- Por enquanto estamos apenas testando a colisão.
+- Pode ser interessante mudar a velocidade dos aliens para testar. 
 
 ##
 
 Aqui, novamente, precisaremos usar atributo com nome `rect` em vez de `ret`.
 
-. . .
-
-Se estiver usando um linter como o pylance você verá um warning em `self.nave`.
-
-- Isso porque o método `spritecollideany` espera um `Sprite`, mas nossa classe `Nave`
-  não herda dela.
-- Mesmo assim o código funciona, por que?
+- Devido ao _duck typing_ do Python, lembra?
 
 . . .
 
-[Duck Typing]{.alert}
+Se estiver usando um _linter_ como o `pylance` você verá um warning em `self.nave`.
 
-## Tratando as colisões entre a nave e aliens
+
+## Criando classe `Estatisticas` antes de tratar a colisão
 
 
 ```{.python filename="config.py"}
@@ -1056,12 +1271,10 @@ class Estatisticas:
 
 ##
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="2,5,13-14,23-39"}
 import sys
 from time import sleep
-
 import pygame
-
 from config import Config
 from estatisticas import Estatisticas
 
@@ -1096,7 +1309,7 @@ from estatisticas import Estatisticas
         self._criar_esquadrão()
         self.nave.centralizar()
 
-        # Faz uma pausa.
+        # Faz uma pausa de meio segundo.
         sleep(0.5)
 ```
 
@@ -1117,7 +1330,7 @@ Repare que sempre usamos a mesma instância da nave.
 
 ## Tratando alienígenas na borda inferior
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="8-17"}
     def _atualizar_aliens(self):
         # -- trecho de código omitido --
 
@@ -1139,7 +1352,7 @@ Repare que sempre usamos a mesma instância da nave.
 
 ## Game Over!
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="5-6,12-14"}
 
     def __init__(self):
         # -- trecho de código omitido --
@@ -1158,9 +1371,9 @@ Repare que sempre usamos a mesma instância da nave.
         # -- trecho de código omitido --
 ```
 
-##
+## Parando execução de partes do jogo no Game Over
 
-```{.python filename="invasao_alien.py"}
+```{.python filename="invasao_alien.py" code-line-numbers="6-9"}
     def executar_jogo(self):
         """Inicia o loop principal do jogo."""
         while True:
@@ -1175,9 +1388,19 @@ Repare que sempre usamos a mesma instância da nave.
             self.clock.tick(60)
 ```
 
-## Exemplos dentro do pygame
+##
 
-## Tutoriais
+Temos agora uma versão jogável do Invasão Alienígena.
+
+- Mas ainda temos muito o que melhorar.
+- Precisamos fazer com que os aliens fiquem mais rápidos a cada esquadrão destruído.
+- Precisamos também adicionar pontuação, por exemplo.
+
+. . .
+
+Faremos isso na próxima aula.
+
+
 
 
 

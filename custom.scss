@@ -49,4 +49,9 @@ div.callout-important  {
 .callout-prompt .callout-title {
   font-weight: bold;
 }
-  
+
+.reveal .slides section .r-fit-code {
+  font-size: clamp(0.7em, 2vmin, 1em) !important;
+  height: 140% !important;
+  overflow: hidden !important;
+}
