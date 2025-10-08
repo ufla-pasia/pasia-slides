@@ -264,6 +264,21 @@ Você pode, por exemplo, alterar as imagens da nave, dos alienígenas e usar ima
 Para isso, procure imagens na internet (ex.: site [Kenney.nl](https://kenney.nl/assets)) ou crie as suas próprias imagens.
 :::: 
 
+##
+
+:::: {.callout-note title="Tarefa 5.2 - Ideias para tornar o jogo mais interessante" icon=false, .nonincremental}
+Existem diversas opções de **Game Design** que podem tornar o jogo mais interessante.
+
+Algumas sugestões são:
+
+- Adicionar sons para os eventos do jogo (ex.: disparo, explosão, etc) e música de fundo.
+- Adicionar diferentes tipos de alienígenas (com movimentação diferente, por exemplo).
+- Adicionar inimigos que jogam bombas.
+- Adicionar power-ups, itens a serem coletados (ex.: tiro duplo, escudo temporário, etc).
+- Adicionar um sistema de vidas extra baseado na pontuação (ex.: ganhar uma vida extra a cada 1000 pontos).
+- Adicionar efeitos visuais (ex.: explosões, partículas, etc).    
+:::: 
+
 # Dicas para interessados em jogos {background-color="#40666e"}
 
 ## Exemplos dentro do pygame

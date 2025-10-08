@@ -7277,7 +7277,7 @@
     "href": "aula_p9.html#section-19",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Existem diversos materiais disponíveis na internet para quem quiser aprender mais sobre o pygame.\n\nComo tutoriais, vídeos no Youtube, livros, etc.\n\n\nUma dica importante é que o pygame é muito antigo, e muitos desses materiais são antigos também.\n\nE acabam dando dicas de como fazer coisas que hoje em dia podem ser feitas de forma mais simples.\n\n\n\nSugiro a leitura do artigo A Newbie Guide to pygame (Um guia para iniciantes no PyGame).\n\nInclusive, foi de lá tirei a dica de usar o método convert() para otimizar o desempenho do jogo.\nE também a dica de tomar cuidado com materiais antigos."
+    "text": "Tarefa 5.2 - Ideias para tornar o jogo mais interessante\n\n\nExistem diversas opções de Game Design que podem tornar o jogo mais interessante.\nAlgumas sugestões são:\n\nAdicionar sons para os eventos do jogo (ex.: disparo, explosão, etc) e música de fundo.\nAdicionar diferentes tipos de alienígenas (com movimentação diferente, por exemplo).\nAdicionar inimigos que jogam bombas.\nAdicionar power-ups, itens a serem coletados (ex.: tiro duplo, escudo temporário, etc).\nAdicionar um sistema de vidas extra baseado na pontuação (ex.: ganhar uma vida extra a cada 1000 pontos).\nAdicionar efeitos visuais (ex.: explosões, partículas, etc)."
   },
   {
     "objectID": "aula_p9.html#section-20",
