@@ -268,10 +268,10 @@ Destaques no código:
             self.clock.tick(60)  # Limita a 60 quadros por segundo
 ```
 
-## Criando uma classe Settings
+## Criando uma classe de Configuração
 
 ```{.python filename="config.py"}
-class Settings:
+class Config:
     """ Classe para armazenar as configurações do jogo Invasão Alienígena. """
 
     def __init__(self):

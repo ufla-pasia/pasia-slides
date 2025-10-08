@@ -7137,21 +7137,21 @@
     "href": "aula_p9.html#section",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Na aula passada conhecemos o módulo pygame, que é uma biblioteca para desenvolvimento de jogos em Python.\n\nE também vimos o básico de Programação Orientada a Objetos (POO) em Python.\n\n\nNesta aula vamos, com a ajuda do Copilot, terminar o desenvolvimento do jogo Invasão Alienígena."
+    "text": "Os exercícios dessa aula são baseados no capítulo 14 do livro:"
   },
   {
     "objectID": "aula_p9.html#section-1",
     "href": "aula_p9.html#section-1",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Observação importante\n\n\nO jogo que desenvolvemos é baseado em um jogo clássico: Space Invaders.\nPor isso, se você pedir ao Copilot para completar o jogo “de uma vez só” é bem possível que ele consiga fazer isso, já que existem diversas implementações desse jogo disponíveis na internet.\nMas, fazendo dessa forma, você não estará aproveitando nada dessa aula.\nA ideia é incrementar o jogo passo a passo, conforme os slides a seguir. E realmente tentar entender o que está sendo feito."
+    "text": "Na aula passada conhecemos o módulo pygame, que é uma biblioteca para desenvolvimento de jogos em Python.\n\nE também vimos o básico de Programação Orientada a Objetos (POO) em Python.\n\n\nNesta aula vamos, com a ajuda do Copilot, terminar o desenvolvimento do jogo Invasão Alienígena."
   },
   {
     "objectID": "aula_p9.html#exemplos-dentro-do-pygame",
     "href": "aula_p9.html#exemplos-dentro-do-pygame",
     "title": "Desenvolvendo Jogos",
     "section": "Exemplos dentro do pygame",
-    "text": "Exemplos dentro do pygame"
+    "text": "Exemplos dentro do pygame\nPara quem tiver interesse em jogos, o pygame tem diversos exemplos de jogos e de implementações relacionadas a jogos.\n\nPara ver algum desses exemplos, você pode aproveitar o ambiente virtual que criamos para o jogo Invasão Alienígena, e executar os comandos abaixo no terminal (assumindo que seu ambiente virtual esteja ativado e se chame venv):\nvenv/bin/python -m pygame.examples.aliens\nvenv/bin/python -m pygame.examples.chimp\nvenv/bin/python -m pygame.examples.chimp\n\n\nOs códigos desses exemplos estão disponíveis no repositório do pygame no GitHub."
   },
   {
     "objectID": "aula_p9.html#tutoriais",
@@ -7159,5 +7159,159 @@
     "title": "Desenvolvendo Jogos",
     "section": "Tutoriais",
     "text": "Tutoriais"
+  },
+  {
+    "objectID": "aula_p9.html#section-2",
+    "href": "aula_p9.html#section-2",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Observação importante\n\n\nO jogo que desenvolvemos é baseado em um jogo clássico: Space Invaders.\nPor isso, se você pedir ao Copilot para completar o jogo “de uma vez só” é bem possível que ele consiga fazer isso, já que existem diversas implementações desse jogo disponíveis na internet.\nMas, fazendo dessa forma, você não estará aproveitando nada dessa aula.\nA ideia é incrementar o jogo passo a passo, conforme os slides a seguir. E realmente tentar entender o que está sendo feito a cada passo."
+  },
+  {
+    "objectID": "aula_p9.html#section-3",
+    "href": "aula_p9.html#section-3",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 1.1 - Botão Jogar\n\n\nAdicione um botão Jogar que deve aparecer antes do jogo começar e reaparecer quando o jogo terminar. Portanto, o jogo só deverá ficar ativo depois que o jogador clicar nesse botão.\nPara isso, você deve criar uma classe Botao que poderia ser reaproveitada para outros botões (inclusive em outros jogos).\nSua classe deve desenhar o botão na tela (e não utilizar uma imagem pronta). Para isso, ela precisará fazer uso, por exemplo, de pygame.font.\nNeste passo você deve apenas criar a classe. No passo seguinte vamos utilizá-la.\n\n\n\n\n\n\n\n\n\n\n\n\nTarefa 1.2 - Desenhando o botão na tela\n\n\nO botão agora deve ser desenhado na tela no início do jogo.\nVocê precisará usar o atributo self.jogo_ativo da classe InvasaoAlienigena.\nNo próximo passo vamos tratar o clique no botão."
+  },
+  {
+    "objectID": "aula_p9.html#section-4",
+    "href": "aula_p9.html#section-4",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 1.3 - Iniciando o jogo\n\n\nVamos agora tratar o clique no botão. Para isso será necessário tratar um evento de mouse (tipo MOUSEBUTTONDOWN).\nAo clicar no botão, o mesmo deve desaparecer e o jogo deve começar.\n\n\n\n\n\n\n\n\n\n\n\n\nTarefa 1.4 - Reiniciando o jogo\n\n\nQuando o jogo terminar (Game Over), o botão deve reaparecer e o jogador deve poder clicar nele para reiniciar o jogo.\nLembre-se de reiniciar as estatísticas e todos os demais atributos necessários para voltar ao estado inicial do jogo."
+  },
+  {
+    "objectID": "aula_p9.html#section-5",
+    "href": "aula_p9.html#section-5",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 1.5 - Desativando o botão Play\n\n\nDependendo de como foi feita sua implementação nos passos anteriores, pode ser que o botão não esteja aparecendo quando o jogo está iniciado, mas que ele continue lá, escondido, inclusive, respondendo a cliques.\nTente clicar na região onde o botão deveria estar e verifique se o jogo reinicia. Se isso acontecer, faça o tratamento necessário para que o botão não responda a cliques quando o jogo estiver ativo."
+  },
+  {
+    "objectID": "aula_p9.html#section-6",
+    "href": "aula_p9.html#section-6",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 1.6 - Ocultando o cursor do mouse\n\n\nA experiência do usuário fica mais interessante se o cursor do mouse for ocultado quando o jogo estiver ativo e reaparecer quando o jogo terminar.\nFaça a alteração necessária para implementar esse comportamento. Você precisará utilizar o método pygame.mouse.set_visible()."
+  },
+  {
+    "objectID": "aula_p9.html#section-7",
+    "href": "aula_p9.html#section-7",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 2.1 - Modificando as configurações de velocidade\n\n\nCria na classe Config um atributo para definir o quanto a velocidade do jogo vai aumentar a cada passagem de nível, ou seja, a rapidez com que o jogo vai ficar mais difícil.\nO valor deve ser um número maior que 1.0. Por exemplo, se o valor for 1.1, a velocidade do jogo vai aumentar em 10% a cada nível.\nCrie um método na classe que aumenta a velocidade do jogo. Basicamente o método vai atualizar o valor dos atributos de velocidade multiplicando-os pelo fator de aumento. É interessante aumentar não só as velocidades dos aliens, mas também da nave do jogador e dos projéteis."
+  },
+  {
+    "objectID": "aula_p9.html#section-8",
+    "href": "aula_p9.html#section-8",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 2.2 - Passando de nível\n\n\nNa classe InvasaoAlienigena, implemente a passagem de nível.\nQuando todos os alienígenas forem destruídos, a velocidade do jogo deve ser aumentada (chamando o método que você criou na tarefa anterior).\nVocê deverá também ter um método na classe config que permita reiniciar a velocidade do jogo para o valor inicial. Esse método deve ser chamado quando o jogador clicar no botão Jogar para iniciar uma nova partida."
+  },
+  {
+    "objectID": "aula_p9.html#section-10",
+    "href": "aula_p9.html#section-10",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 3.2 - Adicionando o placar na tela\n\n\nNeste passo você deve criar um objeto da classe Placar na classe InvasaoAlienigena e utilizá-lo para desenhar o placar na tela.\nLembre-se que, por enquanto, a pontuação do jogador não está sendo atualizada."
+  },
+  {
+    "objectID": "aula_p9.html#section-11",
+    "href": "aula_p9.html#section-11",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 3.3 - Atualizando a pontuação\n\n\nAgora você deve atualizar a pontuação do jogador quando um alienígena for destruído.\nPrimeiramente, crie um atributo na classe Config para definir quantos pontos o jogador ganha por alienígena destruído. Você pode definir um valor padrão, por exemplo, 50 pontos.\nDepois, na classe InvasaoAlienigena, você deve atualizar a pontuação do jogador sempre que um alienígena for destruído. Lembre-se de atualizar o placar também.\nNão se esqueça de voltar a pontuação para zero quando o jogador clicar no botão Jogar para iniciar uma nova partida."
+  },
+  {
+    "objectID": "aula_p9.html#section-12",
+    "href": "aula_p9.html#section-12",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 3.4 - Aumentando os valores dos pontos\n\n\nComo o jogo fica mais difícil a cada nível, é interessante que o valor dos pontos ganhos por alienígena destruído também aumente a cada nível.\nPara isso, vamos seguir a mesma ideia do aumento de velocidade do jogo. Vamos definir um fator de escala do aumento do valor dos pontos na classe Config e aplicar esse aumento sempre que o jogador passar de nível.\nDica: arredonte o valor dos pontos para o múltiplo de 10 mais próximo."
+  },
+  {
+    "objectID": "aula_p9.html#section-13",
+    "href": "aula_p9.html#section-13",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 3.5 - Garantindo que todos os ataques são pontuados\n\n\nDependendo de como foi feita a implementação até aqui, pode ser que o jogador não ganhe pontos se um projétil atingir mais de um alienígena ou se dois projéteis atingirem dois alienígenas ao mesmo tempo.\nVocê pode testar isso aumentando, temporariamente, a largura do projétil para que ele possa atingir mais de um alienígena de uma só vez.\nFaça as alterações necessárias para garantir que o jogador ganhe pontos para cada alienígena destruído, independentemente de como isso aconteça."
+  },
+  {
+    "objectID": "aula_p9.html#section-14",
+    "href": "aula_p9.html#section-14",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 3.6 - Tratando recordes\n\n\nO jogador ficará mais motivado se puder tentar superar o seu recorde.\nCrie um atributo na classe Estatisticas para armazenar o recorde do jogador. Esse atributo deve ser inicializado com zero e atualizado sempre que a pontuação atual do jogador superar o recorde.\nO recorde deve ser exibido na tela do jogo, abaixo da pontuação atual."
+  },
+  {
+    "objectID": "aula_p9.html#section-15",
+    "href": "aula_p9.html#section-15",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 3.7 - Exibindo o nível\n\n\nVamos agora exibir o nível atual do jogo na tela. O nível deve ser exibido abaixo do recorde.\nLembre-se de voltar ele para zero sempre que o jogo for reiniciado."
+  },
+  {
+    "objectID": "aula_p9.html#section-16",
+    "href": "aula_p9.html#section-16",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 4.1 - Preparando a classe Nave\n\n\nPara exibir as vidas do jogador, vamos desenhar naves no canto superior esquerdo da tela.\nNós podemos utilizar a própria classe Nave para desenhar as vidas do jogador. Isso pode ficar mais fácil se fizemos a classe Nave herdar de Sprite pois, como vimos na aula anterior, isso permite trabalhar com grupos de sprites.\nNeste passo, basta fazer a classe Nave herdar de Sprite e chamar o construtor da superclasse dentro do construtor da classe Nave."
+  },
+  {
+    "objectID": "aula_p9.html#section-17",
+    "href": "aula_p9.html#section-17",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 4.2 - Desenhando as vidas do jogador\n\n\nAltere a classe Placar para que ela tenha um grupo de sprites para representar as vidas do jogador. O número de sprites nesse grupo deve ser igual ao número de vidas do jogador, que pode ser acessado através do atributo vidas_restantes da classe Estatisticas. O grupo de sprites deve ser atualizado sempre que o número de vidas do jogador mudar.\nO grupo de sprites deve ser desenhado no canto superior esquerdo da tela."
+  },
+  {
+    "objectID": "aula_p9.html#section-18",
+    "href": "aula_p9.html#section-18",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 5.1 - Personalizando o jogo\n\n\nAgora que o jogo está funcionando, você pode personalizá-lo para deixá-lo com a sua cara.\nVocê pode, por exemplo, alterar as imagens da nave, dos alienígenas e usar imagens para os projéteis.\nPara isso, procure imagens na internet (ex.: site Kenney.nl) ou crie as suas próprias imagens."
+  },
+  {
+    "objectID": "aula_p9.html#section-19",
+    "href": "aula_p9.html#section-19",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Existem diversos materiais disponíveis na internet para quem quiser aprender mais sobre o pygame.\n\nComo tutoriais, vídeos no Youtube, livros, etc.\n\n\nUma dica importante é que o pygame é muito antigo, e muitos desses materiais são antigos também.\n\nE acabam dando dicas de como fazer coisas que hoje em dia podem ser feitas de forma mais simples.\n\n\n\nSugiro a leitura do artigo A Newbie Guide to pygame (Um guia para iniciantes no PyGame).\n\nInclusive, foi de lá tirei a dica de usar o método convert() para otimizar o desempenho do jogo.\nE também a dica de tomar cuidado com materiais antigos."
+  },
+  {
+    "objectID": "aula_p9.html#section-20",
+    "href": "aula_p9.html#section-20",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 3.3 - Desenhando as vidas do jogador\n\n\nAltere a classe Placar para que ela tenha um grupo de sprites para representar as vidas do jogador. O número de sprites nesse grupo deve ser igual ao número de vidas do jogador, que pode ser acessado através do atributo vidas_restantes da classe Estatisticas. O grupo de sprites deve ser atualizado sempre que o número de vidas do jogador mudar.\nO grupo de sprites deve ser desenhado no canto superior esquerdo da tela."
+  },
+  {
+    "objectID": "aula_p9.html#section-9",
+    "href": "aula_p9.html#section-9",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Tarefa 3.1 - Classe Placar\n\n\nAcrescente um atributo pontuacao na classe Estatisticas para armazenar a pontuação do jogador. A princípio vamos iniciá-la com zero, mas ainda não vamos atualizá-la.\nCrie uma classe para representar o placar do jogo. A classe deve ter uma referência para o objeto Estatisticas para poder acessar a pontuação atual do jogador. Ela também deve ter um método para desenhar o placar na tela, no canto superior direito.\nObs.: é mais eficiente se a montagem do texto do placar for feita apenas quando a pontuação for atualizada, e não a cada vez que o placar for desenhado na tela."
+  },
+  {
+    "objectID": "aula_p9.html#materiais-na-internet",
+    "href": "aula_p9.html#materiais-na-internet",
+    "title": "Desenvolvendo Jogos",
+    "section": "Materiais na internet",
+    "text": "Materiais na internet\nExistem diversos materiais disponíveis na internet para quem quiser aprender mais sobre o pygame.\n\nComo tutoriais, vídeos no Youtube, livros, etc.\n\n\nUma dica importante é que o pygame é muito antigo, e muitos desses materiais são antigos também.\n\nE acabam dando dicas de como fazer coisas que hoje em dia podem ser feitas de forma mais simples."
+  },
+  {
+    "objectID": "aula_p9.html#guia-inicial-e-livro",
+    "href": "aula_p9.html#guia-inicial-e-livro",
+    "title": "Desenvolvendo Jogos",
+    "section": "Guia inicial e Livro",
+    "text": "Guia inicial e Livro\nSugiro a leitura do artigo A Newbie Guide to pygame (Um guia para iniciantes no PyGame).\n\nInclusive, foi de lá tirei a dica de usar o método convert() para otimizar o desempenho do jogo.\nE também a dica de tomar cuidado com materiais antigos.\n\n\nPara quem quiser se aprofundar mais, o livro Making Games with Python & Pygame está disponível gratuitamente no site do autor (você pode ler online ou baixar o PDF)."
+  },
+  {
+    "objectID": "aula_p9.html#game-programming-patterns",
+    "href": "aula_p9.html#game-programming-patterns",
+    "title": "Desenvolvendo Jogos",
+    "section": "Game Programming Patterns",
+    "text": "Game Programming Patterns\nPara quem estiver interessado em conceitos mais avançados, a dica é o livro Game Programming Patterns.\n\nA versão web do livro também está disponível gratuitamente no site do autor."
   }
 ]

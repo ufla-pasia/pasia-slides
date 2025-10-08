@@ -44,7 +44,7 @@ E realmente tentar entender o que está sendo feito a cada passo.
 ##
 
 :::: {.callout-note title="Tarefa 1.1 - Botão Jogar" icon=false, .nonincremental}
-Adicione um obotão `Jogar` que deve aparecer antes do jogo começar e reaparecer
+Adicione um botão `Jogar` que deve aparecer antes do jogo começar e reaparecer
 quando o jogo terminar. Portanto, o jogo só deverá ficar ativo depois que o 
 jogador clicar nesse botão.
 
@@ -57,13 +57,14 @@ Para isso, ela precisará fazer uso, por exemplo, de `pygame.font`.
 Neste passo você deve apenas criar a classe. No passo seguinte vamos utilizá-la.
 ::::
 
-
-##
+. . .
 
 :::: {.callout-note title="Tarefa 1.2 - Desenhando o botão na tela" icon=false, .nonincremental}
 O botão agora deve ser desenhado na tela no início do jogo.
 
 Você precisará usar o atributo `self.jogo_ativo` da classe `InvasaoAlienigena`.
+
+No próximo passo vamos tratar o clique no botão.
 ::::
 
 ##
@@ -75,7 +76,7 @@ Vamos agora tratar o clique no botão. Para isso será necessário tratar um eve
 Ao clicar no botão, o mesmo deve desaparecer e o jogo deve começar.
 ::::
 
-##
+. . .
 
 :::: {.callout-note title="Tarefa 1.4 - Reiniciando o jogo" icon=false, .nonincremental}
 Quando o jogo terminar (Game Over), o botão deve reaparecer e o jogador deve poder
@@ -90,7 +91,7 @@ voltar ao estado inicial do jogo.
 :::: {.callout-note title="Tarefa 1.5 - Desativando o botão Play" icon=false, .nonincremental}
 Dependendo de como foi feita sua implementação nos passos anteriores, pode
 ser que o botão não esteja aparecendo quando o jogo está iniciado, mas que ele
-continue lá, inclusive, respondendo a cliques.
+continue lá, escondido, inclusive, respondendo a cliques.
 
 Tente clicar na região onde o botão deveria estar e verifique se o jogo reinicia.
 Se isso acontecer, faça o tratamento necessário para que o botão não responda
@@ -106,8 +107,7 @@ ocultado quando o jogo estiver ativo e reaparecer quando o jogo terminar.
 Faça a alteração necessária para implementar esse comportamento. Você precisará
 utilizar o método `pygame.mouse.set_visible()`.
 ::::
-
-## 
+ 
 
 # Passando de nível {background-color="#40666e"}
 
@@ -119,11 +119,11 @@ Cria na classe `Config` um atributo para definir o quanto a velocidade do jogo v
 aumentar a cada passagem de nível, ou seja, a rapidez com que o jogo vai ficar mais difícil.
 
 O valor deve ser um número maior que 1.0. Por exemplo, se o valor for 1.1, a velocidade
-do jogo vai aumentar 10% a cada nível.
+do jogo vai aumentar em 10% a cada nível.
 
 Crie um método na classe que aumenta a velocidade do jogo. Basicamente o método vai atualizar
 o valor dos atributos de velocidade multiplicando-os pelo fator de aumento.
-É interessante aumentar não só as velocidades dos alines, mas também da nave do jogador
+É interessante aumentar não só as velocidades dos aliens, mas também da nave do jogador
 e dos projéteis.
 ::::
 
@@ -150,7 +150,7 @@ do jogador. A princípio vamos iniciá-la com zero, mas ainda não vamos atualiz
 
 Crie uma classe para representar o placar do jogo. A classe deve ter uma referência para o 
 objeto `Estatisticas` para poder acessar a pontuação atual do jogador.
-Ela deve ter um método para desenhar o placar na tela, no canto superior direito.
+Ela também deve ter um método para desenhar o placar na tela, no canto superior direito.
 
 Obs.: é mais eficiente se a montagem do texto do placar for feita apenas quando a pontuação
 for atualizada, e não a cada vez que o placar for desenhado na tela.
@@ -189,11 +189,13 @@ por alienígena destruído também aumente a cada nível.
 Para isso, vamos seguir a mesma ideia do aumento de velocidade do jogo. Vamos definir um 
 fator de escala do aumento do valor dos pontos na classe `Config` e aplicar esse aumento
 sempre que o jogador passar de nível.
+
+Dica: arredonte o valor dos pontos para o múltiplo de 10 mais próximo.
 ::::
 
 ##
 
-:::: {.callout-note title="Tarefa 3.5 - Garantindo que todos os ataques são pontuadas" icon=false, .nonincremental}
+:::: {.callout-note title="Tarefa 3.5 - Garantindo que todos os ataques são pontuados" icon=false, .nonincremental}
 Dependendo de como foi feita a implementação até aqui, pode ser que o jogador não ganhe pontos
 se um projétil atingir mais de um alienígena ou se dois projéteis atingirem dois alienígenas ao mesmo tempo.
 
@@ -228,7 +230,7 @@ Lembre-se de voltar ele para zero sempre que o jogo for reiniciado.
 
 ##
 
-:::: {.callout-note title="Tarefa 3.2 - Preparando a classe Nave" icon=false, .nonincremental}
+:::: {.callout-note title="Tarefa 4.1 - Preparando a classe Nave" icon=false, .nonincremental}
 Para exibir as vidas do jogador, vamos desenhar naves no canto superior esquerdo da tela.
 
 Nós podemos utilizar a própria classe `Nave` para desenhar as vidas do jogador.
@@ -241,7 +243,7 @@ superclasse dentro do construtor da classe `Nave`.
 
 ##
 
-:::: {.callout-note title="Tarefa 3.3 - Desenhando as vidas do jogador" icon=false, .nonincremental}
+:::: {.callout-note title="Tarefa 4.2 - Desenhando as vidas do jogador" icon=false, .nonincremental}
 Altere a classe `Placar` para que ela tenha um grupo de sprites para representar as vidas do jogador.
 O número de sprites nesse grupo deve ser igual ao número de vidas do jogador, que pode ser
 acessado através do atributo `vidas_restantes` da classe `Estatisticas`.
@@ -250,8 +252,67 @@ O grupo de sprites deve ser atualizado sempre que o número de vidas do jogador 
 O grupo de sprites deve ser desenhado no canto superior esquerdo da tela.
 ::::
 
-# Dicas finais {background-color="#40666e"}
+# Deixando o jogo com o seu estilo {background-color="#40666e"}
+
+##
+
+:::: {.callout-note title="Tarefa 5.1 - Personalizando o jogo" icon=false, .nonincremental}
+Agora que o jogo está funcionando, você pode personalizá-lo para deixá-lo com a sua cara.
+
+Você pode, por exemplo, alterar as imagens da nave, dos alienígenas e usar imagens para os projéteis.
+
+Para isso, procure imagens na internet (ex.: site [Kenney.nl](https://kenney.nl/assets)) ou crie as suas próprias imagens.
+:::: 
+
+# Dicas para interessados em jogos {background-color="#40666e"}
 
 ## Exemplos dentro do pygame
 
-## Tutoriais
+Para quem tiver interesse em jogos, o `pygame` tem diversos exemplos de jogos e de implementações relacionadas a jogos.
+
+. . .
+
+Para ver algum desses exemplos, você pode aproveitar o ambiente virtual que criamos para o jogo Invasão Alienígena,
+e executar os comandos abaixo no terminal (assumindo que seu ambiente virtual esteja ativado e se chame
+`venv`):
+
+```bash
+venv/bin/python -m pygame.examples.aliens
+venv/bin/python -m pygame.examples.chimp
+venv/bin/python -m pygame.examples.chimp
+```
+
+. . .
+
+Os códigos desses exemplos estão disponíveis no repositório do `pygame` no [GitHub](https://github.com/pygame/pygame/tree/main/examples).
+
+## Materiais na internet
+
+Existem diversos materiais disponíveis na internet para quem quiser aprender mais sobre o `pygame`.
+
+-  Como tutoriais, vídeos no Youtube, livros, etc.
+
+. . .
+
+Uma dica importante é que o `pygame` é muito antigo, e muitos desses materiais são antigos também.
+
+- E acabam dando dicas de como fazer coisas que hoje em dia podem ser feitas de forma mais simples.
+
+## Guia inicial e Livro
+
+Sugiro a leitura do artigo [A Newbie Guide to pygame](https://www.pygame.org/docs/tut/newbieguide.html) 
+(Um guia para iniciantes no PyGame).
+
+- Inclusive, foi de lá tirei a dica de usar o método `convert()` para otimizar o desempenho do jogo.
+- E também a dica de tomar cuidado com materiais antigos.
+
+. . .
+
+Para quem quiser se aprofundar mais, o livro [Making Games with Python & Pygame](https://inventwithpython.com/pygame/)
+está disponível gratuitamente no site do autor (você pode ler online ou baixar o PDF).
+
+## Game Programming Patterns
+
+Para quem estiver interessado em conceitos mais avançados, a dica é o livro [Game Programming Patterns](https://gameprogrammingpatterns.com/).
+
+- A versão web do livro também está disponível gratuitamente no site do autor.

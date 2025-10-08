@@ -15,7 +15,7 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Prof.&nbsp;Julio César Alves">
-  <meta name="dcterms.date" content="2025-06-10">
+  <meta name="dcterms.date" content="2025-07-10">
   <title>GAC126 - Programação Aplicada com Suporte de IA – Desenvolvendo Jogos</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -34,6 +34,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-738eed0b7b62565845709334444022c6.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -150,9 +216,18 @@
     </div>
 </div>
 
-  <p class="date">06/10/2025</p>
+  <p class="date">07/10/2025</p>
 </section>
 <section id="section" class="slide level2">
+<h2></h2>
+<p>Os exercícios dessa aula são baseados no <strong>capítulo 14</strong> do livro:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/livro_curso_intensivo_python.jpg" class="quarto-figure quarto-figure-center" style="max-height: 50vh; width: auto;" alt="Capa do livro de Curso Intensivo de Python."></p>
+</figure>
+</div>
+</section>
+<section id="section-1" class="slide level2">
 <h2></h2>
 <p>Na aula passada conhecemos o módulo <code>pygame</code>, que é uma biblioteca para desenvolvimento de jogos em Python.</p>
 <ul>
@@ -162,7 +237,7 @@
 <p>Nesta aula vamos, com a ajuda do Copilot, terminar o desenvolvimento do jogo Invasão Alienígena.</p>
 </div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -176,19 +251,440 @@
 <p>O jogo que desenvolvemos é baseado em um jogo clássico: <em>Space Invaders</em>.</p>
 <p>Por isso, se você pedir ao Copilot para completar o jogo “de uma vez só” é bem possível que ele consiga fazer isso, já que existem diversas implementações desse jogo disponíveis na internet.</p>
 <p>Mas, fazendo dessa forma, você não estará aproveitando nada dessa aula.</p>
-<p>A ideia é incrementar o jogo passo a passo, conforme os slides a seguir. E realmente tentar entender o que está sendo feito.</p>
+<p>A ideia é incrementar o jogo passo a passo, conforme os slides a seguir. E realmente tentar entender o que está sendo feito a cada passo.</p>
 </div>
 </div>
 </div>
+</section>
+<section>
+<section id="acrescentando-botão-jogar" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Acrescentando botão <code>Jogar</code></h1>
+
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div title="Tarefa 1.1 - Botão Jogar">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 1.1 - Botão Jogar</strong></p>
+</div>
+<div class="callout-content">
+<p>Adicione um botão <code>Jogar</code> que deve aparecer antes do jogo começar e reaparecer quando o jogo terminar. Portanto, o jogo só deverá ficar ativo depois que o jogador clicar nesse botão.</p>
+<p>Para isso, você deve criar uma classe <code>Botao</code> que poderia ser reaproveitada para outros botões (inclusive em outros jogos).</p>
+<p>Sua classe deve desenhar o botão na tela (e não utilizar uma imagem pronta). Para isso, ela precisará fazer uso, por exemplo, de <code>pygame.font</code>.</p>
+<p>Neste passo você deve apenas criar a classe. No passo seguinte vamos utilizá-la.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div title="Tarefa 1.2 - Desenhando o botão na tela">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 1.2 - Desenhando o botão na tela</strong></p>
+</div>
+<div class="callout-content">
+<p>O botão agora deve ser desenhado na tela no início do jogo.</p>
+<p>Você precisará usar o atributo <code>self.jogo_ativo</code> da classe <code>InvasaoAlienigena</code>.</p>
+<p>No próximo passo vamos tratar o clique no botão.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div title="Tarefa 1.3 - Iniciando o jogo">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 1.3 - Iniciando o jogo</strong></p>
+</div>
+<div class="callout-content">
+<p>Vamos agora tratar o clique no botão. Para isso será necessário tratar um evento de mouse (tipo <code>MOUSEBUTTONDOWN</code>).</p>
+<p>Ao clicar no botão, o mesmo deve desaparecer e o jogo deve começar.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div title="Tarefa 1.4 - Reiniciando o jogo">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 1.4 - Reiniciando o jogo</strong></p>
+</div>
+<div class="callout-content">
+<p>Quando o jogo terminar (Game Over), o botão deve reaparecer e o jogador deve poder clicar nele para reiniciar o jogo.</p>
+<p>Lembre-se de reiniciar as estatísticas e todos os demais atributos necessários para voltar ao estado inicial do jogo.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div title="Tarefa 1.5 - Desativando o botão Play">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 1.5 - Desativando o botão Play</strong></p>
+</div>
+<div class="callout-content">
+<p>Dependendo de como foi feita sua implementação nos passos anteriores, pode ser que o botão não esteja aparecendo quando o jogo está iniciado, mas que ele continue lá, escondido, inclusive, respondendo a cliques.</p>
+<p>Tente clicar na região onde o botão deveria estar e verifique se o jogo reinicia. Se isso acontecer, faça o tratamento necessário para que o botão não responda a cliques quando o jogo estiver ativo.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div title="Tarefa 1.6 - Ocultando o cursor do mouse">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 1.6 - Ocultando o cursor do mouse</strong></p>
+</div>
+<div class="callout-content">
+<p>A experiência do usuário fica mais interessante se o cursor do mouse for ocultado quando o jogo estiver ativo e reaparecer quando o jogo terminar.</p>
+<p>Faça a alteração necessária para implementar esse comportamento. Você precisará utilizar o método <code>pygame.mouse.set_visible()</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="passando-de-nível" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Passando de nível</h1>
+
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div title="Tarefa 2.1 - Modificando as configurações de velocidade">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 2.1 - Modificando as configurações de velocidade</strong></p>
+</div>
+<div class="callout-content">
+<p>Cria na classe <code>Config</code> um atributo para definir o quanto a velocidade do jogo vai aumentar a cada passagem de nível, ou seja, a rapidez com que o jogo vai ficar mais difícil.</p>
+<p>O valor deve ser um número maior que 1.0. Por exemplo, se o valor for 1.1, a velocidade do jogo vai aumentar em 10% a cada nível.</p>
+<p>Crie um método na classe que aumenta a velocidade do jogo. Basicamente o método vai atualizar o valor dos atributos de velocidade multiplicando-os pelo fator de aumento. É interessante aumentar não só as velocidades dos aliens, mas também da nave do jogador e dos projéteis.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div title="Tarefa 2.2 - Passando de nível">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 2.2 - Passando de nível</strong></p>
+</div>
+<div class="callout-content">
+<p>Na classe <code>InvasaoAlienigena</code>, implemente a passagem de nível.</p>
+<p>Quando todos os alienígenas forem destruídos, a velocidade do jogo deve ser aumentada (chamando o método que você criou na tarefa anterior).</p>
+<p>Você deverá também ter um método na classe <code>config</code> que permita reiniciar a velocidade do jogo para o valor inicial. Esse método deve ser chamado quando o jogador clicar no botão <code>Jogar</code> para iniciar uma nova partida.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="pontuação" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Pontuação</h1>
+
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div title="Tarefa 3.1 - Classe Placar">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 3.1 - Classe Placar</strong></p>
+</div>
+<div class="callout-content">
+<p>Acrescente um atributo <code>pontuacao</code> na classe <code>Estatisticas</code> para armazenar a pontuação do jogador. A princípio vamos iniciá-la com zero, mas ainda não vamos atualizá-la.</p>
+<p>Crie uma classe para representar o placar do jogo. A classe deve ter uma referência para o objeto <code>Estatisticas</code> para poder acessar a pontuação atual do jogador. Ela também deve ter um método para desenhar o placar na tela, no canto superior direito.</p>
+<p>Obs.: é mais eficiente se a montagem do texto do placar for feita apenas quando a pontuação for atualizada, e não a cada vez que o placar for desenhado na tela.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div title="Tarefa 3.2 - Adicionando o placar na tela">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 3.2 - Adicionando o placar na tela</strong></p>
+</div>
+<div class="callout-content">
+<p>Neste passo você deve criar um objeto da classe <code>Placar</code> na classe <code>InvasaoAlienigena</code> e utilizá-lo para desenhar o placar na tela.</p>
+<p>Lembre-se que, por enquanto, a pontuação do jogador não está sendo atualizada.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div title="Tarefa 3.3 - Atualizando a pontuação">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 3.3 - Atualizando a pontuação</strong></p>
+</div>
+<div class="callout-content">
+<p>Agora você deve atualizar a pontuação do jogador quando um alienígena for destruído.</p>
+<p>Primeiramente, crie um atributo na classe <code>Config</code> para definir quantos pontos o jogador ganha por alienígena destruído. Você pode definir um valor padrão, por exemplo, 50 pontos.</p>
+<p>Depois, na classe <code>InvasaoAlienigena</code>, você deve atualizar a pontuação do jogador sempre que um alienígena for destruído. Lembre-se de atualizar o placar também.</p>
+<p>Não se esqueça de voltar a pontuação para zero quando o jogador clicar no botão <code>Jogar</code> para iniciar uma nova partida.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<div title="Tarefa 3.4 - Aumentando os valores dos pontos">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 3.4 - Aumentando os valores dos pontos</strong></p>
+</div>
+<div class="callout-content">
+<p>Como o jogo fica mais difícil a cada nível, é interessante que o valor dos pontos ganhos por alienígena destruído também aumente a cada nível.</p>
+<p>Para isso, vamos seguir a mesma ideia do aumento de velocidade do jogo. Vamos definir um fator de escala do aumento do valor dos pontos na classe <code>Config</code> e aplicar esse aumento sempre que o jogador passar de nível.</p>
+<p>Dica: arredonte o valor dos pontos para o múltiplo de 10 mais próximo.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<div title="Tarefa 3.5 - Garantindo que todos os ataques são pontuados">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 3.5 - Garantindo que todos os ataques são pontuados</strong></p>
+</div>
+<div class="callout-content">
+<p>Dependendo de como foi feita a implementação até aqui, pode ser que o jogador não ganhe pontos se um projétil atingir mais de um alienígena ou se dois projéteis atingirem dois alienígenas ao mesmo tempo.</p>
+<p>Você pode testar isso aumentando, temporariamente, a largura do projétil para que ele possa atingir mais de um alienígena de uma só vez.</p>
+<p>Faça as alterações necessárias para garantir que o jogador ganhe pontos para cada alienígena destruído, independentemente de como isso aconteça.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<div title="Tarefa 3.6 - Tratando recordes">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 3.6 - Tratando recordes</strong></p>
+</div>
+<div class="callout-content">
+<p>O jogador ficará mais motivado se puder tentar superar o seu recorde.</p>
+<p>Crie um atributo na classe <code>Estatisticas</code> para armazenar o recorde do jogador. Esse atributo deve ser inicializado com zero e atualizado sempre que a pontuação atual do jogador superar o recorde.</p>
+<p>O recorde deve ser exibido na tela do jogo, abaixo da pontuação atual.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<div title="Tarefa 3.7 - Exibindo o nível">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 3.7 - Exibindo o nível</strong></p>
+</div>
+<div class="callout-content">
+<p>Vamos agora exibir o nível atual do jogo na tela. O nível deve ser exibido abaixo do recorde.</p>
+<p>Lembre-se de voltar ele para zero sempre que o jogo for reiniciado.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="exibindo-as-vidas-do-jogador" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Exibindo as vidas do jogador</h1>
+
+</section>
+<section id="section-16" class="slide level2">
+<h2></h2>
+<div title="Tarefa 4.1 - Preparando a classe Nave">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 4.1 - Preparando a classe Nave</strong></p>
+</div>
+<div class="callout-content">
+<p>Para exibir as vidas do jogador, vamos desenhar naves no canto superior esquerdo da tela.</p>
+<p>Nós podemos utilizar a própria classe <code>Nave</code> para desenhar as vidas do jogador. Isso pode ficar mais fácil se fizemos a classe <code>Nave</code> herdar de <code>Sprite</code> pois, como vimos na aula anterior, isso permite trabalhar com grupos de sprites.</p>
+<p>Neste passo, basta fazer a classe <code>Nave</code> herdar de <code>Sprite</code> e chamar o construtor da superclasse dentro do construtor da classe <code>Nave</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-17" class="slide level2">
+<h2></h2>
+<div title="Tarefa 4.2 - Desenhando as vidas do jogador">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 4.2 - Desenhando as vidas do jogador</strong></p>
+</div>
+<div class="callout-content">
+<p>Altere a classe <code>Placar</code> para que ela tenha um grupo de sprites para representar as vidas do jogador. O número de sprites nesse grupo deve ser igual ao número de vidas do jogador, que pode ser acessado através do atributo <code>vidas_restantes</code> da classe <code>Estatisticas</code>. O grupo de sprites deve ser atualizado sempre que o número de vidas do jogador mudar.</p>
+<p>O grupo de sprites deve ser desenhado no canto superior esquerdo da tela.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="deixando-o-jogo-com-o-seu-estilo" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Deixando o jogo com o seu estilo</h1>
+
+</section>
+<section id="section-18" class="slide level2">
+<h2></h2>
+<div title="Tarefa 5.1 - Personalizando o jogo">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tarefa 5.1 - Personalizando o jogo</strong></p>
+</div>
+<div class="callout-content">
+<p>Agora que o jogo está funcionando, você pode personalizá-lo para deixá-lo com a sua cara.</p>
+<p>Você pode, por exemplo, alterar as imagens da nave, dos alienígenas e usar imagens para os projéteis.</p>
+<p>Para isso, procure imagens na internet (ex.: site <a href="https://kenney.nl/assets">Kenney.nl</a>) ou crie as suas próprias imagens.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="dicas-para-interessados-em-jogos" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Dicas para interessados em jogos</h1>
+
 </section>
 <section id="exemplos-dentro-do-pygame" class="slide level2">
 <h2>Exemplos dentro do pygame</h2>
+<p>Para quem tiver interesse em jogos, o <code>pygame</code> tem diversos exemplos de jogos e de implementações relacionadas a jogos.</p>
+<div class="fragment">
+<p>Para ver algum desses exemplos, você pode aproveitar o ambiente virtual que criamos para o jogo Invasão Alienígena, e executar os comandos abaixo no terminal (assumindo que seu ambiente virtual esteja ativado e se chame <code>venv</code>):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">venv/bin/python</span> <span class="at">-m</span> pygame.examples.aliens</span>
+<span id="cb1-2"><a></a><span class="ex">venv/bin/python</span> <span class="at">-m</span> pygame.examples.chimp</span>
+<span id="cb1-3"><a></a><span class="ex">venv/bin/python</span> <span class="at">-m</span> pygame.examples.chimp</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Os códigos desses exemplos estão disponíveis no repositório do <code>pygame</code> no <a href="https://github.com/pygame/pygame/tree/main/examples">GitHub</a>.</p>
+</div>
 </section>
-<section id="tutoriais" class="slide level2">
-<h2>Tutoriais</h2>
+<section id="materiais-na-internet" class="slide level2">
+<h2>Materiais na internet</h2>
+<p>Existem diversos materiais disponíveis na internet para quem quiser aprender mais sobre o <code>pygame</code>.</p>
+<ul>
+<li class="fragment">Como tutoriais, vídeos no Youtube, livros, etc.</li>
+</ul>
+<div class="fragment">
+<p>Uma dica importante é que o <code>pygame</code> é muito antigo, e muitos desses materiais são antigos também.</p>
+<ul>
+<li class="fragment">E acabam dando dicas de como fazer coisas que hoje em dia podem ser feitas de forma mais simples.</li>
+</ul>
+</div>
+</section>
+<section id="guia-inicial-e-livro" class="slide level2">
+<h2>Guia inicial e Livro</h2>
+<p>Sugiro a leitura do artigo <a href="https://www.pygame.org/docs/tut/newbieguide.html">A Newbie Guide to pygame</a> (Um guia para iniciantes no PyGame).</p>
+<ul>
+<li class="fragment">Inclusive, foi de lá tirei a dica de usar o método <code>convert()</code> para otimizar o desempenho do jogo.</li>
+<li class="fragment">E também a dica de tomar cuidado com materiais antigos.</li>
+</ul>
+<div class="fragment">
+<p>Para quem quiser se aprofundar mais, o livro <a href="https://inventwithpython.com/pygame/">Making Games with Python &amp; Pygame</a> está disponível gratuitamente no site do autor (você pode ler online ou baixar o PDF).</p>
+</div>
+</section>
+<section id="game-programming-patterns" class="slide level2">
+<h2>Game Programming Patterns</h2>
+<p>Para quem estiver interessado em conceitos mais avançados, a dica é o livro <a href="https://gameprogrammingpatterns.com/">Game Programming Patterns</a>.</p>
+<ul>
+<li class="fragment">A versão web do livro também está disponível gratuitamente no site do autor.</li>
+</ul>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="imagens/logo_UFLA.png" class="slide-logo"></p>
