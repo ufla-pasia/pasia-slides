@@ -11,14 +11,14 @@ O conteúdo dessa aula é baseado no **capítulo 3** do livro abaixo.
 
 ##
 
-Pela pesquisa de perfil da turma vi que alguns alunos conhecem Python e outros não.
+Pela pesquisa de perfil da turma vi que o conhecimento de Python da turma é bem variado.
 
 - É importante então apresentar a linguagem nas primeiras aulas.
 - Mas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.
   - que podem ser interessantes também para que tem mais experiência com Python.
 - Espero então que a aula seja útil para todos :)
 
-. . .
+##
 
 ::: {.callout-caution}
 ## Lembrete
@@ -281,7 +281,7 @@ Nós havíamos passado para o Copilot a tarefa de criar a função completa.
 
 - Mas outra forma de usar o Copilot é nós mesmos definirmos a assinatura da função
   - e pedirmos ao Copilot apenas para implementar o corpo da função.
-- Isso geralmente leva a resultados melhores.
+- Isso pode levar a resultados melhores.
 
 ##
 
@@ -748,11 +748,11 @@ Repare que, nesse caso, o Copilot gerou um código que usa uma [lista]{.alert}.
 - Podemos declarar listas em Python entre colchetes e com valores separados por vírgulas.
 - E o operador `in` indica se um elemento pertence à lista.
 
-. . .
+##
 
 O código parece razoável? Hora de testar!
 
-##
+. . .
 
 Mas nossa função ainda aceita `'Tião'` como senha, o que é claramente ruim.
 
@@ -930,11 +930,11 @@ def eh_senha_forte(senha):
 
 Esse foi o código gerado pelo Copilot.
 
-- Ao analisar se o código parece razoável há dois pontos que vale a pena destacar.
+##
 
-## 
+Ao analisar se o código parece razoável há dois pontos que vale a pena destacar.
 
-A primeira é que o código usa a função `string.punctuation` que parece que vai fazer o que precisamos.
+- O primeiro é que o código usa a função `string.punctuation` que parece que vai fazer o que precisamos.
 
 - Mas para ela funcionar, foi necessário importar um [módulo do Python]{.alert}: `import string`.
 
@@ -1104,7 +1104,7 @@ Mas, na verdade, quanto antes descobrirmos que uma função está errada melhor.
 
 . . .
 
-Me chamou a atenção que, na Pesquisa de Perfil da Turma, poucos de vocês usam Copilot para gerar testes! ⚠️ 
+Me chamou a atenção que, na Pesquisa de Perfil da Turma, vários de vocês não usam IA para gerar testes (ou usam pouco)! ⚠️ 
 
 ##
 
@@ -1332,7 +1332,7 @@ Não há uma regra absoluta para definir o que é uma boa função.
 
 Antes de entrar nas recomendações, você verá que usaremos aqui o termo "funções folha" (_leaf functions_).
 
-- Esse termo se referem a funções que não chamam nenhuma outra função do nosso próprio sistema.
+- Esse termo se refere a funções que não chamam nenhuma outra função do nosso próprio sistema.
 - A ideia vem de que em uma árvore, a partir da raiz, as folhas são as "pontas".
 
 ## [Uma tarefa clara a realizar]{.alert}
@@ -1366,7 +1366,9 @@ A tarefa _"encontrar o maior número em uma lista"_ é claramente definida.
 Já a tarefa _"encontre a melhor palavra em uma lista"_ é mal definida.
 
 - Falta informação: o que significa palavra "melhor"?
-- É a palavra mais longa, a que tem menos vogais, a que tem `J` de Júlio 😁?
+- É a palavra mais longa? 
+  - A que tem menos vogais? 
+  - A que tem `J` de Julio 😁?
 
 ## [Comportamento claramente definido]{.alert}
 

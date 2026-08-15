@@ -1068,11 +1068,11 @@ section .bss
 <li class="fragment">A conversa é a mesma? Por que?</li>
 </ul>
 </section>
-<section id="exercícios-adicionais" class="slide level2">
-<h2>Exercícios Adicionais</h2>
+<section id="section-62" class="slide level2">
+<h2></h2>
 <p>Experimente agora pedir ao Copilot para não aceitar valores inválidos para os lados do retângulo.</p>
 </section>
-<section id="section-62" class="slide level2">
+<section id="section-63" class="slide level2">
 <h2></h2>
 <p>Quando eu fiz esse teste, o programa gerado tinha <strong>replicação de código</strong>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
@@ -1094,6 +1094,39 @@ section .bss
 <span id="cb9-17"><a></a>        <span class="cf">break</span></span>
 <span id="cb9-18"><a></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
 <span id="cb9-19"><a></a>        <span class="bu">print</span>(<span class="st">"Opa, isso não é um número válido, não!"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-64" class="slide level2">
+<h2></h2>
+<p>Esse é um exemplo interessante da diferença que faz o conhecimento técnico por parte de quem está usando o assistente de IA.</p>
+<ul>
+<li class="fragment">Quem fez disciplinas de POO sabe que replicação de código é sinal de <em>design</em> ruim.</li>
+<li class="fragment">Mas, para quem não é da área, e está programando por <em>vibe coding</em> não tem a menor ideia disso.</li>
+</ul>
+<div class="fragment">
+<p>Podemos usar <kbd>Ctrl</kbd> + <kbd>I</kbd> novamente e pedir ao Copilot para remover a replicação de código.</p>
+</div>
+</section>
+<section id="section-65" class="slide level2">
+<h2></h2>
+<p>No meu caso, ao fazer isso, foi gerada uma função para tratar a leitura do lado do retângulo.</p>
+<ul>
+<li class="fragment">Um exemplo de <strong>reutilização de código</strong>.</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="co"># Solicita ao usuário o tamanho dos lados do retângulo</span></span>
+<span id="cb10-2"><a></a><span class="kw">def</span> ler_lado(mensagem):</span>
+<span id="cb10-3"><a></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb10-4"><a></a>        <span class="cf">try</span>:</span>
+<span id="cb10-5"><a></a>            lado <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(mensagem))</span>
+<span id="cb10-6"><a></a>            <span class="cf">if</span> lado <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb10-7"><a></a>                <span class="bu">print</span>(<span class="st">"Opa, o lado deve ser maior que zero, uai!"</span>)</span>
+<span id="cb10-8"><a></a>                <span class="cf">continue</span></span>
+<span id="cb10-9"><a></a>            <span class="cf">return</span> lado</span>
+<span id="cb10-10"><a></a>        <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb10-11"><a></a>            <span class="bu">print</span>(<span class="st">"Opa, isso não é um número válido, não!"</span>)</span>
+<span id="cb10-12"><a></a></span>
+<span id="cb10-13"><a></a></span>
+<span id="cb10-14"><a></a>lado1 <span class="op">=</span> ler_lado(<span class="st">"Ô trem bão, me fala o tamanho do primeiro lado do retângulo, uai: "</span>)</span>
+<span id="cb10-15"><a></a>lado2 <span class="op">=</span> ler_lado(<span class="st">"Agora cê fala o tamanho do segundo lado, sô: "</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section></section>
