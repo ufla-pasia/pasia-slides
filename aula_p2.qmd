@@ -95,9 +95,11 @@ Para exemplificar isso, suponha que vamos criar um programa para jogar `Scrabble
 
 ![](imagens/jogo_scrabble.png){fig-align="center" fig-alt="Jogo de tabuleiro Scrabble em português."}
 
-. . .
+##
 
-- É um jogo de tabuleiro baseado em palavras-cruzadas.
+![](imagens/jogo_scrabble.png){fig-align="center" fig-alt="Jogo de tabuleiro Scrabble em português."}
+
+É um jogo de tabuleiro baseado em palavras-cruzadas.
 
 ##
 
@@ -127,7 +129,7 @@ def numero_de_pontos(palavra):
     q: 6 pontos
     x, z: 8 pontos
 
-    palavra é uma palavra formada por letras caracteres minúsculos
+    palavra é uma palavra formada por letras (caracteres minúsculos)
     Retorna a soma dos pontos de cada letra da palavra
     """
 ```
@@ -470,7 +472,7 @@ def calcular_quantidade_gols(dados, pais):
     - a terceira coluna traz o nome do país do jogador
     - a sexta coluna o nome da liga
     - a décima terceira coluna o número de gols feitos pelo jogador
-    pais é a identificação do país de interesse (ex.: "br BRA")
+    país é a identificação do país de interesse (ex.: "br BRA")
 
     A função calcula e retorna a quantidade de gols feitos 
     por jogadores do país passado em cada liga
