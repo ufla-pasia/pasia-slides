@@ -18,476 +18,476 @@
     "href": "aula_p1.html#section-1",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Você conhece alguma indústria ou negócio cuja forma de trabalho não tem sofrido impacto do uso de softwares?\n\nDifícil de imaginar, não é?\nSoftware é essencial hoje em dia.\n\n\nO resultado tem sido que cada vez mais pessoas querem aprender a programar\n\nE não estamos falando apenas de graduação em área de TI.\n\nPode ser um cientista que precisa de um programa para analisar dados.\nOu um trabalhador de escritório que gostaria de automatizar alguma tarefa repetitiva chata.\nOu alguém que quer criar um jogo por hobby."
+    "text": "Você conhece alguma indústria ou negócio cuja forma de trabalho não tem sofrido impacto do uso de softwares?\n\nDifícil de imaginar, não é?\nSoftware é essencial hoje em dia.\n\n\nResultado: cada vez mais pessoas querem aprender a programar\n\nE não estamos falando apenas de graduação em área de TI.\n\nPode ser um cientista que precisa de um programa para analisar dados.\nOu um trabalhador de escritório que gostaria de automatizar alguma tarefa repetitiva chata.\nOu alguém que quer criar um jogo por hobby."
   },
   {
     "objectID": "aula_p1.html#section-2",
     "href": "aula_p1.html#section-2",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Apesar do desejo de aprender a programar\n\nDécadas de pesquisa na área de educação em computação mostram que programar é difícil.\nFerramentas de IA podem facilitar muito aprendizado\n\nEvitando que o aluno tenha que saber detalhes de regras de sintaxe.\n\n\n\nNesta disciplina usaremos o GitHub Copilot como um assistente de IA.\n\nAlgumas pessoas dizem que assistentes de IA acabarão com todos os empregros de desenvolvedores.\nOutros acham que assistentes de IA nunca serão confiáveis.\nMas é fácil encontrar falhas nesses dois argumentos opostos e extremos.\n\n\n\nO fato é que achar que assistentes de IA não deveriam ser usados hoje em dia\n\nseria o mesmo que um carpinteiro se recusar a usar ferramentas elétricas."
+    "text": "Apesar do desejo de aprender a programar\n\nDécadas de pesquisa na área de educação em computação mostram que programar é difícil.\nFerramentas de IA podem facilitar muito aprendizado\n\nEvitando que o aluno tenha que saber detalhes de regras de sintaxe."
   },
   {
     "objectID": "aula_p1.html#section-3",
     "href": "aula_p1.html#section-3",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Os assistentes de IA possuem vantagens que são inegáveis\n\nGeram códigos que, na grande maioria das vezes, não têm erros de sintaxe.\n\nEvitando frustrações comuns de iniciantes.\n\nSão muito boas para explicar o que um código já implementado faz.\n\nFazendo com que um aluno não dependa tanto de um professor, monitor ou colega para ajudá-lo.\n\n\n\nE, claro, muitas vezes assistentes de IA geram códigos corretos para problemas comuns\n\nJá que é treinado a partir de uma quantidade imensa de códigos.\nPor que então não utilizá-los?"
+    "text": "Nesta disciplina usaremos o GitHub Copilot como um assistente de IA.\n\nAlgumas pessoas dizem que assistentes de IA acabarão com todos os empregros de desenvolvedores.\nOutros acham que assistentes de IA nunca serão confiáveis.\nMas é fácil encontrar falhas nesses dois argumentos opostos e extremos.\n\n\nO fato é que achar que assistentes de IA não deveriam ser usados hoje em dia\n\nseria o mesmo que um carpinteiro se recusar a usar ferramentas elétricas."
   },
   {
     "objectID": "aula_p1.html#section-4",
     "href": "aula_p1.html#section-4",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Isso não quer dizer que criar software agora é algo trivial e podemos confiar toda habilidade de programação para a IA.\n\nO fato é que as habilidades para se criar um bom software estão evoluindo.\n\n\nHabilidades como:\n\ndecomposição de problemas\nespecificação de código\nleitura de código\nteste de código\n\n\n\nSe tornaram mais importantes do que eram no passado.\n\n\nJá habilidades como conhecer a semântica e sintaxe de uma biblioteca são agora menos importantes."
+    "text": "Os assistentes de IA possuem vantagens que são inegáveis\n\nGeram códigos que, na grande maioria das vezes, não têm erros de sintaxe.\n\nEvitando frustrações comuns de iniciantes (seja em programação em geral, ou em uma linguagem específica).\n\nSão muito boas para explicar o que um código já implementado faz.\n\nFazendo com que um aluno não dependa tanto de um professor, monitor ou colega para ajudá-lo."
   },
   {
     "objectID": "aula_p1.html#section-5",
     "href": "aula_p1.html#section-5",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "O que essa disciplina espera de você:\n\nQue conheça o básico de programação\n\nTendo feito IALG ou FP1.\n\nQue esteja disposto a realmente criar software útil com auxílio de IA.\n\nNão faz sentido fazer uma disciplina para virar um operator de TAB :)\n\nQue tenha resiliência para lidar com todo o ciclo de desenvolvimento.\n\nQue envolve criar, testar, corrigir, melhorar, documentar, etc.\n\n\n\nEsperamos que ao final da disciplina você consiga\n\nCriar programas em Python com auxílio de IA.\nSaiba identificar se os programas funcionam corretamente e, se não funcionam, o que fazer para corrigir.\nConsiga ler e entender códigos em Python.\nSaiba utilizar bibliotecas de análise e visualização de dados em Python.\nSaiba automatizar tarefas repetitivas com Python."
+    "text": "E, claro, muitas vezes assistentes de IA geram códigos corretos para problemas comuns\n\nJá que é treinado a partir de uma quantidade imensa de códigos.\nPor que então não utilizá-los?\n\n\nIsso não quer dizer que criar software agora é algo trivial e podemos confiar toda habilidade de programação para a IA.\n\nO fato é que as habilidades para se criar um bom software estão evoluindo."
   },
   {
     "objectID": "aula_p1.html#section-6",
     "href": "aula_p1.html#section-6",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Há um desafio ao utilizar assistentes de IA, que é especialmente relevante no caso de uma disciplina.\n\nAssistentes de IA estão evoluindo muito rapidamente,\ne ainda possuem comportamento não-determinístico.\nCom isso, se você resolver a mesma tarefa várias vezes, você pode obter soluções diferentes.\n\n\nO resultado é que o que você fizer pode não bater exatamente com o que o professor preparou para a aula.\n\nPor isso é tão importante que você aprenda como verificar se uma solução do assistente de IA está correta ou não."
+    "text": "Habilidades como:\n\ndecomposição de problemas\nespecificação de código\nleitura de código\nteste de código\n\n\nse tornaram mais importantes do que eram no passado.\n\n\nJá habilidades como conhecer a semântica e sintaxe de uma biblioteca são agora menos importantes."
   },
   {
     "objectID": "aula_p1.html#section-7",
     "href": "aula_p1.html#section-7",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "O que você acha que esse código faz?\nsection .text \nglobal _start \n_start: \n    mov ecx, 10 \n    mov eax, '0' \n    l1: \n    mov [num], eax \n    mov eax, 4 \n    mov ebx, 1 \n    push ecx \n    mov ecx, num \n    mov edx, 1 \n    int 0x80 \n    mov eax, [num] \n    inc eax \n    pop ecx \n    loop l1 \n    mov eax, 1 \n    int 0x80 \nsection .bss \n    num resb 1\n\nEle faz com que o computador conte de 0 a 9 e imprima os números na tela.\n\nEra assim que se programava antigamente."
+    "text": "O que essa disciplina espera de você:\n\nQue conheça o básico de programação (estamos em migração da proposta)\n\nTendo feito IALG ou FP1.\n\nQue esteja disposto a realmente criar software útil com auxílio de IA.\n\nNão faz sentido fazer uma disciplina para virar um operator de TAB :)\n\nQue tenha resiliência para lidar com todo o ciclo de desenvolvimento.\n\nQue envolve criar, testar, corrigir, melhorar, documentar, etc."
   },
   {
     "objectID": "aula_p1.html#section-8",
     "href": "aula_p1.html#section-8",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "O que você acha que esse código faz?\nsection .text \nglobal _start \n_start: \n    mov ecx, 10 \n    mov eax, '0' \n    l1: \n    mov [num], eax \n    mov eax, 4 \n    mov ebx, 1 \n    push ecx \n    mov ecx, num \n    mov edx, 1 \n    int 0x80 \n    mov eax, [num] \n    inc eax \n    pop ecx \n    loop l1 \n    mov eax, 1 \n    int 0x80 \nsection .bss \n    num resb 1\nEssa monstruosidade foi escrita em código Assembly.\n\nProjetada para ser entendida por máquinas e não humanos.\nMesmo na década de 90 jogos como Doom e Quake tinham trechos escritos em Assembly para garantir desempenho."
+    "text": "Esperamos que ao final da disciplina você consiga\n\nCriar programas em Python com auxílio de IA.\nSaiba identificar se os programas funcionam corretamente e, se não funcionam, o que fazer para corrigir.\nConsiga ler e entender códigos em Python.\nSaiba utilizar bibliotecas de análise e visualização de dados em Python.\nSaiba automatizar tarefas repetitivas com Python.\nConheça boas práticas de uso de Agentes de IA."
   },
   {
     "objectID": "aula_p1.html#section-9",
     "href": "aula_p1.html#section-9",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Uma forma mais moderna de escrever o mesmo programa seria:\n\nfor numero in range(9):\n    print(numero)\n\n\nEscrito em Python, que se parece muito mais com uma linguagem natural.\n\nEspecialmente para quem fala inglês.\n\nE é mais fácil para uma pessoa tentar adivinhar o que o código faz, mesmo que não conheça Python.\n\n\nMas infelizmente, o código está errado, ele não exibe os números de 0 a 9.\n\nApesar de parecer inglês, Python não é inglês.\nE, assim, confundir algum detalhe das regras de um programa pode “quebrá-lo”."
+    "text": "Há um desafio ao utilizar assistentes de IA, que é especialmente relevante no caso de uma disciplina.\n\nAssistentes de IA estão evoluindo muito rapidamente,\ne ainda possuem comportamento não-determinístico.\nCom isso, se você resolver a mesma tarefa várias vezes, você pode obter soluções diferentes.\n\n\nO resultado é que o que você fizer pode não bater exatamente com o que o professor preparou para a aula.\n\nPor isso é tão importante que você aprenda como verificar se uma solução do assistente de IA está correta ou não."
   },
   {
     "objectID": "aula_p1.html#section-10",
     "href": "aula_p1.html#section-10",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Com assitentes de IA, o trabalho ficou muito mais fácil.\n\nPodemos escrever em português, e o GitHub Copilot gera o código em Python para nós.\n\n\nSe escrevemos, por exemplo, o comentário abaixo:\n\n# Exiba os números de 0 a 9\n\n\n\nProvavelmente, o GitHub Copilot irá sugerir o código a seguir\n\nque, diferentemente do código anterior, esse está correto.\n\n\n# Exiba os números de 0 a 9\nfor i in range(10):\n    print(i)"
+    "text": "O que você acha que esse código faz?\nsection .text \nglobal _start \n_start: \n    mov ecx, 10 \n    mov eax, '0' \n    l1: \n    mov [num], eax \n    mov eax, 4 \n    mov ebx, 1 \n    push ecx \n    mov ecx, num \n    mov edx, 1 \n    int 0x80 \n    mov eax, [num] \n    inc eax \n    pop ecx \n    loop l1 \n    mov eax, 1 \n    int 0x80 \nsection .bss \n    num resb 1\n\nEle faz com que o computador conte de 0 a 9 e imprima os números na tela.\n\nEra assim que se programava antigamente."
   },
   {
     "objectID": "aula_p1.html#section-11",
     "href": "aula_p1.html#section-11",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Antes dos assistentes de IA, programadores profissionais costumavam trabalhar com duas telas.\n\nUma com a IDE para programar\nOutra com o Google e/ou Stack Overflow para pesquisar como resolver problemas.\n\n\nMuitas vezes a solução encontrada na internet já era o que o programador estava tentando fazer.\n\nespecialmente no caso de programadores iniciantes.\n\n\n\nUma das coisas que os assistentes de IA fazem de melhor é automatizar esse processo.\n\nFazendo isso não só mais rápido, como também contextualizado no código que está sendo escrito."
+    "text": "section .text \nglobal _start \n_start: \n    mov ecx, 10 \n    mov eax, '0' \n    l1: \n    mov [num], eax \n    mov eax, 4 \n    mov ebx, 1 \n    push ecx \n    mov ecx, num \n    mov edx, 1 \n    int 0x80 \n    mov eax, [num] \n    inc eax \n    pop ecx \n    loop l1 \n    mov eax, 1 \n    int 0x80 \nsection .bss \n    num resb 1\nEssa monstruosidade foi escrita em código Assembly.\n\nProjetada para ser entendida por máquinas e não humanos.\nMesmo na década de 90, jogos como Doom e Quake tinham trechos escritos em Assembly para garantir desempenho."
   },
   {
     "objectID": "aula_p1.html#section-12",
     "href": "aula_p1.html#section-12",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Mas o que é exatamente um assistente de IA?\n\nÉ um agente de IA que te ajuda a completar uma tarefa de programação.\nDe forma similar à Alexa, da Amazon, um assistente de IA entende instruções em linguagem natural.\n\n\nNo caso do Copilot, uma das tarefas que ele faz é:\n\nconverter uma linguagem, como o Português, em programas de computador.\n\n\n\nCopilot é apenas um exemplo de assistente desse tipo.\n\nExistem outros como Amazon Q Developer, Tabnine, Ghostwriter, etc."
+    "text": "Uma forma mais moderna de escrever o mesmo programa seria:\n\nfor numero in range(9):\n    print(numero)\n\n\nEscrito em Python, que se parece muito mais com uma linguagem natural.\n\nEspecialmente para quem fala inglês.\n\nE é mais fácil para uma pessoa tentar adivinhar o que o código faz, mesmo que não conheça Python.\n\n\nMas infelizmente, o código está errado, ele não exibe os números de 0 a 9."
   },
   {
     "objectID": "aula_p1.html#section-13",
     "href": "aula_p1.html#section-13",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Mas como o Copilot funciona?\n\nEle pode ser visto como uma camada entre você e o programa que você está implementando.\nEm vez de escrever diretamente em Python, você descreve o que você quer em palavras e o Copilot gera o programa para você.\nEssas palavras que escrevemos é o que chamamos de prompt.\n\n\nO “cérebro” por traz do Copilot é um programa de computador bacana que chamamos de LLM.\n\nLLM vem do inglês Large Language Model, ou Modelo de Linguagem de Larga Escala.\nUm LLM guarda informações sobre o relacionamento entre palavras\n\nIncluindo quais palavras fazem sentido em certos contextos\nE usa isso para prever a melhor sequência de palavras para responder um prompt."
+    "text": "Apesar de parecer inglês, Python não é inglês.\n\nE, assim, confundir algum detalhe das regras de um programa pode “quebrá-lo”.\n\n\nCom assitentes de IA, o trabalho ficou muito mais fácil.\n\nPodemos escrever em português, e o GitHub Copilot gera o código em Python para nós."
   },
   {
     "objectID": "aula_p1.html#section-14",
     "href": "aula_p1.html#section-14",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Imagine por exemplo que você pergunte qual a próxima palavra deveria ver na frase:\n\n“A pessoa abriu a _____”.\n\n\nHá várias palavras que fariam sentido nesse contexto, como “porta”, “caixa” ou “sessão”.\n\nJá outras claramente não fariam sentido como: “o”, “ele” ou “abrir”.\n\n\n\nUm LLM leva em conta o contexto para completar a próxima palavra e vai fazendo isso, palavra a palavra, até chegar na resposta final.\n\nO LLM faz isso de maneira não determinística, o que significa que há uma certa aleatoriedade no processo.\nAssim, às vezes a frase poderia ser completada com “caixa” e outras vezes com “porta”, por exemplo.\n\n\n\nIsso é importante pois significa que o Copilot pode gerar códigos diferentes cada vez que você pede que ele seja gerado."
+    "text": "Se escrevemos, por exemplo, o comentário abaixo:\n\n# Exiba os números de 0 a 9\n\n\nProvavelmente, o GitHub Copilot irá sugerir o código a seguir\n\nque, diferentemente do código anterior, esse está correto.\n\n\n# Exiba os números de 0 a 9\nfor i in range(10):\n    print(i)"
   },
   {
     "objectID": "aula_p1.html#section-15",
     "href": "aula_p1.html#section-15",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Repare que em nenhum momento dissemos que o Copilot “entende” o que ele está fazendo.\n\nEle simplesmente completa o código com aquilo que parece fazer mais sentido.\n\n\nAssim, durante nossa jornada na disciplina,\n\ncaberá a você conferir se o que está sendo gerado é realmente o que você precisa que seja feito"
+    "text": "Antes dos assistentes de IA, programadores profissionais costumavam trabalhar com duas telas.\n\nUma com a IDE para programar\nOutra com o Google e/ou Stack Overflow para pesquisar como resolver problemas.\n\n\nMuitas vezes a solução encontrada na internet já era o que o programador estava tentando fazer.\n\nespecialmente no caso de programadores iniciantes."
   },
   {
     "objectID": "aula_p1.html#section-16",
     "href": "aula_p1.html#section-16",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Funcionamento do Copilot:\n\nobs.: atualmente você pode escolher diferentes LLMs no Copilot, não só o GPT da OpenAI."
+    "text": "Uma das coisas que os assistentes de IA fazem de melhor é automatizar esse processo.\n\nFazendo isso não só mais rápido, como também contextualizado no código que está sendo escrito."
   },
   {
     "objectID": "aula_p1.html#section-17",
     "href": "aula_p1.html#section-17",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Não seria mais prático se o Copilot gerasse código de máquina diretamente?\n\nPor que você acha que o usamos para gerar um código em uma linguagem de programação como Python?\n\n\nA questão é que o Copilot cometerá erros\n\nE nós precisaremos encontrá-los e corrigi-los (mesmo que com a ajuda do próprio Copilot).\nÉ muito mais fácil fazer isso em uma linguagem de alto nível como Python do que em código de máquina."
+    "text": "Mas o que é exatamente um assistente de IA?\n\nÉ um agente de IA que te ajuda a completar uma tarefa de programação.\nDe forma similar à Alexa, da Amazon, um assistente de IA entende instruções em linguagem natural.\n\n\nNo caso do Copilot, uma das tarefas que ele faz é:\n\nconverter uma linguagem, como o Português, em programas de computador.\n\n\n\nCopilot é apenas um exemplo de assistente desse tipo.\n\nQuais você conhece?"
   },
   {
     "objectID": "aula_p1.html#section-18",
     "href": "aula_p1.html#section-18",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "O vídeo abaixo é bem interessante e explica de forma simples como funcionam os modelos LLM.\n\n\n\n\n\nFica a dica:\n\nEsse canal 3Blue1Brown é muito bom.\nExplica diversos conceitos matemáticos de forma visual e intuitiva."
+    "text": "Mas como o Copilot funciona?\n\nEle pode ser visto como uma camada entre você e o programa que você está implementando.\nEm vez de escrever diretamente em Python, você descreve o que você quer em palavras e o Copilot gera o programa para você.\nEssas palavras que escrevemos é o que chamamos de prompt."
   },
   {
     "objectID": "aula_p1.html#section-19",
     "href": "aula_p1.html#section-19",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Programadores, especialmente iniciantes, gastam muito tempo aprendendo a escrever código sintaticamente correto.\n\nMesmo programadores mais experientes podem gastar muito tempo quando utilizam uma nova linguagem de programação ou mesmo uma nova biblioteca em uma linguagem que já conhecem.\n\n\nAssistentes como o Copilot podem ajudar muito nesse aspecto.\n\nPois quase sempre geram códigos que são sintaticamente corretos.\nEvitando que precisemos escrevê-los do zero.\n\n\n\nCom isso, conseguimos criar softwares mais complexos em menos tempo e com menos frustrações."
+    "text": "O “cérebro” por traz do Copilot é um programa de computador bacana que chamamos de LLM.\n\nLLM vem do inglês Large Language Model, ou Modelo de Linguagem de Larga Escala.\nUm LLM guarda informações sobre o relacionamento entre palavras\n\nIncluindo quais palavras fazem sentido em certos contextos\nE usa isso para prever a melhor sequência de palavras para responder a um prompt."
   },
   {
     "objectID": "aula_p1.html#section-20",
     "href": "aula_p1.html#section-20",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Não ter que se preocupar com detalhes de sintaxe pode ser um grande fator de aumento de produtividade.\n\nAfinal de contas o que precisamos é resolver o problema do usuário final, independente dos detalhes de como o código precisa ser escrito.\nMas não é só assim que o Copilot pode nos ajudar."
+    "text": "Imagine, por exemplo, que você pergunte qual a próxima palavra que deveria aparecer na frase:\n\n“A pessoa abriu a _____”.\n\n\nHá várias palavras que fariam sentido nesse contexto, como “porta”, “caixa” ou “sessão”.\n\nJá outras claramente não fariam sentido como: “o”, “ele” ou “abrir”."
   },
   {
     "objectID": "aula_p1.html#section-21",
     "href": "aula_p1.html#section-21",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "O Copilot, assim como outros assistentes de IA, também pode:\n\nExplicar códigos que já existem\n\nIsso é útil tanto quando temos que trabalhar em um código que não fomos nós que escrevemos.\nComo também quando queremos entender um código que foi gerado pelo próprio Copilot.\n\n\n\nTornar código mais fácil de entender\n\nHá diferentes formas de escrever um código que resolve a mesma tarefa.\nE algumas são mais fáceis de entender do que outras.\nPodemos então pedir ao Copilot para reorganizar o código de forma que ele fique mais fácil de entender."
+    "text": "Um LLM leva em conta o contexto para completar a próxima palavra\n\ne vai fazendo isso, palavra a palavra, até chegar na resposta final.\n\n\nO LLM faz isso de maneira não determinística, o que significa que há uma certa aleatoriedade no processo.\n\nAssim, às vezes a frase poderia ser completada com “caixa” e outras vezes com “porta”, por exemplo.\n\n\n\nIsso é importante pois significa que o Copilot pode gerar códigos diferentes cada vez que você pede que ele seja gerado."
   },
   {
     "objectID": "aula_p1.html#section-22",
     "href": "aula_p1.html#section-22",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "O Copilot, assim como outros assistentes de IA, também pode:\nEncontrar e corrigir bugs\n\nComo já foi mencionado o código gerado pelo Copilot pode não funcionar corretamente.\nOu pode funcionar em quase todos os casos, mas falhar em alguns.\nPodemos então pedir ao Copilot para nos ajudar a encontrar e corrigir esses bugs.\n\n\nExplicar erros\n\nAs mensagens de erro geradas pelas linguagens de programação podem ser difíceis de entender.\nO Copilot pode nos ajudar a entender o que está acontecendo e como corrigir o erro.\nÉ útil passar para o Copilot não só a mensagem de erro, como também a pilha de execução."
+    "text": "Repare que em nenhum momento dissemos que o Copilot “entende” o que ele está fazendo.\n\nEle simplesmente completa o código com aquilo que parece fazer mais sentido.\n\n\nAssim, durante nossa jornada na disciplina,\n\ncaberá a você conferir se o que está sendo gerado é realmente o que você precisa que seja feito"
   },
   {
     "objectID": "aula_p1.html#section-23",
     "href": "aula_p1.html#section-23",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "O Copilot, assim como outros assistentes de IA, também pode:\nEncontrar bibliotecas que podem ser úteis\n\nMuitas vezes não sabemos que bibliotecas existem ou como utilizá-las.\nO Copilot pode nos ajudar a encontrar bibliotecas que podem ser úteis para o nosso problema.\nE também pode nos ajudar a entender como utilizá-las.\n\n\nMelhorar o desempenho do código\n\nO Copilot pode nos ajudar a identificar gargalos de desempenho no código.\nE sugerir melhorias para torná-lo mais eficiente."
+    "text": "Funcionamento do Copilot:\n\nobs.: atualmente você pode escolher diferentes LLMs no Copilot, não só o GPT da OpenAI."
   },
   {
     "objectID": "aula_p1.html#section-24",
     "href": "aula_p1.html#section-24",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Uma dica geral para utilizar assistentes de IA é:\n\nInteraja com o assistente de IA, fazendo ciclos de perguntas e feedbacks.\n\n\nVocê pode, por exemplo:\n\nPedir ao Copilot para gerar um código que resolva um problema específico.\nPedir que ele explique o código que fez.\nPedir que ele melhore o código, tornando-o mais fácil de entender.\nPedir que ele encontre e corrija bugs no código.\nSe necessário, pedir para melhorar o desempenho depois de ter a solução funcionando."
+    "text": "Não seria mais prático se o Copilot gerasse código de máquina diretamente?\n\nPor que você acha que o usamos para gerar um código em uma linguagem de programação como Python?\n\n\nA questão é que o Copilot cometerá erros\n\nE nós precisaremos encontrá-los e corrigi-los (mesmo que com a ajuda do próprio Copilot).\nÉ muito mais fácil fazer isso em uma linguagem de alto nível como Python do que em código de máquina."
   },
   {
     "objectID": "aula_p1.html#section-25",
     "href": "aula_p1.html#section-25",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Além de falar das vantagens, é importante também falar dos riscos e desafios ao usar assistentes de IA.\n\nCopyright\n\nA quem pertence um código gerado por um assistente de IA?\nO assistente de IA é treinado a partir de códigos disponíveis na internet, então é possível que o código gerado seja muito parecido com algum código existente.\nAs ferramentas têm evoluído e muitas identificam a fonte quando o código gerado é muito parecido com algum código existente.\nIsso levanta questões sobre a propriedade intelectual e o uso ético de código gerado por IA.\nA tecnologia evoluiu muito rápido do que a legislação, então ainda teremos muito debate sobre o assunto."
+    "text": "O vídeo abaixo é bem interessante e explica de forma simples como funcionam os modelos LLM.\n\nObs.: você pode mudar a faixa de áudio para dublagem em português."
   },
   {
     "objectID": "aula_p1.html#section-26",
     "href": "aula_p1.html#section-26",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Educação\n\nOs autores do livro fizeram testes com exercícios de disciplinas introdutórias de programação.\nDe cara, o Copilot acertou 50% dos exercícios.\n\nCom um pouco mais de contexto acertou 80%.\n\nÉ fato que a educação precisa mudar para lidar com essa nova realidade.\n\nEm algumas escolas, o aluno pode usar assitentes de IA para fazer os exercícios.\nEm outras, o uso é proibido em provas ou dependendo do curso (como Computação ou Sistemas).\nAlgumas treinararam LLMs específicos para dar apenas certos tipos de respostas.\n\nO fato é que ainda está muito cedo para dizer como LLM vai afetar a educação em computação.\n\nMas certas tendências já começaram a aparecer."
+    "text": "Fica a dica:\n\nEsse canal 3Blue1Brown é muito bom.\nExplica diversos conceitos matemáticos de forma visual e intuitiva."
   },
   {
     "objectID": "aula_p1.html#section-27",
     "href": "aula_p1.html#section-27",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Qualidade do código\n\nÉ necessário ser bem cuidadoso e não confiar cegamente no código gerado por assistentes de IA.\n\nEspecialmente em códigos sensíveis ou que precisam ser especialmente seguros.\nImagine um código de um dispositivo médico ou de um carro autônomo, por exemplo.\n\nÉ fundamental criar uma estrutura de testes, independente do assistente de IA,\n\nPara garantir que o código funciona corretamente."
+    "text": "Programadores, especialmente iniciantes, gastam muito tempo aprendendo a escrever código sintaticamente correto.\n\nMesmo programadores mais experientes podem gastar muito tempo quando utilizam uma nova linguagem de programação ou mesmo uma nova biblioteca em uma linguagem que já conhecem.\n\n\nAssistentes como o Copilot podem ajudar muito nesse aspecto.\n\nPois quase sempre geram códigos que são sintaticamente corretos.\nEvitando que precisemos escrevê-los do zero."
   },
   {
     "objectID": "aula_p1.html#section-28",
     "href": "aula_p1.html#section-28",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Segurança do código\n\nNão há nenhuma garantia de segurança em código gerado por assistentes de IA.\nTrabalhar com dados de usuários, por exemplo, requer cuidados especiais.\nDevemos também tomar cuidado com dados que são enviados para os assistentes de IA.\n\nPor exemplo, não enviar dados sensíveis ou confidenciais.\n\nMuitas empresas proíbam ou limitam a forma de uso das ferramentas de IA, devido a essas preocupações."
+    "text": "Com isso, conseguimos criar softwares mais complexos em menos tempo e com menos frustrações.\n\nNão ter que se preocupar com detalhes de sintaxe pode ser um grande fator de aumento de produtividade.\n\nAfinal de contas o que precisamos é resolver o problema do usuário final, independente dos detalhes de como o código precisa ser escrito.\nMas não é só assim que o Copilot pode nos ajudar."
   },
   {
     "objectID": "aula_p1.html#section-29",
     "href": "aula_p1.html#section-29",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Assistentes de IA não são especialistas (experts)\n\nA grande diferença de um especialista não é o que ele sabe, mas o que ele sabe que não sabe :)\nUm especialista consegue dizer o quão confiante ele está sobre uma determinada solução.\n\nE se não estiver confiante o suficiente, ele estuda até conhecer melhor o que ele não sabe.\n\nAssistentes de IA não têm essa capacidade.\n\nHá casos de assistentes que geraram obituários de pessoas mortas ou que explicaram com um ábaco é mais rápido que um computador.\n\nAs ferramentas estão evoluindo muito, mas ainda são muito autoconfiantes.\nEm resumo: tudo que um assistente de IA faz deve ser verificado por um humano."
+    "text": "O Copilot, assim como outros assistentes de IA, também pode:\n\nExplicar códigos que já existem\n\nIsso é útil tanto quando temos que trabalhar em um código que não fomos nós que escrevemos.\nComo também quando queremos entender um código que foi gerado pelo próprio Copilot."
   },
   {
     "objectID": "aula_p1.html#section-30",
     "href": "aula_p1.html#section-30",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Viés\n\nLLMs vão reproduzir os mesmos vieses que estão presentes nos dados com os quais foram treinados.\nUm LLM é treinada com mais literatura inglesa do que de outras culturas, por exemplo.\n\nE isso acabará se refletindo nas respostas que ele gera.\n\nHá também o risco de reforçar estereótipos negativos.\nNa geração de código, é provável que ele gere códigos em um estilo que é mais comum em grupos que têm maior representatividade na comunidade de programação.\nPor outro lado, as próprias LLMs podem ajudar a quebrar esses vieses ao facilitar o acesso à programação para pessoas que não têm tanta representatividade na comunidade."
+    "text": "Tornar código mais fácil de entender\n\nHá diferentes formas de escrever um código que resolve a mesma tarefa.\nE algumas são mais fáceis de entender do que outras.\nPodemos então pedir ao Copilot para reorganizar o código de forma que ele fique mais fácil de entender."
   },
   {
     "objectID": "aula_p1.html#section-31",
     "href": "aula_p1.html#section-31",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Se o Copilot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?\n\nErrado!\nAssistentes de IA cometem erros.\n\n\nAlém disso, não podemos passar uma tarefa gigantesca para o Copilot e esperar que ele resolva tudo.\n\nExemplo: “Crie um novo jogo de videogame. Ah, e ele precisa ser divertido!”\nIsso não vai funcionar.\nPrecisamos quebrar um problema grande em parte menores para os quais o Copilot possa nos ajudar.\n\nE fazer essa decomposição de problemas não é algo tão simples quanto possa parecer à primeira vista."
+    "text": "Encontrar e corrigir bugs\n\nComo já foi mencionado, o código gerado pelo Copilot pode não funcionar corretamente.\nOu pode funcionar em quase todos os casos, mas falhar em alguns.\nPodemos então pedir ao Copilot para nos ajudar a encontrar e corrigir esses bugs."
   },
   {
     "objectID": "aula_p1.html#section-32",
     "href": "aula_p1.html#section-32",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Uma tarefa que já existia e agora é ainda mais fundamental é: testes de software.\n\nDesenvolvedores profissionais e empresas já tratam esse tipo de tarefa.\nMas é importante saber que o tipo de erro que um assistente de IA pode cometer é diferente do tipo de erro que um humano pode cometer.\n\nPode acontecer de em 20 linhas de código, uma delas tenha um erro tão absurdo ou sutil, que não esperaríamos que ele pudesse acontecer.\n\nAssim, é importante criar uma boa estrutura de testes para garantir que o código funciona corretamente."
+    "text": "Explicar erros\n\nAs mensagens de erro geradas pelas linguagens de programação podem ser difíceis de entender.\nO Copilot pode nos ajudar a entender o que está acontecendo e como corrigir o erro.\nÉ útil passar para o Copilot não só a mensagem de erro, como também a pilha de execução."
   },
   {
     "objectID": "aula_p1.html#section-33",
     "href": "aula_p1.html#section-33",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Outra habilidade essencial é depuração de código.\n\nDepuração é o processo de encontrar e corrigir erros em um código.\nQuando nós mesmos escrevemos o código já costuma ser uma tarefa que consome tempo e exige paciência.\nCom assistentes de IA, a depuração pode ser ainda mais desafiadora.\n\nMesmo que possamos usar a própria IA para ajudar a corrigir\nainda assim precisamos entender o que está acontecendo para poder explicar para a IA o que está errado."
+    "text": "Encontrar bibliotecas que podem ser úteis\n\nMuitas vezes não sabemos que bibliotecas existem ou como utilizá-las.\nO Copilot pode nos ajudar a encontrar bibliotecas que podem ser úteis para o nosso problema.\nE também pode nos ajudar a entender como utilizá-las."
   },
   {
     "objectID": "aula_p1.html#section-34",
     "href": "aula_p1.html#section-34",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Por fim, há uma habilidade totalmente nova quando usamos assistentes de IA: engenharia de prompt.\n\nEngenharia de prompt envolve como dizer para o Copilot o que ele tem que fazer.\nNós podemos escrever as instruções em português, mas a forma como escrevemos essas instruções pode fazer muita diferença.\n\nPrecisamos ser bastante precisos sobre o que queremos.\n\nE mesmo sendo precisos pode ser que a resposta gerada não seja correta.\n\nNesse caso, precisamos primeiro ser capazes de identificar o que está errado\ne depois sermos capazes de reformular o prompt para tentar obter uma resposta melhor.\n\nÀs vezes um pequeno detalhe no prompt pode fazer muita diferença."
+    "text": "Melhorar o desempenho do código\n\nO Copilot pode nos ajudar a identificar gargalos de desempenho no código.\nE sugerir melhorias para torná-lo mais eficiente."
   },
   {
     "objectID": "aula_p1.html#section-35",
     "href": "aula_p1.html#section-35",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Para fazer atividades da disciplina você precisa instalar\n\nVS Code\nPython\nExtensão de Python para VS Code (da Microsoft)\n\nVocê pode instalar digitando Ctrl + P no VS Code e digitando ext install ms-python.python."
+    "text": "Uma dica geral para utilizar assistentes de IA é:\n\nInteraja com o assistente de IA, fazendo ciclos de perguntas e feedbacks."
   },
   {
     "objectID": "aula_p1.html#section-37",
     "href": "aula_p1.html#section-37",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Além disso, precisamos, claro, do GitHub Copilot.\n\nE, como estudante da UFLA, você tem direito à versão GitHub Copilot Pro.\n\n\nPara ter acesso a ela você deve:\n\nCriar uma conta no GitHub, se ainda não tiver, acessando github.com/.\nApós logar, clique no ícone do seu usuário no canto superior direito e acesse a opção Settings.\nNa barra lateral esquerda, clique em Billing and licensing → Education benefits.\nAcesse a opção Start an application\n\nSiga as instruções (você precisará fornecer um comprovante de matrícula)."
+    "text": "Além de falar das vantagens, é importante também falar dos riscos e desafios ao usar assistentes de IA."
   },
   {
     "objectID": "aula_p1.html#section-38",
     "href": "aula_p1.html#section-38",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Vamos agora testar o uso do GitHub Copilot no VS Code\n\nVocê deve logar com seu usuário no painel do Copilot.\n\n\nEm seguida, apague o conteúdo do arquivo Python e digite um comentário com a instrução abaixo.\n\n# exiba na tela: bora começar!\n\n\n\nAo apertar ENTER, aguarde um pouco e o Copilot deve sugerir um código que atenda à sua solicitação.\n\nO código aparece esmaecido e em itálico.\nE você deve apertar TAB para aceitar a sugestão."
+    "text": "Copyright\n\nA quem pertence um código gerado por um assistente de IA?\nO assistente de IA é treinado a partir de códigos disponíveis na internet, então é possível que o código gerado seja muito parecido com algum código existente.\nAs ferramentas têm evoluído e muitas identificam a fonte quando o código gerado é muito parecido com algum código existente.\nIsso levanta questões sobre a propriedade intelectual e o uso ético de código gerado por IA.\nA tecnologia evoluiu muito rápido do que a legislação, então ainda teremos muito debate sobre o assunto."
   },
   {
     "objectID": "aula_p1.html#section-39",
     "href": "aula_p1.html#section-39",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Você deverá então ver um código semelhante a este:\n\nExecute então seu programa para testá-lo.\n\n\n# exiba na tela: bora começar!\nprint(\"bora começar!\")\n\n\nApareceu algo diferente para você?\n\nLembre que o Copilot é não determinístico e pode gerar soluções diferentes de cada vez.\nVocê pode tentar reformular o prompt para ver se obtém uma resposta diferente."
+    "text": "Educação\n\nOs autores do livro fizeram testes com exercícios de disciplinas introdutórias de programação.\nDe cara, o Copilot acertou 50% dos exercícios.\n\nCom um pouco mais de contexto acertou 80%.\n\nÉ fato que a educação precisa mudar para lidar com essa nova realidade."
   },
   {
     "objectID": "aula_p1.html#section-40",
     "href": "aula_p1.html#section-40",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Vamos experimentar um programa que mais do que um simples print na tela.\n\nExperimente criar um programa a partir do prompt abaixo.\n\nNão esqueça de testá-lo.\n\n\n# peça ao usuário o tamanho dos lados de um retângulo e \n# exiba a área do retângulo\n\nDica: às vezes o Copilot continua o comentário da linha anterior em vez de gerar código.\n\nSe isso acontecer, você pode tentar apertar ENTER novamente.\nOu então começar a digitar um código para que ele entenda que é para completar."
+    "text": "Educação\n\nEm algumas escolas, o aluno pode usar assitentes de IA para fazer os exercícios.\n\nEm outras, o uso é proibido em provas ou dependendo do curso (como Computação ou Sistemas).\nAlgumas treinararam LLMs específicos para dar apenas certos tipos de respostas.\n\nO fato é que ainda está muito cedo para dizer como LLM vai afetar a educação em computação.\n\nMas certas tendências já começaram a aparecer."
   },
   {
     "objectID": "aula_p1.html#section-41",
     "href": "aula_p1.html#section-41",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Nós podemos também conversar com o Copilot dentro do contexto de uma parte de código.\n\nPara alterar um trecho de código, por exemplo.\n\n\nExperimente selecionar o código que você acabou de gerar e aperte Ctrl + I.\n\nNa caixa de diálogo que aparece peça ao Copilot para usar emojis na interação com o usuário, por exemplo.\nDepois de processar o prompt, o Copilot fará uma sugestão de alteração no código\n\nVocê pode aceitar a sugestão (o código será alterado).\nFechar a caixa de diálogo (o que vai ignorar a sugestão).\nOu você pode pedir outra sugestão (clicando no botão da terceira opção).\n\n\n\n\nQue tal agora pedir para o Copilot conversar com o usuário em mineirês? :)"
+    "text": "Qualidade do código\n\nÉ necessário ser bem cuidadoso e não confiar cegamente no código gerado por assistentes de IA.\n\nEspecialmente em códigos sensíveis ou que precisam ser especialmente seguros.\nImagine um código de um dispositivo médico ou de um carro autônomo, por exemplo.\n\nÉ fundamental criar uma estrutura de testes, independente do assistente de IA,\n\nPara garantir que o código funciona corretamente."
   },
   {
     "objectID": "aula_p1.html#section-42",
     "href": "aula_p1.html#section-42",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Vamos agora fazer algo mais interessante.\n\nE que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.\n\n\nNós vamos utilizar um conjunto de dados (dataset) da plataforma Kaggle.\n\nUma plataforma de competição de ciência de dados e aprendizado de máquina.\nQue tem milhares de conjuntos de dados dos mais variados assuntos."
+    "text": "Segurança do código\n\nNão há nenhuma garantia de segurança em código gerado por assistentes de IA.\nTrabalhar com dados de usuários, por exemplo, requer cuidados especiais.\nDevemos também tomar cuidado com dados que são enviados para os assistentes de IA.\n\nPor exemplo, não enviar dados sensíveis ou confidenciais.\n\nMuitas empresas proíbam ou limitam a forma de uso das ferramentas de IA, devido a essas preocupações."
   },
   {
     "objectID": "aula_p1.html#section-43",
     "href": "aula_p1.html#section-43",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Vamos trabalhar com dados sobre futebol.\n\nAcesse a página do dataset All footeball player stats in top 5 leagues 23/24.\nSão dados estatísticos dos jogadores das 5 principais ligas de futebol europeias.\nNa página há informações sobre os dados disponíveis e uma amostra dos dados.\n\n\nVamos baixar os dados para usar em nosso programa. Para isso:\n\nClique em Download → Download dataset as zip.\n\nLogue no Kaggle ou crie uma conta se não tiver (pode ser logando com a conta do Google).\n\nDescompacte o arquivo zip baixado.\nCopie o arquivo top5-players.csv para a pasta do seu projeto Python."
+    "text": "Assistentes de IA não são especialistas (experts)\n\nA grande diferença de um especialista não é o que ele sabe, mas o que ele sabe que não sabe 😃\nUm especialista consegue dizer o quão confiante ele está sobre uma determinada solução.\n\nE se não estiver confiante o suficiente, ele estuda até conhecer melhor o que ele não sabe.\n\nAssistentes de IA não têm, nativamente, essa capacidade.\n\nHá casos de assistentes que geraram obituários de pessoas vivas ou que explicaram com um ábaco é mais rápido que um computador."
   },
   {
     "objectID": "aula_p1.html#section-44",
     "href": "aula_p1.html#section-44",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.\n\nCrie um novo arquivo python ou apague o conteúdo do arquivo que você tinha criado.\nEm seguida digite o prompt abaixo e gere o código com o Copilot.\n\n\n\n# abra o arquivo csv chamado \"top5-players.csv\" \n# e guarde os dados em uma variável\n\n\n\nExecute o programa:\n\nele não deve exibir nada, mas serve para testar se o código gerado funciona.\n\n\n\nÉ possível que o Copilot tenha sugerido uma biblioteca mas não a tenha importado.\n\nPara corrigir isso, ou algum outro tipo de erro, você pode selecionar, clicar na lâmpada que aparece\n\nE acessar a opção fix (consertar).\n\nSe ele sugeriu usar uma biblioteca que precisaria ser instalada você pode alterar o prompt\n\npedindo para usar apenas as bibliotecas padrões do python."
+    "text": "Assistentes de IA não são especialistas (experts)\n\nAs ferramentas estão evoluindo muito, mas ainda são muito autoconfiantes.\n\nUltimamente os assistentes têm lidado com isso gerando respostas textuais para elas mesmas e avaliando essas respostas.\nÉ o que é comumente chamado de “raciocínio” (reasoning).\n\nDe toda forma, em resumo: tudo que um assistente de IA faz deve ser verificado por um humano.\n\nHuman in the loop"
   },
   {
     "objectID": "aula_p1.html#section-45",
     "href": "aula_p1.html#section-45",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Nessa parte cada aluno pode estar vendo um código diferente:\n\npois há várias bibliotecas no Python para lidar com arquivos CSV.\nE, como já sabemos, os assistentes de IA são não determinísticos."
+    "text": "Viés\n\nLLMs vão reproduzir os mesmos vieses que estão presentes nos dados com os quais foram treinados.\nUm LLM é treinada com mais literatura inglesa do que de outras culturas, por exemplo.\n\nE isso acabará se refletindo nas respostas que ele gera.\n\nHá também o risco de reforçar estereótipos negativos.\nNa geração de código, é provável que ele gere códigos em um estilo que é mais comum em grupos que têm maior representatividade na comunidade de programação.\nPor outro lado, os próprios LLMs podem ajudar a quebrar esses vieses ao facilitar o acesso à programação para todos."
   },
   {
     "objectID": "aula_p1.html#section-46",
     "href": "aula_p1.html#section-46",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Vamos agora trabalhar com os dados que foram carregados.\n\nA ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.\n\n\nCom o prompt abaixo vamos processar os dados para calcular a quantidade de gol feitos por brasileiros em cada liga.\n\n# a terceira coluna traz o nome do país do jogador, a sexta o nome da liga\n# e a nona o número de gols feitos pelo jogador. Para cada liga some\n# o número de gols feitos por jogadores brasileiros (o país é identificado\n# como \"br BRA\")\n\n\n\nEm seguida, vamos exibir as informações calculadas ordenadas pelo número de gols feitos.\n\n# exiba o nome da liga e o número de gols feitos por brasileiros em ordem\n# descrescente de gols feitos\n\n\n\nTeste seu programa!\n\nCaso seja gerado algum erro, use o Copilot para ajudá-lo a corrigir."
+    "text": "Se o Copilot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?\n\nErrado!\nAssistentes de IA cometem erros."
   },
   {
     "objectID": "aula_p1.html#section-47",
     "href": "aula_p1.html#section-47",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Repare que fizemos o nosso programa com apenas três prompts.\n\nUma para lidar com a entrada de dados.\nOutro para processá-los.\nE o último para exibir os dados.\n\n\nEsse ciclo de entrada, processamento e saída é extremamente comum em programação."
+    "text": "Além disso, não podemos passar uma tarefa gigantesca para o Copilot e esperar que ele resolva tudo.\n\nExemplo: “Crie um novo jogo de videogame. Ah, e ele precisa ser divertido!”\nIsso não vai funcionar.\nPrecisamos quebrar um problema grande em parte menores para os quais o Copilot possa nos ajudar.\n\nE fazer essa decomposição de problemas não é algo tão simples quanto possa parecer à primeira vista."
   },
   {
     "objectID": "aula_p1.html#section-48",
     "href": "aula_p1.html#section-48",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Vamos agora usar o Copilot para alterar o código que havíamos gerado.\n\nSuponha que estamos interessados apenas nos gols dos jogadores jovens.\n\nApague o código gerado pelo segundo prompt que você tinha feito altere o prompt\n\nInformando a coluna que contém a idade e pedindo os dados apenas jogadores com menos de 23 anos.\n\n\n\n# a terceira coluna traz o nome do país do jogador, a sexta o nome da liga\n# e a nona o número de gols feitos pelo jogador. Para cada liga some\n# o número de gols feitos por jogadores brasileiros (o país é identificado\n# como \"br BRA\") e que tenham menos de 23 anos\n\nTeste seu programa!"
+    "text": "Uma tarefa que já existia e agora é ainda mais fundamental é: testes de software.\n\nDesenvolvedores profissionais e empresas já tratam esse tipo de tarefa.\nMas é importante saber que o tipo de erro que um assistente de IA pode cometer é diferente do tipo de erro que um humano pode cometer.\n\nPode acontecer que, em 20 linhas de código, uma delas tenha um erro tão absurdo ou sutil, que não esperaríamos que ele pudesse acontecer.\n\nAssim, é importante criar uma boa estrutura de testes para garantir que o código funciona corretamente."
   },
   {
     "objectID": "aula_p1.html#section-49",
     "href": "aula_p1.html#section-49",
     "title": "Introdução à Programação Suportada por IA",
     "section": "",
-    "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país.\n\neng, es, it, fr ou de.\n\n\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país.\n\nPara isso, apague o código gerado pelo terceiro prompt e o reescreva.\n\n\n\n\n# exiba o nome da liga e o número de gols feitos por brasileiros em ordem\n# descrescente de gols feitos.\n# O nome da liga tem primeiro duas ou três letras para identificar o país,\n# seguido de um espaço e depois o nome da liga propriamente dito. Substitua\n# essas duas letras pelo nome do país. Os países são:\n# eng: Inglaterra, es: Espanha, it: Itália, fr: França e de: Alemanha\n\n\n\nDica:\n\nSe o copilot não gerar o código selecione o comentário, clique na lâmpada, acesse Modify e digite complete o código."
+    "text": "Outra habilidade essencial é depuração de código.\n\nDepuração é o processo de encontrar e corrigir erros em um código.\nQuando nós mesmos escrevemos o código já costuma ser uma tarefa que consome tempo e exige paciência.\nCom assistentes de IA, a depuração pode ser ainda mais desafiadora.\n\nMesmo que possamos usar a própria IA para ajudar a corrigir\nainda assim precisamos entender o que está acontecendo para poder explicar para a IA o que está errado."
   },
   {
     "objectID": "aula_p2.html#section",
     "href": "aula_p2.html#section",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "O conteúdo dessa aula é baseado em partes dos capítulos 2, 3 e 4 do livro abaixo."
+    "text": "O conteúdo dessa aula é baseado em partes dos capítulos 2 e 3 do livro abaixo."
   },
   {
     "objectID": "aula_p2.html#section-2",
     "href": "aula_p2.html#section-2",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.\n\nPara exemplificar isso, suponha que vamos criar um programa para jogar Scrabble.\n\n\n\n\n\n\n\n\nÉ um jogo de tabuleiro baseado em palavras-cruzadas."
+    "text": "Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.\n\nPara exemplificar isso, suponha que vamos criar um programa para jogar Scrabble."
   },
   {
     "objectID": "aula_p2.html#section-3",
     "href": "aula_p2.html#section-3",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Dois jogadores devem ir completando palavras em um tabuleiro com peças de letras.\n\nE, cada vez que um jogador consegue incluir uma palavra, ele ganha pontos de acordo com as letras da palavra."
+    "text": "É um jogo de tabuleiro baseado em palavras-cruzadas."
   },
   {
     "objectID": "aula_p2.html#section-4",
     "href": "aula_p2.html#section-4",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.\n\nO cabeçalho e docstring abaixo mostram como é o cálculo na versão do jogo em português.\n\n\ndef numero_de_pontos(palavra):\n    \"\"\"\n    Cada letra na palavra vale os seguintes pontos:\n    a, e, i, o, u, m, s, r, t: 1 ponto\n    d, l, c, p: 2 pontos\n    n, b, ç: 3 pontos\n    f, g, h, v: 4 pontos\n    j: 5 pontos\n    q: 6 pontos\n    x, z: 8 pontos\n\n    palavra é uma palavra formada por letras caracteres minúsculos\n    Retorna a soma dos pontos de cada letra da palavra\n    \"\"\""
+    "text": "Dois jogadores devem ir completando palavras em um tabuleiro com peças de letras.\n\nE, cada vez que um jogador consegue incluir uma palavra, ele ganha pontos de acordo com as letras da palavra."
   },
   {
     "objectID": "aula_p2.html#section-5",
     "href": "aula_p2.html#section-5",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Uma possível resposta do Copilot para o corpo da função é:\n    pontos = 0\n    for letra in palavra:\n        if letra in \"aeioumsrt\":\n            pontos += 1\n        elif letra in \"dlcp\":\n            pontos += 2\n        elif letra in \"nbç\":\n            pontos += 3\n        elif letra in \"fghv\":\n            pontos += 4\n        elif letra == \"j\":\n            pontos += 5\n        elif letra == \"q\":\n            pontos += 6\n        elif letra in \"xz\":\n            pontos += 8\n    return pontos"
+    "text": "Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.\n\nO cabeçalho e docstring abaixo mostram como é o cálculo na versão do jogo em português.\n\n\ndef numero_de_pontos(palavra):\n    \"\"\"\n    Cada letra na palavra vale os seguintes pontos:\n    a, e, i, o, u, m, s, r, t: 1 ponto\n    d, l, c, p: 2 pontos\n    n, b, ç: 3 pontos\n    f, g, h, v: 4 pontos\n    j: 5 pontos\n    q: 6 pontos\n    x, z: 8 pontos\n\n    palavra é uma palavra formada por letras caracteres minúsculos\n    Retorna a soma dos pontos de cada letra da palavra\n    \"\"\""
   },
   {
     "objectID": "aula_p2.html#section-6",
     "href": "aula_p2.html#section-6",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "O código parece razoável, e nosso próximo passo seria testar a função.\n\nMas o ponto que quero mostrar aqui é como escolher as sugestões do Copilot."
+    "text": "Uma possível resposta do Copilot para o corpo da função é:\n    pontos = 0\n    for letra in palavra:\n        if letra in \"aeioumsrt\":\n            pontos += 1\n        elif letra in \"dlcp\":\n            pontos += 2\n        elif letra in \"nbç\":\n            pontos += 3\n        elif letra in \"fghv\":\n            pontos += 4\n        elif letra == \"j\":\n            pontos += 5\n        elif letra == \"q\":\n            pontos += 6\n        elif letra in \"xz\":\n            pontos += 8\n    return pontos"
   },
   {
     "objectID": "aula_p2.html#section-7",
     "href": "aula_p2.html#section-7",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Quando o Copilot sugere o código, ele aparece esmaecido e em itálico.\n\nAntes de apertarmos TAB para aceitar o código,\npodemos avaliar outras sugestões que o Copilot oferece.\n\nIsso pode ser feito passando o mouse sobre o código e escolhendo no painel que aparece acima do código.\nOu pelo atalho ALT + ] para ver a próxima sugestão ou ALT + [ para ver a anterior."
+    "text": "O código parece razoável, e nosso próximo passo seria testar a função.\n\nMas o ponto que quero mostrar aqui é como escolher as sugestões do Copilot."
   },
   {
     "objectID": "aula_p2.html#section-8",
     "href": "aula_p2.html#section-8",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Uma segunda sugestão feita pelo código para o corpo da função foi:\n    pontos = {\n        'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'm': 1, 's': 1, 'r': 1, 't': 1,\n        'd': 2, 'l': 2, 'c': 2, 'p': 2,\n        'n': 3, 'b': 3, 'ç': 3,\n        'f': 4, 'g': 4, 'h': 4, 'v': 4,\n        'j': 5,\n        'q': 6,\n        'x': 8, 'z': 8\n    }\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\nRepare que ela é bem diferente da anterior."
+    "text": "Quando o Copilot sugere o código, ele aparece esmaecido e em itálico.\n\nAntes de apertarmos TAB para aceitar o código,\npodemos avaliar outras sugestões que o Copilot oferece.\n\nIsso pode ser feito passando o mouse sobre o código e escolhendo no painel que aparece acima do código.\nOu pelo atalho ALT + ] para ver a próxima sugestão ou ALT + [ para ver a anterior."
   },
   {
     "objectID": "aula_p2.html#section-9",
     "href": "aula_p2.html#section-9",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Essa segunda sugestão usa um dicionário para guardar o valor de cada letra.\n\nUm dicionário do Python é uma estrutura similar a um HashMap do Java.\n\n\nNo código, o dicionário pontos usa as letras como chaves e os pontos correspondentes como valores.\n\nAssim, ao percorrer a palavra uma letra de cada vez.\n\npodemos consultar o dicionário para buscar quanto vale a letra."
+    "text": "Uma segunda sugestão feita pelo código para o corpo da função foi:\n    pontos = {\n        'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'm': 1, 's': 1, 'r': 1, 't': 1,\n        'd': 2, 'l': 2, 'c': 2, 'p': 2,\n        'n': 3, 'b': 3, 'ç': 3,\n        'f': 4, 'g': 4, 'h': 4, 'v': 4,\n        'j': 5,\n        'q': 6,\n        'x': 8, 'z': 8\n    }\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\nRepare que ela é bem diferente da anterior."
   },
   {
     "objectID": "aula_p2.html#section-10",
     "href": "aula_p2.html#section-10",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho\n\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\npor\n\n    return sum(pontos.get(letra, 0) for letra in palavra)\n\n\nEsse tipo de construção usando list comprehension é muito comum em Python."
+    "text": "Essa segunda sugestão usa um dicionário para guardar o valor de cada letra.\n\nUm dicionário do Python é uma estrutura similar a um HashMap do Java.\n\n\nNo código, o dicionário pontos usa as letras como chaves e os pontos correspondentes como valores.\n\nAssim, ao percorrer a palavra uma letra de cada vez.\n\npodemos consultar o dicionário para buscar quanto vale a letra."
   },
   {
     "objectID": "aula_p2.html#section-11",
     "href": "aula_p2.html#section-11",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Dica\n\n\nVocê pode fazer com o que o painel de escolha das sugestões do Copilot fique sempre visível, para não precisar passar o mouse sobre o código para acessá-lo.\nPara isso, quando ele aparecer uma vez, acesse os botão de três pontos ao final do painel e escolha a opção Always show toolbar."
+    "text": "Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho\n\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\npor\n\n    return sum(pontos.get(letra, 0) for letra in palavra)\n\n\nEsse tipo de construção usando list comprehension é muito comum em Python."
   },
   {
     "objectID": "aula_p2.html#section-12",
     "href": "aula_p2.html#section-12",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Para fechar o exemplo, suponha que o Tião está jogando Scrabble\n\ne tem três palavras que poderiam ser encaixadas agora: zape, pazes e pizza.\nele gostaria de saber qual palavra dá mais pontos.\n\n\nO que acha do cabeçalho abaixo para uma função que retorne a melhor dessas três palavras?\n\ndef melhor_palavra(palavra1, palavra2, palavra3):"
+    "text": "Dica\n\n\nVocê pode fazer com o que o painel de escolha das sugestões do Copilot fique sempre visível, para não precisar passar o mouse sobre o código para acessá-lo.\nPara isso, quando ele aparecer uma vez, acesse os botão de três pontos ao final do painel e escolha a opção Always show toolbar."
   },
   {
     "objectID": "aula_p2.html#section-13",
     "href": "aula_p2.html#section-13",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "def melhor_palavra(palavra1, palavra2, palavra3):\n\nDe acordo com o guia para criarmos boas funções essa não é uma boa função, por que?\n\nEla poderia ser mais geral, funcionando para qualquer quantidade de palavras.\nPoderíamos, por exemplo, receber uma lista de palavras como parâmetro.\n\n\nVamos então melhorar a definição da função."
+    "text": "Para fechar o exemplo, suponha que o Tião está jogando Scrabble\n\ne tem três palavras que poderiam ser encaixadas agora: zape, pazes e pizza.\nele gostaria de saber qual palavra dá mais pontos.\n\n\nO que acha do cabeçalho abaixo para uma função que retorne a melhor dessas três palavras?\n\ndef melhor_palavra(palavra1, palavra2, palavra3):"
   },
   {
     "objectID": "aula_p2.html#section-14",
     "href": "aula_p2.html#section-14",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "def melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    if not palavras:\n        return None  # Retorna None se a lista estiver vazia\n\n    melhor = palavras[0]\n    max_pontos = numero_de_pontos(melhor)\n\n    for palavra in palavras[1:]:\n        pontos = numero_de_pontos(palavra)\n        if pontos &gt; max_pontos:\n            melhor = palavra\n            max_pontos = pontos\n\n    return melhor"
+    "text": "def melhor_palavra(palavra1, palavra2, palavra3):\n\nDe acordo com o guia para criarmos boas funções essa não é uma boa função, por que?\n\nEla poderia ser mais geral, funcionando para qualquer quantidade de palavras.\nPoderíamos, por exemplo, receber uma lista de palavras como parâmetro.\n\n\nVamos então melhorar a definição da função."
   },
   {
     "objectID": "aula_p2.html#section-15",
     "href": "aula_p2.html#section-15",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Escolhendo entre as sugestões do Copilot, essa foi outra opção:\n\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    return max(palavras, key=numero_de_pontos)\n\n\nQual das duas opções você prefere?"
+    "text": "def melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    if not palavras:\n        return None  # Retorna None se a lista estiver vazia\n\n    melhor = palavras[0]\n    max_pontos = numero_de_pontos(melhor)\n\n    for palavra in palavras[1:]:\n        pontos = numero_de_pontos(palavra)\n        if pontos &gt; max_pontos:\n            melhor = palavra\n            max_pontos = pontos\n\n    return melhor"
   },
   {
     "objectID": "aula_p2.html#section-16",
     "href": "aula_p2.html#section-16",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Talvez seja prematuro escolher sem fazer testes.\n\nVeja esse teste feito com a segunda opção:\n\n&gt;&gt;&gt; melhor_palavra([])\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 6, in melhor_palavra\nValueError: max() iterable argument is empty\n\n\n\nEsse erro não ocorreria na primeira opção."
+    "text": "Escolhendo entre as sugestões do Copilot, essa foi outra opção:\n\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    return max(palavras, key=numero_de_pontos)\n\n\nQual das duas opções você prefere?"
   },
   {
     "objectID": "aula_p2.html#section-17",
     "href": "aula_p2.html#section-17",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "A dica portanto é:\n\nPara qualquer que seja a sugestão escolhida: é necessário sempre testar!\n\n\nA segunda opção poderia ser alterada para a acrescentar o mesmo if da primeira opção.\n\nNesse caso, qual você escolheria?\nSugestão: depende do seu objetivo.\n\nA primeira opção é mais legível.\nA segunda é mais compacta."
+    "text": "Talvez seja prematuro escolher sem fazer testes.\n\nVeja esse teste feito com a segunda opção:\n\n&gt;&gt;&gt; melhor_palavra([])\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 6, in melhor_palavra\nValueError: max() iterable argument is empty\n\n\n\nEsse erro não ocorreria na primeira opção."
   },
   {
     "objectID": "aula_p2.html#section-18",
     "href": "aula_p2.html#section-18",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora fazer algo mais interessante.\n\nE que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.\n\n\nNós vamos utilizar um conjunto de dados (dataset) da plataforma Kaggle.\n\nUma plataforma de competição de ciência de dados e aprendizado de máquina.\nQue tem milhares de conjuntos de dados dos mais variados assuntos."
+    "text": "A dica portanto é:\n\nPara qualquer que seja a sugestão escolhida: é necessário sempre testar!\n\n\nA segunda opção poderia ser alterada para a acrescentar o mesmo if da primeira opção.\n\nNesse caso, qual você escolheria?\nSugestão: depende do seu objetivo.\n\nA primeira opção é mais legível.\nA segunda é mais compacta."
   },
   {
     "objectID": "aula_p2.html#section-19",
     "href": "aula_p2.html#section-19",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos trabalhar com dados sobre futebol.\n\nAcesse a página do dataset All footeball player stats in top 5 leagues 23/24.\nSão dados estatísticos dos jogadores das 5 principais ligas de futebol europeias.\nVeja na página quais são os dados disponíveis e uma amostra dos dados."
+    "text": "Vamos agora fazer algo mais interessante.\n\nE que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.\n\n\nNós vamos utilizar um conjunto de dados (dataset) da plataforma Kaggle.\n\nUma plataforma de competição de ciência de dados e aprendizado de máquina.\nQue tem milhares de conjuntos de dados dos mais variados assuntos."
   },
   {
     "objectID": "aula_p2.html#section-20",
     "href": "aula_p2.html#section-20",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos baixar os dados para usar em nosso programa. Para isso:\n\nClique em Download → Download dataset as zip.\n\nLogue no Kaggle ou crie uma conta se não tiver (pode ser logando com a conta do Google).\n\nDescompacte o arquivo zip baixado.\nCrie uma pasta para o projeto da aula de hoje e copie para ela o arquivo top5-players.csv."
+    "text": "Vamos trabalhar com dados sobre futebol.\n\nAcesse a página do dataset All footeball player stats in top 5 leagues 23/24.\nSão dados estatísticos dos jogadores das 5 principais ligas de futebol europeias.\nVeja na página quais são os dados disponíveis e uma amostra dos dados."
   },
   {
     "objectID": "aula_t2.html#section",
@@ -501,175 +501,175 @@
     "href": "aula_t2.html#section-1",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Pela pesquisa de perfil da turma vi que alguns alunos conhecem Python e outros não.\n\nÉ importante então apresentar a linguagem nas primeiras aulas.\nMas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.\n\nque podem ser interessantes também para que tem mais experiência com Python.\n\nEspero então que a aula seja útil para todos :)\n\n\n\n\n\n\n\n\nLembrete\n\n\nLembre-se que Assistentes de IA são não determinísticos. Portanto, ao experimentar os exemplos dessa aula, você pode obter resultados diferentes."
+    "text": "Pela pesquisa de perfil da turma vi que o conhecimento de Python da turma é bem variado.\n\nÉ importante então apresentar a linguagem nas primeiras aulas.\nMas, junto com a apresentação da linguagem, vou apresentar também boas práticas e dicas de uso do Copilot.\n\nque podem ser interessantes também para que tem mais experiência com Python.\n\nEspero então que a aula seja útil para todos :)"
   },
   {
     "objectID": "aula_t2.html#section-2",
     "href": "aula_t2.html#section-2",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Um dos desafios para programadores iniciantes usarem o Copilot\n\né saber o que é uma tarefa razoável para que ele consiga gerar uma boa solução.\n\n\nComo já mencionamos antes, passar uma tarefa muito grande para o Assistente de IA\n\npode fazer com que ele falhe\ne falhe de uma forma que seja muito difícil de corrigir."
+    "text": "Lembrete\n\n\nLembre-se que Assistentes de IA são não determinísticos. Portanto, ao experimentar os exemplos dessa aula, você pode obter resultados diferentes."
   },
   {
     "objectID": "aula_t2.html#section-3",
     "href": "aula_t2.html#section-3",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Na verdade essa questão de complexidade não é um problema só para o Copilot, mas para nós mesmos.\n\nEngenheiros de Software que tentam resolver problemas muito complexos sem quebrá-los em partes menores também falham.\n\n\nExistem diversas formas de tratar, no código, a decomposição de um problema em partes.\n\nA mais simples delas é a através de funções."
+    "text": "Um dos desafios para programadores iniciantes usarem o Copilot\n\né saber o que é uma tarefa razoável para que ele consiga gerar uma boa solução.\n\n\nComo já mencionamos antes, passar uma tarefa muito grande para o Assistente de IA\n\npode fazer com que ele falhe\ne falhe de uma forma que seja muito difícil de corrigir."
   },
   {
     "objectID": "aula_t2.html#section-4",
     "href": "aula_t2.html#section-4",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Uma função é um trecho de código que resolve uma tarefa específica\n\ne que não é tão complexo a ponto de ficar difícil de implementar e testar."
+    "text": "Na verdade essa questão de complexidade não é um problema só para o Copilot, mas para nós mesmos.\n\nEngenheiros de Software que tentam resolver problemas muito complexos sem quebrá-los em partes menores também falham.\n\n\nExistem diversas formas de tratar, no código, a decomposição de um problema em partes.\n\nA mais simples delas é a através de funções."
   },
   {
     "objectID": "aula_t2.html#section-5",
     "href": "aula_t2.html#section-5",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Claro que vocês já sabem o que são funções e como elas podem ser implementadas.\n\nMas será que vocês sabem (ou se lembram) quais são os critérios para projetar boas funções?\nSerá que pensam nisso na hora de programar, ou simplesmente saem programando?\nAlém disso, no contexto do uso de IA, quais seriam as melhores práticas para projetar funções?"
+    "text": "Uma função é um trecho de código que resolve uma tarefa específica\n\ne que não é tão complexo a ponto de ficar difícil de implementar e testar."
   },
   {
     "objectID": "aula_t2.html#section-6",
     "href": "aula_t2.html#section-6",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Uma função é uma pequena tarefa que pode ser usada para resolver tarefas maiores.\n\nEssas tarefas menores, por sua vez, podem ser usadas para resolver tarefas maiores."
+    "text": "Claro que vocês já sabem o que são funções e como elas podem ser implementadas.\n\nMas será que vocês sabem (ou se lembram) quais são os critérios para projetar boas funções?\nSerá que pensam nisso na hora de programar, ou simplesmente saem programando?\nAlém disso, no contexto do uso de IA, quais seriam as melhores práticas para projetar funções?"
   },
   {
     "objectID": "aula_t2.html#section-7",
     "href": "aula_t2.html#section-7",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Para exemplificar, encontre as palavras abaixo no quebra-cabeça."
+    "text": "Uma função é uma pequena tarefa que pode ser usada para resolver tarefas maiores.\n\nEssas tarefas menores, por sua vez, podem ser usadas para resolver tarefas maiores."
   },
   {
     "objectID": "aula_t2.html#section-8",
     "href": "aula_t2.html#section-8",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Qual foi o raciocínio que você usou para encontrar as palavras?\n\nProcurar todas as palavras de uma vez é uma tarefa muito grande e complicada.\n\n\nVocê poderia, por exemplo, escolher uma palavra para encontrar primeiro.\n\nE, para encontrar essa palavra, você poderia procurar a primeira letra.\n\nE então procurar o restante da palavra buscando para a direita, esquerda, para cima ou para baixo."
+    "text": "Para exemplificar, encontre as palavras abaixo no quebra-cabeça."
   },
   {
     "objectID": "aula_t2.html#section-9",
     "href": "aula_t2.html#section-9",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Repare que estamos decompondo o problema de resolver o caça-palavras\n\nem tarefas menores, que, se resolvidas, nos ajudam a resolver o problema como um todo.\n\n\nÉ essa a estratégia que precisamos seguir na hora de programar."
+    "text": "Qual foi o raciocínio que você usou para encontrar as palavras?\n\nProcurar todas as palavras de uma vez é uma tarefa muito grande e complicada.\n\n\nVocê poderia, por exemplo, escolher uma palavra para encontrar primeiro.\n\nE, para encontrar essa palavra, você poderia procurar a primeira letra.\n\nE então procurar o restante da palavra buscando para a direita, esquerda, para cima ou para baixo."
   },
   {
     "objectID": "aula_t2.html#section-10",
     "href": "aula_t2.html#section-10",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Uma função pode ser vista como um contrato 📝.\n\nSe existir uma função maior e for dito que ela recebe dois números e retorna o maior deles,\nnós podemos acreditar que se a função for chamada com os números 2 e 5, ela retornará 5.\n\nNós não precisamos saber como a função funciona para utilizá-la.\n\nDa mesma forma que não precisamos entender de mecânica de carros para frear um carro 🚗.\n\nNós acionamos o pedal e sabemos que a velocidade do carro vai diminuir 🙌."
+    "text": "Repare que estamos decompondo o problema de resolver o caça-palavras\n\nem tarefas menores, que, se resolvidas, nos ajudam a resolver o problema como um todo.\n\n\nÉ essa a estratégia que precisamos seguir na hora de programar."
   },
   {
     "objectID": "aula_t2.html#section-11",
     "href": "aula_t2.html#section-11",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Na aula passada usamos o Copilot para gerar código a partir de um comentário.\n\nPodemos fazer o mesmo para criar funções.\n\n\nVamos fazer um exemplo:\n\n# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles"
+    "text": "Uma função pode ser vista como um contrato 📝.\n\nSe existir uma função maior e for dito que ela recebe dois números e retorna o maior deles,\nnós podemos acreditar que se a função for chamada com os números 2 e 5, ela retornará 5.\n\nNós não precisamos saber como a função funciona para utilizá-la.\n\nDa mesma forma que não precisamos entender de mecânica de carros para frear um carro 🚗.\n\nNós acionamos o pedal e sabemos que a velocidade do carro vai diminuir 🙌."
   },
   {
     "objectID": "aula_t2.html#section-12",
     "href": "aula_t2.html#section-12",
     "title": "Projetando Funções",
     "section": "",
-    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\n\nEsse é um possível resultado gerado pelo Copilot."
+    "text": "Na aula passada usamos o Copilot para gerar código a partir de um comentário.\n\nPodemos fazer o mesmo para criar funções.\n\n\nVamos fazer um exemplo:\n\n# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles"
   },
   {
     "objectID": "aula_t2.html#section-13",
     "href": "aula_t2.html#section-13",
     "title": "Projetando Funções",
     "section": "",
-    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\n\nNote que assinatura de uma função em Python começa com a palavra-chave def.\n\nÉ isso que diz para o Python que o que vem a seguir é uma função.\n\nDepois vem o nome da função (maior_numero, nesse caso).\n\nDica: se parecer difícil escolher um nome para a função, pode ser um sinal de que ela está fazendo muitas coisas."
+    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\n\nEsse é um possível resultado gerado pelo Copilot."
   },
   {
     "objectID": "aula_t2.html#section-14",
     "href": "aula_t2.html#section-14",
     "title": "Projetando Funções",
     "section": "",
-    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\n\nEm seguida, temos os parâmetros da função, que são as entradas que ela recebe.\nPor fim, temos o corpo da função, que é onde a lógica é implementada.\n\nUma função pode retornar valores ou não.\nQuando ela retorna usamos a palavra-chave return."
+    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\n\nNote que assinatura de uma função em Python começa com a palavra-chave def.\n\nÉ isso que diz para o Python que o que vem a seguir é uma função.\n\nDepois vem o nome da função (maior_numero, nesse caso).\n\nDica: se parecer difícil escolher um nome para a função, pode ser um sinal de que ela está fazendo muitas coisas."
   },
   {
     "objectID": "aula_t2.html#section-15",
     "href": "aula_t2.html#section-15",
     "title": "Projetando Funções",
     "section": "",
-    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\nVeja que, diferente de linguagens fortemente tipadas, em Python não precisamos especificar os tipos\n\nnem dos parâmetros e nem do retorno da função."
+    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\n\nEm seguida, temos os parâmetros da função, que são as entradas que ela recebe.\nPor fim, temos o corpo da função, que é onde a lógica é implementada.\n\nUma função pode retornar valores ou não.\nQuando ela retorna usamos a palavra-chave return."
   },
   {
     "objectID": "aula_t2.html#section-16",
     "href": "aula_t2.html#section-16",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Dica para programadores avançados:\n\nApesar de Python não ser fortemente tipado\n\né uma boa prática usar anotações de tipo (type hints) para melhorar a legibilidade do código.\n\nIsso ajuda muito na implementação de sistemas maiores.\nMas afinal, o que é isso?"
+    "text": "# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\ndef maior_numero(a, b):\n    if a &gt; b:\n        return a\n    else:\n        return b\nVeja que, diferente de linguagens fortemente tipadas, em Python não precisamos especificar os tipos\n\nnem dos parâmetros e nem do retorno da função."
   },
   {
     "objectID": "aula_t2.html#section-17",
     "href": "aula_t2.html#section-17",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos gerar novamente a função maior_numero, mas agora com type hints (acrescentando uma linha na docstring).\n\n# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\n# use anotação de tipos\n\n\ndef maior_numero(a: int, b: int) -&gt; int:\n  if a &gt; b:\n    return a\n  else:\n    return b"
+    "text": "Dica para programadores avançados:\n\nApesar de Python não ser fortemente tipado\n\né uma boa prática usar anotações de tipo (type hints) para melhorar a legibilidade do código.\n\nIsso ajuda muito na implementação de sistemas maiores.\nMas afinal, o que é isso?"
   },
   {
     "objectID": "aula_t2.html#section-18",
     "href": "aula_t2.html#section-18",
     "title": "Projetando Funções",
     "section": "",
-    "text": "As anotações de tipo servem como documentação e podem ser utilizadas por ferramentas de análise sintática.\n\nOu seja, são úteis para dizer para outros programadores o que exatamente a função espera e o que retorna.\nE, principalmente, para que as IDEs, como o VS Code, apontem possíveis erros antes mesmo de rodar o código.\n\nIsso melhora a qualidade do código e facilita a manutenção.\n\n\n\nExperimente, por exemplo, chamar a função no VS Code passando uma string."
+    "text": "Vamos gerar novamente a função maior_numero, mas agora com type hints (acrescentando uma linha na docstring).\n\n# escreva uma função que retorna o  \n# maior de dois números\n# a entrada são dois números\n# e a saída é o maior entre eles\n# use anotação de tipos\n\n\ndef maior_numero(a: int, b: int) -&gt; int:\n  if a &gt; b:\n    return a\n  else:\n    return b"
   },
   {
     "objectID": "aula_t2.html#section-19",
     "href": "aula_t2.html#section-19",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Mas é importante deixar claro que os type hints não alteram o comportamento do código.\n\nComo Python não é uma linguagem compilada, o código vai ser executado\n\ne os type hints são ignorados em tempo de execução.\n\nOu seja, se a função for chamada passando um parâmetro de tipo errado\n\nisso não causará um erro imediatamente, mas pode levar a comportamentos inesperados.\nNa verdade quando dá erro é até melhor, o problema maior é quando passa batido."
+    "text": "As anotações de tipo servem como documentação e podem ser utilizadas por ferramentas de análise sintática.\n\nOu seja, são úteis para dizer para outros programadores o que exatamente a função espera e o que retorna.\nE, principalmente, para que as IDEs, como o VS Code, apontem possíveis erros antes mesmo de rodar o código.\n\nIsso melhora a qualidade do código e facilita a manutenção.\n\n\n\nExperimente, por exemplo, chamar a função no VS Code passando uma string."
   },
   {
     "objectID": "aula_t2.html#section-20",
     "href": "aula_t2.html#section-20",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nos materiais da disciplina vou evitar anotações de tipo para manter os exemplos mais simples.\n\nMas para quem tem mais experiência com Python, recomendo muito que se acostumem a usar."
+    "text": "Mas é importante deixar claro que os type hints não alteram o comportamento do código.\n\nComo Python não é uma linguagem compilada, o código vai ser executado\n\ne os type hints são ignorados em tempo de execução.\n\nOu seja, se a função for chamada passando um parâmetro de tipo errado\n\nisso não causará um erro imediatamente, mas pode levar a comportamentos inesperados.\nNa verdade quando dá erro é até melhor, o problema maior é quando passa batido."
   },
   {
     "objectID": "aula_t2.html#section-21",
     "href": "aula_t2.html#section-21",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nós havíamos passado para o Copilot a tarefa de criar a função completa.\n\nMas outra forma de usar o Copilot é nós mesmos definirmos a assinatura da função\n\ne pedirmos ao Copilot apenas para implementar o corpo da função.\n\nIsso geralmente leva a resultados melhores."
+    "text": "Nos materiais da disciplina vou evitar anotações de tipo para manter os exemplos mais simples.\n\nMas para quem tem mais experiência com Python, recomendo muito que se acostumem a usar."
   },
   {
     "objectID": "aula_t2.html#section-22",
     "href": "aula_t2.html#section-22",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nós podemos fazer isso usando docstrings.\n\nDocstrings são strings de documentação que podem ser usadas para descrever o que uma função faz.\nElas são definidas logo abaixo da assinatura da função e são delimitadas por três aspas duplas.\n\n\n\n\n\n\n\n\nDica\n\n\nÉ uma boa prática escrever docstrings para suas funções."
+    "text": "Nós havíamos passado para o Copilot a tarefa de criar a função completa.\n\nMas outra forma de usar o Copilot é nós mesmos definirmos a assinatura da função\n\ne pedirmos ao Copilot apenas para implementar o corpo da função.\n\nIsso pode levar a resultados melhores."
   },
   {
     "objectID": "aula_t2.html#section-23",
     "href": "aula_t2.html#section-23",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nós poderíamos então gerar a função maior_numero de forma diferente\n\nEscrevendo nós mesmos o cabeçalho e a docstring da função.\nE deixando o Copilot gerar o corpo da função.\n\nO que torna a geração do código mais fácil para o Copilot."
+    "text": "Nós podemos fazer isso usando docstrings.\n\nDocstrings são strings de documentação que podem ser usadas para descrever o que uma função faz.\nElas são definidas logo abaixo da assinatura da função e são delimitadas por três aspas duplas.\n\n\n\n\n\n\n\n\nDica\n\n\nÉ uma boa prática escrever docstrings para suas funções."
   },
   {
     "objectID": "aula_t2.html#section-24",
     "href": "aula_t2.html#section-24",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos então refazer a função, mas agora nós definimos o cabeçalho e docstring da função.\n\ndef maior_numero(num1, num2):\n  \"\"\"\n  num1 e num2 são dois números.\n\n  Retorna o maior dos dois números.\n  \"\"\""
+    "text": "Nós poderíamos então gerar a função maior_numero de forma diferente\n\nEscrevendo nós mesmos o cabeçalho e a docstring da função.\nE deixando o Copilot gerar o corpo da função.\n\nO que torna a geração do código mais fácil para o Copilot."
   },
   {
     "objectID": "aula_t2.html#section-25",
     "href": "aula_t2.html#section-25",
     "title": "Projetando Funções",
     "section": "",
-    "text": "O Copilot pode então gerar o corpo da função.\n\ndef maior_numero(num1, num2):\n  \"\"\"\n  num1 e num2 são dois números.\n\n  Retorna o maior dos dois números.\n  \"\"\"\n  if num1 &gt; num2:\n    return num1\n  else:\n    return num2"
+    "text": "Vamos então refazer a função, mas agora nós definimos o cabeçalho e docstring da função.\n\ndef maior_numero(num1, num2):\n  \"\"\"\n  num1 e num2 são dois números.\n\n  Retorna o maior dos dois números.\n  \"\"\""
   },
   {
     "objectID": "aula_t2.html#investimentos-em-bolsa-do-tião",
@@ -683,84 +683,84 @@
     "href": "aula_t2.html#section-26",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Para terminar, vamos pedir ao Copilot para chamar a função que criamos.\n\n# chame a funcao maior_numero com os valores 3 e 5\n# armazene o resultado em uma variável chamada \n# resultado e então exiba o resultado\n\n\nresultado = maior_numero(3, 5)\nprint(resultado)"
+    "text": "O Copilot pode então gerar o corpo da função.\n\ndef maior_numero(num1, num2):\n  \"\"\"\n  num1 e num2 são dois números.\n\n  Retorna o maior dos dois números.\n  \"\"\"\n  if num1 &gt; num2:\n    return num1\n  else:\n    return num2"
   },
   {
     "objectID": "aula_t2.html#section-27",
     "href": "aula_t2.html#section-27",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Segue uma sugestão de ciclo de criação de funções com Copilot.\n\nDefina o comportamento desejado para a função\nEscreva um prompt que descreva a função da forma mais clara possível\nDeixe o Copilot gerar o código\nLeia o código para avaliar se ele parece razoável\nTeste o código para conferir se ele está correto\n\n\nSe estiver correto, a função está pronta.\nSe não estiver, volte ao passo 2."
+    "text": "Para terminar, vamos pedir ao Copilot para chamar a função que criamos.\n\n# chame a funcao maior_numero com os valores 3 e 5\n# armazene o resultado em uma variável chamada \n# resultado e então exiba o resultado\n\n\nresultado = maior_numero(3, 5)\nprint(resultado)"
   },
   {
     "objectID": "aula_t2.html#section-28",
     "href": "aula_t2.html#section-28",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Essa seria uma boa função para calcular o lucro do Tião?\n\n\ndef calcular_lucro():\n  return (17 - 15) * 10\n\n\n\nNão, essa função não é boa.\n\nPor que?"
+    "text": "Segue uma sugestão de ciclo de criação de funções com Copilot.\n\nDefina o comportamento desejado para a função\nEscreva um prompt que descreva a função da forma mais clara possível\nDeixe o Copilot gerar o código\nLeia o código para avaliar se ele parece razoável\nTeste o código para conferir se ele está correto\n\n\nSe estiver correto, a função está pronta.\nSe não estiver, volte ao passo 2."
   },
   {
     "objectID": "aula_t2.html#section-29",
     "href": "aula_t2.html#section-29",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Quando criamos uma função devemos criá-la da forma mais geral possível.\n\nCom isso, a função pode ser reutilizada em diferentes contextos.\nRepare que, no caso do Tião, ele não quer saber o lucro apenas de uma compra específica\n\nmas sim de qualquer compra que ele faça.\n\n\n\nMesmo que você ache que isso parece muito simples.\n\nÉ muito comum que programadores experientes repitam esse erro em contextos mais complexos."
+    "text": "Essa seria uma boa função para calcular o lucro do Tião?\n\n\ndef calcular_lucro():\n  return (17 - 15) * 10\n\n\n\nNão, essa função não é boa.\n\nPor que?"
   },
   {
     "objectID": "aula_t2.html#section-30",
     "href": "aula_t2.html#section-30",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Como deveria ser a assinatura da função, de forma que ela seja mais útil?\n\nQuais parâmetros deveria receber?\n\na quantidade de ações compradas\n\no valor que as ações foram compradas\n\ne o preço de atual das ações.\n\n\n\nPoderíamos então definir a assinatura assim:\n\ndef calcular_lucro(qtd_acoes, valor_compra, valor_venda)"
+    "text": "Quando criamos uma função devemos criá-la da forma mais geral possível.\n\nCom isso, a função pode ser reutilizada em diferentes contextos.\nRepare que, no caso do Tião, ele não quer saber o lucro apenas de uma compra específica\n\nmas sim de qualquer compra que ele faça.\n\n\n\nMesmo que você ache que isso parece muito simples.\n\nÉ muito comum que programadores experientes repitam esse erro em contextos mais complexos."
   },
   {
     "objectID": "aula_t2.html#section-31",
     "href": "aula_t2.html#section-31",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Seguindo a estratégia que vimos antes,\n\nvamos criar uma docstring para explicar ao Copilot o que a função precisa fazer.\n\n\n\n\n\n\n\n\n\nDica\n\n\nClaro que essa função é muito simples e você poderia pedir ao Copilot para criar inclusive a assinatura e a docstring.\nMas a ideia aqui é que você entenda o processo com uma função simples, para que depois possa aplicar para funções mais complexas."
+    "text": "Como deveria ser a assinatura da função, de forma que ela seja mais útil?\n\nQuais parâmetros deveria receber?\n\na quantidade de ações compradas\n\no valor que as ações foram compradas\n\ne o preço de atual das ações.\n\n\n\nPoderíamos então definir a assinatura assim:\n\ndef calcular_lucro(qtd_acoes, valor_compra, valor_venda)"
   },
   {
     "objectID": "aula_t2.html#section-32",
     "href": "aula_t2.html#section-32",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def calcular_lucro(qtd_acoes, valor_compra, valor_atual):\n  \"\"\"\n  qtd_acoes é a quantidade de ações compradas\n  valor_compra é o valor de cada uma dessas ações\n  valor_atual é o valor atual dessas ações\n\n  Retorne o lucro total obtido com a venda das ações.\n  \"\"\"\n\n\nPodemos agora pedir ao Copilot para gerar o corpo da função."
+    "text": "Seguindo a estratégia que vimos antes,\n\nvamos criar uma docstring para explicar ao Copilot o que a função precisa fazer.\n\n\n\n\n\n\n\n\nDica\n\n\nClaro que essa função é muito simples e você poderia pedir ao Copilot para criar inclusive a assinatura e a docstring.\nMas a ideia aqui é que você entenda o processo com uma função simples, para que depois possa aplicar para funções mais complexas."
   },
   {
     "objectID": "aula_t2.html#section-33",
     "href": "aula_t2.html#section-33",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def calcular_lucro(qtd_acoes, valor_compra, valor_atual):\n  \"\"\"\n  qtd_acoes é a quantidade de ações compradas\n  valor_compra é o valor de cada uma dessas ações\n  valor_atual é o valor atual dessas ações\n\n  Retorne o lucro total obtido com a venda das ações.\n  \"\"\"\n  return (valor_atual - valor_compra) * qtd_acoes"
+    "text": "def calcular_lucro(qtd_acoes, valor_compra, valor_atual):\n  \"\"\"\n  qtd_acoes é a quantidade de ações compradas\n  valor_compra é o valor de cada uma dessas ações\n  valor_atual é o valor atual dessas ações\n\n  Retorne o lucro total obtido com a venda das ações.\n  \"\"\"\n\n\nPodemos agora pedir ao Copilot para gerar o corpo da função."
   },
   {
     "objectID": "aula_t2.html#section-34",
     "href": "aula_t2.html#section-34",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nós já fizemos os três passos iniciais do ciclo de design de funções.\n\nDefina o comportamento desejado para a função\nEscreva um prompt que descreva a função\nDeixe o Copilot gerar o código\nAvalie o código para conferir se ele parece razoável\nTeste o código para conferir se ele está correto"
+    "text": "def calcular_lucro(qtd_acoes, valor_compra, valor_atual):\n  \"\"\"\n  qtd_acoes é a quantidade de ações compradas\n  valor_compra é o valor de cada uma dessas ações\n  valor_atual é o valor atual dessas ações\n\n  Retorne o lucro total obtido com a venda das ações.\n  \"\"\"\n  return (valor_atual - valor_compra) * qtd_acoes"
   },
   {
     "objectID": "aula_t2.html#section-35",
     "href": "aula_t2.html#section-35",
     "title": "Projetando Funções",
     "section": "",
-    "text": "O próximo passo é avaliar se o código parece razoável.\n\n  return (valor_atual - valor_compra) * qtd_acoes\n\n\nO exemplo é simples para avaliar 😊"
+    "text": "Nós já fizemos os três passos iniciais do ciclo de design de funções.\n\nDefina o comportamento desejado para a função\nEscreva um prompt que descreva a função\nDeixe o Copilot gerar o código\nAvalie o código para conferir se ele parece razoável\nTeste o código para conferir se ele está correto"
   },
   {
     "objectID": "aula_t2.html#section-36",
     "href": "aula_t2.html#section-36",
     "title": "Projetando Funções",
     "section": "",
-    "text": "O passo seguinte é testar o código.\n\nE aqui vai uma dica interessante de uso do VS Code para testar códigos Python.\n\n\nVocê pode selecionar o código da função no VS Code e apertar Shift + Enter\n\nAo fazer isso, o trecho de código selecionado será executado em um terminal Python.\nE você poderá então fazer chamadas de teste a essa função no terminal Python."
+    "text": "O próximo passo é avaliar se o código parece razoável.\n\n  return (valor_atual - valor_compra) * qtd_acoes\n\n\nO exemplo é simples para avaliar 😊"
   },
   {
     "objectID": "aula_t2.html#section-37",
     "href": "aula_t2.html#section-37",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Um primeiro teste óbvio que poderíamos fazer\n\né calcular o lucro da compra específica de ações do Tião.\n\n\n\n\n&gt;&gt;&gt;  calcular_lucro(10, 15, 17)\n\n\n20\n\n\n\nEstá certo?\n\nSim, como ele teve 2 reais de lucro em cada ação e são 10 ações, o total é 20.\n\n\n\nPrecisamos agora pensar em mais casos de testes."
+    "text": "O passo seguinte é testar o código.\n\nE aqui vai uma dica interessante de uso do VS Code para testar códigos Python.\n\n\nVocê pode selecionar o código da função no VS Code e apertar Shift + Enter\n\nAo fazer isso, o trecho de código selecionado será executado em um terminal Python.\nE você poderá então fazer chamadas de teste a essa função no terminal Python."
   },
   {
     "objectID": "aula_t2.html#a-senha-do-tião",
@@ -774,224 +774,224 @@
     "href": "aula_t2.html#section-38",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Testar se as ações tivessem subido para R$ 18 em vez de R$ 17 seria um bom teste?\n\nNão, porque seria um teste de um caso na mesma categoria do teste anterior.\nPrecisamos pensar em situações diferentes.\n\n\nPor exemplo:\n\nUma situação que desse prejuízo.\nOu que as ações permanecessem no mesmo preço."
+    "text": "Um primeiro teste óbvio que poderíamos fazer\n\né calcular o lucro da compra específica de ações do Tião.\n\n\n\n&gt;&gt;&gt;  calcular_lucro(10, 15, 17)\n\n\n20\n\n\n\nEstá certo?\n\nSim, como ele teve 2 reais de lucro em cada ação e são 10 ações, o total é 20.\n\n\n\nPrecisamos agora pensar em mais casos de testes."
   },
   {
     "objectID": "aula_t2.html#section-39",
     "href": "aula_t2.html#section-39",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Podemos inverter o preço de compra e o atual para testar o prejuízo.\n\n&gt;&gt;&gt;  calcular_lucro(10, 17, 15)\n-20\n\n\nE testar o caso do preço da ação ser mantido\n\n&gt;&gt;&gt;  calcular_lucro(10, 15, 15)\n0"
+    "text": "Testar se as ações tivessem subido para R$ 18 em vez de R$ 17 seria um bom teste?\n\nNão, porque seria um teste de um caso na mesma categoria do teste anterior.\nPrecisamos pensar em situações diferentes.\n\n\nPor exemplo:\n\nUma situação que desse prejuízo.\nOu que as ações permanecessem no mesmo preço."
   },
   {
     "objectID": "aula_t2.html#section-40",
     "href": "aula_t2.html#section-40",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Mas como saber quantas categorias testar?\n\nComo ter certeza se dois testes não são da mesma categoria?\nOu se eles cobrem todas categorias possíveis?\n\n\nTestes são uma combinação de ciência 🧪 e arte 🎨\n\nÉ necessário prática e experiência para definir bem casos de testes.\nE vamos ter aula específica sobre isso mais adiante na disciplina."
+    "text": "Podemos inverter o preço de compra e o atual para testar o prejuízo.\n\n&gt;&gt;&gt;  calcular_lucro(10, 17, 15)\n-20\n\n\nE testar o caso do preço da ação ser mantido\n\n&gt;&gt;&gt;  calcular_lucro(10, 15, 15)\n0"
   },
   {
     "objectID": "aula_t2.html#section-41",
     "href": "aula_t2.html#section-41",
     "title": "Projetando Funções",
     "section": "",
-    "text": "A princípio, vamos considerar que uma senha é forte se ela não for '1234' ou 'senha'.\n\nVamos então definir o cabeçalho e a docstring de uma função que recebe uma possível senha e retorna se ela é forte ou não.\n\n\n\ndef eh_senha_forte(senha):\n    \"\"\"\n    Uma senha é forte se não for '1234' ou 'senha'\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\""
+    "text": "Mas como saber quantas categorias testar?\n\nComo ter certeza se dois testes não são da mesma categoria?\nOu se eles cobrem todas categorias possíveis?\n\n\nTestes são uma combinação de ciência 🧪 e arte 🎨\n\nÉ necessário prática e experiência para definir bem casos de testes.\nE vamos ter aula específica sobre isso mais adiante na disciplina."
   },
   {
     "objectID": "aula_t2.html#section-42",
     "href": "aula_t2.html#section-42",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Suponha que seja esse o código gerado.\n\ndef eh_senha_forte(senha):\n    \"\"\"\n    Uma senha é forte se não for '1234' ou 'senha'\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"    \n    if senha == \"1234\" or senha == \"senha\":\n        return False\n    return True\n\n\nSeguindo próximo passo do ciclo de design de funções, avaliamos se o código parece razoável.\n\nO que acha?"
+    "text": "A princípio, vamos considerar que uma senha é forte se ela não for '1234' ou 'senha'.\n\nVamos então definir o cabeçalho e a docstring de uma função que recebe uma possível senha e retorna se ela é forte ou não.\n\n\n\ndef eh_senha_forte(senha):\n    \"\"\"\n    Uma senha é forte se não for '1234' ou 'senha'\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\""
   },
   {
     "objectID": "aula_t2.html#section-43",
     "href": "aula_t2.html#section-43",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora testar a função usando Shift + Enter no VS Code.\n\n&gt;&gt;&gt; eh_senha_forte(\"1234\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"senha\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"admin\")\nTrue\n\n\n'admin' claramente não é uma senha forte 🙂"
+    "text": "Suponha que seja esse o código gerado.\n\ndef eh_senha_forte(senha):\n    \"\"\"\n    Uma senha é forte se não for '1234' ou 'senha'\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"    \n    if senha == \"1234\" or senha == \"senha\":\n        return False\n    return True\n\n\nSeguindo próximo passo do ciclo de design de funções, avaliamos se o código parece razoável.\n\nO que acha?"
   },
   {
     "objectID": "aula_t2.html#section-44",
     "href": "aula_t2.html#section-44",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos melhorar a definição da nossa função.\n\ndef eh_senha_forte(senha):\n    \"\"\"\n    Uma senha é forte se não for '1234' ou 'senha' ou 'admin'\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"    \n    if senha in ['1234', 'senha', 'admin']:\n        return False\n    return True"
+    "text": "Vamos agora testar a função usando Shift + Enter no VS Code.\n\n&gt;&gt;&gt; eh_senha_forte(\"1234\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"senha\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"admin\")\nTrue\n\n\n'admin' claramente não é uma senha forte 🙂"
   },
   {
     "objectID": "aula_t2.html#section-45",
     "href": "aula_t2.html#section-45",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha é forte se não for '1234' ou 'senha' ou 'admin'\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"\n    if senha in ['1234', 'senha', 'admin']:\n        return False\n    return True\nRepare que, nesse caso, o Copilot gerou um código que usa uma lista.\n\nPodemos declarar listas em Python entre colchetes e com valores separados por vírgulas.\nE o operador in indica se um elemento pertence à lista.\n\n\nO código parece razoável? Hora de testar!"
+    "text": "Vamos melhorar a definição da nossa função.\n\ndef eh_senha_forte(senha):\n    \"\"\"\n    Uma senha é forte se não for '1234' ou 'senha' ou 'admin'\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"    \n    if senha in ['1234', 'senha', 'admin']:\n        return False\n    return True"
   },
   {
     "objectID": "aula_t2.html#section-46",
     "href": "aula_t2.html#section-46",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Mas nossa função ainda aceita 'Tião' como senha, o que é claramente ruim.\n\nVamos então deixar a definição de senha forte, mais forte 💪."
+    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha é forte se não for '1234' ou 'senha' ou 'admin'\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"\n    if senha in ['1234', 'senha', 'admin']:\n        return False\n    return True\nRepare que, nesse caso, o Copilot gerou um código que usa uma lista.\n\nPodemos declarar listas em Python entre colchetes e com valores separados por vírgulas.\nE o operador in indica se um elemento pertence à lista."
   },
   {
     "objectID": "aula_t2.html#section-47",
     "href": "aula_t2.html#section-47",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere especial.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_especial = any(not c.isalnum() for c in senha)\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_especial\n\nO código gerado pelo Copilot parece claro sobre o que está fazendo no geral.\n\nMas há construções de Python nos detalhes que podem ser melhor exploradas."
+    "text": "O código parece razoável? Hora de testar!\n\nMas nossa função ainda aceita 'Tião' como senha, o que é claramente ruim.\n\nVamos então deixar a definição de senha forte, mais forte 💪."
   },
   {
     "objectID": "aula_t2.html#section-48",
     "href": "aula_t2.html#section-48",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos pedir ao Copilot para explicar o trecho\n\nc.isupper() for c in senha\n\n\nPara isso, aperte Ctrl + I e digite explique essa construção do python."
+    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere especial.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_especial = any(not c.isalnum() for c in senha)\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_especial\n\nO código gerado pelo Copilot parece claro sobre o que está fazendo no geral.\n\nMas há construções de Python nos detalhes que podem ser melhor exploradas."
   },
   {
     "objectID": "aula_t2.html#section-49",
     "href": "aula_t2.html#section-49",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Essa é uma possível resposta do Copilot.\n\n\n\n\nEsse é um bom exemplo de como o Copilot pode nos ajudar a entender um código já implementado."
+    "text": "Vamos pedir ao Copilot para explicar o trecho\n\nc.isupper() for c in senha\n\n\nPara isso, aperte Ctrl + I e digite explique essa construção do python."
   },
   {
     "objectID": "aula_t2.html#section-50",
     "href": "aula_t2.html#section-50",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Agora que o código parece razoável, vamos passar para a fase de testes.\n\n&gt;&gt;&gt; eh_senha_forte(\"Tião\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"Tião4*\")\nTrue\n\n\nParece tudo certo, né? Mas vamos testar mais um caso.\n\n&gt;&gt;&gt; eh_senha_forte(\"Tião da Silva\")\nTrue\n\n\n\nEssa não era uma senha forte, pois não parece conter caracteres especiais."
+    "text": "Essa é uma possível resposta do Copilot.\n\n\n\n\nEsse é um bom exemplo de como o Copilot pode nos ajudar a entender um código já implementado."
   },
   {
     "objectID": "aula_t2.html#section-51",
     "href": "aula_t2.html#section-51",
     "title": "Projetando Funções",
     "section": "",
-    "text": "O que será que aconteceu?\n\nVamos analisar a linha que trata caracteres especiais.\n\n\n\n    tem_especial = any(not c.isalnum() for c in senha)\n\n\n\nPodemos pedir ao copilot para explicar o funcionamento da função isalnum."
+    "text": "Agora que o código parece razoável, vamos passar para a fase de testes.\n\n&gt;&gt;&gt; eh_senha_forte(\"Tião\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"Tião4*\")\nTrue\n\n\nParece tudo certo, né? Mas vamos testar mais um caso.\n\n&gt;&gt;&gt; eh_senha_forte(\"Tião da Silva\")\nTrue\n\n\n\nEssa não era uma senha forte, pois não parece conter caracteres especiais."
   },
   {
     "objectID": "aula_t2.html#section-52",
     "href": "aula_t2.html#section-52",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Essa é uma possível resposta do Copilot.\n\n\n\n\nVeja que o caractere espaço não é alfanumérico, ou seja, não é uma letra ou um número."
+    "text": "O que será que aconteceu?\n\nVamos analisar a linha que trata caracteres especiais.\n\n\n\n    tem_especial = any(not c.isalnum() for c in senha)\n\n\n\nPodemos pedir ao copilot para explicar o funcionamento da função isalnum."
   },
   {
     "objectID": "aula_t2.html#section-53",
     "href": "aula_t2.html#section-53",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Podemos pedir ao Copilot para corrigir.\n\nOu fazer uma engenharia de prompt.\n\nO que no caso, significa mudar a maneira como documentamos a função.\n\n\n\nVamos experimentar substituir caractere especial por caractere de pontuação na docstring da função."
+    "text": "Essa é uma possível resposta do Copilot.\n\n\n\n\nVeja que o caractere espaço não é alfanumérico, ou seja, não é uma letra ou um número."
   },
   {
     "objectID": "aula_t2.html#section-54",
     "href": "aula_t2.html#section-54",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere de pontuação.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\""
+    "text": "Podemos pedir ao Copilot para corrigir.\n\nOu fazer uma engenharia de prompt.\n\nO que no caso, significa mudar a maneira como documentamos a função.\n\n\n\nVamos experimentar substituir caractere especial por caractere de pontuação na docstring da função."
   },
   {
     "objectID": "aula_t2.html#section-55",
     "href": "aula_t2.html#section-55",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere de pontuação.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n    import string\n\n    if len(senha) &lt; 8:\n        return False\n\n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_pontuacao = any(c in string.punctuation for c in senha)\n\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_pontuacao\n\nEsse foi o código gerado pelo Copilot.\n\nAo analisar se o código parece razoável há dois pontos que vale a pena destacar."
+    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere de pontuação.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\""
   },
   {
     "objectID": "aula_t2.html#section-56",
     "href": "aula_t2.html#section-56",
     "title": "Projetando Funções",
     "section": "",
-    "text": "A primeira é que o código usa a função string.punctuation que parece que vai fazer o que precisamos.\n\nMas para ela funcionar, foi necessário importar um módulo do Python: import string.\n\n\nPython possui diversos módulos que podem ser importados para ajudar a realizar tarefas específicas.\n\nA linguagem já vem com muitos deles.\nMas o grande potencial da linguagem é a quantidade de bibliotecas de terceiros que podem ser instaladas e utilizadas."
+    "text": "def eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere de pontuação.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n    import string\n\n    if len(senha) &lt; 8:\n        return False\n\n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_pontuacao = any(c in string.punctuation for c in senha)\n\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_pontuacao\n\nEsse foi o código gerado pelo Copilot."
   },
   {
     "objectID": "aula_t2.html#section-57",
     "href": "aula_t2.html#section-57",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Repare que o código foi gerado fazendo a importação do módulo dentro da própria função.\n\nO que não é uma boa prática de programação.\nPorque deixa as dependências de código menos legíveis para outros programadores.\n\n\nO ideal é levar o import para o início do arquivo.\n\nE, portanto, de fora da função."
+    "text": "Ao analisar se o código parece razoável há dois pontos que vale a pena destacar.\n\nO primeiro é que o código usa a função string.punctuation que parece que vai fazer o que precisamos.\nMas para ela funcionar, foi necessário importar um módulo do Python: import string.\n\n\nPython possui diversos módulos que podem ser importados para ajudar a realizar tarefas específicas.\n\nA linguagem já vem com muitos deles.\nMas o grande potencial da linguagem é a quantidade de bibliotecas de terceiros que podem ser instaladas e utilizadas."
   },
   {
     "objectID": "aula_t2.html#section-58",
     "href": "aula_t2.html#section-58",
     "title": "Projetando Funções",
     "section": "",
-    "text": "import string\n\ndef eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere de pontuação.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n\n    if len(senha) &lt; 8:\n        return False\n\n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_pontuacao = any(c in string.punctuation for c in senha)\n\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_pontuacao"
+    "text": "Repare que o código foi gerado fazendo a importação do módulo dentro da própria função.\n\nO que não é uma boa prática de programação.\nPorque deixa as dependências de código menos legíveis para outros programadores.\n\n\nO ideal é levar o import para o início do arquivo.\n\nE, portanto, de fora da função."
   },
   {
     "objectID": "aula_t2.html#section-59",
     "href": "aula_t2.html#section-59",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Apenas tome cuidado na hora de testar a função usando Shift + Enter para executar a célula.\n\nPois, se não selecionar também a linha que contém o import, o código não vai funcionar.\n\n\n\n&gt;&gt;&gt; eh_senha_forte(\"Tião3da!Silva\")\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 12, in eh_senha_forte\n  File \"&lt;stdin&gt;\", line 12, in &lt;genexpr&gt;\nNameError: name 'string' is not defined. Did you forget to import 'string'?"
+    "text": "import string\n\ndef eh_senha_forte(senha):\n    \"\"\"\n    Uma senha forte tem pelo menos uma letra maiúscula,\n    uma letra minúscula, um número e um caractere de pontuação.\n\n    Retorna True se a senha for forte e False em caso contrário\n    \"\"\"  \n\n    if len(senha) &lt; 8:\n        return False\n\n    tem_maiuscula = any(c.isupper() for c in senha)\n    tem_minuscula = any(c.islower() for c in senha)\n    tem_numero = any(c.isdigit() for c in senha)\n    tem_pontuacao = any(c in string.punctuation for c in senha)\n\n    return tem_maiuscula and tem_minuscula and tem_numero and tem_pontuacao"
   },
   {
     "objectID": "aula_t2.html#section-60",
     "href": "aula_t2.html#section-60",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Obs.: no teste feito pelos autores do livro, o import não foi gerado.\n\nSe isso acontecer com você, você pode inserir manualmente ou pedir o Copilot para corrigir."
+    "text": "Apenas tome cuidado na hora de testar a função usando Shift + Enter para executar a célula.\n\nPois, se não selecionar também a linha que contém o import, o código não vai funcionar.\n\n\n\n&gt;&gt;&gt; eh_senha_forte(\"Tião3da!Silva\")\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 12, in eh_senha_forte\n  File \"&lt;stdin&gt;\", line 12, in &lt;genexpr&gt;\nNameError: name 'string' is not defined. Did you forget to import 'string'?"
   },
   {
     "objectID": "aula_t2.html#section-61",
     "href": "aula_t2.html#section-61",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Outra obsevação sobre o código gerado pelo Copilot é que ele criou uma regra que não havíamos solicitado.\n\n\n    if len(senha) &lt; 8:\n        return False\n\n\n\nEle acrescentou uma verificação que obriga que a senha tenha pelo menos 8 caracteres.\n\nA função len retorna o tamanho de uma string (ou de uma lista, por exemplo)."
+    "text": "Obs.: no teste feito pelos autores do livro, o import não foi gerado.\n\nSe isso acontecer com você, você pode inserir manualmente ou pedir o Copilot para corrigir."
   },
   {
     "objectID": "aula_t2.html#section-62",
     "href": "aula_t2.html#section-62",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Mesmo que consideremos que pode ter sido uma boa sugestão para esse caso.\n\nÉ importante que estejamos atentos para esse fato:\n\nassistentes de IA podem inventar regras de negócio que não foram solicitadas.\n\nO que reforça a importância da avaliação e teste de código.\n\n\nPara o nosso exemplo, vamos remover essas linhas.\n\nÉ hora então de testar o código."
+    "text": "Outra obsevação sobre o código gerado pelo Copilot é que ele criou uma regra que não havíamos solicitado.\n\n\n    if len(senha) &lt; 8:\n        return False\n\n\n\nEle acrescentou uma verificação que obriga que a senha tenha pelo menos 8 caracteres.\n\nA função len retorna o tamanho de uma string (ou de uma lista, por exemplo)."
   },
   {
     "objectID": "aula_t2.html#section-63",
     "href": "aula_t2.html#section-63",
     "title": "Projetando Funções",
     "section": "",
-    "text": "&gt;&gt;&gt; eh_senha_forte(\"Tião da Silva\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"Tião3da Silva\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"Tião3da!Silva\")\nTrue\n\n\nParece tudo OK agora ✅"
+    "text": "Mesmo que consideremos que pode ter sido uma boa sugestão para esse caso.\n\nÉ importante que estejamos atentos para esse fato:\n\nassistentes de IA podem inventar regras de negócio que não foram solicitadas.\n\nO que reforça a importância da avaliação e teste de código.\n\n\nPara o nosso exemplo, vamos remover essas linhas.\n\nÉ hora então de testar o código."
   },
   {
     "objectID": "aula_t2.html#section-64",
     "href": "aula_t2.html#section-64",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Espero que esses exemplos tenham mostrado a importância de testes de código.\n\nProgramadores iniciantes muitas vezes não testam seu código.\nEles confiam que o código está correto pois, analisando o código, ele parece fazer sentido."
+    "text": "&gt;&gt;&gt; eh_senha_forte(\"Tião da Silva\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"Tião3da Silva\")\nFalse\n&gt;&gt;&gt; eh_senha_forte(\"Tião3da!Silva\")\nTrue\n\n\nParece tudo OK agora ✅"
   },
   {
     "objectID": "aula_t2.html#section-65",
     "href": "aula_t2.html#section-65",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Uma diferença bem comum entre juninhos e progamadores experientes é:\n\njuninhos sempre assumem que seu código está correto;\nenquanto desenvolvedores experientes sempre assumem que está errado,\n\naté que tenham testado e provado o contrário.\n\n\n\nUm dos motivos que iniciantes falham em testar código\n\né porque parece meio desanimador descobrir que seu código está errado."
+    "text": "Espero que esses exemplos tenham mostrado a importância de testes de código.\n\nProgramadores iniciantes muitas vezes não testam seu código.\nEles confiam que o código está correto pois, analisando o código, ele parece fazer sentido."
   },
   {
     "objectID": "aula_t2.html#section-66",
     "href": "aula_t2.html#section-66",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Mas, na verdade, quanto antes descobrirmos que uma função está errada melhor.\n\nPor que dá muito mais trabalho quando já desenvolvemos muitas funções.\nE temos que descobrir porque o sistema como um todo não funciona.\n\n\nMe chamou a atenção que, na Pesquisa de Perfil da Turma, poucos de vocês usam Copilot para gerar testes! ⚠️"
+    "text": "Uma diferença bem comum entre juninhos e progamadores experientes é:\n\njuninhos sempre assumem que seu código está correto;\nenquanto desenvolvedores experientes sempre assumem que está errado,\n\naté que tenham testado e provado o contrário.\n\n\n\nUm dos motivos que iniciantes falham em testar código\n\né porque parece meio desanimador descobrir que seu código está errado."
   },
   {
     "objectID": "aula_t2.html#section-67",
     "href": "aula_t2.html#section-67",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Para finalizar o trabalho com senhas fortes\n\nvamos criar uma função que pede ao usuário uma senha\ne, se ela não for forte, continua pedindo uma senha até que seja digitada uma senha forte.\nQue é mais ou menos o que os sites fazem quando criamos uma senha.\n\n\nQual poderia ser a assinatura dessa função?"
+    "text": "Mas, na verdade, quanto antes descobrirmos que uma função está errada melhor.\n\nPor que dá muito mais trabalho quando já desenvolvemos muitas funções.\nE temos que descobrir porque o sistema como um todo não funciona.\n\n\nMe chamou a atenção que, na Pesquisa de Perfil da Turma, vários de vocês não usam IA para gerar testes (ou usam pouco)! ⚠️"
   },
   {
     "objectID": "aula_t2.html#section-68",
     "href": "aula_t2.html#section-68",
     "title": "Projetando Funções",
     "section": "",
-    "text": "A função não precisa de parâmetros, pois não depende de nenhuma informação externa.\n\ndef obter_senha_forte():\n  \"\"\"\n  Fica pedindo uma senha para o usuário até\n  que ele digite uma senha forte.\n\n  Se a senha não for forte, avisa que ela não é.\n  Se for, retorna a senha forte\n  \"\"\""
+    "text": "Para finalizar o trabalho com senhas fortes\n\nvamos criar uma função que pede ao usuário uma senha\ne, se ela não for forte, continua pedindo uma senha até que seja digitada uma senha forte.\nQue é mais ou menos o que os sites fazem quando criamos uma senha.\n\n\nQual poderia ser a assinatura dessa função?"
   },
   {
     "objectID": "aula_t2.html#section-69",
     "href": "aula_t2.html#section-69",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def obter_senha_forte():\n  \"\"\"\n  Fica pedindo uma senha para o usuário até\n  que ele digite uma senha forte.\n\n  Se a senha não for forte, avisa que ela não é.\n  Se for, retorna a senha forte\n  \"\"\"\n  while True:\n      senha = input(\"Digite uma senha forte: \")\n      if eh_senha_forte(senha):\n          return senha\n      print(\"A senha não é forte. Tente novamente.\")\n\n\nVeja que o código gerado pelo Copilot usa a função eh_senha_forte que havíamos criado anteriormente.\n\nO código parece razoável?"
+    "text": "A função não precisa de parâmetros, pois não depende de nenhuma informação externa.\n\ndef obter_senha_forte():\n  \"\"\"\n  Fica pedindo uma senha para o usuário até\n  que ele digite uma senha forte.\n\n  Se a senha não for forte, avisa que ela não é.\n  Se for, retorna a senha forte\n  \"\"\""
   },
   {
     "objectID": "aula_t2.html#esforço-cognitivo",
@@ -1005,7 +1005,7 @@
     "href": "aula_t2.html#section-70",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Para testar no VS Code, temos agora que lembrar de selecionar as duas funções.\n\n\n&gt;&gt;&gt; obter_senha_forte()\nDigite uma senha forte: tião !!@*#@\nA senha não é forte. Tente novamente.\nDigite uma senha forte: tião!!@*#@\nA senha não é forte. Tente novamente.\nDigite uma senha forte: Tião1!@*#@\n'Tião1!@*#@'\n\n\nRepare que a última linha é o retorno da função obter_senha_forte()."
+    "text": "def obter_senha_forte():\n  \"\"\"\n  Fica pedindo uma senha para o usuário até\n  que ele digite uma senha forte.\n\n  Se a senha não for forte, avisa que ela não é.\n  Se for, retorna a senha forte\n  \"\"\"\n  while True:\n      senha = input(\"Digite uma senha forte: \")\n      if eh_senha_forte(senha):\n          return senha\n      print(\"A senha não é forte. Tente novamente.\")\n\n\nVeja que o código gerado pelo Copilot usa a função eh_senha_forte que havíamos criado anteriormente.\n\nO código parece razoável?"
   },
   {
     "objectID": "aula_t2.html#esforço-cognitivo-1",
@@ -1075,7 +1075,7 @@
     "href": "aula_t2.html#melhoria-da-legibilidade-de-código-2",
     "title": "Projetando Funções",
     "section": "Melhoria da legibilidade de código",
-    "text": "Melhoria da legibilidade de código\n\nTer as tarefas do sistema divididas em funções\n\nnos ajuda a entender o que cada parte do código faz\ne a ter uma melhor percepção sobre como as coisas funcionam no todo.\n\n\n\nTambém nos ajuda a dividir o trabalho e as responsabilidades de forma a garantir que o código está correto."
+    "text": "Melhoria da legibilidade de código\nTer as tarefas do sistema divididas em funções\n\nnos ajuda a entender o que cada parte do código faz\ne a ter uma melhor percepção sobre como as coisas funcionam no todo.\n\n\nTambém nos ajuda a dividir o trabalho e as responsabilidades de forma a garantir que o código está correto."
   },
   {
     "objectID": "aula_t2.html#uma-tarefa-clara-a-realizar",
@@ -1089,7 +1089,7 @@
     "href": "aula_t2.html#comportamento-claramente-definido",
     "title": "Projetando Funções",
     "section": "Comportamento claramente definido",
-    "text": "Comportamento claramente definido\n\nA tarefa “encontrar o maior número em uma lista” é claramente definida.\n\nSe alguém te der uma lista de números e te pedir o maior número, você sabe exatamente o que fazer.\n\n\n\nJá a tarefa “encontre a melhor palavra em uma lista” é mal definida.\n\nFalta informação: o que significa palavra “melhor”?\nÉ a palavra mais longa, a que tem menos vogais, a que tem J de Júlio 😁?"
+    "text": "Comportamento claramente definido\n\nA tarefa “encontrar o maior número em uma lista” é claramente definida.\n\nSe alguém te der uma lista de números e te pedir o maior número, você sabe exatamente o que fazer.\n\n\n\nJá a tarefa “encontre a melhor palavra em uma lista” é mal definida.\n\nFalta informação: o que significa palavra “melhor”?\nÉ a palavra mais longa?\n\nA que tem menos vogais?\nA que tem J de Julio 😁?"
   },
   {
     "objectID": "aula_t2.html#comportamento-claramente-definido-1",
@@ -1124,7 +1124,7 @@
     "href": "aula_t2.html#section-71",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Além das funções serem essenciais na decomposição de problemas,\n\nelas também trazem outros benefícios."
+    "text": "Para testar no VS Code, temos agora que lembrar de selecionar as duas funções.\n\n\n&gt;&gt;&gt; obter_senha_forte()\nDigite uma senha forte: tião !!@*#@\nA senha não é forte. Tente novamente.\nDigite uma senha forte: tião!!@*#@\nA senha não é forte. Tente novamente.\nDigite uma senha forte: Tião1!@*#@\n'Tião1!@*#@'\n\n\nRepare que a última linha é o retorno da função obter_senha_forte()."
   },
   {
     "objectID": "aula_t2.html#exemplos-de-boas-funções",
@@ -1194,21 +1194,21 @@
     "href": "aula_t2.html#section-72",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Não há uma regra absoluta para definir o que é uma boa função.\n\nMas há recomendações e intuições que podemos compartilhar.\nMesmo com elas, saiba que identificar boas funções é uma habilidade que requer tempo e prática.\n\n\nAntes de entrar nas recomendações, você verá que usaremos aqui o termo “funções folha” (leaf functions).\n\nEsse termo se referem a funções que não chamam nenhuma outra função do nosso próprio sistema.\nA ideia vem de que em uma árvore, a partir da raiz, as folhas são as “pontas”."
+    "text": "Além das funções serem essenciais na decomposição de problemas,\n\nelas também trazem outros benefícios."
   },
   {
     "objectID": "aula_t2.html#section-73",
     "href": "aula_t2.html#section-73",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Em resumo, esse então é o guia para criarmos boas funções:\n\nUma tarefa clara a realizar\nComportamento claramente definido\nPoucas linhas de código\nUso geral em vez de uso específico\nEntrada e saída claras"
+    "text": "Não há uma regra absoluta para definir o que é uma boa função.\n\nMas há recomendações e intuições que podemos compartilhar.\nMesmo com elas, saiba que identificar boas funções é uma habilidade que requer tempo e prática.\n\n\nAntes de entrar nas recomendações, você verá que usaremos aqui o termo “funções folha” (leaf functions).\n\nEsse termo se refere a funções que não chamam nenhuma outra função do nosso próprio sistema.\nA ideia vem de que em uma árvore, a partir da raiz, as folhas são as “pontas”."
   },
   {
     "objectID": "aula_t2.html#section-74",
     "href": "aula_t2.html#section-74",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.\n\nPara exemplificar isso, suponha que vamos criar um programa para jogar Scrabble.\n\nÉ um jogo de tabuleiro baseado em palavras-cruzadas.\nDois jogadores devem ir completando palavras em um tabuleiro com peças de letras.\n\nE, cada vez que um jogador consegue incluir uma palavra, ele ganha pontos de acordo com as letras da palavra."
+    "text": "Em resumo, esse então é o guia para criarmos boas funções:\n\nUma tarefa clara a realizar\nComportamento claramente definido\nPoucas linhas de código\nUso geral em vez de uso específico\nEntrada e saída claras"
   },
   {
     "objectID": "aula_t2.html#section-75",
@@ -1311,191 +1311,191 @@
   {
     "objectID": "aula_p2.html#section-1",
     "href": "aula_p2.html#section-1",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
     "text": "Na aula anterior, vimos um guia para criarmos boas funções:\n\nUma tarefa clara a realizar\nComportamento claramente definido\nPoucas linhas de código\nUso geral em vez de uso específico\nEntrada e saída claras"
   },
   {
     "objectID": "aula_p2.html#exemplos-de-boas-funções-folha",
     "href": "aula_p2.html#exemplos-de-boas-funções-folha",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "Exemplos de boas funções folha",
     "text": "Exemplos de boas funções folha\n\nCalcular o volume de uma esfera\n\nDado o raio da esfera calcula seu volume.\n\nEncontrar o maior número em uma lista\n\nDada uma lista, retorna seu maior valor.\n\nVerificar se a lista contém um valor específico\n\nDada uma lista e um valor, retornar True se ela tem o valor e False em caso contrário."
   },
   {
     "objectID": "aula_p2.html#exemplos-de-boas-funções-folha-1",
     "href": "aula_p2.html#exemplos-de-boas-funções-folha-1",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "Exemplos de boas funções folha",
     "text": "Exemplos de boas funções folha\n\nExibir o estado de um jogo de Xadrez\n\nDada uma lista 2D representando o tabuleiro do jogo, exibir o tabuleiro na tela em formato texto.\n\nInserir um valor em uma lista\n\nDada uma lista, um novo valor e uma posição na lista, retornar uma nova lista que é a lista original com o novo valor inserido na posição especificada."
   },
   {
     "objectID": "aula_p2.html#funções-folha-ruins",
     "href": "aula_p2.html#funções-folha-ruins",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "Funções folha ruins",
     "text": "Funções folha ruins\nVamos agora ver alguns exemplos de funções folha ruins e porque elas são ruins.\n\nPedir informações fiscais de um usuário e calcular seu imposto de renda\n\nCalcular imposto de renda envolve vários cálculos que deveriam ser implementados em funções separadas."
   },
   {
     "objectID": "aula_p2.html#funções-folha-ruins-1",
     "href": "aula_p2.html#funções-folha-ruins-1",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "Funções folha ruins",
     "text": "Funções folha ruins\nRemover o maior valor de uma lista\n\nPode não parecer ruim a princípio, mas veja que estamos fazendo duas coisas.\n\nPrecisamos encontrar o maior valor na lista.\nE precisamos remover um valor da lista.\n\nAssim, seria mais reutilizável ter uma função folha para cada subtarefa.\n\nObs.: pode ser útil criar uma função não folha que chama as outras duas se isso for usado várias vezes em um sistema."
   },
   {
     "objectID": "aula_p2.html#funções-folha-ruins-2",
     "href": "aula_p2.html#funções-folha-ruins-2",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "Funções folha ruins",
     "text": "Funções folha ruins\nDado um conjunto de dados estatísticos de partidas de futebol, retornar os nomes dos zagueiros que correram mais de 8 km\n\nHá muita informação específica nesse caso.\nClaramente a distância percorrida poderia ser um parâmetro.\nMas, se pensarmos bem, inclusive a posição dos jogadores poderia ser um parâmetro.\nMelhor ainda seria se a própria estatística fosse um parâmetro.\n\nPoderíamos querer consultar, por exemplo, o nome dos goleiro que fizeram mais que 10 gols."
   },
   {
     "objectID": "aula_p2.html#funções-folha-ruins-3",
     "href": "aula_p2.html#funções-folha-ruins-3",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "Funções folha ruins",
     "text": "Funções folha ruins\nDeterminar o melhor filme de todos os tempos\n\nO problema dessa função é que ela é muito vaga.\n\nO que define o que é um bom filme?\nQuais filmes deveriam ser considerados?\n\nSeria mais claro se a função recebesse uma lista de filmes com suas respectivas avaliações e um número limite de avaliações.\n\nE retornasse os filmes melhor avaliados que tivessem, no mínimo, o número de avaliações passado como limite."
   },
   {
     "objectID": "aula_p2.html#funções-folha-ruins-4",
     "href": "aula_p2.html#funções-folha-ruins-4",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "Funções folha ruins",
     "text": "Funções folha ruins\nJogar Call of Duty\n\nPrecisa explicar? 🤓"
   },
   {
     "objectID": "aula_p2.html#section-21",
     "href": "aula_p2.html#section-21",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.\n\nAbra a pasta criada no VS Code.\nCrie um novo arquivo python chamado futebol.py.\nEm seguida, vamos definir uma função para carregar os dados com do arquivo top5-players.csv.\n\n\n\ndef carregar_dados_futebol(nome_arquivo_csv):\n    \"\"\"\n    A função abre o arquivo CSV passado por parâmetro\n    e retorna os dados carregados\n    \"\"\""
+    "text": "Vamos baixar os dados para usar em nosso programa. Para isso:\n\nClique em Download → Download dataset as zip.\n\nLogue no Kaggle ou crie uma conta se não tiver (pode ser logando com a conta do Google).\n\nDescompacte o arquivo zip baixado.\nCrie uma pasta para o projeto da aula de hoje e copie para ela o arquivo top5-players.csv."
   },
   {
     "objectID": "aula_p2.html#section-22",
     "href": "aula_p2.html#section-22",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Teste seu programa usando Shift + Enter para excecutá-lo em um terminal Python.\n\nChame a função passando como parâmetro o nome do arquivo top5-players.csv.\nSe tudo der certo, os dados do arquivo vão aparecer na tela."
+    "text": "Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.\n\nAbra a pasta criada no VS Code.\nCrie um novo arquivo python chamado futebol.py.\nEm seguida, vamos definir uma função para carregar os dados com do arquivo top5-players.csv.\n\n\n\ndef carregar_dados_futebol(nome_arquivo_csv):\n    \"\"\"\n    A função abre o arquivo CSV passado por parâmetro\n    e retorna os dados carregados\n    \"\"\""
   },
   {
     "objectID": "aula_p2.html#section-23",
     "href": "aula_p2.html#section-23",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Nessa parte cada aluno pode estar vendo um código diferente:\n\npois há várias bibliotecas no Python para lidar com arquivos CSV.\nE, como já sabemos, os assistentes de IA são não determinísticos."
+    "text": "Teste seu programa usando Shift + Enter para excecutá-lo em um terminal Python.\n\nChame a função passando como parâmetro o nome do arquivo top5-players.csv.\nSe tudo der certo, os dados do arquivo vão aparecer na tela."
   },
   {
     "objectID": "aula_p2.html#section-24",
     "href": "aula_p2.html#section-24",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "É possível que o Copilot tenha sugerido uma biblioteca mas não a tenha importado.\n\nPara corrigir isso, ou algum outro tipo de erro, você pode selecionar o código gerado,\n\nclicar na lâmpada que aparece e acessar a opção fix (consertar).\n\nSe ele sugeriu usar uma biblioteca que precisaria ser instalada você pode alterar o prompt\n\npedindo para usar apenas as bibliotecas padrões do python."
+    "text": "Nessa parte cada aluno pode estar vendo um código diferente:\n\npois há várias bibliotecas no Python para lidar com arquivos CSV.\nE, como já sabemos, os assistentes de IA são não determinísticos."
   },
   {
     "objectID": "aula_p2.html#section-25",
     "href": "aula_p2.html#section-25",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora trabalhar com os dados que foram carregados.\n\nA ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.\n\n\nPara isso vamos usar duas funções:\n\nUma para calcular os dados que queremos: quantidade de gols feitos por brasileiros em cada liga.\nE outra para exibir os resultados."
+    "text": "É possível que o Copilot tenha sugerido uma biblioteca mas não a tenha importado.\n\nPara corrigir isso, ou algum outro tipo de erro, você pode selecionar o código gerado,\n\nclicar na lâmpada que aparece e acessar a opção fix (consertar).\n\nSe ele sugeriu usar uma biblioteca que precisaria ser instalada você pode alterar o prompt\n\npedindo para usar apenas as bibliotecas padrões do python."
   },
   {
     "objectID": "aula_p2.html#section-26",
     "href": "aula_p2.html#section-26",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Gere então o código da primeira função com o prompt abaixo.\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a nota coluna o número de gols feitos pelo jogador\n    pais é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\"\n\n\nE teste sua função.\n\nLembre-se que você precisa chamar a primeira função."
+    "text": "Vamos agora trabalhar com os dados que foram carregados.\n\nA ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.\n\n\nPara isso vamos usar duas funções:\n\nUma para calcular os dados que queremos: quantidade de gols feitos por brasileiros em cada liga.\nE outra para exibir os resultados."
   },
   {
     "objectID": "aula_p2.html#section-27",
     "href": "aula_p2.html#section-27",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Nós já vimos os resultados no terminal mas em um formato que não é muito adequado para o usuário final.\n\nVamos agora criar uma função para mostrar o resultado.\nE pedir o resultado com as quantidades de gols em ordem decrescente.\n\n\n\ndef exibir_gols_por_liga(quantidade_gols):\n    \"\"\"\n    A função exibe a quantidade de gols feitos por \n    jogadores de um país em cada liga em ordem decrescente.\n    \"\"\""
+    "text": "Gere então o código da primeira função com o prompt abaixo.\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a décima terceira coluna o número de gols feitos pelo jogador\n    pais é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\"\n\n\nE teste sua função.\n\nLembre-se que você precisa chamar a primeira função."
   },
   {
     "objectID": "aula_p2.html#section-28",
     "href": "aula_p2.html#section-28",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Em seguida, vamos pedir ao Copilot para chamar as funções no próprio script Python que estamos criando.\n\n\n# Chame as funções anteriores para exibir ao usuário\n# as quantidades de gols feitos por brasileiros\n# a partir do arquivo top5-players.csv\n\n\n\nAgora nós vamos testar o script propriamente dito.\n\nClicando no botão Run no canto superior direito do VS Code."
+    "text": "Nós já vimos os resultados no terminal mas em um formato que não é muito adequado para o usuário final.\n\nVamos agora criar uma função para mostrar o resultado.\nE pedir o resultado com as quantidades de gols em ordem decrescente.\n\n\n\ndef exibir_gols_por_liga(quantidade_gols):\n    \"\"\"\n    A função exibe a quantidade de gols feitos por \n    jogadores de um país em cada liga em ordem decrescente.\n    \"\"\""
   },
   {
     "objectID": "aula_p2.html#section-29",
     "href": "aula_p2.html#section-29",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Repare que fizemos o nosso programa com apenas três funções.\n\nUma para lidar com a entrada de dados.\nOutra para processá-los.\nE a última para exibir os dados.\n\n\nEsse ciclo de entrada, processamento e saída é extremamente comum em programação."
+    "text": "Em seguida, vamos pedir ao Copilot para chamar as funções no próprio script Python que estamos criando.\n\n\n# Chame as funções anteriores para exibir ao usuário\n# as quantidades de gols feitos por brasileiros\n# a partir do arquivo top5-players.csv\n\n\n\nAgora nós vamos testar o script propriamente dito.\n\nClicando no botão Run no canto superior direito do VS Code."
   },
   {
     "objectID": "aula_p2.html#section-30",
     "href": "aula_p2.html#section-30",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora usar o Copilot para alterar o código que havíamos gerado.\n\nSuponha que estamos interessados apenas nos gols dos jogadores jovens (que têm até 23 anos)\n\n\nPara isso, nós vamos apagar o código gerado para a segunda função que criamos\n\ne vamos redefinir a função.\nVocê alteraria algo na assinatura da função?\nE o que você alteraria na docstring da função?\nMãos à Obra e ao Teste!"
+    "text": "Repare que fizemos o nosso programa com apenas três funções.\n\nUma para lidar com a entrada de dados.\nOutra para processá-los.\nE a última para exibir os dados.\n\n\nEsse ciclo de entrada, processamento e saída é extremamente comum em programação."
   },
   {
     "objectID": "aula_p2.html#section-31",
     "href": "aula_p2.html#section-31",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Seguindo os critérios de criação de boas funções provavelmente você:\n\nAcrescentou um parâmetro de idade máxima à função\nAcrescentou na docstring\n\na informação da coluna que tem a idade do jogador (a sétima).\no significado do parâmetro idade\n\nAlém, é claro de ter passado 23 como idade máxima na chamada da função.\n\n\nSe não foi isso que fez, bora fazer :)"
+    "text": "Vamos agora usar o Copilot para alterar o código que havíamos gerado.\n\nSuponha que estamos interessados apenas nos gols dos jogadores jovens (que têm até 23 anos)\n\n\nPara isso, nós vamos apagar o código gerado para a segunda função que criamos\n\ne vamos redefinir a função.\nVocê alteraria algo na assinatura da função?\nE o que você alteraria na docstring da função?\nMãos à Obra e ao Teste!"
   },
   {
     "objectID": "aula_p2.html#section-32",
     "href": "aula_p2.html#section-32",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país\n\neng, es, it, fr ou de.\n\n\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país.\n\nAcrescentando o texto do slide a seguir à docstring da função de exibição dos resultados"
+    "text": "Seguindo os critérios de criação de boas funções provavelmente você:\n\nAcrescentou um parâmetro de idade máxima à função\nAcrescentou na docstring\n\na informação da coluna que tem a idade do jogador (a sétima).\no significado do parâmetro idade\n\nAlém, é claro de ter passado 23 como idade máxima na chamada da função.\n\n\nSe não foi isso que fez, bora fazer :)"
   },
   {
     "objectID": "aula_p2.html#section-33",
     "href": "aula_p2.html#section-33",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "O nome da liga tem primeiro duas ou três letras para \nidentificar o país, seguido de um espaço e depois o \nnome da liga propriamente dito. Substitua essas duas \nletras pelo nome do país. Os países são: \neng: Inglaterra, es: Espanha, it: Itália, fr: França \ne de: Alemanha\n\nDica: se o copilot não gerar o código selecione o comentário, clique na lâmpada, acesse Modify e digite complete o código."
+    "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país\n\neng, es, it, fr ou de.\n\n\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país.\n\nAcrescentando o texto do slide a seguir à docstring da função de exibição dos resultados"
   },
   {
     "objectID": "aula_p2.html#section-34",
     "href": "aula_p2.html#section-34",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Repare que, se não estivéssemos preocupados em separar o código em funções, quem nunca programou também conseguiria fazer o que fizemos usando o Copilot.\n\nEssa pessoa poderia ter mais dificuldade nas situações que geram erro.\nMas ainda assim conseguiria, ao final, obter o resultado que precisa.\nImagine como seria difícil para ela fazer isso sem uma ferramenta como o Copilot?"
+    "text": "O nome da liga tem primeiro duas ou três letras para \nidentificar o país, seguido de um espaço e depois o \nnome da liga propriamente dito. Substitua essas duas \nletras pelo nome do país. Os países são: \neng: Inglaterra, es: Espanha, it: Itália, fr: França \ne de: Alemanha\n\nDica: se o copilot não gerar o código selecione o comentário, clique na lâmpada, acesse Modify e digite complete o código."
   },
   {
     "objectID": "aula_p2.html#section-35",
     "href": "aula_p2.html#section-35",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos dados processados.\n\nPara isso, selecione toda a terceira função e\n\nAbra o chat do Copilot (clicando no ícone de chat na barra de título do VS Code ou digitando Ctrl + Alt + I).\nMude do modo Agent para Ask (primeira opção na parte inferior do chat).\nE digite o prompt do slide a seguir."
+    "text": "Repare que, se não estivéssemos preocupados em separar o código em funções, quem nunca programou também conseguiria fazer o que fizemos usando o Copilot.\n\nEssa pessoa poderia ter mais dificuldade nas situações que geram erro.\nMas ainda assim conseguiria, ao final, obter o resultado que precisa.\nImagine como seria difícil para ela fazer isso sem uma ferramenta como o Copilot?"
   },
   {
     "objectID": "aula_p2.html#section-36",
     "href": "aula_p2.html#section-36",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "A função selecionada exibe informações no terminal. \nAltere o código para que essas informações sejam \nexibidas em um gráfico. Caso seja necessário \ninstalar alguma biblioteca, me explique como eu \npoderia fazer isso.\n\nSiga então as instruções e faça interações com o Copilot, se necessário, até obter o gráfico."
+    "text": "Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos dados processados.\n\nPara isso, selecione toda a terceira função e\n\nAbra o chat do Copilot (clicando no ícone de chat na barra de título do VS Code ou digitando Ctrl + Alt + I).\nMude do modo Agent para Ask (primeira opção na parte inferior do chat).\nE digite o prompt do slide a seguir."
   },
   {
     "objectID": "aula_p2.html#section-37",
     "href": "aula_p2.html#section-37",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Os exercícios a seguir podem ser feitos usando o Copilot\n\nselecionando o código e acessando a opção Modify\nou via chat.\n\n\nAumente o tamanho das fontes do gráfico.\nExiba o número de gols nas barras do gráfico.\nSalve o gráfico em um arquivo PNG."
+    "text": "A função selecionada exibe informações no terminal. \nAltere o código para que essas informações sejam \nexibidas em um gráfico. Caso seja necessário \ninstalar alguma biblioteca, me explique como eu \npoderia fazer isso.\n\nSiga então as instruções e faça interações com o Copilot, se necessário, até obter o gráfico."
   },
   {
     "objectID": "aula_p2.html#section-38",
     "href": "aula_p2.html#section-38",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "É importante termos em mente que não estamos validando os resultados gerados\n\nAssim, é possível que alguns resultados estejam incorretos.\n\n\nComo foi mencionado nas aulas anteriores, precisamos aprender a testar o código gerado pelo Copilot\n\nPara termos segurança de que ele faz o que precisamos.\nVeremos mais sobre isso mais adiante na disciplina."
+    "text": "Os exercícios a seguir podem ser feitos usando o Copilot\n\nselecionando o código e acessando a opção Modify\nou via chat.\n\n\nAumente o tamanho das fontes do gráfico.\nExiba o número de gols nas barras do gráfico.\nSalve o gráfico em um arquivo PNG."
   },
   {
     "objectID": "aula_p2.html#section-39",
     "href": "aula_p2.html#section-39",
-    "title": "Projetando Funções e Lendo Código Python",
+    "title": "Projetando Funções",
     "section": "",
-    "text": "Obtendo mais informações do dataset:\n\nCrie funções com ajuda do Copilot para cada situação abaixo.\nObs.: as informações podem ser exibidas apenas no terminal.\n\n\nExiba os nomes e quantidade de gols dos cinco jogadores que mais fizeram gols em cada liga, ordenados pela quantidade de gols.\nEncontre o jogador mais jovem que marcou gol em cada liga e exiba seu nome, idade, equipe e número de gols.\nEncontre a equipe que menos tomou cartões (amarelos e vermelhos em cada liga). Exiba o nome da equipe e a quantidade de cartões recebidos de cada tipo."
+    "text": "É importante termos em mente que não estamos validando os resultados gerados\n\nAssim, é possível que alguns resultados estejam incorretos.\n\n\nComo foi mencionado nas aulas anteriores, precisamos aprender a testar o código gerado pelo Copilot\n\nPara termos segurança de que ele faz o que precisamos.\nVeremos mais sobre isso mais adiante na disciplina."
   },
   {
     "objectID": "aula_t3.html#section",
@@ -7313,5 +7313,138 @@
     "title": "Desenvolvendo Jogos",
     "section": "Game Programming Patterns",
     "text": "Game Programming Patterns\nPara quem estiver interessado em conceitos mais avançados, a dica é o livro Game Programming Patterns.\n\nA versão web do livro também está disponível gratuitamente no site do autor."
+  },
+  {
+    "objectID": "aula_p1.html#section-36",
+    "href": "aula_p1.html#section-36",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Você pode, por exemplo:\n\nPedir ao Copilot para gerar um código que resolva um problema específico.\nPedir que ele explique o código que fez.\nPedir que ele melhore o código, tornando-o mais fácil de entender.\nPedir que ele encontre e corrija bugs no código.\nSe necessário, pedir para melhorar o desempenho depois de ter a solução funcionando."
+  },
+  {
+    "objectID": "aula_p1.html#section-50",
+    "href": "aula_p1.html#section-50",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Por fim, há uma habilidade totalmente nova quando usamos assistentes de IA: engenharia de prompt.\n\nEngenharia de prompt envolve como dizer para o Copilot o que ele tem que fazer.\nNós podemos escrever as instruções em português, mas a forma como escrevemos essas instruções pode fazer muita diferença.\n\nPrecisamos ser bastante precisos sobre o que queremos.\n\nE mesmo sendo precisos pode ser que a resposta gerada não seja correta."
+  },
+  {
+    "objectID": "aula_p1.html#section-51",
+    "href": "aula_p1.html#section-51",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Quando a resposta não está correta:\n\nPrecisamos primeiro ser capazes de identificar o que está errado\ne depois sermos capazes de reformular o prompt para tentar obter uma resposta melhor.\n\n\nÀs vezes um pequeno detalhe no prompt pode fazer muita diferença."
+  },
+  {
+    "objectID": "aula_p1.html#section-52",
+    "href": "aula_p1.html#section-52",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Para fazer atividades da disciplina você precisa instalar\n\nVS Code\nPython\nExtensão de Python para VS Code (da Microsoft)\n\nVocê pode instalar digitando Ctrl + P no VS Code e digitando ext install ms-python.python."
+  },
+  {
+    "objectID": "aula_p1.html#section-53",
+    "href": "aula_p1.html#section-53",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Além disso, precisamos, claro, do GitHub Copilot.\n\nE, como estudante da UFLA, você tem direito à versão GitHub Copilot Pro.\n\n\nPara ter acesso a ela você deve:\n\nCriar uma conta no GitHub, se ainda não tiver, acessando github.com/.\nApós logar, clique no ícone do seu usuário no canto superior direito e acesse a opção Settings.\nNa barra lateral esquerda, clique em Billing and licensing → Education benefits.\nAcesse a opção Start an application\n\nSiga as instruções (você precisará fornecer um comprovante de matrícula)."
+  },
+  {
+    "objectID": "aula_p1.html#section-54",
+    "href": "aula_p1.html#section-54",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Para testar se a extensão está instalada corretamente, vamos:\n\nCriar um arquivo acessando a opção File → New File.\nEscolhendo a opção Python File.\nSalvando o arquivo com a extensão .py (acessando File → Save As e usando um nome como aula.py, por exemplo).\nDigitamos um código simples como\n\nprint(\"Meu primeiro programa!\").\n\nE acessamos a opção Run (no canto superior direito).\nSe tudo estiver certo, veremos a saída do programa na parte inferior do VS Code."
+  },
+  {
+    "objectID": "aula_p1.html#section-55",
+    "href": "aula_p1.html#section-55",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Além disso, precisamos, claro, do GitHub Copilot.\n\nComo estudante da UFLA, você pode usar a uma versão melhor do GitHub Copilot.\nPara isso, crie uma conta no GitHub, se ainda não tiver, acessando github.com/.\nApós logar, clique no ícone do seu usuário no canto superior direito e acesse a opção Settings.\nNa barra lateral esquerda, clique em Billing and licensing → Education benefits.\nAcesse a opção Start an application\n\nSiga as instruções (você precisará fornecer um comprovante de matrícula)."
+  },
+  {
+    "objectID": "aula_p1.html#section-56",
+    "href": "aula_p1.html#section-56",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Vamos agora testar o uso do GitHub Copilot no VS Code\n\nVocê deve logar com seu usuário no painel do Copilot.\n\n\nEm seguida, apague o conteúdo do arquivo Python e digite um comentário com a instrução abaixo.\n\n# exiba na tela: bora começar!\n\n\n\nAo apertar ENTER, aguarde um pouco e o Copilot deve sugerir um código que atenda à sua solicitação.\n\nO código aparece esmaecido e em itálico.\nE você deve apertar TAB para aceitar a sugestão."
+  },
+  {
+    "objectID": "aula_p1.html#section-57",
+    "href": "aula_p1.html#section-57",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Você deverá então ver um código semelhante a este:\n\nExecute então seu programa para testá-lo.\n\n\n# exiba na tela: bora começar!\nprint(\"bora começar!\")\n\n\nApareceu algo diferente para você?\n\nLembre que o Copilot é não determinístico e pode gerar soluções diferentes de cada vez.\nVocê pode tentar reformular o prompt para ver se obtém uma resposta diferente."
+  },
+  {
+    "objectID": "aula_p1.html#section-58",
+    "href": "aula_p1.html#section-58",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Vamos experimentar um programa que faz mais do que um simples print na tela.\n\nUse o prompt abaixo (não esqueça de testar o programa).\n\n# peça ao usuário o tamanho dos lados de um retângulo  \n# e exiba a área do retângulo\n\nDica: às vezes o Copilot continua o comentário da linha anterior em vez de gerar código.\n\nSe isso acontecer, você pode tentar apertar ENTER novamente.\nOu então começar a digitar um código para que ele entenda que é para completar."
+  },
+  {
+    "objectID": "aula_p1.html#section-59",
+    "href": "aula_p1.html#section-59",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Nós podemos também conversar com o Copilot dentro do contexto de uma parte de código.\n\nPara alterar um trecho de código, por exemplo."
+  },
+  {
+    "objectID": "aula_p1.html#section-60",
+    "href": "aula_p1.html#section-60",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Experimente selecionar o código que você acabou de gerar e aperte Ctrl + I.\n\nNa caixa de diálogo que aparece peça ao Copilot para usar emojis na interação com o usuário, por exemplo.\nDepois de processar o prompt, o Copilot fará uma sugestão de alteração no código\n\nVocê pode aceitar a sugestão (o código será alterado).\nFechar a caixa de diálogo (o que vai ignorar a sugestão).\nOu você pode pedir outra sugestão (clicando no botão da terceira opção)."
+  },
+  {
+    "objectID": "aula_p1.html#section-61",
+    "href": "aula_p1.html#section-61",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Que tal agora pedir para o Copilot conversar com o usuário em mineirês? :)\n\nCompare como ficou a conversa na sua máquina com algum colega.\nA conversa é a mesma? Por que?"
+  },
+  {
+    "objectID": "aula_p1.html#exercícios-adicionais",
+    "href": "aula_p1.html#exercícios-adicionais",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "Exercícios Adicionais",
+    "text": "Exercícios Adicionais\nExperimente agora pedir ao Copilot para não aceitar valores inválidos para os lados do retângulo."
+  },
+  {
+    "objectID": "aula_p1.html#section-62",
+    "href": "aula_p1.html#section-62",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Experimente agora pedir ao Copilot para não aceitar valores inválidos para os lados do retângulo."
+  },
+  {
+    "objectID": "aula_p1.html#section-63",
+    "href": "aula_p1.html#section-63",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Quando eu fiz esse teste, o programa gerado tinha replicação de código.\nwhile True:\n    try:\n        lado1 = float(input(\"Ô trem bão, me fala o tamanho do primeiro lado do retângulo, uai: \"))\n        if lado1 &lt;= 0:\n            print(\"Opa, o lado deve ser maior que zero, uai!\")\n            continue\n        break\n    except ValueError:\n        print(\"Opa, isso não é um número válido, não!\")\n\nwhile True:\n    try:\n        lado2 = float(input(\"Agora cê fala o tamanho do segundo lado, sô: \"))\n        if lado2 &lt;= 0:\n            print(\"Opa, o lado deve ser maior que zero, uai!\")\n            continue\n        break\n    except ValueError:\n        print(\"Opa, isso não é um número válido, não!\")"
+  },
+  {
+    "objectID": "aula_p1.html#section-64",
+    "href": "aula_p1.html#section-64",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "Esse é um exemplo interessante da diferença que faz o conhecimento técnico por parte de quem está usando o assistente de IA.\n\nQuem fez disciplinas de POO sabe que replicação de código é sinal de design ruim.\nMas, para quem não é da área, e está programando por vibe coding não tem a menor ideia disso.\n\n\nPodemos usar Ctrl + I novamente e pedir ao Copilot para remover a replicação de código."
+  },
+  {
+    "objectID": "aula_p1.html#section-65",
+    "href": "aula_p1.html#section-65",
+    "title": "Introdução à Programação Suportada por IA",
+    "section": "",
+    "text": "No meu caso, ao fazer isso, foi gerada uma função para tratar a leitura do lado do retângulo.\n\nUm exemplo de reutilização de código.\n\n# Solicita ao usuário o tamanho dos lados do retângulo\ndef ler_lado(mensagem):\n    while True:\n        try:\n            lado = float(input(mensagem))\n            if lado &lt;= 0:\n                print(\"Opa, o lado deve ser maior que zero, uai!\")\n                continue\n            return lado\n        except ValueError:\n            print(\"Opa, isso não é um número válido, não!\")\n\n\nlado1 = ler_lado(\"Ô trem bão, me fala o tamanho do primeiro lado do retângulo, uai: \")\nlado2 = ler_lado(\"Agora cê fala o tamanho do segundo lado, sô: \")"
+  },
+  {
+    "objectID": "aula_p2.html#section-40",
+    "href": "aula_p2.html#section-40",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "Obtendo mais informações do dataset:\n\nCrie funções com ajuda do Copilot para cada situação abaixo.\nObs.: as informações podem ser exibidas apenas no terminal.\n\n\nExiba os nomes e quantidade de gols dos cinco jogadores que mais fizeram gols em cada liga, ordenados pela quantidade de gols.\nEncontre o jogador mais jovem que marcou gol em cada liga e exiba seu nome, idade, equipe e número de gols.\nEncontre a equipe que menos tomou cartões (amarelos e vermelhos em cada liga). Exiba o nome da equipe e a quantidade de cartões recebidos de cada tipo."
   }
 ]

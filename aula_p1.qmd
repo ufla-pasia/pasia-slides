@@ -3,15 +3,14 @@ title: Introdução à Programação Suportada por IA
 subtitle: PASIA - Aula P.1
 ---
 
-##  {.smaller}
-
+## 
 O conteúdo dessa aula é baseado nos capítulos 1 e 2 do livro abaixo.
 
-![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 60vh; width: auto;"}
+![](imagens/livro_potter_zingaro.png){fig-align="center" fig-alt="Capa do livro de Potter e Zingaro." style="max-height: 50vh;"}
 
 # Introdução {background-color="#40666e"}
 
-## {.smaller}
+## 
 
 Você conhece alguma indústria ou negócio cuja forma de trabalho não tem sofrido impacto
 do uso de softwares?
@@ -21,14 +20,14 @@ do uso de softwares?
 
 . . .
 
-O resultado tem sido que cada vez mais pessoas querem aprender a programar
+Resultado: cada vez mais pessoas querem aprender a programar
 
 - E não estamos falando apenas de graduação em área de TI.
   - Pode ser um cientista que precisa de um programa para analisar dados.
   - Ou um trabalhador de escritório que gostaria de automatizar alguma tarefa repetitiva chata.
   - Ou alguém que quer criar um jogo por hobby.
 
-## {.smaller}
+## 
 
 Apesar do desejo de aprender a programar
 
@@ -36,7 +35,7 @@ Apesar do desejo de aprender a programar
 - Ferramentas de IA podem facilitar muito aprendizado
   - Evitando que o aluno tenha que saber detalhes de regras de sintaxe.
 
-. . .
+##
 
 Nesta disciplina usaremos o GitHub Copilot como um assistente de IA.
 
@@ -50,29 +49,29 @@ O fato é que achar que assistentes de IA não deveriam ser usados hoje em dia
 
 - seria o mesmo que um carpinteiro se recusar a usar ferramentas elétricas.
 
-## {.smaller}
+## 
 
 Os assistentes de IA possuem vantagens que são inegáveis
 
 - Geram códigos que, na grande maioria das vezes, não têm erros de sintaxe.
-  - Evitando frustrações comuns de iniciantes.
+  - Evitando frustrações comuns de iniciantes (seja em programação em geral, ou em uma linguagem específica).
 - São muito boas para explicar o que um código já implementado faz.
   - Fazendo com que um aluno não dependa tanto de um professor, monitor ou colega para ajudá-lo.
 
-. . .
+##
 
 E, claro, muitas vezes assistentes de IA geram códigos corretos para problemas comuns
 
 - Já que é treinado a partir de uma quantidade imensa de códigos.
 - Por que então não utilizá-los?
 
-## {.smaller}
+. . .
 
 Isso não quer dizer que criar software agora é algo trivial e podemos confiar toda habilidade de programação para a IA.
 
 - O fato é que as habilidades para se criar um bom software estão evoluindo.
 
-. . .
+##
 
 Habilidades como:
 
@@ -83,24 +82,24 @@ Habilidades como:
 
 . . . 
 
-Se tornaram mais importantes do que eram no passado.
+se tornaram mais importantes do que eram no passado.
 
 . . .
 
 Já habilidades como conhecer a semântica e sintaxe de uma biblioteca são agora menos importantes.
 
-## {.smaller}
+## 
 
 O que essa disciplina espera de você:
 
-- Que conheça o básico de programação
+- Que conheça o básico de programação (estamos em migração da proposta)
   - Tendo feito IALG ou FP1.
 - Que esteja disposto a realmente criar software útil com auxílio de IA.
   - Não faz sentido fazer uma disciplina para virar um operator de TAB :)
 - Que tenha resiliência para lidar com todo o ciclo de desenvolvimento.
   - Que envolve criar, testar, corrigir, melhorar, documentar, etc.
 
-. . .
+##
 
 Esperamos que ao final da disciplina você consiga
 
@@ -109,8 +108,9 @@ Esperamos que ao final da disciplina você consiga
 - Consiga ler e entender códigos em Python.
 - Saiba utilizar bibliotecas de análise e visualização de dados em Python.
 - Saiba automatizar tarefas repetitivas com Python.
+- Conheça boas práticas de uso de Agentes de IA.
 
-## {.smaller}
+## 
 
 Há um desafio ao utilizar assistentes de IA, que é especialmente relevante no caso de uma disciplina.
 
@@ -126,7 +126,7 @@ O resultado é que o que você fizer pode não bater exatamente com o que o prof
 
 # Impacto da IA na programação {background-color="#40666e"}
 
-## {.smaller}
+## 
 
 O que você acha que esse código faz?
 
@@ -160,9 +160,7 @@ Ele faz com que o computador conte de 0 a 9 e imprima os números na tela.
 
 - Era assim que se programava antigamente.
 
-## {.smaller}
-
-O que você acha que esse código faz?
+## 
 
 ```{.assembly code-line-numbers="false"}
 section .text 
@@ -191,13 +189,13 @@ section .bss
 Essa monstruosidade foi escrita em código Assembly.
 
 - Projetada para ser entendida por máquinas e não humanos.
-- Mesmo na década de 90 jogos como Doom e Quake tinham trechos escritos em Assembly para garantir desempenho.
+- Mesmo na década de 90, jogos como Doom e Quake tinham trechos escritos em Assembly para garantir desempenho.
 
-## {.smaller}
+## 
 
 Uma forma mais moderna de escrever o mesmo programa seria:
 
-::: {.doublefontsize}
+::: {.halfincfontsize}
 ```{.python code-line-numbers="false"}
 for numero in range(9):
     print(numero)
@@ -212,20 +210,23 @@ for numero in range(9):
 
 Mas infelizmente, o código está errado, ele não exibe os números de 0 a 9.
 
-- Apesar de parecer inglês, Python não é inglês.
+##
+
+Apesar de parecer inglês, Python não é inglês.
+
 - E, assim, confundir algum detalhe das regras de um programa pode "quebrá-lo".
 
-## {.smaller}
+. . .
 
 Com assitentes de IA, o trabalho ficou muito mais fácil.
 
 - Podemos escrever em português, e o GitHub Copilot gera o código em Python para nós.
 
-. . .
+##
 
 Se escrevemos, por exemplo, o comentário abaixo:
 
-::: {.doublefontsize}
+::: {.halfincfontsize}
 ```{.python code-line-numbers="false"}
 # Exiba os números de 0 a 9
 ```
@@ -237,7 +238,7 @@ Provavelmente, o GitHub Copilot irá sugerir o código a seguir
 
 - que, diferentemente do código anterior, esse está correto.
 
-::: {.doublefontsize}
+::: {.halfincfontsize}
 ```{.python code-line-numbers="false"}
 # Exiba os números de 0 a 9
 for i in range(10):
@@ -245,7 +246,7 @@ for i in range(10):
 ```
 :::
 
-## {.smaller}
+## 
 
 Antes dos assistentes de IA, programadores profissionais costumavam trabalhar com duas telas.
 
@@ -258,7 +259,7 @@ Muitas vezes a solução encontrada na internet já era o que o programador esta
 
 - especialmente no caso de programadores iniciantes.
 
-. . .
+##
 
 Uma das coisas que os assistentes de IA fazem de melhor é automatizar esse processo.
 
@@ -266,7 +267,7 @@ Uma das coisas que os assistentes de IA fazem de melhor é automatizar esse proc
 
 # Funcionamento de um assistente de IA {background-color="#40666e"}
 
-## {.smaller}
+## 
 
 Mas o que é exatamente um assistente de IA?
 
@@ -283,9 +284,9 @@ No caso do Copilot, uma das tarefas que ele faz é:
 
 Copilot é apenas um exemplo de assistente desse tipo.
 
-- Existem outros como Amazon Q Developer, Tabnine, Ghostwriter, etc.
+- Quais você conhece?
 
-## {.smaller}
+## 
 
 Mas como o Copilot funciona?
 
@@ -293,18 +294,18 @@ Mas como o Copilot funciona?
 - Em vez de escrever diretamente em Python, você descreve o que você quer em palavras e o Copilot gera o programa para você.
 - Essas palavras que escrevemos é o que chamamos de **_prompt_**.
 
-. . .
+##
 
-O "cérebro" por traz do Copilot é um programa de computador bacana que chamamos de LLM.
+O "cérebro" por traz do Copilot é um programa de computador bacana que chamamos de **LLM**.
 
-- LLM vem do inglês Large Language Model, ou Modelo de Linguagem de Larga Escala.
+- LLM vem do inglês _Large Language Model_, ou Modelo de Linguagem de Larga Escala.
 - Um LLM guarda informações sobre o relacionamento entre palavras
   - Incluindo quais palavras fazem sentido em certos contextos
-  - E usa isso para prever a melhor sequência de palavras para responder um prompt.
+  - E usa isso para prever a melhor sequência de palavras para responder a um prompt.
 
-## {.smaller}
+## 
 
-Imagine por exemplo que você pergunte qual a próxima palavra deveria ver na frase:
+Imagine, por exemplo, que você pergunte qual a próxima palavra que deveria aparecer na frase:
 
 - "A pessoa abriu a _____".
 
@@ -314,19 +315,23 @@ Há várias palavras que fariam sentido nesse contexto, como "porta", "caixa" ou
 
 - Já outras claramente não fariam sentido como: "o", "ele" ou "abrir".
 
-. . . 
+##
 
-Um LLM leva em conta o contexto para completar a próxima palavra e vai fazendo isso, palavra a palavra,
-  até chegar na resposta final.
+Um LLM leva em conta o contexto para completar a próxima palavra 
 
-- O LLM faz isso de maneira **não determinística**, o que significa que há uma certa aleatoriedade no processo.
+- e vai fazendo isso, palavra a palavra, até chegar na resposta final.
+
+. . .
+
+O LLM faz isso de maneira **não determinística**, o que significa que há uma certa aleatoriedade no processo.
+
 - Assim, às vezes a frase poderia ser completada com "caixa" e outras vezes com "porta", por exemplo.
 
 . . . 
 
 Isso é importante pois significa que o Copilot pode gerar códigos diferentes cada vez que você pede que ele seja gerado.
 
-## {.smaller}
+## 
 
 Repare que em nenhum momento dissemos que o Copilot "entende" o que ele está fazendo.
 
@@ -338,7 +343,7 @@ Assim, durante nossa jornada na disciplina,
 
 - caberá a você conferir se o que está sendo gerado é realmente o que você precisa que seja feito
 
-## {.smaller}
+## 
 
 Funcionamento do Copilot:
 
@@ -346,7 +351,7 @@ Funcionamento do Copilot:
 
 ![](imagens/fig1-2_prompt_to_program.png){fig-align="center" fig-alt="Fluxograma mostrando a sequência de passos do prompt até o programa gerado." style="max-height: 60vh; width: auto;"}
 
-## {.smaller}
+## 
 
 Não seria mais prático se o Copilot gerasse código de máquina diretamente?
 
@@ -360,24 +365,29 @@ A questão é que o Copilot cometerá erros
 - É muito mais fácil fazer isso em uma linguagem de alto nível como Python do que em código de máquina.
 
 
-## {.smaller}
+## 
 
 O vídeo abaixo é bem interessante e explica de forma simples como funcionam os modelos LLM.
+
+- Obs.: você pode mudar a faixa de áudio para dublagem em português.
+
+. . .
 
 ::: {.center}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LPZh9BOjkQs" title="Modelos LLM explicados resumidamente" frameborder="0" allowfullscreen></iframe>
 ::: 
 
-. . .
+## 
 
 Fica a dica:
 
 - Esse canal [3Blue1Brown](https://www.youtube.com/@3blue1brown) é muito bom.
+
 - Explica diversos conceitos matemáticos de forma visual e intuitiva.
 
 # O que um assistente de IA pode fazer {background-color="#40666e"}
 
-## {.smaller}
+## 
 
 Programadores, especialmente iniciantes, gastam muito tempo aprendendo a escrever código sintaticamente correto.
 
@@ -391,18 +401,18 @@ Assistentes como o Copilot podem ajudar muito nesse aspecto.
 - Pois quase sempre geram códigos que são sintaticamente corretos.
 - Evitando que precisemos escrevê-los do zero.
 
-. . .
+##
 
 Com isso, conseguimos criar softwares mais complexos em menos tempo e com menos frustrações.
 
-## {.smaller}
+. . . 
 
 Não ter que se preocupar com detalhes de sintaxe pode ser um grande fator de aumento de produtividade.
 
 - Afinal de contas o que precisamos é resolver o problema do usuário final, independente dos detalhes de como o código precisa ser escrito.
 - Mas não é só assim que o Copilot pode nos ajudar.
 
-## {.smaller}
+## 
 
 O Copilot, assim como outros assistentes de IA, também pode:
 
@@ -413,7 +423,7 @@ O Copilot, assim como outros assistentes de IA, também pode:
 - Isso é útil tanto quando temos que trabalhar em um código que não fomos nós que escrevemos.
 - Como também quando queremos entender um código que foi gerado pelo próprio Copilot.
 
-. . .
+## 
 
 **Tornar código mais fácil de entender**
 
@@ -421,17 +431,15 @@ O Copilot, assim como outros assistentes de IA, também pode:
 - E algumas são mais fáceis de entender do que outras.
 - Podemos então pedir ao Copilot para reorganizar o código de forma que ele fique mais fácil de entender.
 
-## {.smaller}
-
-O Copilot, assim como outros assistentes de IA, também pode:
+## 
 
 **Encontrar e corrigir bugs**
 
-- Como já foi mencionado o código gerado pelo Copilot pode não funcionar corretamente.
+- Como já foi mencionado, o código gerado pelo Copilot pode não funcionar corretamente.
 - Ou pode funcionar em quase todos os casos, mas falhar em alguns.
 - Podemos então pedir ao Copilot para nos ajudar a encontrar e corrigir esses bugs.
 
-. . .
+## 
 
 **Explicar erros**
 
@@ -439,9 +447,7 @@ O Copilot, assim como outros assistentes de IA, também pode:
 - O Copilot pode nos ajudar a entender o que está acontecendo e como corrigir o erro.
 - É útil passar para o Copilot não só a mensagem de erro, como também a pilha de execução.
 
-## {.smaller}
-
-O Copilot, assim como outros assistentes de IA, também pode:
+## 
 
 **Encontrar bibliotecas que podem ser úteis**
 
@@ -449,20 +455,20 @@ O Copilot, assim como outros assistentes de IA, também pode:
 - O Copilot pode nos ajudar a encontrar bibliotecas que podem ser úteis para o nosso problema.
 - E também pode nos ajudar a entender como utilizá-las.
 
-. . .
+## 
 
 **Melhorar o desempenho do código**
 
 - O Copilot pode nos ajudar a identificar gargalos de desempenho no código.
 - E sugerir melhorias para torná-lo mais eficiente.
 
-## {.smaller}
+## 
 
-Uma **dica** geral para utilizar assistentes de IA é:
+Uma **dica geral** para utilizar assistentes de IA é:
 
-- Interaja com o assistente de IA, fazendo ciclos de perguntas e feedbacks.
+- Interaja com o assistente de IA, fazendo **ciclos de perguntas e feedbacks**.
 
-. . .
+##
 
 Você pode, por exemplo:
 
@@ -474,11 +480,11 @@ Você pode, por exemplo:
 
 # Riscos e desafios ao usar assistentes de IA {background-color="#40666e"}
 
-## {.smaller}
+## 
 
 Além de falar das vantagens, é importante também falar dos riscos e desafios ao usar assistentes de IA.
 
-. . .
+##
 
 **_Copyright_**
   
@@ -489,7 +495,7 @@ Além de falar das vantagens, é importante também falar dos riscos e desafios 
 - Isso levanta questões sobre a propriedade intelectual e o uso ético de código gerado por IA.
 - A tecnologia evoluiu muito rápido do que a legislação, então ainda teremos muito debate sobre o assunto.
 
-## {.smaller}
+## 
 
 **Educação**
 
@@ -497,23 +503,28 @@ Além de falar das vantagens, é importante também falar dos riscos e desafios 
 - De cara, o Copilot acertou 50% dos exercícios.
   - Com um pouco mais de contexto acertou 80%.
 - É fato que a educação precisa mudar para lidar com essa nova realidade.
-  - Em algumas escolas, o aluno pode usar assitentes de IA para fazer os exercícios.
+
+## 
+
+**Educação**
+
+- Em algumas escolas, o aluno pode usar assitentes de IA para fazer os exercícios.
   - Em outras, o uso é proibido em provas ou dependendo do curso (como Computação ou Sistemas).
   - Algumas treinararam LLMs específicos para dar apenas certos tipos de respostas.
 - O fato é que ainda está muito cedo para dizer como LLM vai afetar a educação em computação.
   - Mas certas tendências já começaram a aparecer.
 
-## {.smaller}
+## 
 
 **Qualidade do código**
 
 - É necessário ser bem cuidadoso e não confiar cegamente no código gerado por assistentes de IA.
   - Especialmente em códigos sensíveis ou que precisam ser especialmente seguros.
   - Imagine um código de um dispositivo médico ou de um carro autônomo, por exemplo.
-- É fundamental criar uma estrutura de testes, independente do assistente de IA,
+- É fundamental criar uma estrutura de testes, **independente do assistente de IA**,
   - Para garantir que o código funciona corretamente.
 
-## {.smaller}
+## 
 
 **Segurança do código**
 
@@ -523,19 +534,27 @@ Além de falar das vantagens, é importante também falar dos riscos e desafios 
   - Por exemplo, não enviar dados sensíveis ou confidenciais.
 - Muitas empresas proíbam ou limitam a forma de uso das ferramentas de IA, devido a essas preocupações.
 
-## {.smaller}
+## 
 
 **Assistentes de IA não são especialistas (_experts_)**
 
-- A grande diferença de um especialista não é o que ele sabe, mas o que ele sabe que não sabe :)
+- A grande diferença de um especialista não é o que ele sabe, mas **o que ele sabe que não sabe** 😃
 - Um especialista consegue dizer o quão confiante ele está sobre uma determinada solução.
   - E se não estiver confiante o suficiente, ele estuda até conhecer melhor o que ele não sabe.
-- Assistentes de IA não têm essa capacidade.
-  - Há casos de assistentes que geraram obituários de pessoas mortas ou que explicaram com um ábaco é mais rápido que um computador.
-- As ferramentas estão evoluindo muito, mas ainda são muito autoconfiantes.
-- Em resumo: tudo que um assistente de IA faz deve ser verificado por um humano.
+- Assistentes de IA não têm, nativamente, essa capacidade.
+  - Há casos de assistentes que geraram obituários de pessoas vivas ou que explicaram com um ábaco é mais rápido que um computador.
 
-## {.smaller}
+##
+
+**Assistentes de IA não são especialistas (_experts_)**
+
+- As ferramentas estão evoluindo muito, mas ainda são muito autoconfiantes.
+  - Ultimamente os assistentes têm lidado com isso gerando respostas textuais para elas mesmas e avaliando essas respostas.
+  - É o que é comumente chamado de _"raciocínio"_ (_reasoning_).
+- De toda forma, em resumo: tudo que um assistente de IA faz deve ser verificado por um humano.
+  - _Human in the loop_
+
+## 
 
 **Viés**
 
@@ -544,18 +563,18 @@ Além de falar das vantagens, é importante também falar dos riscos e desafios 
   - E isso acabará se refletindo nas respostas que ele gera.
 - Há também o risco de reforçar estereótipos negativos.
 - Na geração de código, é provável que ele gere códigos em um estilo que é mais comum em grupos que têm maior representatividade na comunidade de programação.
-- Por outro lado, as próprias LLMs podem ajudar a quebrar esses vieses ao facilitar o acesso à programação para pessoas que não têm tanta representatividade na comunidade.
+- Por outro lado, os próprios LLMs podem ajudar a quebrar esses vieses ao facilitar o acesso à programação para todos.
 
 # As habilidades que precisamos usando Assistentes de IA {background-color="#40666e"}
 
-## {.smaller}
+## 
 
 Se o Copilot pode gerar código para nós, explicá-lo e corrigi-lo, não temos que fazer nada, certo?
 
 - Errado!
 - Assistentes de IA cometem erros.
 
-. . . 
+##
 
 Além disso, não podemos passar uma tarefa gigantesca para o Copilot e esperar que ele resolva tudo.
 
@@ -564,16 +583,16 @@ Além disso, não podemos passar uma tarefa gigantesca para o Copilot e esperar 
 - Precisamos quebrar um problema grande em parte menores para os quais o Copilot possa nos ajudar.
   - E fazer essa [decomposição de problemas]{.alert} não é algo tão simples quanto possa parecer à primeira vista.
 
-## {.smaller}
+## 
 
 Uma tarefa que já existia e agora é ainda mais fundamental é: [testes]{.alert} de software.
 
 - Desenvolvedores profissionais e empresas já tratam esse tipo de tarefa.
 - Mas é importante saber que o tipo de erro que um assistente de IA pode cometer é diferente do tipo de erro que um humano pode cometer.
-  - Pode acontecer de em 20 linhas de código, uma delas tenha um erro tão absurdo ou sutil, que não esperaríamos que ele pudesse acontecer.
+  - Pode acontecer que, em 20 linhas de código, uma delas tenha um erro tão absurdo ou sutil, que não esperaríamos que ele pudesse acontecer.
 - Assim, é importante criar uma boa estrutura de testes para garantir que o código funciona corretamente.
 
-## {.smaller}
+## 
 
 Outra habilidade essencial é [depuração]{.alert} de código.
 
@@ -583,7 +602,7 @@ Outra habilidade essencial é [depuração]{.alert} de código.
   - Mesmo que possamos usar a própria IA para ajudar a corrigir
   - ainda assim precisamos entender o que está acontecendo para poder explicar para a IA o que está errado.
 
-## {.smaller}
+## 
 
 Por fim, há uma habilidade totalmente nova quando usamos assistentes de IA: [engenharia de prompt]{.alert}.
 
@@ -591,13 +610,21 @@ Por fim, há uma habilidade totalmente nova quando usamos assistentes de IA: [en
 - Nós podemos escrever as instruções em português, mas a forma como escrevemos essas instruções pode fazer muita diferença.
   - Precisamos ser bastante precisos sobre o que queremos.
 - E mesmo sendo precisos pode ser que a resposta gerada não seja correta.
-  - Nesse caso, precisamos primeiro ser capazes de identificar o que está errado
-  - e depois sermos capazes de reformular o prompt para tentar obter uma resposta melhor.
-- Às vezes um pequeno detalhe no prompt pode fazer muita diferença.
+
+## 
+
+Quando a resposta não está correta:
+
+- Precisamos primeiro ser capazes de identificar o que está errado
+- e depois sermos capazes de reformular o prompt para tentar obter uma resposta melhor.
+
+. . .
+
+Às vezes um pequeno detalhe no prompt pode fazer muita diferença.
 
 # As ferramentas que vamos usar {background-color="#40666e"}
 
-## {.smaller}
+## 
 
 Para fazer atividades da disciplina você precisa instalar
 
@@ -606,41 +633,37 @@ Para fazer atividades da disciplina você precisa instalar
 - Extensão de Python para VS Code (da Microsoft)
   - Você pode instalar digitando <kbd>Ctrl</kbd> + <kbd>P</kbd> no VS Code e digitando `ext install ms-python.python`.
 
-# {.smaller}
+# 
 
 O VS Code possui o conceito de pasta de trabalho (_working folder_).
 
 - Assim, o ideal é que sempre crie uma pasta para cada projeto que desenvolver.
 - E abra a pasta acessando `File` &rarr; `Open Folder`.
 
-. . .
+##
 
 Para testar se a extensão está instalada corretamente, vamos:
 
 - Criar um arquivo acessando a opção `File` &rarr; `New File`.
 - Escolhendo a opção `Python File`.
 - Salvando o arquivo com a extensão `.py` (acessando `File` &rarr; `Save As` e usando um nome como `aula.py`, por exemplo).
-- Digitamos um código simples como `print("Meu primeiro programa!")`.
+- Digitamos um código simples como 
+  - `print("Meu primeiro programa!")`.
 - E acessamos a opção `Run` (no canto superior direito).
 - Se tudo estiver certo, veremos a saída do programa na parte inferior do VS Code.
 
-## {.smaller}
+## 
 
 Além disso, precisamos, claro, do GitHub Copilot.
 
-- E, como estudante da UFLA, você tem direito à versão GitHub Copilot Pro.
-
-. . .
-
-Para ter acesso a ela você deve:
-
-- Criar uma conta no GitHub, se ainda não tiver, acessando [github.com/](https://github.com/).
+- Como estudante da UFLA, você pode usar a uma versão melhor do GitHub Copilot.
+- Para isso, crie uma conta no GitHub, se ainda não tiver, acessando [github.com/](https://github.com/).
 - Após logar, clique no ícone do seu usuário no canto superior direito e acesse a opção `Settings`.
 - Na barra lateral esquerda, clique em `Billing and licensing` &rarr; `Education benefits`.
 - Acesse a opção `Start an application`
   - Siga as instruções (você precisará fornecer um comprovante de matrícula).
 
-## {.smaller}
+## 
 
 Vamos agora testar o uso do GitHub Copilot no VS Code
 
@@ -663,7 +686,7 @@ Ao apertar ENTER, aguarde um pouco e o Copilot deve sugerir um código que atend
 - O código aparece esmaecido e em itálico.
 - E você deve apertar TAB para aceitar a sugestão.
 
-## {.smaller}
+## 
 
 Você deverá então ver um código semelhante a este:
 
@@ -683,20 +706,18 @@ Apareceu algo diferente para você?
 - Lembre que o Copilot é não determinístico e pode gerar soluções diferentes de cada vez.
 - Você pode tentar reformular o prompt para ver se obtém uma resposta diferente.
 
-## {.smaller}
+## 
 
-Vamos experimentar um programa que mais do que um simples print na tela.
+Vamos experimentar um programa que faz mais do que um simples print na tela.
 
 . . .
 
-Experimente criar um programa a partir do prompt abaixo.
-
-- Não esqueça de testá-lo.
+Use o prompt abaixo (não esqueça de testar o programa).
 
 ::: {.halfincfontsize}
 ```python
-# peça ao usuário o tamanho dos lados de um retângulo e 
-# exiba a área do retângulo
+# peça ao usuário o tamanho dos lados de um retângulo  
+# e exiba a área do retângulo
 ```
 :::
 
@@ -705,13 +726,13 @@ Dica: às vezes o Copilot continua o comentário da linha anterior em vez de ger
 - Se isso acontecer, você pode tentar apertar ENTER novamente.
 - Ou então começar a digitar um código para que ele entenda que é para completar.
 
-## {.smaller}
+## 
 
-Nós podemos também conversar com o Copilot dentro do contexto de uma parte de código.
+Nós podemos também conversar com o Copilot dentro do **contexto de uma parte de código**.
 
 - Para alterar um trecho de código, por exemplo.
 
-. . .
+##
 
 Experimente selecionar o código que você acabou de gerar e aperte <kbd>Ctrl</kbd> + <kbd>I</kbd>.
 
@@ -721,7 +742,75 @@ Experimente selecionar o código que você acabou de gerar e aperte <kbd>Ctrl</k
   - Fechar a caixa de diálogo (o que vai ignorar a sugestão).
   - Ou você pode pedir outra sugestão (clicando no botão da terceira opção).
 
-. . .
+##
 
 Que tal agora pedir para o Copilot conversar com o usuário em mineirês? :)
+
+- Compare como ficou a conversa na sua máquina com algum colega.
+- A conversa é a mesma? Por que?
+
+## 
+
+Experimente agora pedir ao Copilot para não aceitar valores inválidos para os lados do retângulo.
+
+## 
+
+Quando eu fiz esse teste, o programa gerado tinha **replicação de código**.
+
+```python
+while True:
+    try:
+        lado1 = float(input("Ô trem bão, me fala o tamanho do primeiro lado do retângulo, uai: "))
+        if lado1 <= 0:
+            print("Opa, o lado deve ser maior que zero, uai!")
+            continue
+        break
+    except ValueError:
+        print("Opa, isso não é um número válido, não!")
+
+while True:
+    try:
+        lado2 = float(input("Agora cê fala o tamanho do segundo lado, sô: "))
+        if lado2 <= 0:
+            print("Opa, o lado deve ser maior que zero, uai!")
+            continue
+        break
+    except ValueError:
+        print("Opa, isso não é um número válido, não!")
+```
+
+## 
+
+Esse é um exemplo interessante da diferença que faz o conhecimento técnico por parte de quem está usando o assistente de IA.
+
+- Quem fez disciplinas de POO sabe que replicação de código é sinal de _design_ ruim.
+- Mas, para quem não é da área, e está programando por _vibe coding_ não tem a menor ideia disso.
+
+. . .
+
+Podemos usar <kbd>Ctrl</kbd> + <kbd>I</kbd> novamente e pedir ao Copilot para remover a replicação de código.
+
+##
+
+No meu caso, ao fazer isso, foi gerada uma função para tratar a leitura do lado do retângulo.
+
+- Um exemplo de **reutilização de código**.
+
+```python
+# Solicita ao usuário o tamanho dos lados do retângulo
+def ler_lado(mensagem):
+    while True:
+        try:
+            lado = float(input(mensagem))
+            if lado <= 0:
+                print("Opa, o lado deve ser maior que zero, uai!")
+                continue
+            return lado
+        except ValueError:
+            print("Opa, isso não é um número válido, não!")
+
+
+lado1 = ler_lado("Ô trem bão, me fala o tamanho do primeiro lado do retângulo, uai: ")
+lado2 = ler_lado("Agora cê fala o tamanho do segundo lado, sô: ")
+```
 
