@@ -1523,7 +1523,7 @@
     "href": "aula_t3.html#section-1",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "A ideia aqui não é entender cada detalhe de cada linha do código.\n\nE sim aprender a como usar o Copilot para chegar num meio termo entre:\n\n“Esse código faz mágica” 🧙‍♂️\ne “Eu sei exatamente como cada linha de código funciona” 🤓"
+    "text": "A ideia aqui não é entender cada detalhe de cada linha do código.\n\nE sim aprender a como usar o Copilot para chegar num meio termo entre:\n\n\n\n“Esse código faz mágica” 🧙‍♂️\n\n\n\n“Eu sei exatamente como cada linha de código funciona” 🤓"
   },
   {
     "objectID": "aula_t3.html#section-2",
@@ -1537,14 +1537,14 @@
     "href": "aula_t3.html#section-3",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Nas aulas anteriores escremos prompt para que o Copilot explicasse um trecho de código pra gente.\n\nMas o Copilot também tem comandos específicos além de texto livre.\n\n\nPodemos usar o comando /explain por exemplo.\n\nSelecionamos a função (ou trecho de código) que queremos entender e acessamos com o botão direito do mouse a opção Copilot -&gt; Explain\n\nou digitamos /explain no chat (seja com Ctrl + I ou no chat)."
+    "text": "Nas aulas anteriores escrevemos prompts para que o Copilot explicasse trechos de código pra gente.\n\nMas o Copilot também tem comandos específicos além de texto livre.\n\n\nPodemos selecionar a função (ou trecho de código) que queremos entender,\n\ne acessamos com o botão direito do mouse a opção Explain,\nou digitamos /explain na janela de chat lateral."
   },
   {
     "objectID": "aula_t3.html#section-4",
     "href": "aula_t3.html#section-4",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nPodemos complementar o comando /explain com mais detalhes.\nIsso é especialmente útil para fazermos com que o Copilot entenda que queremos as explicações em português."
+    "text": "Dica\n\n\nPodemos complementar o comando /explain com mais detalhes.\nIsso pode ser útil, por exemplo, para fazermos com que o Copilot entenda que queremos as explicações em português."
   },
   {
     "objectID": "aula_t3.html#section-6",
@@ -1600,7 +1600,7 @@
     "href": "aula_t3.html#section-10",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Como professor é incrível que agora os alunos tenham com quem tirar dúvidas quantas vezes for necessário.\n\nApenas lembre-se que a explicação do Copilot pode estar errada.\n\nAí você pode pensar: então pra que ela serve?\n\n\n\nRealmente pode ser frustrante.\n\nMas na maioria dos códigos, especialmente mais simples, as explicações são corretas.\nE, sem o Copilot, se você tivesse dúvidas e procurasse um amigo ou no Google, poderia obter respostas erradas também."
+    "text": "Como professor, considero incrível que agora os alunos tenham com quem tirar dúvidas quantas vezes for necessário.\n\nApenas lembre-se que a explicação do Copilot pode estar errada.\n\nAí você pode pensar: então pra que ela serve?\n\n\n\nRealmente pode ser frustrante.\n\nMas na maioria dos códigos, especialmente mais simples, as explicações são corretas.\nE, sem o Copilot, se você tivesse dúvidas e procurasse um amigo ou no Google, poderia obter respostas erradas também."
   },
   {
     "objectID": "aula_t3.html#section-11",
@@ -1754,7 +1754,7 @@
     "href": "aula_t3.html#section-29",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Dica\n\n\nDurante a sessão interativa o Copilot pode te pedir para escrever trechos de código em Python e, para isso, você precisará pular linha. Mas se usar ENTER você envia o prompt incompleto. Use Shift + ENTER para pular linha.\n\n\n\nVamos fazer uma sessão interativa dessas aqui na sala para revisar os conceitos.\n\nE é altamente recomendável que você faça depois em casa, adaptando o prompt à sua realidade.\nPara tornar o processo ainda mais interativo, vamos usar o PollEverywhere para responder às perguntas durante a sessão."
+    "text": "Dica\n\n\nDurante a sessão interativa o Copilot pode te pedir para escrever trechos de código em Python e, para isso, você precisará pular linha. Mas se usar ENTER você envia o prompt incompleto. Use Shift + ENTER para pular linha.\n\n\n\n\nVamos fazer uma sessão interativa dessas aqui na sala para revisar os conceitos.\n\nE é altamente recomendável que você faça depois em casa, adaptando o prompt à sua realidade.\nPara tornar o processo ainda mais interativo, vamos usar o PollEverywhere para responder às perguntas durante a sessão."
   },
   {
     "objectID": "aula_t3.html#os-10-principais-tópicos-em-python-1",
@@ -1978,7 +1978,7 @@
     "href": "aula_t3.html#section-35",
     "title": "Lendo Código Python",
     "section": "",
-    "text": "Se ainda tivermos tempo, nossa última parte será um Quiz no Poll Everywhere, mas agora com perguntas um pouco mais avançadas.\nNão se preocupe se precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.\n\nMas vou aproveitar o gancho para comentar sobre elas.\n\n\n\n\n\n\n\nDica\n\n\nNa primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. Lembre-se que Assistentes de IA podem gerar respostas erradas.\nUma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir."
+    "text": "Se ainda tivermos tempo, nossa última parte será um Quiz no Poll Everywhere, mas agora com perguntas um pouco mais avançadas.\nNão se preocupe se precisar chutar respostas, afinal podem ser perguntas de coisas que não revisamos.\n\nMas vou aproveitar o gancho para comentar sobre elas.\n\n\n\n\n\n\n\n\n\nDica\n\n\nNa primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. Lembre-se que Assistentes de IA podem gerar respostas erradas.\nUma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir."
   },
   {
     "objectID": "aula_p3.html#section",

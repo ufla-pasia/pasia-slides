@@ -59,13 +59,25 @@ Já o **2º nível, _objetivo geral_,** é geralmente o que esperamos encontrar 
 
 A ideia aqui não é entender cada detalhe de cada linha do código.
 
-- E sim aprender a como usar o Copilot para chegar num meio termo entre:
-  - _“Esse código faz mágica”_ 🧙‍♂️
-  - e _“Eu sei exatamente como cada linha de código funciona”_ 🤓
+. . .
+
+E sim aprender a como usar o Copilot para chegar num meio termo entre:
+
+::: {.columns}
+
+:::: {.column width="50%"}
+- _“Esse código faz mágica”_ 🧙‍♂️
+::::
+
+:::: {.column width="50%"}
+- _“Eu sei exatamente como cada linha de código funciona”_ 🤓
+::::
+
+:::
 
 ##
 
-Na aula passada tratamos o processamento de um dataset de futebol
+Na aula passada tratamos o processamento de um _dataset_ de futebol
 sem nos preocuparmos em entender realmente o código.
 
 - Mas isso foi apenas para demonstrar o uso do Copilot.
@@ -76,23 +88,23 @@ sem nos preocuparmos em entender realmente o código.
 
 ##
 
-Nas aulas anteriores escremos prompt para que o Copilot explicasse um trecho de código pra gente.
+Nas aulas anteriores escrevemos prompts para que o Copilot explicasse trechos de código pra gente.
  
 - Mas o Copilot também tem **comandos específicos** além de texto livre.
 
 . . .
 
-Podemos usar o comando `/explain` por exemplo.
+Podemos selecionar a função (ou trecho de código) que queremos entender,
 
-- Selecionamos a função (ou trecho de código) que queremos entender e acessamos com o botão direito do mouse **a opção Copilot -> Explain** 
-  - ou **digitamos `/explain` no chat** (seja com <kbd>Ctrl</kbd> + <kbd>I</kbd> ou no chat).
+- e acessamos com o **botão direito do mouse a opção** [Explain]{.alert},
+- ou **digitamos `/explain` na janela de chat** lateral.
 
 ##
 
 ::: {.callout-tip}
 Podemos complementar o comando `/explain` com mais detalhes.
 
-Isso é especialmente útil para fazermos com que o Copilot entenda que queremos as explicações em português.
+Isso pode ser útil, por exemplo, para fazermos com que o Copilot entenda que queremos as explicações em português.
 :::
 
 
@@ -154,7 +166,7 @@ podemos pedir uma **explicação linha a linha**.
 
 ##
 
-Como professor é incrível que agora os alunos tenham com quem **tirar dúvidas** quantas vezes for necessário.
+Como professor, considero incrível que agora os alunos tenham com quem **tirar dúvidas** quantas vezes for necessário.
 
 . . .
 
@@ -444,14 +456,13 @@ Formato: Gostaria que a sessão fosse interativa, apresentando um conceito de ca
 
 ##
 
-::: {.nonincremental}
-
 ::: {.callout-tip}
 Durante a sessão interativa o Copilot pode te pedir para escrever trechos de código
 em Python e, para isso, você precisará pular linha. Mas se usar <kbd>ENTER</kbd> você
 envia o prompt incompleto. Use <kbd>Shift</kbd> + <kbd>ENTER</kbd> para pular linha.
 :::
 
+::: {.nonincremental}
 
 Vamos fazer uma sessão interativa dessas aqui na sala para revisar os conceitos.
 
@@ -848,10 +859,14 @@ Não se preocupe se precisar chutar respostas, afinal podem ser perguntas de coi
 
 - Mas vou aproveitar o gancho para comentar sobre elas.
 
+:::
+
+. . .
+
 ::: {.callout-tip}
 Na primeira vez que gerei esse Quiz o Copilot gerou respostas estranhas em alguns casos. 
 Lembre-se que Assistentes de IA podem gerar respostas erradas.
 
 Uma dica quando estiver estudando sozinho é experimentar o código você mesmo para conferir.
 :::
-:::
+

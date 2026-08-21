@@ -413,7 +413,7 @@
     </div>
 </div>
 
-  <p class="date">25/08/2025</p>
+  <p class="date">21/08/2026</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -478,17 +478,23 @@
 <section id="section-1" class="slide level2">
 <h2></h2>
 <p>A ideia aqui não é entender cada detalhe de cada linha do código.</p>
-<ul>
-<li class="fragment">E sim aprender a como usar o Copilot para chegar num meio termo entre:
+<div class="fragment">
+<p>E sim aprender a como usar o Copilot para chegar num meio termo entre:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
 <li class="fragment"><em>“Esse código faz mágica”</em> 🧙‍♂️</li>
-<li class="fragment">e <em>“Eu sei exatamente como cada linha de código funciona”</em> 🤓</li>
-</ul></li>
 </ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><em>“Eu sei exatamente como cada linha de código funciona”</em> 🤓</li>
+</ul>
+</div></div>
+</div>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-<p>Na aula passada tratamos o processamento de um dataset de futebol sem nos preocuparmos em entender realmente o código.</p>
+<p>Na aula passada tratamos o processamento de um <em>dataset</em> de futebol sem nos preocuparmos em entender realmente o código.</p>
 <ul>
 <li class="fragment">Mas isso foi apenas para demonstrar o uso do Copilot.</li>
 <li class="fragment">Em nossos projetos precisamos buscar o meio termo citado no slide anterior.</li>
@@ -501,17 +507,15 @@
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
-<p>Nas aulas anteriores escremos prompt para que o Copilot explicasse um trecho de código pra gente.</p>
+<p>Nas aulas anteriores escrevemos prompts para que o Copilot explicasse trechos de código pra gente.</p>
 <ul>
 <li class="fragment">Mas o Copilot também tem <strong>comandos específicos</strong> além de texto livre.</li>
 </ul>
 <div class="fragment">
-<p>Podemos usar o comando <code>/explain</code> por exemplo.</p>
+<p>Podemos selecionar a função (ou trecho de código) que queremos entender,</p>
 <ul>
-<li class="fragment">Selecionamos a função (ou trecho de código) que queremos entender e acessamos com o botão direito do mouse <strong>a opção Copilot -&gt; Explain</strong>
-<ul>
-<li class="fragment">ou <strong>digitamos <code>/explain</code> no chat</strong> (seja com <kbd>Ctrl</kbd> + <kbd>I</kbd> ou no chat).</li>
-</ul></li>
+<li class="fragment">e acessamos com o <strong>botão direito do mouse a opção</strong> <span class="alert">Explain</span>,</li>
+<li class="fragment">ou <strong>digitamos <code>/explain</code> na janela de chat</strong> lateral.</li>
 </ul>
 </div>
 </section>
@@ -527,7 +531,7 @@
 </div>
 <div class="callout-content">
 <p>Podemos complementar o comando <code>/explain</code> com mais detalhes.</p>
-<p>Isso é especialmente útil para fazermos com que o Copilot entenda que queremos as explicações em português.</p>
+<p>Isso pode ser útil, por exemplo, para fazermos com que o Copilot entenda que queremos as explicações em português.</p>
 </div>
 </div>
 </div>
@@ -586,7 +590,7 @@
 </section>
 <section id="section-10" class="slide level2">
 <h2></h2>
-<p>Como professor é incrível que agora os alunos tenham com quem <strong>tirar dúvidas</strong> quantas vezes for necessário.</p>
+<p>Como professor, considero incrível que agora os alunos tenham com quem <strong>tirar dúvidas</strong> quantas vezes for necessário.</p>
 <div class="fragment">
 <p>Apenas lembre-se que a explicação do Copilot pode estar errada.</p>
 <ul>
@@ -949,7 +953,6 @@ Formato: Gostaria que a sessão fosse interativa, apresentando um conceito de ca
 </section>
 <section id="section-29" class="slide level2">
 <h2></h2>
-<div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -963,6 +966,7 @@ Formato: Gostaria que a sessão fosse interativa, apresentando um conceito de ca
 </div>
 </div>
 </div>
+<div>
 <p>Vamos fazer uma sessão interativa dessas aqui na sala para revisar os conceitos.</p>
 <ul>
 <li>E é <strong>altamente recomendável</strong> que você faça depois em casa, adaptando o prompt à sua realidade.</li>
@@ -1403,6 +1407,8 @@ passar para o outro arquivo. E o gabarito deve ser fornecido somente ao final.</
 <ul>
 <li>Mas vou aproveitar o gancho para comentar sobre elas.</li>
 </ul>
+</div>
+<div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1417,12 +1423,12 @@ passar para o outro arquivo. E o gabarito deve ser fornecido somente ao final.</
 </div>
 </div>
 </div>
-</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="imagens/logo_UFLA.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
+</div>
 </div>
 </div>
 </section></section>
@@ -1453,7 +1459,7 @@ passar para o outro arquivo. E o gabarito deve ser fornecido somente ao final.</
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': false,
+'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
