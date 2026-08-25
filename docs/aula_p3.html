@@ -393,10 +393,6 @@
       margin-right: 0; 
     }
   </style>
-  <meta name="mermaid-theme" content="neutral">
-  <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -979,6 +975,14 @@
 </section>
 <section id="section-22" class="slide level2">
 <h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/ciclo_projeto_funcoes.png" class="quarto-figure quarto-figure-center" style="max-height: 70vh; width: auto;" alt="Diagrama do ciclo de projeto de funções."></p>
+</figure>
+</div>
+</section>
+<section id="section-23" class="slide level2">
+<h2></h2>
 <ul>
 <li class="fragment"><strong>A</strong>. Defina o comportamento desejado da função</li>
 <li class="fragment"><strong>B</strong>. Escreva um prompt que descreve a função</li>
@@ -991,34 +995,6 @@
 <li class="fragment"><strong>I</strong>. Explore alternativas do Copilot. Alguma parece razoável? Sim: <strong>E</strong>, não: <strong>J</strong></li>
 <li class="fragment"><strong>J</strong>. Revise o prompt para melhorar a descrição da função e vá para <strong>C</strong> .</li>
 </ul>
-</section>
-<section id="section-23" class="slide level2">
-<h2></h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-  A(Defina o comportamento desejado da função) --&gt; B(Escreva um prompt que descreve a função)
-  B --&gt; C(Use o Copilot para gerar o código)
-  C --&gt; D(O código parece razoável?)
-  D --Sim--&gt; E(Escreva casos de teste usando pytest)
-  E --&gt; F(Rode os testes. Passou nos testes?)
-  F -- Sim --&gt; G(Escreveu todos os casos de testes?)
-  G -- Sim --&gt; H(Pronto!)
-  G -- Não --&gt; E
-  D -- Não --&gt; I(Explore alternativas do Copilot. Alguma parece razoável?)
-  I -- Sim --&gt; E
-  I -- Não --&gt; J(Revise o prompt para melhorar a descrição da função)
-  J --&gt; C
-  F -- Não --&gt; J
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
 </section></section>
 <section>
 <section id="praticando-escrita-de-testes" class="title-slide slide level1 center" data-background-color="#40666e">
@@ -1065,10 +1041,10 @@
 </section>
 <section id="section-25" class="slide level2">
 <h2></h2>
-<p>Ao chegar na etapa <strong>E</strong>, de escrita de testes, faça você mesmo (<strong>sem apoio da IA</strong>)</p>
+<p>Ao chegar na etapa <strong>E</strong>, de escrita de testes, faça você mesmo (<strong>sem apoio da IA</strong>).</p>
 <ul>
 <li class="fragment">Pense em todos os casos de uso comuns e de borda que julgar necessários.</li>
-<li class="fragment">A ideia é que você só prossiga depois de achar que já terminou todos os testes
+<li class="fragment">A ideia é que você só prossiga depois de achar que já terminou todos os testes.
 <ul>
 <li class="fragment">Ou seja depois de já ter chegado no passo <strong>H</strong> do ciclo de projeto de funções.</li>
 </ul></li>
@@ -1211,7 +1187,7 @@
 <ul>
 <li class="fragment">Para isso podemos criar vários arquivos, ou apenas um para todos os testes.</li>
 <li class="fragment">Se conseguirmos criar apenas um arquivo, será mais fácil gerenciar os testes.</li>
-<li class="fragment">Repare que o arquivo original tem várias colunas, mas para os nossos testes seria suficiente considerar as primeiras nove (que são as que precisamos).</li>
+<li class="fragment">Repare que o arquivo original tem várias colunas, mas para os nossos testes seria suficiente considerar as primeiras treze (que são as que precisamos).</li>
 </ul>
 </section>
 <section id="section-35" class="slide level2">

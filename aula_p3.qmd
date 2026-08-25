@@ -558,6 +558,10 @@ Nas aulas anteriores vimos o **ciclo de projeto de funções**.
 
 ##
 
+![](imagens/ciclo_projeto_funcoes.png){fig-align="center" fig-alt="Diagrama do ciclo de projeto de funções." style="max-height: 70vh; width: auto;"}
+
+##
+
 - **A**. Defina o comportamento desejado da função
 - **B**. Escreva um prompt que descreve a função
 - **C**. Use o Copilot para gerar o código
@@ -569,24 +573,6 @@ Nas aulas anteriores vimos o **ciclo de projeto de funções**.
 - **I**. Explore alternativas do Copilot. Alguma parece razoável?  Sim: **E**, não: **J**
 - **J**. Revise o prompt para melhorar a descrição da função e vá para **C** .
 
-##
-
-```{mermaid}
-flowchart TD
-  A(Defina o comportamento desejado da função) --> B(Escreva um prompt que descreve a função)
-  B --> C(Use o Copilot para gerar o código)
-  C --> D(O código parece razoável?)
-  D --Sim--> E(Escreva casos de teste usando pytest)
-  E --> F(Rode os testes. Passou nos testes?)
-  F -- Sim --> G(Escreveu todos os casos de testes?)
-  G -- Sim --> H(Pronto!)
-  G -- Não --> E
-  D -- Não --> I(Explore alternativas do Copilot. Alguma parece razoável?)
-  I -- Sim --> E
-  I -- Não --> J(Revise o prompt para melhorar a descrição da função)
-  J --> C
-  F -- Não --> J
-```
 
 # Praticando escrita de testes {background-color="#40666e"}
 
