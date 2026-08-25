@@ -89,7 +89,7 @@ Como exemplo, suponha que precisamos testar uma função que
 
 . . .
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 def maior_palavra(palavras):
 ```
@@ -124,7 +124,7 @@ Começando com **casos de uso comuns**:
 
 Podemos pensar em um teste com poucas palavras nas quais apenas uma é maior que todas as outras.
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 >>> maior_palavra(['gato', 'pássaro', 'cachorro'])
 'cachorro'
@@ -135,7 +135,7 @@ Podemos pensar em um teste com poucas palavras nas quais apenas uma é maior que
 
 Podemos agora testar uma lista com mais palavras e com a maior palavra aparecendo em outra posição da lista.
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 >>> maior_palavra(['feliz', 'aniversário', 'para', 'meu', 'cachorro'])
 'aniversário'
@@ -146,7 +146,7 @@ Podemos agora testar uma lista com mais palavras e com a maior palavra aparecend
 
 Por fim, podemos pensar em uma lista contendo uma única palavra.
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 >>> maior_palavra(['feliz'])
 'feliz'
@@ -163,7 +163,7 @@ Se o programa estiver funcionando para esses casos de testes comuns, é hora de 
 
 . . .
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 >>> maior_palavra(['gato', 'cão', 'sapo'])
 'gato'
@@ -178,7 +178,7 @@ E se nenhuma palavra tiver caracteres?
 
 . . .
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 >>> maior_palavra(['', '', ''])
 ''
@@ -206,7 +206,7 @@ E como deveríamos testar o caso do método ser chamado com uma lista vazia?
 
 Assumindo que a função retorne `None` para esse caso, o teste seria:
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 >>> maior_palavra([])
 None
@@ -278,7 +278,7 @@ Qual é a estratégia de testes mais simples que podemos pensar?
 
 Fazemos a chamada como especificamos no caso de testes e comparamos o resultado exibido com o esperado.
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 >>> maior_palavra(['gato', 'cão', 'sapo'])
 'gato'
@@ -338,7 +338,7 @@ Nesta aula nós veremos apenas o básico do `pytest`.
 
 A primeira coisa que precisamos fazer é instalar o `pytest`, já que não é um módulo padrão do Python.
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```bash
 pip install pytest
 ```
@@ -353,7 +353,7 @@ O módulo `pytest` fornece uma maneira simples de implementar testes.
 
 . . . 
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 def test_maior_palavra():
     assert maior_palavra(['gato', 'pássaro', 'cachorro']) == 'cachorro'
@@ -376,7 +376,7 @@ Nós podemos ainda definir uma mensagem de erro personalizada.
 
 . . .
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 assert <condição>, <mensagem_opcional_de_erro>
 ```
@@ -415,7 +415,7 @@ Suponha que nossa função `maior_palavra` esteja implementada em um arquivo `me
 
 A estrutura fica então assim.
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```
 meu_projeto/
 │
@@ -491,15 +491,15 @@ Repare em um detalhe importante do último teste.
 - Já o operador `is` verifica se duas variáveis apontam para o mesmo objeto.
   - Que é similar ao `==` do Java 😁
 
-. . .
+##
 
-Como `None` é um objeto único no Java, é mais eficiente e seguro usar `is None` para verificar se uma variável é `None`.
+Como `None` é um objeto único no Python, é mais eficiente e seguro usar `is None` para verificar se uma variável é `None`.
 
 ## Execução do `pytest`
 
 Agora, para executar os testes, basta executar o comando `pytest` na pasta principal do projeto.
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```bash
 pytest
 ```
@@ -527,7 +527,7 @@ Vamos agora forçar dois erros em nossa função `maior_palavra`
 
 - para ver como o `pytest` vai reportar esses erros.
 
-::: {.halfincfontsize}
+::: {.fontsize125}
 ```python
 def maior_palavra(palavras):
     # removemos a verificação de lista vazia
@@ -677,11 +677,11 @@ Crie então uma função que atenda à necessidade do grupo.
   - Considerando que a primeira fileira é a de número 0.
 - Caso não exista nenhuma fileira que caiba todo o grupo, a função deve retornar `-1`.
 
-. . .
+##
 
 Ao chegar na etapa **E**, de escrita de testes, pense em todos os casos de uso comuns e de borda que julgar necessários.
 
-## Situação 1 - Conferência
+. . .
 
 A ideia é que você só prossiga depois de achar que já terminou todos os testes
 
@@ -718,7 +718,6 @@ Imagine agora que queiramos testar funções com processem arquivos.
 
 . . .
 
-::: {.fontsize125}
 ```python
 def calcular_quantidade_gols(dados, pais):
     """
@@ -732,7 +731,6 @@ def calcular_quantidade_gols(dados, pais):
     por jogadores do país passado em cada liga
     """
 ```
-:::
 
 ##
 
@@ -835,7 +833,7 @@ Vamos então criar um arquivo CSV que cubra os casos de testes. Para isso seguem
 
 ##
 
-Para ler o arquivo criado no seu arquivo com as funçoes de teste você pode começar com o seguinte código:
+Para ler o arquivo criado no seu arquivo com as funções de teste você pode começar com o seguinte código:
 
 ```python
 import csv

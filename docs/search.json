@@ -2216,70 +2216,70 @@
     "href": "aula_p3.html#section-16",
     "title": "Testes",
     "section": "",
-    "text": "Repare em um detalhe importante do último teste.\n\nPara verificar se o retorno é None, usamos is None em vez de == None.\n\n\nÉ que o operador == compara o conteúdo de dois objetos.\n\nDe forma similar ao equals no Java.\nJá o operador is verifica se duas variáveis apontam para o mesmo objeto.\n\nQue é similar ao == do Java 😁\n\n\n\n\nComo None é um objeto único no Java, é mais eficiente e seguro usar is None para verificar se uma variável é None."
+    "text": "Repare em um detalhe importante do último teste.\n\nPara verificar se o retorno é None, usamos is None em vez de == None.\n\n\nÉ que o operador == compara o conteúdo de dois objetos.\n\nDe forma similar ao equals no Java.\nJá o operador is verifica se duas variáveis apontam para o mesmo objeto.\n\nQue é similar ao == do Java 😁"
   },
   {
     "objectID": "aula_p3.html#section-17",
     "href": "aula_p3.html#section-17",
     "title": "Testes",
     "section": "",
-    "text": "Vamos agora forçar dois erros em nossa função maior_palavra\n\npara ver como o pytest vai reportar esses erros.\n\n\ndef maior_palavra(palavras):\n    # removemos a verificação de lista vazia\n    maior = palavras[0]\n    for p in palavras[1:]:\n        # trocamos &gt; por &gt;=\n        if len(p) &gt;= len(maior):\n            maior = p\n    return maior"
+    "text": "Como None é um objeto único no Python, é mais eficiente e seguro usar is None para verificar se uma variável é None."
   },
   {
     "objectID": "aula_p3.html#section-18",
     "href": "aula_p3.html#section-18",
     "title": "Testes",
     "section": "",
-    "text": "Obtemos então a seguinte saída com pytest.\n==================== test session starts =====================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0\nrootdir: /home/julio/Downloads/aula_p2\ncollected 6 items                                            \n\ntestes/test_maior_palavra.py ...F.F                    [100%]\n\n========================== FAILURES ==========================\n_________________ test_maior_palavra_empate __________________\n\n    def test_maior_palavra_empate():\n&gt;       assert maior_palavra(['gato', 'cão', 'sapo']) == 'gato'\nE       AssertionError: assert 'sapo' == 'gato'\nE         \nE         - gato\nE         + sapo\n\ntestes/test_maior_palavra.py:13: AssertionError\n_______________ test_maior_palavra_lista_vazia _______________\n\n    def test_maior_palavra_lista_vazia():\n&gt;       assert maior_palavra([]) == None\n               ^^^^^^^^^^^^^^^^^\n\ntestes/test_maior_palavra.py:19: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npalavras = []\n\n    def maior_palavra(palavras):\n        # removemos a verificação de lista vazia\n&gt;       maior = palavras[0]\n                ^^^^^^^^^^^\nE       IndexError: list index out of range\n\nmeu_app/main.py:3: IndexError\n================== short test summary info ===================\nFAILED testes/test_maior_palavra.py::test_maior_palavra_empate - AssertionError: assert 'sapo' == 'gato'\nFAILED testes/test_maior_palavra.py::test_maior_palavra_lista_vazia - IndexError: list index out of range\n================ 2 failed, 4 passed in 0.04s ================="
+    "text": "Vamos agora forçar dois erros em nossa função maior_palavra\n\npara ver como o pytest vai reportar esses erros.\n\n\ndef maior_palavra(palavras):\n    # removemos a verificação de lista vazia\n    maior = palavras[0]\n    for p in palavras[1:]:\n        # trocamos &gt; por &gt;=\n        if len(p) &gt;= len(maior):\n            maior = p\n    return maior"
   },
   {
     "objectID": "aula_p3.html#section-19",
     "href": "aula_p3.html#section-19",
     "title": "Testes",
     "section": "",
-    "text": "Na saída anterior vemos que foram encontrados 6 testes dos quais dois não passaram\ncollected 6 items                                            \n\ntestes/test_maior_palavra.py ...F.F                    [100%]\n\nEm seguida são apresentados detalhes dos testes que falharam.\n\nQue nos ajudam a identificar o problema para corrigi-lo."
+    "text": "Obtemos então a seguinte saída com pytest.\n==================== test session starts =====================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0\nrootdir: /home/julio/Downloads/aula_p2\ncollected 6 items                                            \n\ntestes/test_maior_palavra.py ...F.F                    [100%]\n\n========================== FAILURES ==========================\n_________________ test_maior_palavra_empate __________________\n\n    def test_maior_palavra_empate():\n&gt;       assert maior_palavra(['gato', 'cão', 'sapo']) == 'gato'\nE       AssertionError: assert 'sapo' == 'gato'\nE         \nE         - gato\nE         + sapo\n\ntestes/test_maior_palavra.py:13: AssertionError\n_______________ test_maior_palavra_lista_vazia _______________\n\n    def test_maior_palavra_lista_vazia():\n&gt;       assert maior_palavra([]) == None\n               ^^^^^^^^^^^^^^^^^\n\ntestes/test_maior_palavra.py:19: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npalavras = []\n\n    def maior_palavra(palavras):\n        # removemos a verificação de lista vazia\n&gt;       maior = palavras[0]\n                ^^^^^^^^^^^\nE       IndexError: list index out of range\n\nmeu_app/main.py:3: IndexError\n================== short test summary info ===================\nFAILED testes/test_maior_palavra.py::test_maior_palavra_empate - AssertionError: assert 'sapo' == 'gato'\nFAILED testes/test_maior_palavra.py::test_maior_palavra_lista_vazia - IndexError: list index out of range\n================ 2 failed, 4 passed in 0.04s ================="
   },
   {
     "objectID": "aula_p3.html#section-20",
     "href": "aula_p3.html#section-20",
     "title": "Testes",
     "section": "",
-    "text": "Nas aulas anteriores vimos o ciclo de projeto de funções.\n\nVamos agora atualizá-lo para incluir a etapa de testes."
+    "text": "Na saída anterior vemos que foram encontrados 6 testes dos quais dois não passaram\ncollected 6 items                                            \n\ntestes/test_maior_palavra.py ...F.F                    [100%]\n\nEm seguida são apresentados detalhes dos testes que falharam.\n\nQue nos ajudam a identificar o problema para corrigi-lo."
   },
   {
     "objectID": "aula_p3.html#section-21",
     "href": "aula_p3.html#section-21",
     "title": "Testes",
     "section": "",
-    "text": "A. Defina o comportamento desejado da função\nB. Escreva um prompt que descreve a função\nC. Use o Copilot para gerar o código\nD. O código parece razoável? Sim: E, não: I.\nE. Escreva casos de teste usando pytest\nF. Rode os testes. Passou nos testes? Sim: G, não: J\nG. Escreveu todos os casos de testes? Sim: H, não: E\nH. Pronto!\nI. Explore alternativas do Copilot. Alguma parece razoável? Sim: E, não: J\nJ. Revise o prompt para melhorar a descrição da função e vá para C ."
+    "text": "Nas aulas anteriores vimos o ciclo de projeto de funções.\n\nVamos agora atualizá-lo para incluir a etapa de testes."
   },
   {
     "objectID": "aula_p3.html#section-22",
     "href": "aula_p3.html#section-22",
     "title": "Testes",
     "section": "",
-    "text": "flowchart TD\n  A(Defina o comportamento desejado da função) --&gt; B(Escreva um prompt que descreve a função)\n  B --&gt; C(Use o Copilot para gerar o código)\n  C --&gt; D(O código parece razoável?)\n  D --Sim--&gt; E(Escreva casos de teste usando pytest)\n  E --&gt; F(Rode os testes. Passou nos testes?)\n  F -- Sim --&gt; G(Escreveu todos os casos de testes?)\n  G -- Sim --&gt; H(Pronto!)\n  G -- Não --&gt; E\n  D -- Não --&gt; I(Explore alternativas do Copilot. Alguma parece razoável?)\n  I -- Sim --&gt; E\n  I -- Não --&gt; J(Revise o prompt para melhorar a descrição da função)\n  J --&gt; C\n  F -- Não --&gt; J"
+    "text": "A. Defina o comportamento desejado da função\nB. Escreva um prompt que descreve a função\nC. Use o Copilot para gerar o código\nD. O código parece razoável? Sim: E, não: I.\nE. Escreva casos de teste usando pytest\nF. Rode os testes. Passou nos testes? Sim: G, não: J\nG. Escreveu todos os casos de testes? Sim: H, não: E\nH. Pronto!\nI. Explore alternativas do Copilot. Alguma parece razoável? Sim: E, não: J\nJ. Revise o prompt para melhorar a descrição da função e vá para C ."
   },
   {
     "objectID": "aula_p3.html#section-23",
     "href": "aula_p3.html#section-23",
     "title": "Testes",
     "section": "",
-    "text": "Vamos agora praticar a escrita de testes.\n\nPara isso, você deve tratar as situações a seguir, seguindo todo o ciclo atualizado de projeto de funções.\n\n\nTrataremos duas situações.\n\nA primeira com o objetivo de experimentarmos o uso da biblioteca pytest.\nJá a segunda com o objetivo de pensarmos em como testar funções que processam arquivos."
+    "text": "flowchart TD\n  A(Defina o comportamento desejado da função) --&gt; B(Escreva um prompt que descreve a função)\n  B --&gt; C(Use o Copilot para gerar o código)\n  C --&gt; D(O código parece razoável?)\n  D --Sim--&gt; E(Escreva casos de teste usando pytest)\n  E --&gt; F(Rode os testes. Passou nos testes?)\n  F -- Sim --&gt; G(Escreveu todos os casos de testes?)\n  G -- Sim --&gt; H(Pronto!)\n  G -- Não --&gt; E\n  D -- Não --&gt; I(Explore alternativas do Copilot. Alguma parece razoável?)\n  I -- Sim --&gt; E\n  I -- Não --&gt; J(Revise o prompt para melhorar a descrição da função)\n  J --&gt; C\n  F -- Não --&gt; J"
   },
   {
     "objectID": "aula_p3.html#section-24",
     "href": "aula_p3.html#section-24",
     "title": "Testes",
     "section": "",
-    "text": "Já que terminou confira se tratou pelo menos os casos abaixo:\n1. Uma fileira com mais assentos livres consecutivos que todas as outras e com mais assentos que o tamanho do grupo.\n2. Uma fileira como do caso 1, mas com dois espaços não consecutivos suficientes para todo o grupo.\n3. Uma fileira como do caso 1, mas com assentos livres do mesmo tamanho do grupo.\n4. Mais de uma fileira com mais assentos livres consecutivos que o tamanho do grupo, sem empates.\n5. Mesmo caso anterior, mas com empates.\n6. Mais de uma fileira com assentos consecutivos livres, mas nenhuma suficiente para todo o grupo.\n7. Uma fileira com todos os assentos livres e suficientes para o tamanho do grupo.\n8. Uma sala de cinema cheia, com todos os assentos ocupados.\n9. Uma sala de cinema vazia, com todos os assentos livres (suficientes para o tamanho do grupo).\n10. Uma sala de cinema cujas fileiras são menores que o tamanho do grupo.\nComplemente os testes que porventura tenham faltado."
+    "text": "Vamos agora praticar a escrita de testes.\n\nPara isso, você deve tratar as situações a seguir, seguindo todo o ciclo atualizado de projeto de funções.\n\n\nTrataremos duas situações.\n\nA primeira com o objetivo de experimentarmos o uso da biblioteca pytest.\nJá a segunda com o objetivo de pensarmos em como testar funções que processam arquivos."
   },
   {
     "objectID": "aula_p3.html#section-25",
     "href": "aula_p3.html#section-25",
     "title": "Testes",
     "section": "",
-    "text": "Nesse caso, como podemos fazer o teste?\n\nUsar o arquivo que queremos processar, o próprio arquivo do Kaggle, não é uma boa ideia.\nPor que?\n\n\n(pense antes de prosseguir…)"
+    "text": "Ao chegar na etapa E, de escrita de testes, pense em todos os casos de uso comuns e de borda que julgar necessários.\n\nA ideia é que você só prossiga depois de achar que já terminou todos os testes\n\nOu seja depois de já ter chegado no passo H do ciclo de projeto de funções.\n\n\n\nAcabou mesmo? Tem certeza?"
   },
   {
     "objectID": "aula_p3.html#situação-1",
@@ -2293,28 +2293,28 @@
     "href": "aula_p3.html#situação-1-1",
     "title": "Testes",
     "section": "Situação 1",
-    "text": "Situação 1\nCrie então uma função que atenda à necessidade do grupo.\n\nEla deve receber uma matriz de booleanos (lista de listas) na qual cada lista representa uma fileira com os assentos ocupados (True) ou livres (False).\nE deve retornar o número da fileira com a maior quantidade de assentos consecutivos livres.\n\nConsiderando que a primeira fileira é a de número 0.\n\nCaso não exista nenhuma fileira que caiba todo o grupo, a função deve retornar -1.\n\n\nAo chegar na etapa E, de escrita de testes, pense em todos os casos de uso comuns e de borda que julgar necessários."
+    "text": "Situação 1\nCrie então uma função que atenda à necessidade do grupo.\n\nEla deve receber uma matriz de booleanos (lista de listas) na qual cada lista representa uma fileira com os assentos ocupados (True) ou livres (False).\nE deve retornar o número da fileira com a maior quantidade de assentos consecutivos livres.\n\nConsiderando que a primeira fileira é a de número 0.\n\nCaso não exista nenhuma fileira que caiba todo o grupo, a função deve retornar -1."
   },
   {
     "objectID": "aula_p3.html#situação-2---testes-com-arquivos",
     "href": "aula_p3.html#situação-2---testes-com-arquivos",
     "title": "Testes",
     "section": "Situação 2 - Testes com arquivos",
-    "text": "Situação 2 - Testes com arquivos\nImagine agora que queiramos testar funções com processem arquivos.\n\nComo a que fizemos em outra aula, com dados de ligas europeias de futebol.\n\n\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a décima terceira coluna o número de gols feitos pelo jogador\n    pais é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\""
+    "text": "Situação 2 - Testes com arquivos\nImagine agora que queiramos testar funções com processem arquivos.\n\nComo a que fizemos em outra aula, com dados de ligas europeias de futebol.\n\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a décima terceira coluna o número de gols feitos pelo jogador\n    pais é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\""
   },
   {
     "objectID": "aula_p3.html#section-26",
     "href": "aula_p3.html#section-26",
     "title": "Testes",
     "section": "",
-    "text": "Como validar se a resposta está correta?\n\n\nRepare que se precisarmos abrir o arquivo Kaggle para conferir manualmente se a resposta está correta, a função perde o sentido pois nem precisaríamos mais dela.\n\n\nE se o arquivo for muito grande?\n\n\nAlém de ser improditivo conferir manualmente, o teste poderia ser lento para executar.\nTestes precisam ser rápidos."
+    "text": "Já que terminou confira se tratou pelo menos os casos abaixo:\n1. Uma fileira com mais assentos livres consecutivos que todas as outras e com mais assentos que o tamanho do grupo.\n2. Uma fileira como do caso 1, mas com dois espaços não consecutivos suficientes para todo o grupo.\n3. Uma fileira como do caso 1, mas com assentos livres do mesmo tamanho do grupo.\n4. Mais de uma fileira com mais assentos livres consecutivos que o tamanho do grupo, sem empates.\n5. Mesmo caso anterior, mas com empates.\n6. Mais de uma fileira com assentos consecutivos livres, mas nenhuma suficiente para todo o grupo.\n7. Uma fileira com todos os assentos livres e suficientes para o tamanho do grupo.\n8. Uma sala de cinema cheia, com todos os assentos ocupados.\n9. Uma sala de cinema vazia, com todos os assentos livres (suficientes para o tamanho do grupo).\n10. Uma sala de cinema cujas fileiras são menores que o tamanho do grupo.\nComplemente os testes que porventura tenham faltado."
   },
   {
     "objectID": "aula_p3.html#section-27",
     "href": "aula_p3.html#section-27",
     "title": "Testes",
     "section": "",
-    "text": "E se o arquivo for alterado?\n\n\nUm outro problema de depender de um arquivo externo é que você não tem controle sobre o conteúdo dele.\nAssim mesmo que você verifique manualmente a resposta esperada para escrever o teste, se o arquivo for alterado, o teste vai parar de funcionar.\nPrejudicando a reprodutibilidade dos testes."
+    "text": "Nesse caso, como podemos fazer o teste?\n\nUsar o arquivo que queremos processar, o próprio arquivo do Kaggle, não é uma boa ideia.\nPor que?\n\n\n(pense antes de prosseguir…)"
   },
   {
     "objectID": "aula_p3.html#situação-1---conferência",
@@ -2328,49 +2328,49 @@
     "href": "aula_p3.html#section-28",
     "title": "Testes",
     "section": "",
-    "text": "E se o arquivo não estiver disponível?\n\n\nPrecisamos garantir que os testes não dependam de fontes externas que podem não estar disponíveis.\nTestes precisam ser isolados.\n\n\nE se o arquivo não tiver casos de borda?\n\n\nPrecisamos garantir que os testes sejam abrangentes e incluam casos de borda relevantes.\nUm arquivo real pode não conter esses casos."
+    "text": "Como validar se a resposta está correta?\n\n\nRepare que se precisarmos abrir o arquivo Kaggle para conferir manualmente se a resposta está correta, a função perde o sentido pois nem precisaríamos mais dela.\n\n\nE se o arquivo for muito grande?\n\n\nAlém de ser improditivo conferir manualmente, o teste poderia ser lento para executar.\nTestes precisam ser rápidos."
   },
   {
     "objectID": "aula_p3.html#section-29",
     "href": "aula_p3.html#section-29",
     "title": "Testes",
     "section": "",
-    "text": "O que podemos fazer então para testar a função garantindo que os testes são rápidos, isolados e reprodutíveis?\n\nPodemos criar um conjunto de dados artificial para o qual sabemos a saída esperada para várias consultas possíveis.\nComo o conjunto é artificial, podemos adicionar a ele situações de casos de borda.\n\n\nNo caso da função que queremos testar, criaríamos um arquivo CSV fictício\n\ncontendo situações dos casos de testes que queiramos testar.\nE usaríamos esse arquivo para testar a função."
+    "text": "E se o arquivo for alterado?\n\n\nUm outro problema de depender de um arquivo externo é que você não tem controle sobre o conteúdo dele.\nAssim mesmo que você verifique manualmente a resposta esperada para escrever o teste, se o arquivo for alterado, o teste vai parar de funcionar.\nPrejudicando a reprodutibilidade dos testes."
   },
   {
     "objectID": "aula_p3.html#section-30",
     "href": "aula_p3.html#section-30",
     "title": "Testes",
     "section": "",
-    "text": "Vamos começar então pensando nos casos de testes.\n\nConsidere que a função pode ser usada para consultar vários países diferentes.\n\n\nLista no seu caderno os casos de testes antes de continuar."
+    "text": "E se o arquivo não estiver disponível?\n\n\nPrecisamos garantir que os testes não dependam de fontes externas que podem não estar disponíveis.\nTestes precisam ser isolados.\n\n\nE se o arquivo não tiver casos de borda?\n\n\nPrecisamos garantir que os testes sejam abrangentes e incluam casos de borda relevantes.\nUm arquivo real pode não conter esses casos."
   },
   {
     "objectID": "aula_p3.html#section-31",
     "href": "aula_p3.html#section-31",
     "title": "Testes",
     "section": "",
-    "text": "Verifique se considerou os casos de testes comuns a seguir.\n\nUm país aparece várias vezes em linhas não consecutivas, incluindo a última linha.\nUm país aparece em linhas consecutivas.\nUm país aparece apenas uma vez.\nUm país aparece em todas as ligas.\nUm país aparece em apenas uma liga.\nUm país aparece várias vezes mas nenhum jogador do país fez gols.\nUm país não aparece no arquivo."
+    "text": "O que podemos fazer então para testar a função garantindo que os testes são rápidos, isolados e reprodutíveis?\n\nPodemos criar um conjunto de dados artificial para o qual sabemos a saída esperada para várias consultas possíveis.\nComo o conjunto é artificial, podemos adicionar a ele situações de casos de borda.\n\n\nNo caso da função que queremos testar, criaríamos um arquivo CSV fictício\n\ncontendo situações dos casos de testes que queiramos testar.\nE usaríamos esse arquivo para testar a função."
   },
   {
     "objectID": "aula_p3.html#section-32",
     "href": "aula_p3.html#section-32",
     "title": "Testes",
     "section": "",
-    "text": "Precisamos agora criar nosso conjunto de dados artificial\n\nPara isso podemos criar vários arquivos, ou apenas um para todos os testes.\nSe conseguirmos criar apenas um arquivo, será mais fácil gerenciar os testes.\nRepare que o arquivo original tem várias colunas, mas para os nossos testes seria suficiente considerar as primeiras nove (que são as que precisamos)."
+    "text": "Vamos começar então pensando nos casos de testes.\n\nConsidere que a função pode ser usada para consultar vários países diferentes.\n\n\nLista no seu caderno os casos de testes antes de continuar."
   },
   {
     "objectID": "aula_p3.html#section-33",
     "href": "aula_p3.html#section-33",
     "title": "Testes",
     "section": "",
-    "text": "Vamos então criar um arquivo CSV que cubra os casos de testes. Para isso seguem algumas dicas:\n\nCrie um arquivo CSV contendo as 13 primeiras colunas e 11 primeiras linhas do arquivo original.\nSalve o arquivo com o nome futebol.csv na pasta testes/dados/.\nAltere os dados do arquivo para atender aos casos de testes levantados.\n\nParece suficiente considerar a existência de apenas duas ligas.\nE você pode usar países diferentes para cobrir todos os casos de testes."
+    "text": "Verifique se considerou os casos de testes comuns a seguir.\n\nUm país aparece várias vezes em linhas não consecutivas, incluindo a última linha.\nUm país aparece em linhas consecutivas.\nUm país aparece apenas uma vez.\nUm país aparece em todas as ligas.\nUm país aparece em apenas uma liga.\nUm país aparece várias vezes mas nenhum jogador do país fez gols.\nUm país não aparece no arquivo."
   },
   {
     "objectID": "aula_p3.html#section-34",
     "href": "aula_p3.html#section-34",
     "title": "Testes",
     "section": "",
-    "text": "Para ler o arquivo criado no seu arquivo com as funçoes de teste você pode usar o seguinte código:\nimport csv\nfrom pathlib import Path\n\nCAMINHO_ARQUIVO_FUTEBOL = Path(__file__).parent / 'dados' / 'futebol.csv'\n\nMãos à obra!"
+    "text": "Precisamos agora criar nosso conjunto de dados artificial\n\nPara isso podemos criar vários arquivos, ou apenas um para todos os testes.\nSe conseguirmos criar apenas um arquivo, será mais fácil gerenciar os testes.\nRepare que o arquivo original tem várias colunas, mas para os nossos testes seria suficiente considerar as primeiras nove (que são as que precisamos)."
   },
   {
     "objectID": "aula_t4.html#section",
@@ -7446,5 +7446,19 @@
     "title": "Projetando Funções",
     "section": "",
     "text": "Obtendo mais informações do dataset:\n\nCrie funções com ajuda do Copilot para cada situação abaixo.\nObs.: as informações podem ser exibidas apenas no terminal.\n\n\nExiba os nomes e quantidade de gols dos cinco jogadores que mais fizeram gols em cada liga, ordenados pela quantidade de gols.\nEncontre o jogador mais jovem que marcou gol em cada liga e exiba seu nome, idade, equipe e número de gols.\nEncontre a equipe que menos tomou cartões (amarelos e vermelhos em cada liga). Exiba o nome da equipe e a quantidade de cartões recebidos de cada tipo."
+  },
+  {
+    "objectID": "aula_p3.html#section-35",
+    "href": "aula_p3.html#section-35",
+    "title": "Testes",
+    "section": "",
+    "text": "Vamos então criar um arquivo CSV que cubra os casos de testes. Para isso seguem algumas dicas:\n\nCrie um arquivo CSV contendo as 13 primeiras colunas e 11 primeiras linhas do arquivo original.\nSalve o arquivo com o nome futebol.csv na pasta testes/dados/.\nAltere os dados do arquivo para atender aos casos de testes levantados.\n\nParece suficiente considerar a existência de apenas duas ligas.\nE você pode usar países diferentes para cobrir todos os casos de testes."
+  },
+  {
+    "objectID": "aula_p3.html#section-36",
+    "href": "aula_p3.html#section-36",
+    "title": "Testes",
+    "section": "",
+    "text": "Para ler o arquivo criado no seu arquivo com as funçoes de teste você pode começar com o seguinte código:\nimport csv\nfrom pathlib import Path\n\nCAMINHO_ARQUIVO_FUTEBOL = Path(__file__).parent / 'dados' / 'futebol.csv'\n\nMãos à obra!"
   }
 ]
