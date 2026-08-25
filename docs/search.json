@@ -2146,7 +2146,7 @@
     "href": "aula_p3.html#implementando-um-teste-com-pytest",
     "title": "Testes",
     "section": "Implementando um teste com pytest",
-    "text": "Implementando um teste com pytest\nO módulo pytest fornece uma maneira simples de implementar testes.\n\nNós, basicamente, escrevemos uma função para cada teste que queremos realizar.\nE, na implementação da função, usamos o comando assert para realizar o teste.\n\n\n\ndef test_maior_palavra():\n    assert maior_palavra(['gato', 'pássaro', 'cachorro']) == 'cachorro'"
+    "text": "Implementando um teste com pytest\nO módulo pytest fornece uma maneira simples de implementar testes.\n\nNós, basicamente, escrevemos uma função para cada teste que queremos realizar.\nE, na implementação da função, usamos o comando assert para realizar o teste.\n\n\ndef test_maior_palavra_unica():\n    assert maior_palavra(['gato', 'pássaro', 'cachorro']) == 'cachorro'"
   },
   {
     "objectID": "aula_p3.html#o-comando-assert",
@@ -2202,7 +2202,7 @@
     "href": "aula_p3.html#execução-do-pytest",
     "title": "Testes",
     "section": "Execução do pytest",
-    "text": "Execução do pytest\nAgora, para executar os testes, basta executar o comando pytest na pasta principal do projeto.\n\npytest\n\n\nSe nossa função passar em todos os testes, esse seria um exemplo de saída esperada.\n=================== test session starts ===================\nplatform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0\nrootdir: /home/julio/Downloads/aula_p2\ncollected 6 items\n\ntestes/test_maior_palavra.py ......                   [100%]\n\n===================== 6 passed in 0.01s ===================="
+    "text": "Execução do pytest\nAgora, para executar os testes, basta executar o comando pytest na pasta principal do projeto.\n\npytest\n\n\nSe nossa função passar em todos os testes, esse seria um exemplo de saída esperada."
   },
   {
     "objectID": "aula_p3.html#section-15",
@@ -2230,7 +2230,7 @@
     "href": "aula_p3.html#section-18",
     "title": "Testes",
     "section": "",
-    "text": "Vamos agora forçar dois erros em nossa função maior_palavra\n\npara ver como o pytest vai reportar esses erros.\n\n\ndef maior_palavra(palavras):\n    # removemos a verificação de lista vazia\n    maior = palavras[0]\n    for p in palavras[1:]:\n        # trocamos &gt; por &gt;=\n        if len(p) &gt;= len(maior):\n            maior = p\n    return maior"
+    "text": "Vamos agora forçar dois erros em nossa função maior_palavra\n\npara ver como o pytest vai reportar esses erros.\n\n\ndef maior_palavra(palavras):\n    # removemos a verificação de lista vazia\n    maior = palavras[0]\n    for p in palavras[1:]:\n        # trocamos &gt; por &gt;=\n        if len(p) &gt;= len(maior):\n            maior = p\n    return maior\n\n\nObtemos então a seguinte saída com pytest."
   },
   {
     "objectID": "aula_p3.html#section-19",
@@ -2244,7 +2244,7 @@
     "href": "aula_p3.html#section-20",
     "title": "Testes",
     "section": "",
-    "text": "Na saída anterior vemos que foram encontrados 6 testes dos quais dois não passaram\ncollected 6 items                                            \n\ntestes/test_maior_palavra.py ...F.F                    [100%]\n\nEm seguida são apresentados detalhes dos testes que falharam.\n\nQue nos ajudam a identificar o problema para corrigi-lo."
+    "text": "Na saída anterior vemos que foram encontrados 6 testes dos quais dois não passaram\n\n\n\n\n\n\nEm seguida são apresentados detalhes dos testes que falharam.\n\nQue nos ajudam a identificar o problema para corrigi-lo."
   },
   {
     "objectID": "aula_p3.html#section-21",
@@ -2279,7 +2279,7 @@
     "href": "aula_p3.html#section-25",
     "title": "Testes",
     "section": "",
-    "text": "Ao chegar na etapa E, de escrita de testes, pense em todos os casos de uso comuns e de borda que julgar necessários.\n\nA ideia é que você só prossiga depois de achar que já terminou todos os testes\n\nOu seja depois de já ter chegado no passo H do ciclo de projeto de funções.\n\n\n\nAcabou mesmo? Tem certeza?"
+    "text": "Ao chegar na etapa E, de escrita de testes, faça você mesmo (sem apoio da IA)\n\nPense em todos os casos de uso comuns e de borda que julgar necessários.\nA ideia é que você só prossiga depois de achar que já terminou todos os testes\n\nOu seja depois de já ter chegado no passo H do ciclo de projeto de funções.\n\n\n\nAcabou mesmo? Tem certeza?"
   },
   {
     "objectID": "aula_p3.html#situação-1",
@@ -2293,7 +2293,7 @@
     "href": "aula_p3.html#situação-1-1",
     "title": "Testes",
     "section": "Situação 1",
-    "text": "Situação 1\nCrie então uma função que atenda à necessidade do grupo.\n\nEla deve receber uma matriz de booleanos (lista de listas) na qual cada lista representa uma fileira com os assentos ocupados (True) ou livres (False).\nE deve retornar o número da fileira com a maior quantidade de assentos consecutivos livres.\n\nConsiderando que a primeira fileira é a de número 0.\n\nCaso não exista nenhuma fileira que caiba todo o grupo, a função deve retornar -1."
+    "text": "Situação 1\nCom o apoio da IA, crie então uma função que atenda à necessidade do grupo.\n\nEla deve receber uma matriz de booleanos (lista de listas) na qual cada lista representa uma fileira com os assentos ocupados (True) ou livres (False).\nE deve retornar o número da fileira com a maior quantidade de assentos consecutivos livres.\n\nConsiderando que a primeira fileira é a de número 0.\n\nCaso não exista nenhuma fileira que caiba todo o grupo, a função deve retornar -1."
   },
   {
     "objectID": "aula_p3.html#situação-2---testes-com-arquivos",
@@ -7459,6 +7459,6 @@
     "href": "aula_p3.html#section-36",
     "title": "Testes",
     "section": "",
-    "text": "Para ler o arquivo criado no seu arquivo com as funçoes de teste você pode começar com o seguinte código:\nimport csv\nfrom pathlib import Path\n\nCAMINHO_ARQUIVO_FUTEBOL = Path(__file__).parent / 'dados' / 'futebol.csv'\n\nMãos à obra!"
+    "text": "Para ler o arquivo criado no seu arquivo com as funções de teste você pode começar com o seguinte código:\nimport csv\nfrom pathlib import Path\n\nCAMINHO_ARQUIVO_FUTEBOL = Path(__file__).parent / 'dados' / 'futebol.csv'\n\nMãos à obra!"
   }
 ]

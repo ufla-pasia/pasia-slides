@@ -353,12 +353,10 @@ O módulo `pytest` fornece uma maneira simples de implementar testes.
 
 . . . 
 
-::: {.fontsize125}
 ```python
-def test_maior_palavra():
+def test_maior_palavra_unica():
     assert maior_palavra(['gato', 'pássaro', 'cachorro']) == 'cachorro'
 ```
-:::
 
 ## O comando `assert`
 
@@ -509,17 +507,7 @@ pytest
 
 Se nossa função passar em todos os testes, esse seria um exemplo de saída esperada.
 
-```bash
-=================== test session starts ===================
-platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
-rootdir: /home/julio/Downloads/aula_p2
-collected 6 items
-
-testes/test_maior_palavra.py ......                   [100%]
-
-===================== 6 passed in 0.01s ====================
-
-```
+![](imagens/print_pytest_ok.png){fig-align="center" fig-alt="Saída do pytest mostrando os 6 casos passando." style="max-height: 50vh; width: auto;"}
 
 ## 
 
@@ -540,63 +528,19 @@ def maior_palavra(palavras):
 ```
 :::
 
-## 
+. . .
 
 Obtemos então a seguinte saída com `pytest`.
 
+##
 
-```bash
-==================== test session starts =====================
-platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
-rootdir: /home/julio/Downloads/aula_p2
-collected 6 items                                            
-
-testes/test_maior_palavra.py ...F.F                    [100%]
-
-========================== FAILURES ==========================
-_________________ test_maior_palavra_empate __________________
-
-    def test_maior_palavra_empate():
->       assert maior_palavra(['gato', 'cão', 'sapo']) == 'gato'
-E       AssertionError: assert 'sapo' == 'gato'
-E         
-E         - gato
-E         + sapo
-
-testes/test_maior_palavra.py:13: AssertionError
-_______________ test_maior_palavra_lista_vazia _______________
-
-    def test_maior_palavra_lista_vazia():
->       assert maior_palavra([]) == None
-               ^^^^^^^^^^^^^^^^^
-
-testes/test_maior_palavra.py:19: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-palavras = []
-
-    def maior_palavra(palavras):
-        # removemos a verificação de lista vazia
->       maior = palavras[0]
-                ^^^^^^^^^^^
-E       IndexError: list index out of range
-
-meu_app/main.py:3: IndexError
-================== short test summary info ===================
-FAILED testes/test_maior_palavra.py::test_maior_palavra_empate - AssertionError: assert 'sapo' == 'gato'
-FAILED testes/test_maior_palavra.py::test_maior_palavra_lista_vazia - IndexError: list index out of range
-================ 2 failed, 4 passed in 0.04s =================
-```
+![](imagens/print_pytest_erros.png){fig-align="center" fig-alt="Saída do pytest mostrando dois casos com erro."}
 
 ## 
 
 Na saída anterior vemos que foram encontrados 6 testes dos quais dois não passaram
 
-```bash
-collected 6 items                                            
-
-testes/test_maior_palavra.py ...F.F                    [100%]
-```
+![](imagens/print_pytest_erros_resumo.png){fig-align="center" fig-alt="Saída do pytest mostrando resumo dos dois casos com erro."}
 
 . . .
 
@@ -670,7 +614,7 @@ Suponha que esteja indo em grupo a uma sala de cinema
 
 ## Situação 1
 
-Crie então uma função que atenda à necessidade do grupo.
+Com o apoio da IA, crie então uma função que atenda à necessidade do grupo.
 
 - Ela deve receber uma matriz de booleanos (lista de listas) na qual cada lista representa uma fileira com os assentos ocupados (`True`) ou livres (`False`).
 - E deve retornar o número da fileira com a maior quantidade de assentos consecutivos livres.
@@ -679,13 +623,11 @@ Crie então uma função que atenda à necessidade do grupo.
 
 ##
 
-Ao chegar na etapa **E**, de escrita de testes, pense em todos os casos de uso comuns e de borda que julgar necessários.
+Ao chegar na etapa **E**, de escrita de testes, faça você mesmo (**sem apoio da IA**).  
 
-. . .
-
-A ideia é que você só prossiga depois de achar que já terminou todos os testes
-
-- Ou seja depois de já ter chegado no passo **H** do ciclo de projeto de funções.
+- Pense em todos os casos de uso comuns e de borda que julgar necessários.
+- A ideia é que você só prossiga depois de achar que já terminou todos os testes.
+  - Ou seja depois de já ter chegado no passo **H** do ciclo de projeto de funções.
 
 . . .
 
@@ -819,7 +761,7 @@ Precisamos agora criar nosso conjunto de dados artificial
 
 - Para isso podemos criar vários arquivos, ou apenas um para todos os testes.
 - Se conseguirmos criar apenas um arquivo, será mais fácil gerenciar os testes.
--  Repare que o arquivo original tem várias colunas, mas para os nossos testes seria suficiente considerar as primeiras nove (que são as que precisamos).
+-  Repare que o arquivo original tem várias colunas, mas para os nossos testes seria suficiente considerar as primeiras treze (que são as que precisamos).
 
 ##
 
