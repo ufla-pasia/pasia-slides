@@ -16,7 +16,6 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Prof.&nbsp;Julio César Alves">
-  <meta name="dcterms.date" content="2025-03-09">
   <title>GAC126 - Programação Aplicada com Suporte de IA – Depuração e Decomposição de Problemas</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -349,7 +348,7 @@
     </div>
 </div>
 
-  <p class="date">03/09/2025</p>
+  <p class="date">25/08/2026</p>
 </section>
 <section class="slide level2">
 
@@ -647,7 +646,7 @@
 <div class="fontsize80">
 <p>Exemplo: <em>“A chuva caía. O guarda-chuva tinha ficado em casa.”</em></p>
 <ul>
-<li class="fragment">São 40 letras e 9 palavras com um total.</li>
+<li class="fragment">São 40 letras e 9 palavras no total.</li>
 <li class="fragment">Tamanho médio das palavras: 40 / 9 = 4.44</li>
 <li class="fragment">Obs.: para simplificar estamos considerando que o hífen conta como letra.</li>
 </ul>
@@ -774,17 +773,24 @@
 </section>
 <section id="identificando-o-autor-desconhecido-1" class="slide level2">
 <h2>Identificando o autor desconhecido</h2>
-<p>Suponha que estamos comparando a <em>impressão digital</em> <code>[4.44, 0.7, 0.5, 4.5, 1.5]</code> com uma <em>impressão digital</em> de um autor desconhecido dada por <code>[4.0, 0.5, 0.7, 4.0, 1.9]</code>.</p>
+<p>Suponha que estamos comparando:</p>
 <ul>
-<li class="fragment">Vamos calcular a diferença, em módulo, entre cada métrica.
+<li class="fragment">a <em>impressão digital</em> <code>[4.44, 0.7, 0.5, 4.5, 1.5]</code> de um autor conhecido.</li>
+<li class="fragment">com a <em>impressão digital</em> <code>[4.0, 0.5, 0.7, 4.0, 1.9]</code> de um autor desconhecido.</li>
+</ul>
+<div class="fragment">
+<p>Vamos começar calculando a diferença, em módulo, entre cada métrica.</p>
 <ul>
 <li class="fragment">O resultado seria <code>[0.44, 0.2, 0.2, 0.5, 0.4]</code>.</li>
-</ul></li>
-<li class="fragment">E, em seguida, vamos calcular a soma ponderada dessas diferenças.
+</ul>
+</div>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<p>E, em seguida, vamos calcular a soma ponderada dessas diferenças.</p>
 <ul>
 <li class="fragment">Os pesos da soma seria: <code>[11, 33, 50, 0.4, 4]</code>.</li>
 <li class="fragment">O resultado seria então <code>(0.44*11 + 0.2*33 + 0.2*50 + 0.5*0.4 + 0.4*4) = 23.24</code>.</li>
-</ul></li>
 </ul>
 </section>
 <section id="identificando-o-autor-desconhecido-2" class="slide level2">
@@ -832,7 +838,7 @@
 <h1><em>Design top-down</em> do Programa de Identificação de Autoria</h1>
 
 </section>
-<section id="section-15" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <p>É <strong>hora</strong> então <strong>de construir o <em>design top-down</em> do programa</strong>.</p>
 <ul>
@@ -841,7 +847,7 @@
 <li class="fragment"><strong>Dica</strong>: provavelmente você encontrará uma ou mais funções que são chamadas por mais de uma função.</li>
 </ul>
 </section>
-<section id="section-16" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <p>No próximo slide vou apresentar o <em>design</em> feito pelos autores do livro.</p>
 <ul>
@@ -875,7 +881,7 @@
 <h1>Implementação do Programa de Identificação de Autoria</h1>
 
 </section>
-<section id="section-17" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <p>Agora é <strong>hora de implementar o programa</strong>.</p>
 <ul>
@@ -887,9 +893,11 @@
 </ul></li>
 <li class="fragment">Dica: ao escrever o prompt/docstring de cada função, pense que ela poderia ser reutilizada futuramente em outros programas</li>
 </ul>
+<div class="fragment">
 <p>Como saber se o programa funciona corretamente?</p>
+</div>
 </section>
-<section id="section-18" class="slide level2">
+<section id="section-19" class="slide level2">
 <h2></h2>
 <p>Você verá que os arquivos de autores desconhecidos têm o nome do autor dentro do arquivo.</p>
 <ul>
@@ -934,7 +942,7 @@
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': false,
+'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,

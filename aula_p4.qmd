@@ -279,7 +279,7 @@ A ideia aqui é diferenciar autores que usam, em média, palavras mais curtas ou
 ::: {.fontsize80}
 Exemplo: _"A chuva caía. O guarda-chuva tinha ficado em casa."_
 
-- São 40 letras e 9 palavras com um total.
+- São 40 letras e 9 palavras no total.
 - Tamanho médio das palavras: 40 / 9 = 4.44
 - Obs.: para simplificar estamos considerando que o hífen conta como letra.
 :::
@@ -393,14 +393,23 @@ Mas como será feita a comparação entre as impressões digitais?
 
 ## Identificando o autor desconhecido
 
-Suponha que estamos comparando a _impressão digital_ `[4.44, 0.7, 0.5, 4.5, 1.5]` com uma 
-_impressão digital_ de um autor desconhecido dada por `[4.0, 0.5, 0.7, 4.0, 1.9]`.
+Suponha que estamos comparando:
 
-- Vamos calcular a diferença, em módulo, entre cada métrica.
-  - O resultado seria `[0.44, 0.2, 0.2, 0.5, 0.4]`.
-- E, em seguida, vamos calcular a soma ponderada dessas diferenças.
-  - Os pesos da soma seria: `[11, 33, 50, 0.4, 4]`.
-  - O resultado seria então `(0.44*11 + 0.2*33 + 0.2*50 + 0.5*0.4 + 0.4*4) = 23.24`.
+- a _impressão digital_ `[4.44, 0.7, 0.5, 4.5, 1.5]` de um autor conhecido.
+- com a _impressão digital_ `[4.0, 0.5, 0.7, 4.0, 1.9]` de um autor desconhecido.
+
+. . .
+
+Vamos começar calculando a diferença, em módulo, entre cada métrica.
+
+- O resultado seria `[0.44, 0.2, 0.2, 0.5, 0.4]`.
+
+##
+
+E, em seguida, vamos calcular a soma ponderada dessas diferenças.
+
+- Os pesos da soma seria: `[11, 33, 50, 0.4, 4]`.
+- O resultado seria então `(0.44*11 + 0.2*33 + 0.2*50 + 0.5*0.4 + 0.4*4) = 23.24`.
 
 ## Identificando o autor desconhecido
 
@@ -480,6 +489,8 @@ Agora é **hora de implementar o programa**.
   - O Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.
 - Dica: ao escrever o prompt/docstring de cada função, pense que ela poderia ser reutilizada 
   futuramente em outros programas
+
+. . .
 
 Como saber se o programa funciona corretamente?
 

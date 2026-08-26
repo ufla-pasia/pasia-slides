@@ -2993,7 +2993,7 @@
     "href": "aula_p4.html#tamanho-médio-das-palavras",
     "title": "Depuração e Decomposição de Problemas",
     "section": "Tamanho médio das palavras",
-    "text": "Tamanho médio das palavras\nA ideia aqui é diferenciar autores que usam, em média, palavras mais curtas ou mais longas.\n\nCalculamos o número total de letras das palavras e o número total de palavras do texto.\nE dividimos o primeiro pelo segundo.\n\n\n\nExemplo: “A chuva caía. O guarda-chuva tinha ficado em casa.”\n\nSão 40 letras e 9 palavras com um total.\nTamanho médio das palavras: 40 / 9 = 4.44\nObs.: para simplificar estamos considerando que o hífen conta como letra."
+    "text": "Tamanho médio das palavras\nA ideia aqui é diferenciar autores que usam, em média, palavras mais curtas ou mais longas.\n\nCalculamos o número total de letras das palavras e o número total de palavras do texto.\nE dividimos o primeiro pelo segundo.\n\n\n\nExemplo: “A chuva caía. O guarda-chuva tinha ficado em casa.”\n\nSão 40 letras e 9 palavras no total.\nTamanho médio das palavras: 40 / 9 = 4.44\nObs.: para simplificar estamos considerando que o hífen conta como letra."
   },
   {
     "objectID": "aula_p4.html#número-de-palavras-diferentes-dividido-pelo-número-total-de-palavras",
@@ -3042,7 +3042,7 @@
     "href": "aula_p4.html#identificando-o-autor-desconhecido-1",
     "title": "Depuração e Decomposição de Problemas",
     "section": "Identificando o autor desconhecido",
-    "text": "Identificando o autor desconhecido\nSuponha que estamos comparando a impressão digital [4.44, 0.7, 0.5, 4.5, 1.5] com uma impressão digital de um autor desconhecido dada por [4.0, 0.5, 0.7, 4.0, 1.9].\n\nVamos calcular a diferença, em módulo, entre cada métrica.\n\nO resultado seria [0.44, 0.2, 0.2, 0.5, 0.4].\n\nE, em seguida, vamos calcular a soma ponderada dessas diferenças.\n\nOs pesos da soma seria: [11, 33, 50, 0.4, 4].\nO resultado seria então (0.44*11 + 0.2*33 + 0.2*50 + 0.5*0.4 + 0.4*4) = 23.24."
+    "text": "Identificando o autor desconhecido\nSuponha que estamos comparando:\n\na impressão digital [4.44, 0.7, 0.5, 4.5, 1.5] de um autor conhecido.\ncom a impressão digital [4.0, 0.5, 0.7, 4.0, 1.9] de um autor desconhecido.\n\n\nVamos começar calculando a diferença, em módulo, entre cada métrica.\n\nO resultado seria [0.44, 0.2, 0.2, 0.5, 0.4]."
   },
   {
     "objectID": "aula_p4.html#identificando-o-autor-desconhecido-2",
@@ -3126,14 +3126,14 @@
     "href": "aula_p4.html#section-15",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "É hora então de construir o design top-down do programa.\n\nRecomendo que façam em duplas, mas podem fazer individualmente se preferirem.\nLembre-se que o objetivo é praticar a habilidade de decomposição de problemas.\nDica: provavelmente você encontrará uma ou mais funções que são chamadas por mais de uma função."
+    "text": "E, em seguida, vamos calcular a soma ponderada dessas diferenças.\n\nOs pesos da soma seria: [11, 33, 50, 0.4, 4].\nO resultado seria então (0.44*11 + 0.2*33 + 0.2*50 + 0.5*0.4 + 0.4*4) = 23.24."
   },
   {
     "objectID": "aula_p4.html#section-16",
     "href": "aula_p4.html#section-16",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "No próximo slide vou apresentar o design feito pelos autores do livro.\n\nMas atenção: é muito importante que você mesmo faça o design.\n\nNão adianta copiar o design de alguém ou usar o design mostrado a seguir.\n\nSomente depois que terminar o design, antes de implementar, você pode comparar com o design mostrado a seguir.\n\nE ver se há algo que você não tinha pensado.\n\nLembre-se que o design não precisa ser igual ao do livro.\n\nA ideia é apenas ajudar a identificar se você esqueceu de algo importante."
+    "text": "É hora então de construir o design top-down do programa.\n\nRecomendo que façam em duplas, mas podem fazer individualmente se preferirem.\nLembre-se que o objetivo é praticar a habilidade de decomposição de problemas.\nDica: provavelmente você encontrará uma ou mais funções que são chamadas por mais de uma função."
   },
   {
     "objectID": "aula_p4.html#complexidade-média-das-frases-1",
@@ -3147,14 +3147,14 @@
     "href": "aula_p4.html#section-17",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "Agora é hora de implementar o programa.\n\nA ideia é usar o Copilot para ajudar na implementação.\nVocê precisará também escrever testes para suas funções.\n\nPelo menos um caso de teste para cada função.\nO Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.\n\nDica: ao escrever o prompt/docstring de cada função, pense que ela poderia ser reutilizada futuramente em outros programas\n\nComo saber se o programa funciona corretamente?"
+    "text": "No próximo slide vou apresentar o design feito pelos autores do livro.\n\nMas atenção: é muito importante que você mesmo faça o design.\n\nNão adianta copiar o design de alguém ou usar o design mostrado a seguir.\n\nSomente depois que terminar o design, antes de implementar, você pode comparar com o design mostrado a seguir.\n\nE ver se há algo que você não tinha pensado.\n\nLembre-se que o design não precisa ser igual ao do livro.\n\nA ideia é apenas ajudar a identificar se você esqueceu de algo importante."
   },
   {
     "objectID": "aula_p4.html#section-18",
     "href": "aula_p4.html#section-18",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "Você verá que os arquivos de autores desconhecidos têm o nome do autor dentro do arquivo.\n\nPortanto, você poderá verificar se o programa está funcionando corretamente. 😉\nE, claro, seu programa não pode usar essa informação para fazer a predição. 😏\n\n\nO exercício deve ser entregue no Campus Virtual até a data indicada."
+    "text": "Agora é hora de implementar o programa.\n\nA ideia é usar o Copilot para ajudar na implementação.\nVocê precisará também escrever testes para suas funções.\n\nPelo menos um caso de teste para cada função.\nO Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.\n\nDica: ao escrever o prompt/docstring de cada função, pense que ela poderia ser reutilizada futuramente em outros programas\n\n\nComo saber se o programa funciona corretamente?"
   },
   {
     "objectID": "aula_t5.html#section",
@@ -7509,5 +7509,12 @@
     "title": "Decomposição de Problemas",
     "section": "",
     "text": "Como mencionamos no início, decomposição de problemas é mais arte que ciência.\n\nE, portanto, exige prática para fazer isso bem.\n\n\nAo longo da disciplina, aplicaremos a decomposição de problemas em outros exemplos.\n\nO que te ajudará a ganhar mais experiência com essa habilidade tão importante."
+  },
+  {
+    "objectID": "aula_p4.html#section-19",
+    "href": "aula_p4.html#section-19",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "",
+    "text": "Você verá que os arquivos de autores desconhecidos têm o nome do autor dentro do arquivo.\n\nPortanto, você poderá verificar se o programa está funcionando corretamente. 😉\nE, claro, seu programa não pode usar essa informação para fazer a predição. 😏\n\n\nO exercício deve ser entregue no Campus Virtual até a data indicada."
   }
 ]
