@@ -645,12 +645,16 @@ Quais testes poderíamos pensar para a função?
 
 . . .
 
+::: {.columns}
+:::: {.column width="50%"}
 No arquivo com uma palavra colocaremos:
 
 ```
 exuberante
 ```
+::::
 
+:::: {.column width="50%"}
 E no arquivo com várias palavras
 
 ```
@@ -659,6 +663,9 @@ exuberante
 melancia
 tucano
 ```
+::::
+
+:::
 
 ## Testes da função `carregar_lista_palavras`
 
