@@ -55,9 +55,11 @@ está bem especificado
 
 - e **quebrá-lo em subproblemas**, os quais são **bem definidos** e **úteis** para resolver o problema original.
 
+- essa quebra pode ocorrer em vários níveis (em módulos, classes, funções, etc.)
+
 . . .
 
-Na aula vamos trabalhar com decomposição de funções.
+Para ilustrar o conceito, na aula vamos trabalhar com **decomposição de funções**.
 
 - O que faremos portanto é escrever funções para cada um dos subproblemas que identificamos.
 
@@ -152,13 +154,17 @@ flowchart TD
 
 ## 
 
-Nós também trabalhamos com uma função `melhor_palavra` que recebe uma
-lista de palavras e retorna aquela que faz mais pontos no jogo _Scrabble_.
+Nós também trabalhamos com uma função `melhor_palavra` 
 
-- Se tivéssemos criando a função usando _design top-down_, poderíamos 
-identificar uma subtarefa que é calcular a pontuação de uma palavra.
+- que recebe uma lista de palavras e retorna aquela que faz mais pontos no jogo _Scrabble_.
 
 . . .
+
+Se estivéssemos criando a função usando _design top-down_, 
+
+- poderíamos identificar uma subtarefa que é calcular a pontuação de uma palavra.
+
+##
 
 Teríamos então o seguinte _design top-down_:
 
@@ -175,9 +181,9 @@ Quando nós criamos essas funções na aula passada, nós não usamos _design to
 
 . . .
 
-Agora, para implementar o código das funções, nós continuaremos a fazer dessa forma.
+Agora, para **implementar o código** das funções, nós continuaremos a fazer dessa forma.
 
-- Mas antes disso, vamos projetar quais são as funções necessárias usando _design top-down_.
+- Mas antes disso, vamos **projetar** quais são as funções necessárias usando _design top-down_.
 
 ##
 
@@ -191,7 +197,7 @@ muita diferença usar ou não _design top-down_.
 Mas, para problemas maiores, a decomposição de problemas é a única forma de manter
 a complexidade sob controle.
 
-- O nosso objetivo aqui é adquirir a [habilidade]{.alert} de quebrar um problema em problemas menores.
+- O nosso objetivo aqui é **adquirir a** [habilidade]{.alert} de quebrar um problema em problemas menores.
 
 # Sugestões de Correção Ortográfica {background-color="#40666e"}
 
@@ -228,15 +234,15 @@ Será um corretor ortográfico básico para palavras individuais.
 
 Nós vamos tratar três tipos de erro de ortografia:
 
-- letra faltando: como _suceso_ ao invés de _sucesso_.
-- letra sobrando: como _menssagem_ ao invés de _mensagem_.
-- letra trocada: como _viajem_ ao invés de _viagem_.
+- letra faltando: como _suceso_ em vez de _sucesso_.
+- letra sobrando: como _menssagem_ em vez de _mensagem_.
+- letra trocada: como _viajem_ em vez de _viagem_.
 
 ##
 
 Existem diversos outros erros de ortografia que não cobriremos:
 
-- Como o caso de _excessão_ ao invés de _exceção_ que tem uma letra trocada e uma letra sobrando.
+- Como o caso de _excessão_ em vez de _exceção_ que tem uma letra trocada e uma letra sobrando.
 - Ou de _metereologia_ em vez de _meteorologia_ que tem uma letra trocada e em posição errada.
 
 . . .
@@ -253,7 +259,10 @@ A nossa tarefa é:
 
 - _Escrever um programa que pega uma palavra que pode estar escrita errada_
   _e oferece sugestões de possíveis correções para ela._
-- Essa tarefa é certamente muito grande para ser tratada de uma vez só.
+
+. . .
+
+Essa tarefa é certamente muito grande para ser tratada de uma vez só.
 
 
 ##
@@ -435,9 +444,13 @@ percebamos que precisamos mudar nossa estratégia.
 - Ou porque chegamos a muitas funções que parecem muito específicas (e não seriam úteis para problemas mais gerais).
 - Ou ainda porque estamos passando muitos parâmetros para as funções ou passando um parâmetro de função em função repetidamente.
 - Ou, por fim, porque apenas queremos experimentar outra abordagem.
-
-A recomendação é: prática! Quanto mais praticar, mais habilidoso será no processo de decomposição.
 :::
+
+. . .
+
+**A recomendação é praticar!**
+
+- Quanto mais praticar, mais habilidoso será no processo de decomposição.
 
 ## Carregar lista de palavras
 
@@ -585,12 +598,17 @@ cada passo do **Ciclo de projeto de funções** para cada função.
 - Mais especificamente, ele já apresenta a solução que preferiram, sem detalhar a **Engenharia de Prompt** utilizada.
 - e não acrescentam os **testes** das funções.
 
+##
+
+Eu incluí aqui nos slides o planejamento dos testes das funções.
+
+- Pois testes são geralmente subestimados pelos alunos, e até por professores 😜
+
 . . .
 
-Eu planejei aqui incluir pelo menos os testes de funções.
+Seria ideal implementarmos todos os testes para problema.
 
-- Que é algo importante e geralmente subestimado pelos alunos, e até por professores 😜
-- Mas vamos ver se o tempo da aula vai permitir passar por tudo.
+- Mas o tempo da aula não seria suficiente para fazer tudo.
 
 ## `carregar_lista_palavras`
 
@@ -612,7 +630,7 @@ Como já fizemos anteriormente, vamos definir a assinatura e a docstring e deixa
 ```python
 def carregar_lista_palavras(caminho_arquivo):
     """
-    caminho_arquivo  é o nome de um arquivo que tem uma palavra 
+    caminho_arquivo é o nome de um arquivo que tem uma palavra 
     em português por linha.
     
     Retorna uma lista com as palavras do arquivo.
@@ -647,7 +665,7 @@ Quais testes poderíamos pensar para a função?
 
 ::: {.columns}
 :::: {.column width="50%"}
-No arquivo com uma palavra colocaremos:
+No arquivo com uma palavra colocamos:
 
 ```
 exuberante
@@ -655,7 +673,7 @@ exuberante
 ::::
 
 :::: {.column width="50%"}
-E no arquivo com várias palavras
+E no arquivo com várias palavras:
 
 ```
 dinossauro
@@ -692,15 +710,17 @@ def test_carregar_lista_palavras_varias_palavras():
 
 ## Observação sobre os slides
 
-Daqui por diante, na aula, nós vamos criar todas as funções e suas respectivas funções
-de teste em um projeto no VS Code.
+Daqui por diante, na aula, nós vamos criar todas as funções em um projeto no VS Code.
 
-- Esse projeto estará disponível no repositório [ufla-pasia/corretor-ortografico](https://github.com/ufla-pasia/corretor-ortografico).
+- Esse projeto está disponível no repositório [ufla-pasia/corretor-ortografico](https://github.com/ufla-pasia/corretor-ortografico).
 
 . . .
 
-Já aqui nos slides vou manter apenas o prompt das funções (assinatura e docstring) e a
-descrição em alto nível dos testeas.
+Já aqui nos slides vou manter apenas:
+
+- o prompt das funções (assinatura e docstring) 
+- e a descrição em alto nível dos testes.
+  - O projeto no VS Code tem todos os testes implementados.
 
 ##
 
@@ -719,6 +739,12 @@ flowchart TD
   C2 --> D3(trocar_letra)
   B --> C3(filtrar_palavras_reais)
   B --> C4(filtrar_palavras_repetidas)
+  
+  classDef Concluido fill:#dff7df,stroke:#2e7d32,stroke-width:3px,color:#1a1a1a;
+  class C1 Concluido;
+
+  classDef Foco fill:#eaf3ff,stroke:#0d6efd,stroke-width:3px,color:#000,font-weight:bold
+  class D1 Foco;
 ```
 
 ## `adicionar_letra`
@@ -755,6 +781,13 @@ flowchart TD
   C2 --> D3(trocar_letra)
   B --> C3(filtrar_palavras_reais)
   B --> C4(filtrar_palavras_repetidas)
+
+  classDef Concluido fill:#dff7df,stroke:#2e7d32,stroke-width:3px,color:#1a1a1a;
+  class C1 Concluido;
+  class D1 Concluido;
+
+  classDef Foco fill:#eaf3ff,stroke:#0d6efd,stroke-width:3px,color:#000,font-weight:bold
+  class D2 Foco;
 ```
 
 ## `remover_letra`
@@ -796,8 +829,9 @@ Testes:
 
 ##
 
-Agora nós já temos todos os subproblemas da função `gerar_palavras_possiveis` resolvidos e, 
-portanto, podemos implementá-la.
+Agora nós já temos todos os subproblemas da função `gerar_palavras_possiveis` resolvidos
+
+- portanto, podemos implementá-la.
 
 ```{mermaid}
 flowchart TD
@@ -809,6 +843,15 @@ flowchart TD
   C2 --> D3(trocar_letra fa:fa-check)
   B --> C3(filtrar_palavras_reais)
   B --> C4(filtrar_palavras_repetidas)
+
+  classDef Concluido fill:#dff7df,stroke:#2e7d32,stroke-width:3px,color:#1a1a1a;
+  class C1 Concluido;
+  class D1 Concluido;
+  class D2 Concluido;
+  class D3 Concluido;
+
+  classDef Foco fill:#eaf3ff,stroke:#0d6efd,stroke-width:3px,color:#000,font-weight:bold
+  class C2 Foco;
 ```
 
 
@@ -833,8 +876,9 @@ Testes:
 
 ##
 
-Nosso sistema está evoluindo bem. Próximo passo: `filtrar_palavras_reais` e depois 
-`filtrar_palavras_repetidas`.
+Nosso sistema está evoluindo bem. 
+
+- Próximos passos: `filtrar_palavras_reais` e depois `filtrar_palavras_repetidas`.
 
 ```{mermaid}
 flowchart TD
@@ -846,6 +890,17 @@ flowchart TD
   C2 --> D3(trocar_letra fa:fa-check)
   B --> C3(filtrar_palavras_reais)
   B --> C4(filtrar_palavras_repetidas)
+
+  classDef Concluido fill:#dff7df,stroke:#2e7d32,stroke-width:3px,color:#1a1a1a;
+  class C1 Concluido;
+  class D1 Concluido;
+  class D2 Concluido;
+  class D3 Concluido;
+  class C2 Concluido;
+
+  classDef Foco fill:#eaf3ff,stroke:#0d6efd,stroke-width:3px,color:#000,font-weight:bold
+  class C3 Foco;
+  class C4 Foco;
 ```
 
 
@@ -861,6 +916,12 @@ def filtrar_palavras_reais(lista_palavras, palavras_possiveis):
     Retorna uma lista das palavras possíveis que estão na lista de palavras.
     """
 ```
+
+Testes:
+
+- Lista de palavras com 4 palavras reais e uma delas está entre as possíveis.
+- Lista de palavras com 4 palavras reais e nenhuma delas é uma sugestão possível.
+- Lista de palavras nas quais várias delas são sugestões possíveis.
 
 
 ## `filtrar_palavras_repetidas`
@@ -882,7 +943,9 @@ Testes:
 
 ##
 
-Já resolvemos todos os subproblemas da função `obter_sugestoes_correcao` e hora de implementá-la.
+Já resolvemos todos os subproblemas da função `obter_sugestoes_correcao`
+
+- então é hora de implementá-la.
 
 ```{mermaid}
 flowchart TD
@@ -894,9 +957,19 @@ flowchart TD
   C2 --> D3(trocar_letra fa:fa-check)
   B --> C3(filtrar_palavras_reais fa:fa-check)
   B --> C4(filtrar_palavras_repetidas fa:fa-check)
+
+  classDef Concluido fill:#dff7df,stroke:#2e7d32,stroke-width:3px,color:#1a1a1a;
+  class C1 Concluido;
+  class D1 Concluido;
+  class D2 Concluido;
+  class D3 Concluido;
+  class C2 Concluido;
+  class C3 Concluido;
+  class C4 Concluido;
+
+  classDef Foco fill:#eaf3ff,stroke:#0d6efd,stroke-width:3px,color:#000,font-weight:bold  
+  class B Foco;
 ```
-
-
 
 ## `obter_sugestoes_correcao`
 
@@ -934,6 +1007,19 @@ flowchart TD
   C2 --> D3(trocar_letra fa:fa-check)
   B --> C3(filtrar_palavras_reais fa:fa-check)
   B --> C4(filtrar_palavras_repetidas fa:fa-check)
+
+  classDef Concluido fill:#dff7df,stroke:#2e7d32,stroke-width:3px,color:#1a1a1a;
+  class C1 Concluido;
+  class D1 Concluido;
+  class D2 Concluido;
+  class D3 Concluido;
+  class C2 Concluido;
+  class C3 Concluido;
+  class C4 Concluido;
+  class B Concluido;
+
+  classDef Foco fill:#eaf3ff,stroke:#0d6efd,stroke-width:3px,color:#000,font-weight:bold  
+  class A Foco;  
 ```
 
 ## `corretor_ortografico`
@@ -965,13 +1051,37 @@ Vamos então experimentar nosso corretor ortográfico.
 
 - Que palavras seria interessante usar?
 
-. . .
+##
 
 Algumas sugestões interessantes são:
 
-- suceso, susesso, beje, lage, análize, asia, ancioso, previlégio, impecilho, brusa, beneficiente, retrógado, sombrancelha.
-- [Essa página](https://www.dicio.com.br/erros-de-ortografia/) traz outros erros comuns de ortografia em português que 
-  você poderia querer testar.
+::: {.columns}
+:::: {.column width="50%"}
+- suce**s**o
+- su**s**esso
+- be**j**e
+- la**g**e
+- análi**z**e
+- a**s**ia
+- an**c**ioso
+::::
+
+:::: {.column width="50%"}
+- pr**e**vilégio
+- **i**mpecilho
+- b**r**usa
+- benefic**i**ente
+- retró**ga**do
+- so**m**brancelha
+::::
+:::
+
+##
+
+A página [https://www.dicio.com.br/erros-de-ortografia/](https://www.dicio.com.br/erros-de-ortografia/) 
+
+- traz outros erros comuns de ortografia em português 
+- que você poderia querer testar.
 
 # Conclusões {background-color="#40666e"}
 
@@ -989,8 +1099,9 @@ O problema se tornou consideravelmente mais fácil de implementar,
 
 ##
 
-Muitos especialistas em Computação consideram que **decomposição de problemas** é
-[a]{.alert} **habilidade** mais crítica necessária para se escrever bons softwares.
+Muitos especialistas em Computação consideram que **decomposição de problemas** 
+
+- é [a]{.alert} **habilidade** [mais crítica]{.alert} necessária para se escrever bons softwares.
 
 . . .
 
