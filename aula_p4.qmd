@@ -471,7 +471,10 @@ No próximo slide vou apresentar o _design_ feito pelos autores do livro.
 
 Você já terminou mesmo seu design? Tem certeza?
 
-. . .
+- Se não terminou, termine primeiro antes de continuar
+
+
+## Design dos autores do livro
 
 ![](imagens/fig11-6_authorship_program_design.png){fig-align="center" fig-alt="Design do programa de identificação de autoria feito pelos autores do livro." style="max-height: 50vh; width: auto;"}
 
