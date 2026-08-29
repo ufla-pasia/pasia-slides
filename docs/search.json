@@ -2986,7 +2986,7 @@
     "href": "aula_p4.html#métricas",
     "title": "Depuração e Decomposição de Problemas",
     "section": "Métricas",
-    "text": "Métricas\nA ideia é utilizar as seguintes métricas para construir a impressão digital de cada autor:\n\n\ntamanho médio das palavras\nnúmero de palavras diferentes dividido pelo número total de palavras\nnúmero de palavras usadas exatamente uma vez dividido pelo número total de palavras\nnúmero médio de palavras por frase\ncomplexidade média das frases\n\nA seguir vamos detalhar como calcular cada uma delas."
+    "text": "Métricas\nA ideia é utilizar as seguintes métricas para construir a impressão digital de cada autor:\n\ntamanho médio das palavras\nnúmero de palavras diferentes dividido pelo número total de palavras\nnúmero de palavras usadas exatamente uma vez dividido pelo número total de palavras\nnúmero médio de palavras por frase\ncomplexidade média das frases\n\nA seguir vamos detalhar como calcular cada uma delas."
   },
   {
     "objectID": "aula_p4.html#tamanho-médio-das-palavras",
@@ -3084,7 +3084,7 @@
     "href": "aula_p4.html#design-dos-autores-do-livro",
     "title": "Depuração e Decomposição de Problemas",
     "section": "Design dos autores do livro",
-    "text": "Design dos autores do livro\nVocê já terminou mesmo seu design? Tem certeza?"
+    "text": "Design dos autores do livro\nVocê já terminou mesmo seu design? Tem certeza?\n\nSe não terminou, termine primeiro antes de continuar"
   },
   {
     "objectID": "aula_p4.html#section-10",
@@ -7544,5 +7544,12 @@
     "title": "Decomposição de Problemas",
     "section": "",
     "text": "Como mencionamos no início, decomposição de problemas é mais arte que ciência.\n\nE, portanto, exige prática para fazer isso bem.\n\n\nAo longo da disciplina, aplicaremos a decomposição de problemas em outros exemplos.\n\nO que te ajudará a ganhar mais experiência com essa habilidade tão importante."
+  },
+  {
+    "objectID": "aula_p4.html#design-dos-autores-do-livro-1",
+    "href": "aula_p4.html#design-dos-autores-do-livro-1",
+    "title": "Depuração e Decomposição de Problemas",
+    "section": "Design dos autores do livro",
+    "text": "Design dos autores do livro"
   }
 ]
