@@ -2986,7 +2986,7 @@
     "href": "aula_p4.html#métricas",
     "title": "Depuração e Decomposição de Problemas",
     "section": "Métricas",
-    "text": "Métricas\nA ideia é utilizar as seguintes métricas para construir a impressão digital de cada autor:\n\ntamanho médio das palavras\nnúmero de palavras diferentes dividido pelo número total de palavras\nnúmero de palavras usadas exatamente uma vez dividido pelo número total de palavras\nnúmero médio de palavras por frase\ncomplexidade média das frases\n\nA seguir vamos detalhar como calcular cada uma delas."
+    "text": "Métricas\nA ideia é utilizar as seguintes métricas para construir a impressão digital de cada autor:\n\n\ntamanho médio das palavras\nnúmero de palavras diferentes dividido pelo número total de palavras\nnúmero de palavras usadas exatamente uma vez dividido pelo número total de palavras\nnúmero médio de palavras por frase\ncomplexidade média das frases\n\nA seguir vamos detalhar como calcular cada uma delas."
   },
   {
     "objectID": "aula_p4.html#tamanho-médio-das-palavras",
@@ -3147,14 +3147,14 @@
     "href": "aula_p4.html#section-17",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "No próximo slide vou apresentar o design feito pelos autores do livro.\n\nMas atenção: é muito importante que você mesmo faça o design.\n\nNão adianta copiar o design de alguém ou usar o design mostrado a seguir.\n\nSomente depois que terminar o design, antes de implementar, você pode comparar com o design mostrado a seguir.\n\nE ver se há algo que você não tinha pensado.\n\nLembre-se que o design não precisa ser igual ao do livro.\n\nA ideia é apenas ajudar a identificar se você esqueceu de algo importante."
+    "text": "Agora é hora de implementar o programa.\n\nA ideia é usar o Copilot para ajudar na implementação.\nVocê precisará também escrever testes para suas funções.\n\nPelo menos um caso de teste para cada função.\nO Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.\n\nDica: ao escrever o prompt/docstring de cada função, pense que ela poderia ser reutilizada futuramente em outros programas\n\n\nComo saber se o programa funciona corretamente?"
   },
   {
     "objectID": "aula_p4.html#section-18",
     "href": "aula_p4.html#section-18",
     "title": "Depuração e Decomposição de Problemas",
     "section": "",
-    "text": "Agora é hora de implementar o programa.\n\nA ideia é usar o Copilot para ajudar na implementação.\nVocê precisará também escrever testes para suas funções.\n\nPelo menos um caso de teste para cada função.\nO Copilot pode ajudar nisso também. Mas você precisa verificar se os testes estão corretos.\n\nDica: ao escrever o prompt/docstring de cada função, pense que ela poderia ser reutilizada futuramente em outros programas\n\n\nComo saber se o programa funciona corretamente?"
+    "text": "Você verá que os arquivos de autores desconhecidos têm o nome do autor dentro do arquivo.\n\nPortanto, você poderá verificar se o programa está funcionando corretamente. 😉\nE, claro, seu programa não pode usar essa informação para fazer a predição. 😏\n\n\nO exercício deve ser entregue no Campus Virtual até a data indicada."
   },
   {
     "objectID": "aula_t5.html#section",
