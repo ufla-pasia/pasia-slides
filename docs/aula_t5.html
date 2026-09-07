@@ -242,7 +242,7 @@
 <section id="o-que-é-engenharia-de-prompt" class="slide level2">
 <h2>O que é engenharia de Prompt?</h2>
 <ul>
-<li class="fragment">Forma de comunicar ao Copilot <strong>o que você precisa</strong>.
+<li class="fragment">Forma de comunicar a um assistente de IA <strong>o que você precisa</strong>.
 <ul>
 <li class="fragment">Processo de elaborar instruções claras para guiar assistentes de IA.</li>
 </ul></li>
@@ -292,15 +292,10 @@
 <li class="fragment">Isso dá contexto rico ao Copilot, levando a sugestões mais relevantes.</li>
 </ul></li>
 </ul>
-</section></section>
-<section>
-<section id="melhores-práticas" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Melhores práticas</h1>
-
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
-<p>Vamos ver agora algumas práticas recomendadas para criar prompts eficazes.</p>
+<p>Vamos ver agora alguns exemplos dessas práticas recomendadas para criar prompts eficazes.</p>
 <ol type="1">
 <li class="fragment">Forneça clareza suficiente</li>
 <li class="fragment">Forneça contexto suficiente</li>
@@ -327,11 +322,12 @@
 <li class="fragment">Ex.: Comentários no topo do arquivo dão mais detalhes sobre o que você quer.</li>
 </ul>
 <div class="fragment">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Escreva um app Flask que retorna uma lista de números pares a partir de uma lista de números</span></span>
-<span id="cb2-2"><a></a><span class="co"># Crie uma função que pega uma lista de números e retorne somente os números pares</span></span>
-<span id="cb2-3"><a></a><span class="co"># Crie uma lista de números de exemplo</span></span>
-<span id="cb2-4"><a></a><span class="co"># Crie uma lista de números pares a partir da lista de números</span></span>
-<span id="cb2-5"><a></a><span class="co"># retorna a lista de números</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Escreva um app Flask que retorna uma lista de números pares a partir de uma </span></span>
+<span id="cb2-2"><a></a><span class="co"># lista de números</span></span>
+<span id="cb2-3"><a></a><span class="co"># Crie uma função que pega uma lista de números e retorne somente os números pares</span></span>
+<span id="cb2-4"><a></a><span class="co"># Crie uma lista de números de exemplo</span></span>
+<span id="cb2-5"><a></a><span class="co"># Crie uma lista de números pares a partir da lista de números</span></span>
+<span id="cb2-6"><a></a><span class="co"># retorna a lista de números</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="forneça-contexto-suficiente-1" class="slide level2">
@@ -468,13 +464,91 @@
 </div>
 </div>
 </div>
+</section>
+<section id="exemplo-de-refinamento-de-prompt" class="slide level2">
+<h2>Exemplo de refinamento de prompt</h2>
+<p>Imagine que você está usando o Copilot e faz o prompt abaixo,</p>
+<ul>
+<li class="fragment">em um novo arquivo, sem nenhum código prévio para fornecer contexto ao Copilot.</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Escreva uma função que eleve ao quadrado os números de uma lista .</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>À primeira vista, parece um prompt simples e eficaz.</p>
+<ul>
+<li class="fragment">Mas há muitas coisas que não estão claras.</li>
+</ul>
+</div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Escreva uma função que eleve ao quadrado os números de uma lista .</p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Em qual linguagem a função deve ser escrita?</li>
+<li class="fragment">Você deseja incluir números negativos?</li>
+<li class="fragment">A entrada conterá algum elemento que não seja um número?</li>
+<li class="fragment">A função deve modificar a lista fornecida ou retornar uma nova lista?</li>
+</ul>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p>Como podemos refinar este prompt para torná-lo mais eficaz?</p>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Escreva uma função em Python que receba uma lista de inteiros e retorne uma nova lista onde cada número esteja elevado ao quadrado, excluindo quaisquer números negativos.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Este novo prompt é claro e específico sobre:</p>
+<ul>
+<li class="fragment">qual linguagem queremos usar,</li>
+<li class="fragment">o que a função deve fazer,</li>
+<li class="fragment">quais restrições existem</li>
+<li class="fragment">e o tipo de entrada esperado.</li>
+</ul>
+</div>
 </section></section>
 <section>
 <section id="como-o-copilot-aprende-com-seus-prompts" class="title-slide slide level1 center" data-background-color="#40666e">
 <h1>Como o Copilot aprende com seus prompts</h1>
 
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <p>O Copilot usa modelos de IA que foram treinados com grande quantidades de dados.</p>
 <ul>
@@ -514,7 +588,10 @@
 <h2>Aprendizado One-Shot</h2>
 <p>É fornecido um único exemplo, ajudando o modelo a gerar uma resposta mais sensível ao contexto.</p>
 <ul>
-<li class="fragment">Pode ser um exemplo de entrada e saída.</li>
+<li class="fragment">Pode ser um exemplo de entrada e saída.
+<ul>
+<li class="fragment">Como da função para retornar números pares que vimos antes.</li>
+</ul></li>
 <li class="fragment">Ou talvez você já tenha uma função semelhante e queira uma variante, por exemplo.</li>
 </ul>
 </section>
@@ -613,7 +690,7 @@
 </ul>
 </div>
 </section>
-<section id="section-4" class="slide level2" data-auto-animate="true">
+<section id="section-6" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <p>Imagine, por exemplo, que você fez várias interações no mesmo chat para realizar uma tarefa</p>
 <div title="Prompt">
@@ -633,7 +710,7 @@
 </div>
 </div>
 </section>
-<section id="section-5" class="slide level2" data-auto-animate="true">
+<section id="section-7" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div title="Prompt">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -657,7 +734,7 @@
 <li class="fragment"><p>Resumir o contexto ou reiniciar a conversa pode reduzir o consumo.</p></li>
 </ul>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <p>Para gerenciar isso de forma eficiente:</p>
 <ul>
@@ -669,28 +746,240 @@
 <li class="fragment">Use referências concisas a trabalhos anteriores em vez de repetir implementações completas.</li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="padrões-de-prompt" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Padrões de Prompt</h1>
+
 </section>
-<section id="persona-para-tarefas-especializadas" class="slide level2">
-<h2><em>Persona</em> para tarefas especializadas</h2>
-<div class="fragment">
-<p>Podemos instruir o Copilot a agir como um <strong>tipo específico de especialista</strong> (<em>persona</em>).</p>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p>Seguindo a mesma ideia dos <strong>Padrões de Projeto</strong> (<em>Design Patterns</em>) de desenvolvimento de software.</p>
 <ul>
-<li class="fragment">Isso pode melhorar significativamente a <strong>qualidade</strong> e a <strong>relevância</strong> do código gerado para domínios especializados.</li>
+<li class="fragment">Existem iniciativas de catalogação de <span class="alert">Padrões de Prompt</span>,</li>
+<li class="fragment">com o objetivo de documentar e divulgar boas práticas,</li>
+<li class="fragment">que levam a resultados melhores no uso de assistentes de IA.</li>
+</ul>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<p>Iniciativas desse tipo são complexas, devido a diversos fatores:</p>
+<ul>
+<li class="fragment">O comportamento não determinístico dos modelos de IA.</li>
+<li class="fragment">Os resultados diferentes que obtemos ao usar diferentes modelos de IA.</li>
+<li class="fragment">A rápida evolução dos assistentes de IA.
+<ul>
+<li class="fragment">Um padrão que parece interessante hoje pode se tornar obsoleto em pouco tempo.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p>De todo modo, é interessante conhecer essas iniciativas.</p>
+<ul>
+<li class="fragment">Pois, mesmo que não se tornem padrões, podem servir de inspiração sobre diferentes formas de uso dos assistentes de IA.</li>
+</ul>
+<div class="fragment">
+<p>Veremos aqui dois exemplos inspirados no Capítulo 12 do livro da disciplina.</p>
+<ul>
+<li class="fragment"><em>Flipped Interaction Pattern</em></li>
+<li class="fragment"><em>Persona Pattern</em></li>
+</ul>
+</div>
+</section>
+<section id="flipped-interaction-pattern" class="slide level2">
+<h2>Flipped Interaction Pattern</h2>
+<p>A ideia do <strong>Padrão de Interação Invertida</strong> é trocarmos de papel com o assistente de IA.</p>
+<ul>
+<li class="fragment">Em vez fazermos perguntas para ele responder,</li>
+<li class="fragment">nós instruímos o agente para que ele nos faça as perguntas.</li>
+</ul>
+<div class="fragment">
+<p>Por incrível que possa parecer à primeira vista,</p>
+<ul>
+<li class="fragment">nós usamos esse padrão quando sabemos muito pouco sobre o que precisamos fazer.</li>
 </ul>
 </div>
 <div class="fragment">
-<p>Essa abordagem ajuda a <strong>acelerar</strong> o desenvolvimento,</p>
+<p>Como assim? 🤔</p>
+</div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p>Quando estamos trabalhando com algo que conhecemos muito pouco,</p>
+<ul>
+<li class="fragment">nós não sabemos nem o que exatamente pedir para o assistente de IA.</li>
+</ul>
+<div class="fragment">
+<p>A motivação desse padrão é que a IA pode saber o que nos perguntar</p>
+<ul>
+<li class="fragment">de forma a chegar mais rápido no seu objetivo,</li>
+<li class="fragment">do que se nós fizéssemos algum prompt vago e incompleto.</li>
+</ul>
+</div>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<p>O padrão segue a seguinte estrutura:</p>
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Eu gostaria que você me fizesse perguntas para alcançarmos X. Você deve fazer perguntas até alcançarmos X, onde X é o objetivo que gostaríamos de alcançar.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>A ideia aqui não é fornecer um prompt preciso,</p>
+<ul>
+<li class="fragment">mas sim nos dar dicas das ideias chave que precisaremos abordar em nosso prompt.</li>
+</ul>
+</div>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<p>Como exemplo, no capítulo 3, nós fizemos uma função para obter uma senha forte do usuário.</p>
+<ul>
+<li class="fragment">Mas suponha que não soubéssemos direito como projetar essa função.</li>
+</ul>
+<div class="fragment">
+<p>Nós podíamos escrever um prompt para o Copilot criar a função pra gente,</p>
+<ul>
+<li class="fragment">Mas, provavelmente, ele poderia tomar decisões com as quais não concordamos.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Podemos então pedir ao Copilot para nos fazer perguntas, antes da implementação.</p>
+</div>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Preciso de uma função em Python que fique perguntando para o usuário uma senha até ele digite uma senha forte. Faça perguntas para mim, uma de cada vez, até que você possa implementar a função</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Experimentei o prompt com dois assistentes de IA</p>
+<ul>
+<li class="fragment">Chamou a atenção a diferença nas respostas.
+<ul>
+<li class="fragment">Mostrando a importância de sabermos conduzir a conversa para obter o resultado que precisamos.</li>
+</ul></li>
+<li class="fragment"><a href="https://docs.google.com/document/d/1NKkVjTNxRWZlkGQAjc7v3KPzF1TyT_H4V3FvheSEmVQ/edit?usp=sharing">Exemplo de uso com Gemini</a></li>
+<li class="fragment"><a href="https://chatgpt.com/share/6a9f082e-92dc-83e9-8e4a-695fc3e152ac">Exemplo com o ChatGPT</a></li>
+</ul>
+</div>
+</section>
+<section id="persona-pattern" class="slide level2">
+<h2>Persona Pattern</h2>
+<p>A ideia do <strong>Padrão de <em>Persona</em></strong> é instruir o assistente de IA de forma que:</p>
+<ul>
+<li class="fragment">ele atue de acordo com um personagem, profissional ou especialista específico.</li>
+</ul>
+<div class="fragment">
+<p>Em vez de responder como um assistente genérico, a IA adota</p>
+<ul>
+<li class="fragment">a mentalidade,</li>
+<li class="fragment">o tom de “voz”,</li>
+<li class="fragment">os conhecimentos técnicos</li>
+<li class="fragment">e até os preconceitos ou limitações daquela persona.</li>
+</ul>
+</div>
+</section>
+<section id="section-16" class="slide level2">
+<h2></h2>
+<p>Mudança de perspectiva:</p>
+<ul>
+<li class="fragment">O modelo filtra suas respostas através das lentes da profissão ou personalidade escolhida.</li>
+</ul>
+<div class="fragment">
+<p>Ajuste de tom e linguagem:</p>
+<ul>
+<li class="fragment">Uma persona de “chef de cozinha renomado” usará termos técnicos de culinária, enquanto um “professor de jardim de infância” explicará o mesmo assunto de forma simples e lúdica.</li>
+</ul>
+</div>
+</section>
+<section id="section-17" class="slide level2">
+<h2></h2>
+<p>Foco no contexto:</p>
+<ul>
+<li class="fragment">Ajuda a IA a priorizar os conhecimentos mais relevantes para aquele papel específico, aumentando a precisão da resposta.</li>
+</ul>
+</section>
+<section id="section-18" class="slide level2">
+<h2></h2>
+<p>No contexto do desenvolvimento de software:</p>
+<ul>
+<li class="fragment">O objetivo é melhorar a <strong>qualidade</strong> e a <strong>relevância</strong> do código gerado para domínios especializados.</li>
+<li class="fragment">Essa abordagem costuma ajudar a <strong>acelerar</strong> o desenvolvimento,
 <ul>
 <li class="fragment">pois tende a levar a soluções mais direcionadas já na primeira tentativa.</li>
+</ul></li>
 </ul>
+<div class="fragment">
+<p>O padrão segue a seguinte estrutura:</p>
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>A partir de agora, atue como persona X. Forneça respostas que persona X criaria.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-19" class="slide level2">
+<h2></h2>
+<p>Suponha, por exemplo, que um aluno esteja fazendo uma disciplina introdutória de programação</p>
+<ul>
+<li class="fragment">na qual algumas construções de Python são proibidas,</li>
+<li class="fragment">com objetivo de evitar que o aluno se desvie dos conceitos introdutórios da curso.</li>
+</ul>
+<div class="fragment">
+<p>Poderíamos usar o seguinte prompt</p>
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>A partir de agora, atue como um instrutor de introdução à programação em Python. No curso que você está lecionando, as seguintes características do Python não são permitidas: list comprehensions, generators, lamda, e funções como any, all, etc. Vou fornecer um código e você deverá verificar se existe qualquer construção de Python não permitida e sugerir como reescrever o código para não usá-las.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-20" class="slide level2">
+<h2></h2>
+<p>Já no contexto do dia a dia do desenvolvimento, pode ser muito útil usar o <strong>Persona Pattern</strong></p>
+<ul>
+<li class="fragment">instruindo o assistente de IA a atuar como um especialista de uma área específica.</li>
+</ul>
+<div class="fragment">
+<p>Veremos alguns exemplos.</p>
 </div>
 </section>
 <section id="função-de-especialista-em-segurança" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Função de especialista em segurança</h2>
-<p>Exemplo: Ao trabalhar em recursos críticos para a segurança,</p>
-<ul>
-<li class="fragment">configure o Copilot para pensar como um especialista na área:</li>
-</ul>
+<p>Ao trabalhar em recursos críticos para a segurança, configure o Copilot para pensar como um especialista na área:</p>
 <div class="fragment">
 <div title="Prompt">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
@@ -809,17 +1098,289 @@
 <li class="fragment">Testes de condições de erro</li>
 </ul>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-21" class="slide level2">
 <h2></h2>
 <p>Definir uma <strong><em>persona</em></strong> pode levar a código pronto para produção mais rapidamente,</p>
 <ul>
 <li class="fragment">incorporando conhecimento do domínio nas implementações iniciais,</li>
 <li class="fragment">reduzindo a necessidade de múltiplos ciclos de revisão.</li>
 </ul>
-<div class="fragment">
-<p>Agora que sabemos como o Copilot usa nossas sugestões para aprender,</p>
+</section></section>
+<section>
+<section id="recursos-do-copilot" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Recursos do Copilot</h1>
+
+</section>
+<section id="section-22" class="slide level2">
+<h2></h2>
+<p>Veremos a seguir alguns recursos específicos do GitHub Copilot, como:</p>
 <ul>
-<li class="fragment">vamos entender como ele usa essas sugestões para sugerir código.</li>
+<li class="fragment"><em>slash commands</em></li>
+<li class="fragment"><em>chat participants</em></li>
+<li class="fragment"><em>chat variables</em></li>
+<li class="fragment">e modos de uso (<em>ask</em>, <em>plan</em> e <em>agent</em>).</li>
+</ul>
+<div class="fragment">
+<p>Obs.: essas funcionalidades se alteraram muito desde a oferta anterior da disciplina.</p>
+</div>
+</section>
+<section id="prompts-implícitos-slash-commands" class="slide level2">
+<h2>Prompts implícitos (<em>slash commands</em>)</h2>
+<p>Podemos usar opções do Copilot fornecem prompts implícitos prédefinidos que podem melhorar a resposta.</p>
+<ul>
+<li class="fragment"><code>/explain</code> — obtém explicações sobre o código.</li>
+<li class="fragment"><code>/fix</code> — para correção de bugs.</li>
+<li class="fragment"><code>/tests</code> — cria testes unitários para o código selecionado.</li>
+<li class="fragment"><code>/clear</code> — inicia um novo chat (contexto), marcando o atual como finalizado</li>
+<li class="fragment"><code>/fork</code> — bifurca a conversa atual em um novo chat.</li>
+<li class="fragment"><code>/compact</code> — libera espaço de contexto, compactando contexto atual.</li>
+</ul>
+</section>
+<section id="prompts-implícitos-slash-commands-1" class="slide level2">
+<h2>Prompts implícitos (<em>slash commands</em>)</h2>
+<p>Esses comandos facilitam a interação com o Copilopt,</p>
+<ul>
+<li class="fragment">permitindo que sejam geradas respostas melhores sem ter que escrever prompts mais longos.</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Combine os comandos com o prompt que você deseja usar.</p>
+<p>Exemplo: <code>/explain como a biblioteca Pandas é usada neste código.</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Experimente digitar <code>/</code> no chat do VS Code para verificar todas as opções disponíveis.</p>
+</div>
+</section>
+<section id="contexto-seletivo" class="slide level2">
+<h2>Contexto seletivo</h2>
+<p>Nós vimos como o Copilot considera o contexto do código que está sendo trabalhado.</p>
+<ul>
+<li class="fragment">Mas você pode também dizer explicitamente ao Copilot qual contexto deve ser considerado.</li>
+</ul>
+</section>
+<section id="contexto-seletivo-1" class="slide level2">
+<h2>Contexto seletivo</h2>
+<p><span class="alert">chat participants</span></p>
+<ul>
+<li class="fragment">Permitem incluir contexto de domínio (como terminal, github, etc.)</li>
+</ul>
+<div class="fragment">
+<p><span class="alert">chat variables</span></p>
+<ul>
+<li class="fragment">Permitem especificar o escopo a ser considerado.</li>
+</ul>
+</div>
+</section>
+<section id="chat-participants" class="slide level2">
+<h2><em>chat participants</em></h2>
+<p><code>@terminal</code> — fornece sugestões baseadas na saída do terminal.</p>
+<ul>
+<li class="fragment">Ex.: <code>@terminal Como corrigir a mensagem de erro que estou vendo.</code></li>
+</ul>
+<div class="fragment">
+<p><code>@vscode</code> — para saber mais sobre os recursos e APIs do VS Code.</p>
+<ul>
+<li class="fragment">Ex.: <code>@vscode como eu mudo as cores do VS Code?</code></li>
+</ul>
+</div>
+<div class="fragment">
+<p><code>@github</code> — expande as informações que o Copilot pode fornecer.</p>
+<ul>
+<li class="fragment">Pode, por exemplo, fazer busca em repositórios ou em histórico de commits.</li>
+</ul>
+</div>
+</section>
+<section id="contexto-seletivo-chat-participants" class="slide level2">
+<h2>Contexto seletivo: <em>chat participants</em></h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Extensões do VS Code podem adicionar participantes específicos ao Copilot.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-23" class="slide level2">
+<h2></h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><em>chat variable</em></th>
+<th>Inclui no prompt:</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>#block</code></td>
+<td>o bloco de código atual</td>
+</tr>
+<tr class="even">
+<td><code>#class</code></td>
+<td>a classe atual</td>
+</tr>
+<tr class="odd">
+<td><code>#comment</code></td>
+<td>o comentário atual</td>
+</tr>
+<tr class="even">
+<td><code>#file</code></td>
+<td>o conteúdo do arquivo atual</td>
+</tr>
+<tr class="odd">
+<td><code>#function</code></td>
+<td>a função ou método atual</td>
+</tr>
+<tr class="even">
+<td><code>#line</code></td>
+<td>a linha de código atual</td>
+</tr>
+<tr class="odd">
+<td><code>#path</code></td>
+<td>o caminho do arquivo</td>
+</tr>
+<tr class="even">
+<td><code>#project</code></td>
+<td>o contexto do projeto</td>
+</tr>
+<tr class="odd">
+<td><code>#selection</code></td>
+<td>o texto atualmente selecionado</td>
+</tr>
+<tr class="even">
+<td><code>#sym</code></td>
+<td>o símbolo atual</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="modos-de-uso-do-chat-copilot" class="slide level2">
+<h2>Modos de uso do Chat Copilot</h2>
+<p>No canto inferior esquerdo da janela do chat do Copilot, você pode escolher entre três modos de uso:</p>
+<ul>
+<li class="fragment">Ask</li>
+<li class="fragment">Plan</li>
+<li class="fragment">Agent</li>
+</ul>
+</section>
+<section id="modo-ask" class="slide level2">
+<h2>Modo <span class="alert">Ask</span></h2>
+<ul>
+<li class="fragment">Para perguntas gerais e explicações.</li>
+<li class="fragment">Possíveis sugestões de código aparecem no Chat e você precisa copiar e colar no editor.</li>
+</ul>
+</section>
+<section id="modo-plan" class="slide level2">
+<h2>Modo <span class="alert">Plan</span></h2>
+<ul>
+<li class="fragment">Permite criar um planejamento estruturado antes da implementação.
+<ul>
+<li class="fragment">Utilize várias interações até atingir o planejamento desejado.</li>
+<li class="fragment">Com isso, você pode corrigir e/ou direcionar a solução ainda em nível de planejamento.</li>
+<li class="fragment">Levando depois a uma implementação melhor (e com menor uso de tokens).</li>
+</ul></li>
+<li class="fragment">Ao final, é exibido um botão para disparar o início da implementação (modo agente, seguindo o planejamento)</li>
+<li class="fragment">Dica: você pode mudar para este modo diretamente usando o comando <code>/plan</code>.</li>
+</ul>
+</section>
+<section id="modo-agent" class="slide level2">
+<h2>Modo <span class="alert">Agent</span></h2>
+<ul>
+<li class="fragment">Quando quiser que o Copilot trate uma tarefa específica de modo autônomo.</li>
+<li class="fragment">O próprio Copilot decide quais arquivos editar e como.</li>
+<li class="fragment">Pode sugerir comandos a serem executados no terminal (você precisa revisar e aprovar).</li>
+<li class="fragment">Funciona em modo interativo até que a tarefa seja concluída.</li>
+<li class="fragment">Tem impactos nos custos, pois cada interação pode consumir várias solicitações de LLM.</li>
+</ul>
+</section>
+<section id="planeje-primeiro-implemente-depois" class="slide level2">
+<h2>Planeje primeiro, implemente depois</h2>
+<div class="fragment">
+<p>Para alterações complexas que envolvem vários arquivos:</p>
+<ul>
+<li class="fragment">É altamente <strong>recomendável separar o planejamento da implementação</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Isso evita que a IA resolva o problema de forma errada</p>
+<ul>
+<li class="fragment">levando a desperdício de créditos de IA em um código que vai acabar sendo descartado.</li>
+</ul>
+</div>
+</section>
+<section id="planeje-primeiro-implemente-depois-1" class="slide level2">
+<h2>Planeje primeiro, implemente depois</h2>
+<ol type="1">
+<li class="fragment"><span class="alert">Explore</span></li>
+</ol>
+<ul>
+<li class="fragment">Use o modo de consulta ou um subagente para ler o código relevante e entender como ele funciona antes de fazer alterações.</li>
+</ul>
+<ol start="2" type="1">
+<li class="fragment"><span class="alert">Planeje</span></li>
+</ol>
+<ul>
+<li class="fragment">Use o agente de Planejamento para criar um plano de implementação estruturado.</li>
+<li class="fragment">Revise e refine o plano antes de executá-lo.</li>
+</ul>
+</section>
+<section id="planeje-primeiro-implemente-depois-2" class="slide level2">
+<h2>Planeje primeiro, implemente depois</h2>
+<ol start="3" type="1">
+<li class="fragment"><span class="alert">Implemente</span></li>
+</ol>
+<ul>
+<li class="fragment">Alterne para o modo de agente e implemente a partir do plano.</li>
+<li class="fragment">Inclua testes ou saídas esperadas para que o agente possa verificar seu próprio trabalho.</li>
+<li class="fragment">Execute sessões independentes do Copilot, Claude ou Codex em paralelo.</li>
+</ul>
+</section>
+<section id="planeje-primeiro-implemente-depois-3" class="slide level2">
+<h2>Planeje primeiro, implemente depois</h2>
+<ol start="4" type="1">
+<li class="fragment"><span class="alert">Revise</span></li>
+</ol>
+<ul>
+<li class="fragment">Use pontos de verificação para revisar o progresso.</li>
+<li class="fragment">Retroceda se o agente se desviar do caminho</li>
+<li class="fragment">Solicite uma revisão de código do Copilot no resultado final da alteração (Pull Request).</li>
+</ul>
+</section>
+<section id="avançado-customização-do-copilot" class="slide level2">
+<h2>Avançado: customização do Copilot</h2>
+<p>Você pode customizar o comportamento do Copilot de diferentes formas.</p>
+<ol type="1">
+<li class="fragment">Com instruções customizadas (para todo o projeto ou para contextos específicos, como todos arquivos .py).</li>
+<li class="fragment">Com arquivos de prompt para reutilização em tarefas repetitivas.</li>
+<li class="fragment">Com modos de chat customizados (além de Ask, Plan e Agent).</li>
+<li class="fragment">Escolhendo diferentes modelos de LLM (se sua assinatura permitir).</li>
+</ol>
+</section>
+<section id="avançado-customização-do-copilot-1" class="slide level2">
+<h2>Avançado: customização do Copilot</h2>
+<ol start="5" type="1">
+<li class="fragment">Usando servidores MCP que permite conectar serviços externos e ferramentas especilizados aumentando as capacidades do Copilot.</li>
+</ol>
+<div class="fragment">
+<p>Não entraremos em detalhes nesses pontos nesta aula.</p>
+<ul>
+<li class="fragment">Para quem quiser saber mais acesse <a href="https://code.visualstudio.com/docs/copilot/customization/overview?originUrl=%2Fdocs%2Fcopilot%2Fcustomization%2Fprompt-files">Customize chat to your workflow</a>.</li>
 </ul>
 </div>
 </section></section>
@@ -828,7 +1389,7 @@
 <h1>Fluxo de Processamento de Prompts</h1>
 
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-24" class="slide level2">
 <h2></h2>
 <p>Vamos agora ver como o Copilot transforma nossos prompts em códigos utilizáveis.</p>
 <ul>
@@ -981,27 +1542,6 @@
 <li class="fragment"><strong>Retenção</strong>: solicitações/sugestões/contexto podem ser mantidos por <strong>até 28 dias</strong> (varia conforme o editor).</li>
 </ul>
 </section>
-<section id="tipos-de-solicitações-no-copilot-chat" class="slide level2">
-<h2>Tipos de solicitações no Copilot Chat</h2>
-<ul>
-<li class="fragment"><p><strong>Perguntas diretas</strong>: conceitos, bibliotecas, dúvidas pontuais.</p>
-<ul>
-<li class="fragment">Ex.: “Como implementar quicksort em Python?”</li>
-</ul></li>
-<li class="fragment"><p><strong>Solicitações relacionadas ao código</strong>: geração, modificação, explicação.</p>
-<ul>
-<li class="fragment">Ex.: “Explique este trecho de código.”</li>
-</ul></li>
-<li class="fragment"><p><strong>Consultas abertas</strong>: boas práticas, dicas gerais.</p>
-<ul>
-<li class="fragment">Ex.: “Como melhorar o desempenho de um app Python?”</li>
-</ul></li>
-<li class="fragment"><p><strong>Solicitações contextuais</strong>: forneça código ou cenários para ajuda personalizada.</p>
-<ul>
-<li class="fragment">Ex.: “Aqui está parte do meu código, sugira melhorias.”</li>
-</ul></li>
-</ul>
-</section>
 <section id="janelas-de-contexto-são-limitadas" class="slide level2">
 <h2>Janelas de contexto são limitadas</h2>
 <p><strong>Janela de contexto</strong> é a quantidade de código/texto que o modelo processa simultaneamente.</p>
@@ -1032,7 +1572,7 @@
 <h1>LLMs no Copilot</h1>
 
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-25" class="slide level2">
 <h2></h2>
 <p>O GitHub Copilot é alimentado por <strong>LLMs</strong> (<em>Large Language Models</em>).</p>
 <ul>
@@ -1165,244 +1705,6 @@
 <li>Manter o prompt longo e detalhado.</li>
 <li>Evitar exemplos no prompt para não restringir a criatividade do Copilot.</li>
 </ul>
-</section></section>
-<section>
-<section id="recursos-do-copilot" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Recursos do Copilot</h1>
-
-</section>
-<section id="prompts-implícitos-slash-commands" class="slide level2">
-<h2>Prompts implícitos (<em>slash commands</em>)</h2>
-<p>Podemos usar opções do Copilot fornecem prompts implícitos prédefinidos que podem melhorar a resposta.</p>
-<ul>
-<li class="fragment"><code>/explain</code> — obtém explicações sobre o código.</li>
-<li class="fragment"><code>/fix</code> — para correção de bugs.</li>
-<li class="fragment"><code>/tests</code> — cria testes unitários para o código selecionado.</li>
-<li class="fragment"><code>/clear</code> — inicia um novo chat (contexto), marcando o atual como finalizado</li>
-<li class="fragment"><code>/fork</code> — bifurca a conversa atual em um novo chat.</li>
-<li class="fragment"><code>/compact</code> — libera espaço de contexto, compactando contexto atual.</li>
-</ul>
-</section>
-<section id="prompts-implícitos-slash-commands-1" class="slide level2">
-<h2>Prompts implícitos (<em>slash commands</em>)</h2>
-<p>Esses comandos facilitam a interação com o Copilopt,</p>
-<ul>
-<li class="fragment">permitindo que sejam geradas respostas melhores sem ter que escrever prompts mais longos.</li>
-</ul>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Dica</strong></p>
-</div>
-<div class="callout-content">
-<p>Combine os comandos com o prompt que você deseja usar.</p>
-<p>Exemplo: <code>/explain como a biblioteca Pandas é usada neste código.</code></p>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Obs.: essa foi uma das funcionalidades que se alteraram muito desde a oferta anterior da disciplina.</p>
-</div>
-</section>
-<section id="contexto-seletivo-chat-participants" class="slide level2">
-<h2>Contexto seletivo: <em>chat participants</em></h2>
-<p>Nós vimos como o Copilot considera o contexto do código que está sendo trabalhado.</p>
-<ul>
-<li class="fragment">Mas você pode também dizer explicitamente ao Copilot qual contexto deve ser considerado.</li>
-</ul>
-<div class="fragment">
-<p>Por exemplo, suponha que você precise gerar um <em>Dockerfile</em> para seu projeto Python.</p>
-<ul>
-<li class="fragment"><p>É um arquivo especial que contém instruções específicas que facilitam a execução do seu projeto em diferentes ambientes.</p></li>
-<li class="fragment"><p>Você pode usar o agente <code>@workspace</code> para indicar que o Copilot deve considerar o contexto de todo o projeto.</p></li>
-</ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>@workspace Preciso criar um Dockerfile para este projeto.</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Provavelmente o Copilot vai gerar explicações sobre o que é um <em>Dockerfile</em> e como ele funciona e, em seguida, sugerir um <em>Dockerfile</em> adequado ao seu projeto.</p>
-</div>
-</section>
-<section id="contexto-seletivo-chat-participants-1" class="slide level2">
-<h2>Contexto seletivo: <em>chat participants</em></h2>
-<p>Além do agente <code>@workspace</code>, você pode usar outros agentes para obter sugestões baseadas em contextos específicos:</p>
-<ul>
-<li class="fragment"><code>@terminal</code> — fornece sugestões baseadas na saída do terminal.
-<ul>
-<li class="fragment">Ex.: <code>@terminal Como corrigir a mensagem de erro que estou vendo.</code></li>
-</ul></li>
-<li class="fragment"><code>@vscode</code> — para saber mais sobre os recursos e APIs do VS Code.
-<ul>
-<li class="fragment">Ex.: <code>@vscode como eu mudo as cores do VS Code?</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="contexto-seletivo-chat-participants-2" class="slide level2">
-<h2>Contexto seletivo: <em>chat participants</em></h2>
-<ul>
-<li class="fragment"><code>@github</code> — expande as informações que o Copilot pode fornecer.
-<ul>
-<li class="fragment">Dica: use <code>@github quais skills estão disponíveis?</code> para saber como usar esse agente.<br>
-</li>
-<li class="fragment">Pode, por exemplo, fazer busca em repositórios ou em histórico de commits.</li>
-</ul></li>
-<li class="fragment"><code>@data</code> — permite fazer análise dados no próprio chat do Copilot.
-<ul>
-<li class="fragment">Ex.: <code>@data crie um gráfico de barras a partir deste arquivo CSV.</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="contexto-seletivo-chat-participants-3" class="slide level2">
-<h2>Contexto seletivo: <em>chat participants</em></h2>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Dica</strong></p>
-</div>
-<div class="callout-content">
-<p>Extensões do VS Code podem adicionar participantes específicos ao Copilot.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="contexto-seletivo-chat-variables" class="slide level2">
-<h2>Contexto seletivo: <em>chat variables</em></h2>
-<p>Ao usar agentes como <code>@workspace</code> ou <code>@vscode</code>, por exemplo, você pode usar variáveis para referenciar contextos mais específicos.</p>
-<ul>
-<li class="fragment">Variáveis de chat são referenciadas com prefixo <code>#</code>.</li>
-<li class="fragment">Você pode usar por exemplo <code>#main.py</code> ou <code>#utils</code> para referenciar arquivos ou pastas específicas do projeto.</li>
-</ul>
-<div class="fragment">
-<p>Você também pode arrastar um arquivo para a janela do chat do Copilot.</p>
-<ul>
-<li class="fragment">Ou clicar no ícone de clipe de papel para anexar arquivos.</li>
-</ul>
-</div>
-</section>
-<section id="modos-de-uso-do-chat-copilot" class="slide level2">
-<h2>Modos de uso do Chat Copilot</h2>
-<p>No canto inferior esquerdo da janela do chat do Copilot, você pode escolher entre três modos de uso:</p>
-<ul>
-<li class="fragment">Ask</li>
-<li class="fragment">Plan</li>
-<li class="fragment">Agent</li>
-</ul>
-</section>
-<section id="modo-ask" class="slide level2">
-<h2>Modo <span class="alert">Ask</span></h2>
-<ul>
-<li class="fragment">Para perguntas gerais e explicações.</li>
-<li class="fragment">Possíveis sugestões de código aparecem no Chat e você precisa copiar e colar no editor.</li>
-</ul>
-</section>
-<section id="modo-plan" class="slide level2">
-<h2>Modo <span class="alert">Plan</span></h2>
-<ul>
-<li class="fragment">Permite criar um planejamento estruturado antes da implementação.
-<ul>
-<li class="fragment">Utilize várias interações até atingir o planejamento desejado.</li>
-<li class="fragment">Com isso, você pode corrigir e/ou direcionar a solução ainda em nível de planejamento.</li>
-<li class="fragment">Levando depois a uma implementação melhor (e com menor uso de tokens).</li>
-</ul></li>
-<li class="fragment">Ao final, é exibido um botão para disparar o início da implementação (modo agente, seguindo o planejamento)</li>
-<li class="fragment">Dica: você pode mudar para este modo diretamente usando o comando <code>/plan</code>.</li>
-</ul>
-</section>
-<section id="modo-agent" class="slide level2">
-<h2>Modo <span class="alert">Agent</span></h2>
-<ul>
-<li class="fragment">Quando quiser que o Copilot trate uma tarefa específica de modo autônomo.</li>
-<li class="fragment">O próprio Copilot decide quais arquivos editar e como.</li>
-<li class="fragment">Pode sugerir comandos a serem executados no terminal (você precisa revisar e aprovar).</li>
-<li class="fragment">Funciona em modo interativo até que a tarefa seja concluída.</li>
-<li class="fragment">Tem impactos nos custos, pois cada interação pode consumir várias solicitações de LLM.</li>
-</ul>
-</section>
-<section id="planeje-primeiro-implemente-depois" class="slide level2">
-<h2>Planeje primeiro, implemente depois</h2>
-<p>É altamente <strong>recomendável separar o planejamento da implementação</strong></p>
-<ul>
-<li class="fragment">para alterações complexas que envolve vários arquivos.</li>
-</ul>
-<div class="fragment">
-<p>Isso evita que a IA resolva o problema de forma errada</p>
-<ul>
-<li class="fragment">levando a desperdício de créditos de IA em um código que vai acabar sendo descartado.</li>
-</ul>
-</div>
-</section>
-<section id="planeje-primeiro-implemente-depois-1" class="slide level2">
-<h2>Planeje primeiro, implemente depois</h2>
-<ol type="1">
-<li class="fragment"><span class="alert">Explore</span></li>
-</ol>
-<ul>
-<li class="fragment">Use o modo de consulta ou um subagente para ler o código relevante e entender como ele funciona antes de fazer alterações.</li>
-</ul>
-<ol start="2" type="1">
-<li class="fragment"><span class="alert">Planeje</span></li>
-</ol>
-<ul>
-<li class="fragment">Use o agente de Planejamento para criar um plano de implementação estruturado.</li>
-<li class="fragment">Revise e refine o plano antes de executá-lo.</li>
-</ul>
-</section>
-<section id="planeje-primeiro-implemente-depois-2" class="slide level2">
-<h2>Planeje primeiro, implemente depois</h2>
-<ol start="3" type="1">
-<li class="fragment"><span class="alert">Implemente</span></li>
-</ol>
-<ul>
-<li class="fragment">Alterne para o modo de agente e implemente a partir do plano.</li>
-<li class="fragment">Inclua testes ou saídas esperadas para que o agente possa verificar seu próprio trabalho.</li>
-<li class="fragment">Execute sessões independentes do Copilot, Claude ou Codex em paralelo.</li>
-</ul>
-</section>
-<section id="planeje-primeiro-implemente-depois-3" class="slide level2">
-<h2>Planeje primeiro, implemente depois</h2>
-<ol start="4" type="1">
-<li class="fragment"><span class="alert">Revise</span></li>
-</ol>
-<ul>
-<li class="fragment">Use pontos de verificação para revisar o progresso.</li>
-<li class="fragment">Retroceda se o agente se desviar do caminho</li>
-<li class="fragment">Solicite uma revisão de código do Copilot no resultado final da alteração (Pull Request).</li>
-</ul>
-</section>
-<section id="avançado-customização-do-copilot" class="slide level2">
-<h2>Avançado: customização do Copilot</h2>
-<p>Você pode customizar o comportamento do Copilot de diferentes formas.</p>
-<ol type="1">
-<li class="fragment">Com instruções customizadas (para todo o projeto ou para contextos específicos, como todos arquivos .py).</li>
-<li class="fragment">Com arquivos de prompt para reutilização em tarefas repetitivas.</li>
-<li class="fragment">Com modos de chat customizados (além de Ask, Plan e Agent).</li>
-<li class="fragment">Escolhendo diferentes modelos de LLM (se sua assinatura permitir).</li>
-</ol>
-</section>
-<section id="avançado-customização-do-copilot-1" class="slide level2">
-<h2>Avançado: customização do Copilot</h2>
-<ol start="5" type="1">
-<li class="fragment">Usando servidores MCP que permite conectar serviços externos e ferramentas especilizados aumentando as capacidades do Copilot.</li>
-</ol>
-<div class="fragment">
-<p>Não entraremos em detalhes nesses pontos nesta aula.</p>
-<ul>
-<li class="fragment">Para quem quiser saber mais acesse <a href="https://code.visualstudio.com/docs/copilot/customization/overview?originUrl=%2Fdocs%2Fcopilot%2Fcustomization%2Fprompt-files">Customize chat to your workflow</a>.</li>
-</ul>
-</div>
-</section></section>
-<section>
-<section id="trabalho-prático" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Trabalho Prático</h1>
-
-</section>
-<section id="section-10" class="slide level2">
-<h2></h2>
 
 
 </section></section>

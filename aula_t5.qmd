@@ -27,7 +27,7 @@ O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Cod
 
 ## O que é engenharia de Prompt?
 
-- Forma de comunicar ao Copilot **o que você precisa**.
+- Forma de comunicar a um assistente de IA **o que você precisa**.
   - Processo de elaborar instruções claras para guiar assistentes de IA.
 - **Objetivo**
   - Gerar código adequado ao contexto e adaptado às necessidades específicas do projeto. 
@@ -61,11 +61,9 @@ O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Cod
   - Isso dá contexto rico ao Copilot, levando a sugestões mais relevantes.
 
 
-# Melhores práticas {background-color="#40666e"}
-
 ## 
 
-Vamos ver agora algumas práticas recomendadas para criar prompts eficazes.
+Vamos ver agora alguns exemplos dessas práticas recomendadas para criar prompts eficazes.
 
 1. Forneça clareza suficiente
 2. Forneça contexto suficiente
@@ -96,7 +94,8 @@ Quanto mais informação contextual for fornecida,  mais aderente será a sugest
 . . . 
 
 ```python
-# Escreva um app Flask que retorna uma lista de números pares a partir de uma lista de números
+# Escreva um app Flask que retorna uma lista de números pares a partir de uma 
+# lista de números
 # Crie uma função que pega uma lista de números e retorne somente os números pares
 # Crie uma lista de números de exemplo
 # Crie uma lista de números pares a partir da lista de números
@@ -201,6 +200,55 @@ Ex.: "Adicione uma função de fibonacci", na mesma caixa, se necessário, pode 
 "não use recursão" e depois "melhore os nomes das variáveis".
 :::
 
+## Exemplo de refinamento de prompt
+
+Imagine que você está usando o Copilot e faz o prompt abaixo,
+
+- em um novo arquivo, sem nenhum código prévio para fornecer contexto ao Copilot.
+
+. . .
+
+::: {.callout-tip}
+Escreva uma função que eleve ao quadrado os números de uma lista .
+:::
+
+. . .
+
+À primeira vista, parece um prompt simples e eficaz.
+
+- Mas há muitas coisas que não estão claras.
+
+##
+
+::: {.callout-tip}
+Escreva uma função que eleve ao quadrado os números de uma lista .
+:::
+
+- Em qual linguagem a função deve ser escrita?
+- Você deseja incluir números negativos?
+- A entrada conterá algum elemento que não seja um número?
+- A função deve modificar a lista fornecida ou retornar uma nova lista?
+
+## 
+
+Como podemos refinar este prompt para torná-lo mais eficaz? 
+
+. . .
+
+
+::: {.callout-tip}
+Escreva uma função em Python que receba uma lista de inteiros e retorne uma nova lista onde cada número esteja elevado ao quadrado, excluindo quaisquer números negativos.
+:::
+
+. . .
+
+Este novo prompt é claro e específico sobre:
+
+- qual linguagem queremos usar, 
+- o que a função deve fazer, 
+- quais restrições existem 
+- e o tipo de entrada esperado.
+
 # Como o Copilot aprende com seus prompts  {background-color="#40666e"}
 
 ## 
@@ -248,6 +296,7 @@ def celsius_para_fahrenheit(celsius):
 É fornecido um único exemplo, ajudando o modelo a gerar uma resposta mais sensível ao contexto.
 
 - Pode ser um exemplo de entrada e saída.
+  - Como da função para retornar números pares que vimos antes.
 - Ou talvez você já tenha uma função semelhante e queira uma variante, por exemplo.
 
 ## Aprendizado One-Shot {auto-animate=true}
@@ -405,25 +454,199 @@ Comece um chat do zero com detalhes essenciais em vez de retomar toda a conversa
 
 - Use referências concisas a trabalhos anteriores em vez de repetir implementações completas.
 
-## _Persona_ para tarefas especializadas
+# Padrões de Prompt {background-color="#40666e"}
+
+##
+
+Seguindo a mesma ideia dos **Padrões de Projeto** (_Design Patterns_) de desenvolvimento de software.
+
+- Existem iniciativas de catalogação de [Padrões de Prompt]{.alert},
+- com o objetivo de documentar e divulgar boas práticas,
+- que levam a resultados melhores no uso de assistentes de IA.
+
+##
+
+Iniciativas desse tipo são complexas, devido a diversos fatores:
+
+- O comportamento não determinístico dos modelos de IA.
+- Os resultados diferentes que obtemos ao usar diferentes modelos de IA.
+- A rápida evolução dos assistentes de IA.
+  - Um padrão que parece interessante hoje pode se tornar obsoleto em pouco tempo.
+
+##
+
+De todo modo, é interessante conhecer essas iniciativas.
+
+- Pois, mesmo que não se tornem padrões, podem servir de inspiração sobre diferentes formas de uso dos assistentes de IA.
 
 . . .
 
-Podemos instruir o Copilot a agir como um **tipo específico de especialista** (_persona_).
+Veremos aqui dois exemplos inspirados no Capítulo 12 do livro da disciplina.
 
-- Isso pode melhorar significativamente a **qualidade** e a **relevância** do código gerado para domínios especializados. 
+- _Flipped Interaction Pattern_
+- _Persona Pattern_
+
+## Flipped Interaction Pattern
+
+A ideia do **Padrão de Interação Invertida** é trocarmos de papel com o assistente de IA.
+
+- Em vez fazermos perguntas para ele responder,
+- nós instruímos o agente para que ele nos faça as perguntas.
+
+. . .
+
+Por incrível que possa parecer à primeira vista,
+
+- nós usamos esse padrão quando sabemos muito pouco sobre o que precisamos fazer.
+
+. . .
+
+Como assim? 🤔
+
+##
+
+Quando estamos trabalhando com algo que conhecemos muito pouco,
+
+- nós não sabemos nem o que exatamente pedir para o assistente de IA.
+
+. . .
+
+A motivação desse padrão é que a IA pode saber o que nos perguntar
+
+- de forma a chegar mais rápido no seu objetivo,
+- do que se nós fizéssemos algum prompt vago e incompleto.
+
+##
+
+O padrão segue a seguinte estrutura:
+
+::: {.callout-note title="Prompt" icon="false"}
+Eu gostaria que você me fizesse perguntas para alcançarmos X.
+Você deve fazer perguntas até alcançarmos X, onde X é o objetivo que gostaríamos de alcançar.
+:::
+
+. . .
+
+A ideia aqui não é fornecer um prompt preciso,
+
+- mas sim nos dar dicas das ideias chave que precisaremos abordar em nosso prompt.
+
+## 
+
+Como exemplo, no capítulo 3, nós fizemos uma função para obter uma senha forte do usuário.
+
+- Mas suponha que não soubéssemos direito como projetar essa função.
+
+. . .
+
+Nós podíamos escrever um prompt para o Copilot criar a função pra gente,
+
+- Mas, provavelmente, ele poderia tomar decisões com as quais não concordamos.
+
+. . .
+
+Podemos então pedir ao Copilot para nos fazer perguntas, antes da implementação.
+
+##
+
+::: {.callout-note title="Prompt" icon="false"}
+Preciso de uma função em Python que fique perguntando para o usuário uma senha até 
+ele digite uma senha forte.
+Faça perguntas para mim, uma de cada vez, até que você possa implementar a função
+:::
 
 . . . 
 
-Essa abordagem ajuda a **acelerar** o desenvolvimento, 
+Experimentei o prompt com dois assistentes de IA
 
-- pois tende a levar a soluções mais direcionadas já na primeira tentativa.
+- Chamou a atenção a diferença nas respostas.
+  - Mostrando a importância de sabermos conduzir a conversa para obter o resultado que precisamos.
+- [Exemplo de uso com Gemini](https://docs.google.com/document/d/1NKkVjTNxRWZlkGQAjc7v3KPzF1TyT_H4V3FvheSEmVQ/edit?usp=sharing)
+- [Exemplo com o ChatGPT](https://chatgpt.com/share/6a9f082e-92dc-83e9-8e4a-695fc3e152ac)
+
+## Persona Pattern
+
+A ideia do **Padrão de _Persona_** é instruir o assistente de IA de forma que:
+
+- ele atue de acordo com um personagem, profissional ou especialista específico.
+
+. . .
+
+Em vez de responder como um assistente genérico, a IA adota 
+
+- a mentalidade, 
+- o tom de "voz", 
+- os conhecimentos técnicos 
+- e até os preconceitos ou limitações daquela persona.
+
+##
+
+Mudança de perspectiva: 
+
+- O modelo filtra suas respostas através das lentes da profissão ou personalidade escolhida.
+
+. . .
+
+Ajuste de tom e linguagem: 
+
+- Uma persona de "chef de cozinha renomado" usará termos técnicos de culinária, enquanto um "professor de jardim de infância" explicará o mesmo assunto de forma simples e lúdica.
+
+##
+
+Foco no contexto: 
+
+- Ajuda a IA a priorizar os conhecimentos mais relevantes para aquele papel específico, aumentando a precisão da resposta.
+
+##
+
+No contexto do desenvolvimento de software:
+
+- O objetivo é melhorar a **qualidade** e a **relevância** do código gerado para domínios especializados. 
+- Essa abordagem costuma ajudar a **acelerar** o desenvolvimento,  
+  - pois tende a levar a soluções mais direcionadas já na primeira tentativa.
+
+. . .
+
+O padrão segue a seguinte estrutura:
+
+::: {.callout-note title="Prompt" icon="false"}
+A partir de agora, atue como persona X.
+Forneça respostas que persona X criaria.
+:::
+
+##
+
+Suponha, por exemplo, que um aluno esteja fazendo uma disciplina introdutória de programação
+
+- na qual algumas construções de Python são proibidas,
+- com objetivo de evitar que o aluno se desvie dos conceitos introdutórios da curso.
+
+. . . 
+
+Poderíamos usar o seguinte prompt
+
+::: {.callout-note title="Prompt" icon="false"}
+A partir de agora, atue como um instrutor de introdução à programação em Python.
+No curso que você está lecionando, as seguintes características do Python não são permitidas:
+list comprehensions, generators, lamda, e funções como any, all, etc.
+Vou fornecer um código e você deverá verificar se existe qualquer construção de Python não
+permitida e sugerir como reescrever o código para não usá-las.
+:::
+
+##
+
+Já no contexto do dia a dia do desenvolvimento, pode ser muito útil usar o **Persona Pattern**
+
+- instruindo o assistente de IA a atuar como um especialista de uma área específica.
+
+. . .
+
+Veremos alguns exemplos.
+
 
 ## Função de especialista em segurança {auto-animate=true}
 
-Exemplo: Ao trabalhar em recursos críticos para a segurança, 
-
-- configure o Copilot para pensar como um especialista na área:
+Ao trabalhar em recursos críticos para a segurança, configure o Copilot para pensar como um especialista na área:
 
 . . .
 
@@ -496,13 +719,199 @@ Isso normalmente produz:
 Definir uma **_persona_** pode levar a código pronto para produção mais rapidamente, 
 
 - incorporando conhecimento do domínio nas implementações iniciais, 
-- reduzindo a necessidade de múltiplos ciclos de revisão.
+- reduzindo a necessidade de múltiplos ciclos de revisão.  
+
+
+# Recursos do Copilot {background-color="#40666e"}
+
+##
+
+Veremos a seguir alguns recursos específicos do GitHub Copilot, como:
+
+- _slash commands_
+- _chat participants_
+- _chat variables_
+- e modos de uso (_ask_, _plan_ e _agent_).
 
 . . .
 
-Agora que sabemos como o Copilot usa nossas sugestões para aprender, 
+Obs.: essas funcionalidades se alteraram muito desde a oferta anterior da disciplina.
 
-- vamos entender como ele usa essas sugestões para sugerir código.
+## Prompts implícitos (_slash commands_)
+
+Podemos usar opções do Copilot fornecem prompts implícitos prédefinidos que podem melhorar a resposta.
+
+- `/explain` — obtém explicações sobre o código.
+- `/fix` — para correção de bugs.
+- `/tests` — cria testes unitários para o código selecionado.
+- `/clear` — inicia um novo chat (contexto), marcando o atual como finalizado
+- `/fork` — bifurca a conversa atual em um novo chat.
+- `/compact` — libera espaço de contexto, compactando contexto atual.
+
+## Prompts implícitos (_slash commands_)
+
+Esses comandos facilitam a interação com o Copilopt,
+
+- permitindo que sejam geradas respostas melhores sem ter que escrever prompts mais longos.
+
+. . .
+
+::: {.callout-tip}
+Combine os comandos com o prompt que você deseja usar.
+
+Exemplo: `/explain como a biblioteca Pandas é usada neste código.`
+:::
+
+. . .
+
+Experimente digitar `/` no chat do VS Code para verificar todas as opções disponíveis.
+
+## Contexto seletivo
+
+Nós vimos como o Copilot considera o contexto do código que está sendo trabalhado.
+
+- Mas você pode também dizer explicitamente ao Copilot qual contexto deve ser considerado.
+
+## Contexto seletivo
+
+[chat participants]{.alert}
+
+- Permitem incluir contexto de domínio (como terminal, github, etc.)
+
+. . .
+
+[chat variables]{.alert}
+
+- Permitem especificar o escopo a ser considerado.
+
+## _chat participants_
+
+`@terminal` — fornece sugestões baseadas na saída do terminal.
+
+- Ex.: `@terminal Como corrigir a mensagem de erro que estou vendo.`
+
+. . .
+
+`@vscode` — para saber mais sobre os recursos e APIs do VS Code.
+
+- Ex.: `@vscode como eu mudo as cores do VS Code?`
+
+. . .
+
+`@github` — expande as informações que o Copilot pode fornecer.
+
+- Pode, por exemplo, fazer busca em repositórios ou em histórico de commits. 
+
+## Contexto seletivo: _chat participants_
+
+::: {.callout-tip}
+Extensões do VS Code podem adicionar participantes específicos ao Copilot.
+:::
+
+## 
+
+| _chat variable_ | Inclui no prompt: |
+| --- | --- |
+| `#block` | o bloco de código atual |
+| `#class` | a classe atual |
+| `#comment` | o comentário atual |
+| `#file` | o conteúdo do arquivo atual |
+| `#function` | a função ou método atual |
+| `#line` | a linha de código atual |
+| `#path` | o caminho do arquivo |
+| `#project` | o contexto do projeto |
+| `#selection` | o texto atualmente selecionado |
+| `#sym` | o símbolo atual |
+
+## Modos de uso do Chat Copilot
+
+No canto inferior esquerdo da janela do chat do Copilot, você pode escolher entre três modos de uso:
+
+- Ask
+- Plan
+- Agent
+
+## Modo [Ask]{.alert}
+
+- Para perguntas gerais e explicações.
+- Possíveis sugestões de código aparecem no Chat e você precisa copiar e colar no editor.
+
+## Modo [Plan]{.alert}
+
+- Permite criar um planejamento estruturado antes da implementação.
+  - Utilize várias interações até atingir o planejamento desejado.
+  - Com isso, você pode corrigir e/ou direcionar a solução ainda em nível de planejamento.
+  - Levando depois a uma implementação melhor (e com menor uso de tokens).
+- Ao final, é exibido um botão para disparar o início da implementação (modo agente, seguindo o planejamento)
+- Dica: você pode mudar para este modo diretamente usando o comando `/plan`.
+
+## Modo [Agent]{.alert}
+
+- Quando quiser que o Copilot trate uma tarefa específica de modo autônomo.
+- O próprio Copilot decide quais arquivos editar e como.
+- Pode sugerir comandos a serem executados no terminal (você precisa revisar e aprovar).
+- Funciona em modo interativo até que a tarefa seja concluída.
+- Tem impactos nos custos, pois cada interação pode consumir várias solicitações de LLM.
+
+## Planeje primeiro, implemente depois
+
+. . .
+
+Para alterações complexas que envolvem vários arquivos:
+
+- É altamente **recomendável separar o planejamento da implementação**
+
+. . .
+
+Isso evita que a IA resolva o problema de forma errada
+
+- levando a desperdício de créditos de IA em um código que vai acabar sendo descartado.
+
+## Planeje primeiro, implemente depois
+
+1. [Explore]{.alert}
+
+- Use o modo de consulta ou um subagente para ler o código relevante e entender como ele funciona antes de fazer alterações.
+
+2. [Planeje]{.alert}
+
+- Use o agente de Planejamento para criar um plano de implementação estruturado. 
+- Revise e refine o plano antes de executá-lo.
+
+## Planeje primeiro, implemente depois
+
+3. [Implemente]{.alert}
+
+- Alterne para o modo de agente e implemente a partir do plano. 
+- Inclua testes ou saídas esperadas para que o agente possa verificar seu próprio trabalho. 
+- Execute sessões independentes do Copilot, Claude ou Codex em paralelo.
+
+## Planeje primeiro, implemente depois
+
+4. [Revise]{.alert}
+- Use pontos de verificação para revisar o progresso.
+- Retroceda se o agente se desviar do caminho
+- Solicite uma revisão de código do Copilot no resultado final da alteração (Pull Request).
+
+
+## Avançado: customização do Copilot
+
+Você pode customizar o comportamento do Copilot de diferentes formas.
+
+1. Com instruções customizadas (para todo o projeto ou para contextos específicos, como todos arquivos .py).
+2. Com arquivos de prompt para reutilização em tarefas repetitivas.
+3. Com modos de chat customizados (além de Ask, Plan e Agent).
+4. Escolhendo diferentes modelos de LLM (se sua assinatura permitir).
+
+## Avançado: customização do Copilot
+
+5. Usando servidores MCP que permite conectar serviços externos e ferramentas especilizados aumentando as capacidades do Copilot.
+
+. . .
+
+Não entraremos em detalhes nesses pontos nesta aula.
+
+- Para quem quiser saber mais acesse [Customize chat to your workflow](https://code.visualstudio.com/docs/copilot/customization/overview?originUrl=%2Fdocs%2Fcopilot%2Fcustomization%2Fprompt-files).
 
 
 # Fluxo de Processamento de Prompts {background-color="#40666e"}
@@ -642,25 +1051,6 @@ Difere das sugestões de código (autocomplete):
 - **Retenção**: solicitações/sugestões/contexto podem ser mantidos por **até 28 dias** (varia conforme o editor).
 
 
-## Tipos de solicitações no Copilot Chat
-
-* **Perguntas diretas**: conceitos, bibliotecas, dúvidas pontuais.
-
-  * Ex.: “Como implementar quicksort em Python?”
-
-* **Solicitações relacionadas ao código**: geração, modificação, explicação.
-
-  * Ex.: “Explique este trecho de código.”
-
-* **Consultas abertas**: boas práticas, dicas gerais.
-
-  * Ex.: “Como melhorar o desempenho de um app Python?”
-
-* **Solicitações contextuais**: forneça código ou cenários para ajuda personalizada.
-
-  * Ex.: “Aqui está parte do meu código, sugira melhorias.”
-
-
 ## Janelas de contexto são limitadas
 
 **Janela de contexto** é a quantidade de código/texto que o modelo processa simultaneamente.
@@ -721,8 +1111,7 @@ O GitHub Copilot é alimentado por **LLMs** (_Large Language Models_).
 - Vantagens:  
   - Mais rápido e econômico  
   - Mais eficiente que adaptadores e prefix tuning  
-  - “Trabalhar de forma mais inteligente, não mais difícil”  
-
+  - “Trabalhar de forma mais inteligente, não mais difícil”
 
 # Avaliação {background-color="#40666e"}
 
@@ -788,188 +1177,3 @@ O GitHub Copilot é alimentado por **LLMs** (_Large Language Models_).
 - Manter o prompt longo e detalhado.
 - Evitar exemplos no prompt para não restringir a criatividade do Copilot.
 :::
-
-# Recursos do Copilot {background-color="#40666e"}
-
-## Prompts implícitos (_slash commands_)
-
-Podemos usar opções do Copilot fornecem prompts implícitos prédefinidos que podem melhorar a resposta.
-
-- `/explain` — obtém explicações sobre o código.
-- `/fix` — para correção de bugs.
-- `/tests` — cria testes unitários para o código selecionado.
-- `/clear` — inicia um novo chat (contexto), marcando o atual como finalizado
-- `/fork` — bifurca a conversa atual em um novo chat.
-- `/compact` — libera espaço de contexto, compactando contexto atual.
-
-## Prompts implícitos (_slash commands_)
-
-Esses comandos facilitam a interação com o Copilopt,
-
-- permitindo que sejam geradas respostas melhores sem ter que escrever prompts mais longos.
-
-. . .
-
-::: {.callout-tip}
-Combine os comandos com o prompt que você deseja usar.
-
-Exemplo: `/explain como a biblioteca Pandas é usada neste código.`
-:::
-
-. . .
-
-Obs.: essa foi uma das funcionalidades que se alteraram muito desde a oferta anterior da disciplina.
-
-## Contexto seletivo: _chat participants_
-
-Nós vimos como o Copilot considera o contexto do código que está sendo trabalhado.
-
-- Mas você pode também dizer explicitamente ao Copilot qual contexto deve ser considerado.
-
-. . .
-
-Por exemplo, suponha que você precise gerar um _Dockerfile_ para seu projeto Python.
-
-- É um arquivo especial que contém instruções específicas que facilitam a execução do seu projeto em diferentes ambientes.
-
-- Você pode usar o agente `@workspace` para indicar que o Copilot deve considerar o contexto de todo o projeto.
-
-```text
-@workspace Preciso criar um Dockerfile para este projeto.
-```
-
-Provavelmente o Copilot vai gerar explicações sobre o que é um _Dockerfile_ e como ele funciona e, em seguida, sugerir um _Dockerfile_ adequado ao seu projeto.
-
-## Contexto seletivo: _chat participants_
-
-Além do agente `@workspace`, você pode usar outros agentes para obter sugestões baseadas em contextos específicos:
-
-- `@terminal` — fornece sugestões baseadas na saída do terminal.
-  - Ex.: `@terminal Como corrigir a mensagem de erro que estou vendo.`
-- `@vscode` — para saber mais sobre os recursos e APIs do VS Code.
-  - Ex.: `@vscode como eu mudo as cores do VS Code?`
-
-## Contexto seletivo: _chat participants_
-
-- `@github` — expande as informações que o Copilot pode fornecer.
-  - Dica: use `@github quais skills estão disponíveis?` para saber como usar esse agente.    
-  - Pode, por exemplo, fazer busca em repositórios ou em histórico de commits. 
-- `@data` — permite fazer análise dados no próprio chat do Copilot.
-  - Ex.: `@data crie um gráfico de barras a partir deste arquivo CSV.`
-
-## Contexto seletivo: _chat participants_
-
-::: {.callout-tip}
-Extensões do VS Code podem adicionar participantes específicos ao Copilot.
-:::
-
-## Contexto seletivo: _chat variables_
-
-Ao usar agentes como `@workspace` ou `@vscode`, por exemplo, você pode usar variáveis para referenciar contextos mais específicos.
-
-- Variáveis de chat são referenciadas com prefixo `#`.
-- Você pode usar por exemplo `#main.py` ou `#utils` para referenciar arquivos ou pastas específicas do projeto.
-
-. . .
-
-Você também pode arrastar um arquivo para a janela do chat do Copilot.
-
-- Ou clicar no ícone de clipe de papel para anexar arquivos.
-
-
-## Modos de uso do Chat Copilot
-
-No canto inferior esquerdo da janela do chat do Copilot, você pode escolher entre três modos de uso:
-
-- Ask
-- Plan
-- Agent
-
-## Modo [Ask]{.alert}
-
-- Para perguntas gerais e explicações.
-- Possíveis sugestões de código aparecem no Chat e você precisa copiar e colar no editor.
-
-## Modo [Plan]{.alert}
-
-- Permite criar um planejamento estruturado antes da implementação.
-  - Utilize várias interações até atingir o planejamento desejado.
-  - Com isso, você pode corrigir e/ou direcionar a solução ainda em nível de planejamento.
-  - Levando depois a uma implementação melhor (e com menor uso de tokens).
-- Ao final, é exibido um botão para disparar o início da implementação (modo agente, seguindo o planejamento)
-- Dica: você pode mudar para este modo diretamente usando o comando `/plan`.
-
-## Modo [Agent]{.alert}
-
-- Quando quiser que o Copilot trate uma tarefa específica de modo autônomo.
-- O próprio Copilot decide quais arquivos editar e como.
-- Pode sugerir comandos a serem executados no terminal (você precisa revisar e aprovar).
-- Funciona em modo interativo até que a tarefa seja concluída.
-- Tem impactos nos custos, pois cada interação pode consumir várias solicitações de LLM.
-
-## Planeje primeiro, implemente depois
-
-É altamente **recomendável separar o planejamento da implementação**
-
-- para alterações complexas que envolve vários arquivos.
-
-. . .
-
-Isso evita que a IA resolva o problema de forma errada
-
-- levando a desperdício de créditos de IA em um código que vai acabar sendo descartado.
-
-## Planeje primeiro, implemente depois
-
-1. [Explore]{.alert}
-
-- Use o modo de consulta ou um subagente para ler o código relevante e entender como ele funciona antes de fazer alterações.
-
-2. [Planeje]{.alert}
-
-- Use o agente de Planejamento para criar um plano de implementação estruturado. 
-- Revise e refine o plano antes de executá-lo.
-
-## Planeje primeiro, implemente depois
-
-3. [Implemente]{.alert}
-
-- Alterne para o modo de agente e implemente a partir do plano. 
-- Inclua testes ou saídas esperadas para que o agente possa verificar seu próprio trabalho. 
-- Execute sessões independentes do Copilot, Claude ou Codex em paralelo.
-
-## Planeje primeiro, implemente depois
-
-4. [Revise]{.alert}
-- Use pontos de verificação para revisar o progresso.
-- Retroceda se o agente se desviar do caminho
-- Solicite uma revisão de código do Copilot no resultado final da alteração (Pull Request).
-
-
-## Avançado: customização do Copilot
-
-Você pode customizar o comportamento do Copilot de diferentes formas.
-
-1. Com instruções customizadas (para todo o projeto ou para contextos específicos, como todos arquivos .py).
-2. Com arquivos de prompt para reutilização em tarefas repetitivas.
-3. Com modos de chat customizados (além de Ask, Plan e Agent).
-4. Escolhendo diferentes modelos de LLM (se sua assinatura permitir).
-
-## Avançado: customização do Copilot
-
-5. Usando servidores MCP que permite conectar serviços externos e ferramentas especilizados aumentando as capacidades do Copilot.
-
-. . .
-
-Não entraremos em detalhes nesses pontos nesta aula.
-
-- Para quem quiser saber mais acesse [Customize chat to your workflow](https://code.visualstudio.com/docs/copilot/customization/overview?originUrl=%2Fdocs%2Fcopilot%2Fcustomization%2Fprompt-files).
-
-
-# Trabalho Prático {background-color="#40666e"}
-
-##
-
-
-
-
