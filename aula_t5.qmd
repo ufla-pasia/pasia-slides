@@ -853,6 +853,66 @@ No canto inferior esquerdo da janela do chat do Copilot, você pode escolher ent
 - Funciona em modo interativo até que a tarefa seja concluída.
 - Tem impactos nos custos, pois cada interação pode consumir várias solicitações de LLM.
 
+
+## Modelos do GitHub Copilot
+
+Na parte inferior da janela do Chat você também pode escolher o modelo de IA usado pelo assistente.
+
+- Na opção `Auto` você deixa que o próprio Copilot escolha o modelo.
+- Você também pode escolher um modelo específico.
+
+##
+
+Cada modelo de IA possui pontos fortes diferentes. 
+
+- Alguns são melhores em raciocínio, 
+- outros se destacam na geração de código ou em respostas mais rápidas.
+
+. . .
+
+Escolher o modelo certo para sua tarefa melhora os resultados.
+
+##  
+
+**Adeque o modelo à complexidade da tarefa**
+
+- Use modelos rápidos para conclusões simples e código repetitivo. 
+- Alterne para modelos otimizados para raciocínio para planejamento, depuração ou decisões arquitetônicas.
+
+. . .
+
+**Use os modelos mais recentes**
+
+- Os modelos mais novos geralmente têm recursos aprimorados. 
+
+##
+
+**Fixe modelos em arquivos de prompts e agentes**
+
+- Especifique os modelos preferidos em seu arquivo de prompt ou definições de agente personalizadas 
+- para garantir que o modelo certo seja usado consistentemente para tarefas específicas.
+
+. . .
+
+**Experimente e compare**
+
+- Se você não estiver satisfeito com uma resposta, tente um modelo diferente. 
+- Modelos diferentes podem produzir resultados significativamente diferentes para o mesmo prompt.
+
+##
+
+**Ajuste o esforço de processamento para modelos de raciocínio**
+
+- Use o controle de esforço de processamento no seletor de modelos para aumentar o esforço para tarefas complexas ou reduzi-lo para tarefas mais simples.
+
+. . .
+
+**Considere o consumo de créditos**
+
+- Modelos mais avançados consomem mais créditos de IA por token. 
+- A seleção automática de modelos equilibra qualidade e custo automaticamente. 
+
+
 ## Planeje primeiro, implemente depois
 
 . . .
@@ -892,7 +952,6 @@ Isso evita que a IA resolva o problema de forma errada
 - Use pontos de verificação para revisar o progresso.
 - Retroceda se o agente se desviar do caminho
 - Solicite uma revisão de código do Copilot no resultado final da alteração (Pull Request).
-
 
 ## Avançado: customização do Copilot
 

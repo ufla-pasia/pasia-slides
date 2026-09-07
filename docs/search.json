@@ -7872,7 +7872,7 @@
     "href": "aula_t5.html#section-24",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "",
-    "text": "Vamos agora ver como o Copilot transforma nossos prompts em códigos utilizáveis.\n\nRepare que é um processo de entrada (processamento do prompt) e saída (código gerado)."
+    "text": "Cada modelo de IA possui pontos fortes diferentes.\n\nAlguns são melhores em raciocínio,\noutros se destacam na geração de código ou em respostas mais rápidas.\n\n\nEscolher o modelo certo para sua tarefa melhora os resultados."
   },
   {
     "objectID": "aula_t5.html#exemplos-de-chat-participants",
@@ -7907,7 +7907,7 @@
     "href": "aula_t5.html#section-25",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "",
-    "text": "O GitHub Copilot é alimentado por LLMs (Large Language Models).\n\nEles permitem escrever código de forma integrada e com reconhecimento de contexto."
+    "text": "Adeque o modelo à complexidade da tarefa\n\nUse modelos rápidos para conclusões simples e código repetitivo.\nAlterne para modelos otimizados para raciocínio para planejamento, depuração ou decisões arquitetônicas.\n\n\nUse os modelos mais recentes\n\nOs modelos mais novos geralmente têm recursos aprimorados."
   },
   {
     "objectID": "aula_t5.html#contexto-seletivo",
@@ -7922,5 +7922,40 @@
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Contexto seletivo",
     "text": "Contexto seletivo\nchat participants\n\nPermitem incluir contexto de domínio (como terminal, github, etc.)\n\n\nchat variables\n\nPermitem especificar o escopo a ser considerado."
+  },
+  {
+    "objectID": "aula_t5.html#modelos-do-github-copilot",
+    "href": "aula_t5.html#modelos-do-github-copilot",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Modelos do GitHub Copilot",
+    "text": "Modelos do GitHub Copilot\nNa parte inferior da janela do Chat você também pode escolher o modelo de IA usado pelo assistente.\n\nNa opção Auto você deixa que o próprio Copilot escolha o modelo.\nVocê também pode escolher um modelo específico."
+  },
+  {
+    "objectID": "aula_t5.html#section-26",
+    "href": "aula_t5.html#section-26",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "",
+    "text": "Fixe modelos em arquivos de prompts e agentes\n\nEspecifique os modelos preferidos em seu arquivo de prompt ou definições de agente personalizadas\npara garantir que o modelo certo seja usado consistentemente para tarefas específicas.\n\n\nExperimente e compare\n\nSe você não estiver satisfeito com uma resposta, tente um modelo diferente.\nModelos diferentes podem produzir resultados significativamente diferentes para o mesmo prompt."
+  },
+  {
+    "objectID": "aula_t5.html#section-27",
+    "href": "aula_t5.html#section-27",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "",
+    "text": "Ajuste o esforço de processamento para modelos de raciocínio\n\nUse o controle de esforço de processamento no seletor de modelos para aumentar o esforço para tarefas complexas ou reduzi-lo para tarefas mais simples.\n\n\nConsidere o consumo de créditos\n\nModelos mais avançados consomem mais créditos de IA por token.\nA seleção automática de modelos equilibra qualidade e custo automaticamente."
+  },
+  {
+    "objectID": "aula_t5.html#section-28",
+    "href": "aula_t5.html#section-28",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "",
+    "text": "Vamos agora ver como o Copilot transforma nossos prompts em códigos utilizáveis.\n\nRepare que é um processo de entrada (processamento do prompt) e saída (código gerado)."
+  },
+  {
+    "objectID": "aula_t5.html#section-29",
+    "href": "aula_t5.html#section-29",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "",
+    "text": "O GitHub Copilot é alimentado por LLMs (Large Language Models).\n\nEles permitem escrever código de forma integrada e com reconhecimento de contexto."
   }
 ]
