@@ -3161,7 +3161,7 @@
     "href": "aula_t5.html#section",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "",
-    "text": "O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Code.\n\nIntrodução à engenharia de prompts com o GitHub Copilot\nUsando recursos avançados do Copilot\nPrompt engineering for Copilot Chat\nAsking GitHub Copilot questions in your IDE"
+    "text": "O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Code.\n\nIntrodução à engenharia de prompts com o GitHub Copilot\nUsando recursos avançados do Copilot\nPrompt engineering for Copilot Chat\nAsking GitHub Copilot questions in your IDE\n\n\nÉ importante dizer que as ferramentas de IA estão evoluindo muito rápido.\n\nMas diversas estratégias fundamentais que veremos aqui continuam fazendo sentido."
   },
   {
     "objectID": "aula_t5.html#o-que-é-engenharia-de-prompt",
@@ -3189,7 +3189,7 @@
     "href": "aula_t5.html#forneça-contexto-suficiente-2",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "2. Forneça contexto suficiente",
-    "text": "2. Forneça contexto suficiente\nRepare que no exemplo anterior foram dados mais detalhes mas ao mesmo tempo as instruções são curtas e objetivas.\n\nEsta prática segue o princípio curto, equilibrando detalhe com concisão para garantir clareza e precisão na comunicação."
+    "text": "2. Forneça contexto suficiente\nRepare que no exemplo anterior foram dados mais detalhes, mas,\n\nao mesmo tempo, as instruções são curtas e objetivas.\n\n\nEsta prática segue o princípio curto,\n\nequilibrando detalhe com concisão para garantir clareza e precisão na comunicação."
   },
   {
     "objectID": "aula_t5.html#forneça-contexto-suficiente-3",
@@ -3231,21 +3231,21 @@
     "href": "aula_t5.html#aprendizado-one-shot",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Aprendizado One-Shot",
-    "text": "Aprendizado One-Shot\nÉ fornecido um único exemplo, ajudando o modelo a gerar uma resposta mais sensível ao contexto.\n\nTalvez você já tenha uma função semelhante e queira uma variante, por exemplo."
+    "text": "Aprendizado One-Shot\nÉ fornecido um único exemplo, ajudando o modelo a gerar uma resposta mais sensível ao contexto.\n\nPode ser um exemplo de entrada e saída.\nOu talvez você já tenha uma função semelhante e queira uma variante, por exemplo."
   },
   {
     "objectID": "aula_t5.html#aprendizado-few-shot",
     "href": "aula_t5.html#aprendizado-few-shot",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Aprendizado Few-Shot",
-    "text": "Aprendizado Few-Shot\nNesse métdodo, o Copilot é apresentado a vários exemplos, equilibrando a imprevisibilidade do zero-shot com a precisão do ajuste fino do one-shot.\n\nSuponha que deseje gerar um código que envie saudações ao usuário dependendo da hora do dia."
+    "text": "Aprendizado Few-Shot\nNesse métdodo, o Copilot é apresentado a vários exemplos,\n\nequilibrando a imprevisibilidade do zero-shot\ncom a precisão do ajuste fino do one-shot."
   },
   {
     "objectID": "aula_t5.html#section-2",
     "href": "aula_t5.html#section-2",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "",
-    "text": "Dica\n\n\nDica: se estiver fazendo experimentações de código por você mesmo, pode ser interessante desabilitar temporariamente o Copilot, evitando que esses “experimentos” interfiram no contexto do Copilot.\n\n\n\n\n\n\n\n\n\nDica\n\n\nDica: mantenha uma boa qualidade de código. Aqui vale o princípio “garbage in, garbage out”. Ou seja, o contexto pode piorar se o código que você está escrevendo estiver com muitos erros ou for de baixa qualidade."
+    "text": "Dica\n\n\nDica: se estiver fazendo experimentações de código por você mesmo, pode ser interessante desabilitar temporariamente o Copilot, evitando que esses “experimentos” interfiram no contexto do Copilot.\n\n\n\n\n\n\n\n\n\n\nDica\n\n\nDica: mantenha uma boa qualidade de código. Aqui vale o princípio “garbage in, garbage out”. Ou seja, o contexto pode piorar se o código que você está escrevendo estiver com muitos erros ou for de baixa qualidade."
   },
   {
     "objectID": "aula_t5.html#fluxo-de-entrada",
@@ -3259,7 +3259,7 @@
     "href": "aula_t5.html#transmissão-segura-coleta-de-contexto",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "1. Transmissão segura + Coleta de contexto",
-    "text": "1. Transmissão segura + Coleta de contexto\n\nPrompts transmitidos via HTTPS (seguro e confidencial).\nSimultaneamente, o Copilot coleta detalhes do ambiente:\n\nCódigo antes e depois do cursor (contexto).\nNome e tipo do arquivo que está sendo editado.\nAbas adjacentes abertas, para que a suestão se alinhe a outros trechos de código do mesmo projeto.\nInformações sobre a estrutura do projeto e caminhos de arquivos.\nInformações sobre linguagnes de programação e frameworks usados."
+    "text": "1. Transmissão segura + Coleta de contexto\nPrompts transmitidos via HTTPS (seguro e confidencial).\n\nSimultaneamente, o Copilot coleta detalhes do ambiente:\n\nCódigo antes e depois do cursor (contexto).\nNome e tipo do arquivo que está sendo editado.\nAbas vizinhas abertas, para que a sugestão se alinhe a outros trechos de código do mesmo projeto.\nInformações sobre a estrutura do projeto e caminhos de arquivos.\nInformações sobre linguagens de programação e frameworks usados."
   },
   {
     "objectID": "aula_t5.html#filtro-de-proxy",
@@ -3287,7 +3287,7 @@
     "href": "aula_t5.html#fluxo-de-saída",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Fluxo de Saída",
-    "text": "Fluxo de Saída\n![] (imagens/engprompt-3-github-copilot-outbound-flow.png){fig-align=“center” fig-alt=“Fluxo de saída do processamento de prompts do GitHub Copilot.” style=“max-height: 60vh;”}"
+    "text": "Fluxo de Saída"
   },
   {
     "objectID": "aula_t5.html#pós-processamento-e-validação-da-resposta",
@@ -3315,14 +3315,14 @@
     "href": "aula_t5.html#tratamento-de-dados-sugestões-de-código",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Tratamento de dados — Sugestões de código",
-    "text": "Tratamento de dados — Sugestões de código\n\nCopilot no editor de código não retém solicitações.\nCódigo, comentários e contexto são usados apenas no momento da sugestão.\nApós gerar a sugestão → solicitações são descartadas.\nAssinantes individuais podem recusar o compartilhamento de dados com o GitHub para treinar modelos."
+    "text": "Tratamento de dados — Sugestões de código\nCopilot no editor de código não retém solicitações.\n\nCódigo, comentários e contexto são usados apenas no momento da sugestão.\nApós gerar a sugestão → solicitações são descartadas.\n\n\nAssinantes individuais podem recusar o compartilhamento de dados com o GitHub para treinar modelos.\n\nIsso é altamente recomendável!"
   },
   {
     "objectID": "aula_t5.html#tratamento-de-dados-copilot-chat",
     "href": "aula_t5.html#tratamento-de-dados-copilot-chat",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Tratamento de dados — Copilot Chat",
-    "text": "Tratamento de dados — Copilot Chat\n\nFunciona como plataforma interativa, com histórico de conversas.\nDifere das sugestões de código (autocomplete):\n\nFormatação: respostas adaptadas à interface de chat, como realce de código.\nParticipação do usuário: permite perguntas de acompanhamento e refinamento.\nRetenção: solicitações/sugestões/contexto podem ser mantidos por até 28 dias (varia conforme o editor)."
+    "text": "Tratamento de dados — Copilot Chat\nFunciona como plataforma interativa, com histórico de conversas.\nDifere das sugestões de código (autocomplete):\n\nFormatação: respostas adaptadas à interface de chat, como realce de código.\nParticipação do usuário: permite perguntas de acompanhamento e refinamento.\nRetenção: solicitações/sugestões/contexto podem ser mantidos por até 28 dias (varia conforme o editor)."
   },
   {
     "objectID": "aula_t5.html#tipos-de-solicitações-no-copilot-chat",
@@ -3420,14 +3420,14 @@
     "href": "aula_t5.html#prompts-implícitos-slash-commands",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Prompts implícitos (slash commands)",
-    "text": "Prompts implícitos (slash commands)\nPodemos usar opções do Copilot fornecem prompts implícitos prédefinidos que podem melhorar a resposta.\n\n/doc — adiciona comentários ao código especificado ou selecionado.\n/explain — obtém explicações sobre o código.\n/fix — para correção de bugs.\n/generate — gera código para responder a um dado prompt.\n/help — obtém ajuda sobre como usar o chat do Copilot.\n/optimize — analisa e melhora o tempo de execução do código selecionado.\n/tests — cria testes unitários para o código selecionado."
+    "text": "Prompts implícitos (slash commands)\nPodemos usar opções do Copilot fornecem prompts implícitos prédefinidos que podem melhorar a resposta.\n\n/explain — obtém explicações sobre o código.\n/fix — para correção de bugs.\n/tests — cria testes unitários para o código selecionado.\n/clear — inicia um novo chat (contexto), marcando o atual como finalizado\n/fork — bifurca a conversa atual em um novo chat.\n/compact — libera espaço de contexto, compactando contexto atual."
   },
   {
     "objectID": "aula_t5.html#prompts-implícitos-slash-commands-1",
     "href": "aula_t5.html#prompts-implícitos-slash-commands-1",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Prompts implícitos (slash commands)",
-    "text": "Prompts implícitos (slash commands)\nEsses comandos facilitam a interação com o Copilopt,\n\npermitindo que sejam geradas respostas melhores sem ter que escrever prompts mais longos.\n\n\n\n\n\n\n\n\nDica\n\n\nCombine os comandos com o prompt que você deseja usar.\nExemplo: /explain como a biblioteca Pandas é usada neste código."
+    "text": "Prompts implícitos (slash commands)\nEsses comandos facilitam a interação com o Copilopt,\n\npermitindo que sejam geradas respostas melhores sem ter que escrever prompts mais longos.\n\n\n\n\n\n\n\n\nDica\n\n\nCombine os comandos com o prompt que você deseja usar.\nExemplo: /explain como a biblioteca Pandas é usada neste código.\n\n\n\n\n\nObs.: essa foi uma das funcionalidades que se alteraram muito desde a oferta anterior da disciplina."
   },
   {
     "objectID": "aula_t5.html#contexto-seletivo-chat-participants",
@@ -3455,21 +3455,21 @@
     "href": "aula_t5.html#modos-de-uso-do-chat-copilot",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Modos de uso do Chat Copilot",
-    "text": "Modos de uso do Chat Copilot\nNo canto inferior esquerdo da janela do chat do Copilot, você pode escolher entre três modos de uso:\n\nAsk\n\nPara perguntas gerais e explicações.\nPossíveis sugestões de código aparecem no Chat e você precisa copiar e colar no editor."
+    "text": "Modos de uso do Chat Copilot\nNo canto inferior esquerdo da janela do chat do Copilot, você pode escolher entre três modos de uso:\n\nAsk\nPlan\nAgent"
   },
   {
     "objectID": "aula_t5.html#histórico-do-chat-do-copilot",
     "href": "aula_t5.html#histórico-do-chat-do-copilot",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Histórico do Chat do Copilot",
-    "text": "Histórico do Chat do Copilot\nO Copilot mantém um histórico das conversas que você teve com ele.\n\nVocê pode acessar esse histórico clicando no ícone de relógio no canto superior esquerdo da janela do chat.\nIsso permite que você revise conversas anteriores, reutilize prompts eficazes e acompanhe o progresso de suas interações com o Copilot ao longo do tempo."
+    "text": "Histórico do Chat do Copilot\nO Copilot mantém um histórico das conversas que você teve com ele.\n\nVocê pode acessar esse histórico clicando no ícone de voltar no canto superior esquerdo da janela do chat.\nIsso permite que você revise conversas anteriores, reutilize prompts eficazes e acompanhe o progresso de suas interações com o Copilot ao longo do tempo."
   },
   {
     "objectID": "aula_t5.html#avançado-customização-do-copilot",
     "href": "aula_t5.html#avançado-customização-do-copilot",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Avançado: customização do Copilot",
-    "text": "Avançado: customização do Copilot\nVocê pode customizar o comportamento do Copilot de diferentes formas.\n\nCom instruções customizadas (para todo o projeto ou para contextos específicos, como todos arquivos .py).\nCom arquivos de prompt para reutilização em tarefas repetitivas.\nCom modos de chat customizados (além de Ask, Edit e Agent).\nEscolhendo diferentes modelos de LLM (se sua assinatura permitir)."
+    "text": "Avançado: customização do Copilot\nVocê pode customizar o comportamento do Copilot de diferentes formas.\n\nCom instruções customizadas (para todo o projeto ou para contextos específicos, como todos arquivos .py).\nCom arquivos de prompt para reutilização em tarefas repetitivas.\nCom modos de chat customizados (além de Ask, Plan e Agent).\nEscolhendo diferentes modelos de LLM (se sua assinatura permitir)."
   },
   {
     "objectID": "aula_t5.html#princípios-da-engenharia-de-prompt-os-4-ss-1",
@@ -3483,7 +3483,7 @@
     "href": "aula_t5.html#princípios-da-engenharia-de-prompt-os-4-ss-2",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Princípios da engenharia de Prompt — os 4 Ss",
-    "text": "Princípios da engenharia de Prompt — os 4 Ss\n\nCurto (short)\n\nSeja conciso: ser específico, mas direito ao ponto.\nA ideia é garantir clareza sem sobrecarregar o Copilot ou complicar a interação.\n\nContextual (surround)\n\nUse nomes de arquivos descritivos e mantenha arquivos relacionados abertos no editor.\nIsso dá contexto rico ao Copilot, levando a sugestões mais relevantes."
+    "text": "Princípios da engenharia de Prompt — os 4 Ss\n\nCurto (short)\n\nSeja conciso: ser específico, mas direto ao ponto.\nA ideia é garantir clareza sem sobrecarregar o Copilot ou complicar a interação.\n\nContextual (surround)\n\nUse nomes de arquivos descritivos e mantenha arquivos relacionados abertos no editor.\nIsso dá contexto rico ao Copilot, levando a sugestões mais relevantes."
   },
   {
     "objectID": "aula_t5.html#forneça-clareza-suficiente",
@@ -3511,7 +3511,7 @@
     "href": "aula_t5.html#forneça-contexto-suficiente-6",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "2. Forneça contexto suficiente",
-    "text": "2. Forneça contexto suficiente\nForneça exemplos de código.\n\nSe for trabalhar com uma nova biblioteca, e o Copilot gerar respostas de outras ou de versões antigas,\nforneça um exemplo de uso da nova biblioteca mesmo que não seja o que você quer fazer.\nIsso ajuda o Copilot a gerar código para a versão mais recente da biblioteca.\n(e depois apague o código de exemplo que colocou)."
+    "text": "2. Forneça contexto suficiente\nForneça exemplos de código.\n\nSe for trabalhar com uma nova biblioteca, e o Copilot gerar respostas de outras ou de versões antigas:\n\nforneça um exemplo de uso da nova biblioteca mesmo que não seja o que você quer fazer.\n\nIsso ajuda o Copilot a gerar código para a versão mais recente da biblioteca.\n\n(e depois apague o código de exemplo que colocou).\n\n\n\nObs.: veremos mais adiante que skills são hoje uma forma mais prática de tratar essa quetão."
   },
   {
     "objectID": "aula_t5.html#itere",
@@ -3539,14 +3539,14 @@
     "href": "aula_t5.html#section-4",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "",
-    "text": "Vamos agora ver como o Copilot transforma nossos prompts em códigos utilizáveis.\n\nRepare que é um processo de entrada (processamento do prompt) e saída (código gerado)."
+    "text": "Imagine, por exemplo, que você fez várias interações no mesmo chat para realizar uma tarefa\n\n\n\n\nPrompt\n\n\nInteração 1: “Crie uma função de autenticação de usuário”\nInteração 2: “Adicione tratamento de erros para credenciais inválidas”\nInteração 3: “Adicione testes unitários para a função de autenticação”\nInteração 4: “Adicione comentários JSDoc para documentar a função”\nInteração 5: “Otimize a função para melhor desempenho”"
   },
   {
     "objectID": "aula_t5.html#aprendizado-few-shot-1",
     "href": "aula_t5.html#aprendizado-few-shot-1",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Aprendizado Few-Shot",
-    "text": "Aprendizado Few-Shot"
+    "text": "Aprendizado Few-Shot\nSuponha que deseje gerar um código que envie saudações ao usuário dependendo da hora do dia.\n\n# Exemplo 1: Mensagem de saudação para a manhã\n# Entrada: 9:00\n# Saída: \"Bom dia!\"\n\n# Exemplo 2: Mensagem de saudação para a tarde\n# Entrada: 14:00\n# Saída: \"Boa tarde!\"\n\n# Exemplo 3: Mensagem de saudação para a noite\n# Entrada: 19:00\n# Saída: \"Boa noite!\"\n\n# Agora, gere um código python que receba a hora atual como entrada usando o \n# módulo datetime e retorne a mensagem de saudação apropriada"
   },
   {
     "objectID": "aula_t5.html#pós-processamento-e-validação-da-resposta-1",
@@ -3560,14 +3560,14 @@
     "href": "aula_t5.html#section-5",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "",
-    "text": "O GitHub Copilot é alimentado por LLMs (Large Language Models).\n\nEles permitem escrever código de forma integrada e com reconhecimento de contexto."
+    "text": "Prompt\n\n\nInteração 1: “Crie uma função de autenticação de usuário”\nInteração 2: “Adicione tratamento de erros para credenciais inválidas”\nInteração 3: “Adicione testes unitários para a função de autenticação”\nInteração 4: “Adicione comentários JSDoc para documentar a função”\nInteração 5: “Otimize a função para melhor desempenho”\n\n\n\n\nCada interação leva todo o histórico do chat, fazendo com que o contexto tenha sempre a conversa anterior mais a atual.\n\nIsso pode aumentar consideravelmente o consumo de tokens.\nResumir o contexto ou reiniciar a conversa pode reduzir o consumo."
   },
   {
     "objectID": "aula_t5.html#contexto-seletivo-chat-participants-2",
     "href": "aula_t5.html#contexto-seletivo-chat-participants-2",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Contexto seletivo: chat participants",
-    "text": "Contexto seletivo: chat participants\n\n@github — expande as informações que o Copilot pode fornecer.\n\nDica: use @github what skills are available? para saber como usar esse agente.\n\nEm portugês essa pergunta não funciona :( … mas a resposta vem em português.\n\nPode, por exemplo, fazer busca em repositórios ou em histórico de commits.\n\n@data — permite fazer análise dados no próprio chat do Copilot.\n\nEx.: @data crie um gráfico de barras a partir deste arquivo CSV."
+    "text": "Contexto seletivo: chat participants\n\n@github — expande as informações que o Copilot pode fornecer.\n\nDica: use @github quais skills estão disponíveis? para saber como usar esse agente.\n\nPode, por exemplo, fazer busca em repositórios ou em histórico de commits.\n\n@data — permite fazer análise dados no próprio chat do Copilot.\n\nEx.: @data crie um gráfico de barras a partir deste arquivo CSV."
   },
   {
     "objectID": "aula_t5.html#contexto-seletivo-chat-participants-3",
@@ -3581,7 +3581,7 @@
     "href": "aula_t5.html#modos-de-uso-do-chat-copilot-1",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Modos de uso do Chat Copilot",
-    "text": "Modos de uso do Chat Copilot\nEdit\n\nPara atualização rápida e específica de um conjunto definido de arquivos.\nPermite controle mais granular sobre as edições propostas pelo Copilot.\nPossibilitando assim controle total sobre o número de solicitações de LLM que o Copilot usa."
+    "text": "Modos de uso do Chat Copilot\nPlan\n\nPermite criar um planejamento estruturado antes da implementação.\n\nUtilize várias interações até atingir o planejamento desejado.\nCom isso, você pode corrigir e/ou direcionar a solução ainda em nível de planejamento.\nLevando depois a uma implementação melhor (e com menor uso de tokens).\n\nAo final, é exibido um botão para disparar o início da implementação (modo agente, seguindo o planejamento)\nDica: você pode mudar para este modo diretamente usando o comando /plan."
   },
   {
     "objectID": "aula_t5.html#modos-de-uso-do-chat-copilot-2",
@@ -3595,21 +3595,21 @@
     "href": "aula_t5.html#histórico-do-chat-do-copilot-1",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Histórico do Chat do Copilot",
-    "text": "Histórico do Chat do Copilot\n\n\n\n\n\n\nDica\n\n\nSe for começar uma nova tarefa que não tem relação com o que você estava fazendo, é melhor começar uma nova conversa clicando no ícone de mais (+) no canto superior esquerdo."
+    "text": "Histórico do Chat do Copilot\n\n\n\n\n\n\nDica\n\n\nSe for começar uma nova tarefa que não tem relação com o que você estava fazendo, é melhor começar uma nova conversa clicando no ícone de mais (+) na barra superior da janela de chat."
   },
   {
     "objectID": "aula_t5.html#avançado-customização-do-copilot-1",
     "href": "aula_t5.html#avançado-customização-do-copilot-1",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "Avançado: customização do Copilot",
-    "text": "Avançado: customização do Copilot\n\nUsando servidores MCP que permite conectar serviços externos e ferramentas especilizados aumentando as capacidades do Copilot.\n\n\nNão entraremos em detalhes aqui.\n\nPara quem quiser saber mais acesse Customize chat to your workflow."
+    "text": "Avançado: customização do Copilot\n\nUsando servidores MCP que permite conectar serviços externos e ferramentas especilizados aumentando as capacidades do Copilot.\n\n\nNão entraremos em detalhes nesses pontos nesta aula.\n\nPara quem quiser saber mais acesse Customize chat to your workflow."
   },
   {
     "objectID": "aula_t5.html#section-6",
     "href": "aula_t5.html#section-6",
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "",
-    "text": "Generalização de funções:\n\nAo escrever funções, tente torná-las o mais genéricas possível.\nIsso começa pelo prório prompt e/ou docstring da função.\n\n\nExemplo:\nSe você tem uma função que recebe uma lista de dados e faz algum processamento.\n\nEssa função não precisa se preocupar sobre como os dados foram obtidos.\nO que ela precisa deixar claro é o formato dos dados que ela espera.\nCom isso ela pode ser usada em diferentes contextos.\n\nEx.: não faz diferença se os dados vieram de arquivo ou não."
+    "text": "Para gerenciar isso de forma eficiente:\n\nrecomece e forneça um contexto focado para novos recursos.\n\n\nComece um chat do zero com detalhes essenciais em vez de retomar toda a conversa.\n\nUse referências concisas a trabalhos anteriores em vez de repetir implementações completas."
   },
   {
     "objectID": "aula_t5.html#generalização-de-funções",
@@ -7551,5 +7551,201 @@
     "title": "Depuração e Decomposição de Problemas",
     "section": "Design dos autores do livro",
     "text": "Design dos autores do livro"
+  },
+  {
+    "objectID": "aula_t5.html#aula-anp-10-de-setembro",
+    "href": "aula_t5.html#aula-anp-10-de-setembro",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Aula ANP 10 de Setembro",
+    "text": "Aula ANP 10 de Setembro\n10/09 teremos o UFLA de Portas Abertas.\n\nAssim não teremos aula presencial.\nA presença será dada pela entrega da atividade de decomposição de problemas da aula passada.\nÉ essencial apresentar o diagrama da decomposição do problema."
+  },
+  {
+    "objectID": "aula_t5.html#aprendizado-few-shot-2",
+    "href": "aula_t5.html#aprendizado-few-shot-2",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Aprendizado Few-Shot",
+    "text": "Aprendizado Few-Shot\nfrom datetime import datetime\n\ndef saudacao():\n    # Obtém a hora atual\n    agora = datetime.now()\n    hora_atual = agora.hour\n\n    # Determina a saudação com base na hora atual\n    if 5 &lt;= hora_atual &lt; 12:\n        return \"Bom dia!\"\n    elif 12 &lt;= hora_atual &lt; 18:\n        return \"Boa tarde!\"\n    else:\n        return \"Boa noite!\"\n\n# Chama a função e imprime a saudação\nprint(saudacao())"
+  },
+  {
+    "objectID": "aula_t5.html#aprendizado-zero-shot-1",
+    "href": "aula_t5.html#aprendizado-zero-shot-1",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Aprendizado Zero-Shot",
+    "text": "Aprendizado Zero-Shot\n# Preciso de uma função para converter temperaturas\n# de Celsius para Fahrenheit"
+  },
+  {
+    "objectID": "aula_t5.html#aprendizado-zero-shot-2",
+    "href": "aula_t5.html#aprendizado-zero-shot-2",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Aprendizado Zero-Shot",
+    "text": "Aprendizado Zero-Shot\n# Preciso de uma função para converter temperaturas\n# de Celsius para Fahrenheit\n\ndef celsius_para_fahrenheit(celsius):\n    fahrenheit = (celsius * 9/5) + 32\n    return fahrenheit"
+  },
+  {
+    "objectID": "aula_t5.html#aprendizado-one-shot-1",
+    "href": "aula_t5.html#aprendizado-one-shot-1",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Aprendizado One-Shot",
+    "text": "Aprendizado One-Shot\n# Exemplo: função para converter temperaturas de Fahrenheit para Celsius\n\ndef fahrenheit_para_celsius(fahrenheit):\n    celsius = (fahrenheit - 32) * 5/9\n    return celsius"
+  },
+  {
+    "objectID": "aula_t5.html#aprendizado-one-shot-2",
+    "href": "aula_t5.html#aprendizado-one-shot-2",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Aprendizado One-Shot",
+    "text": "Aprendizado One-Shot\n# Exemplo: função para converter temperaturas de Fahrenheit para Celsius\n\ndef fahrenheit_para_celsius(fahrenheit):\n    celsius = (fahrenheit - 32) * 5/9\n    return celsius\n\n# Agora preciso de um função para converter temperaturas de Celsius para Fahrenheit"
+  },
+  {
+    "objectID": "aula_t5.html#aprendizado-one-shot-3",
+    "href": "aula_t5.html#aprendizado-one-shot-3",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Aprendizado One-Shot",
+    "text": "Aprendizado One-Shot\n# Exemplo: função para converter temperaturas de Fahrenheit para Celsius\n\ndef fahrenheit_para_celsius(fahrenheit):\n    celsius = (fahrenheit - 32) * 5/9\n    return celsius\n\n# Agora preciso de um função para converter temperaturas de Celsius para Fahrenheit\n\ndef celsius_para_fahrenheit(celsius):\n    fahrenheit = (celsius * 9/5) + 32\n    return fahrenheit"
+  },
+  {
+    "objectID": "aula_t5.html#section-7",
+    "href": "aula_t5.html#section-7",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "",
+    "text": "Definir uma persona pode levar a código pronto para produção mais rapidamente,\n\nincorporando conhecimento do domínio nas implementações iniciais,\nreduzindo a necessidade de múltiplos ciclos de revisão.\n\n\nAgora que sabemos como o Copilot usa nossas sugestões para aprender,\n\nvamos entender como ele usa essas sugestões para sugerir código."
+  },
+  {
+    "objectID": "aula_t5.html#section-8",
+    "href": "aula_t5.html#section-8",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "",
+    "text": "Vamos agora ver como o Copilot transforma nossos prompts em códigos utilizáveis.\n\nRepare que é um processo de entrada (processamento do prompt) e saída (código gerado)."
+  },
+  {
+    "objectID": "aula_t5.html#section-9",
+    "href": "aula_t5.html#section-9",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "",
+    "text": "O GitHub Copilot é alimentado por LLMs (Large Language Models).\n\nEles permitem escrever código de forma integrada e com reconhecimento de contexto."
+  },
+  {
+    "objectID": "aula_t5.html#persona-para-tarefas-especializadas",
+    "href": "aula_t5.html#persona-para-tarefas-especializadas",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Persona para tarefas especializadas",
+    "text": "Persona para tarefas especializadas\n\nPodemos instruir o Copilot a agir como um tipo específico de especialista (persona).\n\nIsso pode melhorar significativamente a qualidade e a relevância do código gerado para domínios especializados.\n\n\n\nEssa abordagem ajuda a acelerar o desenvolvimento,\n\npois tende a levar a soluções mais direcionadas já na primeira tentativa."
+  },
+  {
+    "objectID": "aula_t5.html#função-de-especialista-em-segurança",
+    "href": "aula_t5.html#função-de-especialista-em-segurança",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Função de especialista em segurança",
+    "text": "Função de especialista em segurança\nExemplo: Ao trabalhar em recursos críticos para a segurança,\n\nconfigure o Copilot para pensar como um especialista na área:\n\n\n\n\n\n\nPrompt\n\n\nAtue como um especialista em cibersegurança. Crie uma função de validação de senha que verifique vulnerabilidades comuns e siga as diretrizes da OWASP."
+  },
+  {
+    "objectID": "aula_t5.html#função-de-otimização-de-desempenho",
+    "href": "aula_t5.html#função-de-otimização-de-desempenho",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Função de otimização de desempenho",
+    "text": "Função de otimização de desempenho\nPara código crítico em termos de desempenho, use a função de especialista em desempenho:\n\n\n\n\n\nPrompt\n\n\nAtue como um especialista em otimização de desempenho. Refatore este algoritmo de classificação para lidar com grandes conjuntos de dados de forma eficiente."
+  },
+  {
+    "objectID": "aula_t5.html#função-de-especialista-de-testes",
+    "href": "aula_t5.html#função-de-especialista-de-testes",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Função de especialista de testes",
+    "text": "Função de especialista de testes\nAo criar suítes de testes abrangentes, aproveite a perspectiva de um especialista em testes:\n\n\n\n\n\nPrompt\n\n\nAtue como um especialista em testes. Crie testes unitários abrangentes para este módulo de processamento de pagamentos, incluindo casos extremos e cenários de erro."
+  },
+  {
+    "objectID": "aula_t5.html#encadeamento-de-prompt-e-gerenciamento-do-histórico-do-chat",
+    "href": "aula_t5.html#encadeamento-de-prompt-e-gerenciamento-do-histórico-do-chat",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Encadeamento de Prompt e Gerenciamento do Histórico do Chat",
+    "text": "Encadeamento de Prompt e Gerenciamento do Histórico do Chat\n\nAo trabalhar em funcionalidades com várias etapas\n\nA conversa no chat do Copilot pode se tornar extensa.\n\n\n\nSe, por um lado, o contexto ajuda o Copilot a fornecer respostas melhores.\n\nPor outro, manter longos históricos pode tornar o processo ineficiente e caro."
+  },
+  {
+    "objectID": "aula_t5.html#função-de-especialista-em-segurança-1",
+    "href": "aula_t5.html#função-de-especialista-em-segurança-1",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Função de especialista em segurança",
+    "text": "Função de especialista em segurança\n\n\n\n\nPrompt\n\n\nAtue como um especialista em cibersegurança. Crie uma função de validação de senha que verifique vulnerabilidades comuns e siga as diretrizes da OWASP.\n\n\n\n\nEssa abordagem normalmente gera código que inclui:\n\nSanitização de entrada\nProteção contra ataques comuns\nPadrões de validação padrão do setor\nMelhores práticas de segurança"
+  },
+  {
+    "objectID": "aula_t5.html#função-de-otimização-de-desempenho-1",
+    "href": "aula_t5.html#função-de-otimização-de-desempenho-1",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Função de otimização de desempenho",
+    "text": "Função de otimização de desempenho\n\n\n\n\nPrompt\n\n\nAtue como um especialista em otimização de desempenho. Refatore este algoritmo de classificação para lidar com grandes conjuntos de dados de forma eficiente.\n\n\n\n\nIsso geralmente resulta em:\n\nAlgoritmos e estruturas de dados otimizados\nImplementações com uso eficiente de memória\nConsiderações sobre escalabilidade\nSugestões para monitoramento de desempenho\nPapel de especialista em testes"
+  },
+  {
+    "objectID": "aula_t5.html#função-de-especialista-de-testes-1",
+    "href": "aula_t5.html#função-de-especialista-de-testes-1",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Função de especialista de testes",
+    "text": "Função de especialista de testes\n\n\n\n\nPrompt\n\n\nAtue como um especialista em testes. Crie testes unitários abrangentes para este módulo de processamento de pagamentos, incluindo casos extremos e cenários de erro.\n\n\n\n\nIsso normalmente produz:\n\nCobertura de testes completa\nTratamento de casos extremos\nImplementações simuladas (mocks)\nTestes de condições de erro"
+  },
+  {
+    "objectID": "aula_t5.html#transmissão-segura-coleta-de-contexto-1",
+    "href": "aula_t5.html#transmissão-segura-coleta-de-contexto-1",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "1. Transmissão segura + Coleta de contexto",
+    "text": "1. Transmissão segura + Coleta de contexto\nSimultaneamente, o Copilot coleta detalhes do ambiente:\n\nPré-processamento usando técnica Fill-in-the-Midle (FIM).\n\nModelos especializados em programação são treinados para preencher o meio (lacuna), em vez de tratar apenas geração da próxima palavra a partir do contexto anterior.\n\n\n\nObs.: o contexto coletado tem evoluído rapidamente.\n\nEspecialmente no modo agente, o Copilot pode fazer busca em todo o repositório de código."
+  },
+  {
+    "objectID": "aula_t5.html#janelas-de-contexto-são-limitadas",
+    "href": "aula_t5.html#janelas-de-contexto-são-limitadas",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Janelas de contexto são limitadas",
+    "text": "Janelas de contexto são limitadas\nJanela de contexto é a quantidade de código/texto que o modelo processa simultaneamente.\n\n\n\n\n\n\n\n\nEla Isso inclui não só o prompt utilizado,\n\nmas também o contexto do arquivo e do projeto."
+  },
+  {
+    "objectID": "aula_t5.html#janelas-de-contexto-são-limitadas-1",
+    "href": "aula_t5.html#janelas-de-contexto-são-limitadas-1",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Janelas de contexto são limitadas",
+    "text": "Janelas de contexto são limitadas\nO tamanho máximo da janela de contexto pode variar de acordo com a versão do Copilot\n\nContextos maiores podem ser úteis em determinadas circunstâncias.\nMas têm alto custo, e podem levar a respostas imprecisas e menos úteis."
+  },
+  {
+    "objectID": "aula_t5.html#modo-ask",
+    "href": "aula_t5.html#modo-ask",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Modo Ask",
+    "text": "Modo Ask\n\nPara perguntas gerais e explicações.\nPossíveis sugestões de código aparecem no Chat e você precisa copiar e colar no editor."
+  },
+  {
+    "objectID": "aula_t5.html#modo-plan",
+    "href": "aula_t5.html#modo-plan",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Modo Plan",
+    "text": "Modo Plan\n\nPermite criar um planejamento estruturado antes da implementação.\n\nUtilize várias interações até atingir o planejamento desejado.\nCom isso, você pode corrigir e/ou direcionar a solução ainda em nível de planejamento.\nLevando depois a uma implementação melhor (e com menor uso de tokens).\n\nAo final, é exibido um botão para disparar o início da implementação (modo agente, seguindo o planejamento)\nDica: você pode mudar para este modo diretamente usando o comando /plan."
+  },
+  {
+    "objectID": "aula_t5.html#modo-agent",
+    "href": "aula_t5.html#modo-agent",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Modo Agent",
+    "text": "Modo Agent\n\nQuando quiser que o Copilot trate uma tarefa específica de modo autônomo.\nO próprio Copilot decide quais arquivos editar e como.\nPode sugerir comandos a serem executados no terminal (você precisa revisar e aprovar).\nFunciona em modo interativo até que a tarefa seja concluída.\nTem impactos nos custos, pois cada interação pode consumir várias solicitações de LLM."
+  },
+  {
+    "objectID": "aula_t5.html#planeje-primeiro-implemente-depois",
+    "href": "aula_t5.html#planeje-primeiro-implemente-depois",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Planeje primeiro, implemente depois",
+    "text": "Planeje primeiro, implemente depois\nÉ altamente recomendável separar o planejamento da implementação\n\npara alterações complexas que envolve vários arquivos.\n\n\nIsso evita que a IA resolva o problema de forma errada\n\nlevando a desperdício de créditos de IA em um código que vai acabar sendo descartado."
+  },
+  {
+    "objectID": "aula_t5.html#planeje-primeiro-implemente-depois-1",
+    "href": "aula_t5.html#planeje-primeiro-implemente-depois-1",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Planeje primeiro, implemente depois",
+    "text": "Planeje primeiro, implemente depois\n\nExplore\n\n\nUse o modo de consulta ou um subagente para ler o código relevante e entender como ele funciona antes de fazer alterações.\n\n\nPlaneje\n\n\nUse o agente de Planejamento para criar um plano de implementação estruturado.\nRevise e refine o plano antes de executá-lo."
+  },
+  {
+    "objectID": "aula_t5.html#planeje-primeiro-implemente-depois-2",
+    "href": "aula_t5.html#planeje-primeiro-implemente-depois-2",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Planeje primeiro, implemente depois",
+    "text": "Planeje primeiro, implemente depois\n\nImplemente\n\n\nAlterne para o modo de agente e implemente a partir do plano.\nInclua testes ou saídas esperadas para que o agente possa verificar seu próprio trabalho.\nExecute sessões independentes do Copilot, Claude ou Codex em paralelo."
+  },
+  {
+    "objectID": "aula_t5.html#planeje-primeiro-implemente-depois-3",
+    "href": "aula_t5.html#planeje-primeiro-implemente-depois-3",
+    "title": "Engenharia de Prompt com o GitHub Copilot",
+    "section": "Planeje primeiro, implemente depois",
+    "text": "Planeje primeiro, implemente depois\n\nRevise\n\n\nUse pontos de verificação para revisar o progresso.\nRetroceda se o agente se desviar do caminho\nSolicite uma revisão de código do Copilot no resultado final da alteração (Pull Request)."
   }
 ]

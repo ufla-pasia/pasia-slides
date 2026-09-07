@@ -15,7 +15,7 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Prof.&nbsp;Julio César Alves">
-  <meta name="dcterms.date" content="2025-08-09">
+  <meta name="dcterms.date" content="2026-07-09">
   <title>GAC126 - Programação Aplicada com Suporte de IA – Engenharia de Prompt com o GitHub Copilot</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -101,7 +101,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-b307727eeaef5feb801fee99893ab72c.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-738eed0b7b62565845709334444022c6.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -216,7 +216,7 @@
     </div>
 </div>
 
-  <p class="date">08/09/2025</p>
+  <p class="date">07/09/2026</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -227,6 +227,12 @@
 <li><a href="https://code.visualstudio.com/docs/copilot/chat/prompt-crafting">Prompt engineering for Copilot Chat</a></li>
 <li><a href="https://docs.github.com/en/copilot/how-tos/use-chat/use-chat-in-ide">Asking GitHub Copilot questions in your IDE</a></li>
 </ul>
+<div class="fragment">
+<p>É importante dizer que as ferramentas de IA estão evoluindo muito rápido.</p>
+<ul>
+<li class="fragment">Mas diversas estratégias fundamentais que veremos aqui continuam fazendo sentido.</li>
+</ul>
+</div>
 </section>
 <section>
 <section id="introdução" class="title-slide slide level1 center" data-background-color="#40666e">
@@ -277,7 +283,7 @@
 <ul>
 <li class="fragment"><strong>Curto</strong> (<em>short</em>)
 <ul>
-<li class="fragment">Seja conciso: ser específico, mas direito ao ponto.</li>
+<li class="fragment">Seja conciso: ser específico, mas direto ao ponto.</li>
 <li class="fragment">A ideia é garantir clareza sem sobrecarregar o Copilot ou complicar a interação.</li>
 </ul></li>
 <li class="fragment"><strong>Contextual</strong> (<em>surround</em>)
@@ -338,10 +344,16 @@
 </section>
 <section id="forneça-contexto-suficiente-2" class="slide level2">
 <h2>2. Forneça contexto suficiente</h2>
-<p>Repare que no exemplo anterior foram dados mais detalhes mas ao mesmo tempo as instruções são curtas e objetivas.</p>
+<p>Repare que no exemplo anterior foram dados mais detalhes, mas,</p>
 <ul>
-<li class="fragment">Esta prática segue o princípio <strong>curto</strong>, equilibrando detalhe com concisão para garantir clareza e precisão na comunicação.</li>
+<li class="fragment">ao mesmo tempo, as instruções são curtas e objetivas.</li>
 </ul>
+<div class="fragment">
+<p>Esta prática segue o princípio <strong>curto</strong>,</p>
+<ul>
+<li class="fragment">equilibrando detalhe com concisão para garantir clareza e precisão na comunicação.</li>
+</ul>
+</div>
 </section>
 <section id="forneça-contexto-suficiente-3" class="slide level2">
 <h2>2. Forneça contexto suficiente</h2>
@@ -374,11 +386,18 @@
 <h2>2. Forneça contexto suficiente</h2>
 <p>Forneça exemplos de código.</p>
 <ul>
-<li class="fragment">Se for trabalhar com uma nova biblioteca, e o Copilot gerar respostas de outras ou de versões antigas,</li>
+<li class="fragment">Se for trabalhar com uma nova biblioteca, e o Copilot gerar respostas de outras ou de versões antigas:
+<ul>
 <li class="fragment">forneça um exemplo de uso da nova biblioteca mesmo que não seja o que você quer fazer.</li>
-<li class="fragment">Isso ajuda o Copilot a gerar código para a versão mais recente da biblioteca.</li>
+</ul></li>
+<li class="fragment">Isso ajuda o Copilot a gerar código para a versão mais recente da biblioteca.
+<ul>
 <li class="fragment">(e depois apague o código de exemplo que colocou).</li>
+</ul></li>
 </ul>
+<div class="fragment">
+<p>Obs.: veremos mais adiante que <em>skills</em> são hoje uma forma mais prática de tratar essa quetão.</p>
+</div>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
@@ -395,6 +414,7 @@
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -405,6 +425,7 @@
 </div>
 <div class="callout-content">
 <p>Dica: mantenha uma boa qualidade de código. Aqui vale o princípio <em>“garbage in, garbage out”</em>. Ou seja, o contexto pode piorar se o código que você está escrevendo estiver com muitos erros ou for de baixa qualidade.</p>
+</div>
 </div>
 </div>
 </div>
@@ -474,39 +495,332 @@
 <ul>
 <li class="fragment">Escrevemos o comentário do que queremos diretamente, sem exemplos.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imagens/engprompt-2-create-temp-conversion-from-comment.png" class="quarto-figure quarto-figure-center" alt="Exemplo de aprendizado zero-shot."></p>
-</figure>
-</div>
+</section>
+<section id="aprendizado-zero-shot-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Aprendizado Zero-Shot</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb4-1" class="hljs-ln-code"><a></a><span class="co"># Preciso de uma função para converter temperaturas</span></span>
+<span id="cb4-2" class="hljs-ln-code"><a></a><span class="co"># de Celsius para Fahrenheit</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="aprendizado-zero-shot-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Aprendizado Zero-Shot</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb5-1" class="hljs-ln-code"><a></a><span class="co"># Preciso de uma função para converter temperaturas</span></span>
+<span id="cb5-2" class="hljs-ln-code"><a></a><span class="co"># de Celsius para Fahrenheit</span></span>
+<span id="cb5-3" class="hljs-ln-code"><a></a></span>
+<span id="cb5-4" class="hljs-ln-code"><a></a><span class="kw">def</span> celsius_para_fahrenheit(celsius):</span>
+<span id="cb5-5" class="hljs-ln-code"><a></a>    fahrenheit <span class="op">=</span> (celsius <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb5-6" class="hljs-ln-code"><a></a>    <span class="cf">return</span> fahrenheit</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="aprendizado-one-shot" class="slide level2">
 <h2>Aprendizado One-Shot</h2>
 <p>É fornecido um único exemplo, ajudando o modelo a gerar uma resposta mais sensível ao contexto.</p>
 <ul>
-<li class="fragment">Talvez você já tenha uma função semelhante e queira uma variante, por exemplo.</li>
+<li class="fragment">Pode ser um exemplo de entrada e saída.</li>
+<li class="fragment">Ou talvez você já tenha uma função semelhante e queira uma variante, por exemplo.</li>
 </ul>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imagens/engprompt-2-create-temp-conversion-from-example.png" class="quarto-figure quarto-figure-center" alt="Exemplo de aprendizado one-shot."></p>
-</figure>
-</div>
-</div>
+</section>
+<section id="aprendizado-one-shot-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Aprendizado One-Shot</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb6-1" class="hljs-ln-code"><a></a><span class="co"># Exemplo: função para converter temperaturas de Fahrenheit para Celsius</span></span>
+<span id="cb6-2" class="hljs-ln-code"><a></a></span>
+<span id="cb6-3" class="hljs-ln-code"><a></a><span class="kw">def</span> fahrenheit_para_celsius(fahrenheit):</span>
+<span id="cb6-4" class="hljs-ln-code"><a></a>    celsius <span class="op">=</span> (fahrenheit <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
+<span id="cb6-5" class="hljs-ln-code"><a></a>    <span class="cf">return</span> celsius</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="aprendizado-one-shot-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Aprendizado One-Shot</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb7-1" class="hljs-ln-code"><a></a><span class="co"># Exemplo: função para converter temperaturas de Fahrenheit para Celsius</span></span>
+<span id="cb7-2" class="hljs-ln-code"><a></a></span>
+<span id="cb7-3" class="hljs-ln-code"><a></a><span class="kw">def</span> fahrenheit_para_celsius(fahrenheit):</span>
+<span id="cb7-4" class="hljs-ln-code"><a></a>    celsius <span class="op">=</span> (fahrenheit <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
+<span id="cb7-5" class="hljs-ln-code"><a></a>    <span class="cf">return</span> celsius</span>
+<span id="cb7-6" class="hljs-ln-code"><a></a></span>
+<span id="cb7-7" class="hljs-ln-code"><a></a><span class="co"># Agora preciso de um função para converter temperaturas de Celsius para Fahrenheit</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="aprendizado-one-shot-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Aprendizado One-Shot</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb8-1" class="hljs-ln-code"><a></a><span class="co"># Exemplo: função para converter temperaturas de Fahrenheit para Celsius</span></span>
+<span id="cb8-2" class="hljs-ln-code"><a></a></span>
+<span id="cb8-3" class="hljs-ln-code"><a></a><span class="kw">def</span> fahrenheit_para_celsius(fahrenheit):</span>
+<span id="cb8-4" class="hljs-ln-code"><a></a>    celsius <span class="op">=</span> (fahrenheit <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span></span>
+<span id="cb8-5" class="hljs-ln-code"><a></a>    <span class="cf">return</span> celsius</span>
+<span id="cb8-6" class="hljs-ln-code"><a></a></span>
+<span id="cb8-7" class="hljs-ln-code"><a></a><span class="co"># Agora preciso de um função para converter temperaturas de Celsius para Fahrenheit</span></span>
+<span id="cb8-8" class="hljs-ln-code"><a></a></span>
+<span id="cb8-9" class="hljs-ln-code"><a></a><span class="kw">def</span> celsius_para_fahrenheit(celsius):</span>
+<span id="cb8-10" class="hljs-ln-code"><a></a>    fahrenheit <span class="op">=</span> (celsius <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb8-11" class="hljs-ln-code"><a></a>    <span class="cf">return</span> fahrenheit</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="aprendizado-few-shot" class="slide level2">
 <h2>Aprendizado Few-Shot</h2>
-<p>Nesse métdodo, o Copilot é apresentado a vários exemplos, equilibrando a imprevisibilidade do zero-shot com a precisão do ajuste fino do one-shot.</p>
+<p>Nesse métdodo, o Copilot é apresentado a vários exemplos,</p>
 <ul>
-<li class="fragment">Suponha que deseje gerar um código que envie saudações ao usuário dependendo da hora do dia.</li>
+<li class="fragment">equilibrando a imprevisibilidade do zero-shot</li>
+<li class="fragment">com a precisão do ajuste fino do one-shot.</li>
 </ul>
 </section>
 <section id="aprendizado-few-shot-1" class="slide level2">
 <h2>Aprendizado Few-Shot</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imagens/engprompt-2-generate-greeting-code-from-examples.png" class="quarto-figure quarto-figure-center" alt="Exemplo de aprendizado few-shot."></p>
-</figure>
+<p>Suponha que deseje gerar um código que envie saudações ao usuário dependendo da hora do dia.</p>
+<div class="fragment">
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># Exemplo 1: Mensagem de saudação para a manhã</span></span>
+<span id="cb9-2"><a></a><span class="co"># Entrada: 9:00</span></span>
+<span id="cb9-3"><a></a><span class="co"># Saída: "Bom dia!"</span></span>
+<span id="cb9-4"><a></a></span>
+<span id="cb9-5"><a></a><span class="co"># Exemplo 2: Mensagem de saudação para a tarde</span></span>
+<span id="cb9-6"><a></a><span class="co"># Entrada: 14:00</span></span>
+<span id="cb9-7"><a></a><span class="co"># Saída: "Boa tarde!"</span></span>
+<span id="cb9-8"><a></a></span>
+<span id="cb9-9"><a></a><span class="co"># Exemplo 3: Mensagem de saudação para a noite</span></span>
+<span id="cb9-10"><a></a><span class="co"># Entrada: 19:00</span></span>
+<span id="cb9-11"><a></a><span class="co"># Saída: "Boa noite!"</span></span>
+<span id="cb9-12"><a></a></span>
+<span id="cb9-13"><a></a><span class="co"># Agora, gere um código python que receba a hora atual como entrada usando o </span></span>
+<span id="cb9-14"><a></a><span class="co"># módulo datetime e retorne a mensagem de saudação apropriada</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="aprendizado-few-shot-2" class="slide level2">
+<h2>Aprendizado Few-Shot</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a><span class="kw">def</span> saudacao():</span>
+<span id="cb10-4"><a></a>    <span class="co"># Obtém a hora atual</span></span>
+<span id="cb10-5"><a></a>    agora <span class="op">=</span> datetime.now()</span>
+<span id="cb10-6"><a></a>    hora_atual <span class="op">=</span> agora.hour</span>
+<span id="cb10-7"><a></a></span>
+<span id="cb10-8"><a></a>    <span class="co"># Determina a saudação com base na hora atual</span></span>
+<span id="cb10-9"><a></a>    <span class="cf">if</span> <span class="dv">5</span> <span class="op">&lt;=</span> hora_atual <span class="op">&lt;</span> <span class="dv">12</span>:</span>
+<span id="cb10-10"><a></a>        <span class="cf">return</span> <span class="st">"Bom dia!"</span></span>
+<span id="cb10-11"><a></a>    <span class="cf">elif</span> <span class="dv">12</span> <span class="op">&lt;=</span> hora_atual <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb10-12"><a></a>        <span class="cf">return</span> <span class="st">"Boa tarde!"</span></span>
+<span id="cb10-13"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb10-14"><a></a>        <span class="cf">return</span> <span class="st">"Boa noite!"</span></span>
+<span id="cb10-15"><a></a></span>
+<span id="cb10-16"><a></a><span class="co"># Chama a função e imprime a saudação</span></span>
+<span id="cb10-17"><a></a><span class="bu">print</span>(saudacao())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="encadeamento-de-prompt-e-gerenciamento-do-histórico-do-chat" class="slide level2">
+<h2>Encadeamento de Prompt e Gerenciamento do Histórico do Chat</h2>
+<div class="fragment">
+<p>Ao trabalhar em funcionalidades com várias etapas</p>
+<ul>
+<li class="fragment">A conversa no chat do Copilot pode se tornar extensa.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Se, por um lado, o contexto ajuda o Copilot a fornecer respostas melhores.</p>
+<ul>
+<li class="fragment">Por outro, manter longos históricos pode tornar o processo ineficiente e caro.</li>
+</ul>
+</div>
+</section>
+<section id="section-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<p>Imagine, por exemplo, que você fez várias interações no mesmo chat para realizar uma tarefa</p>
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Interação 1: “Crie uma função de autenticação de usuário”</p>
+<p>Interação 2: “Adicione tratamento de erros para credenciais inválidas”</p>
+<p>Interação 3: “Adicione testes unitários para a função de autenticação”</p>
+<p>Interação 4: “Adicione comentários JSDoc para documentar a função”</p>
+<p>Interação 5: “Otimize a função para melhor desempenho”</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Interação 1: “Crie uma função de autenticação de usuário”</p>
+<p>Interação 2: “Adicione tratamento de erros para credenciais inválidas”</p>
+<p>Interação 3: “Adicione testes unitários para a função de autenticação”</p>
+<p>Interação 4: “Adicione comentários JSDoc para documentar a função”</p>
+<p>Interação 5: “Otimize a função para melhor desempenho”</p>
+</div>
+</div>
+</div>
+</div>
+<p>Cada interação leva todo o histórico do chat, fazendo com que o contexto tenha sempre a conversa anterior mais a atual.</p>
+<ul>
+<li class="fragment"><p>Isso pode aumentar consideravelmente o consumo de tokens.</p></li>
+<li class="fragment"><p>Resumir o contexto ou reiniciar a conversa pode reduzir o consumo.</p></li>
+</ul>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p>Para gerenciar isso de forma eficiente:</p>
+<ul>
+<li class="fragment">recomece e forneça um contexto focado para novos recursos.</li>
+</ul>
+<div class="fragment">
+<p>Comece um chat do zero com detalhes essenciais em vez de retomar toda a conversa.</p>
+<ul>
+<li class="fragment">Use referências concisas a trabalhos anteriores em vez de repetir implementações completas.</li>
+</ul>
+</div>
+</section>
+<section id="persona-para-tarefas-especializadas" class="slide level2">
+<h2><em>Persona</em> para tarefas especializadas</h2>
+<div class="fragment">
+<p>Podemos instruir o Copilot a agir como um <strong>tipo específico de especialista</strong> (<em>persona</em>).</p>
+<ul>
+<li class="fragment">Isso pode melhorar significativamente a <strong>qualidade</strong> e a <strong>relevância</strong> do código gerado para domínios especializados.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Essa abordagem ajuda a <strong>acelerar</strong> o desenvolvimento,</p>
+<ul>
+<li class="fragment">pois tende a levar a soluções mais direcionadas já na primeira tentativa.</li>
+</ul>
+</div>
+</section>
+<section id="função-de-especialista-em-segurança" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Função de especialista em segurança</h2>
+<p>Exemplo: Ao trabalhar em recursos críticos para a segurança,</p>
+<ul>
+<li class="fragment">configure o Copilot para pensar como um especialista na área:</li>
+</ul>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Atue como um especialista em cibersegurança. Crie uma função de validação de senha que verifique vulnerabilidades comuns e siga as diretrizes da OWASP.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="função-de-especialista-em-segurança-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Função de especialista em segurança</h2>
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Atue como um especialista em cibersegurança. Crie uma função de validação de senha que verifique vulnerabilidades comuns e siga as diretrizes da OWASP.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Essa abordagem normalmente gera código que inclui:</p>
+<ul>
+<li class="fragment">Sanitização de entrada</li>
+<li class="fragment">Proteção contra ataques comuns</li>
+<li class="fragment">Padrões de validação padrão do setor</li>
+<li class="fragment">Melhores práticas de segurança</li>
+</ul>
+</section>
+<section id="função-de-otimização-de-desempenho" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Função de otimização de desempenho</h2>
+<p>Para código crítico em termos de desempenho, use a função de especialista em desempenho:</p>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Atue como um especialista em otimização de desempenho. Refatore este algoritmo de classificação para lidar com grandes conjuntos de dados de forma eficiente.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="função-de-otimização-de-desempenho-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Função de otimização de desempenho</h2>
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Atue como um especialista em otimização de desempenho. Refatore este algoritmo de classificação para lidar com grandes conjuntos de dados de forma eficiente.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Isso geralmente resulta em:</p>
+<ul>
+<li class="fragment">Algoritmos e estruturas de dados otimizados</li>
+<li class="fragment">Implementações com uso eficiente de memória</li>
+<li class="fragment">Considerações sobre escalabilidade</li>
+<li class="fragment">Sugestões para monitoramento de desempenho</li>
+<li class="fragment">Papel de especialista em testes</li>
+</ul>
+</section>
+<section id="função-de-especialista-de-testes" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Função de especialista de testes</h2>
+<p>Ao criar suítes de testes abrangentes, aproveite a perspectiva de um especialista em testes:</p>
+<div class="fragment">
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Atue como um especialista em testes. Crie testes unitários abrangentes para este módulo de processamento de pagamentos, incluindo casos extremos e cenários de erro.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="função-de-especialista-de-testes-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Função de especialista de testes</h2>
+<div title="Prompt">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Atue como um especialista em testes. Crie testes unitários abrangentes para este módulo de processamento de pagamentos, incluindo casos extremos e cenários de erro.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Isso normalmente produz:</p>
+<ul>
+<li class="fragment">Cobertura de testes completa</li>
+<li class="fragment">Tratamento de casos extremos</li>
+<li class="fragment">Implementações simuladas (mocks)</li>
+<li class="fragment">Testes de condições de erro</li>
+</ul>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>Definir uma <strong><em>persona</em></strong> pode levar a código pronto para produção mais rapidamente,</p>
+<ul>
+<li class="fragment">incorporando conhecimento do domínio nas implementações iniciais,</li>
+<li class="fragment">reduzindo a necessidade de múltiplos ciclos de revisão.</li>
+</ul>
+<div class="fragment">
+<p>Agora que sabemos como o Copilot usa nossas sugestões para aprender,</p>
+<ul>
+<li class="fragment">vamos entender como ele usa essas sugestões para sugerir código.</li>
+</ul>
 </div>
 </section></section>
 <section>
@@ -514,7 +828,7 @@
 <h1>Fluxo de Processamento de Prompts</h1>
 
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <p>Vamos agora ver como o Copilot transforma nossos prompts em códigos utilizáveis.</p>
 <ul>
@@ -531,17 +845,33 @@
 </section>
 <section id="transmissão-segura-coleta-de-contexto" class="slide level2">
 <h2>1. Transmissão segura + Coleta de contexto</h2>
-<ul>
-<li class="fragment"><p>Prompts transmitidos via <strong>HTTPS</strong> (seguro e confidencial).</p></li>
-<li class="fragment"><p>Simultaneamente, o Copilot coleta detalhes do ambiente:</p>
+<p>Prompts transmitidos via <strong>HTTPS</strong> (seguro e confidencial).</p>
+<div class="fragment">
+<p>Simultaneamente, o Copilot coleta detalhes do ambiente:</p>
 <ul>
 <li class="fragment">Código antes e depois do cursor (contexto).</li>
 <li class="fragment">Nome e tipo do arquivo que está sendo editado.</li>
-<li class="fragment">Abas adjacentes abertas, para que a suestão se alinhe a outros trechos de código do mesmo projeto.</li>
+<li class="fragment">Abas vizinhas abertas, para que a sugestão se alinhe a outros trechos de código do mesmo projeto.</li>
 <li class="fragment">Informações sobre a estrutura do projeto e caminhos de arquivos.</li>
-<li class="fragment">Informações sobre linguagnes de programação e frameworks usados.</li>
+<li class="fragment">Informações sobre linguagens de programação e frameworks usados.</li>
+</ul>
+</div>
+</section>
+<section id="transmissão-segura-coleta-de-contexto-1" class="slide level2">
+<h2>1. Transmissão segura + Coleta de contexto</h2>
+<p>Simultaneamente, o Copilot coleta detalhes do ambiente:</p>
+<ul>
+<li class="fragment">Pré-processamento usando técnica <em>Fill-in-the-Midle (FIM)</em>.
+<ul>
+<li class="fragment">Modelos especializados em programação são treinados para preencher o meio (lacuna), em vez de tratar apenas geração da próxima palavra a partir do contexto anterior.</li>
 </ul></li>
 </ul>
+<div class="fragment">
+<p>Obs.: o contexto coletado tem evoluído rapidamente.</p>
+<ul>
+<li class="fragment">Especialmente no modo agente, o Copilot pode fazer busca em todo o repositório de código.</li>
+</ul>
+</div>
 </section>
 <section id="filtro-de-proxy" class="slide level2">
 <h2>2. Filtro de proxy</h2>
@@ -570,7 +900,11 @@
 </section>
 <section id="fluxo-de-saída" class="slide level2">
 <h2>Fluxo de Saída</h2>
-<p>![] (imagens/engprompt-3-github-copilot-outbound-flow.png){fig-align=“center” fig-alt=“Fluxo de saída do processamento de prompts do GitHub Copilot.” style=“max-height: 60vh;”}</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/engprompt-3-github-copilot-outbound-flow.png" class="quarto-figure quarto-figure-center" style="max-height: 60vh;" alt="Fluxo de saída do processamento de prompts do GitHub Copilot."></p>
+</figure>
+</div>
 </section>
 <section id="pós-processamento-e-validação-da-resposta" class="slide level2">
 <h2>5. Pós-processamento e validação da resposta</h2>
@@ -617,9 +951,6 @@
 <li class="fragment">Incluindo os detalhes de contexto fornecidos.</li>
 <li class="fragment">Para aprimorar o seu entendimento da intenção do usuário e refiniar seus recursos de geração de código.</li>
 </ul>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="dados-do-github-copilot" class="title-slide slide level1 center" data-background-color="#40666e">
@@ -628,23 +959,26 @@
 </section>
 <section id="tratamento-de-dados-sugestões-de-código" class="slide level2">
 <h2>Tratamento de dados — Sugestões de código</h2>
+<p>Copilot no editor de código <strong>não retém solicitações</strong>.</p>
 <ul>
-<li class="fragment">Copilot no editor de código <strong>não retém solicitações</strong>.</li>
 <li class="fragment">Código, comentários e contexto são usados apenas no momento da sugestão.</li>
 <li class="fragment">Após gerar a sugestão → solicitações são descartadas.</li>
-<li class="fragment">Assinantes individuais podem <strong>recusar o compartilhamento</strong> de dados com o GitHub para treinar modelos.</li>
 </ul>
+<div class="fragment">
+<p>Assinantes individuais podem <strong>recusar o compartilhamento</strong> de dados com o GitHub para treinar modelos.</p>
+<ul>
+<li class="fragment">Isso é <span class="alert">altamente recomendável!</span></li>
+</ul>
+</div>
 </section>
 <section id="tratamento-de-dados-copilot-chat" class="slide level2">
 <h2>Tratamento de dados — Copilot Chat</h2>
-<ul>
-<li class="fragment"><p>Funciona como plataforma interativa, com histórico de conversas.</p></li>
-<li class="fragment"><p>Difere das sugestões de código (autocomplete):</p>
+<p>Funciona como plataforma interativa, com histórico de conversas.</p>
+<p>Difere das sugestões de código (autocomplete):</p>
 <ul>
 <li class="fragment"><strong>Formatação</strong>: respostas adaptadas à interface de chat, como realce de código.</li>
 <li class="fragment"><strong>Participação do usuário</strong>: permite perguntas de acompanhamento e refinamento.</li>
 <li class="fragment"><strong>Retenção</strong>: solicitações/sugestões/contexto podem ser mantidos por <strong>até 28 dias</strong> (varia conforme o editor).</li>
-</ul></li>
 </ul>
 </section>
 <section id="tipos-de-solicitações-no-copilot-chat" class="slide level2">
@@ -668,12 +1002,29 @@
 </ul></li>
 </ul>
 </section>
-<section id="limitações-janelas-de-contexto" class="slide level2">
-<h2>Limitações — Janelas de contexto</h2>
+<section id="janelas-de-contexto-são-limitadas" class="slide level2">
+<h2>Janelas de contexto são limitadas</h2>
+<p><strong>Janela de contexto</strong> é a quantidade de código/texto que o modelo processa simultaneamente.</p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagens/engprompt-3-github-context-window.png" class="quarto-figure quarto-figure-center" style="max-height: 50vh;" alt="Janela de contexto de interações com IA."></p>
+</figure>
+</div>
+</div>
+<div class="fragment">
+<p>Ela Isso inclui não só o prompt utilizado,</p>
 <ul>
-<li class="fragment"><strong>Janela de contexto</strong> = quantidade de código/texto que o modelo processa simultaneamente.</li>
-<li class="fragment">Isso inclui não só o prompt utilizado, mas também o contexto do arquivo e do projeto.</li>
-<li class="fragment">Limitação pode variar conforme versão e implementação.</li>
+<li class="fragment">mas também o contexto do arquivo e do projeto.</li>
+</ul>
+</div>
+</section>
+<section id="janelas-de-contexto-são-limitadas-1" class="slide level2">
+<h2>Janelas de contexto são limitadas</h2>
+<p>O tamanho máximo da janela de contexto pode variar de acordo com a versão do Copilot</p>
+<ul>
+<li class="fragment">Contextos maiores podem ser úteis em determinadas circunstâncias.</li>
+<li class="fragment">Mas têm alto custo, e podem levar a respostas imprecisas e menos úteis.</li>
 </ul>
 </section></section>
 <section>
@@ -681,11 +1032,10 @@
 <h1>LLMs no Copilot</h1>
 
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-9" class="slide level2">
 <h2></h2>
+<p>O GitHub Copilot é alimentado por <strong>LLMs</strong> (<em>Large Language Models</em>).</p>
 <ul>
-<li class="fragment">O GitHub Copilot é alimentado por <strong>LLMs</strong> (Large Language Models).<br>
-</li>
 <li class="fragment">Eles permitem escrever código de forma integrada e com <strong>reconhecimento de contexto</strong>.</li>
 </ul>
 </section>
@@ -825,13 +1175,12 @@
 <h2>Prompts implícitos (<em>slash commands</em>)</h2>
 <p>Podemos usar opções do Copilot fornecem prompts implícitos prédefinidos que podem melhorar a resposta.</p>
 <ul>
-<li class="fragment"><code>/doc</code> — adiciona comentários ao código especificado ou selecionado.</li>
 <li class="fragment"><code>/explain</code> — obtém explicações sobre o código.</li>
 <li class="fragment"><code>/fix</code> — para correção de bugs.</li>
-<li class="fragment"><code>/generate</code> — gera código para responder a um dado prompt.</li>
-<li class="fragment"><code>/help</code> — obtém ajuda sobre como usar o chat do Copilot.</li>
-<li class="fragment"><code>/optimize</code> — analisa e melhora o tempo de execução do código selecionado.</li>
 <li class="fragment"><code>/tests</code> — cria testes unitários para o código selecionado.</li>
+<li class="fragment"><code>/clear</code> — inicia um novo chat (contexto), marcando o atual como finalizado</li>
+<li class="fragment"><code>/fork</code> — bifurca a conversa atual em um novo chat.</li>
+<li class="fragment"><code>/compact</code> — libera espaço de contexto, compactando contexto atual.</li>
 </ul>
 </section>
 <section id="prompts-implícitos-slash-commands-1" class="slide level2">
@@ -856,6 +1205,9 @@
 </div>
 </div>
 </div>
+<div class="fragment">
+<p>Obs.: essa foi uma das funcionalidades que se alteraram muito desde a oferta anterior da disciplina.</p>
+</div>
 </section>
 <section id="contexto-seletivo-chat-participants" class="slide level2">
 <h2>Contexto seletivo: <em>chat participants</em></h2>
@@ -869,7 +1221,7 @@
 <li class="fragment"><p>É um arquivo especial que contém instruções específicas que facilitam a execução do seu projeto em diferentes ambientes.</p></li>
 <li class="fragment"><p>Você pode usar o agente <code>@workspace</code> para indicar que o Copilot deve considerar o contexto de todo o projeto.</p></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>@workspace Preciso criar um Dockerfile para este projeto.</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>@workspace Preciso criar um Dockerfile para este projeto.</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Provavelmente o Copilot vai gerar explicações sobre o que é um <em>Dockerfile</em> e como ele funciona e, em seguida, sugerir um <em>Dockerfile</em> adequado ao seu projeto.</p>
 </div>
 </section>
@@ -892,10 +1244,8 @@
 <ul>
 <li class="fragment"><code>@github</code> — expande as informações que o Copilot pode fornecer.
 <ul>
-<li class="fragment">Dica: use <code>@github what skills are available?</code> para saber como usar esse agente.
-<ul>
-<li class="fragment">Em portugês essa pergunta não funciona :( … mas a resposta vem em português.</li>
-</ul></li>
+<li class="fragment">Dica: use <code>@github quais skills estão disponíveis?</code> para saber como usar esse agente.<br>
+</li>
 <li class="fragment">Pode, por exemplo, fazer busca em repositórios ou em histórico de commits.</li>
 </ul></li>
 <li class="fragment"><code>@data</code> — permite fazer análise dados no próprio chat do Copilot.
@@ -937,26 +1287,34 @@
 <section id="modos-de-uso-do-chat-copilot" class="slide level2">
 <h2>Modos de uso do Chat Copilot</h2>
 <p>No canto inferior esquerdo da janela do chat do Copilot, você pode escolher entre três modos de uso:</p>
-<div class="fragment">
-<p><span class="alert">Ask</span></p>
+<ul>
+<li class="fragment">Ask</li>
+<li class="fragment">Plan</li>
+<li class="fragment">Agent</li>
+</ul>
+</section>
+<section id="modo-ask" class="slide level2">
+<h2>Modo <span class="alert">Ask</span></h2>
 <ul>
 <li class="fragment">Para perguntas gerais e explicações.</li>
 <li class="fragment">Possíveis sugestões de código aparecem no Chat e você precisa copiar e colar no editor.</li>
 </ul>
-</div>
 </section>
-<section id="modos-de-uso-do-chat-copilot-1" class="slide level2">
-<h2>Modos de uso do Chat Copilot</h2>
-<p><span class="alert">Edit</span></p>
+<section id="modo-plan" class="slide level2">
+<h2>Modo <span class="alert">Plan</span></h2>
 <ul>
-<li class="fragment">Para atualização rápida e específica de um conjunto definido de arquivos.</li>
-<li class="fragment">Permite controle mais granular sobre as edições propostas pelo Copilot.</li>
-<li class="fragment">Possibilitando assim controle total sobre o número de solicitações de LLM que o Copilot usa.</li>
+<li class="fragment">Permite criar um planejamento estruturado antes da implementação.
+<ul>
+<li class="fragment">Utilize várias interações até atingir o planejamento desejado.</li>
+<li class="fragment">Com isso, você pode corrigir e/ou direcionar a solução ainda em nível de planejamento.</li>
+<li class="fragment">Levando depois a uma implementação melhor (e com menor uso de tokens).</li>
+</ul></li>
+<li class="fragment">Ao final, é exibido um botão para disparar o início da implementação (modo agente, seguindo o planejamento)</li>
+<li class="fragment">Dica: você pode mudar para este modo diretamente usando o comando <code>/plan</code>.</li>
 </ul>
 </section>
-<section id="modos-de-uso-do-chat-copilot-2" class="slide level2">
-<h2>Modos de uso do Chat Copilot</h2>
-<p><span class="alert">Agent</span></p>
+<section id="modo-agent" class="slide level2">
+<h2>Modo <span class="alert">Agent</span></h2>
 <ul>
 <li class="fragment">Quando quiser que o Copilot trate uma tarefa específica de modo autônomo.</li>
 <li class="fragment">O próprio Copilot decide quais arquivos editar e como.</li>
@@ -965,29 +1323,56 @@
 <li class="fragment">Tem impactos nos custos, pois cada interação pode consumir várias solicitações de LLM.</li>
 </ul>
 </section>
-<section id="histórico-do-chat-do-copilot" class="slide level2">
-<h2>Histórico do Chat do Copilot</h2>
-<p>O Copilot mantém um histórico das conversas que você teve com ele.</p>
+<section id="planeje-primeiro-implemente-depois" class="slide level2">
+<h2>Planeje primeiro, implemente depois</h2>
+<p>É altamente <strong>recomendável separar o planejamento da implementação</strong></p>
 <ul>
-<li class="fragment">Você pode acessar esse histórico clicando no ícone de relógio no canto superior esquerdo da janela do chat.</li>
-<li class="fragment">Isso permite que você revise conversas anteriores, reutilize prompts eficazes e acompanhe o progresso de suas interações com o Copilot ao longo do tempo.</li>
+<li class="fragment">para alterações complexas que envolve vários arquivos.</li>
+</ul>
+<div class="fragment">
+<p>Isso evita que a IA resolva o problema de forma errada</p>
+<ul>
+<li class="fragment">levando a desperdício de créditos de IA em um código que vai acabar sendo descartado.</li>
+</ul>
+</div>
+</section>
+<section id="planeje-primeiro-implemente-depois-1" class="slide level2">
+<h2>Planeje primeiro, implemente depois</h2>
+<ol type="1">
+<li class="fragment"><span class="alert">Explore</span></li>
+</ol>
+<ul>
+<li class="fragment">Use o modo de consulta ou um subagente para ler o código relevante e entender como ele funciona antes de fazer alterações.</li>
+</ul>
+<ol start="2" type="1">
+<li class="fragment"><span class="alert">Planeje</span></li>
+</ol>
+<ul>
+<li class="fragment">Use o agente de Planejamento para criar um plano de implementação estruturado.</li>
+<li class="fragment">Revise e refine o plano antes de executá-lo.</li>
 </ul>
 </section>
-<section id="histórico-do-chat-do-copilot-1" class="slide level2">
-<h2>Histórico do Chat do Copilot</h2>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Dica</strong></p>
-</div>
-<div class="callout-content">
-<p>Se for começar uma nova tarefa que não tem relação com o que você estava fazendo, é melhor começar uma nova conversa clicando no ícone de mais (+) no canto superior esquerdo.</p>
-</div>
-</div>
-</div>
+<section id="planeje-primeiro-implemente-depois-2" class="slide level2">
+<h2>Planeje primeiro, implemente depois</h2>
+<ol start="3" type="1">
+<li class="fragment"><span class="alert">Implemente</span></li>
+</ol>
+<ul>
+<li class="fragment">Alterne para o modo de agente e implemente a partir do plano.</li>
+<li class="fragment">Inclua testes ou saídas esperadas para que o agente possa verificar seu próprio trabalho.</li>
+<li class="fragment">Execute sessões independentes do Copilot, Claude ou Codex em paralelo.</li>
+</ul>
+</section>
+<section id="planeje-primeiro-implemente-depois-3" class="slide level2">
+<h2>Planeje primeiro, implemente depois</h2>
+<ol start="4" type="1">
+<li class="fragment"><span class="alert">Revise</span></li>
+</ol>
+<ul>
+<li class="fragment">Use pontos de verificação para revisar o progresso.</li>
+<li class="fragment">Retroceda se o agente se desviar do caminho</li>
+<li class="fragment">Solicite uma revisão de código do Copilot no resultado final da alteração (Pull Request).</li>
+</ul>
 </section>
 <section id="avançado-customização-do-copilot" class="slide level2">
 <h2>Avançado: customização do Copilot</h2>
@@ -995,7 +1380,7 @@
 <ol type="1">
 <li class="fragment">Com instruções customizadas (para todo o projeto ou para contextos específicos, como todos arquivos .py).</li>
 <li class="fragment">Com arquivos de prompt para reutilização em tarefas repetitivas.</li>
-<li class="fragment">Com modos de chat customizados (além de Ask, Edit e Agent).</li>
+<li class="fragment">Com modos de chat customizados (além de Ask, Plan e Agent).</li>
 <li class="fragment">Escolhendo diferentes modelos de LLM (se sua assinatura permitir).</li>
 </ol>
 </section>
@@ -1005,57 +1390,19 @@
 <li class="fragment">Usando servidores MCP que permite conectar serviços externos e ferramentas especilizados aumentando as capacidades do Copilot.</li>
 </ol>
 <div class="fragment">
-<p>Não entraremos em detalhes aqui.</p>
+<p>Não entraremos em detalhes nesses pontos nesta aula.</p>
 <ul>
 <li class="fragment">Para quem quiser saber mais acesse <a href="https://code.visualstudio.com/docs/copilot/customization/overview?originUrl=%2Fdocs%2Fcopilot%2Fcustomization%2Fprompt-files">Customize chat to your workflow</a>.</li>
 </ul>
 </div>
 </section></section>
 <section>
-<section id="observações-sobre-as-últimas-aulas" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Observações sobre as últimas aulas</h1>
+<section id="trabalho-prático" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Trabalho Prático</h1>
 
 </section>
-<section id="generalização-de-funções" class="slide level2">
-<h2>Generalização de funções</h2>
-<p>Ao escrever funções, tente torná-las o mais genéricas possível.</p>
-<ul>
-<li class="fragment">Isso começa pelo prório prompt e/ou docstring da função.</li>
-</ul>
-<div class="fragment">
-<p>Ex.: uma função que recebe uma lista de dados e faz algum processamento.</p>
-<ul>
-<li class="fragment">não precisa se preocupar sobre como os dados foram obtidos.</li>
-<li class="fragment">O que ela precisa deixar claro é o formato dos dados que ela espera.</li>
-<li class="fragment">Com isso ela pode ser usada em diferentes contextos.
-<ul>
-<li class="fragment">Ex.: não faz diferença se os dados vieram de arquivo ou não.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="decomposição-de-problemas" class="slide level2">
-<h2>Decomposição de problemas</h2>
-<p>Notei uma resistência muito grande de boa parte dos alunos em decompor o problema da aula passada.</p>
-<ul>
-<li class="fragment">E alguns já estavam bem dispersos na aula teórica anterior antes disso.</li>
-</ul>
-<div class="fragment">
-<p>Lembrem-se que a expectativa é que no futuro nosso trabalho será fortemente baseado em assistência com IA.</p>
-<ul>
-<li class="fragment">E se darão melhor aqueles que conseguirem ser mais produtivos com esse tipo de ferramenta.</li>
-<li class="fragment">E a decomposição de problemas é uma habilidade essencial para isso.</li>
-</ul>
-</div>
-</section>
-<section id="decomposição-de-problemas-1" class="slide level2">
-<h2>Decomposição de problemas</h2>
-<p>Como diz o ditado <em>“Apressado come cru”</em>.</p>
-<ul>
-<li class="fragment">Às vezes ficamos tentados a obter resultados rápidos.</li>
-<li class="fragment">E, as primeiras respostas, podem nos dar a impressão que estamos cortando caminhos.</li>
-<li class="fragment">Mas, na verdade, podemos estar apenas criando mais trabalho para nós mesmos.</li>
-</ul>
+<section id="section-10" class="slide level2">
+<h2></h2>
 
 
 </section></section>

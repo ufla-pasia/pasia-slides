@@ -16,9 +16,14 @@ O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Cod
 
 :::
 
+. . .
+
+É importante dizer que as ferramentas de IA estão evoluindo muito rápido.
+
+- Mas diversas estratégias fundamentais que veremos aqui continuam fazendo sentido.
+
 # Introdução {background-color="#40666e"}
 
----
 
 ## O que é engenharia de Prompt?
 
@@ -29,7 +34,6 @@ O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Cod
   - Garantindo que seja correto sintática, funcional e contextualmente.
 - Qualidade do código gerado depende da **clareza e precisão do prompt**.
 
----
 
 ## Princípios da engenharia de Prompt — os 4 Ss
 
@@ -50,7 +54,7 @@ O conteúdo dessa aula é baseado em materiais sobre o GitHub Copilot e o VS Cod
 ## Princípios da engenharia de Prompt — os 4 Ss
 
 * **Curto** (_short_)
-  - Seja conciso: ser específico, mas direito ao ponto.
+  - Seja conciso: ser específico, mas direto ao ponto.
   - A ideia é garantir clareza sem sobrecarregar o Copilot ou complicar a interação.
 * **Contextual** (_surround_)
   - Use nomes de arquivos descritivos e mantenha arquivos relacionados abertos no editor.
@@ -105,10 +109,15 @@ Quanto mais informação contextual for fornecida,  mais aderente será a sugest
 
 ## 2. Forneça contexto suficiente
 
-Repare que no exemplo anterior foram dados mais detalhes mas ao mesmo tempo
-as instruções são curtas e objetivas.
+Repare que no exemplo anterior foram dados mais detalhes, mas,
 
-- Esta prática segue o princípio **curto**, equilibrando detalhe com concisão para garantir clareza e precisão na comunicação.
+- ao mesmo tempo, as instruções são curtas e objetivas.
+
+. . .
+
+Esta prática segue o princípio **curto**, 
+
+- equilibrando detalhe com concisão para garantir clareza e precisão na comunicação.
 
 ## 2. Forneça contexto suficiente
 
@@ -137,16 +146,22 @@ Utilize nomes de funções e classes descritivos.
 
 Forneça exemplos de código.
 
-- Se for trabalhar com uma nova biblioteca, e o Copilot gerar respostas de outras ou de versões antigas, 
-- forneça um exemplo de uso da nova biblioteca mesmo que não seja o que você quer fazer.
+- Se for trabalhar com uma nova biblioteca, e o Copilot gerar respostas de outras ou de versões antigas:
+  - forneça um exemplo de uso da nova biblioteca mesmo que não seja o que você quer fazer.
 - Isso ajuda o Copilot a gerar código para a versão mais recente da biblioteca.
-- (e depois apague o código de exemplo que colocou).
+  - (e depois apague o código de exemplo que colocou).
+
+. . .
+
+Obs.: veremos mais adiante que _skills_ são hoje uma forma mais prática de tratar essa quetão.
 
 ##
 
 ::: {.callout-tip}
 Dica: se estiver fazendo experimentações de código por você mesmo, pode ser interessante desabilitar temporariamente o Copilot, evitando que esses "experimentos" interfiram no contexto do Copilot.
 :::
+
+. . .
 
 
 ::: {.callout-tip}
@@ -203,7 +218,6 @@ Essa prática é inspirada em técnicas de **aprendizado de máquina**.
 - Aprendizado One-Shot.
 - Aprendizado Few-shot.
 
----
 
 ## Aprendizado Zero-Shot
 
@@ -211,28 +225,284 @@ Essa prática é inspirada em técnicas de **aprendizado de máquina**.
 
 - Escrevemos o comentário do que queremos diretamente, sem exemplos.
 
-![](imagens/engprompt-2-create-temp-conversion-from-comment.png){fig-align="center" fig-alt="Exemplo de aprendizado zero-shot."}
+## Aprendizado Zero-Shot {auto-animate=true}
+
+```python
+# Preciso de uma função para converter temperaturas
+# de Celsius para Fahrenheit
+```
+
+## Aprendizado Zero-Shot {auto-animate=true}
+
+```python
+# Preciso de uma função para converter temperaturas
+# de Celsius para Fahrenheit
+
+def celsius_para_fahrenheit(celsius):
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+```
 
 ## Aprendizado One-Shot
 
 É fornecido um único exemplo, ajudando o modelo a gerar uma resposta mais sensível ao contexto.
 
-- Talvez você já tenha uma função semelhante e queira uma variante, por exemplo.
+- Pode ser um exemplo de entrada e saída.
+- Ou talvez você já tenha uma função semelhante e queira uma variante, por exemplo.
+
+## Aprendizado One-Shot {auto-animate=true}
+
+```python
+# Exemplo: função para converter temperaturas de Fahrenheit para Celsius
+
+def fahrenheit_para_celsius(fahrenheit):
+    celsius = (fahrenheit - 32) * 5/9
+    return celsius
+```
+
+## Aprendizado One-Shot {auto-animate=true}
+
+```python
+# Exemplo: função para converter temperaturas de Fahrenheit para Celsius
+
+def fahrenheit_para_celsius(fahrenheit):
+    celsius = (fahrenheit - 32) * 5/9
+    return celsius
+
+# Agora preciso de um função para converter temperaturas de Celsius para Fahrenheit
+```
+
+## Aprendizado One-Shot {auto-animate=true}
+
+```python
+# Exemplo: função para converter temperaturas de Fahrenheit para Celsius
+
+def fahrenheit_para_celsius(fahrenheit):
+    celsius = (fahrenheit - 32) * 5/9
+    return celsius
+
+# Agora preciso de um função para converter temperaturas de Celsius para Fahrenheit
+
+def celsius_para_fahrenheit(celsius):
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+```
+
+
+## Aprendizado Few-Shot
+
+Nesse métdodo, o Copilot é apresentado a vários exemplos, 
+
+- equilibrando a imprevisibilidade do zero-shot 
+- com a precisão do ajuste fino do one-shot.
+
+## Aprendizado Few-Shot
+
+Suponha que deseje gerar um código que envie saudações ao usuário dependendo da hora do dia.
 
 . . .
 
-![](imagens/engprompt-2-create-temp-conversion-from-example.png){fig-align="center" fig-alt="Exemplo de aprendizado one-shot."}
+```python
+# Exemplo 1: Mensagem de saudação para a manhã
+# Entrada: 9:00
+# Saída: "Bom dia!"
 
+# Exemplo 2: Mensagem de saudação para a tarde
+# Entrada: 14:00
+# Saída: "Boa tarde!"
+
+# Exemplo 3: Mensagem de saudação para a noite
+# Entrada: 19:00
+# Saída: "Boa noite!"
+
+# Agora, gere um código python que receba a hora atual como entrada usando o 
+# módulo datetime e retorne a mensagem de saudação apropriada
+```
 
 ## Aprendizado Few-Shot
 
-Nesse métdodo, o Copilot é apresentado a vários exemplos, equilibrando a imprevisibilidade do zero-shot com a precisão do ajuste fino do one-shot.
+```python
+from datetime import datetime
 
-- Suponha que deseje gerar um código que envie saudações ao usuário dependendo da hora do dia.
+def saudacao():
+    # Obtém a hora atual
+    agora = datetime.now()
+    hora_atual = agora.hour
 
-## Aprendizado Few-Shot
+    # Determina a saudação com base na hora atual
+    if 5 <= hora_atual < 12:
+        return "Bom dia!"
+    elif 12 <= hora_atual < 18:
+        return "Boa tarde!"
+    else:
+        return "Boa noite!"
 
-![](imagens/engprompt-2-generate-greeting-code-from-examples.png){fig-align="center" fig-alt="Exemplo de aprendizado few-shot."}
+# Chama a função e imprime a saudação
+print(saudacao())
+```
+
+## Encadeamento de Prompt e Gerenciamento do Histórico do Chat 
+
+. . .
+
+Ao trabalhar em funcionalidades com várias etapas
+
+- A conversa no chat do Copilot pode se tornar extensa.
+
+. . .
+
+Se, por um lado, o contexto ajuda o Copilot a fornecer respostas melhores.
+
+- Por outro, manter longos históricos pode tornar o processo ineficiente e caro.
+
+. . .
+
+## {auto-animate=true}
+
+Imagine, por exemplo, que você fez várias interações no mesmo chat para realizar uma tarefa
+
+::: {.callout-note title="Prompt" icon="false"}
+Interação 1: "Crie uma função de autenticação de usuário"
+
+Interação 2: "Adicione tratamento de erros para credenciais inválidas"
+
+Interação 3: "Adicione testes unitários para a função de autenticação" 
+
+Interação 4: "Adicione comentários JSDoc para documentar a função"
+
+Interação 5: "Otimize a função para melhor desempenho"
+:::
+
+## {auto-animate=true}
+
+::: {.callout-note title="Prompt" icon="false"}
+Interação 1: "Crie uma função de autenticação de usuário"
+
+Interação 2: "Adicione tratamento de erros para credenciais inválidas"
+
+Interação 3: "Adicione testes unitários para a função de autenticação" 
+
+Interação 4: "Adicione comentários JSDoc para documentar a função"
+
+Interação 5: "Otimize a função para melhor desempenho"
+:::
+
+Cada interação leva todo o histórico do chat, fazendo com que o contexto tenha sempre a conversa anterior mais a atual.
+
+- Isso pode aumentar consideravelmente o consumo de tokens.
+
+- Resumir o contexto ou reiniciar a conversa pode reduzir o consumo.
+
+## 
+
+Para gerenciar isso de forma eficiente:
+
+- recomece e forneça um contexto focado para novos recursos.
+
+. . .
+
+Comece um chat do zero com detalhes essenciais em vez de retomar toda a conversa.
+
+- Use referências concisas a trabalhos anteriores em vez de repetir implementações completas.
+
+## _Persona_ para tarefas especializadas
+
+. . .
+
+Podemos instruir o Copilot a agir como um **tipo específico de especialista** (_persona_).
+
+- Isso pode melhorar significativamente a **qualidade** e a **relevância** do código gerado para domínios especializados. 
+
+. . . 
+
+Essa abordagem ajuda a **acelerar** o desenvolvimento, 
+
+- pois tende a levar a soluções mais direcionadas já na primeira tentativa.
+
+## Função de especialista em segurança {auto-animate=true}
+
+Exemplo: Ao trabalhar em recursos críticos para a segurança, 
+
+- configure o Copilot para pensar como um especialista na área:
+
+. . .
+
+::: {.callout-note title="Prompt" icon="false"}
+Atue como um especialista em cibersegurança. Crie uma função de validação de senha que verifique vulnerabilidades comuns e siga as diretrizes da OWASP.
+:::
+
+## Função de especialista em segurança {auto-animate=true}
+
+::: {.callout-note title="Prompt" icon="false"}
+Atue como um especialista em cibersegurança. Crie uma função de validação de senha que verifique vulnerabilidades comuns e siga as diretrizes da OWASP.
+:::
+
+Essa abordagem normalmente gera código que inclui:
+
+- Sanitização de entrada
+- Proteção contra ataques comuns
+- Padrões de validação padrão do setor
+- Melhores práticas de segurança
+
+## Função de otimização de desempenho {auto-animate=true}
+
+Para código crítico em termos de desempenho, use a função de especialista em desempenho:
+
+. . .
+
+::: {.callout-note title="Prompt" icon="false"}
+Atue como um especialista em otimização de desempenho. Refatore este algoritmo de classificação para lidar com grandes conjuntos de dados de forma eficiente.
+:::
+
+## Função de otimização de desempenho {auto-animate=true}
+
+::: {.callout-note title="Prompt" icon="false"}
+Atue como um especialista em otimização de desempenho. Refatore este algoritmo de classificação para lidar com grandes conjuntos de dados de forma eficiente.
+:::
+
+Isso geralmente resulta em:
+
+- Algoritmos e estruturas de dados otimizados
+- Implementações com uso eficiente de memória
+- Considerações sobre escalabilidade
+- Sugestões para monitoramento de desempenho
+- Papel de especialista em testes
+
+## Função de especialista de testes {auto-animate=true}
+
+Ao criar suítes de testes abrangentes, aproveite a perspectiva de um especialista em testes:
+
+. . .
+
+::: {.callout-note title="Prompt" icon="false"}
+Atue como um especialista em testes. Crie testes unitários abrangentes para este módulo de processamento de pagamentos, incluindo casos extremos e cenários de erro.
+:::
+
+## Função de especialista de testes {auto-animate=true}
+
+::: {.callout-note title="Prompt" icon="false"}
+Atue como um especialista em testes. Crie testes unitários abrangentes para este módulo de processamento de pagamentos, incluindo casos extremos e cenários de erro.
+:::
+
+Isso normalmente produz:
+
+- Cobertura de testes completa
+- Tratamento de casos extremos
+- Implementações simuladas (mocks)
+- Testes de condições de erro
+
+##
+
+Definir uma **_persona_** pode levar a código pronto para produção mais rapidamente, 
+
+- incorporando conhecimento do domínio nas implementações iniciais, 
+- reduzindo a necessidade de múltiplos ciclos de revisão.
+
+. . .
+
+Agora que sabemos como o Copilot usa nossas sugestões para aprender, 
+
+- vamos entender como ele usa essas sugestões para sugerir código.
 
 
 # Fluxo de Processamento de Prompts {background-color="#40666e"}
@@ -250,16 +520,31 @@ Vamos agora ver como o Copilot transforma nossos prompts em códigos utilizávei
 
 ## 1. Transmissão segura + Coleta de contexto
 
-* Prompts transmitidos via **HTTPS** (seguro e confidencial).
-* Simultaneamente, o Copilot coleta detalhes do ambiente:
+Prompts transmitidos via **HTTPS** (seguro e confidencial).
 
-  * Código antes e depois do cursor (contexto).
-  * Nome e tipo do arquivo que está sendo editado.
-  * Abas adjacentes abertas, para que a suestão se alinhe a outros trechos de código do mesmo projeto.
-  * Informações sobre a estrutura do projeto e caminhos de arquivos.
-  * Informações sobre linguagnes de programação e frameworks usados.
+. . .
 
----
+Simultaneamente, o Copilot coleta detalhes do ambiente:
+
+* Código antes e depois do cursor (contexto).
+* Nome e tipo do arquivo que está sendo editado.
+* Abas vizinhas abertas, para que a sugestão se alinhe a outros trechos de código do mesmo projeto.
+* Informações sobre a estrutura do projeto e caminhos de arquivos.
+* Informações sobre linguagens de programação e frameworks usados.
+
+## 1. Transmissão segura + Coleta de contexto
+
+Simultaneamente, o Copilot coleta detalhes do ambiente:
+
+* Pré-processamento usando técnica _Fill-in-the-Midle (FIM)_.
+  - Modelos especializados em programação são treinados para preencher o meio (lacuna), em vez de
+    tratar apenas geração da próxima palavra a partir do contexto anterior.
+
+. . .
+
+Obs.: o contexto coletado tem evoluído rapidamente.
+
+- Especialmente no modo agente, o Copilot pode fazer busca em todo o repositório de código.
 
 ## 2. Filtro de proxy
 
@@ -269,7 +554,6 @@ Prompt passa por servidor proxy no Azure (mantido pelo GitHub).
 * bloqueando tentativas de manipulação do prompt 
 * ou ataques de injeção para obter detalhes sobre como o modelo gera as sugestões de código.
 
----
 
 ## 3. Filtragem de toxicidade
 
@@ -278,7 +562,6 @@ Antes da geração, Copilot utiliza filtros para que o código gerado não inclu
   * Discurso de ódio ou conteúdo inapropriado (que pode ser ofensivo, por exemplo).
   * Dados pessoais (nomes, endereços, IDs) para preteger a privacidade e a segurança dos dados do usuário.
 
----
 
 ## 4. Geração de código com o modelo LLM
 
@@ -286,11 +569,10 @@ Antes da geração, Copilot utiliza filtros para que o código gerado não inclu
 * As sugestões são baseadas no entendimento do Copilot tanto do prompt quanto do contexto, 
 * para produzir resultados que sejam relevantes, funcionais e alinhados aos requisitos específicos do projeto.
 
----
 
 ## Fluxo de Saída
 
-![] (imagens/engprompt-3-github-copilot-outbound-flow.png){fig-align="center" fig-alt="Fluxo de saída do processamento de prompts do GitHub Copilot." style="max-height: 60vh;"}
+![](imagens/engprompt-3-github-copilot-outbound-flow.png){fig-align="center" fig-alt="Fluxo de saída do processamento de prompts do GitHub Copilot." style="max-height: 60vh;"}
 
 ## 5. Pós-processamento e validação da resposta
 
@@ -322,7 +604,6 @@ Se o código gerado falhar nessas verificações → pode ser truncada ou descar
   * Para aumentar seu próprio conhecimento com base nas sugestões aceitas.
   * Para aprender e se aprimorar por meio de modificações e rejeições das sugestões.
 
----
 
 ## 7. Repetição para prompts subsequentes
 
@@ -332,30 +613,34 @@ O processo é repetido à medida que o usuário forneça mais prompts.
 - Incluindo os detalhes de contexto fornecidos.
 - Para aprimorar o seu entendimento da intenção do usuário e refiniar seus recursos de geração de código.
 
----
 
 # Dados do GitHub Copilot {background-color="#40666e"}
 
 
 ## Tratamento de dados — Sugestões de código
 
-* Copilot no editor de código **não retém solicitações**.
-* Código, comentários e contexto são usados apenas no momento da sugestão.
-* Após gerar a sugestão → solicitações são descartadas.
-* Assinantes individuais podem **recusar o compartilhamento** de dados com o GitHub para treinar modelos.
+Copilot no editor de código **não retém solicitações**.
 
----
+- Código, comentários e contexto são usados apenas no momento da sugestão.
+- Após gerar a sugestão → solicitações são descartadas.
+
+. . .
+
+Assinantes individuais podem **recusar o compartilhamento** de dados com o GitHub para treinar modelos.
+
+- Isso é [altamente recomendável!]{.alert}
+
 
 ## Tratamento de dados — Copilot Chat
 
-* Funciona como plataforma interativa, com histórico de conversas.
-* Difere das sugestões de código (autocomplete):
+Funciona como plataforma interativa, com histórico de conversas.
 
-  * **Formatação**: respostas adaptadas à interface de chat, como realce de código.
-  * **Participação do usuário**: permite perguntas de acompanhamento e refinamento.
-  * **Retenção**: solicitações/sugestões/contexto podem ser mantidos por **até 28 dias** (varia conforme o editor).
+Difere das sugestões de código (autocomplete):
 
----
+- **Formatação**: respostas adaptadas à interface de chat, como realce de código.
+- **Participação do usuário**: permite perguntas de acompanhamento e refinamento.
+- **Retenção**: solicitações/sugestões/contexto podem ser mantidos por **até 28 dias** (varia conforme o editor).
+
 
 ## Tipos de solicitações no Copilot Chat
 
@@ -375,20 +660,35 @@ O processo é repetido à medida que o usuário forneça mais prompts.
 
   * Ex.: “Aqui está parte do meu código, sugira melhorias.”
 
----
 
-## Limitações — Janelas de contexto
+## Janelas de contexto são limitadas
 
-* **Janela de contexto** = quantidade de código/texto que o modelo processa simultaneamente.
-* Isso inclui não só o prompt utilizado, mas também o contexto do arquivo e do projeto.
-* Limitação pode variar conforme versão e implementação.
+**Janela de contexto** é a quantidade de código/texto que o modelo processa simultaneamente.
+
+. . .
+
+![](imagens/engprompt-3-github-context-window.png){fig-align="center" fig-alt="Janela de contexto de interações com IA." style="max-height: 50vh;"}
+
+. . .
+
+Ela Isso inclui não só o prompt utilizado, 
+
+- mas também o contexto do arquivo e do projeto.
+
+## Janelas de contexto são limitadas
+
+O tamanho máximo da janela de contexto pode variar de acordo com a versão do Copilot
+
+- Contextos maiores podem ser úteis em determinadas circunstâncias.
+- Mas têm alto custo, e podem levar a respostas imprecisas e menos úteis.
 
 
 # LLMs no Copilot {background-color="#40666e"}
 
 ##
 
-- O GitHub Copilot é alimentado por **LLMs** (Large Language Models).  
+O GitHub Copilot é alimentado por **LLMs** (_Large Language Models_).
+
 - Eles permitem escrever código de forma integrada e com **reconhecimento de contexto**.  
 
 ## O que são LLMs?
@@ -399,7 +699,6 @@ O processo é repetido à medida que o usuário forneça mais prompts.
 - **Base em aprendizado de máquina**: redes neurais com milhões ou bilhões de parâmetros.  
 - **Versatilidade**: aplicáveis a múltiplos domínios e idiomas.
 
----
 
 ## Ajuste fino de LLMs
 
@@ -496,13 +795,12 @@ O processo é repetido à medida que o usuário forneça mais prompts.
 
 Podemos usar opções do Copilot fornecem prompts implícitos prédefinidos que podem melhorar a resposta.
 
-- `/doc` — adiciona comentários ao código especificado ou selecionado.
 - `/explain` — obtém explicações sobre o código.
 - `/fix` — para correção de bugs.
-- `/generate` — gera código para responder a um dado prompt.
-- `/help` — obtém ajuda sobre como usar o chat do Copilot.
-- `/optimize` — analisa e melhora o tempo de execução do código selecionado.
 - `/tests` — cria testes unitários para o código selecionado.
+- `/clear` — inicia um novo chat (contexto), marcando o atual como finalizado
+- `/fork` — bifurca a conversa atual em um novo chat.
+- `/compact` — libera espaço de contexto, compactando contexto atual.
 
 ## Prompts implícitos (_slash commands_)
 
@@ -517,6 +815,10 @@ Combine os comandos com o prompt que você deseja usar.
 
 Exemplo: `/explain como a biblioteca Pandas é usada neste código.`
 :::
+
+. . .
+
+Obs.: essa foi uma das funcionalidades que se alteraram muito desde a oferta anterior da disciplina.
 
 ## Contexto seletivo: _chat participants_
 
@@ -550,8 +852,7 @@ Além do agente `@workspace`, você pode usar outros agentes para obter sugestõ
 ## Contexto seletivo: _chat participants_
 
 - `@github` — expande as informações que o Copilot pode fornecer.
-  - Dica: use `@github what skills are available?` para saber como usar esse agente.
-    - Em portugês essa pergunta não funciona :( ... mas a resposta vem em português.
+  - Dica: use `@github quais skills estão disponíveis?` para saber como usar esse agente.    
   - Pode, por exemplo, fazer busca em repositórios ou em histórico de commits. 
 - `@data` — permite fazer análise dados no próprio chat do Copilot.
   - Ex.: `@data crie um gráfico de barras a partir deste arquivo CSV.`
@@ -580,24 +881,25 @@ Você também pode arrastar um arquivo para a janela do chat do Copilot.
 
 No canto inferior esquerdo da janela do chat do Copilot, você pode escolher entre três modos de uso:
 
-. . .
+- Ask
+- Plan
+- Agent
 
-[Ask]{.alert}
+## Modo [Ask]{.alert}
 
 - Para perguntas gerais e explicações.
 - Possíveis sugestões de código aparecem no Chat e você precisa copiar e colar no editor.
 
-## Modos de uso do Chat Copilot
+## Modo [Plan]{.alert}
 
-[Edit]{.alert}
+- Permite criar um planejamento estruturado antes da implementação.
+  - Utilize várias interações até atingir o planejamento desejado.
+  - Com isso, você pode corrigir e/ou direcionar a solução ainda em nível de planejamento.
+  - Levando depois a uma implementação melhor (e com menor uso de tokens).
+- Ao final, é exibido um botão para disparar o início da implementação (modo agente, seguindo o planejamento)
+- Dica: você pode mudar para este modo diretamente usando o comando `/plan`.
 
-- Para atualização rápida e específica de um conjunto definido de arquivos.
-- Permite controle mais granular sobre as edições propostas pelo Copilot.
-- Possibilitando assim controle total sobre o número de solicitações de LLM que o Copilot usa.
-
-## Modos de uso do Chat Copilot
-
-[Agent]{.alert}
+## Modo [Agent]{.alert}
 
 - Quando quiser que o Copilot trate uma tarefa específica de modo autônomo.
 - O próprio Copilot decide quais arquivos editar e como.
@@ -605,20 +907,44 @@ No canto inferior esquerdo da janela do chat do Copilot, você pode escolher ent
 - Funciona em modo interativo até que a tarefa seja concluída.
 - Tem impactos nos custos, pois cada interação pode consumir várias solicitações de LLM.
 
+## Planeje primeiro, implemente depois
 
-## Histórico do Chat do Copilot
+É altamente **recomendável separar o planejamento da implementação**
 
-O Copilot mantém um histórico das conversas que você teve com ele.
+- para alterações complexas que envolve vários arquivos.
 
-- Você pode acessar esse histórico clicando no ícone de relógio no canto superior esquerdo da janela do chat.
-- Isso permite que você revise conversas anteriores, reutilize prompts eficazes e acompanhe o
-progresso de suas interações com o Copilot ao longo do tempo.
+. . .
 
-## Histórico do Chat do Copilot
+Isso evita que a IA resolva o problema de forma errada
 
-::: {.callout-tip}
-Se for começar uma nova tarefa que não tem relação com o que você estava fazendo, é melhor começar uma nova conversa clicando no ícone de mais (+) no canto superior esquerdo.
-:::
+- levando a desperdício de créditos de IA em um código que vai acabar sendo descartado.
+
+## Planeje primeiro, implemente depois
+
+1. [Explore]{.alert}
+
+- Use o modo de consulta ou um subagente para ler o código relevante e entender como ele funciona antes de fazer alterações.
+
+2. [Planeje]{.alert}
+
+- Use o agente de Planejamento para criar um plano de implementação estruturado. 
+- Revise e refine o plano antes de executá-lo.
+
+## Planeje primeiro, implemente depois
+
+3. [Implemente]{.alert}
+
+- Alterne para o modo de agente e implemente a partir do plano. 
+- Inclua testes ou saídas esperadas para que o agente possa verificar seu próprio trabalho. 
+- Execute sessões independentes do Copilot, Claude ou Codex em paralelo.
+
+## Planeje primeiro, implemente depois
+
+4. [Revise]{.alert}
+- Use pontos de verificação para revisar o progresso.
+- Retroceda se o agente se desviar do caminho
+- Solicite uma revisão de código do Copilot no resultado final da alteração (Pull Request).
+
 
 ## Avançado: customização do Copilot
 
@@ -626,7 +952,7 @@ Você pode customizar o comportamento do Copilot de diferentes formas.
 
 1. Com instruções customizadas (para todo o projeto ou para contextos específicos, como todos arquivos .py).
 2. Com arquivos de prompt para reutilização em tarefas repetitivas.
-3. Com modos de chat customizados (além de Ask, Edit e Agent).
+3. Com modos de chat customizados (além de Ask, Plan e Agent).
 4. Escolhendo diferentes modelos de LLM (se sua assinatura permitir).
 
 ## Avançado: customização do Copilot
@@ -635,58 +961,10 @@ Você pode customizar o comportamento do Copilot de diferentes formas.
 
 . . .
 
-Não entraremos em detalhes aqui.
+Não entraremos em detalhes nesses pontos nesta aula.
 
 - Para quem quiser saber mais acesse [Customize chat to your workflow](https://code.visualstudio.com/docs/copilot/customization/overview?originUrl=%2Fdocs%2Fcopilot%2Fcustomization%2Fprompt-files).
 
-# Observações sobre as últimas aulas {background-color="#40666e"}
-
-## Generalização de funções
-
-Ao escrever funções, tente torná-las o mais genéricas possível.
-
-- Isso começa pelo prório prompt e/ou docstring da função.
-
-. . .
-
-Ex.: uma função que recebe uma lista de dados e faz algum processamento.
-
-- não precisa se preocupar sobre como os dados foram obtidos.
-- O que ela precisa deixar claro é o formato dos dados que ela espera.
-- Com isso ela pode ser usada em diferentes contextos.
-  - Ex.: não faz diferença se os dados vieram de arquivo ou não.
-
-## Decomposição de problemas
-
-Notei uma resistência muito grande de boa parte dos alunos em decompor o problema da
-aula passada.
-
-- E alguns já estavam bem dispersos na aula teórica anterior antes disso.
-
-. . .
-
-Lembrem-se que a expectativa é que no futuro nosso trabalho será fortemente
-baseado em assistência com IA.
-
-- E se darão melhor aqueles que conseguirem ser mais produtivos com esse tipo de ferramenta.
-- E a decomposição de problemas é uma habilidade essencial para isso.
-
-
-## Decomposição de problemas
-
-Como diz o ditado _"Apressado come cru"_.
-
-- Às vezes ficamos tentados a obter resultados rápidos.
-- E, as primeiras respostas, podem nos dar a impressão que estamos cortando caminhos.
-- Mas, na verdade, podemos estar apenas criando mais trabalho para nós mesmos.
-
-## Aula ANP 10 de Setembro
-
-10/09 teremos o UFLA de Portas Abertas.
-
-- Assim não teremos aula presencial.
-- A presença será dada pela entrega da atividade de decomposição de problemas da aula passada.
-- É essencial apresentar o diagrama da decomposição do problema.
 
 # Trabalho Prático {background-color="#40666e"}
 
