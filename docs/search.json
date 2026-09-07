@@ -3721,7 +3721,7 @@
     "href": "aula_t6.html#section-12",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Quando estamos criando ferramentas, é muito comum que:\n\nprecisemos lidar com arquivos de diferentes formato\n\n(como arquivos zip, pdf, planilhas de excel ou imagens).\n\ne que precisemos fazer alguma tarefa específica\n\n(como enviar e-mails, intergair com um site, mover arquivos, etc).\n\n\n\nPara muitas dessas coisas precisaremos usar algum módulo.\n\nMas qual módulo?\nE ele é built-in ou preciso instalar?"
+    "text": "Quando estamos criando ferramentas, é muito comum que:\n\nprecisemos lidar com arquivos de diferentes formato\n\n(como arquivos zip, pdf, planilhas de excel ou imagens).\n\ne que precisemos fazer alguma tarefa específica\n\n(como enviar e-mails, interagir com um site, mover arquivos, etc).\n\n\n\nPara muitas dessas coisas precisaremos usar algum módulo.\n\nMas qual módulo?\nE ele é built-in ou preciso instalar?"
   },
   {
     "objectID": "aula_t6.html#section-13",
@@ -3875,7 +3875,7 @@
     "href": "aula_t6.html#section-33",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "GitHub Copilot\n\n\nA melhor forma de instalar um módulo Python para um projeto é usar um ambiente virtual. Assim, as dependências ficam isoladas e não afetam outros projetos ou o sistema.\nPassos recomendados:\n\nCrie um ambiente virtual na pasta do projeto:\n\npython3 -m venv venv\n\nAtive o ambiente virtual:\n\nsource venv/bin/activate\n\nInstale o módulo desejado (exemplo: pyperclip):\n\npip install pyperclip\n\n(Opcional) Gere um arquivo de dependências:\n\npip freeze &gt; requirements.txt\nAssim, você mantém seu projeto organizado e fácil de compartilhar ou replicar em outros ambientes."
+    "text": "GitHub Copilot\n\n\nA melhor forma de instalar um módulo Python para um projeto é usar um ambiente virtual. Assim, as dependências ficam isoladas e não afetam outros projetos ou o sistema.\nPassos recomendados:\n\nCrie um ambiente virtual na pasta do projeto:\n\npython3 -m venv venv\n\nAtive o ambiente virtual:\n\nsource venv/bin/activate  # Linux/Mac\nvenv\\Scripts\\activate     # Windows\n\nInstale o módulo desejado (exemplo: pyperclip):\n\npython -m pip install pyperclip\n\n(Opcional) Gere um arquivo de dependências:\n\npython -m pip freeze &gt; requirements.txt\nAssim, você mantém seu projeto organizado e fácil de compartilhar ou replicar em outros ambientes."
   },
   {
     "objectID": "aula_t6.html#section-34",
@@ -4176,7 +4176,7 @@
     "href": "aula_t6.html#section-76",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Lembre-se também que precisamos seguir o mesmo procedimento do exemplo anterior para criar o ambiente virtual e instalar o módulo pypdf.\n\npython3 -m venv venv\nsource venv/bin/activate\npip install pypdf\npip freeze &gt; requirements.txt\n\n\nLembre-se também de configurar o VS Code para usar o Python do ambiente virtual."
+    "text": "Lembre-se também que precisamos seguir o mesmo procedimento do exemplo anterior para criar o ambiente virtual e instalar o módulo pypdf.\n\npython3 -m venv venv\nsource venv/bin/activate  # Linux/Mac\nvenv\\Scripts\\activate     # Windows\npython -m pip install pypdf\npython -m pip freeze &gt; requirements.txt\n\n\nLembre-se também de configurar o VS Code para usar o Python do ambiente virtual."
   },
   {
     "objectID": "aula_t6.html#section-77",
@@ -4253,14 +4253,14 @@
     "href": "aula_t6.html#section-86",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Nós acabamos de ter o 8º UFLA de Portas Abertas.\n\nE, dentro do evento, tivemos a Oficina de Programação de Jogos.\n\n\nNessa oficina, os participantes do evento experimentam, e modificam, jogos implementados como trabalho da disciplina IPOO de Sistemas de Informação.\n\nE um jogo para ensino de Python, desenvolvido como TCC de Ciência da Computação."
+    "text": "Dentro do UFLA de Portas Abertas.\n\nCostuma acontecer a Oficina de Programação de Jogos.\n\n\nNessa oficina, os alunos participantes do evento:\n\nexperimentam e modificam jogos implementados em atividades acadêmicas da UFLA:\n\ncomo trabalhos da disciplina IPOO de Sistemas de Informação.\nE um jogo para ensino de Python, desenvolvido como TCC de Ciência da Computação."
   },
   {
     "objectID": "aula_t6.html#section-87",
     "href": "aula_t6.html#section-87",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "No evento do ano anterior tínhamos duas dificuldades:\n\nDeixávamos todos os jogos em todas as máquinas, mas abríamos um jogo em cada máquina alternadamente.\n\nA ideia era que os participantes percebessem que havia vários jogos.\n\nDepois que os participantes alteravam o código de um jogo, precisávamos restaurar o código original para a próxima turma.\nDava uma trabalheira fazer isso na mão."
+    "text": "Nos anos antertiores tínhamos duas dificuldades:\n\nDeixávamos todos os jogos em todas as máquinas, mas abríamos um jogo em cada máquina alternadamente.\n\nA ideia era que os participantes percebessem que havia vários jogos.\n\nDepois que os participantes alteravam o código de um jogo, precisávamos restaurar o código original para a próxima turma.\nDava uma trabalheira fazer isso na mão."
   },
   {
     "objectID": "aula_t6.html#prompt",
@@ -4344,7 +4344,7 @@
     "href": "aula_t6.html#section-96",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Mas enquanto estava tentando isso, usei o ChatGPT e ele informou que uma alternativa seria usar o pygame.\n\nPois é um módulo Python que não depende de instalação no sistema operacional.\n\n\nPretendo fazer isso no próximo ano 😉"
+    "text": "Mas enquanto estava tentando isso, usei o ChatGPT e ele informou que uma alternativa seria usar o pygame.\n\nPois é um módulo Python que não depende de instalação no sistema operacional.\n\n\nE, claro, é mais uma oportunidade de usar IA para nos apoiar 😉"
   },
   {
     "objectID": "aula_t6.html#exemplo-4-juntando-fotos-de-vários-celulares",
@@ -7957,5 +7957,12 @@
     "title": "Engenharia de Prompt com o GitHub Copilot",
     "section": "",
     "text": "O GitHub Copilot é alimentado por LLMs (Large Language Models).\n\nEles permitem escrever código de forma integrada e com reconhecimento de contexto."
+  },
+  {
+    "objectID": "aula_t6.html#outro-exemplo-lab-exam-sender",
+    "href": "aula_t6.html#outro-exemplo-lab-exam-sender",
+    "title": "Automatizando Tarefas Tediosas",
+    "section": "Outro exemplo: lab-exam-sender",
+    "text": "Outro exemplo: lab-exam-sender\nOutro caso que usei UIA na prática para automatização de tarefa:\n\nfoi a criação de um utilitário para envio de provas no laboratório.\n\n\nNas aulas de IPOO e POO, aplico prova que é feita no BlueJ e VS Code.\n\nAntes eu coletava as provas usando pendrive.\nMas, com apoio de IA, criei uma ferramenta na qual o próprio aluno envia a prova para a máquina do professor."
   }
 ]
