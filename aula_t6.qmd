@@ -157,7 +157,7 @@ Quando estamos criando ferramentas, é muito comum que:
 - precisemos lidar com arquivos de diferentes formato
   - (como arquivos zip, pdf, planilhas de excel ou imagens).
 - e que precisemos fazer alguma tarefa específica
-  - (como enviar e-mails, intergair com um site, mover arquivos, etc).
+  - (como enviar e-mails, interagir com um site, mover arquivos, etc).
 
 . . .
 
@@ -1552,20 +1552,21 @@ na criação de ferramentas que usem módulos do Python.
 
 ##
 
-Nós acabamos de ter o 8º UFLA de Portas Abertas.
+Dentro do UFLA de Portas Abertas.
 
-- E, dentro do evento, tivemos a Oficina de Programação de Jogos.
+- Costuma acontecer a Oficina de Programação de Jogos.
 
 . . .
 
-Nessa oficina, os participantes do evento experimentam, e modificam, jogos 
-implementados como trabalho da disciplina IPOO de Sistemas de Informação.
+Nessa oficina, os alunos participantes do evento:
 
-- E um jogo para ensino de Python, desenvolvido como TCC de Ciência da Computação.
+- experimentam e modificam jogos implementados em atividades acadêmicas da UFLA:
+  - como trabalhos da disciplina IPOO de Sistemas de Informação.
+  - E um jogo para ensino de Python, desenvolvido como TCC de Ciência da Computação.
 
 ##
 
-No evento do ano anterior tínhamos duas dificuldades:
+Nos anos antertiores tínhamos duas dificuldades:
 
 - Deixávamos todos os jogos em todas as máquinas, mas abríamos um jogo
   em cada máquina alternadamente.
@@ -1663,5 +1664,18 @@ Mas enquanto estava tentando isso, usei o ChatGPT e ele informou que uma alterna
 
 . . .
 
-Pretendo fazer isso no próximo ano 😉
+E, claro, é mais uma oportunidade de usar IA para nos apoiar 😉
+
+## Outro exemplo: `lab-exam-sender`
+
+Outro caso que usei UIA na prática para automatização de tarefa:
+
+- foi a criação de um utilitário para envio de provas no laboratório.
+
+. . .
+
+Nas aulas de IPOO e POO, aplico prova que é feita no BlueJ e VS Code.
+
+- Antes eu coletava as provas usando pendrive.
+- Mas, com apoio de IA, criei uma ferramenta na qual o próprio aluno envia a prova para a máquina do professor.
 
