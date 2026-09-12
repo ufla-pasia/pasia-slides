@@ -48,13 +48,13 @@ juntar fotos de várias pastas (e não apenas as duas do exemplo).
 Deve ser possível também usar a ferramenta novamente para acrescentar novas 
 fotos na pasta que contém as fotos juntadas (sem duplicar fotos).
 
-Lembre-se de usar o fluxo de trabalho que vimos na aula anterior
-(e que está repetido no próximo slide).
+**Você deve usar o fluxo de trabalho que vimos na aula anterior
+(e que está repetido no próximo slide)**.
 
 Dica: você deve usar os arquivos disponíveis em [AulaP6-tarefa1.zip](dados/AulaP6-tarefa1.zip)
 para realizar testes. Confira se são geradas 200 fotos no total.
 
-Depois de fazer o exercício, leia os slides seguintes que apresentam
+**Depois de fazer o exercício**, leia os slides seguintes que apresentam
 como o problema foi tratado pelos autores do livro e algumas dicas de 
 como o professor lidou com problemas teve para construir a ferramenta.
 :::
@@ -265,7 +265,7 @@ Mas por que então o código do livro funcionava?
 
 ##
 
-Aproveito esse episódio para reforçar alguns pontos:
+Aproveito esse episódio para reforçar algumas [dicas]{.alert}:
 
 - **Cuidado** com automatizações que podem levar a perda de dados.
 - Faça **testes**.

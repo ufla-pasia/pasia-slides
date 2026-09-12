@@ -4505,7 +4505,7 @@
     "href": "aula_p6.html#section-3",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Tarefa 1\n\n\nA ideia é que você crie a ferramenta em Python para tratar essa demanda de juntar as fotos. A ferramenta deve ser suficientemente genérica para que possa ser usada para juntar fotos de várias pastas (e não apenas as duas do exemplo). Deve ser possível também usar a ferramenta novamente para acrescentar novas fotos na pasta que contém as fotos juntadas (sem duplicar fotos).\nLembre-se de usar o fluxo de trabalho que vimos na aula anterior (e que está repetido no próximo slide).\nDica: você deve usar os arquivos disponíveis em AulaP6-tarefa1.zip para realizar testes. Confira se são geradas 200 fotos no total.\nDepois de fazer o exercício, leia os slides seguintes que apresentam como o problema foi tratado pelos autores do livro e algumas dicas de como o professor lidou com problemas teve para construir a ferramenta."
+    "text": "Tarefa 1\n\n\nA ideia é que você crie a ferramenta em Python para tratar essa demanda de juntar as fotos. A ferramenta deve ser suficientemente genérica para que possa ser usada para juntar fotos de várias pastas (e não apenas as duas do exemplo). Deve ser possível também usar a ferramenta novamente para acrescentar novas fotos na pasta que contém as fotos juntadas (sem duplicar fotos).\nVocê deve usar o fluxo de trabalho que vimos na aula anterior (e que está repetido no próximo slide).\nDica: você deve usar os arquivos disponíveis em AulaP6-tarefa1.zip para realizar testes. Confira se são geradas 200 fotos no total.\nDepois de fazer o exercício, leia os slides seguintes que apresentam como o problema foi tratado pelos autores do livro e algumas dicas de como o professor lidou com problemas teve para construir a ferramenta."
   },
   {
     "objectID": "aula_p6.html#section-4",
@@ -4624,7 +4624,7 @@
     "href": "aula_p6.html#section-20",
     "title": "Automatizando Tarefas Tediosas",
     "section": "",
-    "text": "Aproveito esse episódio para reforçar alguns pontos:\n\nCuidado com automatizações que podem levar a perda de dados.\nFaça testes.\nTrabalhe com cópias dos dados originais."
+    "text": "Aproveito esse episódio para reforçar algumas dicas:\n\nCuidado com automatizações que podem levar a perda de dados.\nFaça testes.\nTrabalhe com cópias dos dados originais."
   },
   {
     "objectID": "aula_p6.html#section-21",
