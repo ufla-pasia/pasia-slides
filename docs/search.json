@@ -5667,7 +5667,7 @@
     "href": "aula_p7.html#section-14",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Esses dados poderiam estar disponíveis em uma planilha ou arquivo CSV, por exemplo.\n\nMas para usarmos aqui, vamos criar um dicionário Python com esses dados.\n\n\nvendas = {\n    \"Mês\": [\"Jan\", \"Fev\", \"Mar\", \"Abr\", \"Mai\", \"Jun\"],\n    \"Produto A\": [150, 200, 250, 300, 280, 320],\n    \"Produto B\": [100, 120, 180, 160, 220, 210],\n    \"Produto C\": [80, 90, 100, 120, 140, 160]\n}\nRepare que cada chave do dicionário representa o nome de uma coluna.\n\nE os valores são listas com os dados de cada coluna."
+    "text": "Plotly suporta vários tipos de gráficos.\n\nVale a pena dar uma olhada no site para ter uma visão geral.\nplotly.com/python"
   },
   {
     "objectID": "aula_p7.html#plotly",
@@ -5688,28 +5688,28 @@
     "href": "aula_p7.html#section-15",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Plotly suporta vários tipos de gráficos.\n\nVale a pena dar uma olhada no site para ter uma visão geral.\nplotly.com/python"
+    "text": "Vamos agora usar o Pandas e Plotly para criar gráficos interativos com os dados de municípios brasileiros.\n\nPara os próximos exercícios, baixe o arquivo Excel com dados de municípios de Minas Gerais, obtidos do IBGE."
   },
   {
     "objectID": "aula_p7.html#section-16",
     "href": "aula_p7.html#section-16",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Vamos agora usar o Pandas e Plotly para criar gráficos interativos com os dados de municípios brasileiros.\n\nPara os próximos exercícios, baixe o arquivo Excel com dados de municípios de Minas Gerais, obtidos do IBGE."
+    "text": "Tarefa 4\n\n\nFaça a leitura do arquivo Excel com os dados dos municípios de Minas Gerais, usando a biblioteca Pandas.\nCrie um gráfico, usando Plotly, que mostre a população estimada em 2025 dos 20 municípios mais populosos de Minas Gerais.\n\n\n\n\n\n\n\n\n\n\n\n\nTarefa 5\n\n\nExiba um gráfico de pizza mostrando a proporção de receitas realizadas em 2024 dos 5 maiores municípios do sul de Minas Gerais (Poços de Caldas, Pouso Alegre, Varginha, Passos e Lavras)."
   },
   {
     "objectID": "aula_p7.html#section-17",
     "href": "aula_p7.html#section-17",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Tarefa 4\n\n\nFaça a leitura do arquivo Excel com os dados dos municípios de Minas Gerais, usando a biblioteca Pandas.\nCrie um gráfico, usando Plotly, que mostre a população estimada em 2025 dos 20 municípios mais populosos de Minas Gerais.\n\n\n\n\n\n\n\n\n\n\n\n\nTarefa 5\n\n\nExiba um gráfico de pizza mostrando a proporção de receitas realizadas em 2024 dos 5 maiores municípios do sul de Minas Gerais (Poços de Caldas, Pouso Alegre, Varginha, Passos e Lavras)."
+    "text": "Tarefa 6\n\n\nCrie um gráfico de dispersão que mostre a relação entre o nível de escolarização, a mortalidade infantil, a população estimada e o PIB per capta dos 40 municípios mais populosos de Minas Gerais.\nUtilize:\n\no eixo X para representar representar o PIB per capta,\no eixo Y para representar a população estimada,\no tamanho dos pontos para representar a mortalidade infantil,\ne a cor dos pontos para representar o nível de escolarização."
   },
   {
     "objectID": "aula_p7.html#section-18",
     "href": "aula_p7.html#section-18",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Tarefa 6\n\n\nCrie um gráfico de dispersão que mostre a relação entre o nível de escolarização, a mortalidade infantil, a população estimada e o PIB per capta dos 40 municípios mais populosos de Minas Gerais.\nUtilize:\n\no eixo X para representar representar o PIB per capta,\no eixo Y para representar a população estimada,\no tamanho dos pontos para representar a mortalidade infantil,\ne a cor dos pontos para representar o nível de escolarização."
+    "text": "Dê uma olhada no catálogo de exemplos do Dash:\n\ndash-example-index.herokuapp.com"
   },
   {
     "objectID": "aula_p7.html#dash-1",
@@ -5723,21 +5723,21 @@
     "href": "aula_p7.html#section-19",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Dê uma olhada no catálogo de exemplos do Dash:\n\ndash-example-index.herokuapp.com"
+    "text": "Tarefa 7\n\n\nCrie uma aplicação web interativa para mostrar o gráfico da Tarefa 6.\nA aplicação deve permitir que o usuário selecione o número de municípios a serem exibidos no gráfico, usando um controle deslizante (slider).\n\n\n\n\n\n\n\n\n\n\n\n\nTarefa 8\n\n\nAltere a aplicação web para que ela permita que o usuário altere o critério de seleção dos municípios a serem exibidos (mais populosos, de maior PIB per capta, etc), usando um menu suspenso (dropdown)."
   },
   {
     "objectID": "aula_p7.html#section-20",
     "href": "aula_p7.html#section-20",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Tarefa 7\n\n\nCrie uma aplicação web interativa para mostrar o gráfico da Tarefa 6.\nA aplicação deve permitir que o usuário selecione o número de municípios a serem exibidos no gráfico, usando um controle deslizante (slider).\n\n\n\n\n\n\n\n\n\n\n\n\nTarefa 8\n\n\nAltere a aplicação web para que ela permita que o usuário altere o critério de seleção dos municípios a serem exibidos (maios populosos, de maior PIB per capta, etc), usando um menu suspenso (dropdown)."
+    "text": "Tarefa 9\n\n\nAltere a aplicação Web de forma que o usuário consiga escolher quais colunas serão usadas no gráfico de dispersão.\nOu seja, quais colunas representarão os eixos X e Y, o tamanho dos pontos e a cor dos pontos."
   },
   {
     "objectID": "aula_p7.html#section-21",
     "href": "aula_p7.html#section-21",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Tarefa 9\n\n\nAltere a aplicação Web de forma que o usuário consiga escolher quais colunas serão usadas no gráfico de dispersão.\nOu seja, quais colunas representarão os eixos X e Y e o tamanho e a cor dos pontos."
+    "text": "Tarefa 9\n\n\nAltere a aplicação Web de forma que o usuário consiga escolher quais colunas serão usadas no gráfico de dispersão.\nOu seja, quais colunas representarão os eixos X e Y, o tamanho dos pontos e a cor dos pontos."
   },
   {
     "objectID": "aula_t8.html#section",

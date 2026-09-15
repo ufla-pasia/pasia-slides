@@ -415,8 +415,6 @@ refeições consumidas de acordo com a cidade de nascimento do estudante.
 O gráfico deve mostrar primeiro as cidades com maior número de refeições consumidas.
 :::
 
-##
-
 # Plotly {background-color="#40666e"}
 
 ## Plotly
