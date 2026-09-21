@@ -338,7 +338,7 @@ Agora com o Copilot podemos concentrar
 
 . . .
 
-Geral usamos períodos de tempo no eixo `X` (horizontal).
+Geralmente usamos períodos de tempo no eixo `X` (horizontal).
 
 - e uma ou mais colunas numéricas no eixo `Y` (vertical).
 
@@ -588,7 +588,7 @@ Vamos ver outras melhorias de visualização que podemos fazer com a ajuda do Co
 ::: {.callout-caution title="Prompt" icon="false"}
 Altere o gráfico para que as barras sejam exibidas na horizontal, e os valores de 
 cada barra sejam exibidos dentro da própria barra. Use uma paleta de cores.
-Também altere o título do eixo X para Produtos e mude a cor do Título e dos nomes dos
+Também altere o título do eixo X para Produtos e mude a cor do título e dos nomes dos
 eixos para azul escuro.
 :::
 

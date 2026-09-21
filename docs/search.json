@@ -4855,7 +4855,7 @@
     "href": "aula_t7.html#gráfico-de-linhas",
     "title": "Visualizando Dados",
     "section": "Gráfico de Linhas",
-    "text": "Gráfico de Linhas\nGráficos de linhas, como os que apresentamos, são úteis quando precisamos:\n\nilustrar tendências em dados ao longo de um período de tempo.\n\n\nGeral usamos períodos de tempo no eixo X (horizontal).\n\ne uma ou mais colunas numéricas no eixo Y (vertical)."
+    "text": "Gráfico de Linhas\nGráficos de linhas, como os que apresentamos, são úteis quando precisamos:\n\nilustrar tendências em dados ao longo de um período de tempo.\n\n\nGeralmente usamos períodos de tempo no eixo X (horizontal).\n\ne uma ou mais colunas numéricas no eixo Y (vertical)."
   },
   {
     "objectID": "aula_t7.html#section-19",
@@ -4953,7 +4953,7 @@
     "href": "aula_t7.html#section-30",
     "title": "Visualizando Dados",
     "section": "",
-    "text": "Vamos ver outras melhorias de visualização que podemos fazer com a ajuda do Copilot.\n\nPodemos, por exemplo, pedir que o gráfico seja gerado na horizontal,\nou que as barras sejam exibidas com cores diferentes.\n\n\n\n\n\n\nPrompt\n\n\nAltere o gráfico para que as barras sejam exibidas na horizontal, e os valores de cada barra sejam exibidos dentro da própria barra. Use uma paleta de cores. Também altere o título do eixo X para Produtos e mude a cor do Título e dos nomes dos eixos para azul escuro."
+    "text": "Vamos ver outras melhorias de visualização que podemos fazer com a ajuda do Copilot.\n\nPodemos, por exemplo, pedir que o gráfico seja gerado na horizontal,\nou que as barras sejam exibidas com cores diferentes.\n\n\n\n\n\n\nPrompt\n\n\nAltere o gráfico para que as barras sejam exibidas na horizontal, e os valores de cada barra sejam exibidos dentro da própria barra. Use uma paleta de cores. Também altere o título do eixo X para Produtos e mude a cor do título e dos nomes dos eixos para azul escuro."
   },
   {
     "objectID": "aula_t7.html#section-31",
