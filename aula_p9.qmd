@@ -294,7 +294,6 @@ e executar os comandos abaixo no terminal (assumindo que seu ambiente virtual es
 ```bash
 venv/bin/python -m pygame.examples.aliens
 venv/bin/python -m pygame.examples.chimp
-venv/bin/python -m pygame.examples.chimp
 ```
 
 . . .
