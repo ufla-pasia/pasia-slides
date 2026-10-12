@@ -1,0 +1,923 @@
+---
+title: Spec-Driven Development e Programação Agêntica
+subtitle: PASIA - Aula T.10
+---
+
+##
+
+Até agora, usamos IA para **compreender código, projetar funções, escrever testes** e desenvolver aplicações.
+
+. . .
+
+Hoje vamos discutir como organizar o desenvolvimento de um **projeto com várias funcionalidades** usando agentes de programação.
+
+- Como evitar que decisões importantes se percam ao longo das conversas?
+- Como conferir se o agente fez **o que precisávamos**, e não apenas algo que funciona?
+
+## Objetivos desta aula
+
+Ao final, você deverá conseguir:
+
+- distinguir *vibe coding* de [Spec-Driven Development (SDD)]{.alert};
+- reconhecer o papel das **especificações**, do **agente** e da **revisão humana**;
+- descrever um fluxo incremental de SDD, da constituição à validação;
+- identificar riscos, limites e aplicações de MCP, skills e subagentes.
+
+# Por que especificar? {background-color="#40666e"}
+
+## Uma situação conhecida
+
+Imagine que você pediu a um agente para criar um sistema de controle de tarefas.
+
+- Primeiro, pediu o cadastro de tarefas.
+- Depois, filtros por situação e por prioridade.
+- Em outra sessão, pediu exportação para CSV.
+
+. . .
+
+O agente pode implementar cada pedido, mas **esquecer decisões anteriores** ou modificar comportamentos já aprovados.
+
+## Vibe Coding vs. SDD
+
+:::: {.columns}
+::: {.column width="50%"}
+**Vibe coding**
+
+1. Pedimos algo.
+2. Observamos o resultado.
+3. Corrigimos pelo chat.
+4. Repetimos.
+:::
+::: {.column width="50%"}
+**Spec-Driven Development**
+
+1. Definimos objetivos e restrições.
+2. Registramos decisões em arquivos.
+3. Planejamos e implementamos.
+4. Validamos contra critérios explícitos.
+:::
+::::
+
+## 
+
+Com **vibe coding** você torce para conseguir o que você precisa.
+
+. . .
+
+Já com SDD você chega mais perto do que realmente precisa.
+
+- Foca em dar contexto através de arquivos de especificação
+- Em vez de trabalhar diretamente com programação.
+
+. . .
+
+SDD não elimina a conversa: ela passa a **produzir e manter decisões verificáveis**.
+
+## SDD: Vantagens
+
+- Pode lidar com alterações grandes que afetam vários arquivos.
+- Lida com perda de contexto entre diferentes interações com agentes de IA.
+  - Garante definições “não-negociáveis”.
+- Define objetivo, critérios de sucesso, restrições
+  - Agente cria o plano completo.
+
+
+##
+
+Sistemas podem se tornar mais difíceis de manter
+
+- Quando várias pessoas usam diferentes IAs, com diferentes contextos para trabalhar no mesmo sistema.
+- Especificação é uma forma de fazer com que toda a equipe siga os mesmos critérios, padrões, na hora de fazer o sistema.
+
+. . .
+
+Em projetos novos, agentes podem gerar a especificação desde o início.
+
+- Mas podemos também criar especificações para projetos já existentes.
+
+##
+
+IA pode trabalhar por vários minutos desenvolvendo algo
+
+- E o resultado é muito melhor se gastarmos alguns minutos **planejando melhor** [o que]{.alert} e [como]{.alert} as coisas devem ser feitas.
+
+## Uma especificação é um contrato de trabalho
+
+Ela esclarece:
+
+- **O quê** deve ser feito e **por quê**;
+- **quais restrições** devem ser respeitadas;
+- **como reconhecer** que a entrega foi concluída.
+
+. . .
+
+Especificação pode ser feita usando as próprias ferramentas de IA
+
+- Elas sumarizam as decisões principais de arquitetura.
+
+## Uma especificação é um contrato de trabalho
+
+Servem como referência compartilhada entre pessoas, sessões e agentes diferentes.
+
+- Não garante código correto por si só.
+- Exige revisão e atualização contínuas.
+
+## Exemplo: requisito ambíguo
+
+> Crie uma lista de tarefas com prioridades.
+
+. . .
+
+O agente precisa decidir sozinho:
+
+- Quais prioridades existem?
+- Uma tarefa pode ficar sem prioridade?
+- Como aparecem as tarefas concluídas?
+- Os dados devem persistir entre execuções?
+
+## A mesma ideia, com critérios verificáveis
+
+::: {.callout-note title="Exemplo de especificação" icon="false"}
+- Cada tarefa tem **descrição**, **prioridade** (`baixa`, `media`, `alta`) e **situação** (`pendente` ou `concluida`).
+- A descrição não pode ser vazia.
+- Por padrão, a listagem mostra todas as tarefas.
+- O usuário pode filtrar por situação.
+- Para esta primeira versão, os dados ficam apenas em memória.
+:::
+
+. . .
+
+**Teste de aceitação:** ao marcar uma tarefa como concluída, o filtro `pendente` não pode mais apresentá-la.
+
+## Discussão
+
+::: {.callout-tip title="Atividade rápida" icon="false"}
+Um usuário diz: **"O sistema precisa ser fácil de usar"**.
+
+1. Por que esse requisito é difícil de validar?
+2. Reescrevam-no como um comportamento observável.
+3. Que teste permitiria verificar esse comportamento?
+:::
+
+## O que o humano delega — e o que não delega
+
+**Agentes** podem analisar repositórios, editar arquivos, executar comandos e testes.
+
+. . .
+
+**Pessoas** continuam responsáveis por:
+
+- decidir objetivos e prioridades;
+- aprovar escolhas e restrições;
+- inspecionar resultados e riscos;
+- aceitar ou rejeitar a entrega.
+
+. . .
+
+O agente acelera a construção; a especificação orienta a construção.
+
+## SDD: Benefícios
+
+Controla o código com pequenas modificações na especificação.
+
+- Algumas linhas dizendo como deve ser o front-end pode gerar centenas de linhas de código.
+- Não precisamos gastar energia / tempo / raciocínio nos detalhes de implementação (abstração).
+
+. . .
+
+Elimina o decaimento de contexto
+
+- Acontece entre muitas sessões com agentes.
+- Especificações mantêm contextos não só entre sessões com o mesmo agente, mas também entre diferentes agentes.
+
+## SDD: Benefícios
+
+Melhora a fidelidade à intenção
+
+- É mais provável que os agentes atendam seus objetivos.
+
+##
+
+Assim como compilador traduz código em binário.
+
+- Estamos agora traduzindo especificação em linguagem humana em código.
+
+. . .
+
+A ideia é trazer “engenharia” do ciclo de desenvolvimento de software para codificação com agentes.
+
+## Agente vs. Chat
+
+Agente tem acesso ao código, ferramentas que você tem instaladas, etc.
+
+. . .
+
+Agentes são *pair-programmers*
+
+- Eles fornecem conhecimento técnico e velocidade.
+- Você, como arquiteto, apresenta o desenho da solução (*blue-prints*).
+- O agente é o músculo, e a especificação é o cérebro
+
+## Agente vs. Chat
+
+A ideia é produzir software que não só funcione
+
+- mas que, principalmente, esteja alinhado com seus objetivos de longo prazo.
+
+
+# O ciclo de trabalho {background-color="#40666e"}
+
+## Duas escalas de decisão
+
+:::: {.columns}
+::: {.column width="50%"}
+**Projeto — constituição**
+
+- Missão
+- Pilha tecnológica
+- Roadmap
+:::
+::: {.column width="50%"}
+**Funcionalidade — ciclo incremental**
+
+- Requisitos
+- Planejamento
+- Validação
+- Implementação e revisão
+:::
+::::
+
+. . .
+
+Entre funcionalidades: **replanejar** quando as decisões mudarem.
+
+## Primeira fase: Constituição
+
+Pode ser o que costuma ser feito em arquivo `agents.md`
+
+- Mas não depende de agente de IA específico.
+- E é mais estruturado.
+- Funciona como acordo entre os humanos e também com os agentes.
+
+. . .
+
+Precisamos focar no nível certo de detalhes:
+
+- E **não** naquilo que o agente pode descobrir sozinho.
+
+## Constituição: missão
+
+A missão estabelece o contexto de longo prazo:
+
+- Define o [por quê]{.alert}
+- Indica a visão e problema que queremos resolver;
+- público-alvo e principais necessidades;
+- escopo do produto e o que está fora dele;
+- objetivos e critérios gerais de sucesso.
+
+## Constituição: pilha tecnológica
+
+Registra escolhas e restrições técnicas que precisam ser mantidas:
+
+- linguagem e bibliotecas permitidas;
+- modo de execução e distribuição;
+- persistência de dados;
+- organização arquitetural e convenções essenciais.
+
+. . .
+
+Indica como a solução se encaixa na pilha de tecnologia da empresa
+
+- Evita que cada agente reinvente a arquitetura do projeto.
+
+## Constituição: roadmap
+
+Lista com **fases de implementação ordenadas**.
+
+- Cada fase terá seu próprio arquivo de especificação.
+
+. . .
+
+É um documento vivo: novas informações podem mudar sua ordem ou granularidade.
+
+## Segunda fase: Funcionalidade
+
+Terminada a constituição entramos no processo de criar funcionalidades.
+
+. . .
+
+Para cada funcionalidade, o processo envolve
+
+1. Especificação
+2. Implementação
+3. Validação
+
+## Terceira fase: Replanejamento
+
+É executada entre uma fase de funcionalidade e outra
+
+- Melhora a definição da Constituição
+- Melhora o próprio processo.
+
+. . .
+
+Esse ciclo Funcionalidade -> Replanejamento -> Funcionalidade é repetido até terminarmos a solução.
+
+## Programação Agêntica
+
+Devemos lembrar do nível correto de detalhamento.
+
+- Nós somos os arquitetos que passamos os projetos para os construtores
+
+. . .
+
+Nosso papel é:
+- Projetar
+- Supervisonar
+- Revisar
+- Aceitar… ou pedir mudanças
+
+. . .
+
+Nosso foco deve ser em fornecer contexto para os construtores fazerem o trabalho deles.
+
+- Assumindo que eles sabem fazer o trabalho deles.
+
+## Por que trabalhar em etapas?
+
+Mudanças pequenas:
+
+- tornam diffs mais fáceis de revisar;
+- permitem localizar regressões;
+- reduzem o custo de refazer escolhas equivocadas;
+- diminuem a quantidade de contexto necessária para a próxima etapa.
+
+. . .
+
+"Implementar tudo de uma vez" pode funcionar, mas aumenta o volume de código a verificar.
+
+## Exemplo de estrutura
+
+```text
+projeto/
+├── README.md
+├── specs/
+│   ├── missao.md
+│   ├── pilha-tecnologia.md
+│   ├── roadmap.md
+│   └── 01-cadastro-tarefas/
+│       ├── requisitos.md
+│       ├── planejamento.md
+│       └── validacao.md
+├── src/
+└── tests/
+```
+
+Os **nomes e diretórios são convenções do nosso exemplo**, não exigências do SDD.
+
+## Ambiente
+
+SDD é agnóstico em relação às ferramentas utilizadas.
+
+- Pode ser qualquer IDE.
+- Qualquer agente de IA.
+- É altamente recomendável usar controle de versão (_git_) para a revisão das alterações feitas pelo agente de IA.
+
+# Criando a Constituição {background-color="#40666e"}
+
+##
+
+Lembre-se que constituição se refere ao planejamento de alto nível sobre o que será desenvolvido agora (e até no futuro).
+
+1. Missão: ideia principal.
+2. Pilha de Tecnologia: como ela se encaixa na pilha da empresa.
+  - Precisamos, principalmente, limitar o que será usado.
+3. Roadamp: quais funcionalidades são planejadas.
+
+. . .
+
+Usamos o próprio agente de IA para nos ajudar a escrever a constituição
+
+## Passo 1: Descrição do projeto README.md
+
+Colocar a descrição em alto nível do projeto
+
+- Focar especialmente no que se espera com a solução a ser desenvolvida.
+- Consideranto tanto o público-alvo (usuários finais).
+- Quanto o público interno (desenvolvedores / mantenedores da solução).
+
+## Passo 2: Criação das especificações da constituição
+
+Pode ser feita conversando-se com o agente.
+
+. . .
+
+::: {.callout-caution title="Exemplo de Prompt" icon="false"}
+Estamos criando XX, que é um XXXX. Veja no arquivo README.md o que é esperado no projeto. Vamos criar uma “constituição” em um diretório `specs`:
+
+- `missao.md`
+- `pilha-tecnologia.md`
+- `roadmap.md` para organizar a implementação em alto nível, em passos bem pequenos.
+:::
+
+##
+
+SDD funciona melhor com abordagem *human in the loop*.
+
+- Quando revisamos / validamos pequenas modificações.
+
+Revise o que foi criado pelo agente.
+
+- Se precisar melhorar alguma coisa na especificação peça o agente, em vez de mudar manualmente.
+- Isso evita que algum documento relacionado fique desatualizado.
+
+## Passo 3: comitar os arquivos
+
+É importante usar controle de versão, comitar os arquivos.
+
+- Isso permite ter rastreabilidade / histórico das decisões relacionadas à especificação.
+
+
+# Especificando a Funcionalidade {background-color="#40666e"}
+
+##
+
+**Importante**: Comece uma [nova sessão com o agente]{.alert}, 
+pois todo o contexto que ele precisa está na especificação.
+
+. . .
+
+::: {.callout-caution title="Exemplo de Prompt" icon="false"}
+Encontre a próxima fase em specs/roadmap.md, crie uma branch e me pergunte sobre a especificação da funcionalidade.
+Crie:
+ - Uma nova pasta YYYY-MM-DD-nome-funcionalidade dentro de `specs` para essa funcionalidade.
+ - Dentro dela:
+  - `planejamento.md` com uma série de grupos de tarefas numerados.
+  - `requisitos.md` para escopo, decisões e contexto.
+  - `validacao.md` para como saber se a implementação foi feita com sucesso e pode ser incluída (_merge_).
+
+Use `specs/missao.md` e `specs/pilha-tecnologia.md` para se guiar.
+:::
+
+##
+
+Na conversa com o agente revise com cuidado e responda às perguntas feitas.
+
+- Você não tem que aceitar tudo que o agente está propondo.
+- É importante fazer escolhas conscientes e que guiem para o que realmente é necessário.
+
+. . .
+
+Quando a especificação for gerada, revise-a com cuidado.
+
+- É muito importante que ela comece correta para que o trabalho fique bem feito.
+- Se alguma coisa não estiver certa, peça ao agente para corrigir.
+
+##
+
+Comece revisando `planejamento.md`.
+
+- Veja se tem tudo que é necessário.
+- Se faltar algo peça ao agente para adicionar (ex: um novo grupo de tarefas para algo que faltou).
+
+. . .
+
+Depois revise `requisitos.md`.
+
+- Não passe direto nisso, mas também não é para ficar entrando em detalhes técnicos (ex.: nomes de variáveis).
+- Queremos controlar o processo, mas não controlar demais o agente.
+
+##
+
+Por fim, revise `validacao.md`.
+
+- É importante que o que esteja sendo proposto realmente teste se tudo funciona como deveria.
+
+. . .
+
+Lembre-se que o que está escrito em algumas linhas nos arquivos markdown, pode gerar centenas de linhas de código.
+
+- Então **o tempo gasto revisando** o texto, **é tempo muito bem investido**!
+
+# Implementação da Funcionalidade {background-color="#40666e"} 
+
+##
+
+Comece uma **nova sessão** com o agente.
+
+. . .
+
+Diga ao agente para fazer a implementação da funcionalidade.
+
+- Você pode pedir para ele implementar todas as funcionalidades restantes
+- Ou fazer um grupo de tarefas de cada vez
+  - É bem útil quando uma mudança pode ter grandes implicações depois.
+
+##
+
+Revise as alterações feitas.
+
+- Em seguida, execute a aplicação (se for o caso).
+
+. . .
+
+O agente fez as validações dele, no próximo passo, faremos as nossas.
+
+# Validação da Funcionalidade {background-color="#40666e"} 
+
+##
+
+Avalie o código criado
+
+- Foco no alto nível: se a implementação funciona e atende aos requisitos
+- E não em detalhes: como quais classes foram criadas.
+
+. . .
+
+Se precisar alterar algo, peça ao agente para atualizar não só implementação, mas também o planejamento.
+
+- Exemplo: `Atualize `specs/YYYY-MM-DD-nome-funcionalidade.md` e a implementação para que ...`
+
+## 
+
+Antes de terminar funcionalidade, pergunte-se:
+
+- Os critérios de aceitação foram atendidos?
+- Os documentos refletem o comportamento real?
+- Há testes relevantes e o código está versionado?
+- O roadmap representa o que ainda falta fazer?
+
+##
+
+Esse processo é o que chamamos de *human in the loop*.
+
+- Atuamos no revisão e não na programação em si.
+- Agentes são muito rápidos para programar, mas nós temos que guiar para que seja feito o que realmente precisamos.
+- Removemos a sobrecarga mental de ter que escrever, evoluir e validar cada linha de código.
+  - Tendo a especificação, o próprio agente valida o que está fazendo.
+
+##
+
+Podemos até fazer alterações diretamente no código, quando isso parecer ser mais eficiente.
+
+- Mas lembre-se de pedir o agente para atualizar a especificação, para refletir o que foi feito.
+
+. . 
+
+Ao terminar a validação marque o trabalho como completo.
+
+## Exemplos de prompts úteis para finalização
+
+::: {.callout-caution title="Exemplo de Prompt" icon="false"}
+Faça um PR para a branch develop para a fase que implementamos, marcando-a como finalizada em specs/roadmap.md
+:::
+
+. . .
+
+::: {.callout-caution title="Exemplo de Prompt" icon="false"}
+Marque esta fase em `specs/roadmap.md` como completa, comite o que foi feito, mude para main, faça o merge dessa branch e delete-a.
+:::
+
+# Replanejamento {background-color="#40666e"} 
+
+##
+
+Antes de prosseguir para a próxima funcionalidade, vale a pena refletir sobre o processo.
+
+- Às vezes precisamos ir mais devagar para que, no final, sejamos mais rápidos.
+
+. . .
+
+Se for necessário alterar a constituição do projeto, é recomendável fazer isso em uma branch específica.
+
+- Isso ajuda a identificar qual versão da constituição gerou qual código.
+- Pode ser identificado que seria necessário seguir um design responsivo, por exemplo.
+
+##
+
+Se a implementação do que está sendo alterado for pequena, pode ser que faça sentido fazer na própria branch de replanejamento.
+
+- Mas se for algo maior, vale a pena acrescentar como uma fase futura do Roadmap.
+
+. . .
+
+Queremos que a especificação guarde as decisões, não apenas o código.
+
+- E precisamos que as duas coisas estejam sincronizadas.
+- Portanto, é necessário deixar isso claro para o agente.
+
+. . .
+
+**Princípio:** especificação e código devem evoluir juntos.
+
+##
+
+Precisamos manter alterações pequenas.
+
+- Facilita a revisão da especificação e do código que precisamos fazer.
+
+. . .
+
+No replanejamento, é interessante verificar se os próximos passos ainda fazem sentido.
+
+- Pode ser necessário alterá-los, mudar a ordem, combinar várias fases em uma só ou separar em mais de uma.
+
+##
+
+A fase de replanejamento pode ser usada também para sincronizar stakeholders do projeto que não sejam de perfil técnico.
+
+- Um exemplo para facilitar isso seria manter um log das mudanças (change log).
+- Podemos usar **skills** para isso.
+
+## Skills
+
+**Skills** adicionam novas habilidades e capacidades a um agente de IA.
+
+- São úteis para processos bem definidos e repetitivos que demandam contexto específico do nosso projeto ou empresa
+- Podemos escrever skills na mão, mas agentes de IA geralmente têm skills que nos ajudam a escrever novas skills.
+- Exemplos:
+    - Skill para atualizar o changelog do projeto.
+    - Skill para tarefas de validação e qualidade de código.
+
+
+# Próxima fase de funcionalidade {background-color="#40666e"} 
+
+##
+
+É muito importante evitar a fadiga de IA.
+
+- IA gera muito código, que pode ser bem complicado de revisar.
+- Precisamos garantir que, na nova fase de funcionalidade, a IA siga a especificação, e não alguma memória das últimas conversas que tivemos.
+- Além de ajudar a evitar custos desnecessários com grande histórico de contexto.
+
+##
+
+Por isso, é importante verificar:
+
+- Terminamos realmente o que estávamos fazendo?
+- Já foi feito merge da última funcionalidade ou replanejamento?
+- A próxima fase está clara e bem definida?
+
+. . .
+
+E então limpamos o contexto do agente.
+
+- Para começarmos a próxima fase.
+
+##
+
+Podemos começar com o mesmo prompt da primeira funcionalidade.
+
+- E, se isso for repetitivo, podemos automatizar nosso workflow.
+
+. . .
+
+E então seguimos os mesmos passos da funcionalidade anterior.
+
+- Ter fases de replanejamento entre funcionalidades ajuda a evitar transbordamento de contexto.
+  - Não só do agente de IA, mas nosso também.
+
+##
+
+Às vezes precisamos pedir ao agente comece implementando apenas parte da funcionalidade.
+
+- Para manter o trabalho gerenciável.
+
+. . .
+
+Dica: observar o “raciocínio” do agente pode ser útil para entender melhor suas decisões.
+
+##
+
+Durante o desenvolvimento, você pode descobrir que algum padrão de codificação deveria estar sendo seguido, mas não tinha sido especificado.
+
+- Tudo bem, a ideia é evoluir a especificação também ao longo do projeto.
+
+. . .
+
+Usar o **depurador para rodar testes** automatizados pode ser uma boa estratégia para ganhar mais entendimento sobre como funciona o código.
+
+##
+
+Podemos também pedir o agente para fazer uma revisão profunda das alterações de uma branch antes de prosseguir.
+
+::: {.callout-caution title="Exemplo de Prompt" icon="false"}
+Faça uma revisão profunda: dispare múltiplos subagentes para verificar todas as alterações dessa branch a partir de três perspectivas diferentes e verifique se alguma coisa não faz sentido, poderia ser melhor, etc.
+:::
+
+. . .
+
+Criar subagentes é interessante porque não polui a janela de contexto do agente principal.
+
+- E dá a oportunidade para a IA avaliar melhor o código.
+- Os subagentes podem retornar problemas e sugestões de melhoria no projeto, que você pode decidir tratar ou não.
+
+# Projetos Legados {background-color="#40666e"} 
+
+##
+
+SDD pode ser útil também para projetos já existentes, criados sem IA.
+
+. . .
+
+Devemos começar criando a constituição do projeto.
+
+- Podemos usar basicamente o mesmo prompt que usamos para o projeto novo.
+  - Mas listando os artefatos que podem ser usados para entender o projeto: como código, README, lista de TODOs, issues, etc.
+- A IA usará Engenharia Reversa para gerar a especificação a partir do projeto existente.
+
+##
+
+A constituição criada permitirá que futuras funcionalidades desenvolvidas pelo agente de IA estejam alinhadas com o que foi desenvolvido antes no projeto.
+
+Lembre-se que a especificação deve ser versionada assim como o código.
+
+Depois de criada a constituição, o processo SDD é exatamente o mesmo feito para novos projetos.
+
+# Ferramentas e integração {background-color="#40666e"}
+
+## Chat × agente de programação
+
+. . .
+
+Um chat convencional responde a mensagens.
+
+. . .
+
+Um **agente de programação**, quando autorizado e equipado com ferramentas, também pode:
+
+- consultar arquivos e estrutura do repositório;
+- alterar código e especificações;
+- executar comandos e testes;
+- revisar alterações.
+
+. . .
+
+O nível de autonomia depende das ferramentas disponíveis e das permissões concedidas.
+
+## `AGENTS.md` e skills
+
+**`AGENTS.md`** pode reunir instruções recorrentes para agentes que trabalham no repositório.
+
+Já **Skills** encapsulam procedimentos e contexto para tarefas repetitivas.
+
+. . .
+
+Exemplos de skill:
+
+- preparar especificação de uma nova funcionalidade;
+- verificar padrões de testes;
+- atualizar changelog após uma entrega.
+
+A disponibilidade e o formato variam conforme a ferramenta.
+
+## O que é MCP?
+
+. . .
+
+[Model Context Protocol (MCP)]{.alert} é um protocolo aberto de integração entre aplicações com IA e fontes de dados ou ferramentas externas.
+
+- **Cliente MCP:** componente da aplicação que se conecta a um servidor.
+- **Servidor MCP:** expõe capacidades autorizadas (por exemplo, ferramentas e recursos).
+- **Ferramenta:** operação que um cliente pode solicitar, como listar arquivos.
+
+. . .
+
+MCP **não é** um modelo de IA; é um mecanismo de conexão padronizada.
+
+## Exemplo de MCP: arquivos locais
+
+```text
+Agente / aplicativo (cliente MCP)
+             |
+             | protocolo MCP
+             v
+Servidor MCP de arquivos
+             |
+             v
+Diretório permitido do projeto
+```
+
+. . .
+
+O agente pode pedir ao servidor para **listar ou ler arquivos** que estejam dentro do escopo autorizado.
+
+- Acesso e operações dependem das permissões configuradas.
+- Não se deve expor pastas pessoais ou credenciais desnecessariamente.
+
+## MCP × API × skill
+
+| Conceito | Papel principal |
+|---|---|
+| API | Interface de programação de um serviço |
+| MCP | Protocolo para disponibilizar capacidades a clientes compatíveis |
+| Skill | Instruções/procedimentos reutilizáveis para o agente |
+
+. . .
+
+Eles podem ser **complementares**, não concorrentes.
+
+## Subagentes e inspeção independente
+
+Algumas ferramentas permitem delegar revisões a agentes auxiliares.
+
+- Um revisa **requisitos**.
+- Outro procura **falhas de teste**.
+- Outro verifica **arquitetura e manutenção**.
+
+. . .
+
+Revisões independentes ajudam, mas **não substituem a verificação humana** e podem aumentar o consumo de tokens.
+
+# Aprendizados de um projeto real {background-color="#40666e"}
+
+## Exemplo: aplicação de relatórios com Streamlit
+
+Essa aula foi preparada aplicando-se SDD a uma demanda real
+
+- um aplicativo web Python/Streamlit desenvolvido com apoio de agentes;
+- foram criados os documentos de missão, pilha tecnológica e roadmap.
+  - E também um arquivo adicional com especificação da interface Streamlit (`ui-spec.md`);
+- funcionalidades foram implementadas em rodadas sucessivas.
+
+. . .
+
+O processo revelou benefícios, mas também problemas de **sincronização das especificações**.
+
+## Quando um requisito se perde
+
+. . .
+
+Em um caso, a decisão era **ocultar** um botão de download sem permissão.
+
+- O agente chegou a implementar o botão **desabilitado**, com mensagem explicativa.
+
+. . .
+
+A divergência reapareceu mais tarde, indicando que a decisão não estava registrada de forma suficientemente consistente nos documentos relevantes.
+
+- **Lição:** corrigir o código sem atualizar a especificação permite regressões futuras.
+
+## Arquitetura é uma restrição verificável
+
+Em outra situação, dados simulados foram colocados diretamente na camada de interface, contrariando uma separação de camadas definida para o projeto.
+
+. . .
+
+A implementação até poderia funcionar visualmente, mas **violava uma decisão de arquitetura**.
+
+- Requisitos funcionais e restrições arquiteturais exigem validação.
+- O agente não pode inferir o que é "não negociável" se isso não estiver claro.
+
+## Custos e limites
+
+- Mais autonomia pode significar **mais tokens e mais código a revisar**.
+- Trocar de modelo não resolve, por si só, especificação ambígua ou desatualizada.
+- Testes gerados pelo próprio agente podem reproduzir um entendimento incorreto.
+- Sem conhecimento técnico, fica difícil avaliar escolhas e regressões.
+
+. . .
+
+SDD melhora a coordenação, mas não dispensa conhecimento de programação e engenharia de software.
+
+# Síntese e preparação para o laboratório {background-color="#40666e"}
+
+## Qual processo escolher?
+
+**Exercício isolado e descartável:** uma conversa curta pode bastar.
+
+**Funcionalidade pequena em projeto existente:** registre requisitos e validação antes de alterar o código.
+
+**Projeto com evolução contínua:** constituição, roadmap e entregas incrementais passam a ser especialmente úteis.
+
+. . .
+
+O nível de formalização deve ser **proporcional à complexidade e ao risco**.
+
+## Checkpoint — o que está errado?
+
+> "O agente criou testes e todos passaram. Portanto, podemos fazer o merge sem conferir requisitos."
+
+. . .
+
+**Discuta:** que tipos de falhas esse raciocínio pode esconder?
+
+- Critérios de aceitação mal compreendidos.
+- Testes insuficientes ou alinhados a uma implementação errada.
+- Violação de restrições técnicas não exercitadas pelos testes.
+
+## Na aula prática
+
+Construiremos um pequeno **gerenciador de tarefas em Python**, partindo de documentos de especificação.
+
+1. Constituição e uma funcionalidade inicial.
+2. Implementação incremental e testes.
+3. Mudança de requisito e replanejamento.
+4. Demonstração de **MCP de arquivos**, sem exigir chamadas pagas de LLM.
+
+## Referências
+
+- DeepLearning.AI — [Spec-Driven Development (SDD) with Code Agents](https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents).
+- [Model Context Protocol — documentação](https://modelcontextprotocol.io/).
+- [MCP: servidor de arquivos](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem).
+- Anotações feitas para preparação da aula (`anotacoes.md`): experiência prática com Streamlit e agentes.
