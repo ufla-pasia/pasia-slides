@@ -172,9 +172,11 @@ Um usuário diz: **"O sistema precisa ser fácil de usar"**.
 - inspecionar resultados e riscos;
 - aceitar ou rejeitar a entrega.
 
-. . .
+## O que o humano delega — e o que não delega
 
-O agente acelera a construção; a especificação orienta a construção.
+Enquanto **o agente** [acelera]{.alert} a construção, 
+
+- **a especificação** [orienta]{.alert} a construção.
 
 ## SDD: Benefícios
 
@@ -216,7 +218,7 @@ Agentes são *pair-programmers*
 
 - Eles fornecem conhecimento técnico e velocidade.
 - Você, como arquiteto, apresenta o desenho da solução (*blue-prints*).
-- O agente é o músculo, e a especificação é o cérebro
+- O agente é o músculo e a especificação é o cérebro.
 
 ## Agente vs. Chat
 
@@ -227,18 +229,18 @@ A ideia é produzir software que não só funcione
 
 # O ciclo de trabalho {background-color="#40666e"}
 
-## Duas escalas de decisão
+## Dois níveis de decisão
 
 :::: {.columns}
 ::: {.column width="50%"}
-**Projeto — constituição**
+**Alto nível: Constituição**
 
 - Missão
 - Pilha tecnológica
 - Roadmap
 :::
 ::: {.column width="50%"}
-**Funcionalidade — ciclo incremental**
+**Segundo nível: Funcionalidade — ciclo incremental**
 
 - Requisitos
 - Planejamento
@@ -267,10 +269,14 @@ Precisamos focar no nível certo de detalhes:
 
 ## Constituição: missão
 
-A missão estabelece o contexto de longo prazo:
+A missão estabelece o contexto de longo prazo.
 
-- Define o [por quê]{.alert}
-- Indica a visão e problema que queremos resolver;
+- E define o [por quê]{.alert} da solução.
+
+. . .
+
+Indica a visão e problema que queremos resolver;
+
 - público-alvo e principais necessidades;
 - escopo do produto e o que está fora dele;
 - objetivos e critérios gerais de sucesso.
@@ -286,7 +292,7 @@ Registra escolhas e restrições técnicas que precisam ser mantidas:
 
 . . .
 
-Indica como a solução se encaixa na pilha de tecnologia da empresa
+Indica como a solução se encaixa na pilha de tecnologia da empresa.
 
 - Evita que cada agente reinvente a arquitetura do projeto.
 
@@ -332,12 +338,13 @@ Devemos lembrar do nível correto de detalhamento.
 . . .
 
 Nosso papel é:
+
 - Projetar
 - Supervisonar
 - Revisar
-- Aceitar… ou pedir mudanças
+- Aceitar… ou pedir mudanças.
 
-. . .
+##
 
 Nosso foco deve ser em fornecer contexto para os construtores fazerem o trabalho deles.
 
@@ -345,16 +352,18 @@ Nosso foco deve ser em fornecer contexto para os construtores fazerem o trabalho
 
 ## Por que trabalhar em etapas?
 
+. . .
+
 Mudanças pequenas:
 
-- tornam diffs mais fáceis de revisar;
+- tornam _diffs_ mais fáceis de revisar;
 - permitem localizar regressões;
 - reduzem o custo de refazer escolhas equivocadas;
 - diminuem a quantidade de contexto necessária para a próxima etapa.
 
 . . .
 
-"Implementar tudo de uma vez" pode funcionar, mas aumenta o volume de código a verificar.
+Implementar "tudo de uma vez" pode funcionar, mas aumenta o volume de código a verificar.
 
 ## Exemplo de estrutura
 
@@ -392,15 +401,17 @@ Lembre-se que constituição se refere ao planejamento de alto nível sobre o qu
 1. Missão: ideia principal.
 2. Pilha de Tecnologia: como ela se encaixa na pilha da empresa.
   - Precisamos, principalmente, limitar o que será usado.
-3. Roadamp: quais funcionalidades são planejadas.
+3. Roadmap: quais funcionalidades são planejadas.
 
 . . .
 
-Usamos o próprio agente de IA para nos ajudar a escrever a constituição
+Usamos o próprio agente de IA para nos ajudar a escrever a constituição.
 
 ## Passo 1: Descrição do projeto README.md
 
-Colocar a descrição em alto nível do projeto
+. . .
+
+Colocar a descrição em alto nível do projeto.
 
 - Focar especialmente no que se espera com a solução a ser desenvolvida.
 - Consideranto tanto o público-alvo (usuários finais).
@@ -408,11 +419,13 @@ Colocar a descrição em alto nível do projeto
 
 ## Passo 2: Criação das especificações da constituição
 
+. . .
+
 Pode ser feita conversando-se com o agente.
 
 . . .
 
-::: {.callout-caution title="Exemplo de Prompt" icon="false"}
+::: {.callout-caution title="Exemplo de Prompt" icon="false" .nonincremental}
 Estamos criando XX, que é um XXXX. Veja no arquivo README.md o que é esperado no projeto. Vamos criar uma “constituição” em um diretório `specs`:
 
 - `missao.md`
@@ -425,6 +438,8 @@ Estamos criando XX, que é um XXXX. Veja no arquivo README.md o que é esperado 
 SDD funciona melhor com abordagem *human in the loop*.
 
 - Quando revisamos / validamos pequenas modificações.
+
+. . .
 
 Revise o que foi criado pelo agente.
 
@@ -447,11 +462,12 @@ pois todo o contexto que ele precisa está na especificação.
 
 . . .
 
-::: {.callout-caution title="Exemplo de Prompt" icon="false"}
+::: {.callout-caution title="Exemplo de Prompt" icon="false" .nonincremental}
 Encontre a próxima fase em specs/roadmap.md, crie uma branch e me pergunte sobre a especificação da funcionalidade.
 Crie:
- - Uma nova pasta YYYY-MM-DD-nome-funcionalidade dentro de `specs` para essa funcionalidade.
- - Dentro dela:
+
+- Uma nova pasta YYYY-MM-DD-nome-funcionalidade dentro de `specs` para essa funcionalidade.
+- Dentro dela:
   - `planejamento.md` com uma série de grupos de tarefas numerados.
   - `requisitos.md` para escopo, decisões e contexto.
   - `validacao.md` para como saber se a implementação foi feita com sucesso e pode ser incluída (_merge_).
@@ -551,7 +567,7 @@ Antes de terminar funcionalidade, pergunte-se:
 
 Esse processo é o que chamamos de *human in the loop*.
 
-- Atuamos no revisão e não na programação em si.
+- Atuamos na revisão e não na programação em si.
 - Agentes são muito rápidos para programar, mas nós temos que guiar para que seja feito o que realmente precisamos.
 - Removemos a sobrecarga mental de ter que escrever, evoluir e validar cada linha de código.
   - Tendo a especificação, o próprio agente valida o que está fazendo.
@@ -562,7 +578,7 @@ Podemos até fazer alterações diretamente no código, quando isso parecer ser 
 
 - Mas lembre-se de pedir o agente para atualizar a especificação, para refletir o que foi feito.
 
-. . 
+. . .
 
 Ao terminar a validação marque o trabalho como completo.
 
@@ -628,17 +644,6 @@ A fase de replanejamento pode ser usada também para sincronizar stakeholders do
 
 - Um exemplo para facilitar isso seria manter um log das mudanças (change log).
 - Podemos usar **skills** para isso.
-
-## Skills
-
-**Skills** adicionam novas habilidades e capacidades a um agente de IA.
-
-- São úteis para processos bem definidos e repetitivos que demandam contexto específico do nosso projeto ou empresa
-- Podemos escrever skills na mão, mas agentes de IA geralmente têm skills que nos ajudam a escrever novas skills.
-- Exemplos:
-    - Skill para atualizar o changelog do projeto.
-    - Skill para tarefas de validação e qualidade de código.
-
 
 # Próxima fase de funcionalidade {background-color="#40666e"} 
 
@@ -730,92 +735,276 @@ Devemos começar criando a constituição do projeto.
 
 A constituição criada permitirá que futuras funcionalidades desenvolvidas pelo agente de IA estejam alinhadas com o que foi desenvolvido antes no projeto.
 
-Lembre-se que a especificação deve ser versionada assim como o código.
+- Lembre-se que a especificação deve ser versionada assim como o código.
+- Depois de criada a constituição, o processo SDD é exatamente o mesmo feito para novos projetos.
 
-Depois de criada a constituição, o processo SDD é exatamente o mesmo feito para novos projetos.
+# Comentários sobre Experiência sobre uso real de SDD {background-color="#40666e"}
 
-# Ferramentas e integração {background-color="#40666e"}
-
-## Chat × agente de programação
-
-. . .
-
-Um chat convencional responde a mensagens.
+## App Web usando Python Streamlit
 
 . . .
 
-Um **agente de programação**, quando autorizado e equipado com ferramentas, também pode:
+Eu já tinha os requisitos do ponto de vista do usuário.
 
-- consultar arquivos e estrutura do repositório;
-- alterar código e especificações;
-- executar comandos e testes;
-- revisar alterações.
+- Criei a missão usando esse arquivo como um TODO de demandas.
+- E escrevi um README com necessidades gerais do projeto.
+- Gerei também um arquivo `ui-spec.md` usando gemini a partir de prints e prototipação feita com Excalidraw.
+- Usei VS Code + Copilot + Git.
+
+##
+
+Fase inicial do processo até relatórios de finos funcionou bem.
+
+- Apesar do consumo de tokens ser alto.
+- Copilot a princípio usando GPT 5.3 Codex.
+  - Depois passou a usar MAI-Code-1-Flash.
 
 . . .
 
-O nível de autonomia depende das ferramentas disponíveis e das permissões concedidas.
+Entre uma fase e outra eu pedia para atualizar a `ui-spec.md`.
 
-## `AGENTS.md` e skills
+- Porque fui descobrindo que ele não representava exatamente o que eu tinha na prototipação inicial.
+
+## 
+
+Mas ao chegar na parte de Fretes o resultado começou a ficar bem ruim.
+
+- Não fazia o que eu queria
+- Atrapalhava o que já estava pronto de finos.
+- Tentei ir acertando com o prompt mas vi que nunca ficava certo.
+- Pode ser que aí tenha começado a fazer falta o conhecimento técnico mais profundo sobre Streamlit.
+- Mas desconfiei do modelo MAI.
+
+##
+
+Experimentei simplesmente descartar a implementação e começar uma nova sessão escolhendo modelo Claude Sonnet 5.
+
+- Ele faz coisas bem mais profundas, pensa mais, e até fez testes usando a própria aplicação web gerada.
+- Mas demora bastante, faz muita coisa e consome muitos tokens!
+- E o resultado do primeiro grupo implementado já não foi legal.
+
+## 
+
+Resolvi então tentar
+
+- Forçar novamente o uso do Codex no Copilot.
+- Refinar o planejamento
+  - Fiz um prompt relatando as dificuldades que eu estava encontrando.
+  - Os arquivos de planejamento, requisitos e validação foram atualizados.
+
+##
+
+Mas aí notei uma possível fonte do problema.
+
+- O arquivo `ui-spec.md` talvez estivesse atrapalhando.
+- Quando fiz mudanças durante a implementação dos relatórios de finos usei a IA para atualizá-lo, mas sem mexer nas funcionalidades futuras.
+  - Elas acabaram ficando com definições desatualizadas.
+- Usei então a IA para atualizar isso tanto para Fretes como para a fase futura de Prêmios.
+
+##
+
+Fiz então a implementação:
+
+- E enfim funcionou!
+- Com um bom consumo de tokens, mas foi rápido.
+- Observação: agente cria “memória” interna que pode influenciar no resultado (não sei exatamente como o copilot trata isso entre modelos diferentes).
+
+## Regressões
+
+. . .
+
+Ao longo do desenvolvimento notei que algumas decisões acabavam sendo perdidas, e a implementação “voltava” para algo que eu não queria.
+
+- Ex.: quando usuário não tinha permissão eu queria que os botões de Download simplesmente não aparecessem.
+- Mas na primeira implementação ficavam desabilitados com uma mensagem dizendo que usuário não tinha acesso.
+- Eu então pedi para ficar do jeito que eu queria. Mas, mais adiante, ao tratar os fretes, essa decisão voltou.
+- Provavelmente porque isso não estava claro na especificação do Roadmap.
+
+##
+
+No minicurso que fiz, depois do planejamento da funcionalidade partia-se diretamente para implementação.
+
+- Mas usando o Codex, ele sempre sugeria criar um checklist de implementação técnica por arquivo antes da implementação, mas eu não fiz nenhuma vez.
+- Teria sido melhor? :)
+
+## Replanejamento
+
+Fiz um replanejamento para os relatórios sob demanda.
+
+- Ver [prompt](https://app.notion.com/p/Exemplo-de-replanejamento-no-projeto-piloto-3b615baf13668017b592e1ec9b06cebf?source=copy_link).
+- Replanejamento foi importante e teve bom resultado.
+
+## Situações inesperadas
+
+Após o replanejamento o agente mockou os dados diretamente na `main_view`.
+
+- Sem seguir contrato de divisão de camadas que era algo crítico da arquitetura.
+
+. . .
+
+Briga para fazer notificação funcionar
+
+- Problema da implementação minha? 
+- Realmente não é tão simples no Streamlit?
+
+## O consutmo de tokens é bem alto
+
+- No meu caso compensou, pois eu gastaria muito mais tempo para o desenvolvimento.
+- E esse tempo economizado eu estaria desenvolvendo outras coisas, portanto, ganhei produtividade.
+- Mas essa conta é complexa:
+  - Provavelmente eu teria gastado menos se tivesse mais conhecimento técnico sobre Streamlit.
+  - E se usasse outra IA (como ChatGPT, Gemini para discutir decisões antes de aplicar no Copilot).
+
+## Testes automatizados
+
+Provavelmente eu não teria implementado tantos testes automatizados.
+
+- O que na verdade seria um deficiência da minha implementação
+- Portanto, o resultado com IA, nesse ponto, foi melhor.
+
+## Riscos de _vibe coding_ da suíte de testes
+
+. . .
+
+Como fazemos código sem entender tudo, também não conseguimos mais garantir que os testes estão adequados.
+
+- Assim, os testes podem ser atualizados para atender ao que foi implementado e não mais ao que era necessário fazer.
+- Esse é um [alto risco]{.alert}!
+
+## Aprendizado sobre a geração do `ui-spec.md`
+
+. . .
+
+Creio que o resultado ficaria bem melhor se eu tivesse feito uma prototipação inicial já usando streamlit
+
+- considerando o conteúdo desse arquivo, ainda sem as partes funcionais.
+
+. . .
+
+O planejamento de cada rodada de funcionalidade parecia perder informações do `ui-spec.md`
+
+- faltou melhorar meu prompt?
+
+## Outras observações
+
+Impactos da falta de conhecimento com Streamlit.
+
+- Mesmo usando skill do Streamlit não consegui aumentar a largura de uma caixa diálogo.
+- Em uma busca no Google vi que bastava usar parâmetro `width="large"` .
+
+. . .
+
+Roadmap perdia informações do TODO
+
+- Seguindo a metologia eu mesmo deveria ter refinado isso nos primeiros prompts.
+
+##
+
+Problemas acentuação nos textos e comentários.
+
+- Deveria estar claro no README.md?
+
+. . .
+
+Comportamentos variados da IA
+
+- Só na fase 7 ela resolveu atualizar arquivo de planejamento a cada grupo implementado com o status.
+
+## Desenvolvimento após protótipo usando SSD
+
+Na fase seguinte do projeto acabei não seguindo SSD.
+
+- Principalmente devido ao alto consumo de tokens.
+- E à minha falta de conhecimento técnico de Streamlit.
+
+. . .
+
+Continuei usando Copilot, mas sem seguir o processo em si.
+
+## Desenvolvimento após protótipo usando SSD
+
+Essa experiência reforçou o que discutimos no início da disciplina.
+
+- Quem tem base técnica para o que está sendo desenvolvido, consegue tirar melhor proveito das ferramentas de IA.
+
+. . .
+
+E devemos levar em conta que essa foi uma primeira experiência com a metodologia.
+
+- Foi um aprendizado.
+- O uso em um próximo projeto tende a melhorar os resultados.
+
+# Padrões usados em Programação Agêntica {background-color="#40666e"}
+
+##
+
+Como a evolução rápida dos agentes de IA, 
+
+- não é recomendado que nosso SDD esteja fortemente vinculado a um agente específico.
+
+. . .
+
+Por isso é importante usar padrões que nos ajudem a manter o trabalho funcionando 
+
+- mesmo que precisemos usar outro agente de IA no futuro.
+
+## Exemplos de padrões
+
+- MCP
+- Agents.md
+- Skills
+
+## MCP
+
+[Model Context Protocol]{.alert} é um padrão de código-aberto para conectar agentes de IA com ferramentas externas.
+
+- Permite que agente tenha acesso, por exemplo, a banco de dados, APIs, sistemas de acesso restrito, etc.
+- Existe MCP para acessar, por exemplo, versão mais atualizada de pacotes.
+
+. . .
+
+Existem vários MCPs úteis para o que precisamos.
+
+## `AGENTS.md` 
 
 **`AGENTS.md`** pode reunir instruções recorrentes para agentes que trabalham no repositório.
 
-Já **Skills** encapsulam procedimentos e contexto para tarefas repetitivas.
+- É uma espécie de README, mas para os agentes.
+
+## Skills
+
+Podemos criar skills que facilitem nosso trabalho evitando tarefas repetitivas.
+
+- O prompt para especificar a funcionalidade, por exemplo, é repetitivo.
+  - Ou para atualizar o changelog do projeto, para tarefas de validação e qualidade de código.
+- Podemos usar o próprio agente de IA para criar as skills.
 
 . . .
 
-Exemplos de skill:
+::: {.callout-caution title="Exemplo de Prompt" icon="false"}
+Quero parar de ficar repetindo o prompt de especificação.
+Use seu criador de skill para me ajudar a escrever uma especificação de funcionalidade, como uma skill local.
+Segue o prompt que tenho usado:
+  ...
+:::
 
-- preparar especificação de uma nova funcionalidade;
-- verificar padrões de testes;
-- atualizar changelog após uma entrega.
+## Skills
 
-A disponibilidade e o formato variam conforme a ferramenta.
+Assistir a saída do agente enquanto cria a skill pode ajudar a verificar se ela está sendo criada como gostaria.
 
-## O que é MCP?
-
-. . .
-
-[Model Context Protocol (MCP)]{.alert} é um protocolo aberto de integração entre aplicações com IA e fontes de dados ou ferramentas externas.
-
-- **Cliente MCP:** componente da aplicação que se conecta a um servidor.
-- **Servidor MCP:** expõe capacidades autorizadas (por exemplo, ferramentas e recursos).
-- **Ferramenta:** operação que um cliente pode solicitar, como listar arquivos.
+- Para usar uma skill, podemos dizer diretamente para usá-la ao fazer uma tarefa
 
 . . .
 
-MCP **não é** um modelo de IA; é um mecanismo de conexão padronizada.
+::: {.callout-caution title="Exemplo de Prompt" icon="false"}
+Use a skill de especificação de funcionalidade para especificar a próxima ...
+:::
 
-## Exemplo de MCP: arquivos locais
+## Plugins
 
-```text
-Agente / aplicativo (cliente MCP)
-             |
-             | protocolo MCP
-             v
-Servidor MCP de arquivos
-             |
-             v
-Diretório permitido do projeto
-```
+São extensões para agentes de IA que podem ser instaladas e atualizadas.
 
-. . .
-
-O agente pode pedir ao servidor para **listar ou ler arquivos** que estejam dentro do escopo autorizado.
-
-- Acesso e operações dependem das permissões configuradas.
-- Não se deve expor pastas pessoais ou credenciais desnecessariamente.
-
-## MCP × API × skill
-
-| Conceito | Papel principal |
-|---|---|
-| API | Interface de programação de um serviço |
-| MCP | Protocolo para disponibilizar capacidades a clientes compatíveis |
-| Skill | Instruções/procedimentos reutilizáveis para o agente |
-
-. . .
-
-Eles podem ser **complementares**, não concorrentes.
+- Geralmente são específicas para cada agente de IA.
 
 ## Subagentes e inspeção independente
 
@@ -829,70 +1018,31 @@ Algumas ferramentas permitem delegar revisões a agentes auxiliares.
 
 Revisões independentes ajudam, mas **não substituem a verificação humana** e podem aumentar o consumo de tokens.
 
-# Aprendizados de um projeto real {background-color="#40666e"}
+## Spec-kit e OpenSpec
 
-## Exemplo: aplicação de relatórios com Streamlit
+`github.com/spec-kit` é uma tentativa de formalizar fluxo de trabalho com SDD.
 
-Essa aula foi preparada aplicando-se SDD a uma demanda real
-
-- um aplicativo web Python/Streamlit desenvolvido com apoio de agentes;
-- foram criados os documentos de missão, pilha tecnológica e roadmap.
-  - E também um arquivo adicional com especificação da interface Streamlit (`ui-spec.md`);
-- funcionalidades foram implementadas em rodadas sucessivas.
+- Fornece comandos para agentes de IA que fazem o que nós vimos.
 
 . . .
 
-O processo revelou benefícios, mas também problemas de **sincronização das especificações**.
+OpenSpec é uma alternativa.
 
-## Quando um requisito se perde
+- `github.com/fission-ai/open-spec`
 
-. . .
+## Backlog
 
-Em um caso, a decisão era **ocultar** um botão de download sem permissão.
+Às vezes, durante o desenvolvimento de uma funcionalidade temos uma ideia de algo que poderia ser feito.
 
-- O agente chegou a implementar o botão **desabilitado**, com mensagem explicativa.
-
-. . .
-
-A divergência reapareceu mais tarde, indicando que a decisão não estava registrada de forma suficientemente consistente nos documentos relevantes.
-
-- **Lição:** corrigir o código sem atualizar a especificação permite regressões futuras.
-
-## Arquitetura é uma restrição verificável
-
-Em outra situação, dados simulados foram colocados diretamente na camada de interface, contrariando uma separação de camadas definida para o projeto.
+- Como mudar a banco de dados usado, por exemplo.
+- E conversamos sobre isso com o agente, mas não queremos implementar agora.
 
 . . .
 
-A implementação até poderia funcionar visualmente, mas **violava uma decisão de arquitetura**.
+Podemos pedir o agente para criar uma pasta de backlog e salvar essa conversa (com recomendações) de forma organizada (por data e assunto, por exemplo).
 
-- Requisitos funcionais e restrições arquiteturais exigem validação.
-- O agente não pode inferir o que é "não negociável" se isso não estiver claro.
+- De forma que depois possam ser consultadas para serem incluídas no Roadmap.
 
-## Custos e limites
-
-- Mais autonomia pode significar **mais tokens e mais código a revisar**.
-- Trocar de modelo não resolve, por si só, especificação ambígua ou desatualizada.
-- Testes gerados pelo próprio agente podem reproduzir um entendimento incorreto.
-- Sem conhecimento técnico, fica difícil avaliar escolhas e regressões.
-
-. . .
-
-SDD melhora a coordenação, mas não dispensa conhecimento de programação e engenharia de software.
-
-# Síntese e preparação para o laboratório {background-color="#40666e"}
-
-## Qual processo escolher?
-
-**Exercício isolado e descartável:** uma conversa curta pode bastar.
-
-**Funcionalidade pequena em projeto existente:** registre requisitos e validação antes de alterar o código.
-
-**Projeto com evolução contínua:** constituição, roadmap e entregas incrementais passam a ser especialmente úteis.
-
-. . .
-
-O nível de formalização deve ser **proporcional à complexidade e ao risco**.
 
 ## Checkpoint — o que está errado?
 
@@ -906,18 +1056,11 @@ O nível de formalização deve ser **proporcional à complexidade e ao risco**.
 - Testes insuficientes ou alinhados a uma implementação errada.
 - Violação de restrições técnicas não exercitadas pelos testes.
 
-## Na aula prática
+# Referência {background-color="#40666e"}
 
-Construiremos um pequeno **gerenciador de tarefas em Python**, partindo de documentos de especificação.
+##
 
-1. Constituição e uma funcionalidade inicial.
-2. Implementação incremental e testes.
-3. Mudança de requisito e replanejamento.
-4. Demonstração de **MCP de arquivos**, sem exigir chamadas pagas de LLM.
+DeepLearning.AI:
 
-## Referências
+- Minicurso: [Spec-Driven Development (SDD) with Code Agents](https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents).
 
-- DeepLearning.AI — [Spec-Driven Development (SDD) with Code Agents](https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents).
-- [Model Context Protocol — documentação](https://modelcontextprotocol.io/).
-- [MCP: servidor de arquivos](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem).
-- Anotações feitas para preparação da aula (`anotacoes.md`): experiência prática com Streamlit e agentes.

@@ -420,9 +420,13 @@
 <li class="fragment">aceitar ou rejeitar a entrega.</li>
 </ul>
 </div>
-<div class="fragment">
-<p>O agente acelera a construção; a especificação orienta a construção.</p>
-</div>
+</section>
+<section id="o-que-o-humano-delega-e-o-que-não-delega-1" class="slide level2">
+<h2>O que o humano delega — e o que não delega</h2>
+<p>Enquanto <strong>o agente</strong> <span class="alert">acelera</span> a construção,</p>
+<ul>
+<li class="fragment"><strong>a especificação</strong> <span class="alert">orienta</span> a construção.</li>
+</ul>
 </section>
 <section id="sdd-benefícios" class="slide level2">
 <h2>SDD: Benefícios</h2>
@@ -464,7 +468,7 @@
 <ul>
 <li class="fragment">Eles fornecem conhecimento técnico e velocidade.</li>
 <li class="fragment">Você, como arquiteto, apresenta o desenho da solução (<em>blue-prints</em>).</li>
-<li class="fragment">O agente é o músculo, e a especificação é o cérebro</li>
+<li class="fragment">O agente é o músculo e a especificação é o cérebro.</li>
 </ul>
 </div>
 </section>
@@ -480,18 +484,18 @@
 <h1>O ciclo de trabalho</h1>
 
 </section>
-<section id="duas-escalas-de-decisão" class="slide level2">
-<h2>Duas escalas de decisão</h2>
+<section id="dois-níveis-de-decisão" class="slide level2">
+<h2>Dois níveis de decisão</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Projeto — constituição</strong></p>
+<p><strong>Alto nível: Constituição</strong></p>
 <ul>
 <li class="fragment">Missão</li>
 <li class="fragment">Pilha tecnológica</li>
 <li class="fragment">Roadmap</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Funcionalidade — ciclo incremental</strong></p>
+<p><strong>Segundo nível: Funcionalidade — ciclo incremental</strong></p>
 <ul>
 <li class="fragment">Requisitos</li>
 <li class="fragment">Planejamento</li>
@@ -503,19 +507,33 @@
 <p>Entre funcionalidades: <strong>replanejar</strong> quando as decisões mudarem.</p>
 </div>
 </section>
-<section id="constituição-missão" class="slide level2">
-<h2>Constituição: missão</h2>
-<p>A missão estabelece o contexto de longo prazo:</p>
+<section id="primeira-fase-constituição" class="slide level2">
+<h2>Primeira fase: Constituição</h2>
+<p>Pode ser o que costuma ser feito em arquivo <code>agents.md</code></p>
 <ul>
-<li class="fragment">problema que queremos resolver;</li>
-<li class="fragment">público-alvo e principais necessidades;</li>
-<li class="fragment">escopo do produto e o que está fora dele;</li>
-<li class="fragment">objetivos e critérios gerais de sucesso.</li>
+<li class="fragment">Mas não depende de agente de IA específico.</li>
+<li class="fragment">E é mais estruturado.</li>
+<li class="fragment">Funciona como acordo entre os humanos e também com os agentes.</li>
 </ul>
 <div class="fragment">
 <p>Precisamos focar no nível certo de detalhes:</p>
 <ul>
 <li class="fragment">E <strong>não</strong> naquilo que o agente pode descobrir sozinho.</li>
+</ul>
+</div>
+</section>
+<section id="constituição-missão" class="slide level2">
+<h2>Constituição: missão</h2>
+<p>A missão estabelece o contexto de longo prazo.</p>
+<ul>
+<li class="fragment">E define o <span class="alert">por quê</span> da solução.</li>
+</ul>
+<div class="fragment">
+<p>Indica a visão e problema que queremos resolver;</p>
+<ul>
+<li class="fragment">público-alvo e principais necessidades;</li>
+<li class="fragment">escopo do produto e o que está fora dele;</li>
+<li class="fragment">objetivos e critérios gerais de sucesso.</li>
 </ul>
 </div>
 </section>
@@ -529,20 +547,81 @@
 <li class="fragment">organização arquitetural e convenções essenciais.</li>
 </ul>
 <div class="fragment">
-<p>Evita que cada agente reinvente a arquitetura do projeto.</p>
+<p>Indica como a solução se encaixa na pilha de tecnologia da empresa.</p>
+<ul>
+<li class="fragment">Evita que cada agente reinvente a arquitetura do projeto.</li>
+</ul>
 </div>
 </section>
 <section id="constituição-roadmap" class="slide level2">
 <h2>Constituição: roadmap</h2>
-<p>Lista <strong>entregas pequenas e ordenadas</strong>:</p>
-<ol type="1">
-<li class="fragment">Criar e listar tarefas em memória.</li>
-<li class="fragment">Concluir tarefas e filtrar por situação.</li>
-<li class="fragment">Salvar e recuperar tarefas de um arquivo.</li>
-<li class="fragment">Adicionar interface para usuário.</li>
-</ol>
+<p>Lista com <strong>fases de implementação ordenadas</strong>.</p>
+<ul>
+<li class="fragment">Cada fase terá seu próprio arquivo de especificação.</li>
+</ul>
 <div class="fragment">
 <p>É um documento vivo: novas informações podem mudar sua ordem ou granularidade.</p>
+</div>
+</section>
+<section id="segunda-fase-funcionalidade" class="slide level2">
+<h2>Segunda fase: Funcionalidade</h2>
+<p>Terminada a constituição entramos no processo de criar funcionalidades.</p>
+<div class="fragment">
+<p>Para cada funcionalidade, o processo envolve</p>
+<ol type="1">
+<li class="fragment">Especificação</li>
+<li class="fragment">Implementação</li>
+<li class="fragment">Validação</li>
+</ol>
+</div>
+</section>
+<section id="terceira-fase-replanejamento" class="slide level2">
+<h2>Terceira fase: Replanejamento</h2>
+<p>É executada entre uma fase de funcionalidade e outra</p>
+<ul>
+<li class="fragment">Melhora a definição da Constituição</li>
+<li class="fragment">Melhora o próprio processo.</li>
+</ul>
+<div class="fragment">
+<p>Esse ciclo Funcionalidade -&gt; Replanejamento -&gt; Funcionalidade é repetido até terminarmos a solução.</p>
+</div>
+</section>
+<section id="programação-agêntica" class="slide level2">
+<h2>Programação Agêntica</h2>
+<p>Devemos lembrar do nível correto de detalhamento.</p>
+<ul>
+<li class="fragment">Nós somos os arquitetos que passamos os projetos para os construtores</li>
+</ul>
+<div class="fragment">
+<p>Nosso papel é:</p>
+<ul>
+<li class="fragment">Projetar</li>
+<li class="fragment">Supervisonar</li>
+<li class="fragment">Revisar</li>
+<li class="fragment">Aceitar… ou pedir mudanças.</li>
+</ul>
+</div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p>Nosso foco deve ser em fornecer contexto para os construtores fazerem o trabalho deles.</p>
+<ul>
+<li class="fragment">Assumindo que eles sabem fazer o trabalho deles.</li>
+</ul>
+</section>
+<section id="por-que-trabalhar-em-etapas" class="slide level2">
+<h2>Por que trabalhar em etapas?</h2>
+<div class="fragment">
+<p>Mudanças pequenas:</p>
+<ul>
+<li class="fragment">tornam <em>diffs</em> mais fáceis de revisar;</li>
+<li class="fragment">permitem localizar regressões;</li>
+<li class="fragment">reduzem o custo de refazer escolhas equivocadas;</li>
+<li class="fragment">diminuem a quantidade de contexto necessária para a próxima etapa.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Implementar “tudo de uma vez” pode funcionar, mas aumenta o volume de código a verificar.</p>
 </div>
 </section>
 <section id="exemplo-de-estrutura" class="slide level2">
@@ -561,195 +640,773 @@
 <span id="cb1-12"><a></a>└── tests/</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Os <strong>nomes e diretórios são convenções do nosso exemplo</strong>, não exigências do SDD.</p>
 </section>
-<section id="ciclo-de-uma-funcionalidade" class="slide level2">
-<h2>Ciclo de uma funcionalidade</h2>
-<p><strong>1. Especificar</strong> → <strong>2. Planejar</strong> → <strong>3. Implementar</strong> → <strong>4. Validar</strong></p>
-<div class="fragment">
-<p>Durante a especificação:</p>
+<section id="ambiente" class="slide level2">
+<h2>Ambiente</h2>
+<p>SDD é agnóstico em relação às ferramentas utilizadas.</p>
 <ul>
-<li class="fragment"><strong><code>requisitos.md</code></strong>: comportamentos, decisões e restrições;</li>
-<li class="fragment"><strong><code>planejamento.md</code></strong>: grupos de tarefas pequenos e ordenados;</li>
-<li class="fragment"><strong><code>validacao.md</code></strong>: critérios e verificações necessárias.</li>
+<li class="fragment">Pode ser qualquer IDE.</li>
+<li class="fragment">Qualquer agente de IA.</li>
+<li class="fragment">É altamente recomendável usar controle de versão (<em>git</em>) para a revisão das alterações feitas pelo agente de IA.</li>
 </ul>
-</div>
+</section></section>
+<section>
+<section id="criando-a-constituição" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Criando a Constituição</h1>
+
 </section>
-<section id="planejamento-não-é-código-fonte" class="slide level2">
-<h2>Planejamento não é código-fonte</h2>
-<p>Um plano útil pode conter:</p>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p>Lembre-se que constituição se refere ao planejamento de alto nível sobre o que será desenvolvido agora (e até no futuro).</p>
 <ol type="1">
-<li class="fragment">Modelar tarefa e validações.</li>
-<li class="fragment">Implementar cadastro e listagem.</li>
-<li class="fragment">Criar testes para casos esperados e inválidos.</li>
-<li class="fragment">Conferir os critérios de aceitação.</li>
+<li class="fragment">Missão: ideia principal.</li>
+<li class="fragment">Pilha de Tecnologia: como ela se encaixa na pilha da empresa.</li>
+</ol>
+<ul>
+<li class="fragment">Precisamos, principalmente, limitar o que será usado.</li>
+</ul>
+<ol start="3" type="1">
+<li class="fragment">Roadmap: quais funcionalidades são planejadas.</li>
 </ol>
 <div class="fragment">
-<p>Evite instruções desnecessariamente minuciosas, quando não são decisões de arquitetura ou de comportamento.</p>
+<p>Usamos o próprio agente de IA para nos ajudar a escrever a constituição.</p>
 </div>
 </section>
-<section id="validar-a-intenção-não-apenas-a-execução" class="slide level2">
-<h2>Validar a intenção — não apenas a execução</h2>
-<p>Um teste automatizado pode passar e, ainda assim, o produto estar errado.</p>
+<section id="passo-1-descrição-do-projeto-readme.md" class="slide level2">
+<h2>Passo 1: Descrição do projeto README.md</h2>
+<div class="fragment">
+<p>Colocar a descrição em alto nível do projeto.</p>
 <ul>
-<li class="fragment">Implementação: tarefa concluída permanece no filtro <code>pendente</code>.</li>
-<li class="fragment">Teste criado pelo agente: confirma o comportamento implementado.</li>
-<li class="fragment">Requisito original: tarefa concluída <strong>não aparece</strong> nesse filtro.</li>
+<li class="fragment">Focar especialmente no que se espera com a solução a ser desenvolvida.</li>
+<li class="fragment">Consideranto tanto o público-alvo (usuários finais).</li>
+<li class="fragment">Quanto o público interno (desenvolvedores / mantenedores da solução).</li>
+</ul>
+</div>
+</section>
+<section id="passo-2-criação-das-especificações-da-constituição" class="slide level2">
+<h2>Passo 2: Criação das especificações da constituição</h2>
+<div class="fragment">
+<p>Pode ser feita conversando-se com o agente.</p>
+</div>
+<div class="fragment">
+<div title="Exemplo de Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exemplo de Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Estamos criando XX, que é um XXXX. Veja no arquivo README.md o que é esperado no projeto. Vamos criar uma “constituição” em um diretório <code>specs</code>:</p>
+<ul>
+<li><code>missao.md</code></li>
+<li><code>pilha-tecnologia.md</code></li>
+<li><code>roadmap.md</code> para organizar a implementação em alto nível, em passos bem pequenos.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>SDD funciona melhor com abordagem <em>human in the loop</em>.</p>
+<ul>
+<li class="fragment">Quando revisamos / validamos pequenas modificações.</li>
 </ul>
 <div class="fragment">
-<p><strong>Qual é a referência correta para decidir?</strong></p>
+<p>Revise o que foi criado pelo agente.</p>
+<ul>
+<li class="fragment">Se precisar melhorar alguma coisa na especificação peça o agente, em vez de mudar manualmente.</li>
+<li class="fragment">Isso evita que algum documento relacionado fique desatualizado.</li>
+</ul>
 </div>
 </section>
-<section id="human-in-the-loop" class="slide level2">
-<h2>Human in the loop</h2>
-<p>Depois de cada entrega pequena:</p>
+<section id="passo-3-comitar-os-arquivos" class="slide level2">
+<h2>Passo 3: comitar os arquivos</h2>
+<p>É importante usar controle de versão, comitar os arquivos.</p>
 <ul>
-<li class="fragment">Leia a diferença entre arquivos (<em>diff</em>).</li>
-<li class="fragment">Execute e observe a aplicação.</li>
-<li class="fragment">Verifique os critérios de aceitação.</li>
-<li class="fragment">Solicite correções <strong>na implementação e na especificação</strong>, se necessário.</li>
+<li class="fragment">Isso permite ter rastreabilidade / histórico das decisões relacionadas à especificação.</li>
+</ul>
+</section></section>
+<section>
+<section id="especificando-a-funcionalidade" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Especificando a Funcionalidade</h1>
+
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<p><strong>Importante</strong>: Comece uma <span class="alert">nova sessão com o agente</span>, pois todo o contexto que ele precisa está na especificação.</p>
+<div class="fragment">
+<div title="Exemplo de Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exemplo de Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Encontre a próxima fase em specs/roadmap.md, crie uma branch e me pergunte sobre a especificação da funcionalidade. Crie:</p>
+<ul>
+<li>Uma nova pasta YYYY-MM-DD-nome-funcionalidade dentro de <code>specs</code> para essa funcionalidade.</li>
+<li>Dentro dela:
+<ul>
+<li><code>planejamento.md</code> com uma série de grupos de tarefas numerados.</li>
+<li><code>requisitos.md</code> para escopo, decisões e contexto.</li>
+<li><code>validacao.md</code> para como saber se a implementação foi feita com sucesso e pode ser incluída (<em>merge</em>).</li>
+</ul></li>
+</ul>
+<p>Use <code>specs/missao.md</code> e <code>specs/pilha-tecnologia.md</code> para se guiar.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p>Na conversa com o agente revise com cuidado e responda às perguntas feitas.</p>
+<ul>
+<li class="fragment">Você não tem que aceitar tudo que o agente está propondo.</li>
+<li class="fragment">É importante fazer escolhas conscientes e que guiem para o que realmente é necessário.</li>
 </ul>
 <div class="fragment">
-<p>Só então registre a conclusão com <strong>Git</strong> (commit, branch e merge, conforme o fluxo da equipe).</p>
+<p>Quando a especificação for gerada, revise-a com cuidado.</p>
+<ul>
+<li class="fragment">É muito importante que ela comece correta para que o trabalho fique bem feito.</li>
+<li class="fragment">Se alguma coisa não estiver certa, peça ao agente para corrigir.</li>
+</ul>
 </div>
 </section>
-<section id="por-que-trabalhar-em-etapas" class="slide level2">
-<h2>Por que trabalhar em etapas?</h2>
-<p>Mudanças pequenas:</p>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<p>Comece revisando <code>planejamento.md</code>.</p>
 <ul>
-<li class="fragment">tornam diffs mais fáceis de revisar;</li>
-<li class="fragment">permitem localizar regressões;</li>
-<li class="fragment">reduzem o custo de refazer escolhas equivocadas;</li>
-<li class="fragment">diminuem a quantidade de contexto necessária para a próxima etapa.</li>
+<li class="fragment">Veja se tem tudo que é necessário.</li>
+<li class="fragment">Se faltar algo peça ao agente para adicionar (ex: um novo grupo de tarefas para algo que faltou).</li>
 </ul>
 <div class="fragment">
-<p>“Implementar tudo de uma vez” pode funcionar, mas aumenta o volume de código a verificar.</p>
+<p>Depois revise <code>requisitos.md</code>.</p>
+<ul>
+<li class="fragment">Não passe direto nisso, mas também não é para ficar entrando em detalhes técnicos (ex.: nomes de variáveis).</li>
+<li class="fragment">Queremos controlar o processo, mas não controlar demais o agente.</li>
+</ul>
 </div>
 </section>
-<section id="encerrando-uma-etapa" class="slide level2">
-<h2>Encerrando uma etapa</h2>
-<p>Antes de começar outra funcionalidade, pergunte:</p>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p>Por fim, revise <code>validacao.md</code>.</p>
+<ul>
+<li class="fragment">É importante que o que esteja sendo proposto realmente teste se tudo funciona como deveria.</li>
+</ul>
+<div class="fragment">
+<p>Lembre-se que o que está escrito em algumas linhas nos arquivos markdown, pode gerar centenas de linhas de código.</p>
+<ul>
+<li class="fragment">Então <strong>o tempo gasto revisando</strong> o texto, <strong>é tempo muito bem investido</strong>!</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="implementação-da-funcionalidade" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Implementação da Funcionalidade</h1>
+
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p>Comece uma <strong>nova sessão</strong> com o agente.</p>
+<div class="fragment">
+<p>Diga ao agente para fazer a implementação da funcionalidade.</p>
+<ul>
+<li class="fragment">Você pode pedir para ele implementar todas as funcionalidades restantes</li>
+<li class="fragment">Ou fazer um grupo de tarefas de cada vez
+<ul>
+<li class="fragment">É bem útil quando uma mudança pode ter grandes implicações depois.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<p>Revise as alterações feitas.</p>
+<ul>
+<li class="fragment">Em seguida, execute a aplicação (se for o caso).</li>
+</ul>
+<div class="fragment">
+<p>O agente fez as validações dele, no próximo passo, faremos as nossas.</p>
+</div>
+</section></section>
+<section>
+<section id="validação-da-funcionalidade" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Validação da Funcionalidade</h1>
+
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<p>Avalie o código criado</p>
+<ul>
+<li class="fragment">Foco no alto nível: se a implementação funciona e atende aos requisitos</li>
+<li class="fragment">E não em detalhes: como quais classes foram criadas.</li>
+</ul>
+<div class="fragment">
+<p>Se precisar alterar algo, peça ao agente para atualizar não só implementação, mas também o planejamento.</p>
+<ul>
+<li class="fragment">Exemplo: <code>Atualize</code>specs/YYYY-MM-DD-nome-funcionalidade.md<code>e a implementação para que ...</code></li>
+</ul>
+</div>
+</section>
+<section id="section-15" class="slide level2">
+<h2></h2>
+<p>Antes de terminar funcionalidade, pergunte-se:</p>
 <ul>
 <li class="fragment">Os critérios de aceitação foram atendidos?</li>
 <li class="fragment">Os documentos refletem o comportamento real?</li>
 <li class="fragment">Há testes relevantes e o código está versionado?</li>
 <li class="fragment">O roadmap representa o que ainda falta fazer?</li>
 </ul>
-<div class="fragment">
-<p>Uma <strong>nova sessão do agente</strong> pode começar lendo os documentos atualizados, sem depender do histórico do chat.</p>
-</div>
 </section>
-<section id="replanejamento" class="slide level2">
-<h2>Replanejamento</h2>
-<p>Depois de uma etapa, novas informações podem exigir:</p>
+<section id="section-16" class="slide level2">
+<h2></h2>
+<p>Esse processo é o que chamamos de <em>human in the loop</em>.</p>
 <ul>
-<li class="fragment">ajustar missão ou restrições técnicas;</li>
-<li class="fragment">dividir uma funcionalidade muito grande;</li>
-<li class="fragment">alterar a ordem do roadmap;</li>
-<li class="fragment">registrar uma decisão que tinha ficado apenas na conversa.</li>
+<li class="fragment">Atuamos na revisão e não na programação em si.</li>
+<li class="fragment">Agentes são muito rápidos para programar, mas nós temos que guiar para que seja feito o que realmente precisamos.</li>
+<li class="fragment">Removemos a sobrecarga mental de ter que escrever, evoluir e validar cada linha de código.
+<ul>
+<li class="fragment">Tendo a especificação, o próprio agente valida o que está fazendo.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-17" class="slide level2">
+<h2></h2>
+<p>Podemos até fazer alterações diretamente no código, quando isso parecer ser mais eficiente.</p>
+<ul>
+<li class="fragment">Mas lembre-se de pedir o agente para atualizar a especificação, para refletir o que foi feito.</li>
 </ul>
 <div class="fragment">
-<p><strong>Princípio:</strong> especificação e código devem evoluir juntos.</p>
+<p>Ao terminar a validação marque o trabalho como completo.</p>
+</div>
+</section>
+<section id="exemplos-de-prompts-úteis-para-finalização" class="slide level2">
+<h2>Exemplos de prompts úteis para finalização</h2>
+<div title="Exemplo de Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exemplo de Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Faça um PR para a branch develop para a fase que implementamos, marcando-a como finalizada em specs/roadmap.md</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div title="Exemplo de Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exemplo de Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Marque esta fase em <code>specs/roadmap.md</code> como completa, comite o que foi feito, mude para main, faça o merge dessa branch e delete-a.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section></section>
 <section>
-<section id="ferramentas-e-integração" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Ferramentas e integração</h1>
+<section id="replanejamento" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Replanejamento</h1>
 
 </section>
-<section id="chat-agente-de-programação" class="slide level2">
-<h2>Chat × agente de programação</h2>
-<div class="fragment">
-<p>Um chat convencional responde a mensagens.</p>
-</div>
-<div class="fragment">
-<p>Um <strong>agente de programação</strong>, quando autorizado e equipado com ferramentas, também pode:</p>
+<section id="section-18" class="slide level2">
+<h2></h2>
+<p>Antes de prosseguir para a próxima funcionalidade, vale a pena refletir sobre o processo.</p>
 <ul>
-<li class="fragment">consultar arquivos e estrutura do repositório;</li>
-<li class="fragment">alterar código e especificações;</li>
-<li class="fragment">executar comandos e testes;</li>
-<li class="fragment">revisar alterações.</li>
+<li class="fragment">Às vezes precisamos ir mais devagar para que, no final, sejamos mais rápidos.</li>
+</ul>
+<div class="fragment">
+<p>Se for necessário alterar a constituição do projeto, é recomendável fazer isso em uma branch específica.</p>
+<ul>
+<li class="fragment">Isso ajuda a identificar qual versão da constituição gerou qual código.</li>
+<li class="fragment">Pode ser identificado que seria necessário seguir um design responsivo, por exemplo.</li>
+</ul>
+</div>
+</section>
+<section id="section-19" class="slide level2">
+<h2></h2>
+<p>Se a implementação do que está sendo alterado for pequena, pode ser que faça sentido fazer na própria branch de replanejamento.</p>
+<ul>
+<li class="fragment">Mas se for algo maior, vale a pena acrescentar como uma fase futura do Roadmap.</li>
+</ul>
+<div class="fragment">
+<p>Queremos que a especificação guarde as decisões, não apenas o código.</p>
+<ul>
+<li class="fragment">E precisamos que as duas coisas estejam sincronizadas.</li>
+<li class="fragment">Portanto, é necessário deixar isso claro para o agente.</li>
 </ul>
 </div>
 <div class="fragment">
-<p>O nível de autonomia depende das ferramentas disponíveis e das permissões concedidas.</p>
+<p><strong>Princípio:</strong> especificação e código devem evoluir juntos.</p>
 </div>
 </section>
-<section id="agents.md-e-skills" class="slide level2">
-<h2><code>AGENTS.md</code> e skills</h2>
+<section id="section-20" class="slide level2">
+<h2></h2>
+<p>Precisamos manter alterações pequenas.</p>
+<ul>
+<li class="fragment">Facilita a revisão da especificação e do código que precisamos fazer.</li>
+</ul>
+<div class="fragment">
+<p>No replanejamento, é interessante verificar se os próximos passos ainda fazem sentido.</p>
+<ul>
+<li class="fragment">Pode ser necessário alterá-los, mudar a ordem, combinar várias fases em uma só ou separar em mais de uma.</li>
+</ul>
+</div>
+</section>
+<section id="section-21" class="slide level2">
+<h2></h2>
+<p>A fase de replanejamento pode ser usada também para sincronizar stakeholders do projeto que não sejam de perfil técnico.</p>
+<ul>
+<li class="fragment">Um exemplo para facilitar isso seria manter um log das mudanças (change log).</li>
+<li class="fragment">Podemos usar <strong>skills</strong> para isso.</li>
+</ul>
+</section></section>
+<section>
+<section id="próxima-fase-de-funcionalidade" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Próxima fase de funcionalidade</h1>
+
+</section>
+<section id="section-22" class="slide level2">
+<h2></h2>
+<p>É muito importante evitar a fadiga de IA.</p>
+<ul>
+<li class="fragment">IA gera muito código, que pode ser bem complicado de revisar.</li>
+<li class="fragment">Precisamos garantir que, na nova fase de funcionalidade, a IA siga a especificação, e não alguma memória das últimas conversas que tivemos.</li>
+<li class="fragment">Além de ajudar a evitar custos desnecessários com grande histórico de contexto.</li>
+</ul>
+</section>
+<section id="section-23" class="slide level2">
+<h2></h2>
+<p>Por isso, é importante verificar:</p>
+<ul>
+<li class="fragment">Terminamos realmente o que estávamos fazendo?</li>
+<li class="fragment">Já foi feito merge da última funcionalidade ou replanejamento?</li>
+<li class="fragment">A próxima fase está clara e bem definida?</li>
+</ul>
+<div class="fragment">
+<p>E então limpamos o contexto do agente.</p>
+<ul>
+<li class="fragment">Para começarmos a próxima fase.</li>
+</ul>
+</div>
+</section>
+<section id="section-24" class="slide level2">
+<h2></h2>
+<p>Podemos começar com o mesmo prompt da primeira funcionalidade.</p>
+<ul>
+<li class="fragment">E, se isso for repetitivo, podemos automatizar nosso workflow.</li>
+</ul>
+<div class="fragment">
+<p>E então seguimos os mesmos passos da funcionalidade anterior.</p>
+<ul>
+<li class="fragment">Ter fases de replanejamento entre funcionalidades ajuda a evitar transbordamento de contexto.
+<ul>
+<li class="fragment">Não só do agente de IA, mas nosso também.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section-25" class="slide level2">
+<h2></h2>
+<p>Às vezes precisamos pedir ao agente comece implementando apenas parte da funcionalidade.</p>
+<ul>
+<li class="fragment">Para manter o trabalho gerenciável.</li>
+</ul>
+<div class="fragment">
+<p>Dica: observar o “raciocínio” do agente pode ser útil para entender melhor suas decisões.</p>
+</div>
+</section>
+<section id="section-26" class="slide level2">
+<h2></h2>
+<p>Durante o desenvolvimento, você pode descobrir que algum padrão de codificação deveria estar sendo seguido, mas não tinha sido especificado.</p>
+<ul>
+<li class="fragment">Tudo bem, a ideia é evoluir a especificação também ao longo do projeto.</li>
+</ul>
+<div class="fragment">
+<p>Usar o <strong>depurador para rodar testes</strong> automatizados pode ser uma boa estratégia para ganhar mais entendimento sobre como funciona o código.</p>
+</div>
+</section>
+<section id="section-27" class="slide level2">
+<h2></h2>
+<p>Podemos também pedir o agente para fazer uma revisão profunda das alterações de uma branch antes de prosseguir.</p>
+<div title="Exemplo de Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exemplo de Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Faça uma revisão profunda: dispare múltiplos subagentes para verificar todas as alterações dessa branch a partir de três perspectivas diferentes e verifique se alguma coisa não faz sentido, poderia ser melhor, etc.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Criar subagentes é interessante porque não polui a janela de contexto do agente principal.</p>
+<ul>
+<li class="fragment">E dá a oportunidade para a IA avaliar melhor o código.</li>
+<li class="fragment">Os subagentes podem retornar problemas e sugestões de melhoria no projeto, que você pode decidir tratar ou não.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="projetos-legados" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Projetos Legados</h1>
+
+</section>
+<section id="section-28" class="slide level2">
+<h2></h2>
+<p>SDD pode ser útil também para projetos já existentes, criados sem IA.</p>
+<div class="fragment">
+<p>Devemos começar criando a constituição do projeto.</p>
+<ul>
+<li class="fragment">Podemos usar basicamente o mesmo prompt que usamos para o projeto novo.
+<ul>
+<li class="fragment">Mas listando os artefatos que podem ser usados para entender o projeto: como código, README, lista de TODOs, issues, etc.</li>
+</ul></li>
+<li class="fragment">A IA usará Engenharia Reversa para gerar a especificação a partir do projeto existente.</li>
+</ul>
+</div>
+</section>
+<section id="section-29" class="slide level2">
+<h2></h2>
+<p>A constituição criada permitirá que futuras funcionalidades desenvolvidas pelo agente de IA estejam alinhadas com o que foi desenvolvido antes no projeto.</p>
+<ul>
+<li class="fragment">Lembre-se que a especificação deve ser versionada assim como o código.</li>
+<li class="fragment">Depois de criada a constituição, o processo SDD é exatamente o mesmo feito para novos projetos.</li>
+</ul>
+</section></section>
+<section>
+<section id="comentários-sobre-experiência-sobre-uso-real-de-sdd" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Comentários sobre Experiência sobre uso real de SDD</h1>
+
+</section>
+<section id="app-web-usando-python-streamlit" class="slide level2">
+<h2>App Web usando Python Streamlit</h2>
+<div class="fragment">
+<p>Eu já tinha os requisitos do ponto de vista do usuário.</p>
+<ul>
+<li class="fragment">Criei a missão usando esse arquivo como um TODO de demandas.</li>
+<li class="fragment">E escrevi um README com necessidades gerais do projeto.</li>
+<li class="fragment">Gerei também um arquivo <code>ui-spec.md</code> usando gemini a partir de prints e prototipação feita com Excalidraw.</li>
+<li class="fragment">Usei VS Code + Copilot + Git.</li>
+</ul>
+</div>
+</section>
+<section id="section-30" class="slide level2">
+<h2></h2>
+<p>Fase inicial do processo até relatórios de finos funcionou bem.</p>
+<ul>
+<li class="fragment">Apesar do consumo de tokens ser alto.</li>
+<li class="fragment">Copilot a princípio usando GPT 5.3 Codex.
+<ul>
+<li class="fragment">Depois passou a usar MAI-Code-1-Flash.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p>Entre uma fase e outra eu pedia para atualizar a <code>ui-spec.md</code>.</p>
+<ul>
+<li class="fragment">Porque fui descobrindo que ele não representava exatamente o que eu tinha na prototipação inicial.</li>
+</ul>
+</div>
+</section>
+<section id="section-31" class="slide level2">
+<h2></h2>
+<p>Mas ao chegar na parte de Fretes o resultado começou a ficar bem ruim.</p>
+<ul>
+<li class="fragment">Não fazia o que eu queria</li>
+<li class="fragment">Atrapalhava o que já estava pronto de finos.</li>
+<li class="fragment">Tentei ir acertando com o prompt mas vi que nunca ficava certo.</li>
+<li class="fragment">Pode ser que aí tenha começado a fazer falta o conhecimento técnico mais profundo sobre Streamlit.</li>
+<li class="fragment">Mas desconfiei do modelo MAI.</li>
+</ul>
+</section>
+<section id="section-32" class="slide level2">
+<h2></h2>
+<p>Experimentei simplesmente descartar a implementação e começar uma nova sessão escolhendo modelo Claude Sonnet 5.</p>
+<ul>
+<li class="fragment">Ele faz coisas bem mais profundas, pensa mais, e até fez testes usando a própria aplicação web gerada.</li>
+<li class="fragment">Mas demora bastante, faz muita coisa e consome muitos tokens!</li>
+<li class="fragment">E o resultado do primeiro grupo implementado já não foi legal.</li>
+</ul>
+</section>
+<section id="section-33" class="slide level2">
+<h2></h2>
+<p>Resolvi então tentar</p>
+<ul>
+<li class="fragment">Forçar novamente o uso do Codex no Copilot.</li>
+<li class="fragment">Refinar o planejamento
+<ul>
+<li class="fragment">Fiz um prompt relatando as dificuldades que eu estava encontrando.</li>
+<li class="fragment">Os arquivos de planejamento, requisitos e validação foram atualizados.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-34" class="slide level2">
+<h2></h2>
+<p>Mas aí notei uma possível fonte do problema.</p>
+<ul>
+<li class="fragment">O arquivo <code>ui-spec.md</code> talvez estivesse atrapalhando.</li>
+<li class="fragment">Quando fiz mudanças durante a implementação dos relatórios de finos usei a IA para atualizá-lo, mas sem mexer nas funcionalidades futuras.
+<ul>
+<li class="fragment">Elas acabaram ficando com definições desatualizadas.</li>
+</ul></li>
+<li class="fragment">Usei então a IA para atualizar isso tanto para Fretes como para a fase futura de Prêmios.</li>
+</ul>
+</section>
+<section id="section-35" class="slide level2">
+<h2></h2>
+<p>Fiz então a implementação:</p>
+<ul>
+<li class="fragment">E enfim funcionou!</li>
+<li class="fragment">Com um bom consumo de tokens, mas foi rápido.</li>
+<li class="fragment">Observação: agente cria “memória” interna que pode influenciar no resultado (não sei exatamente como o copilot trata isso entre modelos diferentes).</li>
+</ul>
+</section>
+<section id="regressões" class="slide level2">
+<h2>Regressões</h2>
+<div class="fragment">
+<p>Ao longo do desenvolvimento notei que algumas decisões acabavam sendo perdidas, e a implementação “voltava” para algo que eu não queria.</p>
+<ul>
+<li class="fragment">Ex.: quando usuário não tinha permissão eu queria que os botões de Download simplesmente não aparecessem.</li>
+<li class="fragment">Mas na primeira implementação ficavam desabilitados com uma mensagem dizendo que usuário não tinha acesso.</li>
+<li class="fragment">Eu então pedi para ficar do jeito que eu queria. Mas, mais adiante, ao tratar os fretes, essa decisão voltou.</li>
+<li class="fragment">Provavelmente porque isso não estava claro na especificação do Roadmap.</li>
+</ul>
+</div>
+</section>
+<section id="section-36" class="slide level2">
+<h2></h2>
+<p>No minicurso que fiz, depois do planejamento da funcionalidade partia-se diretamente para implementação.</p>
+<ul>
+<li class="fragment">Mas usando o Codex, ele sempre sugeria criar um checklist de implementação técnica por arquivo antes da implementação, mas eu não fiz nenhuma vez.</li>
+<li class="fragment">Teria sido melhor? :)</li>
+</ul>
+</section>
+<section id="replanejamento-1" class="slide level2">
+<h2>Replanejamento</h2>
+<p>Fiz um replanejamento para os relatórios sob demanda.</p>
+<ul>
+<li class="fragment">Ver <a href="https://app.notion.com/p/Exemplo-de-replanejamento-no-projeto-piloto-3b615baf13668017b592e1ec9b06cebf?source=copy_link">prompt</a>.</li>
+<li class="fragment">Replanejamento foi importante e teve bom resultado.</li>
+</ul>
+</section>
+<section id="situações-inesperadas" class="slide level2">
+<h2>Situações inesperadas</h2>
+<p>Após o replanejamento o agente mockou os dados diretamente na <code>main_view</code>.</p>
+<ul>
+<li class="fragment">Sem seguir contrato de divisão de camadas que era algo crítico da arquitetura.</li>
+</ul>
+<div class="fragment">
+<p>Briga para fazer notificação funcionar</p>
+<ul>
+<li class="fragment">Problema da implementação minha?</li>
+<li class="fragment">Realmente não é tão simples no Streamlit?</li>
+</ul>
+</div>
+</section>
+<section id="o-consutmo-de-tokens-é-bem-alto" class="slide level2">
+<h2>O consutmo de tokens é bem alto</h2>
+<ul>
+<li class="fragment">No meu caso compensou, pois eu gastaria muito mais tempo para o desenvolvimento.</li>
+<li class="fragment">E esse tempo economizado eu estaria desenvolvendo outras coisas, portanto, ganhei produtividade.</li>
+<li class="fragment">Mas essa conta é complexa:
+<ul>
+<li class="fragment">Provavelmente eu teria gastado menos se tivesse mais conhecimento técnico sobre Streamlit.</li>
+<li class="fragment">E se usasse outra IA (como ChatGPT, Gemini para discutir decisões antes de aplicar no Copilot).</li>
+</ul></li>
+</ul>
+</section>
+<section id="testes-automatizados" class="slide level2">
+<h2>Testes automatizados</h2>
+<p>Provavelmente eu não teria implementado tantos testes automatizados.</p>
+<ul>
+<li class="fragment">O que na verdade seria um deficiência da minha implementação</li>
+<li class="fragment">Portanto, o resultado com IA, nesse ponto, foi melhor.</li>
+</ul>
+</section>
+<section id="riscos-de-vibe-coding-da-suíte-de-testes" class="slide level2">
+<h2>Riscos de <em>vibe coding</em> da suíte de testes</h2>
+<div class="fragment">
+<p>Como fazemos código sem entender tudo, também não conseguimos mais garantir que os testes estão adequados.</p>
+<ul>
+<li class="fragment">Assim, os testes podem ser atualizados para atender ao que foi implementado e não mais ao que era necessário fazer.</li>
+<li class="fragment">Esse é um <span class="alert">alto risco</span>!</li>
+</ul>
+</div>
+</section>
+<section id="aprendizado-sobre-a-geração-do-ui-spec.md" class="slide level2">
+<h2>Aprendizado sobre a geração do <code>ui-spec.md</code></h2>
+<div class="fragment">
+<p>Creio que o resultado ficaria bem melhor se eu tivesse feito uma prototipação inicial já usando streamlit</p>
+<ul>
+<li class="fragment">considerando o conteúdo desse arquivo, ainda sem as partes funcionais.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>O planejamento de cada rodada de funcionalidade parecia perder informações do <code>ui-spec.md</code></p>
+<ul>
+<li class="fragment">faltou melhorar meu prompt?</li>
+</ul>
+</div>
+</section>
+<section id="outras-observações" class="slide level2">
+<h2>Outras observações</h2>
+<p>Impactos da falta de conhecimento com Streamlit.</p>
+<ul>
+<li class="fragment">Mesmo usando skill do Streamlit não consegui aumentar a largura de uma caixa diálogo.</li>
+<li class="fragment">Em uma busca no Google vi que bastava usar parâmetro <code>width="large"</code> .</li>
+</ul>
+<div class="fragment">
+<p>Roadmap perdia informações do TODO</p>
+<ul>
+<li class="fragment">Seguindo a metologia eu mesmo deveria ter refinado isso nos primeiros prompts.</li>
+</ul>
+</div>
+</section>
+<section id="section-37" class="slide level2">
+<h2></h2>
+<p>Problemas acentuação nos textos e comentários.</p>
+<ul>
+<li class="fragment">Deveria estar claro no README.md?</li>
+</ul>
+<div class="fragment">
+<p>Comportamentos variados da IA</p>
+<ul>
+<li class="fragment">Só na fase 7 ela resolveu atualizar arquivo de planejamento a cada grupo implementado com o status.</li>
+</ul>
+</div>
+</section>
+<section id="desenvolvimento-após-protótipo-usando-ssd" class="slide level2">
+<h2>Desenvolvimento após protótipo usando SSD</h2>
+<p>Na fase seguinte do projeto acabei não seguindo SSD.</p>
+<ul>
+<li class="fragment">Principalmente devido ao alto consumo de tokens.</li>
+<li class="fragment">E à minha falta de conhecimento técnico de Streamlit.</li>
+</ul>
+<div class="fragment">
+<p>Continuei usando Copilot, mas sem seguir o processo em si.</p>
+</div>
+</section>
+<section id="desenvolvimento-após-protótipo-usando-ssd-1" class="slide level2">
+<h2>Desenvolvimento após protótipo usando SSD</h2>
+<p>Essa experiência reforçou o que discutimos no início da disciplina.</p>
+<ul>
+<li class="fragment">Quem tem base técnica para o que está sendo desenvolvido, consegue tirar melhor proveito das ferramentas de IA.</li>
+</ul>
+<div class="fragment">
+<p>E devemos levar em conta que essa foi uma primeira experiência com a metodologia.</p>
+<ul>
+<li class="fragment">Foi um aprendizado.</li>
+<li class="fragment">O uso em um próximo projeto tende a melhorar os resultados.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="padrões-usados-em-programação-agêntica" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Padrões usados em Programação Agêntica</h1>
+
+</section>
+<section id="section-38" class="slide level2">
+<h2></h2>
+<p>Como a evolução rápida dos agentes de IA,</p>
+<ul>
+<li class="fragment">não é recomendado que nosso SDD esteja fortemente vinculado a um agente específico.</li>
+</ul>
+<div class="fragment">
+<p>Por isso é importante usar padrões que nos ajudem a manter o trabalho funcionando</p>
+<ul>
+<li class="fragment">mesmo que precisemos usar outro agente de IA no futuro.</li>
+</ul>
+</div>
+</section>
+<section id="exemplos-de-padrões" class="slide level2">
+<h2>Exemplos de padrões</h2>
+<ul>
+<li class="fragment">MCP</li>
+<li class="fragment">Agents.md</li>
+<li class="fragment">Skills</li>
+</ul>
+</section>
+<section id="mcp" class="slide level2">
+<h2>MCP</h2>
+<p><span class="alert">Model Context Protocol</span> é um padrão de código-aberto para conectar agentes de IA com ferramentas externas.</p>
+<ul>
+<li class="fragment">Permite que agente tenha acesso, por exemplo, a banco de dados, APIs, sistemas de acesso restrito, etc.</li>
+<li class="fragment">Existe MCP para acessar, por exemplo, versão mais atualizada de pacotes.</li>
+</ul>
+<div class="fragment">
+<p>Existem vários MCPs úteis para o que precisamos.</p>
+</div>
+</section>
+<section id="agents.md" class="slide level2">
+<h2><code>AGENTS.md</code></h2>
 <p><strong><code>AGENTS.md</code></strong> pode reunir instruções recorrentes para agentes que trabalham no repositório.</p>
-<p>Já <strong>Skills</strong> encapsulam procedimentos e contexto para tarefas repetitivas.</p>
-<div class="fragment">
-<p>Exemplos de skill:</p>
 <ul>
-<li class="fragment">preparar especificação de uma nova funcionalidade;</li>
-<li class="fragment">verificar padrões de testes;</li>
-<li class="fragment">atualizar changelog após uma entrega.</li>
+<li class="fragment">É uma espécie de README, mas para os agentes.</li>
 </ul>
-<p>A disponibilidade e o formato variam conforme a ferramenta.</p>
+</section>
+<section id="skills" class="slide level2">
+<h2>Skills</h2>
+<p>Podemos criar skills que facilitem nosso trabalho evitando tarefas repetitivas.</p>
+<ul>
+<li class="fragment">O prompt para especificar a funcionalidade, por exemplo, é repetitivo.
+<ul>
+<li class="fragment">Ou para atualizar o changelog do projeto, para tarefas de validação e qualidade de código.</li>
+</ul></li>
+<li class="fragment">Podemos usar o próprio agente de IA para criar as skills.</li>
+</ul>
+<div class="fragment">
+<div title="Exemplo de Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exemplo de Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Quero parar de ficar repetindo o prompt de especificação. Use seu criador de skill para me ajudar a escrever uma especificação de funcionalidade, como uma skill local. Segue o prompt que tenho usado: …</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="o-que-é-mcp" class="slide level2">
-<h2>O que é MCP?</h2>
-<div class="fragment">
-<p><span class="alert">Model Context Protocol (MCP)</span> é um protocolo aberto de integração entre aplicações com IA e fontes de dados ou ferramentas externas.</p>
+<section id="skills-1" class="slide level2">
+<h2>Skills</h2>
+<p>Assistir a saída do agente enquanto cria a skill pode ajudar a verificar se ela está sendo criada como gostaria.</p>
 <ul>
-<li class="fragment"><strong>Cliente MCP:</strong> componente da aplicação que se conecta a um servidor.</li>
-<li class="fragment"><strong>Servidor MCP:</strong> expõe capacidades autorizadas (por exemplo, ferramentas e recursos).</li>
-<li class="fragment"><strong>Ferramenta:</strong> operação que um cliente pode solicitar, como listar arquivos.</li>
+<li class="fragment">Para usar uma skill, podemos dizer diretamente para usá-la ao fazer uma tarefa</li>
 </ul>
-</div>
 <div class="fragment">
-<p>MCP <strong>não é</strong> um modelo de IA; é um mecanismo de conexão padronizada.</p>
+<div title="Exemplo de Prompt">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exemplo de Prompt</strong></p>
+</div>
+<div class="callout-content">
+<p>Use a skill de especificação de funcionalidade para especificar a próxima …</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="exemplo-de-mcp-arquivos-locais" class="slide level2">
-<h2>Exemplo de MCP: arquivos locais</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Agente / aplicativo (cliente MCP)</span>
-<span id="cb2-2"><a></a>             |</span>
-<span id="cb2-3"><a></a>             | protocolo MCP</span>
-<span id="cb2-4"><a></a>             v</span>
-<span id="cb2-5"><a></a>Servidor MCP de arquivos</span>
-<span id="cb2-6"><a></a>             |</span>
-<span id="cb2-7"><a></a>             v</span>
-<span id="cb2-8"><a></a>Diretório permitido do projeto</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment">
-<p>O agente pode pedir ao servidor para <strong>listar ou ler arquivos</strong> que estejam dentro do escopo autorizado.</p>
+<section id="plugins" class="slide level2">
+<h2>Plugins</h2>
+<p>São extensões para agentes de IA que podem ser instaladas e atualizadas.</p>
 <ul>
-<li class="fragment">Acesso e operações dependem das permissões configuradas.</li>
-<li class="fragment">Não se deve expor pastas pessoais ou credenciais desnecessariamente.</li>
+<li class="fragment">Geralmente são específicas para cada agente de IA.</li>
 </ul>
-</div>
-</section>
-<section id="mcp-api-skill" class="slide level2">
-<h2>MCP × API × skill</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Conceito</th>
-<th>Papel principal</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>API</td>
-<td>Interface de programação de um serviço</td>
-</tr>
-<tr class="even">
-<td>MCP</td>
-<td>Protocolo para disponibilizar capacidades a clientes compatíveis</td>
-</tr>
-<tr class="odd">
-<td>Skill</td>
-<td>Instruções/procedimentos reutilizáveis para o agente</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p>Eles podem ser <strong>complementares</strong>, não concorrentes.</p>
-</div>
 </section>
 <section id="subagentes-e-inspeção-independente" class="slide level2">
 <h2>Subagentes e inspeção independente</h2>
@@ -762,77 +1419,32 @@
 <div class="fragment">
 <p>Revisões independentes ajudam, mas <strong>não substituem a verificação humana</strong> e podem aumentar o consumo de tokens.</p>
 </div>
-</section></section>
-<section>
-<section id="aprendizados-de-um-projeto-real" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Aprendizados de um projeto real</h1>
-
 </section>
-<section id="exemplo-aplicação-de-relatórios-com-streamlit" class="slide level2">
-<h2>Exemplo: aplicação de relatórios com Streamlit</h2>
-<p>Essa aula foi preparada aplicando-se SDD a uma demanda real</p>
+<section id="spec-kit-e-openspec" class="slide level2">
+<h2>Spec-kit e OpenSpec</h2>
+<p><code>github.com/spec-kit</code> é uma tentativa de formalizar fluxo de trabalho com SDD.</p>
 <ul>
-<li class="fragment">um aplicativo web Python/Streamlit desenvolvido com apoio de agentes;</li>
-<li class="fragment">foram criados os documentos de missão, pilha tecnológica e roadmap.
-<ul>
-<li class="fragment">E também um arquivo adicional com especificação da interface Streamlit (<code>ui-spec.md</code>);</li>
-</ul></li>
-<li class="fragment">funcionalidades foram implementadas em rodadas sucessivas.</li>
+<li class="fragment">Fornece comandos para agentes de IA que fazem o que nós vimos.</li>
 </ul>
 <div class="fragment">
-<p>O processo revelou benefícios, mas também problemas de <strong>sincronização das especificações</strong>.</p>
-</div>
-</section>
-<section id="quando-um-requisito-se-perde" class="slide level2">
-<h2>Quando um requisito se perde</h2>
-<div class="fragment">
-<p>Em um caso, a decisão era <strong>ocultar</strong> um botão de download sem permissão.</p>
+<p>OpenSpec é uma alternativa.</p>
 <ul>
-<li class="fragment">O agente chegou a implementar o botão <strong>desabilitado</strong>, com mensagem explicativa.</li>
-</ul>
-</div>
-<div class="fragment">
-<p>A divergência reapareceu mais tarde, indicando que a decisão não estava registrada de forma suficientemente consistente nos documentos relevantes.</p>
-<ul>
-<li class="fragment"><strong>Lição:</strong> corrigir o código sem atualizar a especificação permite regressões futuras.</li>
+<li class="fragment"><code>github.com/fission-ai/open-spec</code></li>
 </ul>
 </div>
 </section>
-<section id="arquitetura-é-uma-restrição-verificável" class="slide level2">
-<h2>Arquitetura é uma restrição verificável</h2>
-<p>Em outra situação, dados simulados foram colocados diretamente na camada de interface, contrariando uma separação de camadas definida para o projeto.</p>
-<div class="fragment">
-<p>A implementação até poderia funcionar visualmente, mas <strong>violava uma decisão de arquitetura</strong>.</p>
+<section id="backlog" class="slide level2">
+<h2>Backlog</h2>
+<p>Às vezes, durante o desenvolvimento de uma funcionalidade temos uma ideia de algo que poderia ser feito.</p>
 <ul>
-<li class="fragment">Requisitos funcionais e restrições arquiteturais exigem validação.</li>
-<li class="fragment">O agente não pode inferir o que é “não negociável” se isso não estiver claro.</li>
-</ul>
-</div>
-</section>
-<section id="custos-e-limites" class="slide level2">
-<h2>Custos e limites</h2>
-<ul>
-<li class="fragment">Mais autonomia pode significar <strong>mais tokens e mais código a revisar</strong>.</li>
-<li class="fragment">Trocar de modelo não resolve, por si só, especificação ambígua ou desatualizada.</li>
-<li class="fragment">Testes gerados pelo próprio agente podem reproduzir um entendimento incorreto.</li>
-<li class="fragment">Sem conhecimento técnico, fica difícil avaliar escolhas e regressões.</li>
+<li class="fragment">Como mudar a banco de dados usado, por exemplo.</li>
+<li class="fragment">E conversamos sobre isso com o agente, mas não queremos implementar agora.</li>
 </ul>
 <div class="fragment">
-<p>SDD melhora a coordenação, mas não dispensa conhecimento de programação e engenharia de software.</p>
-</div>
-</section></section>
-<section>
-<section id="síntese-e-preparação-para-o-laboratório" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Síntese e preparação para o laboratório</h1>
-
-</section>
-<section id="qual-processo-escolher" class="slide level2">
-<h2>Qual processo escolher?</h2>
-<p><strong>Exercício isolado e descartável:</strong> uma conversa curta pode bastar.</p>
-<p><strong>Funcionalidade pequena em projeto existente:</strong> registre requisitos e validação antes de alterar o código.</p>
-<p><strong>Projeto com evolução contínua:</strong> constituição, roadmap e entregas incrementais passam a ser especialmente úteis.</p>
-<div class="fragment">
-<p>O nível de formalização deve ser <strong>proporcional à complexidade e ao risco</strong>.</p>
+<p>Podemos pedir o agente para criar uma pasta de backlog e salvar essa conversa (com recomendações) de forma organizada (por data e assunto, por exemplo).</p>
+<ul>
+<li class="fragment">De forma que depois possam ser consultadas para serem incluídas no Roadmap.</li>
+</ul>
 </div>
 </section>
 <section id="checkpoint-o-que-está-errado" class="slide level2">
@@ -848,24 +1460,17 @@
 <li class="fragment">Violação de restrições técnicas não exercitadas pelos testes.</li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="referência" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Referência</h1>
+
 </section>
-<section id="na-aula-prática" class="slide level2">
-<h2>Na aula prática</h2>
-<p>Construiremos um pequeno <strong>gerenciador de tarefas em Python</strong>, partindo de documentos de especificação.</p>
-<ol type="1">
-<li class="fragment">Constituição e uma funcionalidade inicial.</li>
-<li class="fragment">Implementação incremental e testes.</li>
-<li class="fragment">Mudança de requisito e replanejamento.</li>
-<li class="fragment">Demonstração de <strong>MCP de arquivos</strong>, sem exigir chamadas pagas de LLM.</li>
-</ol>
-</section>
-<section id="referências" class="slide level2">
-<h2>Referências</h2>
+<section id="section-39" class="slide level2">
+<h2></h2>
+<p>DeepLearning.AI:</p>
 <ul>
-<li class="fragment">DeepLearning.AI — <a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents">Spec-Driven Development (SDD) with Code Agents</a>.</li>
-<li class="fragment"><a href="https://modelcontextprotocol.io/">Model Context Protocol — documentação</a>.</li>
-<li class="fragment"><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem">MCP: servidor de arquivos</a>.</li>
-<li class="fragment">Anotações feitas para preparação da aula (<code>anotacoes.md</code>): experiência prática com Streamlit e agentes.</li>
+<li class="fragment">Minicurso: <a href="https://learn.deeplearning.ai/courses/spec-driven-development-with-coding-agents">Spec-Driven Development (SDD) with Code Agents</a>.</li>
 </ul>
 
 
