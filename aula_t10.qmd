@@ -60,33 +60,35 @@ O agente pode implementar cada pedido, mas **esquecer decisões anteriores** ou 
 
 ## 
 
-Com **vibe coding** você torce para conseguir o que você precisa.
+Com [vibe coding]{.alert} você **torce** para conseguir o que você precisa.
 
 . . .
 
-Já com SDD você chega mais perto do que realmente precisa.
+Já com [SDD]{.alert} você **chega mais perto** do que realmente precisa.
 
-- Foca em dar contexto através de arquivos de especificação
-- Em vez de trabalhar diretamente com programação.
+- Focando em dar contexto através de arquivos de especificação,
+- em vez de trabalhar diretamente com programação.
 
 . . .
 
-SDD não elimina a conversa: ela passa a **produzir e manter decisões verificáveis**.
+SDD não elimina a conversa:
+
+- ela passa a **produzir e manter decisões verificáveis**.
 
 ## SDD: Vantagens
 
 - Pode lidar com alterações grandes que afetam vários arquivos.
 - Lida com perda de contexto entre diferentes interações com agentes de IA.
   - Garante definições “não-negociáveis”.
-- Define objetivo, critérios de sucesso, restrições
-  - Agente cria o plano completo.
+- Define objetivo, critérios de sucesso, restrições.
+  - Agente de IA é quem cria o plano completo.
 
 
 ##
 
-Sistemas podem se tornar mais difíceis de manter
+Sistemas podem se tornar mais difíceis de manter quando várias pessoas usam diferentes IAs, 
 
-- Quando várias pessoas usam diferentes IAs, com diferentes contextos para trabalhar no mesmo sistema.
+- com diferentes contextos para trabalhar no mesmo sistema.
 - Especificação é uma forma de fazer com que toda a equipe siga os mesmos critérios, padrões, na hora de fazer o sistema.
 
 . . .
@@ -97,11 +99,13 @@ Em projetos novos, agentes podem gerar a especificação desde o início.
 
 ##
 
-IA pode trabalhar por vários minutos desenvolvendo algo
+IA pode trabalhar por vários minutos desenvolvendo algo.
 
-- E o resultado é muito melhor se gastarmos alguns minutos **planejando melhor** [o que]{.alert} e [como]{.alert} as coisas devem ser feitas.
+- E o resultado será muito melhor se gastarmos alguns minutos **planejando melhor** [o que]{.alert} e [como]{.alert} as coisas devem ser feitas.
 
 ## Uma especificação é um contrato de trabalho
+
+. . .
 
 Ela esclarece:
 
@@ -111,9 +115,9 @@ Ela esclarece:
 
 . . .
 
-Especificação pode ser feita usando as próprias ferramentas de IA
+Especificação pode ser feita usando as próprias ferramentas de IA.
 
-- Elas sumarizam as decisões principais de arquitetura.
+- Elas podem nos ajudar a sumarizar as decisões principais de arquitetura.
 
 ## Uma especificação é um contrato de trabalho
 
@@ -123,6 +127,8 @@ Servem como referência compartilhada entre pessoas, sessões e agentes diferent
 - Exige revisão e atualização contínuas.
 
 ## Exemplo: requisito ambíguo
+
+. . .
 
 > Crie uma lista de tarefas com prioridades.
 
@@ -161,6 +167,8 @@ Um usuário diz: **"O sistema precisa ser fácil de usar"**.
 
 ## O que o humano delega — e o que não delega
 
+. . .
+
 **Agentes** podem analisar repositórios, editar arquivos, executar comandos e testes.
 
 . . .
@@ -180,33 +188,35 @@ Enquanto **o agente** [acelera]{.alert} a construção,
 
 ## SDD: Benefícios
 
-Controla o código com pequenas modificações na especificação.
-
-- Algumas linhas dizendo como deve ser o front-end pode gerar centenas de linhas de código.
-- Não precisamos gastar energia / tempo / raciocínio nos detalhes de implementação (abstração).
-
 . . .
 
-Elimina o decaimento de contexto
+**Controla o código com pequenas modificações na especificação**
+
+- Algumas linhas dizendo como deve ser o front-end, por exemplo, podem gerar centenas de linhas de código.
+- Não precisamos gastar energia / tempo / raciocínio nos detalhes de implementação (usamos **abstração**).
+
+## SDD: Benefícios
+
+**Elimina o decaimento de contexto**
 
 - Acontece entre muitas sessões com agentes.
 - Especificações mantêm contextos não só entre sessões com o mesmo agente, mas também entre diferentes agentes.
 
-## SDD: Benefícios
+. . .
 
-Melhora a fidelidade à intenção
+**Melhora a fidelidade à intenção**
 
 - É mais provável que os agentes atendam seus objetivos.
 
 ##
 
-Assim como compilador traduz código em binário.
+Assim como compilador traduz código para binário.
 
-- Estamos agora traduzindo especificação em linguagem humana em código.
+- Estamos agora traduzindo especificação em linguagem humana para código.
 
 . . .
 
-A ideia é trazer “engenharia” do ciclo de desenvolvimento de software para codificação com agentes.
+A ideia do SDD é trazer “engenharia” do ciclo de desenvolvimento de software para codificação com agentes.
 
 ## Agente vs. Chat
 
@@ -228,6 +238,19 @@ A ideia é produzir software que não só funcione
 
 
 # O ciclo de trabalho {background-color="#40666e"}
+
+## Dois níveis de decisão
+
+Começamos o projeto em um alto nível de decisão:
+
+- criando a especificação do que chamaremos de **Constituição** do projeto.
+
+. . .
+
+Depois entramos no segundo nível, com ciclo incremental de:
+
+- especificação e desenvolvimento de funcionalidade
+- e replanejamento entre cada uma delas.
 
 ## Dois níveis de decisão
 
@@ -300,7 +323,7 @@ Indica como a solução se encaixa na pilha de tecnologia da empresa.
 
 Lista com **fases de implementação ordenadas**.
 
-- Cada fase terá seu próprio arquivo de especificação.
+- Cada fase terá depois seu próprio arquivo de especificação.
 
 . . .
 
@@ -312,7 +335,7 @@ Terminada a constituição entramos no processo de criar funcionalidades.
 
 . . .
 
-Para cada funcionalidade, o processo envolve
+Para cada funcionalidade, o processo envolve:
 
 1. Especificação
 2. Implementação
@@ -320,9 +343,9 @@ Para cada funcionalidade, o processo envolve
 
 ## Terceira fase: Replanejamento
 
-É executada entre uma fase de funcionalidade e outra
+É executada entre uma fase de funcionalidade e outra.
 
-- Melhora a definição da Constituição
+- Melhora a definição da Constituição.
 - Melhora o próprio processo.
 
 . . .
@@ -331,9 +354,9 @@ Esse ciclo Funcionalidade -> Replanejamento -> Funcionalidade é repetido até t
 
 ## Programação Agêntica
 
-Devemos lembrar do nível correto de detalhamento.
+Devemos nos lembrar do nível correto de detalhamento.
 
-- Nós somos os arquitetos que passamos os projetos para os construtores
+- Nós somos os arquitetos que passamos os projetos para os construtores.
 
 . . .
 
@@ -415,7 +438,7 @@ Colocar a descrição em alto nível do projeto.
 
 - Focar especialmente no que se espera com a solução a ser desenvolvida.
 - Consideranto tanto o público-alvo (usuários finais).
-- Quanto o público interno (desenvolvedores / mantenedores da solução).
+  - Quanto o público interno (desenvolvedores / mantenedores da solução).
 
 ## Passo 2: Criação das especificações da constituição
 
@@ -435,7 +458,7 @@ Estamos criando XX, que é um XXXX. Veja no arquivo README.md o que é esperado 
 
 ##
 
-SDD funciona melhor com abordagem *human in the loop*.
+SDD funciona melhor com abordagem [*human in the loop*]{.alert}.
 
 - Quando revisamos / validamos pequenas modificações.
 
@@ -487,7 +510,7 @@ Na conversa com o agente revise com cuidado e responda às perguntas feitas.
 Quando a especificação for gerada, revise-a com cuidado.
 
 - É muito importante que ela comece correta para que o trabalho fique bem feito.
-- Se alguma coisa não estiver certa, peça ao agente para corrigir.
+- Se alguma coisa não estiver certa, peça ao próprio agente para corrigir.
 
 ##
 
@@ -545,18 +568,18 @@ O agente fez as validações dele, no próximo passo, faremos as nossas.
 
 Avalie o código criado
 
-- Foco no alto nível: se a implementação funciona e atende aos requisitos
-- E não em detalhes: como quais classes foram criadas.
+- Foco no alto nível: se a implementação funciona e atende aos requisitos.
+- E não em detalhes: como nos nomes das classes que foram criadas.
 
 . . .
 
 Se precisar alterar algo, peça ao agente para atualizar não só implementação, mas também o planejamento.
 
-- Exemplo: `Atualize `specs/YYYY-MM-DD-nome-funcionalidade.md` e a implementação para que ...`
+- Exemplo: `Atualize specs/YYYY-MM-DD-nome-funcionalidade.md e a implementação para que ...`
 
 ## 
 
-Antes de terminar funcionalidade, pergunte-se:
+Antes de terminar a funcionalidade, pergunte-se:
 
 - Os critérios de aceitação foram atendidos?
 - Os documentos refletem o comportamento real?
@@ -568,9 +591,18 @@ Antes de terminar funcionalidade, pergunte-se:
 Esse processo é o que chamamos de *human in the loop*.
 
 - Atuamos na revisão e não na programação em si.
-- Agentes são muito rápidos para programar, mas nós temos que guiar para que seja feito o que realmente precisamos.
-- Removemos a sobrecarga mental de ter que escrever, evoluir e validar cada linha de código.
-  - Tendo a especificação, o próprio agente valida o que está fazendo.
+
+. . .
+
+Agentes são muito rápidos para programar, 
+
+- mas nós temos que guiá-los para que seja feito o que realmente precisamos.
+
+. . .
+
+Removemos a sobrecarga mental de ter que escrever, evoluir e validar cada linha de código.
+
+- Tendo a especificação, o próprio agente valida o que está fazendo.
 
 ##
 
@@ -621,10 +653,7 @@ Queremos que a especificação guarde as decisões, não apenas o código.
 
 - E precisamos que as duas coisas estejam sincronizadas.
 - Portanto, é necessário deixar isso claro para o agente.
-
-. . .
-
-**Princípio:** especificação e código devem evoluir juntos.
+- **Princípio:** especificação e código devem evoluir juntos.
 
 ##
 
@@ -640,7 +669,7 @@ No replanejamento, é interessante verificar se os próximos passos ainda fazem 
 
 ##
 
-A fase de replanejamento pode ser usada também para sincronizar stakeholders do projeto que não sejam de perfil técnico.
+A fase de replanejamento pode ser usada também para sincronizar _stakeholders_ do projeto que não sejam de perfil técnico.
 
 - Um exemplo para facilitar isso seria manter um log das mudanças (change log).
 - Podemos usar **skills** para isso.
@@ -706,6 +735,8 @@ Usar o **depurador para rodar testes** automatizados pode ser uma boa estratégi
 
 Podemos também pedir o agente para fazer uma revisão profunda das alterações de uma branch antes de prosseguir.
 
+. . .
+
 ::: {.callout-caution title="Exemplo de Prompt" icon="false"}
 Faça uma revisão profunda: dispare múltiplos subagentes para verificar todas as alterações dessa branch a partir de três perspectivas diferentes e verifique se alguma coisa não faz sentido, poderia ser melhor, etc.
 :::
@@ -728,7 +759,7 @@ SDD pode ser útil também para projetos já existentes, criados sem IA.
 Devemos começar criando a constituição do projeto.
 
 - Podemos usar basicamente o mesmo prompt que usamos para o projeto novo.
-  - Mas listando os artefatos que podem ser usados para entender o projeto: como código, README, lista de TODOs, issues, etc.
+  - Mas listando os artefatos que podem ser usados para entender o projeto: como código, README, lista de _TODOs_, _issues_, etc.
 - A IA usará Engenharia Reversa para gerar a especificação a partir do projeto existente.
 
 ##
@@ -738,7 +769,7 @@ A constituição criada permitirá que futuras funcionalidades desenvolvidas pel
 - Lembre-se que a especificação deve ser versionada assim como o código.
 - Depois de criada a constituição, o processo SDD é exatamente o mesmo feito para novos projetos.
 
-# Comentários sobre Experiência sobre uso real de SDD {background-color="#40666e"}
+# Comentários sobre experiência com uso real de SDD {background-color="#40666e"}
 
 ## App Web usando Python Streamlit
 
@@ -748,7 +779,7 @@ Eu já tinha os requisitos do ponto de vista do usuário.
 
 - Criei a missão usando esse arquivo como um TODO de demandas.
 - E escrevi um README com necessidades gerais do projeto.
-- Gerei também um arquivo `ui-spec.md` usando gemini a partir de prints e prototipação feita com Excalidraw.
+- Gerei também um arquivo `ui-spec.md` usando Gemini a partir de prints e prototipação feita com Excalidraw.
 - Usei VS Code + Copilot + Git.
 
 ##
@@ -756,7 +787,7 @@ Eu já tinha os requisitos do ponto de vista do usuário.
 Fase inicial do processo até relatórios de finos funcionou bem.
 
 - Apesar do consumo de tokens ser alto.
-- Copilot a princípio usando GPT 5.3 Codex.
+- Copilot a princípio escolheu usar GPT 5.3 Codex.
   - Depois passou a usar MAI-Code-1-Flash.
 
 . . .
@@ -767,10 +798,10 @@ Entre uma fase e outra eu pedia para atualizar a `ui-spec.md`.
 
 ## 
 
-Mas ao chegar na parte de Fretes o resultado começou a ficar bem ruim.
+Mas ao chegar nos relatórios de fretes, o resultado começou a ficar bem ruim.
 
 - Não fazia o que eu queria
-- Atrapalhava o que já estava pronto de finos.
+- Atrapalhava o que já estava pronto dos relatórios anteriores.
 - Tentei ir acertando com o prompt mas vi que nunca ficava certo.
 - Pode ser que aí tenha começado a fazer falta o conhecimento técnico mais profundo sobre Streamlit.
 - Mas desconfiei do modelo MAI.
@@ -842,10 +873,10 @@ Após o replanejamento o agente mockou os dados diretamente na `main_view`.
 
 . . .
 
-Briga para fazer notificação funcionar
+Briga para fazer notificação funcionar.
 
-- Problema da implementação minha? 
-- Realmente não é tão simples no Streamlit?
+- Problema da minha implementação? 
+- Ou realmente não é tão simples no Streamlit?
 
 ## O consutmo de tokens é bem alto
 
@@ -859,7 +890,7 @@ Briga para fazer notificação funcionar
 
 Provavelmente eu não teria implementado tantos testes automatizados.
 
-- O que na verdade seria um deficiência da minha implementação
+- O que na verdade seria um deficiência da minha implementação.
 - Portanto, o resultado com IA, nesse ponto, foi melhor.
 
 ## Riscos de _vibe coding_ da suíte de testes
@@ -929,7 +960,7 @@ Essa experiência reforçou o que discutimos no início da disciplina.
 
 . . .
 
-E devemos levar em conta que essa foi uma primeira experiência com a metodologia.
+E claro que devemos levar em conta que essa foi uma primeira experiência minha com a metodologia SDD.
 
 - Foi um aprendizado.
 - O uso em um próximo projeto tende a melhorar os resultados.

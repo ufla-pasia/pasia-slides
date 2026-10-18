@@ -8005,14 +8005,14 @@
     "href": "aula_t10.html#uma-especificação-é-um-contrato-de-trabalho",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Uma especificação é um contrato de trabalho",
-    "text": "Uma especificação é um contrato de trabalho\nEla esclarece:\n\nO quê deve ser feito e por quê;\nquais restrições devem ser respeitadas;\ncomo reconhecer que a entrega foi concluída.\n\n\nEspecificação pode ser feita usando as próprias ferramentas de IA\n\nElas sumarizam as decisões principais de arquitetura."
+    "text": "Uma especificação é um contrato de trabalho\n\nEla esclarece:\n\nO quê deve ser feito e por quê;\nquais restrições devem ser respeitadas;\ncomo reconhecer que a entrega foi concluída.\n\n\n\nEspecificação pode ser feita usando as próprias ferramentas de IA.\n\nElas podem nos ajudar a sumarizar as decisões principais de arquitetura."
   },
   {
     "objectID": "aula_t10.html#exemplo-requisito-ambíguo",
     "href": "aula_t10.html#exemplo-requisito-ambíguo",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Exemplo: requisito ambíguo",
-    "text": "Exemplo: requisito ambíguo\n\nCrie uma lista de tarefas com prioridades.\n\n\nO agente precisa decidir sozinho:\n\nQuais prioridades existem?\nUma tarefa pode ficar sem prioridade?\nComo aparecem as tarefas concluídas?\nOs dados devem persistir entre execuções?"
+    "text": "Exemplo: requisito ambíguo\n\n\nCrie uma lista de tarefas com prioridades.\n\n\n\nO agente precisa decidir sozinho:\n\nQuais prioridades existem?\nUma tarefa pode ficar sem prioridade?\nComo aparecem as tarefas concluídas?\nOs dados devem persistir entre execuções?"
   },
   {
     "objectID": "aula_t10.html#a-mesma-ideia-com-critérios-verificáveis",
@@ -8033,7 +8033,7 @@
     "href": "aula_t10.html#o-que-o-humano-delega-e-o-que-não-delega",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "O que o humano delega — e o que não delega",
-    "text": "O que o humano delega — e o que não delega\nAgentes podem analisar repositórios, editar arquivos, executar comandos e testes.\n\nPessoas continuam responsáveis por:\n\ndecidir objetivos e prioridades;\naprovar escolhas e restrições;\ninspecionar resultados e riscos;\naceitar ou rejeitar a entrega."
+    "text": "O que o humano delega — e o que não delega\n\nAgentes podem analisar repositórios, editar arquivos, executar comandos e testes.\n\n\nPessoas continuam responsáveis por:\n\ndecidir objetivos e prioridades;\naprovar escolhas e restrições;\ninspecionar resultados e riscos;\naceitar ou rejeitar a entrega."
   },
   {
     "objectID": "aula_t10.html#duas-escalas-de-decisão",
@@ -8061,7 +8061,7 @@
     "href": "aula_t10.html#constituição-roadmap",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Constituição: roadmap",
-    "text": "Constituição: roadmap\nLista com fases de implementação ordenadas.\n\nCada fase terá seu próprio arquivo de especificação.\n\n\nÉ um documento vivo: novas informações podem mudar sua ordem ou granularidade."
+    "text": "Constituição: roadmap\nLista com fases de implementação ordenadas.\n\nCada fase terá depois seu próprio arquivo de especificação.\n\n\nÉ um documento vivo: novas informações podem mudar sua ordem ou granularidade."
   },
   {
     "objectID": "aula_t10.html#exemplo-de-estrutura",
@@ -8222,7 +8222,7 @@
     "href": "aula_t10.html#section-1",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Com vibe coding você torce para conseguir o que você precisa.\n\nJá com SDD você chega mais perto do que realmente precisa.\n\nFoca em dar contexto através de arquivos de especificação\nEm vez de trabalhar diretamente com programação.\n\n\n\nSDD não elimina a conversa: ela passa a produzir e manter decisões verificáveis."
+    "text": "Com vibe coding você torce para conseguir o que você precisa.\n\nJá com SDD você chega mais perto do que realmente precisa.\n\nFocando em dar contexto através de arquivos de especificação,\nem vez de trabalhar diretamente com programação.\n\n\n\nSDD não elimina a conversa:\n\nela passa a produzir e manter decisões verificáveis."
   },
   {
     "objectID": "aula_t10.html#vibe-coding-vs.-sdd",
@@ -8236,14 +8236,14 @@
     "href": "aula_t10.html#sdd-vantagens",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "SDD: Vantagens",
-    "text": "SDD: Vantagens\n\nPode lidar com alterações grandes que afetam vários arquivos.\nLida com perda de contexto entre diferentes interações com agentes de IA.\n\nGarante definições “não-negociáveis”.\n\nDefine objetivo, critérios de sucesso, restrições\n\nAgente cria o plano completo."
+    "text": "SDD: Vantagens\n\nPode lidar com alterações grandes que afetam vários arquivos.\nLida com perda de contexto entre diferentes interações com agentes de IA.\n\nGarante definições “não-negociáveis”.\n\nDefine objetivo, critérios de sucesso, restrições.\n\nAgente de IA é quem cria o plano completo."
   },
   {
     "objectID": "aula_t10.html#section-2",
     "href": "aula_t10.html#section-2",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Sistemas podem se tornar mais difíceis de manter\n\nQuando várias pessoas usam diferentes IAs, com diferentes contextos para trabalhar no mesmo sistema.\nEspecificação é uma forma de fazer com que toda a equipe siga os mesmos critérios, padrões, na hora de fazer o sistema.\n\n\nEm projetos novos, agentes podem gerar a especificação desde o início.\n\nMas podemos também criar especificações para projetos já existentes."
+    "text": "Sistemas podem se tornar mais difíceis de manter quando várias pessoas usam diferentes IAs,\n\ncom diferentes contextos para trabalhar no mesmo sistema.\nEspecificação é uma forma de fazer com que toda a equipe siga os mesmos critérios, padrões, na hora de fazer o sistema.\n\n\nEm projetos novos, agentes podem gerar a especificação desde o início.\n\nMas podemos também criar especificações para projetos já existentes."
   },
   {
     "objectID": "aula_t10.html#uma-especificação-é-um-contrato-de-trabalho-1",
@@ -8257,7 +8257,7 @@
     "href": "aula_t10.html#section-3",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "IA pode trabalhar por vários minutos desenvolvendo algo\n\nE o resultado é muito melhor se gastarmos alguns minutos planejando melhor o que e como as coisas devem ser feitas."
+    "text": "IA pode trabalhar por vários minutos desenvolvendo algo.\n\nE o resultado será muito melhor se gastarmos alguns minutos planejando melhor o que e como as coisas devem ser feitas."
   },
   {
     "objectID": "aula_t10.html#discussão",
@@ -8271,21 +8271,21 @@
     "href": "aula_t10.html#sdd-benefícios",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "SDD: Benefícios",
-    "text": "SDD: Benefícios\nControla o código com pequenas modificações na especificação.\n\nAlgumas linhas dizendo como deve ser o front-end pode gerar centenas de linhas de código.\nNão precisamos gastar energia / tempo / raciocínio nos detalhes de implementação (abstração).\n\n\nElimina o decaimento de contexto\n\nAcontece entre muitas sessões com agentes.\nEspecificações mantêm contextos não só entre sessões com o mesmo agente, mas também entre diferentes agentes."
+    "text": "SDD: Benefícios\n\nControla o código com pequenas modificações na especificação\n\nAlgumas linhas dizendo como deve ser o front-end, por exemplo, podem gerar centenas de linhas de código.\nNão precisamos gastar energia / tempo / raciocínio nos detalhes de implementação (usamos abstração)."
   },
   {
     "objectID": "aula_t10.html#sdd-benefícios-1",
     "href": "aula_t10.html#sdd-benefícios-1",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "SDD: Benefícios",
-    "text": "SDD: Benefícios\nMelhora a fidelidade à intenção\n\nÉ mais provável que os agentes atendam seus objetivos."
+    "text": "SDD: Benefícios\nElimina o decaimento de contexto\n\nAcontece entre muitas sessões com agentes.\nEspecificações mantêm contextos não só entre sessões com o mesmo agente, mas também entre diferentes agentes.\n\n\nMelhora a fidelidade à intenção\n\nÉ mais provável que os agentes atendam seus objetivos."
   },
   {
     "objectID": "aula_t10.html#section-4",
     "href": "aula_t10.html#section-4",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Assim como compilador traduz código em binário.\n\nEstamos agora traduzindo especificação em linguagem humana em código.\n\n\nA ideia é trazer “engenharia” do ciclo de desenvolvimento de software para codificação com agentes."
+    "text": "Assim como compilador traduz código para binário.\n\nEstamos agora traduzindo especificação em linguagem humana para código.\n\n\nA ideia do SDD é trazer “engenharia” do ciclo de desenvolvimento de software para codificação com agentes."
   },
   {
     "objectID": "aula_t10.html#agente-vs.-chat",
@@ -8313,21 +8313,21 @@
     "href": "aula_t10.html#segunda-fase-funcionalidade",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Segunda fase: Funcionalidade",
-    "text": "Segunda fase: Funcionalidade\nTerminada a constituição entramos no processo de criar funcionalidades.\n\nPara cada funcionalidade, o processo envolve\n\nEspecificação\nImplementação\nValidação"
+    "text": "Segunda fase: Funcionalidade\nTerminada a constituição entramos no processo de criar funcionalidades.\n\nPara cada funcionalidade, o processo envolve:\n\nEspecificação\nImplementação\nValidação"
   },
   {
     "objectID": "aula_t10.html#terceira-fase-replanejamento",
     "href": "aula_t10.html#terceira-fase-replanejamento",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Terceira fase: Replanejamento",
-    "text": "Terceira fase: Replanejamento\nÉ executada entre uma fase de funcionalidade e outra\n\nMelhora a definição da Constituição\nMelhora o próprio processo.\n\n\nEsse ciclo Funcionalidade -&gt; Replanejamento -&gt; Funcionalidade é repetido até terminarmos a solução."
+    "text": "Terceira fase: Replanejamento\nÉ executada entre uma fase de funcionalidade e outra.\n\nMelhora a definição da Constituição.\nMelhora o próprio processo.\n\n\nEsse ciclo Funcionalidade -&gt; Replanejamento -&gt; Funcionalidade é repetido até terminarmos a solução."
   },
   {
     "objectID": "aula_t10.html#programação-agêntica",
     "href": "aula_t10.html#programação-agêntica",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Programação Agêntica",
-    "text": "Programação Agêntica\nDevemos lembrar do nível correto de detalhamento.\n\nNós somos os arquitetos que passamos os projetos para os construtores\n\n\nNosso papel é:\n\nProjetar\nSupervisonar\nRevisar\nAceitar… ou pedir mudanças."
+    "text": "Programação Agêntica\nDevemos nos lembrar do nível correto de detalhamento.\n\nNós somos os arquitetos que passamos os projetos para os construtores.\n\n\nNosso papel é:\n\nProjetar\nSupervisonar\nRevisar\nAceitar… ou pedir mudanças."
   },
   {
     "objectID": "aula_t10.html#ambiente",
@@ -8348,7 +8348,7 @@
     "href": "aula_t10.html#passo-1-descrição-do-projeto-readme.md",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Passo 1: Descrição do projeto README.md",
-    "text": "Passo 1: Descrição do projeto README.md\n\nColocar a descrição em alto nível do projeto.\n\nFocar especialmente no que se espera com a solução a ser desenvolvida.\nConsideranto tanto o público-alvo (usuários finais).\nQuanto o público interno (desenvolvedores / mantenedores da solução)."
+    "text": "Passo 1: Descrição do projeto README.md\n\nColocar a descrição em alto nível do projeto.\n\nFocar especialmente no que se espera com a solução a ser desenvolvida.\nConsideranto tanto o público-alvo (usuários finais).\n\nQuanto o público interno (desenvolvedores / mantenedores da solução)."
   },
   {
     "objectID": "aula_t10.html#passo-2-criação-das-especificações-da-constituição",
@@ -8390,7 +8390,7 @@
     "href": "aula_t10.html#section-9",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Na conversa com o agente revise com cuidado e responda às perguntas feitas.\n\nVocê não tem que aceitar tudo que o agente está propondo.\nÉ importante fazer escolhas conscientes e que guiem para o que realmente é necessário.\n\n\nQuando a especificação for gerada, revise-a com cuidado.\n\nÉ muito importante que ela comece correta para que o trabalho fique bem feito.\nSe alguma coisa não estiver certa, peça ao agente para corrigir."
+    "text": "Na conversa com o agente revise com cuidado e responda às perguntas feitas.\n\nVocê não tem que aceitar tudo que o agente está propondo.\nÉ importante fazer escolhas conscientes e que guiem para o que realmente é necessário.\n\n\nQuando a especificação for gerada, revise-a com cuidado.\n\nÉ muito importante que ela comece correta para que o trabalho fique bem feito.\nSe alguma coisa não estiver certa, peça ao próprio agente para corrigir."
   },
   {
     "objectID": "aula_t10.html#section-10",
@@ -8425,21 +8425,21 @@
     "href": "aula_t10.html#section-14",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Avalie o código criado\n\nFoco no alto nível: se a implementação funciona e atende aos requisitos\nE não em detalhes: como quais classes foram criadas.\n\n\nSe precisar alterar algo, peça ao agente para atualizar não só implementação, mas também o planejamento.\n\nExemplo: Atualizespecs/YYYY-MM-DD-nome-funcionalidade.mde a implementação para que ..."
+    "text": "Avalie o código criado\n\nFoco no alto nível: se a implementação funciona e atende aos requisitos.\nE não em detalhes: como nos nomes das classes que foram criadas.\n\n\nSe precisar alterar algo, peça ao agente para atualizar não só implementação, mas também o planejamento.\n\nExemplo: Atualize specs/YYYY-MM-DD-nome-funcionalidade.md e a implementação para que ..."
   },
   {
     "objectID": "aula_t10.html#section-15",
     "href": "aula_t10.html#section-15",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Antes de terminar funcionalidade, pergunte-se:\n\nOs critérios de aceitação foram atendidos?\nOs documentos refletem o comportamento real?\nHá testes relevantes e o código está versionado?\nO roadmap representa o que ainda falta fazer?"
+    "text": "Antes de terminar a funcionalidade, pergunte-se:\n\nOs critérios de aceitação foram atendidos?\nOs documentos refletem o comportamento real?\nHá testes relevantes e o código está versionado?\nO roadmap representa o que ainda falta fazer?"
   },
   {
     "objectID": "aula_t10.html#section-16",
     "href": "aula_t10.html#section-16",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Esse processo é o que chamamos de human in the loop.\n\nAtuamos na revisão e não na programação em si.\nAgentes são muito rápidos para programar, mas nós temos que guiar para que seja feito o que realmente precisamos.\nRemovemos a sobrecarga mental de ter que escrever, evoluir e validar cada linha de código.\n\nTendo a especificação, o próprio agente valida o que está fazendo."
+    "text": "Esse processo é o que chamamos de human in the loop.\n\nAtuamos na revisão e não na programação em si.\n\n\nAgentes são muito rápidos para programar,\n\nmas nós temos que guiá-los para que seja feito o que realmente precisamos.\n\n\n\nRemovemos a sobrecarga mental de ter que escrever, evoluir e validar cada linha de código.\n\nTendo a especificação, o próprio agente valida o que está fazendo."
   },
   {
     "objectID": "aula_t10.html#exemplos-de-prompts-úteis-para-finalização",
@@ -8467,7 +8467,7 @@
     "href": "aula_t10.html#section-19",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Se a implementação do que está sendo alterado for pequena, pode ser que faça sentido fazer na própria branch de replanejamento.\n\nMas se for algo maior, vale a pena acrescentar como uma fase futura do Roadmap.\n\n\nQueremos que a especificação guarde as decisões, não apenas o código.\n\nE precisamos que as duas coisas estejam sincronizadas.\nPortanto, é necessário deixar isso claro para o agente.\n\n\n\nPrincípio: especificação e código devem evoluir juntos."
+    "text": "Se a implementação do que está sendo alterado for pequena, pode ser que faça sentido fazer na própria branch de replanejamento.\n\nMas se for algo maior, vale a pena acrescentar como uma fase futura do Roadmap.\n\n\nQueremos que a especificação guarde as decisões, não apenas o código.\n\nE precisamos que as duas coisas estejam sincronizadas.\nPortanto, é necessário deixar isso claro para o agente.\nPrincípio: especificação e código devem evoluir juntos."
   },
   {
     "objectID": "aula_t10.html#section-20",
@@ -8530,7 +8530,7 @@
     "href": "aula_t10.html#section-27",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Podemos também pedir o agente para fazer uma revisão profunda das alterações de uma branch antes de prosseguir.\n\n\n\n\nExemplo de Prompt\n\n\nFaça uma revisão profunda: dispare múltiplos subagentes para verificar todas as alterações dessa branch a partir de três perspectivas diferentes e verifique se alguma coisa não faz sentido, poderia ser melhor, etc.\n\n\n\n\n\nCriar subagentes é interessante porque não polui a janela de contexto do agente principal.\n\nE dá a oportunidade para a IA avaliar melhor o código.\nOs subagentes podem retornar problemas e sugestões de melhoria no projeto, que você pode decidir tratar ou não."
+    "text": "Podemos também pedir o agente para fazer uma revisão profunda das alterações de uma branch antes de prosseguir.\n\n\n\n\n\nExemplo de Prompt\n\n\nFaça uma revisão profunda: dispare múltiplos subagentes para verificar todas as alterações dessa branch a partir de três perspectivas diferentes e verifique se alguma coisa não faz sentido, poderia ser melhor, etc.\n\n\n\n\n\n\nCriar subagentes é interessante porque não polui a janela de contexto do agente principal.\n\nE dá a oportunidade para a IA avaliar melhor o código.\nOs subagentes podem retornar problemas e sugestões de melhoria no projeto, que você pode decidir tratar ou não."
   },
   {
     "objectID": "aula_t10.html#section-28",
@@ -8544,7 +8544,7 @@
     "href": "aula_t10.html#app-web-usando-python-streamlit",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "App Web usando Python Streamlit",
-    "text": "App Web usando Python Streamlit\n\nEu já tinha os requisitos do ponto de vista do usuário.\n\nCriei a missão usando esse arquivo como um TODO de demandas.\nE escrevi um README com necessidades gerais do projeto.\nGerei também um arquivo ui-spec.md usando gemini a partir de prints e prototipação feita com Excalidraw.\nUsei VS Code + Copilot + Git."
+    "text": "App Web usando Python Streamlit\n\nEu já tinha os requisitos do ponto de vista do usuário.\n\nCriei a missão usando esse arquivo como um TODO de demandas.\nE escrevi um README com necessidades gerais do projeto.\nGerei também um arquivo ui-spec.md usando Gemini a partir de prints e prototipação feita com Excalidraw.\nUsei VS Code + Copilot + Git."
   },
   {
     "objectID": "aula_t10.html#section-29",
@@ -8558,14 +8558,14 @@
     "href": "aula_t10.html#section-30",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Fase inicial do processo até relatórios de finos funcionou bem.\n\nApesar do consumo de tokens ser alto.\nCopilot a princípio usando GPT 5.3 Codex.\n\nDepois passou a usar MAI-Code-1-Flash.\n\n\n\nEntre uma fase e outra eu pedia para atualizar a ui-spec.md.\n\nPorque fui descobrindo que ele não representava exatamente o que eu tinha na prototipação inicial."
+    "text": "Fase inicial do processo até relatórios de finos funcionou bem.\n\nApesar do consumo de tokens ser alto.\nCopilot a princípio escolheu usar GPT 5.3 Codex.\n\nDepois passou a usar MAI-Code-1-Flash.\n\n\n\nEntre uma fase e outra eu pedia para atualizar a ui-spec.md.\n\nPorque fui descobrindo que ele não representava exatamente o que eu tinha na prototipação inicial."
   },
   {
     "objectID": "aula_t10.html#section-31",
     "href": "aula_t10.html#section-31",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
-    "text": "Mas ao chegar na parte de Fretes o resultado começou a ficar bem ruim.\n\nNão fazia o que eu queria\nAtrapalhava o que já estava pronto de finos.\nTentei ir acertando com o prompt mas vi que nunca ficava certo.\nPode ser que aí tenha começado a fazer falta o conhecimento técnico mais profundo sobre Streamlit.\nMas desconfiei do modelo MAI."
+    "text": "Mas ao chegar nos relatórios de fretes, o resultado começou a ficar bem ruim.\n\nNão fazia o que eu queria\nAtrapalhava o que já estava pronto dos relatórios anteriores.\nTentei ir acertando com o prompt mas vi que nunca ficava certo.\nPode ser que aí tenha começado a fazer falta o conhecimento técnico mais profundo sobre Streamlit.\nMas desconfiei do modelo MAI."
   },
   {
     "objectID": "aula_t10.html#section-32",
@@ -8614,7 +8614,7 @@
     "href": "aula_t10.html#situações-inesperadas",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Situações inesperadas",
-    "text": "Situações inesperadas\nApós o replanejamento o agente mockou os dados diretamente na main_view.\n\nSem seguir contrato de divisão de camadas que era algo crítico da arquitetura.\n\n\nBriga para fazer notificação funcionar\n\nProblema da implementação minha?\nRealmente não é tão simples no Streamlit?"
+    "text": "Situações inesperadas\nApós o replanejamento o agente mockou os dados diretamente na main_view.\n\nSem seguir contrato de divisão de camadas que era algo crítico da arquitetura.\n\n\nBriga para fazer notificação funcionar.\n\nProblema da minha implementação?\nOu realmente não é tão simples no Streamlit?"
   },
   {
     "objectID": "aula_t10.html#o-consutmo-de-tokens-é-bem-alto",
@@ -8628,7 +8628,7 @@
     "href": "aula_t10.html#testes-automatizados",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Testes automatizados",
-    "text": "Testes automatizados\nProvavelmente eu não teria implementado tantos testes automatizados.\n\nO que na verdade seria um deficiência da minha implementação\nPortanto, o resultado com IA, nesse ponto, foi melhor."
+    "text": "Testes automatizados\nProvavelmente eu não teria implementado tantos testes automatizados.\n\nO que na verdade seria um deficiência da minha implementação.\nPortanto, o resultado com IA, nesse ponto, foi melhor."
   },
   {
     "objectID": "aula_t10.html#riscos-de-vibe-coding-da-suíte-de-testes",
@@ -8719,7 +8719,7 @@
     "href": "aula_t10.html#dois-níveis-de-decisão",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Dois níveis de decisão",
-    "text": "Dois níveis de decisão\n\n\nAlto nível: Constituição\n\nMissão\nPilha tecnológica\nRoadmap\n\n\nSegundo nível: Funcionalidade — ciclo incremental\n\nRequisitos\nPlanejamento\nValidação\nImplementação e revisão\n\n\n\nEntre funcionalidades: replanejar quando as decisões mudarem."
+    "text": "Dois níveis de decisão\nComeçamos o projeto em um alto nível de decisão:\n\ncriando a especificação do que chamaremos de Constituição do projeto.\n\n\nDepois entramos no segundo nível, com ciclo incremental de:\n\nespecificação e desenvolvimento de funcionalidade\ne replanejamento entre cada uma delas."
   },
   {
     "objectID": "aula_t10.html#section-38",
@@ -8747,7 +8747,7 @@
     "href": "aula_t10.html#desenvolvimento-após-protótipo-usando-ssd-1",
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Desenvolvimento após protótipo usando SSD",
-    "text": "Desenvolvimento após protótipo usando SSD\nEssa experiência reforçou o que discutimos no início da disciplina.\n\nQuem tem base técnica para o que está sendo desenvolvido, consegue tirar melhor proveito das ferramentas de IA.\n\n\nE devemos levar em conta que essa foi uma primeira experiência com a metodologia.\n\nFoi um aprendizado.\nO uso em um próximo projeto tende a melhorar os resultados."
+    "text": "Desenvolvimento após protótipo usando SSD\nEssa experiência reforçou o que discutimos no início da disciplina.\n\nQuem tem base técnica para o que está sendo desenvolvido, consegue tirar melhor proveito das ferramentas de IA.\n\n\nE claro que devemos levar em conta que essa foi uma primeira experiência minha com a metodologia SDD.\n\nFoi um aprendizado.\nO uso em um próximo projeto tende a melhorar os resultados."
   },
   {
     "objectID": "aula_t10.html#plugins",
@@ -8783,5 +8783,229 @@
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "",
     "text": "DeepLearning.AI:\n\nMinicurso: Spec-Driven Development (SDD) with Code Agents."
+  },
+  {
+    "objectID": "aula_p10.html#section",
+    "href": "aula_p10.html#section",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "",
+    "text": "Hoje vamos aplicar SDD para construir um projeto pequeno de Python com apoio de um agente de IA.\n\nVamos escrever e revisar especificações antes de implementar.\nTrabalharemos em etapas, com testes e Git.\nNo final, experimentaremos um servidor MCP local.\n\n\nObjetivo: praticar o método. Não é necessário consumir muitos tokens nem usar um serviço pago."
+  },
+  {
+    "objectID": "aula_p10.html#o-que-entregar-até-o-final-da-semana",
+    "href": "aula_p10.html#o-que-entregar-até-o-final-da-semana",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "O que entregar até o final da semana",
+    "text": "O que entregar até o final da semana\nUm repositório (ou arquivo compactado) contendo:\n\nREADME.md, specs/missao.md, specs/pilha-tecnologia.md, specs/roadmap.md;\nspecs/01-tarefas/{requisitos,planejamento,validacao}.md;\naplicação Python e testes automatizados;\nregistro curto das verificações realizadas e das decisões de revisão;\num breve relato da experiência com MCP ou do procedimento alternativo, caso não seja possível executar a ferramenta.\n\n\nImportante: o objetivo não é avaliar qual modelo gerou mais código."
+  },
+  {
+    "objectID": "aula_p10.html#ferramentas",
+    "href": "aula_p10.html#ferramentas",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Ferramentas",
+    "text": "Ferramentas\n\nPython 3 e editor de código;\nterminal;\npytest;\nGit recomendado.\nNode.js/npm para o exemplo MCP.\n\n\nTrabalhem com uma única funcionalidade antes de começar a seguinte."
+  },
+  {
+    "objectID": "aula_p10.html#o-projeto-gerenciador-de-tarefas",
+    "href": "aula_p10.html#o-projeto-gerenciador-de-tarefas",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "O projeto: gerenciador de tarefas",
+    "text": "O projeto: gerenciador de tarefas\nVamos criar uma biblioteca Python, sem interface gráfica e sem banco de dados.\nNa primeira etapa, ela deverá:\n\ncadastrar tarefas com descrição e prioridade;\nlistar tarefas;\nrejeitar entradas inválidas.\n\n\nDepois faremos uma mudança solicitada pelo “cliente”: marcar tarefas como concluídas e filtrar por situação."
+  },
+  {
+    "objectID": "aula_p10.html#tempo-sugerido-para-o-laboratório",
+    "href": "aula_p10.html#tempo-sugerido-para-o-laboratório",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tempo sugerido para o laboratório",
+    "text": "Tempo sugerido para o laboratório\n\n\n\nBloco\nAtividade\n\n\n\n\n10 min\nPreparação e constituição\n\n\n20 min\nEspecificar a primeira funcionalidade\n\n\n25 min\nImplementar e testar\n\n\n15 min\nMudança de requisito e revisão\n\n\n15 min\nDemonstração de MCP e documentação\n\n\n\nO tempo é uma sugestão de organização, não um limite: a entrega pode ser concluída durante a semana."
+  },
+  {
+    "objectID": "aula_p10.html#crie-o-repositório",
+    "href": "aula_p10.html#crie-o-repositório",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Crie o repositório",
+    "text": "Crie o repositório\nmkdir tarefas-sdd\ncd tarefas-sdd\ngit init\nmkdir -p specs/01-tarefas src tests\nNo Windows, use o terminal integrado com Git Bash ou crie os diretórios pelo explorador do editor.\n\nPrepare um README.md com a finalidade do projeto, instruções de execução e referência aos documentos em specs/."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-1.1-missão",
+    "href": "aula_p10.html#tarefa-1.1-missão",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 1.1 — Missão",
+    "text": "Tarefa 1.1 — Missão\n\n\n\n\nCriar specs/missao.md\n\n\nEscreva, com suas palavras:\n\nProblema: organizar tarefas simples para uso individual.\nUsuário: pessoa que usa scripts Python básicos.\nObjetivo: cadastrar, consultar e atualizar tarefas.\nFora de escopo: interface gráfica, autenticação, nuvem e banco de dados.\n\n\n\n\n\n\nEvite decidir ainda os nomes de classes e funções."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-1.2-pilha-e-roadmap",
+    "href": "aula_p10.html#tarefa-1.2-pilha-e-roadmap",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 1.2 — Pilha e roadmap",
+    "text": "Tarefa 1.2 — Pilha e roadmap\n\n\n\n\nCriar os dois documentos\n\n\nEm specs/pilha-tecnologia.md, registre:\n\nPython 3; biblioteca padrão; dados em memória;\ntestes com unittest ou pytest;\norganização em src/ e tests/.\n\nEm specs/roadmap.md, defina:\n\nCadastro e listagem de tarefas.\nConclusão e filtro por situação.\nFuturo, não implementar: persistência em JSON."
+  },
+  {
+    "objectID": "aula_p10.html#usando-a-ia-com-economia",
+    "href": "aula_p10.html#usando-a-ia-com-economia",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Usando a IA com economia",
+    "text": "Usando a IA com economia\nSe você tiver um agente, não peça a implementação completa agora.\n\n\n\n\nPrompt opcional\n\n\nLeia README.md e os documentos de specs/. Aponte até três ambiguidades ou contradições na constituição. Não escreva código nem gere arquivos. Responda brevemente.\n\n\n\n\n\nAvalie as sugestões e altere os documentos somente quando fizer sentido."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-2.1-requisitos.md",
+    "href": "aula_p10.html#tarefa-2.1-requisitos.md",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 2.1 — requisitos.md",
+    "text": "Tarefa 2.1 — requisitos.md\n\n\n\n\nEscreva os requisitos da fase 1\n\n\n\nCada tarefa contém id inteiro, descricao e prioridade.\nPrioridades possíveis: baixa, media, alta.\ndescricao não pode ser vazia nem apenas espaços.\nA prioridade inválida deve causar ValueError.\nCada cadastro válido recebe um id único, crescente a partir de 1.\nA listagem devolve todas as tarefas cadastradas, em ordem de criação.\nAs tarefas ficam apenas em memória.\n\n\n\n\n\n\nFora de escopo da fase 1: marcar tarefas como concluídas e salvar arquivos."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-2.2-planejamento-e-validação",
+    "href": "aula_p10.html#tarefa-2.2-planejamento-e-validação",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 2.2 — Planejamento e validação",
+    "text": "Tarefa 2.2 — Planejamento e validação\n\n\n\n\nComplete os dois arquivos\n\n\nEm planejamento.md, organize o trabalho em grupos:\n\nEstrutura de dados e cadastro.\nListagem e validação de entradas.\nTestes e revisão.\n\nEm validacao.md, escreva cenários observáveis para:\n\ncadastro válido, IDs crescentes e ordem de listagem;\ndescrição vazia / somente espaços;\nprioridade fora do conjunto permitido;\nlistagem quando não existem tarefas."
+  },
+  {
+    "objectID": "aula_p10.html#antes-da-implementação-revisão-em-dupla",
+    "href": "aula_p10.html#antes-da-implementação-revisão-em-dupla",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Antes da implementação: revisão em dupla",
+    "text": "Antes da implementação: revisão em dupla\nTroquem os documentos com um colega e verifiquem:\n\nÉ possível implementar sem inventar uma regra importante?\nHá algum caso em que duas interpretações seriam válidas?\nCada requisito relevante tem pelo menos uma forma de verificação?\n\n\nCorrijam a especificação antes de programar."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-3.1-implemente-apenas-a-fase-1",
+    "href": "aula_p10.html#tarefa-3.1-implemente-apenas-a-fase-1",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 3.1 — Implemente apenas a fase 1",
+    "text": "Tarefa 3.1 — Implemente apenas a fase 1\n\n\n\n\nImplementação incremental\n\n\nImplemente o comportamento descrito em specs/01-tarefas/requisitos.md.\nSugestão: criar src/tarefas.py com uma estrutura de armazenamento em memória.\n\nVerifique primeiro o cadastro.\nSó então implemente a listagem.\nNão implemente ainda o roadmap completo.\n\n\n\n\n\n\nVocê pode programar manualmente ou pedir um grupo de tarefas por vez ao agente."
+  },
+  {
+    "objectID": "aula_p10.html#exemplo-de-prompt-de-implementação",
+    "href": "aula_p10.html#exemplo-de-prompt-de-implementação",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Exemplo de prompt de implementação",
+    "text": "Exemplo de prompt de implementação\n\n\n\n\nPrompt opcional para agente\n\n\nConsulte specs/missao.md, specs/pilha-tecnologia.md e os três arquivos de specs/01-tarefas/. Implemente somente o primeiro grupo de planejamento.md em Python. Respeite requisitos.md e não adicione funcionalidades futuras. Mostre um resumo breve dos arquivos alterados.\n\n\n\n\n\nApós a resposta, leia as alterações antes de avançar."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-3.2-testes-automatizados",
+    "href": "aula_p10.html#tarefa-3.2-testes-automatizados",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 3.2 — Testes automatizados",
+    "text": "Tarefa 3.2 — Testes automatizados\nEscreva testes que expressem o que foi especificado, não simplesmente o que o código já faz.\n# Exemplo de teste conceitual: adapte à sua API.\ndef test_rejeita_descricao_vazia():\n    gerenciador = GerenciadorTarefas()\n    with pytest.raises(ValueError):\n        gerenciador.adicionar(\"   \", \"alta\")\n\nO exemplo usa pytest; se estiver usando unittest, adapte para self.assertRaises(ValueError)."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-3.3-execute-e-revise",
+    "href": "aula_p10.html#tarefa-3.3-execute-e-revise",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 3.3 — Execute e revise",
+    "text": "Tarefa 3.3 — Execute e revise\nCom pytest instalado:\npython -m pytest -q\nCom unittest, se os testes foram escritos nesse framework:\npython -m unittest discover -s tests -v\n\nConfira os testes e os critérios de validacao.md. Teste passando não é garantia de requisito atendido."
+  },
+  {
+    "objectID": "aula_p10.html#checklist-de-revisão-da-fase-1",
+    "href": "aula_p10.html#checklist-de-revisão-da-fase-1",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Checklist de revisão da fase 1",
+    "text": "Checklist de revisão da fase 1\n\nTodas as regras de entrada são verificadas?\nOs IDs são únicos e crescentes?\nA listagem tem a ordem definida?\nHá funções não solicitadas ou dependências desnecessárias?\nA documentação descreve o que foi implementado?\n\n\nSe estiver usando Git, faça um commit da primeira etapa concluída."
+  },
+  {
+    "objectID": "aula_p10.html#o-cliente-solicitou-uma-mudança",
+    "href": "aula_p10.html#o-cliente-solicitou-uma-mudança",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "O cliente solicitou uma mudança",
+    "text": "O cliente solicitou uma mudança\n\nAgora eu preciso marcar uma tarefa como concluída e listar apenas as tarefas pendentes.\n\nNão implemente imediatamente.\n\nPrimeiro, revisem o roadmap e a especificação da segunda funcionalidade."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-4.1-especifique-a-fase-2",
+    "href": "aula_p10.html#tarefa-4.1-especifique-a-fase-2",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 4.1 — Especifique a fase 2",
+    "text": "Tarefa 4.1 — Especifique a fase 2\nCrie specs/02-conclusao/ com requisitos.md, planejamento.md e validacao.md.\n\n\n\n\nRequisitos mínimos\n\n\n\nAo cadastrar, toda tarefa começa com situação pendente.\nUma tarefa existente pode ser marcada como concluida pelo ID.\nUm ID inexistente deve causar ValueError.\nA listagem pode receber filtro pendente ou concluida.\nSem filtro, a listagem mantém todas as tarefas.\nMarcar uma tarefa como concluída não muda seu ID nem sua prioridade."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-4.2-planeje-os-testes-primeiro",
+    "href": "aula_p10.html#tarefa-4.2-planeje-os-testes-primeiro",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 4.2 — Planeje os testes primeiro",
+    "text": "Tarefa 4.2 — Planeje os testes primeiro\nNo validacao.md da fase 2, inclua cenários para:\n\ntarefa recém-cadastrada aparece em pendente;\napós conclusão, deixa de aparecer em pendente;\napós conclusão, aparece em concluida;\nlistagem sem filtro continua mostrando todas;\ntentativa de concluir ID inexistente causa erro.\n\n\nDepois implemente somente a fase 2 e execute novamente os testes da fase 1."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-4.3-replaneje-e-registre",
+    "href": "aula_p10.html#tarefa-4.3-replaneje-e-registre",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 4.3 — Replaneje e registre",
+    "text": "Tarefa 4.3 — Replaneje e registre\nApós implementar:\n\natualize roadmap.md com o estado das duas fases;\nregistre qualquer decisão que surgiu durante o desenvolvimento;\ncorrija documentação desatualizada;\nrevise o diff e faça commit, se estiver usando Git.\n\n\nPergunta: o que poderia dar errado se a situação concluida fosse implementada, mas omitida dos requisitos?"
+  },
+  {
+    "objectID": "aula_p10.html#nossa-demonstração",
+    "href": "aula_p10.html#nossa-demonstração",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Nossa demonstração",
+    "text": "Nossa demonstração\nUsaremos um servidor MCP de sistema de arquivos que pode listar e ler arquivos de um diretório autorizado.\n\nCliente de teste: MCP Inspector.\nServidor: Filesystem MCP Server.\nDiretório permitido: somente a pasta do exercício.\n\n\nEsse teste não precisa chamar um LLM e, portanto, não consome tokens de um modelo."
+  },
+  {
+    "objectID": "aula_p10.html#atenção-às-permissões",
+    "href": "aula_p10.html#atenção-às-permissões",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Atenção às permissões",
+    "text": "Atenção às permissões\n\n\n\n\nAntes de executar\n\n\n\nUse uma pasta de testes sem senhas, tokens ou dados privados.\nNunca autorize acesso à pasta pessoal inteira para esta atividade.\nMCP Inspector e o servidor são ferramentas locais, mas pacotes npx podem precisar de internet para instalação.\nO Inspector é uma ferramenta de diagnóstico: não é obrigatório instalar um agente de IA."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-5.1-executar-o-inspector",
+    "href": "aula_p10.html#tarefa-5.1-executar-o-inspector",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 5.1 — Executar o Inspector",
+    "text": "Tarefa 5.1 — Executar o Inspector\nVerifique primeiro se Node.js e npm estão disponíveis:\nnode --version\nnpm --version\nEm seguida, inicie o Inspector:\nnpx -y @modelcontextprotocol/inspector\n\nAbra a interface local indicada no terminal. A aparência e os campos podem mudar entre versões."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-5.2-conectar-ao-servidor",
+    "href": "aula_p10.html#tarefa-5.2-conectar-ao-servidor",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 5.2 — Conectar ao servidor",
+    "text": "Tarefa 5.2 — Conectar ao servidor\nNa interface do Inspector, configure uma conexão STDIO:\n\nCommand: npx\nArguments: -y @modelcontextprotocol/server-filesystem CAMINHO_ABSOLUTO_DO_PROJETO\n\nExemplo de argumentos (Linux/macOS):\n-y @modelcontextprotocol/server-filesystem /home/aluno/tarefas-sdd\n\nNo Windows, pode ser necessário usar cmd com argumentos /c npx -y .... Substitua pelo caminho real e autorizado do projeto."
+  },
+  {
+    "objectID": "aula_p10.html#tarefa-5.3-inspecionar-e-testar",
+    "href": "aula_p10.html#tarefa-5.3-inspecionar-e-testar",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Tarefa 5.3 — Inspecionar e testar",
+    "text": "Tarefa 5.3 — Inspecionar e testar\nDepois de conectar:\n\nConsulte a lista de Tools disponíveis.\nEncontre a ferramenta para listar diretórios ou ler arquivos.\nExecute uma leitura de README.md dentro da pasta permitida.\nObserve os argumentos fornecidos e a resposta obtida.\n\n\nPergunta: o Inspector enviou um prompt a um modelo de linguagem ou chamou diretamente uma ferramenta do servidor MCP?"
+  },
+  {
+    "objectID": "aula_p10.html#o-que-aprendemos-com-o-teste",
+    "href": "aula_p10.html#o-que-aprendemos-com-o-teste",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "O que aprendemos com o teste?",
+    "text": "O que aprendemos com o teste?\nMCP Inspector (cliente)\n          |\n          | tools/list e tools/call\n          v\nFilesystem MCP Server\n          |\n          v\n   README.md do projeto\n\nO cliente descobre ferramentas oferecidas pelo servidor.\nO cliente solicita uma operação com argumentos.\nO servidor executa a operação dentro das permissões concedidas."
+  },
+  {
+    "objectID": "aula_p10.html#se-o-mcp-não-funcionar-no-laboratório",
+    "href": "aula_p10.html#se-o-mcp-não-funcionar-no-laboratório",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Se o MCP não funcionar no laboratório",
+    "text": "Se o MCP não funcionar no laboratório\n\n\n\n\nAlternativa sem instalação\n\n\nConsulte a documentação oficial do servidor de arquivos e do MCP Inspector.\nNo seu relatório, descreva:\n\nQual é o papel do cliente e do servidor.\nQue operação usaria para listar ou ler README.md.\nPor que a configuração deve restringir o diretório autorizado.\nPor que essa operação não exige, por si só, tokens de uma LLM.\n\n\n\n\n\nNão é necessário assinar serviço pago ou usar API key para completar essa alternativa."
+  },
+  {
+    "objectID": "aula_p10.html#registro-final-da-atividade",
+    "href": "aula_p10.html#registro-final-da-atividade",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Registro final da atividade",
+    "text": "Registro final da atividade\nNo README.md ou em relato.md, responda brevemente:\n\nQual requisito ficou mais claro depois de revisar a especificação?\nQual teste protege uma regra importante?\nQue mudança foi feita na especificação durante a fase 2?\nO que conseguiu observar na atividade MCP (ou na alternativa)?\nSe usou IA: em quais momentos ela ajudou e o que você precisou corrigir?"
+  },
+  {
+    "objectID": "aula_p10.html#critérios-de-avaliação",
+    "href": "aula_p10.html#critérios-de-avaliação",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Critérios de avaliação",
+    "text": "Critérios de avaliação\n\n\n\n\n\n\n\nDimensão\nEvidência esperada\n\n\n\n\nEspecificação\nRequisitos explícitos e coerentes com missão e roadmap\n\n\nProcesso\nEntregas incrementais e registro de revisões\n\n\nImplementação\nRegras das duas fases atendidas\n\n\nValidação\nTestes relevantes e execução documentada\n\n\nMCP\nDemonstração ou explicação da alternativa\n\n\n\nA avaliação considera o processo e as evidências, não a quantidade de código gerado pela IA."
+  },
+  {
+    "objectID": "aula_p10.html#referências-de-apoio",
+    "href": "aula_p10.html#referências-de-apoio",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Referências de apoio",
+    "text": "Referências de apoio\n\nModel Context Protocol — documentação.\nMCP Inspector — repositório e instruções.\nFilesystem MCP Server — instruções.\nSpec-Driven Development with Code Agents — DeepLearning.AI."
+  },
+  {
+    "objectID": "aula_t10.html#dois-níveis-de-decisão-1",
+    "href": "aula_t10.html#dois-níveis-de-decisão-1",
+    "title": "Spec-Driven Development e Programação Agêntica",
+    "section": "Dois níveis de decisão",
+    "text": "Dois níveis de decisão\n\n\nAlto nível: Constituição\n\nMissão\nPilha tecnológica\nRoadmap\n\n\nSegundo nível: Funcionalidade — ciclo incremental\n\nRequisitos\nPlanejamento\nValidação\nImplementação e revisão\n\n\n\nEntre funcionalidades: replanejar quando as decisões mudarem."
   }
 ]

@@ -15,7 +15,6 @@
   <meta name="generator" content="quarto-1.7.33">
 
   <meta name="author" content="Prof.&nbsp;Julio César Alves">
-  <meta name="dcterms.date" content="2026-12-10">
   <title>GAC126 - Programação Aplicada com Suporte de IA – Spec-Driven Development e Programação Agêntica</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -216,7 +215,7 @@
     </div>
 </div>
 
-  <p class="date">12/10/2026</p>
+  <p class="date">18/10/2026</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -279,16 +278,19 @@
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
-<p>Com <strong>vibe coding</strong> você torce para conseguir o que você precisa.</p>
+<p>Com <span class="alert">vibe coding</span> você <strong>torce</strong> para conseguir o que você precisa.</p>
 <div class="fragment">
-<p>Já com SDD você chega mais perto do que realmente precisa.</p>
+<p>Já com <span class="alert">SDD</span> você <strong>chega mais perto</strong> do que realmente precisa.</p>
 <ul>
-<li class="fragment">Foca em dar contexto através de arquivos de especificação</li>
-<li class="fragment">Em vez de trabalhar diretamente com programação.</li>
+<li class="fragment">Focando em dar contexto através de arquivos de especificação,</li>
+<li class="fragment">em vez de trabalhar diretamente com programação.</li>
 </ul>
 </div>
 <div class="fragment">
-<p>SDD não elimina a conversa: ela passa a <strong>produzir e manter decisões verificáveis</strong>.</p>
+<p>SDD não elimina a conversa:</p>
+<ul>
+<li class="fragment">ela passa a <strong>produzir e manter decisões verificáveis</strong>.</li>
+</ul>
 </div>
 </section>
 <section id="sdd-vantagens" class="slide level2">
@@ -299,17 +301,17 @@
 <ul>
 <li class="fragment">Garante definições “não-negociáveis”.</li>
 </ul></li>
-<li class="fragment">Define objetivo, critérios de sucesso, restrições
+<li class="fragment">Define objetivo, critérios de sucesso, restrições.
 <ul>
-<li class="fragment">Agente cria o plano completo.</li>
+<li class="fragment">Agente de IA é quem cria o plano completo.</li>
 </ul></li>
 </ul>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-<p>Sistemas podem se tornar mais difíceis de manter</p>
+<p>Sistemas podem se tornar mais difíceis de manter quando várias pessoas usam diferentes IAs,</p>
 <ul>
-<li class="fragment">Quando várias pessoas usam diferentes IAs, com diferentes contextos para trabalhar no mesmo sistema.</li>
+<li class="fragment">com diferentes contextos para trabalhar no mesmo sistema.</li>
 <li class="fragment">Especificação é uma forma de fazer com que toda a equipe siga os mesmos critérios, padrões, na hora de fazer o sistema.</li>
 </ul>
 <div class="fragment">
@@ -321,23 +323,25 @@
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
-<p>IA pode trabalhar por vários minutos desenvolvendo algo</p>
+<p>IA pode trabalhar por vários minutos desenvolvendo algo.</p>
 <ul>
-<li class="fragment">E o resultado é muito melhor se gastarmos alguns minutos <strong>planejando melhor</strong> <span class="alert">o que</span> e <span class="alert">como</span> as coisas devem ser feitas.</li>
+<li class="fragment">E o resultado será muito melhor se gastarmos alguns minutos <strong>planejando melhor</strong> <span class="alert">o que</span> e <span class="alert">como</span> as coisas devem ser feitas.</li>
 </ul>
 </section>
 <section id="uma-especificação-é-um-contrato-de-trabalho" class="slide level2">
 <h2>Uma especificação é um contrato de trabalho</h2>
+<div class="fragment">
 <p>Ela esclarece:</p>
 <ul>
 <li class="fragment"><strong>O quê</strong> deve ser feito e <strong>por quê</strong>;</li>
 <li class="fragment"><strong>quais restrições</strong> devem ser respeitadas;</li>
 <li class="fragment"><strong>como reconhecer</strong> que a entrega foi concluída.</li>
 </ul>
+</div>
 <div class="fragment">
-<p>Especificação pode ser feita usando as próprias ferramentas de IA</p>
+<p>Especificação pode ser feita usando as próprias ferramentas de IA.</p>
 <ul>
-<li class="fragment">Elas sumarizam as decisões principais de arquitetura.</li>
+<li class="fragment">Elas podem nos ajudar a sumarizar as decisões principais de arquitetura.</li>
 </ul>
 </div>
 </section>
@@ -351,9 +355,11 @@
 </section>
 <section id="exemplo-requisito-ambíguo" class="slide level2">
 <h2>Exemplo: requisito ambíguo</h2>
+<div class="fragment">
 <blockquote>
 <p>Crie uma lista de tarefas com prioridades.</p>
 </blockquote>
+</div>
 <div class="fragment">
 <p>O agente precisa decidir sozinho:</p>
 <ul>
@@ -410,7 +416,9 @@
 </section>
 <section id="o-que-o-humano-delega-e-o-que-não-delega" class="slide level2">
 <h2>O que o humano delega — e o que não delega</h2>
+<div class="fragment">
 <p><strong>Agentes</strong> podem analisar repositórios, editar arquivos, executar comandos e testes.</p>
+</div>
 <div class="fragment">
 <p><strong>Pessoas</strong> continuam responsáveis por:</p>
 <ul>
@@ -430,34 +438,36 @@
 </section>
 <section id="sdd-benefícios" class="slide level2">
 <h2>SDD: Benefícios</h2>
-<p>Controla o código com pequenas modificações na especificação.</p>
-<ul>
-<li class="fragment">Algumas linhas dizendo como deve ser o front-end pode gerar centenas de linhas de código.</li>
-<li class="fragment">Não precisamos gastar energia / tempo / raciocínio nos detalhes de implementação (abstração).</li>
-</ul>
 <div class="fragment">
-<p>Elimina o decaimento de contexto</p>
+<p><strong>Controla o código com pequenas modificações na especificação</strong></p>
 <ul>
-<li class="fragment">Acontece entre muitas sessões com agentes.</li>
-<li class="fragment">Especificações mantêm contextos não só entre sessões com o mesmo agente, mas também entre diferentes agentes.</li>
+<li class="fragment">Algumas linhas dizendo como deve ser o front-end, por exemplo, podem gerar centenas de linhas de código.</li>
+<li class="fragment">Não precisamos gastar energia / tempo / raciocínio nos detalhes de implementação (usamos <strong>abstração</strong>).</li>
 </ul>
 </div>
 </section>
 <section id="sdd-benefícios-1" class="slide level2">
 <h2>SDD: Benefícios</h2>
-<p>Melhora a fidelidade à intenção</p>
+<p><strong>Elimina o decaimento de contexto</strong></p>
+<ul>
+<li class="fragment">Acontece entre muitas sessões com agentes.</li>
+<li class="fragment">Especificações mantêm contextos não só entre sessões com o mesmo agente, mas também entre diferentes agentes.</li>
+</ul>
+<div class="fragment">
+<p><strong>Melhora a fidelidade à intenção</strong></p>
 <ul>
 <li class="fragment">É mais provável que os agentes atendam seus objetivos.</li>
 </ul>
+</div>
 </section>
 <section id="section-4" class="slide level2">
 <h2></h2>
-<p>Assim como compilador traduz código em binário.</p>
+<p>Assim como compilador traduz código para binário.</p>
 <ul>
-<li class="fragment">Estamos agora traduzindo especificação em linguagem humana em código.</li>
+<li class="fragment">Estamos agora traduzindo especificação em linguagem humana para código.</li>
 </ul>
 <div class="fragment">
-<p>A ideia é trazer “engenharia” do ciclo de desenvolvimento de software para codificação com agentes.</p>
+<p>A ideia do SDD é trazer “engenharia” do ciclo de desenvolvimento de software para codificação com agentes.</p>
 </div>
 </section>
 <section id="agente-vs.-chat" class="slide level2">
@@ -485,6 +495,20 @@
 
 </section>
 <section id="dois-níveis-de-decisão" class="slide level2">
+<h2>Dois níveis de decisão</h2>
+<p>Começamos o projeto em um alto nível de decisão:</p>
+<ul>
+<li class="fragment">criando a especificação do que chamaremos de <strong>Constituição</strong> do projeto.</li>
+</ul>
+<div class="fragment">
+<p>Depois entramos no segundo nível, com ciclo incremental de:</p>
+<ul>
+<li class="fragment">especificação e desenvolvimento de funcionalidade</li>
+<li class="fragment">e replanejamento entre cada uma delas.</li>
+</ul>
+</div>
+</section>
+<section id="dois-níveis-de-decisão-1" class="slide level2">
 <h2>Dois níveis de decisão</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -557,7 +581,7 @@
 <h2>Constituição: roadmap</h2>
 <p>Lista com <strong>fases de implementação ordenadas</strong>.</p>
 <ul>
-<li class="fragment">Cada fase terá seu próprio arquivo de especificação.</li>
+<li class="fragment">Cada fase terá depois seu próprio arquivo de especificação.</li>
 </ul>
 <div class="fragment">
 <p>É um documento vivo: novas informações podem mudar sua ordem ou granularidade.</p>
@@ -567,7 +591,7 @@
 <h2>Segunda fase: Funcionalidade</h2>
 <p>Terminada a constituição entramos no processo de criar funcionalidades.</p>
 <div class="fragment">
-<p>Para cada funcionalidade, o processo envolve</p>
+<p>Para cada funcionalidade, o processo envolve:</p>
 <ol type="1">
 <li class="fragment">Especificação</li>
 <li class="fragment">Implementação</li>
@@ -577,9 +601,9 @@
 </section>
 <section id="terceira-fase-replanejamento" class="slide level2">
 <h2>Terceira fase: Replanejamento</h2>
-<p>É executada entre uma fase de funcionalidade e outra</p>
+<p>É executada entre uma fase de funcionalidade e outra.</p>
 <ul>
-<li class="fragment">Melhora a definição da Constituição</li>
+<li class="fragment">Melhora a definição da Constituição.</li>
 <li class="fragment">Melhora o próprio processo.</li>
 </ul>
 <div class="fragment">
@@ -588,9 +612,9 @@
 </section>
 <section id="programação-agêntica" class="slide level2">
 <h2>Programação Agêntica</h2>
-<p>Devemos lembrar do nível correto de detalhamento.</p>
+<p>Devemos nos lembrar do nível correto de detalhamento.</p>
 <ul>
-<li class="fragment">Nós somos os arquitetos que passamos os projetos para os construtores</li>
+<li class="fragment">Nós somos os arquitetos que passamos os projetos para os construtores.</li>
 </ul>
 <div class="fragment">
 <p>Nosso papel é:</p>
@@ -677,8 +701,10 @@
 <p>Colocar a descrição em alto nível do projeto.</p>
 <ul>
 <li class="fragment">Focar especialmente no que se espera com a solução a ser desenvolvida.</li>
-<li class="fragment">Consideranto tanto o público-alvo (usuários finais).</li>
+<li class="fragment">Consideranto tanto o público-alvo (usuários finais).
+<ul>
 <li class="fragment">Quanto o público interno (desenvolvedores / mantenedores da solução).</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -709,7 +735,7 @@
 </section>
 <section id="section-7" class="slide level2">
 <h2></h2>
-<p>SDD funciona melhor com abordagem <em>human in the loop</em>.</p>
+<p>SDD funciona melhor com abordagem <span class="alert"><em>human in the loop</em></span>.</p>
 <ul>
 <li class="fragment">Quando revisamos / validamos pequenas modificações.</li>
 </ul>
@@ -772,7 +798,7 @@
 <p>Quando a especificação for gerada, revise-a com cuidado.</p>
 <ul>
 <li class="fragment">É muito importante que ela comece correta para que o trabalho fique bem feito.</li>
-<li class="fragment">Se alguma coisa não estiver certa, peça ao agente para corrigir.</li>
+<li class="fragment">Se alguma coisa não estiver certa, peça ao próprio agente para corrigir.</li>
 </ul>
 </div>
 </section>
@@ -842,19 +868,19 @@
 <h2></h2>
 <p>Avalie o código criado</p>
 <ul>
-<li class="fragment">Foco no alto nível: se a implementação funciona e atende aos requisitos</li>
-<li class="fragment">E não em detalhes: como quais classes foram criadas.</li>
+<li class="fragment">Foco no alto nível: se a implementação funciona e atende aos requisitos.</li>
+<li class="fragment">E não em detalhes: como nos nomes das classes que foram criadas.</li>
 </ul>
 <div class="fragment">
 <p>Se precisar alterar algo, peça ao agente para atualizar não só implementação, mas também o planejamento.</p>
 <ul>
-<li class="fragment">Exemplo: <code>Atualize</code>specs/YYYY-MM-DD-nome-funcionalidade.md<code>e a implementação para que ...</code></li>
+<li class="fragment">Exemplo: <code>Atualize specs/YYYY-MM-DD-nome-funcionalidade.md e a implementação para que ...</code></li>
 </ul>
 </div>
 </section>
 <section id="section-15" class="slide level2">
 <h2></h2>
-<p>Antes de terminar funcionalidade, pergunte-se:</p>
+<p>Antes de terminar a funcionalidade, pergunte-se:</p>
 <ul>
 <li class="fragment">Os critérios de aceitação foram atendidos?</li>
 <li class="fragment">Os documentos refletem o comportamento real?</li>
@@ -867,12 +893,19 @@
 <p>Esse processo é o que chamamos de <em>human in the loop</em>.</p>
 <ul>
 <li class="fragment">Atuamos na revisão e não na programação em si.</li>
-<li class="fragment">Agentes são muito rápidos para programar, mas nós temos que guiar para que seja feito o que realmente precisamos.</li>
-<li class="fragment">Removemos a sobrecarga mental de ter que escrever, evoluir e validar cada linha de código.
+</ul>
+<div class="fragment">
+<p>Agentes são muito rápidos para programar,</p>
+<ul>
+<li class="fragment">mas nós temos que guiá-los para que seja feito o que realmente precisamos.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Removemos a sobrecarga mental de ter que escrever, evoluir e validar cada linha de código.</p>
 <ul>
 <li class="fragment">Tendo a especificação, o próprio agente valida o que está fazendo.</li>
-</ul></li>
 </ul>
+</div>
 </section>
 <section id="section-17" class="slide level2">
 <h2></h2>
@@ -943,10 +976,8 @@
 <ul>
 <li class="fragment">E precisamos que as duas coisas estejam sincronizadas.</li>
 <li class="fragment">Portanto, é necessário deixar isso claro para o agente.</li>
+<li class="fragment"><strong>Princípio:</strong> especificação e código devem evoluir juntos.</li>
 </ul>
-</div>
-<div class="fragment">
-<p><strong>Princípio:</strong> especificação e código devem evoluir juntos.</p>
 </div>
 </section>
 <section id="section-20" class="slide level2">
@@ -964,7 +995,7 @@
 </section>
 <section id="section-21" class="slide level2">
 <h2></h2>
-<p>A fase de replanejamento pode ser usada também para sincronizar stakeholders do projeto que não sejam de perfil técnico.</p>
+<p>A fase de replanejamento pode ser usada também para sincronizar <em>stakeholders</em> do projeto que não sejam de perfil técnico.</p>
 <ul>
 <li class="fragment">Um exemplo para facilitar isso seria manter um log das mudanças (change log).</li>
 <li class="fragment">Podemos usar <strong>skills</strong> para isso.</li>
@@ -1038,6 +1069,7 @@
 <section id="section-27" class="slide level2">
 <h2></h2>
 <p>Podemos também pedir o agente para fazer uma revisão profunda das alterações de uma branch antes de prosseguir.</p>
+<div class="fragment">
 <div title="Exemplo de Prompt">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -1046,6 +1078,7 @@
 </div>
 <div class="callout-content">
 <p>Faça uma revisão profunda: dispare múltiplos subagentes para verificar todas as alterações dessa branch a partir de três perspectivas diferentes e verifique se alguma coisa não faz sentido, poderia ser melhor, etc.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1071,7 +1104,7 @@
 <ul>
 <li class="fragment">Podemos usar basicamente o mesmo prompt que usamos para o projeto novo.
 <ul>
-<li class="fragment">Mas listando os artefatos que podem ser usados para entender o projeto: como código, README, lista de TODOs, issues, etc.</li>
+<li class="fragment">Mas listando os artefatos que podem ser usados para entender o projeto: como código, README, lista de <em>TODOs</em>, <em>issues</em>, etc.</li>
 </ul></li>
 <li class="fragment">A IA usará Engenharia Reversa para gerar a especificação a partir do projeto existente.</li>
 </ul>
@@ -1086,8 +1119,8 @@
 </ul>
 </section></section>
 <section>
-<section id="comentários-sobre-experiência-sobre-uso-real-de-sdd" class="title-slide slide level1 center" data-background-color="#40666e">
-<h1>Comentários sobre Experiência sobre uso real de SDD</h1>
+<section id="comentários-sobre-experiência-com-uso-real-de-sdd" class="title-slide slide level1 center" data-background-color="#40666e">
+<h1>Comentários sobre experiência com uso real de SDD</h1>
 
 </section>
 <section id="app-web-usando-python-streamlit" class="slide level2">
@@ -1097,7 +1130,7 @@
 <ul>
 <li class="fragment">Criei a missão usando esse arquivo como um TODO de demandas.</li>
 <li class="fragment">E escrevi um README com necessidades gerais do projeto.</li>
-<li class="fragment">Gerei também um arquivo <code>ui-spec.md</code> usando gemini a partir de prints e prototipação feita com Excalidraw.</li>
+<li class="fragment">Gerei também um arquivo <code>ui-spec.md</code> usando Gemini a partir de prints e prototipação feita com Excalidraw.</li>
 <li class="fragment">Usei VS Code + Copilot + Git.</li>
 </ul>
 </div>
@@ -1107,7 +1140,7 @@
 <p>Fase inicial do processo até relatórios de finos funcionou bem.</p>
 <ul>
 <li class="fragment">Apesar do consumo de tokens ser alto.</li>
-<li class="fragment">Copilot a princípio usando GPT 5.3 Codex.
+<li class="fragment">Copilot a princípio escolheu usar GPT 5.3 Codex.
 <ul>
 <li class="fragment">Depois passou a usar MAI-Code-1-Flash.</li>
 </ul></li>
@@ -1121,10 +1154,10 @@
 </section>
 <section id="section-31" class="slide level2">
 <h2></h2>
-<p>Mas ao chegar na parte de Fretes o resultado começou a ficar bem ruim.</p>
+<p>Mas ao chegar nos relatórios de fretes, o resultado começou a ficar bem ruim.</p>
 <ul>
 <li class="fragment">Não fazia o que eu queria</li>
-<li class="fragment">Atrapalhava o que já estava pronto de finos.</li>
+<li class="fragment">Atrapalhava o que já estava pronto dos relatórios anteriores.</li>
 <li class="fragment">Tentei ir acertando com o prompt mas vi que nunca ficava certo.</li>
 <li class="fragment">Pode ser que aí tenha começado a fazer falta o conhecimento técnico mais profundo sobre Streamlit.</li>
 <li class="fragment">Mas desconfiei do modelo MAI.</li>
@@ -1207,10 +1240,10 @@
 <li class="fragment">Sem seguir contrato de divisão de camadas que era algo crítico da arquitetura.</li>
 </ul>
 <div class="fragment">
-<p>Briga para fazer notificação funcionar</p>
+<p>Briga para fazer notificação funcionar.</p>
 <ul>
-<li class="fragment">Problema da implementação minha?</li>
-<li class="fragment">Realmente não é tão simples no Streamlit?</li>
+<li class="fragment">Problema da minha implementação?</li>
+<li class="fragment">Ou realmente não é tão simples no Streamlit?</li>
 </ul>
 </div>
 </section>
@@ -1230,7 +1263,7 @@
 <h2>Testes automatizados</h2>
 <p>Provavelmente eu não teria implementado tantos testes automatizados.</p>
 <ul>
-<li class="fragment">O que na verdade seria um deficiência da minha implementação</li>
+<li class="fragment">O que na verdade seria um deficiência da minha implementação.</li>
 <li class="fragment">Portanto, o resultado com IA, nesse ponto, foi melhor.</li>
 </ul>
 </section>
@@ -1304,7 +1337,7 @@
 <li class="fragment">Quem tem base técnica para o que está sendo desenvolvido, consegue tirar melhor proveito das ferramentas de IA.</li>
 </ul>
 <div class="fragment">
-<p>E devemos levar em conta que essa foi uma primeira experiência com a metodologia.</p>
+<p>E claro que devemos levar em conta que essa foi uma primeira experiência minha com a metodologia SDD.</p>
 <ul>
 <li class="fragment">Foi um aprendizado.</li>
 <li class="fragment">O uso em um próximo projeto tende a melhorar os resultados.</li>
