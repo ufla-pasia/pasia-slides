@@ -361,7 +361,7 @@
     "href": "aula_p2.html#section-2",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.\n\nPara exemplificar isso, suponha que vamos criar um programa para jogar Scrabble."
+    "text": "Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.\n. . .\nPara exemplificar isso, suponha que vamos criar um programa para jogar Scrabble."
   },
   {
     "objectID": "aula_p2.html#section-3",
@@ -382,7 +382,7 @@
     "href": "aula_p2.html#section-5",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.\n\nO cabeçalho e docstring abaixo mostram como é o cálculo na versão do jogo em português.\n\n\ndef numero_de_pontos(palavra):\n    \"\"\"\n    Cada letra na palavra vale os seguintes pontos:\n    a, e, i, o, u, m, s, r, t: 1 ponto\n    d, l, c, p: 2 pontos\n    n, b, ç: 3 pontos\n    f, g, h, v: 4 pontos\n    j: 5 pontos\n    q: 6 pontos\n    x, z: 8 pontos\n\n    palavra é uma palavra formada por letras caracteres minúsculos\n    Retorna a soma dos pontos de cada letra da palavra\n    \"\"\""
+    "text": "Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.\n\nO cabeçalho e docstring abaixo mostram como é o cálculo na versão do jogo em português.\n\n. . .\ndef numero_de_pontos(palavra):\n    \"\"\"\n    Cada letra na palavra vale os seguintes pontos:\n    a, e, i, o, u, m, s, r, t: 1 ponto\n    d, l, c, p: 2 pontos\n    n, b, ç: 3 pontos\n    f, g, h, v: 4 pontos\n    j: 5 pontos\n    q: 6 pontos\n    x, z: 8 pontos\n\n    palavra é uma palavra formada por letras (caracteres minúsculos)\n    Retorna a soma dos pontos de cada letra da palavra\n    \"\"\""
   },
   {
     "objectID": "aula_p2.html#section-6",
@@ -410,42 +410,42 @@
     "href": "aula_p2.html#section-9",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Uma segunda sugestão feita pelo código para o corpo da função foi:\n    pontos = {\n        'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'm': 1, 's': 1, 'r': 1, 't': 1,\n        'd': 2, 'l': 2, 'c': 2, 'p': 2,\n        'n': 3, 'b': 3, 'ç': 3,\n        'f': 4, 'g': 4, 'h': 4, 'v': 4,\n        'j': 5,\n        'q': 6,\n        'x': 8, 'z': 8\n    }\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\nRepare que ela é bem diferente da anterior."
+    "text": "Uma segunda sugestão feita pelo código para o corpo da função foi:\n    pontos = {\n        'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'm': 1, 's': 1, 'r': 1, 't': 1,\n        'd': 2, 'l': 2, 'c': 2, 'p': 2,\n        'n': 3, 'b': 3, 'ç': 3,\n        'f': 4, 'g': 4, 'h': 4, 'v': 4,\n        'j': 5,\n        'q': 6,\n        'x': 8, 'z': 8\n    }\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n. . .\nRepare que ela é bem diferente da anterior."
   },
   {
     "objectID": "aula_p2.html#section-10",
     "href": "aula_p2.html#section-10",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Essa segunda sugestão usa um dicionário para guardar o valor de cada letra.\n\nUm dicionário do Python é uma estrutura similar a um HashMap do Java.\n\n\nNo código, o dicionário pontos usa as letras como chaves e os pontos correspondentes como valores.\n\nAssim, ao percorrer a palavra uma letra de cada vez.\n\npodemos consultar o dicionário para buscar quanto vale a letra."
+    "text": "Essa segunda sugestão usa um dicionário para guardar o valor de cada letra.\n\nUm dicionário do Python é uma estrutura similar a um HashMap do Java.\n\n. . .\nNo código, o dicionário pontos usa as letras como chaves e os pontos correspondentes como valores.\n\nAssim, ao percorrer a palavra uma letra de cada vez.\n\npodemos consultar o dicionário para buscar quanto vale a letra."
   },
   {
     "objectID": "aula_p2.html#section-11",
     "href": "aula_p2.html#section-11",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho\n\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\npor\n\n    return sum(pontos.get(letra, 0) for letra in palavra)\n\n\nEsse tipo de construção usando list comprehension é muito comum em Python."
+    "text": "Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho\n\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\npor\n\n    return sum(pontos.get(letra, 0) for letra in palavra)\n\n\n\nEsse tipo de construção usando list comprehension é muito comum em Python."
   },
   {
     "objectID": "aula_p2.html#section-12",
     "href": "aula_p2.html#section-12",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Dica\n\n\nVocê pode fazer com o que o painel de escolha das sugestões do Copilot fique sempre visível, para não precisar passar o mouse sobre o código para acessá-lo.\nPara isso, quando ele aparecer uma vez, acesse os botão de três pontos ao final do painel e escolha a opção Always show toolbar."
+    "text": "Dica\n\n\n\nVocê pode fazer com o que o painel de escolha das sugestões do Copilot fique sempre visível, para não precisar passar o mouse sobre o código para acessá-lo.\nPara isso, quando ele aparecer uma vez, acesse os botão de três pontos ao final do painel e escolha a opção Always show toolbar."
   },
   {
     "objectID": "aula_p2.html#section-13",
     "href": "aula_p2.html#section-13",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Para fechar o exemplo, suponha que o Tião está jogando Scrabble\n\ne tem três palavras que poderiam ser encaixadas agora: zape, pazes e pizza.\nele gostaria de saber qual palavra dá mais pontos.\n\n\nO que acha do cabeçalho abaixo para uma função que retorne a melhor dessas três palavras?\n\ndef melhor_palavra(palavra1, palavra2, palavra3):"
+    "text": "Para fechar o exemplo, suponha que o Tião está jogando Scrabble\n\ne tem três palavras que poderiam ser encaixadas agora: zape, pazes e pizza.\nele gostaria de saber qual palavra dá mais pontos.\n\n. . .\nO que acha do cabeçalho abaixo para uma função que retorne a melhor dessas três palavras?\n\ndef melhor_palavra(palavra1, palavra2, palavra3):"
   },
   {
     "objectID": "aula_p2.html#section-14",
     "href": "aula_p2.html#section-14",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def melhor_palavra(palavra1, palavra2, palavra3):\n\nDe acordo com o guia para criarmos boas funções essa não é uma boa função, por que?\n\nEla poderia ser mais geral, funcionando para qualquer quantidade de palavras.\nPoderíamos, por exemplo, receber uma lista de palavras como parâmetro.\n\n\nVamos então melhorar a definição da função."
+    "text": "def melhor_palavra(palavra1, palavra2, palavra3):\n\nDe acordo com o guia para criarmos boas funções essa não é uma boa função, por que?\n\nEla poderia ser mais geral, funcionando para qualquer quantidade de palavras.\nPoderíamos, por exemplo, receber uma lista de palavras como parâmetro.\n\n. . .\nVamos então melhorar a definição da função."
   },
   {
     "objectID": "aula_p2.html#section-15",
@@ -459,28 +459,28 @@
     "href": "aula_p2.html#section-16",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Escolhendo entre as sugestões do Copilot, essa foi outra opção:\n\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    return max(palavras, key=numero_de_pontos)\n\n\nQual das duas opções você prefere?"
+    "text": "Escolhendo entre as sugestões do Copilot, essa foi outra opção:\n\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    return max(palavras, key=numero_de_pontos)\n\n. . .\nQual das duas opções você prefere?"
   },
   {
     "objectID": "aula_p2.html#section-17",
     "href": "aula_p2.html#section-17",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Talvez seja prematuro escolher sem fazer testes.\n\nVeja esse teste feito com a segunda opção:\n\n&gt;&gt;&gt; melhor_palavra([])\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 6, in melhor_palavra\nValueError: max() iterable argument is empty\n\n\n\nEsse erro não ocorreria na primeira opção."
+    "text": "Talvez seja prematuro escolher sem fazer testes.\n. . .\nVeja esse teste feito com a segunda opção:\n\n&gt;&gt;&gt; melhor_palavra([])\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 6, in melhor_palavra\nValueError: max() iterable argument is empty\n\n. . .\nEsse erro não ocorreria na primeira opção."
   },
   {
     "objectID": "aula_p2.html#section-18",
     "href": "aula_p2.html#section-18",
     "title": "Projetando Funções",
     "section": "",
-    "text": "A dica portanto é:\n\nPara qualquer que seja a sugestão escolhida: é necessário sempre testar!\n\n\nA segunda opção poderia ser alterada para a acrescentar o mesmo if da primeira opção.\n\nNesse caso, qual você escolheria?\nSugestão: depende do seu objetivo.\n\nA primeira opção é mais legível.\nA segunda é mais compacta."
+    "text": "A dica portanto é:\n\nPara qualquer que seja a sugestão escolhida: é necessário sempre testar!\n\n. . .\nA segunda opção poderia ser alterada para a acrescentar o mesmo if da primeira opção.\n\nNesse caso, qual você escolheria?\nSugestão: depende do seu objetivo.\n\nA primeira opção é mais legível.\nA segunda é mais compacta."
   },
   {
     "objectID": "aula_p2.html#section-19",
     "href": "aula_p2.html#section-19",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora fazer algo mais interessante.\n\nE que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.\n\n\nNós vamos utilizar um conjunto de dados (dataset) da plataforma Kaggle.\n\nUma plataforma de competição de ciência de dados e aprendizado de máquina.\nQue tem milhares de conjuntos de dados dos mais variados assuntos."
+    "text": "Vamos agora fazer algo mais interessante.\n\nE que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.\n\n. . .\nNós vamos utilizar um conjunto de dados (dataset) da plataforma Kaggle.\n\nUma plataforma de competição de ciência de dados e aprendizado de máquina.\nQue tem milhares de conjuntos de dados dos mais variados assuntos."
   },
   {
     "objectID": "aula_p2.html#section-20",
@@ -1334,7 +1334,7 @@
     "href": "aula_p2.html#funções-folha-ruins",
     "title": "Projetando Funções",
     "section": "Funções folha ruins",
-    "text": "Funções folha ruins\nVamos agora ver alguns exemplos de funções folha ruins e porque elas são ruins.\n\nPedir informações fiscais de um usuário e calcular seu imposto de renda\n\nCalcular imposto de renda envolve vários cálculos que deveriam ser implementados em funções separadas."
+    "text": "Funções folha ruins\nVamos agora ver alguns exemplos de funções folha ruins e porque elas são ruins.\n. . .\nPedir informações fiscais de um usuário e calcular seu imposto de renda\n\nCalcular imposto de renda envolve vários cálculos que deveriam ser implementados em funções separadas."
   },
   {
     "objectID": "aula_p2.html#funções-folha-ruins-1",
@@ -1376,7 +1376,7 @@
     "href": "aula_p2.html#section-22",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.\n\nAbra a pasta criada no VS Code.\nCrie um novo arquivo python chamado futebol.py.\nEm seguida, vamos definir uma função para carregar os dados com do arquivo top5-players.csv.\n\n\n\ndef carregar_dados_futebol(nome_arquivo_csv):\n    \"\"\"\n    A função abre o arquivo CSV passado por parâmetro\n    e retorna os dados carregados\n    \"\"\""
+    "text": "Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.\n\nAbra a pasta criada no VS Code.\nCrie um novo arquivo python chamado futebol.py.\nEm seguida, vamos definir uma função para carregar os dados com do arquivo top5-players.csv.\n\n. . .\n\ndef carregar_dados_futebol(nome_arquivo_csv):\n    \"\"\"\n    A função abre o arquivo CSV passado por parâmetro\n    e retorna os dados carregados\n    \"\"\""
   },
   {
     "objectID": "aula_p2.html#section-23",
@@ -1404,56 +1404,56 @@
     "href": "aula_p2.html#section-26",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora trabalhar com os dados que foram carregados.\n\nA ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.\n\n\nPara isso vamos usar duas funções:\n\nUma para calcular os dados que queremos: quantidade de gols feitos por brasileiros em cada liga.\nE outra para exibir os resultados."
+    "text": "Vamos agora trabalhar com os dados que foram carregados.\n\nA ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.\n\n. . .\nPara isso vamos usar duas funções:\n\nUma para calcular os dados que queremos: quantidade de gols feitos por brasileiros em cada liga.\nE outra para exibir os resultados."
   },
   {
     "objectID": "aula_p2.html#section-27",
     "href": "aula_p2.html#section-27",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Gere então o código da primeira função com o prompt abaixo.\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a décima terceira coluna o número de gols feitos pelo jogador\n    pais é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\"\n\n\nE teste sua função.\n\nLembre-se que você precisa chamar a primeira função."
+    "text": "Gere então o código da primeira função com o prompt abaixo.\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a décima terceira coluna o número de gols feitos pelo jogador\n    país é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\"\n\n. . .\nE teste sua função.\n\nLembre-se que você precisa chamar a primeira função."
   },
   {
     "objectID": "aula_p2.html#section-28",
     "href": "aula_p2.html#section-28",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nós já vimos os resultados no terminal mas em um formato que não é muito adequado para o usuário final.\n\nVamos agora criar uma função para mostrar o resultado.\nE pedir o resultado com as quantidades de gols em ordem decrescente.\n\n\n\ndef exibir_gols_por_liga(quantidade_gols):\n    \"\"\"\n    A função exibe a quantidade de gols feitos por \n    jogadores de um país em cada liga em ordem decrescente.\n    \"\"\""
+    "text": "Nós já vimos os resultados no terminal mas em um formato que não é muito adequado para o usuário final.\n\nVamos agora criar uma função para mostrar o resultado.\nE pedir o resultado com as quantidades de gols em ordem decrescente.\n\n. . .\n\ndef exibir_gols_por_liga(quantidade_gols):\n    \"\"\"\n    A função exibe a quantidade de gols feitos por \n    jogadores de um país em cada liga em ordem decrescente.\n    \"\"\""
   },
   {
     "objectID": "aula_p2.html#section-29",
     "href": "aula_p2.html#section-29",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Em seguida, vamos pedir ao Copilot para chamar as funções no próprio script Python que estamos criando.\n\n\n# Chame as funções anteriores para exibir ao usuário\n# as quantidades de gols feitos por brasileiros\n# a partir do arquivo top5-players.csv\n\n\n\nAgora nós vamos testar o script propriamente dito.\n\nClicando no botão Run no canto superior direito do VS Code."
+    "text": "Em seguida, vamos pedir ao Copilot para chamar as funções no próprio script Python que estamos criando.\n. . .\n\n# Chame as funções anteriores para exibir ao usuário\n# as quantidades de gols feitos por brasileiros\n# a partir do arquivo top5-players.csv\n\n. . .\nAgora nós vamos testar o script propriamente dito.\n\nClicando no botão Run no canto superior direito do VS Code."
   },
   {
     "objectID": "aula_p2.html#section-30",
     "href": "aula_p2.html#section-30",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Repare que fizemos o nosso programa com apenas três funções.\n\nUma para lidar com a entrada de dados.\nOutra para processá-los.\nE a última para exibir os dados.\n\n\nEsse ciclo de entrada, processamento e saída é extremamente comum em programação."
+    "text": "Repare que fizemos o nosso programa com apenas três funções.\n\nUma para lidar com a entrada de dados.\nOutra para processá-los.\nE a última para exibir os dados.\n\n. . .\nEsse ciclo de entrada, processamento e saída é extremamente comum em programação."
   },
   {
     "objectID": "aula_p2.html#section-31",
     "href": "aula_p2.html#section-31",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora usar o Copilot para alterar o código que havíamos gerado.\n\nSuponha que estamos interessados apenas nos gols dos jogadores jovens (que têm até 23 anos)\n\n\nPara isso, nós vamos apagar o código gerado para a segunda função que criamos\n\ne vamos redefinir a função.\nVocê alteraria algo na assinatura da função?\nE o que você alteraria na docstring da função?\nMãos à Obra e ao Teste!"
+    "text": "Vamos agora usar o Copilot para alterar o código que havíamos gerado.\n\nSuponha que estamos interessados apenas nos gols dos jogadores jovens (que têm até 23 anos)\n\n. . .\nPara isso, nós vamos apagar o código gerado para a segunda função que criamos\n\ne vamos redefinir a função.\nVocê alteraria algo na assinatura da função?\nE o que você alteraria na docstring da função?\nMãos à Obra e ao Teste!"
   },
   {
     "objectID": "aula_p2.html#section-32",
     "href": "aula_p2.html#section-32",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Seguindo os critérios de criação de boas funções provavelmente você:\n\nAcrescentou um parâmetro de idade máxima à função\nAcrescentou na docstring\n\na informação da coluna que tem a idade do jogador (a sétima).\no significado do parâmetro idade\n\nAlém, é claro de ter passado 23 como idade máxima na chamada da função.\n\n\nSe não foi isso que fez, bora fazer :)"
+    "text": "Seguindo os critérios de criação de boas funções provavelmente você:\n\nAcrescentou um parâmetro de idade máxima à função\nAcrescentou na docstring\n\na informação da coluna que tem a idade do jogador (a sétima).\no significado do parâmetro idade\n\nAlém, é claro de ter passado 23 como idade máxima na chamada da função.\n\n. . .\nSe não foi isso que fez, bora fazer :)"
   },
   {
     "objectID": "aula_p2.html#section-33",
     "href": "aula_p2.html#section-33",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país\n\neng, es, it, fr ou de.\n\n\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país.\n\nAcrescentando o texto do slide a seguir à docstring da função de exibição dos resultados"
+    "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país\n\neng, es, it, fr ou de.\n\n. . .\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país.\n\nAcrescentando o texto do slide a seguir à docstring da função de exibição dos resultados"
   },
   {
     "objectID": "aula_p2.html#section-34",
@@ -1474,7 +1474,7 @@
     "href": "aula_p2.html#section-36",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos dados processados.\n\nPara isso, selecione toda a terceira função e\n\nAbra o chat do Copilot (clicando no ícone de chat na barra de título do VS Code ou digitando Ctrl + Alt + I).\nMude do modo Agent para Ask (primeira opção na parte inferior do chat).\nE digite o prompt do slide a seguir."
+    "text": "Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos dados processados.\n. . .\nPara isso, selecione toda a terceira função e\n\nAbra o chat do Copilot (clicando no ícone de chat na barra de título do VS Code ou digitando Ctrl + Alt + I).\nMude do modo Agent para Ask (primeira opção na parte inferior do chat).\nE digite o prompt do slide a seguir."
   },
   {
     "objectID": "aula_p2.html#section-37",
@@ -1495,7 +1495,7 @@
     "href": "aula_p2.html#section-39",
     "title": "Projetando Funções",
     "section": "",
-    "text": "É importante termos em mente que não estamos validando os resultados gerados\n\nAssim, é possível que alguns resultados estejam incorretos.\n\n\nComo foi mencionado nas aulas anteriores, precisamos aprender a testar o código gerado pelo Copilot\n\nPara termos segurança de que ele faz o que precisamos.\nVeremos mais sobre isso mais adiante na disciplina."
+    "text": "É importante termos em mente que não estamos validando os resultados gerados\n\nAssim, é possível que alguns resultados estejam incorretos.\n\n. . .\nComo foi mencionado nas aulas anteriores, precisamos aprender a testar o código gerado pelo Copilot\n\nPara termos segurança de que ele faz o que precisamos.\nVeremos mais sobre isso mais adiante na disciplina."
   },
   {
     "objectID": "aula_t3.html#section",
@@ -7144,14 +7144,14 @@
     "href": "aula_p9.html#section-1",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Na aula passada conhecemos o módulo pygame, que é uma biblioteca para desenvolvimento de jogos em Python.\n\nE também vimos o básico de Programação Orientada a Objetos (POO) em Python.\n\n\nNesta aula vamos, com a ajuda do Copilot, terminar o desenvolvimento do jogo Invasão Alienígena."
+    "text": "Na aula passada conhecemos o módulo pygame, que é uma biblioteca para desenvolvimento de jogos em Python.\n\nE também vimos o básico de Programação Orientada a Objetos (POO) em Python.\n\n. . .\nNesta aula vamos, com a ajuda do Copilot, terminar o desenvolvimento do jogo Invasão Alienígena."
   },
   {
     "objectID": "aula_p9.html#exemplos-dentro-do-pygame",
     "href": "aula_p9.html#exemplos-dentro-do-pygame",
     "title": "Desenvolvendo Jogos",
     "section": "Exemplos dentro do pygame",
-    "text": "Exemplos dentro do pygame\nPara quem tiver interesse em jogos, o pygame tem diversos exemplos de jogos e de implementações relacionadas a jogos.\n\nPara ver algum desses exemplos, você pode aproveitar o ambiente virtual que criamos para o jogo Invasão Alienígena, e executar os comandos abaixo no terminal (assumindo que seu ambiente virtual esteja ativado e se chame venv):\nvenv/bin/python -m pygame.examples.aliens\nvenv/bin/python -m pygame.examples.chimp\nvenv/bin/python -m pygame.examples.chimp\n\n\nOs códigos desses exemplos estão disponíveis no repositório do pygame no GitHub."
+    "text": "Exemplos dentro do pygame\nPara quem tiver interesse em jogos, o pygame tem diversos exemplos de jogos e de implementações relacionadas a jogos.\n. . .\nPara ver algum desses exemplos, você pode aproveitar o ambiente virtual que criamos para o jogo Invasão Alienígena, e executar os comandos abaixo no terminal (assumindo que seu ambiente virtual esteja ativado e se chame venv):\nvenv/bin/python -m pygame.examples.aliens\nvenv/bin/python -m pygame.examples.chimp\n. . .\nOs códigos desses exemplos estão disponíveis no repositório do pygame no GitHub."
   },
   {
     "objectID": "aula_p9.html#tutoriais",
@@ -7165,119 +7165,119 @@
     "href": "aula_p9.html#section-2",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Observação importante\n\n\nO jogo que desenvolvemos é baseado em um jogo clássico: Space Invaders.\nPor isso, se você pedir ao Copilot para completar o jogo “de uma vez só” é bem possível que ele consiga fazer isso, já que existem diversas implementações desse jogo disponíveis na internet.\nMas, fazendo dessa forma, você não estará aproveitando nada dessa aula.\nA ideia é incrementar o jogo passo a passo, conforme os slides a seguir. E realmente tentar entender o que está sendo feito a cada passo."
+    "text": "Observação importante\n\n\n\nO jogo que desenvolvemos é baseado em um jogo clássico: Space Invaders.\nPor isso, se você pedir ao Copilot para completar o jogo “de uma vez só” é bem possível que ele consiga fazer isso, já que existem diversas implementações desse jogo disponíveis na internet.\nMas, fazendo dessa forma, você não estará aproveitando nada dessa aula.\nA ideia é incrementar o jogo passo a passo, conforme os slides a seguir. E realmente tentar entender o que está sendo feito a cada passo."
   },
   {
     "objectID": "aula_p9.html#section-3",
     "href": "aula_p9.html#section-3",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 1.1 - Botão Jogar\n\n\nAdicione um botão Jogar que deve aparecer antes do jogo começar e reaparecer quando o jogo terminar. Portanto, o jogo só deverá ficar ativo depois que o jogador clicar nesse botão.\nPara isso, você deve criar uma classe Botao que poderia ser reaproveitada para outros botões (inclusive em outros jogos).\nSua classe deve desenhar o botão na tela (e não utilizar uma imagem pronta). Para isso, ela precisará fazer uso, por exemplo, de pygame.font.\nNeste passo você deve apenas criar a classe. No passo seguinte vamos utilizá-la.\n\n\n\n\n\n\n\n\n\n\n\n\nTarefa 1.2 - Desenhando o botão na tela\n\n\nO botão agora deve ser desenhado na tela no início do jogo.\nVocê precisará usar o atributo self.jogo_ativo da classe InvasaoAlienigena.\nNo próximo passo vamos tratar o clique no botão."
+    "text": "Tarefa 1.1 - Botão Jogar\n\n\n\nAdicione um botão Jogar que deve aparecer antes do jogo começar e reaparecer quando o jogo terminar. Portanto, o jogo só deverá ficar ativo depois que o jogador clicar nesse botão.\nPara isso, você deve criar uma classe Botao que poderia ser reaproveitada para outros botões (inclusive em outros jogos).\nSua classe deve desenhar o botão na tela (e não utilizar uma imagem pronta). Para isso, ela precisará fazer uso, por exemplo, de pygame.font.\nNeste passo você deve apenas criar a classe. No passo seguinte vamos utilizá-la.\n\n\n. . .\n\n\n\n\n\n\nTarefa 1.2 - Desenhando o botão na tela\n\n\n\nO botão agora deve ser desenhado na tela no início do jogo.\nVocê precisará usar o atributo self.jogo_ativo da classe InvasaoAlienigena.\nNo próximo passo vamos tratar o clique no botão."
   },
   {
     "objectID": "aula_p9.html#section-4",
     "href": "aula_p9.html#section-4",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 1.3 - Iniciando o jogo\n\n\nVamos agora tratar o clique no botão. Para isso será necessário tratar um evento de mouse (tipo MOUSEBUTTONDOWN).\nAo clicar no botão, o mesmo deve desaparecer e o jogo deve começar.\n\n\n\n\n\n\n\n\n\n\n\n\nTarefa 1.4 - Reiniciando o jogo\n\n\nQuando o jogo terminar (Game Over), o botão deve reaparecer e o jogador deve poder clicar nele para reiniciar o jogo.\nLembre-se de reiniciar as estatísticas e todos os demais atributos necessários para voltar ao estado inicial do jogo."
+    "text": "Tarefa 1.3 - Iniciando o jogo\n\n\n\nVamos agora tratar o clique no botão. Para isso será necessário tratar um evento de mouse (tipo MOUSEBUTTONDOWN).\nAo clicar no botão, o mesmo deve desaparecer e o jogo deve começar.\n\n\n. . .\n\n\n\n\n\n\nTarefa 1.4 - Reiniciando o jogo\n\n\n\nQuando o jogo terminar (Game Over), o botão deve reaparecer e o jogador deve poder clicar nele para reiniciar o jogo.\nLembre-se de reiniciar as estatísticas e todos os demais atributos necessários para voltar ao estado inicial do jogo."
   },
   {
     "objectID": "aula_p9.html#section-5",
     "href": "aula_p9.html#section-5",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 1.5 - Desativando o botão Play\n\n\nDependendo de como foi feita sua implementação nos passos anteriores, pode ser que o botão não esteja aparecendo quando o jogo está iniciado, mas que ele continue lá, escondido, inclusive, respondendo a cliques.\nTente clicar na região onde o botão deveria estar e verifique se o jogo reinicia. Se isso acontecer, faça o tratamento necessário para que o botão não responda a cliques quando o jogo estiver ativo."
+    "text": "Tarefa 1.5 - Desativando o botão Play\n\n\n\nDependendo de como foi feita sua implementação nos passos anteriores, pode ser que o botão não esteja aparecendo quando o jogo está iniciado, mas que ele continue lá, escondido, inclusive, respondendo a cliques.\nTente clicar na região onde o botão deveria estar e verifique se o jogo reinicia. Se isso acontecer, faça o tratamento necessário para que o botão não responda a cliques quando o jogo estiver ativo."
   },
   {
     "objectID": "aula_p9.html#section-6",
     "href": "aula_p9.html#section-6",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 1.6 - Ocultando o cursor do mouse\n\n\nA experiência do usuário fica mais interessante se o cursor do mouse for ocultado quando o jogo estiver ativo e reaparecer quando o jogo terminar.\nFaça a alteração necessária para implementar esse comportamento. Você precisará utilizar o método pygame.mouse.set_visible()."
+    "text": "Tarefa 1.6 - Ocultando o cursor do mouse\n\n\n\nA experiência do usuário fica mais interessante se o cursor do mouse for ocultado quando o jogo estiver ativo e reaparecer quando o jogo terminar.\nFaça a alteração necessária para implementar esse comportamento. Você precisará utilizar o método pygame.mouse.set_visible()."
   },
   {
     "objectID": "aula_p9.html#section-7",
     "href": "aula_p9.html#section-7",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 2.1 - Modificando as configurações de velocidade\n\n\nCria na classe Config um atributo para definir o quanto a velocidade do jogo vai aumentar a cada passagem de nível, ou seja, a rapidez com que o jogo vai ficar mais difícil.\nO valor deve ser um número maior que 1.0. Por exemplo, se o valor for 1.1, a velocidade do jogo vai aumentar em 10% a cada nível.\nCrie um método na classe que aumenta a velocidade do jogo. Basicamente o método vai atualizar o valor dos atributos de velocidade multiplicando-os pelo fator de aumento. É interessante aumentar não só as velocidades dos aliens, mas também da nave do jogador e dos projéteis."
+    "text": "Tarefa 2.1 - Modificando as configurações de velocidade\n\n\n\nCria na classe Config um atributo para definir o quanto a velocidade do jogo vai aumentar a cada passagem de nível, ou seja, a rapidez com que o jogo vai ficar mais difícil.\nO valor deve ser um número maior que 1.0. Por exemplo, se o valor for 1.1, a velocidade do jogo vai aumentar em 10% a cada nível.\nCrie um método na classe que aumenta a velocidade do jogo. Basicamente o método vai atualizar o valor dos atributos de velocidade multiplicando-os pelo fator de aumento. É interessante aumentar não só as velocidades dos aliens, mas também da nave do jogador e dos projéteis."
   },
   {
     "objectID": "aula_p9.html#section-8",
     "href": "aula_p9.html#section-8",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 2.2 - Passando de nível\n\n\nNa classe InvasaoAlienigena, implemente a passagem de nível.\nQuando todos os alienígenas forem destruídos, a velocidade do jogo deve ser aumentada (chamando o método que você criou na tarefa anterior).\nVocê deverá também ter um método na classe config que permita reiniciar a velocidade do jogo para o valor inicial. Esse método deve ser chamado quando o jogador clicar no botão Jogar para iniciar uma nova partida."
+    "text": "Tarefa 2.2 - Passando de nível\n\n\n\nNa classe InvasaoAlienigena, implemente a passagem de nível.\nQuando todos os alienígenas forem destruídos, a velocidade do jogo deve ser aumentada (chamando o método que você criou na tarefa anterior).\nVocê deverá também ter um método na classe config que permita reiniciar a velocidade do jogo para o valor inicial. Esse método deve ser chamado quando o jogador clicar no botão Jogar para iniciar uma nova partida."
   },
   {
     "objectID": "aula_p9.html#section-10",
     "href": "aula_p9.html#section-10",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 3.2 - Adicionando o placar na tela\n\n\nNeste passo você deve criar um objeto da classe Placar na classe InvasaoAlienigena e utilizá-lo para desenhar o placar na tela.\nLembre-se que, por enquanto, a pontuação do jogador não está sendo atualizada."
+    "text": "Tarefa 3.2 - Adicionando o placar na tela\n\n\n\nNeste passo você deve criar um objeto da classe Placar na classe InvasaoAlienigena e utilizá-lo para desenhar o placar na tela.\nLembre-se que, por enquanto, a pontuação do jogador não está sendo atualizada."
   },
   {
     "objectID": "aula_p9.html#section-11",
     "href": "aula_p9.html#section-11",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 3.3 - Atualizando a pontuação\n\n\nAgora você deve atualizar a pontuação do jogador quando um alienígena for destruído.\nPrimeiramente, crie um atributo na classe Config para definir quantos pontos o jogador ganha por alienígena destruído. Você pode definir um valor padrão, por exemplo, 50 pontos.\nDepois, na classe InvasaoAlienigena, você deve atualizar a pontuação do jogador sempre que um alienígena for destruído. Lembre-se de atualizar o placar também.\nNão se esqueça de voltar a pontuação para zero quando o jogador clicar no botão Jogar para iniciar uma nova partida."
+    "text": "Tarefa 3.3 - Atualizando a pontuação\n\n\n\nAgora você deve atualizar a pontuação do jogador quando um alienígena for destruído.\nPrimeiramente, crie um atributo na classe Config para definir quantos pontos o jogador ganha por alienígena destruído. Você pode definir um valor padrão, por exemplo, 50 pontos.\nDepois, na classe InvasaoAlienigena, você deve atualizar a pontuação do jogador sempre que um alienígena for destruído. Lembre-se de atualizar o placar também.\nNão se esqueça de voltar a pontuação para zero quando o jogador clicar no botão Jogar para iniciar uma nova partida."
   },
   {
     "objectID": "aula_p9.html#section-12",
     "href": "aula_p9.html#section-12",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 3.4 - Aumentando os valores dos pontos\n\n\nComo o jogo fica mais difícil a cada nível, é interessante que o valor dos pontos ganhos por alienígena destruído também aumente a cada nível.\nPara isso, vamos seguir a mesma ideia do aumento de velocidade do jogo. Vamos definir um fator de escala do aumento do valor dos pontos na classe Config e aplicar esse aumento sempre que o jogador passar de nível.\nDica: arredonte o valor dos pontos para o múltiplo de 10 mais próximo."
+    "text": "Tarefa 3.4 - Aumentando os valores dos pontos\n\n\n\nComo o jogo fica mais difícil a cada nível, é interessante que o valor dos pontos ganhos por alienígena destruído também aumente a cada nível.\nPara isso, vamos seguir a mesma ideia do aumento de velocidade do jogo. Vamos definir um fator de escala do aumento do valor dos pontos na classe Config e aplicar esse aumento sempre que o jogador passar de nível.\nDica: arredonte o valor dos pontos para o múltiplo de 10 mais próximo."
   },
   {
     "objectID": "aula_p9.html#section-13",
     "href": "aula_p9.html#section-13",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 3.5 - Garantindo que todos os ataques são pontuados\n\n\nDependendo de como foi feita a implementação até aqui, pode ser que o jogador não ganhe pontos se um projétil atingir mais de um alienígena ou se dois projéteis atingirem dois alienígenas ao mesmo tempo.\nVocê pode testar isso aumentando, temporariamente, a largura do projétil para que ele possa atingir mais de um alienígena de uma só vez.\nFaça as alterações necessárias para garantir que o jogador ganhe pontos para cada alienígena destruído, independentemente de como isso aconteça."
+    "text": "Tarefa 3.5 - Garantindo que todos os ataques são pontuados\n\n\n\nDependendo de como foi feita a implementação até aqui, pode ser que o jogador não ganhe pontos se um projétil atingir mais de um alienígena ou se dois projéteis atingirem dois alienígenas ao mesmo tempo.\nVocê pode testar isso aumentando, temporariamente, a largura do projétil para que ele possa atingir mais de um alienígena de uma só vez.\nFaça as alterações necessárias para garantir que o jogador ganhe pontos para cada alienígena destruído, independentemente de como isso aconteça."
   },
   {
     "objectID": "aula_p9.html#section-14",
     "href": "aula_p9.html#section-14",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 3.6 - Tratando recordes\n\n\nO jogador ficará mais motivado se puder tentar superar o seu recorde.\nCrie um atributo na classe Estatisticas para armazenar o recorde do jogador. Esse atributo deve ser inicializado com zero e atualizado sempre que a pontuação atual do jogador superar o recorde.\nO recorde deve ser exibido na tela do jogo, abaixo da pontuação atual."
+    "text": "Tarefa 3.6 - Tratando recordes\n\n\n\nO jogador ficará mais motivado se puder tentar superar o seu recorde.\nCrie um atributo na classe Estatisticas para armazenar o recorde do jogador. Esse atributo deve ser inicializado com zero e atualizado sempre que a pontuação atual do jogador superar o recorde.\nO recorde deve ser exibido na tela do jogo, abaixo da pontuação atual."
   },
   {
     "objectID": "aula_p9.html#section-15",
     "href": "aula_p9.html#section-15",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 3.7 - Exibindo o nível\n\n\nVamos agora exibir o nível atual do jogo na tela. O nível deve ser exibido abaixo do recorde.\nLembre-se de voltar ele para zero sempre que o jogo for reiniciado."
+    "text": "Tarefa 3.7 - Exibindo o nível\n\n\n\nVamos agora exibir o nível atual do jogo na tela. O nível deve ser exibido abaixo do recorde.\nLembre-se de voltar ele para zero sempre que o jogo for reiniciado."
   },
   {
     "objectID": "aula_p9.html#section-16",
     "href": "aula_p9.html#section-16",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 4.1 - Preparando a classe Nave\n\n\nPara exibir as vidas do jogador, vamos desenhar naves no canto superior esquerdo da tela.\nNós podemos utilizar a própria classe Nave para desenhar as vidas do jogador. Isso pode ficar mais fácil se fizemos a classe Nave herdar de Sprite pois, como vimos na aula anterior, isso permite trabalhar com grupos de sprites.\nNeste passo, basta fazer a classe Nave herdar de Sprite e chamar o construtor da superclasse dentro do construtor da classe Nave."
+    "text": "Tarefa 4.1 - Preparando a classe Nave\n\n\n\nPara exibir as vidas do jogador, vamos desenhar naves no canto superior esquerdo da tela.\nNós podemos utilizar a própria classe Nave para desenhar as vidas do jogador. Isso pode ficar mais fácil se fizemos a classe Nave herdar de Sprite pois, como vimos na aula anterior, isso permite trabalhar com grupos de sprites.\nNeste passo, basta fazer a classe Nave herdar de Sprite e chamar o construtor da superclasse dentro do construtor da classe Nave."
   },
   {
     "objectID": "aula_p9.html#section-17",
     "href": "aula_p9.html#section-17",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 4.2 - Desenhando as vidas do jogador\n\n\nAltere a classe Placar para que ela tenha um grupo de sprites para representar as vidas do jogador. O número de sprites nesse grupo deve ser igual ao número de vidas do jogador, que pode ser acessado através do atributo vidas_restantes da classe Estatisticas. O grupo de sprites deve ser atualizado sempre que o número de vidas do jogador mudar.\nO grupo de sprites deve ser desenhado no canto superior esquerdo da tela."
+    "text": "Tarefa 4.2 - Desenhando as vidas do jogador\n\n\n\nAltere a classe Placar para que ela tenha um grupo de sprites para representar as vidas do jogador. O número de sprites nesse grupo deve ser igual ao número de vidas do jogador, que pode ser acessado através do atributo vidas_restantes da classe Estatisticas. O grupo de sprites deve ser atualizado sempre que o número de vidas do jogador mudar.\nO grupo de sprites deve ser desenhado no canto superior esquerdo da tela."
   },
   {
     "objectID": "aula_p9.html#section-18",
     "href": "aula_p9.html#section-18",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 5.1 - Personalizando o jogo\n\n\nAgora que o jogo está funcionando, você pode personalizá-lo para deixá-lo com a sua cara.\nVocê pode, por exemplo, alterar as imagens da nave, dos alienígenas e usar imagens para os projéteis.\nPara isso, procure imagens na internet (ex.: site Kenney.nl) ou crie as suas próprias imagens."
+    "text": "Tarefa 5.1 - Personalizando o jogo\n\n\n\nAgora que o jogo está funcionando, você pode personalizá-lo para deixá-lo com a sua cara.\nVocê pode, por exemplo, alterar as imagens da nave, dos alienígenas e usar imagens para os projéteis.\nPara isso, procure imagens na internet (ex.: site Kenney.nl) ou crie as suas próprias imagens."
   },
   {
     "objectID": "aula_p9.html#section-19",
     "href": "aula_p9.html#section-19",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 5.2 - Ideias para tornar o jogo mais interessante\n\n\nExistem diversas opções de Game Design que podem tornar o jogo mais interessante.\nAlgumas sugestões são:\n\nAdicionar sons para os eventos do jogo (ex.: disparo, explosão, etc) e música de fundo.\nAdicionar diferentes tipos de alienígenas (com movimentação diferente, por exemplo).\nAdicionar inimigos que jogam bombas.\nAdicionar power-ups, itens a serem coletados (ex.: tiro duplo, escudo temporário, etc).\nAdicionar um sistema de vidas extra baseado na pontuação (ex.: ganhar uma vida extra a cada 1000 pontos).\nAdicionar efeitos visuais (ex.: explosões, partículas, etc)."
+    "text": "Tarefa 5.2 - Ideias para tornar o jogo mais interessante\n\n\n\nExistem diversas opções de Game Design que podem tornar o jogo mais interessante.\nAlgumas sugestões são:\n\nAdicionar sons para os eventos do jogo (ex.: disparo, explosão, etc) e música de fundo.\nAdicionar diferentes tipos de alienígenas (com movimentação diferente, por exemplo).\nAdicionar inimigos que jogam bombas.\nAdicionar power-ups, itens a serem coletados (ex.: tiro duplo, escudo temporário, etc).\nAdicionar um sistema de vidas extra baseado na pontuação (ex.: ganhar uma vida extra a cada 1000 pontos).\nAdicionar efeitos visuais (ex.: explosões, partículas, etc)."
   },
   {
     "objectID": "aula_p9.html#section-20",
@@ -7291,21 +7291,21 @@
     "href": "aula_p9.html#section-9",
     "title": "Desenvolvendo Jogos",
     "section": "",
-    "text": "Tarefa 3.1 - Classe Placar\n\n\nAcrescente um atributo pontuacao na classe Estatisticas para armazenar a pontuação do jogador. A princípio vamos iniciá-la com zero, mas ainda não vamos atualizá-la.\nCrie uma classe para representar o placar do jogo. A classe deve ter uma referência para o objeto Estatisticas para poder acessar a pontuação atual do jogador. Ela também deve ter um método para desenhar o placar na tela, no canto superior direito.\nObs.: é mais eficiente se a montagem do texto do placar for feita apenas quando a pontuação for atualizada, e não a cada vez que o placar for desenhado na tela."
+    "text": "Tarefa 3.1 - Classe Placar\n\n\n\nAcrescente um atributo pontuacao na classe Estatisticas para armazenar a pontuação do jogador. A princípio vamos iniciá-la com zero, mas ainda não vamos atualizá-la.\nCrie uma classe para representar o placar do jogo. A classe deve ter uma referência para o objeto Estatisticas para poder acessar a pontuação atual do jogador. Ela também deve ter um método para desenhar o placar na tela, no canto superior direito.\nObs.: é mais eficiente se a montagem do texto do placar for feita apenas quando a pontuação for atualizada, e não a cada vez que o placar for desenhado na tela."
   },
   {
     "objectID": "aula_p9.html#materiais-na-internet",
     "href": "aula_p9.html#materiais-na-internet",
     "title": "Desenvolvendo Jogos",
     "section": "Materiais na internet",
-    "text": "Materiais na internet\nExistem diversos materiais disponíveis na internet para quem quiser aprender mais sobre o pygame.\n\nComo tutoriais, vídeos no Youtube, livros, etc.\n\n\nUma dica importante é que o pygame é muito antigo, e muitos desses materiais são antigos também.\n\nE acabam dando dicas de como fazer coisas que hoje em dia podem ser feitas de forma mais simples."
+    "text": "Materiais na internet\nExistem diversos materiais disponíveis na internet para quem quiser aprender mais sobre o pygame.\n\nComo tutoriais, vídeos no Youtube, livros, etc.\n\n. . .\nUma dica importante é que o pygame é muito antigo, e muitos desses materiais são antigos também.\n\nE acabam dando dicas de como fazer coisas que hoje em dia podem ser feitas de forma mais simples."
   },
   {
     "objectID": "aula_p9.html#guia-inicial-e-livro",
     "href": "aula_p9.html#guia-inicial-e-livro",
     "title": "Desenvolvendo Jogos",
     "section": "Guia inicial e Livro",
-    "text": "Guia inicial e Livro\nSugiro a leitura do artigo A Newbie Guide to pygame (Um guia para iniciantes no PyGame).\n\nInclusive, foi de lá tirei a dica de usar o método convert() para otimizar o desempenho do jogo.\nE também a dica de tomar cuidado com materiais antigos.\n\n\nPara quem quiser se aprofundar mais, o livro Making Games with Python & Pygame está disponível gratuitamente no site do autor (você pode ler online ou baixar o PDF)."
+    "text": "Guia inicial e Livro\nSugiro a leitura do artigo A Newbie Guide to pygame (Um guia para iniciantes no PyGame).\n\nInclusive, foi de lá tirei a dica de usar o método convert() para otimizar o desempenho do jogo.\nE também a dica de tomar cuidado com materiais antigos.\n\n. . .\nPara quem quiser se aprofundar mais, o livro Making Games with Python & Pygame está disponível gratuitamente no site do autor (você pode ler online ou baixar o PDF)."
   },
   {
     "objectID": "aula_p9.html#game-programming-patterns",
@@ -8787,9 +8787,9 @@
   {
     "objectID": "aula_p10.html#section",
     "href": "aula_p10.html#section",
-    "title": "Spec-Driven Development e Programação Agêntica",
+    "title": "Criando e utilizando um servidor MCP",
     "section": "",
-    "text": "Hoje vamos aplicar SDD para construir um projeto pequeno de Python com apoio de um agente de IA.\n\nVamos escrever e revisar especificações antes de implementar.\nTrabalharemos em etapas, com testes e Git.\nNo final, experimentaremos um servidor MCP local.\n\n\nObjetivo: praticar o método. Não é necessário consumir muitos tokens nem usar um serviço pago."
+    "text": "servidor.py\n\nfrom fastmcp import FastMCP\n\nmcp = FastMCP(\"Calculadora-Academica\")\n\n@mcp.tool()\ndef calcular_media(nota1: float, nota2: float) -&gt; dict:\n    \"\"\"Calcula a média e informa a situação do aluno.\"\"\"\n    media = (nota1 + nota2) / 2\n    status = \"Aprovado\" if media &gt;= 6 else \"Recuperação\"\n    return {\"media\": media, \"status\": status}\n\nif __name__ == \"__main__\":\n    mcp.run()\n\n\nFastMCP() cria o servidor.\n@mcp.tool() disponibiliza a função como uma ferramenta MCP.\nmcp.run() inicia o servidor (por padrão, usando stdio)."
   },
   {
     "objectID": "aula_p10.html#o-que-entregar-até-o-final-da-semana",
@@ -9007,5 +9007,432 @@
     "title": "Spec-Driven Development e Programação Agêntica",
     "section": "Dois níveis de decisão",
     "text": "Dois níveis de decisão\n\n\nAlto nível: Constituição\n\nMissão\nPilha tecnológica\nRoadmap\n\n\nSegundo nível: Funcionalidade — ciclo incremental\n\nRequisitos\nPlanejamento\nValidação\nImplementação e revisão\n\n\n\nEntre funcionalidades: replanejar quando as decisões mudarem."
+  },
+  {
+    "objectID": "aula_p10.html",
+    "href": "aula_p10.html",
+    "title": "Aula Prática 10: Criando e Consumindo um Servidor MCP com Spec-Driven Development",
+    "section": "",
+    "text": "Introdução\nNesta aula prática, vamos aprender a criar um servidor MCP (Model Context Protocol) em Python e utilizá-lo tanto no ambiente do desenvolvedor (via VS Code + Copilot) quanto em uma aplicação simples voltada para o usuário final.\nPara estruturar a construção do servidor MCP, utilizaremos a metodologia Spec-Driven Development (SDD) apresentada na aula teórica.\n\n\n\n\n\n\nNota sobre o uso de SDD nesta aula\n\n\n\nO projeto desenvolvido hoje é um exemplo didático simples, projetado para caber no tempo de uma aula prática de laboratório.\nEm projetos reais e complexos, o SDD demonstra todo o seu potencial ao gerenciar centenas de arquivos, prevenir o decaimento de contexto em sessões longas e garantir contratos arquiteturais rigorosos. Aqui, aplicaremos o fluxo completo (Constituição \\(\\rightarrow\\) Funcionalidade \\(\\rightarrow\\) Validação \\(\\rightarrow\\) Replanejamento) para que você assimile o processo e a disciplina mental, mesmo que o escopo reduzido atenue os impactos mais dramáticos da metodologia.\n\n\n\n\n\nParte 1: Construção do Servidor MCP com SDD\nDesenvolveremos um servidor MCP para um Sistema de Helpdesk/Suporte ao Cliente. O objetivo desse servidor é expor operações do banco de dados de chamados de forma padronizada para que agentes de IA possam consultar e manipular o sistema.\n\n\n\n\n\n\n\nExercício 1: Criando a Constituição do Servidor MCP\n\n\n\n\nObjetivo\nDefinir o planejamento de alto nível do servidor MCP criando a estrutura de Constituição na raiz do projeto.\n\n\nOrientações Gerais\nVocê não deve escrever os arquivos de especificação manualmente linha por linha. Utilize o GitHub Copilot no VS Code para auxiliá-lo a gerar a constituição a partir do contexto fornecido a seguir.\n\nCrie a estrutura de diretórios do projeto:\nhelpdesk-mcp/\n├── README.md\n└── specs/\n    ├── missao.md\n    ├── pilha-tecnologia.md\n    └── roadmap.md\n\n\n\n\n\n\n\n\nReusoCC BY-SA 4.0"
+  },
+  {
+    "objectID": "aula_p9.html",
+    "href": "aula_p9.html",
+    "title": "Desenvolvendo Jogos",
+    "section": "",
+    "text": "Os exercícios dessa aula são baseados no capítulo 14 do livro:"
+  },
+  {
+    "objectID": "aula_p2.html",
+    "href": "aula_p2.html",
+    "title": "Projetando Funções",
+    "section": "",
+    "text": "O conteúdo dessa aula é baseado em partes dos capítulos 2 e 3 do livro abaixo."
+  },
+  {
+    "objectID": "ufla-pasia.html",
+    "href": "ufla-pasia.html",
+    "title": "ufla-pasia",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "ufla-pasia.html#quarto",
+    "href": "ufla-pasia.html#quarto",
+    "title": "ufla-pasia",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "clean-template/clean-template.html",
+    "href": "clean-template/clean-template.html",
+    "title": "Quarto reveal.js clean",
+    "section": "",
+    "text": "Before we dive a bit deeper, here is a simple example of the clean theme in action.\n\nNo pictures or anything fancy. Just text for the moment.\n\nNext, we’ll take a brief tour of some theme components.\n\nWe’ll use the same basic structure as the original LaTeX slides.\nNote that the full suite of Reveal.js features are available for this Quarto implementation, even if we don’t cover everything here."
+  },
+  {
+    "objectID": "clean-template/clean-template.html#example-slide",
+    "href": "clean-template/clean-template.html#example-slide",
+    "title": "Quarto reveal.js clean",
+    "section": "",
+    "text": "Before we dive a bit deeper, here is a simple example of the clean theme in action.\n\nNo pictures or anything fancy. Just text for the moment.\n\nNext, we’ll take a brief tour of some theme components.\n\nWe’ll use the same basic structure as the original LaTeX slides.\nNote that the full suite of Reveal.js features are available for this Quarto implementation, even if we don’t cover everything here."
+  },
+  {
+    "objectID": "clean-template/clean-template.html#before-you-proceed",
+    "href": "clean-template/clean-template.html#before-you-proceed",
+    "title": "Quarto reveal.js clean",
+    "section": "Before you proceed…",
+    "text": "Before you proceed…\n\nRequirements for the coding examples in this demo\n\n\n\n\n\n\nR libraries\n\n\n\nWhile the clean theme is language agnostic, we will use several R coding examples in this demo to highlight some advanced theme features.\nYou will need the following libraries if you’d like to render the template “as-is”:\ninstall.packages(c(\"modelsummary\", \"gt\", \"fixest\", \"pdftools\", \"tinytex\", \"threejs\"))\n\n\n\n\n\n\n\n\nTinyTex\n\n\n\nWhile reveal.js presentations are HTML format, we will show an example of how to embed LaTeX tables as images. This requires a working Tex distribution, of which TinyTex provides by far the easiest and lightest integration with Quarto. More details here.\nquarto install tinytex"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#components-1",
+    "href": "clean-template/clean-template.html#components-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\n\nOrdered and Unordered Lists\nHere we have an unordered list.\n\nfirst item\n\nsub-item\n\nsecond item\n\nAnd next we have an ordered one.\n\nfirst item\n\nsub-item\n\nsecond item"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#components-2",
+    "href": "clean-template/clean-template.html#components-2",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\n\nAlerts & Cross-refs\nTo emphasize specific words or text, you can:\n\nUse the default .alert class, e.g. important note.\nUse the .fg class for custom colour, e.g. important note.\nUse the .bg class for custom background, e.g. important note.\n\nTo cross-reference, you have several options, for example:\n\nBeamer-like .button class provided by this theme, e.g. Appendix\nQuarto’s native cross-ref syntax, e.g., “See Seção 4.3.”"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#components-3",
+    "href": "clean-template/clean-template.html#components-3",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\n\nCitations\nCitations follow the standard Quarto format and be sourced from BibLaTex, BibTeX, or CLS files. For example:\n\nTopic 1: Spatial Frictions (Fajgelbaum et al. 2018; Hsieh e Moretti 2019; Moretti 2011)\nTopic 2: Blah (Suárez Serrato e Zidar 2016)"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#components-4",
+    "href": "clean-template/clean-template.html#components-4",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\n\nBlocks\nQuarto provides dedicated environments for theorems, lemmas, and so forth.\nBut in presentation format, it’s arguably more effective just to use a Callout Block.\n\n\n\n\n\n\nRegression Specification\n\n\n\nThe main specification is as follows:\n\\[\ny_{it} = X_{it} \\beta + \\mu_i + \\varepsilon_{it}\n\\]"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#components-5",
+    "href": "clean-template/clean-template.html#components-5",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\n\nMulticolumn I: Text only\n\n\n\nColumn 1\nHere is a long sentence that will wrap onto the next line as it hits the column width, and continue this way until it stops.\n\n\n\nColumn 2\nSome other text in another column.\nA second paragraph.\n\n\n\nMulticolumn support is very flexible and we can continue with a single full span column in the same slide."
+  },
+  {
+    "objectID": "clean-template/clean-template.html#components-6",
+    "href": "clean-template/clean-template.html#components-6",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components\n\nMulticolumn II: Text and figures\n\n\n\n\n\nA point about the figure that is potentially important.\nAnother point about the figure that is also potentially important.\n\n\n\nNote that sub- and multi-panel figures are also natively supported by Quarto. See here."
+  },
+  {
+    "objectID": "clean-template/clean-template.html#components-7",
+    "href": "clean-template/clean-template.html#components-7",
+    "title": "Quarto reveal.js clean",
+    "section": "Components",
+    "text": "Components"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#tables-1",
+    "href": "clean-template/clean-template.html#tables-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Tables",
+    "text": "Tables\n\nRegression example\nQuarto offers excellent table support, with further customization via user libraries. Let’s illustrate with a regression example:"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#regression-table",
+    "href": "clean-template/clean-template.html#regression-table",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\n\nmodelsummary\nIf you use modelsummary with this Quarto theme, we advise setting the gt backend for a cleaner aesthetic. More details here."
+  },
+  {
+    "objectID": "clean-template/clean-template.html#regression-table-1",
+    "href": "clean-template/clean-template.html#regression-table-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\n\netable\nfixest’s powerful native tabling functions were designed for LaTeX output. But we can use the markdown = TRUE option to make them work with this theme too. (Details here.) Quick notes:\n\nInstall the tinytex & pdftools packages first.\nSet the R chunk option output: asis."
+  },
+  {
+    "objectID": "clean-template/clean-template.html#regression-table-2",
+    "href": "clean-template/clean-template.html#regression-table-2",
+    "title": "Quarto reveal.js clean",
+    "section": "Regression table",
+    "text": "Regression table\n\netable (cont.)"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#figure",
+    "href": "clean-template/clean-template.html#figure",
+    "title": "Quarto reveal.js clean",
+    "section": "Figure",
+    "text": "Figure"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#figure-1",
+    "href": "clean-template/clean-template.html#figure-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Figure",
+    "text": "Figure\n\nFull-size Figures\nYou can use the {.background-image} container environment to completely fill the slide background with an image.\nIdeally, your figure will be the same aspect ratio as the screen that you’re presenting on.\n\nThis can be a bit tricky because of the dynamic nature of reveal.js / HTML. But it’s probably something close to 16:9.\nAspect ratio can also matter for a regular full-frame images (previous slide)."
+  },
+  {
+    "objectID": "clean-template/clean-template.html#interactive-plots",
+    "href": "clean-template/clean-template.html#interactive-plots",
+    "title": "Quarto reveal.js clean",
+    "section": "Interactive plots",
+    "text": "Interactive plots\nNote: Simple flight data example using threejs. There are many interactive plotting options beyond this. (More details.)"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#summary-1",
+    "href": "clean-template/clean-template.html#summary-1",
+    "title": "Quarto reveal.js clean",
+    "section": "Summary",
+    "text": "Summary\n\nA minimal and elegant presentation theme\nThe Quarto reveal.js clean theme aims to be a minimal and elegant presention theme.\nWe have highlighted some theme-specific components. But all of the regular reveal.js functionality is supported (chalkboard, etc.)\nInstall the theme:\nquarto install extension grantmcdermott/quarto-revealjs-clean\nUse these demo slides as a template:\nquarto use template grantmcdermott/quarto-revealjs-clean-demo"
+  },
+  {
+    "objectID": "clean-template/clean-template.html#references",
+    "href": "clean-template/clean-template.html#references",
+    "title": "Quarto reveal.js clean",
+    "section": "References",
+    "text": "References\n\n\nFajgelbaum, Pablo D, Eduardo Morales, Juan Carlos Suarez Serrato, e Owen Zidar. 2018. “State Taxes and Spatial Misallocation”, 90.\n\n\nHsieh, Chang-Tai, e Enrico Moretti. 2019. “Housing Constraints and Spatial Misallocation”. American Economic Journal: Macroeconomics 11 (2): 39.\n\n\nMoretti, Enrico. 2011. “Local Labor Markets”. Em Handbook of Labor Economics. Vol. 4. Elsevier.\n\n\nSuárez Serrato, Juan Carlos, e Owen Zidar. 2016. “Who Benefits from State Corporate Tax Cuts? A Local Labor Markets Approach with Heterogeneous Firms”. American Economic Review 106 (9)."
+  },
+  {
+    "objectID": "clean-template/clean-template.html#sec-appendix",
+    "href": "clean-template/clean-template.html#sec-appendix",
+    "title": "Quarto reveal.js clean",
+    "section": "Appendix",
+    "text": "Appendix\nBack to main"
+  },
+  {
+    "objectID": "aula_p10.html#objetivos-desta-aula",
+    "href": "aula_p10.html#objetivos-desta-aula",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Objetivos desta aula",
+    "text": "Objetivos desta aula\nHoje vamos aprender a criar um servidor MCP e utilizá-lo em uma aplicação simples.\n\nVamos começar com uma introdução básica a MCP.\nNa primeira parte prática, construiremos um servidor MCP para um sistema de helpdesk, com auxílio do GitHub Copilot.\nUsaremos Spec-Driven Development (SDD) para orientar o desenvolvimento.\nNa segunda parte, criaremos um protótipo em Streamlit que usa as ferramentas do servidor MCP."
+  },
+  {
+    "objectID": "aula_p10.html#o-que-esperar-do-sdd-neste-laboratório",
+    "href": "aula_p10.html#o-que-esperar-do-sdd-neste-laboratório",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "O que esperar do SDD neste laboratório?",
+    "text": "O que esperar do SDD neste laboratório?\n\n\n\n\nUm exemplo didático, não um projeto real complexo\n\n\nO sistema será deliberadamente pequeno para que possamos exercitar o fluxo de SDD:\nConstituição → Funcionalidade (especificação, implementação e validação) → Replanejamento.\nEm um projeto desse porte, os benefícios práticos do SDD podem ser limitados: o processo talvez pareça mais trabalhoso que escrever diretamente o código.\nO objetivo aqui é aprender o método para aplicá-lo, posteriormente, em sistemas maiores e com evolução contínua."
+  },
+  {
+    "objectID": "aula_p10.html#como-vamos-trabalhar",
+    "href": "aula_p10.html#como-vamos-trabalhar",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Como vamos trabalhar?",
+    "text": "Como vamos trabalhar?\n\nUse o VS Code com GitHub Copilot, preferencialmente no modo agente.\nPeça ao Copilot que crie e atualize os arquivos; o enunciado indica os objetivos e as restrições, não a implementação pronta.\nRevise especificações e resultados antes de autorizar a próxima etapa.\nFaça pequenos commits e uma branch por funcionalidade.\nInicie novas conversas com o agente nas mudanças de fase, para que as especificações sejam a fonte principal de contexto."
+  },
+  {
+    "objectID": "aula_p10.html#o-cenário-helpdesk",
+    "href": "aula_p10.html#o-cenário-helpdesk",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "O cenário: helpdesk",
+    "text": "O cenário: helpdesk\nUma equipe de suporte técnico registra chamados de clientes em um banco de dados.\n\nQueremos criar um servidor MCP que disponibilize tools para que um agente de IA possa:\n\nListar chamados (inclusive filtrando por status).\nConsultar o histórico de chamados de um cliente.\nAtualizar o status de um chamado.\n\n\n\nO servidor expõe operações sobre dados, não uma interface para o atendente. Essa interface será construída na segunda parte."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-1-constituição-do-projeto",
+    "href": "aula_p10.html#exercício-1-constituição-do-projeto",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 1 — Constituição do projeto",
+    "text": "Exercício 1 — Constituição do projeto\n\n\n\n\nExercício 1.1 — Missão\n\n\nCrie um projeto chamado helpdesk-mcp e um README.md que descreva, em alto nível, o servidor MCP pretendido.\nUse o Copilot para produzir specs/missao.md, registrando:\n\npropósito do servidor e problema que resolve;\nquem utilizará suas ferramentas (agentes ou aplicações clientes de MCP);\nescopo inicial: operações de consulta e atualização de chamados;\nlimites do exemplo (dados fictícios, uso local e ausência de autenticação real).\n\nNão peça a implementação ainda. Revise se a missão está clara antes de avançar."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-1-constituição-do-projeto-1",
+    "href": "aula_p10.html#exercício-1-constituição-do-projeto-1",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 1 — Constituição do projeto",
+    "text": "Exercício 1 — Constituição do projeto\n\n\n\n\nExercício 1.2 — Pilha tecnológica\n\n\nPeça ao Copilot que crie specs/pilha-tecnologia.md e registre as decisões técnicas obrigatórias:\n\nPython, com ambiente virtual e dependências documentadas;\nbiblioteca fastmcp para implementar o servidor e expor as tools;\nSQLite para persistir os chamados;\ncriação automática do banco e de registros fictícios, caso ainda não existam;\nexecução local, com transporte MCP compatível com stdio.\n\nO banco deve permitir identificar cada chamado, seu cliente, descrição, status e informações necessárias à consulta de histórico. Peça ao agente que proponha os detalhes e revise as escolhas."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-1-constituição-do-projeto-2",
+    "href": "aula_p10.html#exercício-1-constituição-do-projeto-2",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 1 — Constituição do projeto",
+    "text": "Exercício 1 — Constituição do projeto\n\n\n\n\nExercício 1.3 — Roadmap\n\n\nPeça ao Copilot para criar specs/roadmap.md com três fases pequenas, nesta ordem:\n\nListar chamados: tool listar_chamados, com filtro opcional por status.\nBuscar histórico de cliente: tool buscar_historico_cliente, consultando os chamados de um cliente.\nAtualizar status: tool atualizar_status, alterando o status de um chamado existente.\n\nSolicite que cada fase tenha um objetivo e um critério geral de conclusão. Não detalhamos as três implementações agora: isso será feito uma funcionalidade por vez."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-1-revisão-e-versionamento",
+    "href": "aula_p10.html#exercício-1-revisão-e-versionamento",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 1 — Revisão e versionamento",
+    "text": "Exercício 1 — Revisão e versionamento\n\n\n\n\nExercício 1.4 — Encerrar a Constituição\n\n\nConfira os três arquivos da Constituição:\n\nA missão explica por quê o sistema existe?\nA pilha tecnológica registra as restrições e os dados fictícios?\nO roadmap descreve o que será entregue e em que ordem?\n\nPeça ao Copilot que corrija inconsistências entre os arquivos. Depois inicialize o repositório Git e registre a Constituição em um commit na branch main."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-2-primeira-funcionalidade",
+    "href": "aula_p10.html#exercício-2-primeira-funcionalidade",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 2 — Primeira funcionalidade",
+    "text": "Exercício 2 — Primeira funcionalidade\n\n\n\n\nExercício 2.1 — Especificar: listar chamados\n\n\nCrie a branch feature/01-listar-chamados a partir de main e inicie uma nova conversa com o Copilot.\nPeça que consulte a Constituição e crie specs/01-listar-chamados/ com:\n\nrequisitos.md: comportamentos esperados, entradas, saídas e casos relevantes;\nplanejamento.md: grupos pequenos de tarefas, em ordem;\nvalidacao.md: como verificar que a funcionalidade atende aos requisitos.\n\nDiscuta questões como quais status são aceitos, o resultado para nenhum chamado encontrado e a inicialização dos dados fictícios.\nRevise e aprove as especificações antes de implementar."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-2-primeira-funcionalidade-1",
+    "href": "aula_p10.html#exercício-2-primeira-funcionalidade-1",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 2 — Primeira funcionalidade",
+    "text": "Exercício 2 — Primeira funcionalidade\n\n\n\n\nExercício 2.2 — Implementar\n\n\nInicie uma nova conversa e solicite a implementação somente da primeira fase, seguindo specs/01-listar-chamados/.\nOriente o Copilot a:\n\ncriar o servidor MCP em Python e a estrutura de persistência SQLite;\npopular o banco com registros fictícios somente quando necessário, sem apagar alterações existentes;\ndisponibilizar a tool listar_chamados;\ncriar os testes previstos na especificação;\ndocumentar como executar e registrar o servidor MCP no VS Code.\n\nConfira os arquivos modificados antes de prosseguir."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-2-testando-no-copilot",
+    "href": "aula_p10.html#exercício-2-testando-no-copilot",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 2 — Testando no Copilot",
+    "text": "Exercício 2 — Testando no Copilot\n\n\n\n\nExercício 2.3 — Validação human in the loop\n\n\nRegistre o servidor local no VS Code (.vscode/mcp.json) e habilite sua utilização pelo Copilot Chat.\nPeça, no chat, ações como:\n\n“Liste todos os chamados”;\n“Quais chamados estão abertos?”;\n“Liste os chamados com um status que não existe”.\n\nConfira se o Copilot chamou a tool MCP, em vez de apenas inventar uma resposta. Compare os resultados com o banco e com validacao.md.\nSe encontrar erros, peça a correção na especificação e no código. Execute também os testes automatizados."
+  },
+  {
+    "objectID": "aula_p10.html#configuração-do-mcp-no-vs-code",
+    "href": "aula_p10.html#configuração-do-mcp-no-vs-code",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Configuração do MCP no VS Code",
+    "text": "Configuração do MCP no VS Code\nUm exemplo da estrutura de .mcp.json é:\n{\n  \"servers\": {\n    \"helpdesk-mcp\": {\n      \"type\": \"stdio\",\n      \"command\": \"/home/usuario/testeMCP/.venv/bin/python\",\n      \"args\": [\n          \"/home/usuario/testeMCP/servidor.py\"\n      ]\n    }\n  }\n}"
+  },
+  {
+    "objectID": "aula_p10.html#exercício-2-conclusão-da-fase",
+    "href": "aula_p10.html#exercício-2-conclusão-da-fase",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 2 — Conclusão da fase",
+    "text": "Exercício 2 — Conclusão da fase\n\n\n\n\nExercício 2.4 — Aceitação e integração\n\n\nSomente depois de validar:\n\nCompare o resultado com requisitos.md e validacao.md.\nSolicite ao Copilot uma revisão das alterações da branch.\nRegistre a implementação e as especificações em commit.\nFaça o merge em main e verifique o funcionamento após a integração.\n\nO objetivo não é apenas fazer a ferramenta responder, mas garantir que o comportamento está alinhado ao que foi especificado."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-3-revisar-o-plano",
+    "href": "aula_p10.html#exercício-3-revisar-o-plano",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 3 — Revisar o plano",
+    "text": "Exercício 3 — Revisar o plano\n\n\n\n\nExercício 3 — Replanejamento após a primeira entrega\n\n\nAntes de iniciar a segunda funcionalidade, use o Copilot para avaliar o que aprendemos:\n\nA estrutura do banco atende às próximas duas fases?\nAlguma regra ou decisão importante precisa entrar na Constituição?\nOs critérios das fases restantes continuam adequados?\nHá algo que deve ser dividido, esclarecido ou retirado do roadmap?\n\nAtualize specs/roadmap.md para registrar a Fase 1 como concluída e revise os demais arquivos da Constituição, se necessário.\nSe houver mudanças significativas, use uma branch específica de replanejamento. Integre e faça commit antes de começar a próxima funcionalidade."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-4-histórico-do-cliente",
+    "href": "aula_p10.html#exercício-4-histórico-do-cliente",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 4 — Histórico do cliente",
+    "text": "Exercício 4 — Histórico do cliente\n\n\n\n\nExercício 4 — Segunda funcionalidade\n\n\nCrie a branch feature/02-historico-cliente a partir da main atualizada. Abra uma nova conversa com o Copilot.\nRepita o ciclo:\n\nEspecificação: gere requisitos.md, planejamento.md e validacao.md para buscar_historico_cliente.\nImplementação: peça apenas a funcionalidade da fase atual, preservando listar_chamados.\nValidação: consulte, pelo Copilot Chat, o histórico de um cliente com vários chamados e de um cliente inexistente. Execute testes, inclusive de regressão.\nConclusão: revise, faça commit e merge na main.\n\nNão pule o replanejamento antes da fase seguinte."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-5-replanejamento-novamente",
+    "href": "aula_p10.html#exercício-5-replanejamento-novamente",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 5 — Replanejamento novamente",
+    "text": "Exercício 5 — Replanejamento novamente\n\n\n\n\nExercício 5 — Preparar a atualização de status\n\n\nReavalie a Constituição à luz das duas funcionalidades prontas.\n\nOs status permitidos estão definidos de forma consistente?\nO que acontece ao tentar atualizar um chamado inexistente?\nA futura operação de atualização deve preservar os dados históricos?\nO roadmap e a especificação correspondem ao código atual?\n\nPeça ao Copilot que registre as decisões necessárias na Constituição, sem implementar ainda a próxima funcionalidade. Marque a Fase 2 como concluída, faça commit e integre as alterações."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-6-atualizar-status",
+    "href": "aula_p10.html#exercício-6-atualizar-status",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 6 — Atualizar status",
+    "text": "Exercício 6 — Atualizar status\n\n\n\n\nExercício 6 — Terceira funcionalidade\n\n\nCrie feature/03-atualizar-status e reinicie a conversa com o Copilot.\nRepita especificação → implementação → validação, desta vez para atualizar_status:\n\ndefinir o identificador do chamado e o novo status;\ntratar status inválido e chamado inexistente;\nvalidar que o novo estado ficou persistido no SQLite;\nconfirmar que as duas tools de consulta continuam funcionando.\n\nDepois da revisão, faça commit, merge e o replanejamento final, marcando as três fases como concluídas em specs/roadmap.md."
+  },
+  {
+    "objectID": "aula_p10.html#checkpoint-servidor-concluído",
+    "href": "aula_p10.html#checkpoint-servidor-concluído",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Checkpoint — Servidor concluído",
+    "text": "Checkpoint — Servidor concluído\nAntes de seguir, confirme:\n\nA Constituição está atualizada e versionada.\nAs três funcionalidades foram desenvolvidas em branches independentes.\nCada uma possui requisitos, planejamento e validação.\nAs três tools aparecem no cliente MCP do Copilot.\nOs testes passaram e os dados fictícios estão disponíveis.\nmain contém a versão integrada do servidor."
+  },
+  {
+    "objectID": "aula_p10.html#agora-outro-cliente-mcp",
+    "href": "aula_p10.html#agora-outro-cliente-mcp",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Agora, outro cliente MCP",
+    "text": "Agora, outro cliente MCP\nAté aqui, o servidor foi utilizado pelo Copilot Chat, no ambiente do desenvolvedor.\nAgora criaremos uma aplicação web para um atendente de helpdesk que consome o mesmo servidor MCP.\nNesta parte, não usaremos SDD: queremos apenas prototipar a integração com uma interface voltada ao usuário final.\n\n\n\n\nUma distinção importante\n\n\nO Streamlit não passa automaticamente a conversar com uma IA ao instalar o MCP. Precisamos de um cliente MCP na aplicação para chamar as tools; um modelo de linguagem só é necessário se quisermos interpretar perguntas livres com IA."
+  },
+  {
+    "objectID": "aula_p10.html#arquitetura-do-protótipo",
+    "href": "aula_p10.html#arquitetura-do-protótipo",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Arquitetura do protótipo",
+    "text": "Arquitetura do protótipo\n\n\n\n\n\nflowchart LR\n    A[Atendente] --&gt; B[Chat Streamlit]\n    B --&gt; C[Cliente MCP em Python]\n    C --&gt; D[Servidor MCP de helpdesk]\n    D --&gt; E[(SQLite)]\n\n\n\n\n\n\nNesta versão, usaremos comandos simples interpretados pela aplicação, sem necessidade de API paga de modelo de linguagem.\nA comunicação entre a aplicação e as operações do helpdesk deverá passar pelo protocolo MCP, não por acesso direto ao SQLite."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-7-chat-do-atendente",
+    "href": "aula_p10.html#exercício-7-chat-do-atendente",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 7 — Chat do atendente",
+    "text": "Exercício 7 — Chat do atendente\n\n\n\n\nExercício 7.1 — Criar a interface\n\n\nEm uma pasta separada, ou na pasta app/ do projeto, peça ao Copilot para criar uma aplicação Streamlit com:\n\ntítulo e orientação de uso para o atendente;\nmensagens exibidas com st.chat_message;\nentrada de usuário com st.chat_input;\nhistórico da conversa durante a sessão (st.session_state).\n\nExecute a aplicação com streamlit run app.py e verifique a interface.\nPor enquanto, não precisa usar modelo de linguagem."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-7-conectar-o-mcp",
+    "href": "aula_p10.html#exercício-7-conectar-o-mcp",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 7 — Conectar o MCP",
+    "text": "Exercício 7 — Conectar o MCP\n\n\n\n\nExercício 7.2 — Consumir as tools\n\n\nPeça ao Copilot para conectar a aplicação ao servidor de helpdesk usando um cliente MCP Python (por exemplo, o Client da biblioteca fastmcp, conectado ao script do servidor via stdio).\nA aplicação deverá interpretar comandos simples do usuário e invocar as tools correspondentes, como:\n\nlistar abertos → listar_chamados;\nhistórico do cliente 2 → buscar_historico_cliente;\nalterar chamado 3 para fechado → atualizar_status.\n\nOs exemplos dependem dos identificadores e status definidos no projeto. Exiba os resultados na conversa e trate comandos desconhecidos com uma orientação clara."
+  },
+  {
+    "objectID": "aula_p10.html#exercício-7-validação-do-protótipo",
+    "href": "aula_p10.html#exercício-7-validação-do-protótipo",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Exercício 7 — Validação do protótipo",
+    "text": "Exercício 7 — Validação do protótipo\n\n\n\n\nExercício 7.3 — Teste de ponta a ponta\n\n\nNa interface Streamlit:\n\nListe os chamados abertos.\nConsulte o histórico de um cliente fictício existente.\nAtualize o status de um chamado.\nFaça uma nova consulta e verifique se a alteração persistiu.\nExperimente um identificador inexistente ou comando inválido.\n\nConfirme que o Streamlit chama o servidor MCP. Não vale consultar ou modificar o banco diretamente pela aplicação."
+  },
+  {
+    "objectID": "aula_p10.html#extensão-opcional-chat-com-linguagem-natural",
+    "href": "aula_p10.html#extensão-opcional-chat-com-linguagem-natural",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Extensão opcional — Chat com linguagem natural",
+    "text": "Extensão opcional — Chat com linguagem natural\nPeça ao Copilot para criar uma versão em que o usuário escreve perguntas livres e um modelo de IA escolhe qual tool MCP utilizar.\n\nCompare esse comportamento com os comandos fixos do protótipo.\nNão é necessário usar uma API paga para concluir a atividade.\nPara alterações no banco, considere pedir confirmação explícita ao atendente antes de executar a tool.\n\n\nImportante: com comandos fixos, temos uma interface de chat para operar o MCP, não um agente LLM conversacional."
+  },
+  {
+    "objectID": "aula_p10.html#entrega",
+    "href": "aula_p10.html#entrega",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Entrega",
+    "text": "Entrega\nOrganize o repositório de modo que outra pessoa consiga reproduzir a execução:\n\nCódigo do servidor MCP e inicialização do SQLite com dados fictícios.\nConstituição e especificações de cada funcionalidade.\nCódigo do protótipo Streamlit (sem dados sensíveis ou chaves de API).\nREADME.md com instalação, execução e exemplos de teste das três tools e da interface.\n\n\n\n\n\nCritério principal\n\n\nDevem ser demonstráveis as três tools MCP e uma chamada real ao servidor MCP a partir da aplicação Streamlit. O processo de SDD deve estar documentado no Git e nas especificações."
+  },
+  {
+    "objectID": "aula_p10.html#como-vamos-trabalhar-1",
+    "href": "aula_p10.html#como-vamos-trabalhar-1",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Como vamos trabalhar?",
+    "text": "Como vamos trabalhar?\n\n\n\n\nUso dos limites gratuitos\n\n\nTrabalhe em etapas pequenas, evite pedir a implementação do projeto inteiro de uma vez e não repita solicitações sem antes conferir os arquivos gerados."
+  },
+  {
+    "objectID": "aula_p10.html#configuração-do-mcp-no-vs-code-1",
+    "href": "aula_p10.html#configuração-do-mcp-no-vs-code-1",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Configuração do MCP no VS Code",
+    "text": "Configuração do MCP no VS Code\n\nAjuste o comando python ao interpretador do ambiente virtual que contém fastmcp.\nUse o mecanismo de inicialização do MCP do VS Code e verifique se o servidor e a tool aparecem disponíveis.\nstdio usa a entrada e saída padrão: evite print() de depuração em stdout no servidor.\n\n\n\n\n\n\nDica\n\n\nA configuração registra o servidor; ela não implementa nenhuma tool. O Copilot deve criar o código conforme a especificação."
+  },
+  {
+    "objectID": "aula_p10.html#o-que-é-mcp",
+    "href": "aula_p10.html#o-que-é-mcp",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "O que é MCP?",
+    "text": "O que é MCP?\n\nO Model Context Protocol (MCP) é um padrão aberto, criado pela Anthropic, para conectar aplicações de IA a ferramentas e fontes de dados externas.\n\nPense nele como um “USB-C para aplicações de IA”.\nEm vez de desenvolver uma integração específica para cada aplicação, usamos um protocolo comum.\nO MCP utiliza JSON-RPC para padronizar a comunicação.\n\n\n\nUm mesmo servidor MCP pode ser utilizado por diferentes clientes, como VS Code + Copilot, Claude Desktop e outras aplicações."
+  },
+  {
+    "objectID": "aula_p10.html#como-funciona-o-mcp",
+    "href": "aula_p10.html#como-funciona-o-mcp",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Como funciona o MCP?",
+    "text": "Como funciona o MCP?\n\n\n\n\n\n\nflowchart LR\n    A[\"Cliente MCP&lt;br/&gt;(VS Code + Copilot)\"]\n    B[\"Servidor MCP&lt;br/&gt;(Python)\"]\n    C[(\"Banco de dados&lt;br/&gt;ou API\")]\n\n    A &lt;--&gt;|MCP| B\n    B &lt;--&gt;|Operações| C\n\n\n\n\n\n\n\n\nUm servidor MCP pode oferecer três tipos principais de capacidades:\n\nTools: funções que o agente pode executar (consultar chamados, atualizar dados).\nResources: informações que podem ser consultadas (documentos, arquivos, logs).\nPrompts: modelos de instruções reutilizáveis.\n\n\n\n\n\nNesta aula\n\n\nVamos construir um servidor MCP que disponibiliza tools para consultar e atualizar chamados de helpdesk."
+  },
+  {
+    "objectID": "aula_p10.html#um-servidor-mcp-simples-em-python",
+    "href": "aula_p10.html#um-servidor-mcp-simples-em-python",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Um servidor MCP simples em Python",
+    "text": "Um servidor MCP simples em Python\n\nPara demonstração, usaremos a biblioteca FastMCP para criar um servidor com uma ferramenta que calcula a média de duas notas.\n\n\n\n\nservidor.py\n\nfrom fastmcp import FastMCP\n\nmcp = FastMCP(\"Calculadora-Academica\")\n\n@mcp.tool()\ndef calcular_media(nota1: float, nota2: float) -&gt; dict:\n    \"\"\"Calcula a média e informa a situação do aluno.\"\"\"\n    media = (nota1 + nota2) / 2\n    status = \"Aprovado\" if media &gt;= 6 else \"Recuperação\"\n    return {\"media\": media, \"status\": status}\n\nif __name__ == \"__main__\":\n    mcp.run()"
+  },
+  {
+    "objectID": "aula_p10.html#conectando-o-mcp-ao-vs-code",
+    "href": "aula_p10.html#conectando-o-mcp-ao-vs-code",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Conectando o MCP ao VS Code",
+    "text": "Conectando o MCP ao VS Code\n\nPara que o Copilot utilize nosso servidor, precisamos registrá-lo no VS Code.\n\n\nCrie o arquivo .mcp.json (ajuste os caminhos para sua máquina):\n{\n    \"mcpServers\": {\n        \"calculadora\": {\n            \"type\": \"stdio\",\n            \"command\": \"/home/usuario/testeMCP/.venv/bin/python\",\n            \"args\": [\n                \"/home/usuario/testeMCP/servidor.py\"\n            ]\n        }\n    }\n}"
+  },
+  {
+    "objectID": "aula_p10.html#usando-nosso-mcp-no-copilot-chat",
+    "href": "aula_p10.html#usando-nosso-mcp-no-copilot-chat",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Usando nosso MCP no Copilot Chat",
+    "text": "Usando nosso MCP no Copilot Chat\n\nCom o servidor iniciado, abra o Copilot Chat no modo Agente e verifique se a ferramenta calcular_media está disponível.\n\n\nExperimente solicitar e observe o processo apresentado a seguir.\n\nCalcule a média de um aluno que obteve notas 7 e 8. Utilize a ferramenta da calculadora."
+  },
+  {
+    "objectID": "aula_p10.html#section-1",
+    "href": "aula_p10.html#section-1",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "",
+    "text": "Um exemplo didático, não um projeto real complexo\n\n\nO sistema será deliberadamente pequeno para que possamos exercitar o fluxo de SDD:\nConstituição → Funcionalidade (especificação, implementação e validação) → Replanejamento.\nEm um projeto desse porte, os benefícios práticos do SDD podem ser limitados: o processo talvez pareça mais trabalhoso que escrever diretamente o código.\nO objetivo aqui é aprender o método para aplicá-lo, posteriormente, em sistemas maiores e com evolução contínua."
+  },
+  {
+    "objectID": "aula_p10.html#conectando-o-mcp-ao-vs-code-1",
+    "href": "aula_p10.html#conectando-o-mcp-ao-vs-code-1",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Conectando o MCP ao VS Code",
+    "text": "Conectando o MCP ao VS Code\n\nO VS Code inicia o programa servidor.py como um servidor MCP local.\nO servidor disponibiliza suas ferramentas para o cliente MCP.\nO Copilot pode utilizar essas ferramentas durante uma conversa.\n\n\n\n\n\n\nAtenção\n\n\nO comando python deve apontar para o ambiente em que a biblioteca fastmcp foi instalada. No VS Code, inicie o servidor MCP pela opção disponibilizada no arquivo de configuração."
+  },
+  {
+    "objectID": "aula_p10.html#usando-nosso-mcp-no-copilot-chat-1",
+    "href": "aula_p10.html#usando-nosso-mcp-no-copilot-chat-1",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "Usando nosso MCP no Copilot Chat",
+    "text": "Usando nosso MCP no Copilot Chat\n\nO Copilot identifica a ferramenta MCP disponível.\nSolicita sua execução com nota1=7 e nota2=8.\nO servidor executa a função Python e retorna o resultado.\nO Copilot apresenta a resposta ao usuário.\n\n\n\n\n\n\nIdeia principal\n\n\nO Copilot não executa diretamente a lógica da calculadora: ele solicita a execução de uma ferramenta disponibilizada pelo servidor MCP.\nDa mesma forma, nosso servidor de helpdesk disponibilizará ferramentas que poderão ser usadas tanto pelo Copilot quanto por uma aplicação Streamlit."
+  },
+  {
+    "objectID": "aula_p10.html#section-2",
+    "href": "aula_p10.html#section-2",
+    "title": "Criando e utilizando um servidor MCP",
+    "section": "",
+    "text": "Organize o repositório de modo que outra pessoa consiga reproduzir a execução:\n\nCódigo do servidor MCP e inicialização do SQLite com dados fictícios.\nConstituição e especificações de cada funcionalidade.\nCódigo do protótipo Streamlit (sem dados sensíveis ou chaves de API).\nREADME.md com instalação, execução e exemplos de teste das três tools e da interface.\n\n\n\n\n\n\nCritério principal\n\n\nDevem ser demonstráveis as três tools MCP e uma chamada real ao servidor MCP a partir da aplicação Streamlit. O processo de SDD deve estar documentado no Git e nas especificações."
   }
 ]

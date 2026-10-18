@@ -1,0 +1,529 @@
+---
+title: Criando e utilizando um servidor MCP
+subtitle: PASIA - Aula P.10
+---
+
+## Objetivos desta aula
+
+Hoje vamos aprender a **criar um servidor MCP** e **utilizá-lo em uma aplicação simples**.
+
+- Vamos começar com uma introdução básica a MCP.
+- Na primeira parte prática, construiremos um servidor MCP para um sistema de **helpdesk**, com auxílio do **GitHub Copilot**.
+- Usaremos **Spec-Driven Development (SDD)** para orientar o desenvolvimento.
+- Na segunda parte, criaremos um protótipo em **Streamlit** que usa as ferramentas do servidor MCP.
+
+# Introdução ao MCP {background-color="#40666e"}
+
+## O que é MCP?
+
+. . .
+
+O **Model Context Protocol (MCP)** é um padrão aberto, criado pela Anthropic, para conectar aplicações de IA a **ferramentas e fontes de dados externas**.
+
+- Pense nele como um **"USB-C para aplicações de IA"**.
+- Em vez de desenvolver uma integração específica para cada aplicação, usamos um protocolo comum.
+- O MCP utiliza **JSON-RPC** para padronizar a comunicação.
+
+. . .
+
+Um mesmo servidor MCP pode ser utilizado por diferentes clientes, como **VS Code + Copilot**, Claude Desktop e outras aplicações.
+
+## Como funciona o MCP?
+
+. . .
+
+```{mermaid}
+flowchart LR
+    A["Cliente MCP<br/>(VS Code + Copilot)"]
+    B["Servidor MCP<br/>(Python)"]
+    C[("Banco de dados<br/>ou API")]
+
+    A <-->|MCP| B
+    B <-->|Operações| C
+```
+
+. . .
+
+Um servidor MCP pode oferecer três tipos principais de capacidades:
+
+- **Tools:** funções que o agente pode executar (consultar chamados, atualizar dados).
+- **Resources:** informações que podem ser consultadas (documentos, arquivos, logs).
+- **Prompts:** modelos de instruções reutilizáveis.
+
+::: {.callout-note title="Nesta aula" icon=false}
+Vamos construir um servidor MCP que disponibiliza **tools** para consultar e atualizar chamados de helpdesk.
+:::
+
+## Um servidor MCP simples em Python {.autoanimate}
+
+. . .
+
+Para demonstração, usaremos a biblioteca **FastMCP** para criar um servidor com uma ferramenta que calcula a média de duas notas.
+
+. . .
+
+
+```{.python filename="servidor.py"}
+from fastmcp import FastMCP
+
+mcp = FastMCP("Calculadora-Academica")
+
+@mcp.tool()
+def calcular_media(nota1: float, nota2: float) -> dict:
+    """Calcula a média e informa a situação do aluno."""
+    media = (nota1 + nota2) / 2
+    status = "Aprovado" if media >= 6 else "Recuperação"
+    return {"media": media, "status": status}
+
+if __name__ == "__main__":
+    mcp.run()
+```
+
+## {.autoanimate}
+
+```{.python filename="servidor.py"}
+from fastmcp import FastMCP
+
+mcp = FastMCP("Calculadora-Academica")
+
+@mcp.tool()
+def calcular_media(nota1: float, nota2: float) -> dict:
+    """Calcula a média e informa a situação do aluno."""
+    media = (nota1 + nota2) / 2
+    status = "Aprovado" if media >= 6 else "Recuperação"
+    return {"media": media, "status": status}
+
+if __name__ == "__main__":
+    mcp.run()
+```
+
+- `FastMCP()` cria o servidor.
+- `@mcp.tool()` disponibiliza a função como uma ferramenta MCP.
+- `mcp.run()` inicia o servidor (por padrão, usando **stdio**).
+
+## Conectando o MCP ao VS Code
+
+. . .
+
+Para que o Copilot utilize nosso servidor, precisamos registrá-lo no VS Code.
+
+. . .
+
+Crie o arquivo `.mcp.json` (ajuste os caminhos para sua máquina):
+
+```json
+{
+	"mcpServers": {
+		"calculadora": {
+			"type": "stdio",
+			"command": "/home/usuario/testeMCP/.venv/bin/python",
+			"args": [
+				"/home/usuario/testeMCP/servidor.py"
+			]
+		}
+	}
+}
+```
+
+## Conectando o MCP ao VS Code
+
+- O VS Code inicia o programa `servidor.py` como um **servidor MCP local**.
+- O servidor disponibiliza suas ferramentas para o cliente MCP.
+- O Copilot pode utilizar essas ferramentas durante uma conversa.
+
+. . .
+
+::: {.callout-tip title="Atenção" icon=false}
+O comando `python` deve apontar para o ambiente em que a biblioteca `fastmcp` foi instalada. No VS Code, inicie o servidor MCP pela opção disponibilizada no arquivo de configuração.
+:::
+
+## Usando nosso MCP no Copilot Chat
+
+. . .
+
+Com o servidor iniciado, abra o **Copilot Chat** no modo **Agente** e verifique se a ferramenta `calcular_media` está disponível.
+
+. . .
+
+Experimente solicitar e observe o processo apresentado a seguir.
+
+> Calcule a média de um aluno que obteve notas 7 e 8.
+> Utilize a ferramenta da calculadora.
+
+## Usando nosso MCP no Copilot Chat
+
+1. O Copilot identifica a ferramenta MCP disponível.
+2. Solicita sua execução com `nota1=7` e `nota2=8`.
+3. O servidor executa a função Python e retorna o resultado.
+4. O Copilot apresenta a resposta ao usuário.
+
+. . .
+
+::: {.callout-important title="Ideia principal" icon=false}
+O **Copilot não executa diretamente a lógica da calculadora**: ele solicita a execução de uma ferramenta disponibilizada pelo servidor MCP.
+
+Da mesma forma, nosso servidor de helpdesk disponibilizará ferramentas que poderão ser usadas tanto pelo Copilot quanto por uma aplicação Streamlit.
+:::
+
+# O que esperar do SDD nesta aula? {background-color="#40666e"}
+
+##
+
+::: {.callout-important title="Um exemplo didático, não um projeto real complexo" icon=false .nonincremental}
+O sistema será **deliberadamente pequeno** para que possamos exercitar o fluxo de SDD:
+
+**Constituição → Funcionalidade (especificação, implementação e validação) → Replanejamento.**
+
+Em um projeto desse porte, os benefícios práticos do SDD podem ser **limitados**: o processo talvez pareça mais trabalhoso que escrever diretamente o código.
+
+O objetivo aqui é **aprender o método** para aplicá-lo, posteriormente, em sistemas maiores e com evolução contínua.
+:::
+
+## Como vamos trabalhar?
+
+- Use o **VS Code com GitHub Copilot**, preferencialmente no modo agente.
+- Peça ao Copilot que **crie e atualize os arquivos**; o enunciado indica os objetivos e as restrições, não a implementação pronta.
+- **Revise** especificações e resultados antes de autorizar a próxima etapa.
+- Faça pequenos commits e **uma branch por funcionalidade**.
+- Inicie **novas conversas** com o agente nas mudanças de fase, para que as especificações sejam a fonte principal de contexto.
+
+## Como vamos trabalhar?
+
+::: {.callout-tip title="Uso dos limites gratuitos" icon=false .nonincremental}
+Trabalhe em etapas pequenas, evite pedir a implementação do projeto inteiro de uma vez e não repita solicitações sem antes conferir os arquivos gerados.
+:::
+
+# Parte 1 — Servidor MCP com SDD {background-color="#40666e"}
+
+## O cenário: helpdesk
+
+Uma equipe de suporte técnico registra **chamados de clientes** em um banco de dados.
+
+. . .
+
+Queremos criar um servidor MCP que disponibilize *tools* para que um agente de IA possa:
+
+1. **Listar chamados** (inclusive filtrando por status).
+2. **Consultar o histórico** de chamados de um cliente.
+3. **Atualizar o status** de um chamado.
+
+. . .
+
+O servidor expõe **operações sobre dados**, não uma interface para o atendente. Essa interface será construída na segunda parte.
+
+## Exercício 1 — Constituição do projeto
+
+::: {.callout-note title="Exercício 1.1 — Missão" icon=false .nonincremental}
+Crie um projeto chamado `helpdesk-mcp` e um `README.md` que descreva, em alto nível, o servidor MCP pretendido.
+
+Use o Copilot para produzir `specs/missao.md`, registrando:
+
+- propósito do servidor e problema que resolve;
+- quem utilizará suas ferramentas (agentes ou aplicações clientes de MCP);
+- escopo inicial: operações de consulta e atualização de chamados;
+- limites do exemplo (dados fictícios, uso local e ausência de autenticação real).
+
+**Não peça a implementação ainda.** Revise se a missão está clara antes de avançar.
+:::
+
+## Exercício 1 — Constituição do projeto
+
+::: {.callout-note title="Exercício 1.2 — Pilha tecnológica" icon=false .nonincremental}
+Peça ao Copilot que crie `specs/pilha-tecnologia.md` e registre as decisões técnicas obrigatórias:
+
+- **Python**, com ambiente virtual e dependências documentadas;
+- biblioteca **`fastmcp`** para implementar o servidor e expor as *tools*;
+- **SQLite** para persistir os chamados;
+- criação automática do banco e de **registros fictícios**, caso ainda não existam;
+- execução local, com transporte MCP compatível com **stdio**.
+
+O banco deve permitir identificar cada chamado, seu cliente, descrição, status e informações necessárias à consulta de histórico. Peça ao agente que proponha os detalhes e **revise as escolhas**.
+:::
+
+## Exercício 1 — Constituição do projeto
+
+::: {.callout-note title="Exercício 1.3 — Roadmap" icon=false .nonincremental}
+Peça ao Copilot para criar `specs/roadmap.md` com **três fases pequenas**, nesta ordem:
+
+1. **Listar chamados:** *tool* `listar_chamados`, com filtro opcional por status.
+2. **Buscar histórico de cliente:** *tool* `buscar_historico_cliente`, consultando os chamados de um cliente.
+3. **Atualizar status:** *tool* `atualizar_status`, alterando o status de um chamado existente.
+
+Solicite que cada fase tenha um objetivo e um critério geral de conclusão. **Não detalhamos as três implementações agora:** isso será feito uma funcionalidade por vez.
+:::
+
+## Exercício 1 — Revisão e versionamento
+
+::: {.callout-note title="Exercício 1.4 — Encerrar a Constituição" icon=false .nonincremental}
+Confira os três arquivos da Constituição:
+
+- A missão explica **por quê** o sistema existe?
+- A pilha tecnológica registra as **restrições** e os dados fictícios?
+- O roadmap descreve **o que será entregue e em que ordem**?
+
+Peça ao Copilot que corrija inconsistências entre os arquivos. Depois inicialize o repositório Git e **registre a Constituição em um commit na branch `main`**.
+:::
+
+## Exercício 2 — Primeira funcionalidade
+
+::: {.callout-note title="Exercício 2.1 — Especificar: listar chamados" icon=false .nonincremental}
+Crie a branch `feature/01-listar-chamados` a partir de `main` e inicie uma **nova conversa** com o Copilot.
+
+Peça que consulte a Constituição e crie `specs/01-listar-chamados/` com:
+
+- `requisitos.md`: comportamentos esperados, entradas, saídas e casos relevantes;
+- `planejamento.md`: grupos pequenos de tarefas, em ordem;
+- `validacao.md`: como verificar que a funcionalidade atende aos requisitos.
+
+Discuta questões como **quais status são aceitos**, o resultado para **nenhum chamado encontrado** e a inicialização dos **dados fictícios**.
+
+**Revise e aprove as especificações antes de implementar.**
+:::
+
+## Exercício 2 — Primeira funcionalidade
+
+::: {.callout-note title="Exercício 2.2 — Implementar" icon=false .nonincremental}
+Inicie uma nova conversa e solicite a implementação **somente da primeira fase**, seguindo `specs/01-listar-chamados/`.
+
+Oriente o Copilot a:
+
+- criar o servidor MCP em Python e a estrutura de persistência SQLite;
+- popular o banco com registros fictícios **somente quando necessário**, sem apagar alterações existentes;
+- disponibilizar a *tool* `listar_chamados`;
+- criar os testes previstos na especificação;
+- documentar como executar e registrar o servidor MCP no VS Code.
+
+**Confira** os arquivos modificados antes de prosseguir.
+:::
+
+## Exercício 2 — Testando no Copilot
+
+::: {.callout-note title="Exercício 2.3 — Validação human in the loop" icon=false .nonincremental}
+Registre o servidor local no VS Code (`.vscode/mcp.json`) e habilite sua utilização pelo Copilot Chat.
+
+Peça, no chat, ações como:
+
+- "Liste todos os chamados";
+- "Quais chamados estão abertos?";
+- "Liste os chamados com um status que não existe".
+
+Confira se o Copilot **chamou a tool MCP**, em vez de apenas inventar uma resposta. Compare os resultados com o banco e com `validacao.md`.
+
+Se encontrar erros, peça a correção **na especificação e no código**. Execute também os testes automatizados.
+:::
+
+## Configuração do MCP no VS Code
+
+Um exemplo da **estrutura** de `.mcp.json` é:
+
+```json
+{
+  "servers": {
+    "helpdesk-mcp": {
+      "type": "stdio",
+      "command": "/home/usuario/testeMCP/.venv/bin/python",
+      "args": [
+          "/home/usuario/testeMCP/servidor.py"
+      ]
+    }
+  }
+}
+```
+
+## Configuração do MCP no VS Code
+
+- Ajuste o comando `python` ao **interpretador do ambiente virtual** que contém `fastmcp`.
+- Use o mecanismo de inicialização do MCP do VS Code e verifique se o servidor e a *tool* aparecem disponíveis.
+- `stdio` usa a entrada e saída padrão: evite `print()` de depuração em `stdout` no servidor.
+
+. . .
+
+::: {.callout-tip title="Dica" icon=false .nonincremental}
+A configuração registra o servidor; ela **não implementa** nenhuma *tool*. O Copilot deve criar o código conforme a especificação.
+:::
+
+## Exercício 2 — Conclusão da fase
+
+::: {.callout-note title="Exercício 2.4 — Aceitação e integração" icon=false .nonincremental}
+Somente depois de validar:
+
+1. Compare o resultado com `requisitos.md` e `validacao.md`.
+2. Solicite ao Copilot uma revisão das alterações da branch.
+3. Registre a implementação e as especificações em commit.
+4. Faça o **merge em `main`** e verifique o funcionamento após a integração.
+
+O objetivo não é apenas fazer a ferramenta responder, mas garantir que o comportamento está **alinhado ao que foi especificado**.
+:::
+
+# Replanejamento {background-color="#40666e"}
+
+## Exercício 3 — Revisar o plano
+
+::: {.callout-note title="Exercício 3 — Replanejamento após a primeira entrega" icon=false .nonincremental}
+Antes de iniciar a segunda funcionalidade, use o Copilot para **avaliar o que aprendemos**:
+
+- A estrutura do banco atende às próximas duas fases?
+- Alguma regra ou decisão importante precisa entrar na Constituição?
+- Os critérios das fases restantes continuam adequados?
+- Há algo que deve ser dividido, esclarecido ou retirado do roadmap?
+
+Atualize `specs/roadmap.md` para registrar a **Fase 1 como concluída** e revise os demais arquivos da Constituição, se necessário.
+
+Se houver mudanças significativas, use uma **branch específica de replanejamento**. Integre e faça commit antes de começar a próxima funcionalidade.
+:::
+
+# Continuando o ciclo {background-color="#40666e"}
+
+## Exercício 4 — Histórico do cliente
+
+::: {.callout-note title="Exercício 4 — Segunda funcionalidade" icon=false .nonincremental}
+Crie a branch `feature/02-historico-cliente` a partir da `main` atualizada. **Abra uma nova conversa** com o Copilot.
+
+Repita o ciclo:
+
+1. **Especificação:** gere `requisitos.md`, `planejamento.md` e `validacao.md` para `buscar_historico_cliente`.
+2. **Implementação:** peça apenas a funcionalidade da fase atual, preservando `listar_chamados`.
+3. **Validação:** consulte, pelo Copilot Chat, o histórico de um cliente com vários chamados e de um cliente inexistente. Execute testes, inclusive de regressão.
+4. **Conclusão:** revise, faça commit e merge na `main`.
+
+**Não pule o replanejamento antes da fase seguinte.**
+:::
+
+## Exercício 5 — Replanejamento novamente
+
+::: {.callout-note title="Exercício 5 — Preparar a atualização de status" icon=false .nonincremental}
+Reavalie a Constituição à luz das duas funcionalidades prontas.
+
+- Os status permitidos estão definidos de forma consistente?
+- O que acontece ao tentar atualizar um chamado inexistente?
+- A futura operação de atualização deve preservar os dados históricos?
+- O roadmap e a especificação correspondem ao código atual?
+
+Peça ao Copilot que registre as decisões necessárias na Constituição, **sem implementar ainda** a próxima funcionalidade. Marque a Fase 2 como concluída, faça commit e integre as alterações.
+:::
+
+## Exercício 6 — Atualizar status
+
+::: {.callout-note title="Exercício 6 — Terceira funcionalidade" icon=false .nonincremental}
+Crie `feature/03-atualizar-status` e reinicie a conversa com o Copilot.
+
+Repita **especificação → implementação → validação**, desta vez para `atualizar_status`:
+
+- definir o identificador do chamado e o novo status;
+- tratar status inválido e chamado inexistente;
+- validar que o novo estado ficou **persistido no SQLite**;
+- confirmar que as duas *tools* de consulta continuam funcionando.
+
+Depois da revisão, faça commit, merge e o **replanejamento final**, marcando as três fases como concluídas em `specs/roadmap.md`.
+:::
+
+## Checkpoint — Servidor concluído
+
+Antes de seguir, confirme:
+
+- [ ] A Constituição está atualizada e versionada.
+- [ ] As três funcionalidades foram desenvolvidas em **branches independentes**.
+- [ ] Cada uma possui requisitos, planejamento e validação.
+- [ ] As três *tools* aparecem no cliente MCP do Copilot.
+- [ ] Os testes passaram e os dados fictícios estão disponíveis.
+- [ ] `main` contém a versão integrada do servidor.
+
+# Parte 2 — Aplicação Streamlit {background-color="#40666e"}
+
+## Agora, outro cliente MCP
+
+Até aqui, o servidor foi utilizado **pelo Copilot Chat**, no ambiente do desenvolvedor.
+
+Agora criaremos uma **aplicação web para um atendente de helpdesk** que consome o **mesmo servidor MCP**.
+
+**Nesta parte, não usaremos SDD:** queremos apenas prototipar a integração com uma interface voltada ao usuário final.
+
+::: {.callout-important title="Uma distinção importante" icon=false .nonincremental}
+O Streamlit **não passa automaticamente a conversar com uma IA** ao instalar o MCP. Precisamos de um **cliente MCP** na aplicação para chamar as *tools*; um modelo de linguagem só é necessário se quisermos interpretar perguntas livres com IA.
+:::
+
+## Arquitetura do protótipo
+
+```{mermaid}
+flowchart LR
+    A[Atendente] --> B[Chat Streamlit]
+    B --> C[Cliente MCP em Python]
+    C --> D[Servidor MCP de helpdesk]
+    D --> E[(SQLite)]
+```
+
+Nesta versão, usaremos **comandos simples interpretados pela aplicação**, sem necessidade de API paga de modelo de linguagem.
+
+A comunicação entre a aplicação e as operações do helpdesk deverá passar **pelo protocolo MCP**, não por acesso direto ao SQLite.
+
+## Exercício 7 — Chat do atendente
+
+::: {.callout-note title="Exercício 7.1 — Criar a interface" icon=false .nonincremental}
+Em uma pasta separada, ou na pasta `app/` do projeto, peça ao Copilot para criar uma aplicação **Streamlit** com:
+
+- título e orientação de uso para o atendente;
+- mensagens exibidas com `st.chat_message`;
+- entrada de usuário com `st.chat_input`;
+- histórico da conversa durante a sessão (`st.session_state`).
+
+Execute a aplicação com `streamlit run app.py` e verifique a interface.
+
+Por enquanto, **não precisa usar modelo de linguagem**.
+:::
+
+## Exercício 7 — Conectar o MCP
+
+::: {.callout-note title="Exercício 7.2 — Consumir as tools" icon=false .nonincremental}
+Peça ao Copilot para conectar a aplicação ao servidor de helpdesk usando um **cliente MCP Python** (por exemplo, o `Client` da biblioteca `fastmcp`, conectado ao script do servidor via *stdio*).
+
+A aplicação deverá interpretar comandos simples do usuário e invocar as *tools* correspondentes, como:
+
+- `listar abertos` → `listar_chamados`;
+- `histórico do cliente 2` → `buscar_historico_cliente`;
+- `alterar chamado 3 para fechado` → `atualizar_status`.
+
+Os exemplos dependem dos **identificadores e status** definidos no projeto. Exiba os resultados na conversa e trate comandos desconhecidos com uma orientação clara.
+:::
+
+## Exercício 7 — Validação do protótipo
+
+::: {.callout-note title="Exercício 7.3 — Teste de ponta a ponta" icon=false .nonincremental}
+Na interface Streamlit:
+
+1. Liste os chamados abertos.
+2. Consulte o histórico de um cliente fictício existente.
+3. Atualize o status de um chamado.
+4. Faça uma nova consulta e verifique se a **alteração persistiu**.
+5. Experimente um identificador inexistente ou comando inválido.
+
+**Confirme que o Streamlit chama o servidor MCP.** Não vale consultar ou modificar o banco diretamente pela aplicação.
+:::
+
+## Extensão opcional — Chat com linguagem natural
+
+Peça ao Copilot para criar uma versão em que o usuário escreve **perguntas livres** e um modelo de IA escolhe qual *tool* MCP utilizar.
+
+- Compare esse comportamento com os **comandos fixos** do protótipo.
+- Não é necessário usar uma API paga para concluir a atividade.
+- Para alterações no banco, considere **pedir confirmação explícita ao atendente** antes de executar a *tool*.
+
+. . .   
+
+**Importante:** com comandos fixos, temos uma interface de chat para operar o MCP, **não um agente LLM conversacional**.
+
+# Entrega {background-color="#40666e"}
+
+## {.smaller}
+
+Organize o repositório de modo que outra pessoa consiga **reproduzir a execução**:
+
+- Código do servidor MCP e inicialização do SQLite com dados fictícios.
+- Constituição e especificações de cada funcionalidade.
+- Código do protótipo Streamlit (sem dados sensíveis ou chaves de API).
+- `README.md` com instalação, execução e exemplos de teste das três *tools* e da interface.
+
+. . .
+
+::: {.callout-tip title="Critério principal" icon=false .nonincremental}
+Devem ser demonstráveis **as três tools MCP** e **uma chamada real ao servidor MCP a partir da aplicação Streamlit**. O processo de SDD deve estar documentado no Git e nas especificações.
+:::
