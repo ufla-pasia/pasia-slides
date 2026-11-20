@@ -361,7 +361,7 @@
     "href": "aula_p2.html#section-2",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.\n. . .\nPara exemplificar isso, suponha que vamos criar um programa para jogar Scrabble."
+    "text": "Quando pedimos ao Copilot para gerar um código, podemos avaliar outras possíveis sugestões dele.\n\nPara exemplificar isso, suponha que vamos criar um programa para jogar Scrabble."
   },
   {
     "objectID": "aula_p2.html#section-3",
@@ -382,7 +382,7 @@
     "href": "aula_p2.html#section-5",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.\n\nO cabeçalho e docstring abaixo mostram como é o cálculo na versão do jogo em português.\n\n. . .\ndef numero_de_pontos(palavra):\n    \"\"\"\n    Cada letra na palavra vale os seguintes pontos:\n    a, e, i, o, u, m, s, r, t: 1 ponto\n    d, l, c, p: 2 pontos\n    n, b, ç: 3 pontos\n    f, g, h, v: 4 pontos\n    j: 5 pontos\n    q: 6 pontos\n    x, z: 8 pontos\n\n    palavra é uma palavra formada por letras (caracteres minúsculos)\n    Retorna a soma dos pontos de cada letra da palavra\n    \"\"\""
+    "text": "Vamos trabalhar aqui apenas com a função que calcula os pontos de uma palavra.\n\nO cabeçalho e docstring abaixo mostram como é o cálculo na versão do jogo em português.\n\n\ndef numero_de_pontos(palavra):\n    \"\"\"\n    Cada letra na palavra vale os seguintes pontos:\n    a, e, i, o, u, m, s, r, t: 1 ponto\n    d, l, c, p: 2 pontos\n    n, b, ç: 3 pontos\n    f, g, h, v: 4 pontos\n    j: 5 pontos\n    q: 6 pontos\n    x, z: 8 pontos\n\n    palavra é uma palavra formada por letras (caracteres minúsculos)\n    Retorna a soma dos pontos de cada letra da palavra\n    \"\"\""
   },
   {
     "objectID": "aula_p2.html#section-6",
@@ -410,42 +410,42 @@
     "href": "aula_p2.html#section-9",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Uma segunda sugestão feita pelo código para o corpo da função foi:\n    pontos = {\n        'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'm': 1, 's': 1, 'r': 1, 't': 1,\n        'd': 2, 'l': 2, 'c': 2, 'p': 2,\n        'n': 3, 'b': 3, 'ç': 3,\n        'f': 4, 'g': 4, 'h': 4, 'v': 4,\n        'j': 5,\n        'q': 6,\n        'x': 8, 'z': 8\n    }\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n. . .\nRepare que ela é bem diferente da anterior."
+    "text": "Uma segunda sugestão feita pelo código para o corpo da função foi:\n    pontos = {\n        'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'm': 1, 's': 1, 'r': 1, 't': 1,\n        'd': 2, 'l': 2, 'c': 2, 'p': 2,\n        'n': 3, 'b': 3, 'ç': 3,\n        'f': 4, 'g': 4, 'h': 4, 'v': 4,\n        'j': 5,\n        'q': 6,\n        'x': 8, 'z': 8\n    }\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\nRepare que ela é bem diferente da anterior."
   },
   {
     "objectID": "aula_p2.html#section-10",
     "href": "aula_p2.html#section-10",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Essa segunda sugestão usa um dicionário para guardar o valor de cada letra.\n\nUm dicionário do Python é uma estrutura similar a um HashMap do Java.\n\n. . .\nNo código, o dicionário pontos usa as letras como chaves e os pontos correspondentes como valores.\n\nAssim, ao percorrer a palavra uma letra de cada vez.\n\npodemos consultar o dicionário para buscar quanto vale a letra."
+    "text": "Essa segunda sugestão usa um dicionário para guardar o valor de cada letra.\n\nUm dicionário do Python é uma estrutura similar a um HashMap do Java.\n\n\nNo código, o dicionário pontos usa as letras como chaves e os pontos correspondentes como valores.\n\nAssim, ao percorrer a palavra uma letra de cada vez.\n\npodemos consultar o dicionário para buscar quanto vale a letra."
   },
   {
     "objectID": "aula_p2.html#section-11",
     "href": "aula_p2.html#section-11",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho\n\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\npor\n\n    return sum(pontos.get(letra, 0) for letra in palavra)\n\n\n\nEsse tipo de construção usando list comprehension é muito comum em Python."
+    "text": "Em uma terceira sugestão, o Copilot fez a soma dos pontos em uma única linha, trocando o trecho\n\n    total = 0\n    for letra in palavra:\n        total += pontos.get(letra, 0)  # Adiciona o valor da letra ou 0 se não estiver no dicionário\n    return total\n\npor\n\n    return sum(pontos.get(letra, 0) for letra in palavra)\n\n\nEsse tipo de construção usando list comprehension é muito comum em Python."
   },
   {
     "objectID": "aula_p2.html#section-12",
     "href": "aula_p2.html#section-12",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Dica\n\n\n\nVocê pode fazer com o que o painel de escolha das sugestões do Copilot fique sempre visível, para não precisar passar o mouse sobre o código para acessá-lo.\nPara isso, quando ele aparecer uma vez, acesse os botão de três pontos ao final do painel e escolha a opção Always show toolbar."
+    "text": "Dica\n\n\nVocê pode fazer com o que o painel de escolha das sugestões do Copilot fique sempre visível, para não precisar passar o mouse sobre o código para acessá-lo.\nPara isso, quando ele aparecer uma vez, acesse os botão de três pontos ao final do painel e escolha a opção Always show toolbar."
   },
   {
     "objectID": "aula_p2.html#section-13",
     "href": "aula_p2.html#section-13",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Para fechar o exemplo, suponha que o Tião está jogando Scrabble\n\ne tem três palavras que poderiam ser encaixadas agora: zape, pazes e pizza.\nele gostaria de saber qual palavra dá mais pontos.\n\n. . .\nO que acha do cabeçalho abaixo para uma função que retorne a melhor dessas três palavras?\n\ndef melhor_palavra(palavra1, palavra2, palavra3):"
+    "text": "Para fechar o exemplo, suponha que o Tião está jogando Scrabble\n\ne tem três palavras que poderiam ser encaixadas agora: zape, pazes e pizza.\nele gostaria de saber qual palavra dá mais pontos.\n\n\nO que acha do cabeçalho abaixo para uma função que retorne a melhor dessas três palavras?\n\ndef melhor_palavra(palavra1, palavra2, palavra3):"
   },
   {
     "objectID": "aula_p2.html#section-14",
     "href": "aula_p2.html#section-14",
     "title": "Projetando Funções",
     "section": "",
-    "text": "def melhor_palavra(palavra1, palavra2, palavra3):\n\nDe acordo com o guia para criarmos boas funções essa não é uma boa função, por que?\n\nEla poderia ser mais geral, funcionando para qualquer quantidade de palavras.\nPoderíamos, por exemplo, receber uma lista de palavras como parâmetro.\n\n. . .\nVamos então melhorar a definição da função."
+    "text": "def melhor_palavra(palavra1, palavra2, palavra3):\n\nDe acordo com o guia para criarmos boas funções essa não é uma boa função, por que?\n\nEla poderia ser mais geral, funcionando para qualquer quantidade de palavras.\nPoderíamos, por exemplo, receber uma lista de palavras como parâmetro.\n\n\nVamos então melhorar a definição da função."
   },
   {
     "objectID": "aula_p2.html#section-15",
@@ -459,28 +459,28 @@
     "href": "aula_p2.html#section-16",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Escolhendo entre as sugestões do Copilot, essa foi outra opção:\n\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    return max(palavras, key=numero_de_pontos)\n\n. . .\nQual das duas opções você prefere?"
+    "text": "Escolhendo entre as sugestões do Copilot, essa foi outra opção:\n\ndef melhor_palavra(palavras):\n    \"\"\"\n    palavras é uma lista de palavras.\n\n    Retorna a palavra com a maior pontuação.\n    \"\"\"\n    return max(palavras, key=numero_de_pontos)\n\n\nQual das duas opções você prefere?"
   },
   {
     "objectID": "aula_p2.html#section-17",
     "href": "aula_p2.html#section-17",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Talvez seja prematuro escolher sem fazer testes.\n. . .\nVeja esse teste feito com a segunda opção:\n\n&gt;&gt;&gt; melhor_palavra([])\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 6, in melhor_palavra\nValueError: max() iterable argument is empty\n\n. . .\nEsse erro não ocorreria na primeira opção."
+    "text": "Talvez seja prematuro escolher sem fazer testes.\n\nVeja esse teste feito com a segunda opção:\n\n&gt;&gt;&gt; melhor_palavra([])\nTraceback (most recent call last):\n  File \"&lt;stdin&gt;\", line 1, in &lt;module&gt;\n  File \"&lt;stdin&gt;\", line 6, in melhor_palavra\nValueError: max() iterable argument is empty\n\n\n\nEsse erro não ocorreria na primeira opção."
   },
   {
     "objectID": "aula_p2.html#section-18",
     "href": "aula_p2.html#section-18",
     "title": "Projetando Funções",
     "section": "",
-    "text": "A dica portanto é:\n\nPara qualquer que seja a sugestão escolhida: é necessário sempre testar!\n\n. . .\nA segunda opção poderia ser alterada para a acrescentar o mesmo if da primeira opção.\n\nNesse caso, qual você escolheria?\nSugestão: depende do seu objetivo.\n\nA primeira opção é mais legível.\nA segunda é mais compacta."
+    "text": "A dica portanto é:\n\nPara qualquer que seja a sugestão escolhida: é necessário sempre testar!\n\n\nA segunda opção poderia ser alterada para a acrescentar o mesmo if da primeira opção.\n\nNesse caso, qual você escolheria?\nSugestão: depende do seu objetivo.\n\nA primeira opção é mais legível.\nA segunda é mais compacta."
   },
   {
     "objectID": "aula_p2.html#section-19",
     "href": "aula_p2.html#section-19",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora fazer algo mais interessante.\n\nE que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.\n\n. . .\nNós vamos utilizar um conjunto de dados (dataset) da plataforma Kaggle.\n\nUma plataforma de competição de ciência de dados e aprendizado de máquina.\nQue tem milhares de conjuntos de dados dos mais variados assuntos."
+    "text": "Vamos agora fazer algo mais interessante.\n\nE que já dê uma ideia de como podemos usar o Copilot em tarefas de processamento de dados.\n\n\nNós vamos utilizar um conjunto de dados (dataset) da plataforma Kaggle.\n\nUma plataforma de competição de ciência de dados e aprendizado de máquina.\nQue tem milhares de conjuntos de dados dos mais variados assuntos."
   },
   {
     "objectID": "aula_p2.html#section-20",
@@ -1334,7 +1334,7 @@
     "href": "aula_p2.html#funções-folha-ruins",
     "title": "Projetando Funções",
     "section": "Funções folha ruins",
-    "text": "Funções folha ruins\nVamos agora ver alguns exemplos de funções folha ruins e porque elas são ruins.\n. . .\nPedir informações fiscais de um usuário e calcular seu imposto de renda\n\nCalcular imposto de renda envolve vários cálculos que deveriam ser implementados em funções separadas."
+    "text": "Funções folha ruins\nVamos agora ver alguns exemplos de funções folha ruins e porque elas são ruins.\n\nPedir informações fiscais de um usuário e calcular seu imposto de renda\n\nCalcular imposto de renda envolve vários cálculos que deveriam ser implementados em funções separadas."
   },
   {
     "objectID": "aula_p2.html#funções-folha-ruins-1",
@@ -1376,7 +1376,7 @@
     "href": "aula_p2.html#section-22",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.\n\nAbra a pasta criada no VS Code.\nCrie um novo arquivo python chamado futebol.py.\nEm seguida, vamos definir uma função para carregar os dados com do arquivo top5-players.csv.\n\n. . .\n\ndef carregar_dados_futebol(nome_arquivo_csv):\n    \"\"\"\n    A função abre o arquivo CSV passado por parâmetro\n    e retorna os dados carregados\n    \"\"\""
+    "text": "Vamos agora escrever um prompt para carregar os dados do arquivo em nosso programa.\n\nAbra a pasta criada no VS Code.\nCrie um novo arquivo python chamado futebol.py.\nEm seguida, vamos definir uma função para carregar os dados com do arquivo top5-players.csv.\n\n\n\ndef carregar_dados_futebol(nome_arquivo_csv):\n    \"\"\"\n    A função abre o arquivo CSV passado por parâmetro\n    e retorna os dados carregados\n    \"\"\""
   },
   {
     "objectID": "aula_p2.html#section-23",
@@ -1404,56 +1404,56 @@
     "href": "aula_p2.html#section-26",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora trabalhar com os dados que foram carregados.\n\nA ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.\n\n. . .\nPara isso vamos usar duas funções:\n\nUma para calcular os dados que queremos: quantidade de gols feitos por brasileiros em cada liga.\nE outra para exibir os resultados."
+    "text": "Vamos agora trabalhar com os dados que foram carregados.\n\nA ideia é analisar as estatísticas dos jogadores brasileiros nas principais ligas de futebol.\n\n\nPara isso vamos usar duas funções:\n\nUma para calcular os dados que queremos: quantidade de gols feitos por brasileiros em cada liga.\nE outra para exibir os resultados."
   },
   {
     "objectID": "aula_p2.html#section-27",
     "href": "aula_p2.html#section-27",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Gere então o código da primeira função com o prompt abaixo.\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a décima terceira coluna o número de gols feitos pelo jogador\n    país é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\"\n\n. . .\nE teste sua função.\n\nLembre-se que você precisa chamar a primeira função."
+    "text": "Gere então o código da primeira função com o prompt abaixo.\n\ndef calcular_quantidade_gols(dados, pais):\n    \"\"\"\n    dados contém dados estatísticos de futebol:\n    - a terceira coluna traz o nome do país do jogador\n    - a sexta coluna o nome da liga\n    - a décima terceira coluna o número de gols feitos pelo jogador\n    país é a identificação do país de interesse (ex.: \"br BRA\")\n\n    A função calcula e retorna a quantidade de gols feitos \n    por jogadores do país passado em cada liga\n    \"\"\"\n\n\nE teste sua função.\n\nLembre-se que você precisa chamar a primeira função."
   },
   {
     "objectID": "aula_p2.html#section-28",
     "href": "aula_p2.html#section-28",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Nós já vimos os resultados no terminal mas em um formato que não é muito adequado para o usuário final.\n\nVamos agora criar uma função para mostrar o resultado.\nE pedir o resultado com as quantidades de gols em ordem decrescente.\n\n. . .\n\ndef exibir_gols_por_liga(quantidade_gols):\n    \"\"\"\n    A função exibe a quantidade de gols feitos por \n    jogadores de um país em cada liga em ordem decrescente.\n    \"\"\""
+    "text": "Nós já vimos os resultados no terminal mas em um formato que não é muito adequado para o usuário final.\n\nVamos agora criar uma função para mostrar o resultado.\nE pedir o resultado com as quantidades de gols em ordem decrescente.\n\n\n\ndef exibir_gols_por_liga(quantidade_gols):\n    \"\"\"\n    A função exibe a quantidade de gols feitos por \n    jogadores de um país em cada liga em ordem decrescente.\n    \"\"\""
   },
   {
     "objectID": "aula_p2.html#section-29",
     "href": "aula_p2.html#section-29",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Em seguida, vamos pedir ao Copilot para chamar as funções no próprio script Python que estamos criando.\n. . .\n\n# Chame as funções anteriores para exibir ao usuário\n# as quantidades de gols feitos por brasileiros\n# a partir do arquivo top5-players.csv\n\n. . .\nAgora nós vamos testar o script propriamente dito.\n\nClicando no botão Run no canto superior direito do VS Code."
+    "text": "Em seguida, vamos pedir ao Copilot para chamar as funções no próprio script Python que estamos criando.\n\n\n# Chame as funções anteriores para exibir ao usuário\n# as quantidades de gols feitos por brasileiros\n# a partir do arquivo top5-players.csv\n\n\n\nAgora nós vamos testar o script propriamente dito.\n\nClicando no botão Run no canto superior direito do VS Code."
   },
   {
     "objectID": "aula_p2.html#section-30",
     "href": "aula_p2.html#section-30",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Repare que fizemos o nosso programa com apenas três funções.\n\nUma para lidar com a entrada de dados.\nOutra para processá-los.\nE a última para exibir os dados.\n\n. . .\nEsse ciclo de entrada, processamento e saída é extremamente comum em programação."
+    "text": "Repare que fizemos o nosso programa com apenas três funções.\n\nUma para lidar com a entrada de dados.\nOutra para processá-los.\nE a última para exibir os dados.\n\n\nEsse ciclo de entrada, processamento e saída é extremamente comum em programação."
   },
   {
     "objectID": "aula_p2.html#section-31",
     "href": "aula_p2.html#section-31",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora usar o Copilot para alterar o código que havíamos gerado.\n\nSuponha que estamos interessados apenas nos gols dos jogadores jovens (que têm até 23 anos)\n\n. . .\nPara isso, nós vamos apagar o código gerado para a segunda função que criamos\n\ne vamos redefinir a função.\nVocê alteraria algo na assinatura da função?\nE o que você alteraria na docstring da função?\nMãos à Obra e ao Teste!"
+    "text": "Vamos agora usar o Copilot para alterar o código que havíamos gerado.\n\nSuponha que estamos interessados apenas nos gols dos jogadores jovens (que têm até 23 anos)\n\n\nPara isso, nós vamos apagar o código gerado para a segunda função que criamos\n\ne vamos redefinir a função.\nVocê alteraria algo na assinatura da função?\nE o que você alteraria na docstring da função?\nMãos à Obra e ao Teste!"
   },
   {
     "objectID": "aula_p2.html#section-32",
     "href": "aula_p2.html#section-32",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Seguindo os critérios de criação de boas funções provavelmente você:\n\nAcrescentou um parâmetro de idade máxima à função\nAcrescentou na docstring\n\na informação da coluna que tem a idade do jogador (a sétima).\no significado do parâmetro idade\n\nAlém, é claro de ter passado 23 como idade máxima na chamada da função.\n\n. . .\nSe não foi isso que fez, bora fazer :)"
+    "text": "Seguindo os critérios de criação de boas funções provavelmente você:\n\nAcrescentou um parâmetro de idade máxima à função\nAcrescentou na docstring\n\na informação da coluna que tem a idade do jogador (a sétima).\no significado do parâmetro idade\n\nAlém, é claro de ter passado 23 como idade máxima na chamada da função.\n\n\nSe não foi isso que fez, bora fazer :)"
   },
   {
     "objectID": "aula_p2.html#section-33",
     "href": "aula_p2.html#section-33",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país\n\neng, es, it, fr ou de.\n\n. . .\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país.\n\nAcrescentando o texto do slide a seguir à docstring da função de exibição dos resultados"
+    "text": "Você deve ter notado que os nomes das ligas começam com um identificador do país\n\neng, es, it, fr ou de.\n\n\nVamos pedir ao Copilot para substituir esse identificador pelo nome do país.\n\nAcrescentando o texto do slide a seguir à docstring da função de exibição dos resultados"
   },
   {
     "objectID": "aula_p2.html#section-34",
@@ -1474,7 +1474,7 @@
     "href": "aula_p2.html#section-36",
     "title": "Projetando Funções",
     "section": "",
-    "text": "Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos dados processados.\n. . .\nPara isso, selecione toda a terceira função e\n\nAbra o chat do Copilot (clicando no ícone de chat na barra de título do VS Code ou digitando Ctrl + Alt + I).\nMude do modo Agent para Ask (primeira opção na parte inferior do chat).\nE digite o prompt do slide a seguir."
+    "text": "Vamos agora interagir com o Copilot via chat para gerar um gráfico a partir dos dados processados.\n\nPara isso, selecione toda a terceira função e\n\nAbra o chat do Copilot (clicando no ícone de chat na barra de título do VS Code ou digitando Ctrl + Alt + I).\nMude do modo Agent para Ask (primeira opção na parte inferior do chat).\nE digite o prompt do slide a seguir."
   },
   {
     "objectID": "aula_p2.html#section-37",
@@ -1495,7 +1495,7 @@
     "href": "aula_p2.html#section-39",
     "title": "Projetando Funções",
     "section": "",
-    "text": "É importante termos em mente que não estamos validando os resultados gerados\n\nAssim, é possível que alguns resultados estejam incorretos.\n\n. . .\nComo foi mencionado nas aulas anteriores, precisamos aprender a testar o código gerado pelo Copilot\n\nPara termos segurança de que ele faz o que precisamos.\nVeremos mais sobre isso mais adiante na disciplina."
+    "text": "É importante termos em mente que não estamos validando os resultados gerados\n\nAssim, é possível que alguns resultados estejam incorretos.\n\n\nComo foi mencionado nas aulas anteriores, precisamos aprender a testar o código gerado pelo Copilot\n\nPara termos segurança de que ele faz o que precisamos.\nVeremos mais sobre isso mais adiante na disciplina."
   },
   {
     "objectID": "aula_t3.html#section",
@@ -9258,7 +9258,7 @@
     "href": "aula_p10.html#exercício-2-testando-no-copilot",
     "title": "Criando e utilizando um servidor MCP",
     "section": "Exercício 2 — Testando no Copilot",
-    "text": "Exercício 2 — Testando no Copilot\n\n\n\n\nExercício 2.3 — Validação human in the loop\n\n\nRegistre o servidor local no VS Code (.vscode/mcp.json) e habilite sua utilização pelo Copilot Chat.\nPeça, no chat, ações como:\n\n“Liste todos os chamados”;\n“Quais chamados estão abertos?”;\n“Liste os chamados com um status que não existe”.\n\nConfira se o Copilot chamou a tool MCP, em vez de apenas inventar uma resposta. Compare os resultados com o banco e com validacao.md.\nSe encontrar erros, peça a correção na especificação e no código. Execute também os testes automatizados."
+    "text": "Exercício 2 — Testando no Copilot\n\n\n\n\nExercício 2.3 — Validação human in the loop\n\n\nRegistre o servidor local no VS Code (.mcp.json) e habilite sua utilização pelo Copilot Chat.\nPeça, no chat, ações como:\n\n“Liste todos os chamados”;\n“Quais chamados estão abertos?”;\n“Liste os chamados com um status que não existe”.\n\nConfira se o Copilot chamou a tool MCP, em vez de apenas inventar uma resposta. Compare os resultados com o banco e com validacao.md.\nSe encontrar erros, peça a correção na especificação e no código. Execute também os testes automatizados."
   },
   {
     "objectID": "aula_p10.html#configuração-do-mcp-no-vs-code",
@@ -9434,5 +9434,12 @@
     "title": "Criando e utilizando um servidor MCP",
     "section": "",
     "text": "Organize o repositório de modo que outra pessoa consiga reproduzir a execução:\n\nCódigo do servidor MCP e inicialização do SQLite com dados fictícios.\nConstituição e especificações de cada funcionalidade.\nCódigo do protótipo Streamlit (sem dados sensíveis ou chaves de API).\nREADME.md com instalação, execução e exemplos de teste das três tools e da interface.\n\n\n\n\n\n\nCritério principal\n\n\nDevem ser demonstráveis as três tools MCP e uma chamada real ao servidor MCP a partir da aplicação Streamlit. O processo de SDD deve estar documentado no Git e nas especificações."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GAC126 - Programação Aplicada com Suporte de IA",
+    "section": "",
+    "text": "As aulas alternam entre teóricas (T) e práticas (P). Clique no título para abrir os slides.\n\n\n\nAula\nTeórica\nPrática\n\n\n\n\n1\nSlides da aula T.1 (Google Slides)\nIntrodução à Programação Suportada por IA\n\n\n2\nProjetando Funções\nProjetando Funções\n\n\n3\nLendo Código Python\nTestes\n\n\n4\nDecomposição de Problemas\nDepuração e Decomposição de Problemas\n\n\n5\nEngenharia de Prompt com o GitHub Copilot\n—\n\n\n6\nAutomatizando Tarefas Tediosas\nAutomatizando Tarefas Tediosas\n\n\n7\nVisualizando Dados\nVisualizando Dados\n\n\n8\nTrabalhando com APIs\nTrabalhando com APIs\n\n\n9\nDesenvolvendo Jogos e POO\nDesenvolvendo Jogos\n\n\n10\nSpec-Driven Development e Programação Agêntica\nCriando e utilizando um servidor MCP\n\n\n\n\n\n\nReusoCC BY-SA 4.0"
   }
 ]

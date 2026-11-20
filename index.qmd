@@ -1,0 +1,23 @@
+---
+title: "GAC126 - Programação Aplicada com Suporte de IA"
+subtitle: "Material das aulas"
+format:
+  html:
+    theme: cosmo
+    toc: false
+---
+
+As aulas alternam entre teóricas (T) e práticas (P). Clique no título para abrir os slides.
+
+| Aula | Teórica | Prática |
+|:----:|---------|---------|
+| 1 | [Slides da aula T.1 (Google Slides)](https://docs.google.com/presentation/d/1MIQ2suVdXoip-OOtzySTKJjE8W-dhsR9pHY9Py4k_io/edit?usp=drive_link) | [Introdução à Programação Suportada por IA](aula_p1.html) |
+| 2 | [Projetando Funções](aula_t2.html) | [Projetando Funções](aula_p2.html) |
+| 3 | [Lendo Código Python](aula_t3.html) | [Testes](aula_p3.html) |
+| 4 | [Decomposição de Problemas](aula_t4.html) | [Depuração e Decomposição de Problemas](aula_p4.html) |
+| 5 | [Engenharia de Prompt com o GitHub Copilot](aula_t5.html) | — |
+| 6 | [Automatizando Tarefas Tediosas](aula_t6.html) | [Automatizando Tarefas Tediosas](aula_p6.html) |
+| 7 | [Visualizando Dados](aula_t7.html) | [Visualizando Dados](aula_p7.html) |
+| 8 | [Trabalhando com APIs](aula_t8.html) | [Trabalhando com APIs](aula_p8.html) |
+| 9 | [Desenvolvendo Jogos e POO](aula_t9.html) | [Desenvolvendo Jogos](aula_p9.html) |
+| 10 | [Spec-Driven Development e Programação Agêntica](aula_t10.html) | [Criando e utilizando um servidor MCP](aula_p10.html) |

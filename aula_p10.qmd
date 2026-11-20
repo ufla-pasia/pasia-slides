@@ -299,7 +299,7 @@ Oriente o Copilot a:
 ## Exercício 2 — Testando no Copilot
 
 ::: {.callout-note title="Exercício 2.3 — Validação human in the loop" icon=false .nonincremental}
-Registre o servidor local no VS Code (`.vscode/mcp.json`) e habilite sua utilização pelo Copilot Chat.
+Registre o servidor local no VS Code (`.mcp.json`) e habilite sua utilização pelo Copilot Chat.
 
 Peça, no chat, ações como:
 
